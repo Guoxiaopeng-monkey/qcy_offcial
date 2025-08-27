@@ -1,0 +1,680 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product_page_featured_product_section_eKUxRF": {
+      "type": "product-page-featured-product-section",
+      "disabled": true,
+      "settings": {
+        "featured_image": "shopify://shop_images/39910_2x_99949133-4fe9-4dbb-86b4-4355549a30b5.png",
+        "heading": "QCY H3"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "judge_me_reviews_preview_badge_kPwtUd": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "buy_now_label": "Buy Now"
+          }
+        },
+        "membership_discount_nAmWHi": {
+          "type": "membership_discount",
+          "disabled": true,
+          "settings": {
+            "percentage": "5",
+            "unit": "%",
+            "status": "OFF",
+            "description": "Join now for an extra 5% member discount!",
+            "link_label": "Become a member >",
+            "link_url": ""
+          }
+        },
+        "delivery_payment_xjMGEk": {
+          "type": "delivery_payment",
+          "settings": {
+            "heading": "Delivery & Payment",
+            "show_shipping_icons": true,
+            "shipping_icon_1": "shopify://shop_images/trusted_1.png",
+            "show_payment_icons": true,
+            "payment_icon_1": "shopify://shop_images/trust_2.png",
+            "payment_icon_2": "shopify://shop_images/959z4_1.jpg",
+            "payment_icon_3": "shopify://shop_images/klarna-900x500_6f07ff2b-fa9f-4de4-93b5-6a59d4048f75.png",
+            "payment_icon_4": "shopify://shop_images/PIX-900x500_954536f0-01a6-42fe-a35a-0016181782e5.png"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "vendor",
+        "judge_me_reviews_preview_badge_kPwtUd",
+        "price",
+        "description",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "membership_discount_nAmWHi",
+        "delivery_payment_xjMGEk"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 52,
+        "padding_bottom": 80,
+        "enable_group_media": true,
+        "media_grouping_option": "Color",
+        "enable_support_center": true,
+        "support_Icon_1": "shopify://shop_images/truck-fast.svg",
+        "support_heading_1": "Fast & Free Shipping",
+        "support_description_1": "<p><em>Worldwide shipping to 60+ countries, with free delivery</em> to most destinations.For details, please refer to: <a href=\"https://us.qcy.com/pages/shipping-policy\" target=\"_blank\" title=\"https://us.qcy.com/pages/shipping-policy\">Shipping Policy</a></p>",
+        "support_Icon_2": "shopify://shop_images/back-square.svg",
+        "support_heading_2": "30-Day Money-Back Guarantee",
+        "support_description_2": "<p>Get a full refund when you return your undamaged products within 30 days and for any reason. Once the item arrives back at our warehouse for inspection, the refund process will begin. <a href=\"/pages/return-refund-policy\" title=\"Return&Refund Policy\">Refund Policy</a></p>",
+        "support_Icon_3": "shopify://shop_images/42849.svg",
+        "support_heading_3": "Hassle-Free Warranty",
+        "support_description_3": "<p>If the product has quality problems within one year, QCY will provide direct, hassle-free warranty service. For more information, please refer to: <a href=\"/pages/warranty-policy\" title=\"Warranty Policy\">Warranty Policy</a></p>",
+        "support_Icon_4": "shopify://shop_images/chat-question_1.svg",
+        "support_heading_4": "Lifetime Customer Support",
+        "support_description_4": "<p>We'll always be there for you. If you have any questions or concerns, feel free to contact us at <a href=\"mailto:service@qcyearphone.com\" title=\"mailto:service@qcyearphone.com\">service@qcyearphone.com</a>.</p>"
+      }
+    },
+    "product_page_header_section_bpQYpw": {
+      "type": "product-page-header-section",
+      "blocks": {
+        "header_menu_DqaX6d": {
+          "type": "header_menu",
+          "settings": {
+            "header_menu": "Features"
+          }
+        },
+        "header_menu_QrxAym": {
+          "type": "header_menu",
+          "settings": {
+            "header_menu": "Specification"
+          }
+        },
+        "header_menu_rGH6xx": {
+          "type": "header_menu",
+          "settings": {
+            "header_menu": "Reviews"
+          }
+        }
+      },
+      "block_order": [
+        "header_menu_DqaX6d",
+        "header_menu_QrxAym",
+        "header_menu_rGH6xx"
+      ],
+      "settings": {}
+    },
+    "product_page_gallery_featured_image_section_79B43B": {
+      "type": "product-page-gallery-featured-image-section",
+      "blocks": {
+        "item_DX6mJr": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/42824_2x_4.png",
+            "image_mobile": "shopify://shop_images/43723_2x_4.png",
+            "heading": ""
+          }
+        },
+        "item_8wdzp3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/42826_2x_4.png",
+            "image_mobile": "shopify://shop_images/43727_2x_4.png",
+            "heading": ""
+          }
+        },
+        "item_B9mfRk": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/42825_2x_4.png",
+            "image_mobile": "shopify://shop_images/43726_2x_4.png",
+            "heading": ""
+          }
+        },
+        "item_4CGhpY": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/43782_2x_3.png",
+            "image_mobile": "shopify://shop_images/43787_2x_3.png",
+            "heading": ""
+          }
+        },
+        "item_4pWFih": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/43784_2x_3.png",
+            "image_mobile": "shopify://shop_images/43729_2x_4.png",
+            "heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_DX6mJr",
+        "item_8wdzp3",
+        "item_B9mfRk",
+        "item_4CGhpY",
+        "item_4pWFih"
+      ],
+      "settings": {
+        "header_nav": "Features"
+      }
+    },
+    "product_page_footer_section_kKYNfJ": {
+      "type": "product-page-footer-section",
+      "settings": {
+        "btn_add_to_card_label": "Add To Cart"
+      }
+    },
+    "product_page_featured_specs_section_A3prPV": {
+      "type": "product-page-featured-specs-section",
+      "disabled": true,
+      "settings": {
+        "bg_image": "shopify://shop_images/39954_2x_12.png",
+        "bg_image_mobile": "shopify://shop_images/39957_2x_9.png"
+      }
+    },
+    "product_page_featured_video_section_NbhMGF": {
+      "type": "product-page-featured-video-section",
+      "disabled": true,
+      "settings": {
+        "video": "shopify://files/videos/WeChat_20241015164923.mp4"
+      }
+    },
+    "product_page_scroll_content_section_DkGNRw": {
+      "type": "product-page-scroll-content-section",
+      "blocks": {
+        "content_n98KXx": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/39908_2x_10.webp",
+            "heading": "Minimised Sound leakage",
+            "text_color": "#121212",
+            "description": "<p>With advanced directional audio technology and auto sound beam adjustment, sounds are transmitted precisely into ear canal, making for a private listening experience.</p>",
+            "sub_image": "shopify://shop_images/e_0_2x_a25ee4bb-0845-424e-a491-56ad08712346.png",
+            "sub_image_fullwidth": true
+          }
+        },
+        "content_agxaXd": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/39908_2x_9.webp",
+            "heading": "Open Up Your Ear",
+            "text_color": "#121212",
+            "description": "<p>With C-Shape open-ear design, QCY Crossky C30 keeps you in sync with your surroundings, without sealing the ear canal.</p>",
+            "sub_image_fullwidth": false
+          }
+        }
+      },
+      "block_order": [
+        "content_n98KXx",
+        "content_agxaXd"
+      ],
+      "settings": {
+        "bg_color": "#ffffff"
+      }
+    },
+    "product_page_image_slider_section_dpQdgV": {
+      "type": "product-page-image-slider-section",
+      "blocks": {
+        "image_3mnKTC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/39911_2x_26.png",
+            "heading": "Vibrant and clear Audio",
+            "sub_heading": "10.8mm Dual-Magnet Driver",
+            "description": "<p>With 10.8 mm dual-magnet high-sensitivity driver unit, the headphones deliver sterling sound quality and clear vocals within a tiny, delicate body.</p>",
+            "title": "High-Fidelity Sound"
+          }
+        },
+        "image_QBLDTW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/40058.png",
+            "heading": "Long-Lasting Listening",
+            "sub_heading": "Battary Life",
+            "description": "<p>Listen up to 5.5 hours using the earbuds alone. Total 25 hours battery life with the charging case.</p>",
+            "title": "Power For Days",
+            "image_add": "shopify://shop_images/20250411152932.jpg"
+          }
+        },
+        "image_zB3Qhk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/39911_2x_28.png",
+            "heading": "Wrap Around",
+            "sub_heading": "Your Ears",
+            "description": "<p>Fits perfectly alongside glasses and other accessories.</p>",
+            "title": "All Day Comfort"
+          }
+        },
+        "image_3fayic": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/39911_2x_29.webp",
+            "heading": "Noise Cancelling",
+            "sub_heading": "Clear Calls",
+            "description": "",
+            "title": "Clear Communication"
+          }
+        }
+      },
+      "block_order": [
+        "image_3mnKTC",
+        "image_QBLDTW",
+        "image_zB3Qhk",
+        "image_3fayic"
+      ],
+      "settings": {
+        "animation_fade": false
+      }
+    },
+    "product_page_side_by_side_section_rYNrbK": {
+      "type": "product-page-side-by-side-section",
+      "blocks": {
+        "left_content_CHpgtG": {
+          "type": "left_content",
+          "settings": {
+            "bg_image": "shopify://shop_images/39919_2x_7.png",
+            "heading": "Style it Your Own way",
+            "description": "<p>The headphone features an elegant matte texture paired with a mirror-like sheen finish on the acoustic ball, making them a chic accessory for any outfit.</p>",
+            "heading_1": "",
+            "unit_1": "",
+            "label_1": "",
+            "heading_2": "",
+            "unit_2": "",
+            "label_2": ""
+          }
+        },
+        "right_content_xntrMe": {
+          "type": "right_content",
+          "settings": {
+            "bg_image": "shopify://shop_images/39920_2x_7.webp",
+            "heading": "Bass Enhance algorithm",
+            "description": "<p>Our dynamic EQ algorithm improves the bass performance, and reduces high-frequency distortion, delivers balanced sound no matter how loud you turn it up.</p>",
+            "heading_1": "",
+            "unit_1": "",
+            "label_1": "",
+            "heading_2": "",
+            "unit_2": "",
+            "label_2": "",
+            "image": "shopify://shop_images/lQLPJyInutaVqNXNAXDNAkewyXmk9S-Ok-UHR4Jp279XAQ_583_368.png"
+          }
+        },
+        "left_content_8rmCpk": {
+          "type": "left_content",
+          "disabled": true,
+          "settings": {
+            "bg_image": "shopify://shop_images/39921_2x_8.png",
+            "heading": "Seamless Dual-Device Connections",
+            "description": "<p>Lorem lpsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation Ullamco Laboris Nisi Ut Aliquip Ex Ea Commodo Consequat.</p>",
+            "heading_1": "",
+            "unit_1": "",
+            "label_1": "",
+            "heading_2": "",
+            "unit_2": "",
+            "label_2": ""
+          }
+        },
+        "full_width_YBUtgm": {
+          "type": "full_width",
+          "settings": {
+            "image": "shopify://shop_images/image_7.png"
+          }
+        }
+      },
+      "block_order": [
+        "left_content_CHpgtG",
+        "right_content_xntrMe",
+        "left_content_8rmCpk",
+        "full_width_YBUtgm"
+      ],
+      "settings": {}
+    },
+    "product_page_mobile_application_section_EVFkfd": {
+      "type": "product-page-mobile-application-section",
+      "blocks": {
+        "content_H9LEqK": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/39917_2x_1.png",
+            "heading": "Multi-Point Connection",
+            "description": "<p>Connect your AilyBuds Pro+ to two devices at the same time so you can switch between,them to handle tasks on the other rather than reconnect.</p>"
+          }
+        },
+        "content_erbh9N": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/39917_2x_2.png",
+            "heading": "Want to Know How They Fit? Check via OCY APP",
+            "description": "<p>Connect the earbuds to QCY APP and enable Adaptive Noise Cancellation.lf their fit isn't good, adjust your wear and restart Adaptive Noise Cancellation to check again.Perfect fit means perfect noise cancellation.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_H9LEqK",
+        "content_erbh9N"
+      ],
+      "disabled": true,
+      "settings": {
+        "bg_image": "shopify://shop_images/39966_2x_8aa7fbbc-86f3-4172-9c25-6f156a1e0ece.png"
+      }
+    },
+    "product_page_featured_image_with_product_section_L8VbDY": {
+      "type": "product-page-featured-image-with-product-section",
+      "blocks": {
+        "image_Q4aadn": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/42833_2x_9c0fcd98-4569-4bb0-ad53-db2e2470b1bb.png",
+            "image_mobile": "shopify://shop_images/43881_2x_3e609784-04a0-4341-9744-d58cdaf1ab46.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_Q4aadn"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_content": false,
+        "heading": "Noise-Free Clear Call",
+        "description": "<p>Thanks to ENC and microphone DSP noise canceling technologiesOCY H3 Lite can enhance vocals while axe ambient noises so you canenjoy crystal-clear call.</p>",
+        "product_image": "shopify://shop_images/beauty_2x_9f661270-f357-4941-a178-185f124f1208.png",
+        "featured_image": "shopify://shop_images/1e54c5204e8f6bbe27d3dbae30736d67_2x_7205f883-36c0-4281-8a34-5eebb1cb0381.png"
+      }
+    },
+    "product_page_box_section_CVh7J7": {
+      "type": "product-page-box-section",
+      "disabled": true,
+      "settings": {
+        "heading": "In the Box",
+        "description": "<p>Instruction manual *1<br/>Type-C charging cable *1<br/>Headphones and charging box *1</p>",
+        "box_image": "shopify://shop_images/39922_2x_1.png"
+      }
+    },
+    "product_page_custom_slider_abhWDr": {
+      "type": "product-page-custom-slider",
+      "blocks": {
+        "text_image_npUmMX": {
+          "type": "text_image",
+          "settings": {
+            "right_content": true,
+            "image": "shopify://shop_images/43984_2x_7c6b92f3-08b5-4c1c-9a1d-62decd906bcd.webp",
+            "sub_heading": "",
+            "heading": "Personalization with QCY APP",
+            "description": "<p>The QCY App lets you easily adjust EQ settings, customize touch control and more. Dive in and make these headphones truly yours.</p>"
+          }
+        },
+        "text_image_CGRcpk": {
+          "type": "text_image",
+          "settings": {
+            "right_content": false,
+            "image": "shopify://shop_images/39922_2x_7.webp",
+            "sub_heading": "",
+            "heading": "In the Box",
+            "description": "<p>Earbuds *1<br/>Type-C cable *1<br/>User manual *1<br/>Packaging *1</p>"
+          }
+        },
+        "fullwidth_LhkqUG": {
+          "type": "fullwidth",
+          "settings": {
+            "image": "shopify://shop_images/43853_2x_2.png",
+            "image_mobile": "shopify://shop_images/43881_2x_6.png"
+          }
+        },
+        "image_image_pdLg6x": {
+          "type": "image_image",
+          "settings": {
+            "heading": "Easy Control",
+            "description": "",
+            "left_image": "shopify://shop_images/40051_2x_c49957a4-165c-4ba9-a165-3e9113863599.png",
+            "right_image": "shopify://shop_images/39921_2x_9.png"
+          }
+        }
+      },
+      "block_order": [
+        "text_image_npUmMX",
+        "text_image_CGRcpk",
+        "fullwidth_LhkqUG",
+        "image_image_pdLg6x"
+      ],
+      "settings": {
+        "animation_fade": false,
+        "background_color": "#ffffff"
+      }
+    },
+    "product_page_compare_product_section_YtzgmE": {
+      "type": "product-page-compare-product-section",
+      "blocks": {
+        "product_8P7B7V": {
+          "type": "product",
+          "settings": {
+            "product": "qcy-melobuds-anc-development"
+          }
+        },
+        "product_Mygdb4": {
+          "type": "product",
+          "settings": {
+            "product": "qcy-melobuds-pro-development"
+          }
+        },
+        "product_TLwzh9": {
+          "type": "product",
+          "settings": {
+            "product": "qcy-t13-development"
+          }
+        }
+      },
+      "block_order": [
+        "product_8P7B7V",
+        "product_Mygdb4",
+        "product_TLwzh9"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Compare QCY Headphones"
+      }
+    },
+    "product_page_specification_section_JzXBfD": {
+      "type": "product-page-specification-section",
+      "blocks": {
+        "specification_wa463N": {
+          "type": "specification",
+          "settings": {
+            "select_specs": "basic",
+            "description": "<p>Type: Open Ear<br/>Driver: ф10.8mm dual-magnet driver<br/>Audio codec: AAC/SBC<br/>Call noise cancellation: Dual-mic ENC call<br/>Compatible system: iOS/Android<br/>Charging port: USB Type-C<br/>Weight: 5g(single earbud)</p>"
+          }
+        },
+        "specification_mLhHBG": {
+          "type": "specification",
+          "settings": {
+            "select_specs": "bluetooth",
+            "description": "<p>Pairing name: QCY Crossky C30<br/>Effective bluetooth range: 10m<br/>Bluetooth version: 5.4<br/>Supported Protocols: HFP/A2DP/AVRCP</p>"
+          }
+        },
+        "specification_VkHf8b": {
+          "type": "specification",
+          "settings": {
+            "select_specs": "battery",
+            "description": "<p>Battery capacity: 32mAh(earbud)<br/>Battery life: 5.5h(earbuds),25h with charging case<br/>Cable charge time: 2h</p>"
+          }
+        }
+      },
+      "block_order": [
+        "specification_wa463N",
+        "specification_mLhHBG",
+        "specification_VkHf8b"
+      ],
+      "settings": {
+        "product_header": "Specification",
+        "heading": "Spec",
+        "heading_specs": "Product Name",
+        "custom_manual_title": ""
+      }
+    },
+    "product_page_review_section_QC38Ja": {
+      "type": "product-page-review-section",
+      "settings": {
+        "header_nav": "Reviews"
+      }
+    },
+    "product_page_faqs_section_bWj7KF": {
+      "type": "product-page-faqs-section",
+      "blocks": {
+        "faqs_xeaKhr": {
+          "type": "faqs",
+          "settings": {
+            "heading": "Do you ship overseas?",
+            "description": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "faqs_LE3NGA": {
+          "type": "faqs",
+          "settings": {
+            "heading": "How long will it take to get my orders?",
+            "description": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "faqs_7M9Yth": {
+          "type": "faqs",
+          "settings": {
+            "heading": "What's the difference between a QCY Melobuds and QCY Melobuds Pro?",
+            "description": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "faqs_V7pTAk": {
+          "type": "faqs",
+          "settings": {
+            "heading": "What's the difference between a QCY Melobuds and QCY Melobuds Pro?Do you offer a 30-day trial for headphones devices?",
+            "description": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "faqs_X9rL6W": {
+          "type": "faqs",
+          "settings": {
+            "heading": "Do you ship overseas?",
+            "description": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faqs_xeaKhr",
+        "faqs_LE3NGA",
+        "faqs_7M9Yth",
+        "faqs_V7pTAk",
+        "faqs_X9rL6W"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Frequently asked questions."
+      }
+    },
+    "homepage_best_seller_section_47nMnm": {
+      "type": "homepage-best-seller-section",
+      "settings": {
+        "heading": "You May Also Like",
+        "heading_mobile": "You May Also Like",
+        "description": "<p>Whether it’s fitness or commuting, QCY can meet your needs.</p>",
+        "btn_title": "",
+        "collection": "best-seller"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "product_page_featured_product_section_eKUxRF",
+    "main",
+    "product_page_header_section_bpQYpw",
+    "product_page_gallery_featured_image_section_79B43B",
+    "product_page_footer_section_kKYNfJ",
+    "product_page_featured_specs_section_A3prPV",
+    "product_page_featured_video_section_NbhMGF",
+    "product_page_scroll_content_section_DkGNRw",
+    "product_page_image_slider_section_dpQdgV",
+    "product_page_side_by_side_section_rYNrbK",
+    "product_page_mobile_application_section_EVFkfd",
+    "product_page_featured_image_with_product_section_L8VbDY",
+    "product_page_box_section_CVh7J7",
+    "product_page_custom_slider_abhWDr",
+    "product_page_compare_product_section_YtzgmE",
+    "product_page_specification_section_JzXBfD",
+    "product_page_review_section_QC38Ja",
+    "product_page_faqs_section_bWj7KF",
+    "homepage_best_seller_section_47nMnm",
+    "related-products"
+  ]
+}

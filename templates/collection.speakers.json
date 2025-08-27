@@ -1,0 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_d8bwY6": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify://shop_images/sp7-1.jpg",
+        "image_mobile": "shopify://shop_images/sp7.jpg",
+        "heading": "Bluetooth Speakers",
+        "text": "Discover the freedom of exceptional sound with QCY's Bluetooth speakers. Experience rich audio, advanced sound clarity, and portable design—crafted for every lifestyle and any journey.",
+        "desktop_heading_color": "#ffffff",
+        "desktop_text_color": "#ffffff"
+      }
+    },
+    "collection_navigation_wDLXFT": {
+      "type": "collection-navigation",
+      "name": "Collection Navigation",
+      "settings": {
+        "text_color": "#333333",
+        "padding": 10
+      }
+    },
+    "main_collection_D4J9rG": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "rich_text_nWKeqJ": {
+      "type": "rich-text",
+      "disabled": true,
+      "settings": {
+        "heading": "Bluetooth Speakers",
+        "text": "<p>Wireless headphones deliver pristine, immersive audio directly to your ears, creating an intimate listening experience free from external interference. They're perfect for enjoying music, gaming, and movies in your personal audio sanctuary, whether at home or on the go. Discover QCY's premium collection for an exceptional listening journey.</p><p>Our Bluetooth wireless headphones incorporate advanced audio technology and superior codec support, setting new standards in sound reproduction. Engineered with precision-tuned drivers, they produce detailed, authentic sound that transforms your favorite tracks into a captivating musical experience. QCY's innovative active noise cancellation system stands out as a cornerstone feature, effectively eliminating up to 98% of ambient noise to enhance your audio immersion.</p><p>For crystal-clear communications, our over ear headphones utilize cutting-edge AI algorithms, while the intuitive companion app enables customized sound profiles and adjustable noise reduction levels. Each model features ergonomically designed memory foam ear cushions, ensuring lasting comfort during extended listening sessions.</p><p>Experience audio perfection with QCY's premium headphones, your passport to pure, uninterrupted musical bliss. Elevate your listening experience with our noise cancelling headphones and discover what true audio excellence feels like!</p>"
+      }
+    }
+  },
+  "order": [
+    "image_with_text_d8bwY6",
+    "collection_navigation_wDLXFT",
+    "main_collection_D4J9rG",
+    "rich_text_nWKeqJ"
+  ]
+}

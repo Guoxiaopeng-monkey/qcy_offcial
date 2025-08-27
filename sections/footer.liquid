@@ -1,0 +1,764 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{{ 'section-footer.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-newsletter.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-menu.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-payment.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-social.aio.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .footer {
+    margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  .footer__content-bottom-wrapper{
+    justify-content: space-between;
+  }
+  {%  unless template == 'index' %} 
+    .footer-icons-support-section,
+    .newsletter-section{
+        background-color:#fff;
+    }
+  {% endunless %}
+
+  @media screen and (min-width: 750px) {
+    .footer {
+      margin-top: {{ section.settings.margin_top }}px;
+    }
+
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  {%- liquid
+    assign has_social_icons = true
+    if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
+      assign has_social_icons = false
+    endif
+
+    if settings.brand_image == blank and settings.brand_headline == blank and settings.brand_description == blank
+      assign brand_empty = true
+    endif
+
+    if section.blocks.size == 1 and section.blocks[0].type == 'brand_information' and brand_empty and has_social_icons == false and section.settings.newsletter_enable == false and section.settings.enable_follow_on_shop == false
+      assign only_empty_brand = true
+    endif
+  -%}
+  {%- if section.blocks.size > 0
+    or section.settings.newsletter_enable
+    or section.settings.show_social
+    and has_social_icons == true
+    or section.settings.enable_follow_on_shop
+  -%}
+    {%- unless only_empty_brand -%}
+      <div class="footer__content-top page-width">
+        {%- if section.blocks.size > 0 -%}
+          {%- liquid
+            if section.blocks.size == 9
+              assign footer_grid_class = 'grid--3-col-tablet'
+            elsif section.blocks.size > 6
+              assign footer_grid_class = 'grid--4-col-desktop'
+            elsif section.blocks.size > 4
+              assign footer_grid_class = 'grid--3-col-tablet'
+            endif
+          -%}
+          <div class="footer-menu-container">
+            <div class="col_80">
+              <div
+                class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                {% endif %}
+                >
+                {%- for block in section.blocks -%}
+                  <div
+                    class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                    {{ block.shopify_attributes }}
+                    {% if settings.animations_reveal_on_scroll %}
+                      data-cascade
+                      style="--animation-order: {{ forloop.index }};"
+                    {% endif %}
+                  >
+                    {%- if block.settings.heading != blank -%}
+                      <h4 class="footer-block__heading white-f f-f-bold inline-richtext">{{- block.settings.heading -}}</h4>
+                    {%- endif -%}
+
+                    {%- case block.type -%}
+                      {%- when '@app' -%}
+                        {% render block %}
+                      {%- when 'text' -%}
+                        <div class="footer-block__details-content rte">
+                          {{ block.settings.subtext }}
+                        </div>
+                      {%- when 'link_list' -%}
+                        {%- if block.settings.menu != blank -%}
+                          <ul class="footer-block__details-content list-unstyled">
+                            {%- for link in block.settings.menu.links -%}
+                              <li>
+                                <a
+                                  href="{{ link.url }}"
+                                  class="link link--text list-menu__item white-gray-f h5 f-f-regular list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                                >
+                                  {{ link.title | escape }}
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      {%- when 'brand_information' -%}
+                        <div class="footer-block__brand-info">
+                          {%- if settings.brand_image != blank -%}
+                            {%- assign brand_image_height = settings.brand_image_width
+                              | divided_by: settings.brand_image.aspect_ratio
+                            -%}
+                            <div
+                              class="footer-block__image-wrapper"
+                              style="max-width: min(100%, {{ settings.brand_image_width }}px);"
+                            >
+                              {{
+                                settings.brand_image
+                                | image_url: width: 1100
+                                | image_tag:
+                                  loading: 'lazy',
+                                  widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
+                                  height: brand_image_height,
+                                  width: settings.brand_image_width
+                              }}
+                            </div>
+                          {%- endif -%}
+                          {%- if settings.brand_headline != blank -%}
+                            <h4 class="footer-block__heading white-f rte">{{ settings.brand_headline }}</h4>
+                          {%- endif -%}
+                          {%- if settings.brand_description != blank -%}
+                            <div class="rte">{{ settings.brand_description }}</div>
+                          {%- endif -%}
+                          {%- if block.settings.show_social and has_social_icons -%}
+                            {%- render 'social-icons', class: 'footer__list-social' -%}
+                          {%- endif -%}
+                        </div>
+                      {%- when 'image' -%}
+                        <div class="footer-block__details-content footer-block-image {{ block.settings.alignment }}">
+                          {%- if block.settings.image != blank -%}
+                            {%- assign image_size_2x = block.settings.image_width | times: 2 | at_most: 5760 -%}
+                            <div
+                              class="footer-block__image-wrapper"
+                              style="max-width: min(100%, {{ block.settings.image_width }}px);"
+                            >
+                              <img
+                                srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_2x }} 2x"
+                                src="{{ block.settings.image | image_url: width: 760 }}"
+                                alt="{{ block.settings.image.alt | escape }}"
+                                loading="lazy"
+                                width="{{ block.settings.image.width }}"
+                                height="{{ block.settings.image.height }}"
+                              >
+                            </div>
+                          {%- else -%}
+                            {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                          {%- endif -%}
+                        </div>
+                    {%- endcase -%}
+                  </div>
+                {%- endfor -%}
+                {% render 'footer-country-selector-mobile', country_setting: section.settings.enable_language_selector , currency_setting: section.settings.enable_country_selector  %}
+              </div>
+              
+            </div>
+
+
+
+
+
+            
+            <div class="col_20">
+              <div class="social-icon-container">
+                  <h4 class="white-f f-f-bold mx-0">{{ section.settings.newsletter_heading }}</h4>
+                  <div class="social-list">
+                    <a href="{{ settings.social_instagram_link }}" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
+                        <g transform="translate(-1235 -11281)">
+                          <circle fill="#fff" cx="18.5" cy="18.5" r="18.5" transform="translate(1235 11281)"/>
+                          <g transform="translate(1244 11290)" isolation="isolate">
+                            <path d="M13.271,1.758a5.18,5.18,0,0,1,1.754.325,2.923,2.923,0,0,1,1.086.705,2.908,2.908,0,0,1,.705,1.086,5.2,5.2,0,0,1,.325,1.754c.044,1,.055,1.3.055,3.818s-.011,2.825-.055,3.818a5.18,5.18,0,0,1-.325,1.754,3.116,3.116,0,0,1-1.791,1.791,5.2,5.2,0,0,1-1.754.325c-1,.044-1.3.055-3.818.055s-2.825-.011-3.818-.055a5.18,5.18,0,0,1-1.754-.325A2.923,2.923,0,0,1,2.8,16.1a2.907,2.907,0,0,1-.705-1.086,5.2,5.2,0,0,1-.325-1.754c-.044-1-.055-1.3-.055-3.818s.011-2.825.055-3.818A5.179,5.179,0,0,1,2.09,3.873,2.923,2.923,0,0,1,2.8,2.788a2.908,2.908,0,0,1,1.086-.705,5.2,5.2,0,0,1,1.754-.325C6.628,1.713,6.927,1.7,9.453,1.7S12.278,1.713,13.271,1.758ZM5.557.055A6.907,6.907,0,0,0,3.264.495,4.614,4.614,0,0,0,1.588,1.588,4.632,4.632,0,0,0,.495,3.26,6.927,6.927,0,0,0,.055,5.554C.011,6.565,0,6.887,0,9.453s.011,2.888.055,3.9a6.907,6.907,0,0,0,.439,2.293,4.614,4.614,0,0,0,1.093,1.676A4.621,4.621,0,0,0,3.26,18.407a6.927,6.927,0,0,0,2.293.439c1.008.044,1.329.055,3.9.055s2.888-.011,3.9-.055a6.907,6.907,0,0,0,2.293-.439A4.829,4.829,0,0,0,18.4,15.645a6.926,6.926,0,0,0,.439-2.293c.044-1.008.055-1.329.055-3.9s-.011-2.888-.055-3.9A6.906,6.906,0,0,0,18.4,3.268a4.427,4.427,0,0,0-1.082-1.68A4.621,4.621,0,0,0,15.645.5,6.927,6.927,0,0,0,13.352.059C12.34.011,12.019,0,9.453,0S6.565.011,5.557.055Z"/>
+                            <path d="M0,4.856A4.856,4.856,0,1,0,4.856,0,4.857,4.857,0,0,0,0,4.856Zm1.706,0a3.15,3.15,0,1,1,3.15,3.15A3.15,3.15,0,0,1,1.706,4.856Z" transform="translate(4.598 4.597)"/>
+                            <path d="M1.134,2.267A1.134,1.134,0,1,1,2.267,1.134,1.134,1.134,0,0,1,1.134,2.267Z" transform="translate(13.367 3.272)"/>
+                          </g>
+                        </g>
+                      </svg>
+                    </a>
+                    <a href="{{ settings.social_facebook_link }}" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
+                        <g transform="translate(-1286 -11281)">
+                          <circle fill="#fff" cx="18.5" cy="18.5" r="18.5" transform="translate(1286 11281)"/>
+                          <g transform="translate(1295.054 11290.111)" isolation="isolate">
+                            <path d="M9.447,0A9.447,9.447,0,0,0,7.971,18.778v-6.6h-2.4V9.447h2.4V7.365A3.334,3.334,0,0,1,11.539,3.69a14.532,14.532,0,0,1,2.115.185V6.2H12.462a1.366,1.366,0,0,0-1.54,1.476V9.447h2.62l-.419,2.731h-2.2v6.6A9.447,9.447,0,0,0,9.447,0Z"/>
+                          </g>
+                        </g>
+                      </svg>
+                    </a>
+                    <a href="{{ settings.social_youtube_link }}" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" viewBox="0 0 37 37" xml:space="preserve" width="37" height="37">
+                        <path fill="#fff" d="M18.5 0c10.21 0 18.5 8.29 18.5 18.5S28.71 37 18.5 37 0 28.71 0 18.5 8.29 0 18.5 0m11.079 12.934c-0.266 -0.995 -1.049 -1.778 -2.044 -2.044C25.731 10.406 18.5 10.406 18.5 10.406s-7.231 0 -9.035 0.483c-0.995 0.266 -1.778 1.049 -2.044 2.044C6.938 14.737 6.938 18.5 6.938 18.5s0 3.763 0.483 5.566c0.266 0.995 1.05 1.779 2.044 2.045C11.269 26.594 18.5 26.594 18.5 26.594s7.231 0 9.035 -0.483c0.995 -0.266 1.778 -1.05 2.044 -2.045C30.063 22.263 30.063 18.5 30.063 18.5s0 -3.763 -0.483 -5.566M16.187 21.969v-6.938l6.008 3.469z"/>
+                      </svg>
+
+                    </a>
+                    <a href="{{ settings.social_tiktok_link }}" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 37 37" width="37" height="37">
+                        <path fill="#fff" d="M18.5 0C8.283 0 0 8.283 0 18.5s8.283 18.5 18.5 18.5 18.5 -8.283 18.5 -18.5S28.717 0 18.5 0m9.367 16.793c-1.964 0 -3.876 -0.638 -5.348 -1.716l-0.012 7.335a6.681 6.681 0 1 1 -5.794 -6.628v3.602a3.155 3.155 0 1 0 2.261 3.026V7.901h3.705a5.187 5.187 0 0 0 5.187 5.187Z"/>
+                      </svg>
+                    </a>
+                  
+                  </div>
+              </div>
+              <div class="app-icon-container">
+                <h4 class="white-f f-f-bold mx-0">App</h4>
+                <div class="app-icon-list">
+                    <a href="{{ settings.google_app_link }}" target="_blank">
+                      <img loading="lazy" src="{{ settings.google_app_image | img_url: 'master' }}"
+                        alt="{{ settings.google_app_image.alt | default: settings.google_app_image.src | split: '/' | last | split: '?' | first | split: '.' | first | escape }}"
+                        >
+                    </a>
+                    <a href="{{ settings.apple_app_link }}" target="_blank">
+                      <img loading="lazy" src="{{ settings.apple_app_image | img_url: 'master' }}"
+                         alt="{{ settings.apple_app_image.alt | default: settings.apple_app_image.src | split: '/' | last | split: '?' | first | split: '.' | first | escape }}"
+                        >
+                    </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+    {% comment %}
+        <div
+          class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+          {% endif %}
+          >
+          {%- if section.settings.newsletter_enable -%}
+            <div class="footer-block__newsletter">
+              {%- if section.settings.newsletter_heading != blank -%}
+                <h4 class="footer-block__heading white-f inline-richtext">{{ section.settings.newsletter_heading }}</h4>
+              {%- endif -%}
+              {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <div class="newsletter-form__field-wrapper">
+                  <div class="field">
+                    <input
+                      id="NewsletterForm--{{ section.id }}"
+                      type="email"
+                      name="contact[email]"
+                      class="field__input"
+                      value="{{ form.email }}"
+                      aria-required="true"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      autocomplete="email"
+                      {% if form.errors %}
+                        autofocus
+                        aria-invalid="true"
+                        aria-describedby="ContactFooter-error"
+                      {% elsif form.posted_successfully? %}
+                        aria-describedby="ContactFooter-success"
+                      {% endif %}
+                      placeholder="{{ 'newsletter.label' | t }}"
+                      required
+                    >
+                    <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                      {{ 'newsletter.label' | t }}
+                    </label>
+                    <button
+                      type="submit"
+                      class="newsletter-form__button field__button"
+                      name="commit"
+                      id="Subscribe"
+                      aria-label="{{ 'newsletter.button_label' | t }}"
+                    >
+                      <span class="svg-wrapper">
+                        {{- 'icon-arrow.svg' | inline_asset_content -}}
+                      </span>
+                    </button>
+                  </div>
+                  {%- if form.errors -%}
+                    <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                      <span class="svg-wrapper">
+                        {{- 'icon-error.svg' | inline_asset_content -}}
+                      </span>
+                      {{- form.errors.translated_fields.email | capitalize }}
+                      {{ form.errors.messages.email -}}
+                    </small>
+                  {%- endif -%}
+                </div>
+                {%- if form.posted_successfully? -%}
+                  <h3
+                    class="newsletter-form__message newsletter-form__message--success form__message"
+                    id="ContactFooter-success"
+                    tabindex="-1"
+                    autofocus
+                  >
+                    <span class="svg-wrapper">
+                      {{- 'icon-success.svg' | inline_asset_content -}}
+                    </span>
+                    {{- 'newsletter.success' | t }}
+                  </h3>
+                {%- endif -%}
+              {%- endform -%}
+            </div>
+          {%- endif -%}
+
+          {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
+            <div class="footer__follow-on-shop">
+              {{ shop | login_button: action: 'follow' }}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.show_social and has_social_icons -%}
+            {%- render 'social-icons', class: 'footer__list-social' -%}
+          {%- endif -%}
+        </div>
+      </div>{% endcomment %}
+    {%- endunless -%}
+  {%- endif -%}
+
+  <div
+    class="footer__content-bottom{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+    {% endif %}
+  >
+    <div class="footer__content-bottom-wrapper first-row ">
+    {% comment %}
+      <div class="footer__column footer__localization isolate">
+        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+          <localization-form>
+            {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
+              <div>
+                <h2 class="caption-large text-body" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                {%- render 'country-localization', localPosition: 'FooterCountry' -%}
+              </div>
+            {%- endform -%}
+          </localization-form>
+        {%- endif -%}
+
+        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+          <localization-form>
+            {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
+              <div>
+                <h2 class="caption-large text-body" id="FooterLanguageLabel">
+                  {{ 'localization.language_label' | t }}
+                </h2>
+                {%- render 'language-localization', localPosition: 'FooterLanguage' -%}
+              </div>
+            {%- endform -%}
+          </localization-form>
+        {%- endif -%}
+      </div>
+      <div class="footer__column footer__column--info">
+        {%- if section.settings.payment_enable -%}
+          <div class="footer__payment">
+            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+            <ul class="list list-payment" role="list">
+              {%- for type in shop.enabled_payment_types -%}
+                <li class="list-payment__item">
+                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      </div>
+    {% endcomment %}
+
+      <small class="copyright__content white-gray-f p">
+          &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+      </small>
+      <div class="country-selector-footer">
+        {% render 'country-selector', section: 'dropdown-above', country_setting: section.settings.enable_language_selector , currency_setting: section.settings.enable_country_selector  %}
+
+        <localization-form style="display:none;">
+            {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
+              <select name="locale_code" id="locale_code">
+                  {%- for language in localization.available_languages -%}
+                  <option value="{{ language.iso_code }}">{{ language.iso_code }}</option>
+                  {%- endfor -%}
+              </select>
+            {%- endform -%}
+        </localization-form>
+      </div>
+    </div>
+    <div class="footer__content-bottom-wrapper{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
+      <div class="footer__copyright caption white-gray-f">
+        {% comment %}
+        <small class="copyright__content">{{ powered_by_link }}</small>
+        {% endcomment %}
+          <ul class="policies list-unstyled">
+            {% for policy in linklists['footer-policies1'].links %}
+              {%- if policy != blank -%}
+                <li>
+                  <small class="copyright__content p "
+                    ><a href="{{ policy.url }} ">{{ policy.title | escape }}</a></small
+                  >
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        <div class="footer-payment-icons">
+          {%- if settings.show_payment_icons -%}
+            <div class="payment-icons1">
+              {%- for i in (1..8) -%}
+                {%- assign icon_setting = 'payment_icon_' | append: i -%}
+                {%- if settings[icon_setting] != blank -%}
+                  <img src="{{ settings[icon_setting] | img_url: 'master' }}" 
+                       alt="{{ settings[icon_setting].alt | escape }}" 
+                       loading="lazy"
+                       width="{{ settings[icon_setting].width }}"
+                       height="24">
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </div>
+        {% comment %}
+        <img loading="lazy" src="{{ settings.payment_icons_desktop | img_url: 'master' }}" class="payment-icons h-desktop"
+          alt="Available payment methods - desktop view"
+          >
+        <img loading="lazy" src="{{ settings.payment_icons_mobile | img_url: 'master' }}" class="payment-icons h-mobile"
+          alt="Available payment methods - mobile view" 
+          >
+        {% endcomment %}
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+
+  $(document).ready(function () {
+    $(window).on("resize", function (e) {
+        checkScreenSize();
+    });
+
+    checkScreenSize();
+    
+    function checkScreenSize(){
+        var newWindowWidth = $(window).width();
+    
+        if (newWindowWidth < 481) {
+            if (!$('.footer-block--menu').data('ui-accordion')) {
+                $('.footer-block--menu').accordion({
+                    heightStyle: "content",
+                    active: false,
+                    collapsible: true
+                });
+              $('.footer-block--menu.loop-2').accordion('option', 'active', 0);
+            }
+        } else {
+            if ($('.footer-block--menu').data('ui-accordion')) {
+                $('.footer-block--menu').accordion("destroy");
+            }
+        }
+    }
+    
+  });
+
+  
+  $('.country-selector').each(function(){
+    var $container = $(this); 
+
+    // Toggle the active class for the country menu
+    $container.find('.current-country-selector').click(function(event){
+      
+      $container.find('.country-menu-list').toggleClass('active');
+      $container.find('.currency-menu-list').removeClass('active'); // Hide the currency menu
+
+      $('header.header').toggleClass("hover-header-menu");
+      $('.announcement-bar-section').toggleClass("hover-header-menu");
+
+      event.stopPropagation(); // Prevent the click from propagating to the document
+    });
+
+    // Toggle the active class for the currency menu
+    $container.find('.current-currency-selector').click(function(event){
+      $container.find('.currency-menu-list').addClass('active'); // Show the currency menu
+      $container.find('.country-menu-list').removeClass('active'); // Hide the country menu
+      $('header.header').addClass("hover-header-menu");
+      $('.announcement-bar-section').addClass("hover-header-menu");
+      event.stopPropagation(); // Prevent the click from propagating to the document
+    });
+
+
+    // Close both menus when clicking outside
+    $(document).click(function(event) {
+      if (!$container.is(event.target) && $container.has(event.target).length === 0) {
+        $container.find('.country-menu-list').removeClass('active');
+        $container.find('.currency-menu-list').removeClass('active');
+        $('header.header').removeClass("hover-header-menu");
+        $('.announcement-bar-section').removeClass("hover-header-menu");
+      }
+    });
+  });
+  
+  $('.country-link').each(function() {
+      $(this).on('click', function(event) {
+          event.preventDefault();
+          const locale = $(this).data('locale');
+          $('#locale_code').val(locale); // Set the selected locale
+          $('#FooterLanguageForm').submit(); // Submit the form
+      });
+  });
+
+</script>
+                              
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "link_list",
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "t:sections.footer.blocks.link_list.settings.heading.default",
+          "label": "t:sections.footer.blocks.link_list.settings.heading.label"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "t:sections.footer.blocks.link_list.settings.menu.label",
+          "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+        }
+      ]
+    },
+    {
+      "type": "brand_information",
+      "name": "t:sections.footer.blocks.brand_information.name",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.footer.blocks.brand_information.settings.paragraph.content"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.footer.blocks.brand_information.settings.header__1.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_social",
+          "default": true,
+          "label": "t:sections.footer.blocks.brand_information.settings.show_social.label",
+          "info": "t:sections.footer.blocks.brand_information.settings.show_social.info"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.footer.blocks.text.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "t:sections.footer.blocks.text.settings.heading.default",
+          "label": "t:sections.footer.blocks.text.settings.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "default": "t:sections.footer.blocks.text.settings.subtext.default",
+          "label": "t:sections.footer.blocks.text.settings.subtext.label"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 50,
+          "max": 550,
+          "step": 5,
+          "unit": "px",
+          "label": "Image width",
+          "default": 100
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Image alignment on large screen",
+          "options": [
+            {
+              "value": "",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__1.content",
+      "info": "t:sections.footer.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "newsletter_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.newsletter_enable.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "newsletter_heading",
+      "default": "t:sections.footer.settings.newsletter_heading.default",
+      "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__9.content",
+      "info": "t:sections.footer.settings.header__9.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_follow_on_shop",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_follow_on_shop.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__2.content",
+      "info": "t:sections.footer.settings.header__2.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "default": true,
+      "label": "t:sections.footer.settings.show_social.label"
+    },
+    {
+      "type": "header",
+      "content": "Currency selector",
+      "info": "To add a currency, go to your [market settings.](\/admin\/settings\/markets)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "default": true,
+      "label": "Enable currency selector"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__5.content",
+      "info": "t:sections.footer.settings.header__6.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_language_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__7.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "payment_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.payment_enable.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__8.content",
+      "info": "t:sections.footer.settings.header__8.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_policy",
+      "default": true,
+      "label": "t:sections.footer.settings.show_policy.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.footer.settings.margin_top.label",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "text"
+      }
+    ]
+  }
+}
+{% endschema %}

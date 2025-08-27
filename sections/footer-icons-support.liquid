@@ -1,0 +1,159 @@
+<style>
+    .footer-icons-support-section{
+      padding:80px 0px;
+      overflow: hidden;
+    }
+    .footer-icons-support-section .slick-dots{
+        display:none;
+        position:relative;
+        padding:0px;
+        margin:0px;
+    }
+    .footer-icons-support-section .swiper-wrapper{
+        justify-content: space-between;
+        gap:50px;
+    }
+    .footer-icons-support-section .icon-support-item{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1.5rem;
+      width:fit-content;
+    }
+    .slick-initialized .slick-slide.icon-support-item{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        width: 100%;
+    }
+    .icon-support-item img{
+        height:35px;
+        width:35px;
+        object-fit:contain;
+    }
+
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+        .footer-icons-support-section .swiper-wrapper{
+          gap:0;
+        }
+        .footer-icons-support-inner-section .icon-support-item h4{
+          font-size:16px !important;
+        }
+        .footer-icons-support-section .slick-dots{
+            display:block;
+            padding-top:10px;
+        }
+        .slick-dots li{
+            width:10px;
+            height:10px;
+            background:white;
+            margin:0px 10px;
+            border:1px solid white !important;
+        }
+        .slick-dots li.slick-active{
+            background:transparent;
+            border-color:white;
+        }
+        .footer-icons-support-section .icon-support-item{
+            flex-direction: column;
+        }
+        .footer-icons-support-section{
+            padding:50px 0px;
+        }
+    }
+
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) {
+        .footer-icons-support-section .icon-support-item{
+            flex-direction: column;
+        }
+        .footer-icons-support-section{
+            padding:50px 0px;
+        }
+        .footer-icons-support-section .swiper-wrapper{
+          gap:0;
+        }
+    }
+
+</style>
+<div class="footer-icons-support-inner-section page-width">
+    <div class="footer-icon-slider">
+        <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+                <div class="icon-support-item swiper-slide">
+                    {% if block.settings.image != blank %}
+                        <img loading="lazy" src="{{ block.settings.image | img_url:'2048x2048' }}"   alt="{{ block.settings.image.alt | default: block.settings.image.src | split: '/' | last | split: '?' | first | split: '.' | first | escape }}"> 
+                    {% endif %}
+                    <h3 class="f-f-medium mx-0 center">{{ block.settings.title }}</h3>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="footer-icon-slider-swiper-pagination swiper-pagination-default"></div>
+</div>
+{% javascript %}
+    
+    var footer_icon_support_slider = new Swiper('.footer-icon-slider', {
+        slidesPerView: "auto",
+        allowTouchMove: true,
+        pagination: {
+            el: '.footer-icon-slider-swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            // when window width is >= 320px (mobile)
+            320: {
+                slidesPerView: 1,
+            },
+            // when window width is >= 768px (tablet)
+            768: {
+                slidesPerView: 2,
+            },
+            // when window width is >= 1024px (desktop)
+            1024: {
+                slidesPerView: 3,
+            },
+            1524: {
+                slidesPerView: 4,
+            },
+            // when window width is >= 1024px (desktop)
+            1680: {
+                slidesPerView: "auto",
+            }
+        }
+        
+    });
+{% endjavascript %}
+{% schema %}
+  {
+    
+    "class": "footer-icons-support-section",
+    "name": "Footer Icons",
+    "max_blocks": 4,
+    "blocks": [
+        {
+            "type": "Icons",
+            "name": "Icons",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                }
+            ]
+        }
+    ],
+    "presets" :[{
+      "name" : "Footer Icons"
+    }]
+  }
+{% endschema %} 

@@ -1,0 +1,186 @@
+{% stylesheet %}
+    .collection-list-section{
+        padding:80px 0px;
+        position:relative;
+        overflow:hidden;  
+    }
+    .collectin-list-container{
+        margin-top:30px;
+        overflow:hidden;
+    }
+    .collectin-list-container .collection-item{
+        display:flex;
+        border-radius:20px;
+        position:relative;
+        overflow:hidden;
+    }
+    .collectin-list-container .collection-item img{
+        width:100%;
+        height:100%;
+        transition: all 0.3s ease;
+    }
+    .collectin-list-container .collection-item img:hover{
+        scale:1.2;
+    }
+    .heading-content{
+        position: absolute;
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+        bottom: 30px;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0px 30px;  
+    }
+    .heading-content svg{
+        width:12px;
+        height:12px;
+        margin-top:1px;
+    }
+    .collection-list-slider-arrows{
+        position:absolute;
+        top:50%;
+        left:0;
+        right:0;
+        margin:auto;
+        width:100%;
+        max-width:var(--page-width);
+        padding:0px 20px;
+        display:flex;
+        flex-direction:row-reverse;
+        justify-content: space-between;
+    }
+    .collection-list-slider-arrows .collection-list-button-prev, 
+    .collection-list-slider-arrows .collection-list-button-next{
+        background: #DBDBDB;
+        border-radius: 50px;
+        display: flex;
+        cursor: pointer;
+        z-index: 2;
+        width:fit-content;
+        transition: all 0.3s ease;
+    }
+    .collection-list-slider-arrows .collection-list-button-prev:hover, 
+    .collection-list-slider-arrows .collection-list-button-next:hover{
+        background: #FF8832;
+    }
+    {% if section.blocks.sizes =< 4 %}
+        .collection-list-slider-arrows{
+            display:none;
+        }
+    {% endif %}
+    .collection-list-section .collectin-list-swiper-pagination{
+        display:none;
+    }
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+      
+        .collection-list-section{
+            padding-bottom:0;
+        }
+        .collection-list-section .collectin-list-swiper-pagination{
+            display:flex;
+        }
+        .collection-list-slider-arrows{
+            display:flex;
+        }
+        .collection-list-section .collection-item .heading-content{
+            width:82%;
+        }
+    }
+
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px){
+        .collection-list-section .collectin-list-swiper-pagination{
+            display:flex;
+        }
+        .collection-list-slider-arrows{
+            display:flex;
+        }
+        .collection-list-section .collection-item .heading-content{
+            width:82%;
+        }
+    }
+
+
+{% endstylesheet %}
+<div class="page-width">
+    <h2 class="text-md f-f-bold mx-0">{{ section.settings.title }}</h2>
+    <div class="collectin-list-container">
+        <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+                <a href="{{ block.settings.collection.url }}" class="collection-item swiper-slide scroll-trigger animate--slide-in" style="--animation-order: {{ forloop.index }};">
+                    <img loading="lazy" src="{{ block.settings.bg_image |  img_url: 'master' }}" alt="{{ block.settings.bg_image.alt | escape }}">
+                    <div class="heading-content">
+                        <h3 class="mx-0 white-f f-f-bold">{{ block.settings.Heading }}</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 330 330" xml:space="preserve">
+                            <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001  c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213  C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606  C255,161.018,253.42,157.202,250.606,154.389z" fill="#fff"></path>
+                        </svg>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="collection-list-slider-arrows">
+        <div class="collection-list-button-next">
+             <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52">
+                <g id="right_normal" transform="translate(-1835 -559)">
+                    <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" transform="translate(1835 559)" fill="transparent"></rect>
+                    <path id="路径_4" data-name="路径 4" d="M253.944,103.831a.906.906,0,0,1-.7-.3.97.97,0,0,1,.1-1.4l6.385-5.786a.748.748,0,0,0,0-1.2l-6.485-5.487a.99.99,0,0,1,1.3-1.5l6.385,5.487a2.808,2.808,0,0,1,1,2.1,2.871,2.871,0,0,1-.9,2.1l-6.385,5.786a1.85,1.85,0,0,1-.7.2Z" transform="translate(1604.091 489.128)" fill="#fff"></path>
+                </g>
+            </svg>
+        </div>
+        <div class="collection-list-button-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" id="left_normal" width="53" height="52" viewBox="0 0 53 52">
+                <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" fill="transparent"></rect>
+                <path id="路径_4" data-name="路径 4" d="M260.873,103.831a.906.906,0,0,0,.7-.3.97.97,0,0,0-.1-1.4l-6.385-5.786a.748.748,0,0,1,0-1.2l6.485-5.487a.99.99,0,0,0-1.3-1.5l-6.385,5.487a2.808,2.808,0,0,0-1,2.1,2.871,2.871,0,0,0,.9,2.1l6.385,5.786a1.85,1.85,0,0,0,.7.2Z" transform="translate(-230.909 -69.872)" fill="#fff"></path>
+            </svg>
+        </div>
+    </div>
+    <div class="collectin-list-swiper-pagination swiper-pagination-long"></div>
+</div>
+{% schema %}
+    {
+      
+        "class": "collection-list-section",
+        "name": "Collection List",
+        "templates": ["index"],
+        "limit": 1,
+        "settings": [
+              {
+                  "type": "text",
+                  "id": "title",
+                  "label": "Heading",
+                  "default":"Explore The Collections"
+              }
+        ],
+        "blocks": [
+          {
+              "type": "collection",
+              "name": "Collection",
+              "settings": [
+                  {
+                      "type": "collection",
+                      "id": "collection",
+                      "label": "Collection"
+                  },
+                  {
+                      "type": "image_picker",
+                      "id": "bg_image",
+                      "label": "Background Image"
+                  },
+                  {
+                      "type": "text",
+                      "id": "Heading",
+                      "label": "Heading"
+                  }
+              ]
+          }
+        ],
+        "presets" :[{
+            "name" : "Collection List"
+        }]
+    }
+  {% endschema %} 

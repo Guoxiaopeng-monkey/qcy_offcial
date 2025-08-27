@@ -1,0 +1,220 @@
+<div class="partner-section-wrapper" id="partner-section">
+  <div class="partner-section">
+    <div class="partner-section__left">
+      {%- if section.settings.illustration -%}
+        <img 
+          src="{{ section.settings.illustration | img_url: 'master' }}"
+          alt="{{ section.settings.illustration.alt | escape }}"
+          loading="lazy"
+          class="illustration"
+        >
+      {%- endif -%}
+    </div>
+
+    <div class="partner-section__right">
+      <div class="partner-logos">
+        <div class="partner-logo-item">
+          {%- if section.settings.impact_logo -%}
+            <img loading="lazy" 
+              src="{{ section.settings.impact_logo | img_url: 'master' }}"
+              alt="Impact"
+              class="partner-logo"
+            >
+            <a href="{{ section.settings.impact_link }}" class="cta-button" target="_blank">
+              {{ section.settings.impact_button_text | default: 'Get Started' }}
+            </a>
+          {%- endif -%}
+        </div>
+
+        <div class="partner-logo-item">
+          {%- if section.settings.shareasale_logo -%}
+            <img loading="lazy" 
+              src="{{ section.settings.shareasale_logo | img_url: 'master' }}"
+              alt="ShareASale"
+              class="partner-logo"
+            >
+            <a href="{{ section.settings.shareasale_link }}" class="cta-button" target="_blank">
+              {{ section.settings.shareasale_button_text | default: 'Get Started' }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="contact-info">
+        <p>{{ section.settings.contact_text }} {{ section.settings.contact_email }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Partner CTA",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "illustration",
+      "label": "Left side illustration"
+    },
+    {
+      "type": "image_picker",
+      "id": "impact_logo",
+      "label": "Impact logo"
+    },
+    {
+      "type": "url",
+      "id": "impact_link",
+      "label": "Impact button link"
+    },
+    {
+      "type": "text",
+      "id": "impact_button_text",
+      "label": "Impact button text",
+      "default": "Get Started"
+    },
+    {
+      "type": "image_picker",
+      "id": "shareasale_logo",
+      "label": "ShareASale logo"
+    },
+    {
+      "type": "url",
+      "id": "shareasale_link",
+      "label": "ShareASale button link"
+    },
+    {
+      "type": "text",
+      "id": "shareasale_button_text",
+      "label": "ShareASale button text",
+      "default": "Get Started"
+    },
+    {
+      "type": "text",
+      "id": "contact_text",
+      "label": "Contact question text",
+      "default": "Questions About Our Program? Email:"
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Contact email",
+      "default": "affiliate@qcyearphone.com"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Partner CTA",
+      "settings": {
+        "contact_text": "Questions About Our Program? Email:",
+        "contact_email": "affiliate@qcyearphone.com"
+      }
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.partner-section-wrapper {
+  background-color: #F9F9F9;
+}
+.partner-section {
+  display: flex;
+  gap: 4rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+.partner-section__left {
+  flex: 0.3;
+}
+.illustration {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+}
+.partner-section__right {
+  flex: 0.7;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.partner-logos {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  padding: 2rem 0;
+}
+.partner-logos::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 80%;
+  background-color: #e0e0e0;
+}
+.partner-logo-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.partner-logo {
+  height: 90px;
+  width: auto;
+}
+.cta-button {
+  background: #FF8832;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.cta-button:hover {
+  background: #000000;
+  transform: translateY(-1px);
+}
+.contact-info {
+  text-align: center;
+  color: #666;
+  padding-top: 2rem;
+  margin-top: 1rem;
+   position: relative;
+}
+.contact-info:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width:60%;  
+  height: 1px;
+  background-color: #e0e0e0;
+}
+@media screen and (max-width: 768px) {
+  .partner-section {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  .partner-logos {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .partner-logos::after {
+    display: none;
+  }
+  .partner-logo-item {
+    width: 100%;
+  }
+}
+{% endstylesheet %}

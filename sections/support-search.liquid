@@ -1,0 +1,93 @@
+<style>
+    @media only screen and (min-width: 0px) {
+        .support-search {
+            background: url('{{ section.settings.background_mobile | img_url: "master" }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    @media only screen and (min-width: 1280px) {
+        .support-search {
+            background: url('{{ section.settings.background_desktop | img_url: "master" }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+</style>
+
+<section class="support-search">
+    <div class="page-width section-content h-100">
+        <div class="row align-items-lg-center align-items-md-start align-items-sm-start h-100">
+            <div class="col-12 text-center">
+                <h1 class="title">
+                    {{ section.settings.title }}
+                </h1>
+                <div class="search-group">
+                    <input type="text" class="search" placeholder="Search">
+                    <span class="search-x">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                    <span class="search-btn">
+                        <span class="svg-wrapper">
+                            {{ 'icon-search.svg' | inline_asset_content }}
+                        </span>
+                    </span>
+                </div>
+                <p class="no-found">
+                    "<span></span>" not found.
+                </p>
+                {% if section.blocks %}
+                    <div class="search-items">
+                        {% for block in section.blocks %}
+                            <a href="{{ block.settings.search_url }}">{{ block.settings.search_item }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Support Search",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "image_picker",
+            "id": "background_desktop",
+            "label": "Background Desktop"
+        },
+        {
+            "type": "image_picker",
+            "id": "background_mobile",
+            "label": "Background Mobile"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "search",
+            "name": "Search Item",
+            "limit": 5,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "search_item",
+                    "label": "Search Item"
+                },
+                {
+                    "type": "url",
+                    "id": "search_url",
+                    "label": "Search URL"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,710 @@
+<section class="faq" data-anchor="faq">
+    <div class="page-width section-content">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12 ms-auto text-center">
+                <h2 class="title">
+                    {{ section.settings.title }}
+                </h2>
+                <div class="toggles">
+
+                    {% assign counter_1 = 0 %}
+                    {% assign counter_2 = 0 %}
+                    {% assign counter_3 = 0 %}
+                    {% assign counter_4 = 0 %}
+                    {% assign counter_5 = 0 %}
+                    {% assign counter_6 = 0 %}
+                    {% assign counter_7 = 0 %}
+                    {% assign counter_8 = 0 %}
+
+                    {% for block in section.blocks %}
+                        {% if block.type == 'app-control' %}
+                            {% assign counter_1 = counter_1 | plus: 1 %}
+                        {% endif %}
+                        {% if block.type == 'battery-charging' %}
+                            {% assign counter_2 = counter_2 | plus: 1 %}
+                        {% endif %}
+                        {% if block.type == 'bluetooth-connection' %}
+                            {% assign counter_3 = counter_3 | plus: 1 %}
+                        {% endif %}
+                        {% if block.type == 'care-others' %}
+                            {% assign counter_4 = counter_4 | plus: 1 %}
+                        {% endif %}
+                        {% if block.type == 'software-firmware' %}
+                            {% assign counter_5 = counter_5 | plus: 1 %}
+                        {% endif %}
+                        {% if block.type == 'sound-anc' %}
+                            {% assign counter_6 = counter_6 | plus: 1 %}
+                        {% endif %}
+                        {% if block.type == 'watch-application' %}
+                            {% assign counter_7 = counter_7 | plus: 1 %}
+                        {% endif %}
+                        {% if block.type == 'wearing' %}
+                            {% assign counter_8 = counter_8 | plus: 1 %}
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if counter_1 > 0 %}
+                        <span data-toggle="app-control">
+                            App & Control
+                        </span>
+                    {% endif %}
+                    {% if counter_2 > 0 %}
+                        <span data-toggle="battery-charging">
+                            Battery & Charging
+                        </span>
+                    {% endif %}
+                    {% if counter_3 > 0 %}
+                        <span data-toggle="bluetooth-connection">
+                            Bluetooth & Connection
+                        </span>
+                    {% endif %}
+                    {% if counter_4 > 0 %}
+                        <span data-toggle="care-others">
+                            Care & Others
+                        </span>
+                    {% endif %}
+                    {% if counter_5 > 0 %}
+                        <span data-toggle="software-firmware">
+                            Software & Firmware
+                        </span>
+                    {% endif %}
+                    {% if counter_6 > 0 %}
+                        <span data-toggle="sound-anc">
+                            Sound & ANC
+                        </span>
+                    {% endif %}
+                    {% if counter_7 > 0 %}
+                        <span data-toggle="watch-application">
+                            Watch Application
+                        </span>
+                    {% endif %}
+                    {% if counter_8 > 0 %}
+                        <span data-toggle="wearing">
+                            Wearing
+                        </span>
+                    {% endif %}
+
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-12 col-sm-12 ms-auto">
+                <div class="nav-toggles">
+                    <div class="nav-toggle" data-toggle="app-control">
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="accordion" id="accordion-1">
+                                    {% assign index_1 = 0 %}
+                                    {% for block in section.blocks %}
+                                        {% if block.type == 'app-control' %}
+                                            {% assign index_1 = index_1 | plus: 1 %}
+                                            <div class="accordion-item" data-page="{{ index_1 | minus: 1 | divided_by: 5 | plus: 1 }}">
+                                                <h2 class="accordion-header" id="headingOne-{{ forloop.index }}">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne-{{ forloop.index }}" aria-expanded="false" aria-controls="collapseOne-{{ forloop.index }}">
+                                                        {{ block.settings.question }}
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseOne-{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="headingOne-{{ forloop.index }}" data-bs-parent="#accordion-howto">
+                                                    <div class="accordion-body">
+                                                        {{ block.settings.answer | newline_to_br }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            {% if counter_1 > 5 %}
+
+                                {% assign items_per_page = 5 %}
+                                {% assign total_items = counter_1 %}
+                                {% assign total_pages = total_items | divided_by: items_per_page %}
+                                {% assign remainder = total_items | modulo: items_per_page %}
+
+                                {% assign page_total = total_pages %}
+                                {% if remainder != 0 %}
+                                    {% assign page_total = page_total | plus: 1 %}
+                                {% endif %}
+
+                                <div class="paginate custom" data-total="{{ page_total }}">
+                                    <a class="page disable" href="javascript:void(0)">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </a>
+
+                                    {% if remainder != 0 %}
+                                        {% assign total_pages = total_pages | plus: 1 %}
+                                    {% endif %}
+
+                                    {% for i in (1..total_pages) %}
+                                        <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                    {% endfor %}
+
+                                    <a class="page" href="javascript:void(0)" data-i="2">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <div class="nav-toggle" data-toggle="battery-charging">
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="accordion" id="accordion-2">
+                                    {% assign index_2 = 0 %}
+                                    {% for block in section.blocks %}
+                                        {% if block.type == 'battery-charging' %}
+                                            {% assign index_2 = index_2 | plus: 1 %}
+                                            <div class="accordion-item" data-page="{{ index_2 | minus: 1 | divided_by: 5 | plus: 1 }}">
+                                                <h2 class="accordion-header" id="headingTwo-{{ forloop.index }}">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo-{{ forloop.index }}" aria-expanded="false" aria-controls="collapseTwo-{{ forloop.index }}">
+                                                        {{ block.settings.question }}
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseTwo-{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="headingTwo-{{ forloop.index }}" data-bs-parent="#accordion-howto">
+                                                    <div class="accordion-body">
+                                                        {{ block.settings.answer | newline_to_br }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            {% if counter_2 > 5 %}
+
+                                {% assign items_per_page = 5 %}
+                                {% assign total_items = counter_2 %}
+                                {% assign total_pages = total_items | divided_by: items_per_page %}
+                                {% assign remainder = total_items | modulo: items_per_page %}
+
+                                {% assign page_total = total_pages %}
+                                {% if remainder != 0 %}
+                                    {% assign page_total = page_total | plus: 1 %}
+                                {% endif %}
+
+                                <div class="paginate custom" data-total="{{ page_total }}">
+                                    <a class="page disable" href="javascript:void(0)">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </a>
+
+                                    {% if remainder != 0 %}
+                                        {% assign total_pages = total_pages | plus: 1 %}
+                                    {% endif %}
+
+                                    {% for i in (1..total_pages) %}
+                                        <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                    {% endfor %}
+
+                                    <a class="page" href="javascript:void(0)" data-i="2">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <div class="nav-toggle" data-toggle="bluetooth-connection">
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="accordion" id="accordion-3">
+                                    {% assign index_3 = 0 %}
+                                    {% for block in section.blocks %}
+                                        {% if block.type == 'bluetooth-connection' %}
+                                            {% assign index_3 = index_3 | plus: 1 %}
+                                            <div class="accordion-item" data-page="{{ index_3 | minus: 1 | divided_by: 5 | plus: 1 }}">
+                                                <h2 class="accordion-header" id="headingThree-{{ forloop.index }}">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree-{{ forloop.index }}" aria-expanded="false" aria-controls="collapseThree-{{ forloop.index }}">
+                                                        {{ block.settings.question }}
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseThree-{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="headingThree-{{ forloop.index }}" data-bs-parent="#accordion-howto">
+                                                    <div class="accordion-body">
+                                                        {{ block.settings.answer | newline_to_br }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            {% if counter_3 > 5 %}
+
+                                {% assign items_per_page = 5 %}
+                                {% assign total_items = counter_3 %}
+                                {% assign total_pages = total_items | divided_by: items_per_page %}
+                                {% assign remainder = total_items | modulo: items_per_page %}
+
+                                {% assign page_total = total_pages %}
+                                {% if remainder != 0 %}
+                                    {% assign page_total = page_total | plus: 1 %}
+                                {% endif %}
+
+                                <div class="paginate custom" data-total="{{ page_total }}">
+                                    <a class="page disable" href="javascript:void(0)">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </a>
+
+                                    {% if remainder != 0 %}
+                                        {% assign total_pages = total_pages | plus: 1 %}
+                                    {% endif %}
+
+                                    {% for i in (1..total_pages) %}
+                                        <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                    {% endfor %}
+
+                                    <a class="page" href="javascript:void(0)" data-i="2">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <div class="nav-toggle" data-toggle="care-others">
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="accordion" id="accordion-4">
+                                    {% assign index_4 = 0 %}
+                                    {% for block in section.blocks %}
+                                        {% if block.type == 'care-others' %}
+                                            {% assign index_4 = index_4 | plus: 1 %}
+                                            <div class="accordion-item" data-page="{{ index_4 | minus: 1 | divided_by: 5 | plus: 1 }}">
+                                                <h2 class="accordion-header" id="headingFour-{{ forloop.index }}">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour-{{ forloop.index }}" aria-expanded="false" aria-controls="collapseFour-{{ forloop.index }}">
+                                                        {{ block.settings.question }}
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseFour-{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="headingFour-{{ forloop.index }}" data-bs-parent="#accordion-howto">
+                                                    <div class="accordion-body">
+                                                        {{ block.settings.answer | newline_to_br }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            {% if counter_4 > 5 %}
+
+                                {% assign items_per_page = 5 %}
+                                {% assign total_items = counter_4 %}
+                                {% assign total_pages = total_items | divided_by: items_per_page %}
+                                {% assign remainder = total_items | modulo: items_per_page %}
+
+                                {% assign page_total = total_pages %}
+                                {% if remainder != 0 %}
+                                    {% assign page_total = page_total | plus: 1 %}
+                                {% endif %}
+
+                                <div class="paginate custom" data-total="{{ page_total }}">
+                                    <a class="page disable" href="javascript:void(0)">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </a>
+
+                                    {% if remainder != 0 %}
+                                        {% assign total_pages = total_pages | plus: 1 %}
+                                    {% endif %}
+
+                                    {% for i in (1..total_pages) %}
+                                        <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                    {% endfor %}
+
+                                    <a class="page" href="javascript:void(0)" data-i="2">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <div class="nav-toggle" data-toggle="software-firmware">
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="accordion" id="accordion-5">
+                                    {% assign index_5 = 0 %}
+                                    {% for block in section.blocks %}
+                                        {% if block.type == 'software-firmware' %}
+                                            {% assign index_5 = index_5 | plus: 1 %}
+                                            <div class="accordion-item" data-page="{{ index_5 | minus: 1 | divided_by: 5 | plus: 1 }}">
+                                                <h2 class="accordion-header" id="headingFive-{{ forloop.index }}">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive-{{ forloop.index }}" aria-expanded="false" aria-controls="collapseFive-{{ forloop.index }}">
+                                                        {{ block.settings.question }}
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseFive-{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="headingFive-{{ forloop.index }}" data-bs-parent="#accordion-howto">
+                                                    <div class="accordion-body">
+                                                        {{ block.settings.answer | newline_to_br }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            {% if counter_5 > 5 %}
+
+                                {% assign items_per_page = 5 %}
+                                {% assign total_items = counter_5 %}
+                                {% assign total_pages = total_items | divided_by: items_per_page %}
+                                {% assign remainder = total_items | modulo: items_per_page %}
+
+                                {% assign page_total = total_pages %}
+                                {% if remainder != 0 %}
+                                    {% assign page_total = page_total | plus: 1 %}
+                                {% endif %}
+
+                                <div class="paginate custom" data-total="{{ page_total }}">
+                                    <a class="page disable" href="javascript:void(0)">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </a>
+
+                                    {% if remainder != 0 %}
+                                        {% assign total_pages = total_pages | plus: 1 %}
+                                    {% endif %}
+
+                                    {% for i in (1..total_pages) %}
+                                        <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                    {% endfor %}
+
+                                    <a class="page" href="javascript:void(0)" data-i="2">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <div class="nav-toggle" data-toggle="sound-anc">
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="accordion" id="accordion-6">
+                                    {% assign index_6 = 0 %}
+                                    {% for block in section.blocks %}
+                                        {% if block.type == 'sound-anc' %}
+                                            {% assign index_6 = index_6 | plus: 1 %}
+                                            <div class="accordion-item" data-page="{{ index_6 | minus: 1 | divided_by: 5 | plus: 1 }}">
+                                                <h2 class="accordion-header" id="headingSix-{{ forloop.index }}">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix-{{ forloop.index }}" aria-expanded="false" aria-controls="collapseSix-{{ forloop.index }}">
+                                                        {{ block.settings.question }}
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseSix-{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="headingSix-{{ forloop.index }}" data-bs-parent="#accordion-howto">
+                                                    <div class="accordion-body">
+                                                        {{ block.settings.answer | newline_to_br }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            {% if counter_6 > 5 %}
+
+                                {% assign items_per_page = 5 %}
+                                {% assign total_items = counter_6 %}
+                                {% assign total_pages = total_items | divided_by: items_per_page %}
+                                {% assign remainder = total_items | modulo: items_per_page %}
+
+                                {% assign page_total = total_pages %}
+                                {% if remainder != 0 %}
+                                    {% assign page_total = page_total | plus: 1 %}
+                                {% endif %}
+
+                                <div class="paginate custom" data-total="{{ page_total }}">
+                                    <a class="page disable" href="javascript:void(0)">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </a>
+
+                                    {% if remainder != 0 %}
+                                        {% assign total_pages = total_pages | plus: 1 %}
+                                    {% endif %}
+
+                                    {% for i in (1..total_pages) %}
+                                        <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                    {% endfor %}
+
+                                    <a class="page" href="javascript:void(0)" data-i="2">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <div class="nav-toggle" data-toggle="watch-application">
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="accordion" id="accordion-7">
+                                    {% assign index_7 = 0 %}
+                                    {% for block in section.blocks %}
+                                        {% if block.type == 'watch-application' %}
+                                            {% assign index_7 = index_7 | plus: 1 %}
+                                            <div class="accordion-item" data-page="{{ index_7 | minus: 1 | divided_by: 5 | plus: 1 }}">
+                                                <h2 class="accordion-header" id="headingSeven-{{ forloop.index }}">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven-{{ forloop.index }}" aria-expanded="false" aria-controls="collapseSeven-{{ forloop.index }}">
+                                                        {{ block.settings.question }}
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseSeven-{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="headingSeven-{{ forloop.index }}" data-bs-parent="#accordion-howto">
+                                                    <div class="accordion-body">
+                                                        {{ block.settings.answer | newline_to_br }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            {% if counter_7 > 5 %}
+
+                                {% assign items_per_page = 5 %}
+                                {% assign total_items = counter_7 %}
+                                {% assign total_pages = total_items | divided_by: items_per_page %}
+                                {% assign remainder = total_items | modulo: items_per_page %}
+
+                                {% assign page_total = total_pages %}
+                                {% if remainder != 0 %}
+                                    {% assign page_total = page_total | plus: 1 %}
+                                {% endif %}
+
+                                <div class="paginate custom" data-total="{{ page_total }}">
+                                    <a class="page disable" href="javascript:void(0)">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </a>
+
+                                    {% if remainder != 0 %}
+                                        {% assign total_pages = total_pages | plus: 1 %}
+                                    {% endif %}
+
+                                    {% for i in (1..total_pages) %}
+                                        <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                    {% endfor %}
+
+                                    <a class="page" href="javascript:void(0)" data-i="2">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <div class="nav-toggle" data-toggle="wearing">
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="accordion" id="accordion-1">
+                                    {% assign index_8 = 0 %}
+                                    {% for block in section.blocks %}
+                                        {% if block.type == 'wearing' %}
+                                            {% assign index_8 = index_8 | plus: 1 %}
+                                            <div class="accordion-item" data-page="{{ index_8 | minus: 1 | divided_by: 5 | plus: 1 }}">
+                                                <h2 class="accordion-header" id="headingEight-{{ forloop.index }}">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight-{{ forloop.index }}" aria-expanded="false" aria-controls="collapseEight-{{ forloop.index }}">
+                                                        {{ block.settings.question }}
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseEight-{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="headingEight-{{ forloop.index }}" data-bs-parent="#accordion-howto">
+                                                    <div class="accordion-body">
+                                                        {{ block.settings.answer | newline_to_br }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            {% if counter_8 > 5 %}
+
+                                {% assign items_per_page = 5 %}
+                                {% assign total_items = counter_8 %}
+                                {% assign total_pages = total_items | divided_by: items_per_page %}
+                                {% assign remainder = total_items | modulo: items_per_page %}
+
+                                {% assign page_total = total_pages %}
+                                {% if remainder != 0 %}
+                                    {% assign page_total = page_total | plus: 1 %}
+                                {% endif %}
+
+                                <div class="paginate custom" data-total="{{ page_total }}">
+                                    <a class="page disable" href="javascript:void(0)">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </a>
+
+                                    {% if remainder != 0 %}
+                                        {% assign total_pages = total_pages | plus: 1 %}
+                                    {% endif %}
+
+                                    {% for i in (1..total_pages) %}
+                                        <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                    {% endfor %}
+
+                                    <a class="page" href="javascript:void(0)" data-i="2">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "FAQ Support",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "app-control",
+            "name": "App & Control",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "question",
+                    "label": "Question"
+                },
+                {
+                    "type": "textarea",
+                    "id": "answer",
+                    "label": "Answer"
+                }
+            ]
+        },
+        {
+            "type": "battery-charging",
+            "name": "Battery & Charging",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "question",
+                    "label": "Question"
+                },
+                {
+                    "type": "textarea",
+                    "id": "answer",
+                    "label": "Answer"
+                }
+            ]
+        },
+        {
+            "type": "bluetooth-connection",
+            "name": "Bluetooth & Connection",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "question",
+                    "label": "Question"
+                },
+                {
+                    "type": "textarea",
+                    "id": "answer",
+                    "label": "Answer"
+                }
+            ]
+        },
+        {
+            "type": "care-others",
+            "name": "Care & Others",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "question",
+                    "label": "Question"
+                },
+                {
+                    "type": "textarea",
+                    "id": "answer",
+                    "label": "Answer"
+                }
+            ]
+        },
+        {
+            "type": "software-firmware",
+            "name": "Software & Firmware",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "question",
+                    "label": "Question"
+                },
+                {
+                    "type": "textarea",
+                    "id": "answer",
+                    "label": "Answer"
+                }
+            ]
+        },
+        {
+            "type": "sound-anc",
+            "name": "Sound & ANC",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "question",
+                    "label": "Question"
+                },
+                {
+                    "type": "textarea",
+                    "id": "answer",
+                    "label": "Answer"
+                }
+            ]
+        },
+        {
+            "type": "watch-application",
+            "name": "Watch Application",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "question",
+                    "label": "Question"
+                },
+                {
+                    "type": "textarea",
+                    "id": "answer",
+                    "label": "Answer"
+                }
+            ]
+        },
+        {
+            "type": "wearing",
+            "name": "Wearing",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "question",
+                    "label": "Question"
+                },
+                {
+                    "type": "textarea",
+                    "id": "answer",
+                    "label": "Answer"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

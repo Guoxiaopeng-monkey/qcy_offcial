@@ -1,0 +1,259 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "promotion_banner_yEiC7a": {
+      "type": "promotion-banner",
+      "settings": {
+        "background": "shopify://shop_images/kv_1920x600_cb5a5a0f-67d5-4367-98ee-914142a4dcbd.jpg",
+        "background_mobile": "shopify://shop_images/banner_430x932_cea26028-4e7d-4cb9-9a7f-b5e37533fcf7.jpg",
+        "sub_heading": "",
+        "heading": "",
+        "description": "",
+        "countdown_display": false,
+        "date_time": "Nov 14, 2024 14:00:00"
+      }
+    },
+    "promotion_page_header_section_GKedz6": {
+      "type": "promotion-page-header-section",
+      "blocks": {
+        "header_menu_Y9QUV3": {
+          "type": "header_menu",
+          "settings": {
+            "header_menu": "HEAPHONES"
+          }
+        },
+        "header_menu_NLUDzX": {
+          "type": "header_menu",
+          "settings": {
+            "header_menu": "TWS"
+          }
+        },
+        "header_menu_mnyGLC": {
+          "type": "header_menu",
+          "settings": {
+            "header_menu": "OWS"
+          }
+        }
+      },
+      "block_order": [
+        "header_menu_Y9QUV3",
+        "header_menu_NLUDzX",
+        "header_menu_mnyGLC"
+      ],
+      "settings": {}
+    },
+    "promotion_featured_product_R79DxV": {
+      "type": "promotion-featured-product",
+      "settings": {
+        "product_header": "Promotion 1",
+        "bg_image": "shopify://shop_images/39985_2x_1.png",
+        "bg_image_mobile": "shopify://shop_images/39985_2x_2.png",
+        "sub_heading": "Holiday Bonus Gift",
+        "heading": "<p>Spend More to Unlock a <strong>Free Surprise!</strong></p>",
+        "link_heading": "Bonus Gifts Guidelines >",
+        "modal_heading": "Bonus Gifts Guidelines",
+        "modal_description": "<p>Lorem Ipsum Odor Amet. Consectetuer Adipiscing Ellt. Rutrum Lorem Condimentum Diam Etiam Viverra Eleifend. Donec Commodo. Enim Locus Ante Augue Dapibus Cursus Nec Justo Lacus Vivamus. Uttrices Arcu Bibendum Vulputate Cras; Erat Mattis Dictum Nam Frtngilla. Varius Qu•sque Cras Velit ld Netus. Sagittis Lacus Ridiculus Ullamcorper Maecenas Dictumst F•nibus Orci Sodales.</p><p>Condimentum Lectus Erat Blandit Commodo. Sed Conubia Interdum Posuere. Tempor Morbi Vehicula Eget Eletfend. Consectetur Congue Vulputate. Consectetur Nec Urna ut Hac Ntsl. Accumsan Ultricies Nibh Dolor: Varius Eleifend ld Cursus Eros. Mauris Ullamcorper Velit Curae Hac Lacinia Aliquet Trisuque Nascetur. Egestas Consectctur Mollis Senectus Morbi Quam Massa Euismod. Facil•sis Consectetur Pharetra Ex Maecenas Netus Mus Quisque.</p><p>Mus Libero Prims Natoque Fames Ipsum Malesuada; Curabitur Conubla Dis.<br/>Pharetra Convallis Quis Locus Aenean Cubillo Locus. At Facilisis Rhoncus<br/>Elementum Consectetur Felis Ac Fames. Scelerisque Maecenas Nam Tortor<br/>Eros Sed Conubia. Vellt Curabltur Lacinia Dolor Fells Integer Orci Accumsan<br/>Platea. Ac Adipiscing Lobortis Facilisi Eleifend: Sagittis Duis. Elegfend Egestas<br/>Integer Diam Rhoncus: Phasellus Consectetur Efficrtur. Eu Felis Suscipit Odio<br/>Dui Metus Bibendum Libero Curabitur.</p><p>Elcmcntum Ac Inceptos Quis Rhoncus; Est Sagitus Taciti. Ad Inceptos</p>"
+      }
+    },
+    "promotion_collection_list_qN9rKT": {
+      "type": "promotion-collection-list",
+      "settings": {
+        "product_header": "HEAPHONES",
+        "sub_heading": "Seasonal Sound Sale",
+        "heading": "<p>Grab <strong>20% Off </strong>Select Headphones for the Holidays!</p>",
+        "collection": "headphones",
+        "link_heading": "Guidelines >",
+        "modal_heading": "Bonus Gifts Guidelines 2",
+        "modal_description": "<p>Lorem Ipsum Odor Amet. Consectetuer Adipiscing Ellt. Rutrum Lorem Condimentum Diam Etiam Viverra Eleifend. Donec Commodo. Enim Locus Ante Augue Dapibus Cursus Nec Justo Lacus Vivamus. Uttrices Arcu Bibendum Vulputate Cras; Erat Mattis Dictum Nam Frtngilla. Varius Qu•sque Cras Velit ld Netus. Sagittis Lacus Ridiculus Ullamcorper Maecenas Dictumst F•nibus Orci Sodales.</p><p>Condimentum Lectus Erat Blandit Commodo. Sed Conubia Interdum Posuere. Tempor Morbi Vehicula Eget Eletfend. Consectetur Congue Vulputate. Consectetur Nec Urna ut Hac Ntsl. Accumsan Ultricies Nibh Dolor: Varius Eleifend ld Cursus Eros. Mauris Ullamcorper Velit Curae Hac Lacinia Aliquet Trisuque Nascetur. Egestas Consectctur Mollis Senectus Morbi Quam Massa Euismod. Facil•sis Consectetur Pharetra Ex Maecenas Netus Mus Quisque.</p><p>Mus Libero Prims Natoque Fames Ipsum Malesuada; Curabitur Conubla Dis.<br/>Pharetra Convallis Quis Locus Aenean Cubillo Locus. At Facilisis Rhoncus<br/>Elementum Consectetur Felis Ac Fames. Scelerisque Maecenas Nam Tortor<br/>Eros Sed Conubia. Vellt Curabltur Lacinia Dolor Fells Integer Orci Accumsan<br/>Platea. Ac Adipiscing Lobortis Facilisi Eleifend: Sagittis Duis. Elegfend Egestas<br/>Integer Diam Rhoncus: Phasellus Consectetur Efficrtur. Eu Felis Suscipit Odio<br/>Dui Metus Bibendum Libero Curabitur.</p><p>Elcmcntum Ac Inceptos Quis Rhoncus; Est Sagitus Taciti. Ad Inceptos</p>"
+      }
+    },
+    "promotion_side_product_section_xYnUwC": {
+      "type": "promotion-side-product-section",
+      "blocks": {
+        "right_product_ziY8fi": {
+          "type": "right_product",
+          "settings": {
+            "product": "qcy-h3-wireless-headphone",
+            "featured_image": "shopify://shop_images/39992_2x_1.png",
+            "date_picker": "25/11/2024 09:57:19",
+            "heading_1": "",
+            "description_1": "",
+            "heading_2": "",
+            "description_2": "",
+            "heading_3": "",
+            "description_3": "",
+            "heading_4": "",
+            "description_4": ""
+          }
+        },
+        "left_product_jjbbwC": {
+          "type": "left_product",
+          "settings": {
+            "product": "qcy-h3-wireless-headphone",
+            "featured_image": "shopify://shop_images/39992_2x_2.png",
+            "date_picker": "",
+            "heading_1": "",
+            "heading_2": "",
+            "heading_3": "",
+            "heading_4": ""
+          }
+        },
+        "right_product_VG87MA": {
+          "type": "right_product",
+          "settings": {
+            "product": "qcy-h3-wireless-headphone",
+            "featured_image": "shopify://shop_images/39992_2x_1.png",
+            "date_picker": "25/10/2024 09:57:19",
+            "heading_1": "",
+            "description_1": "",
+            "heading_2": "",
+            "description_2": "",
+            "heading_3": "",
+            "description_3": "",
+            "heading_4": "",
+            "description_4": ""
+          }
+        }
+      },
+      "block_order": [
+        "right_product_ziY8fi",
+        "left_product_jjbbwC",
+        "right_product_VG87MA"
+      ],
+      "settings": {
+        "product_header": "Promotion 3"
+      }
+    },
+    "promotion_review_section_mGrz3q": {
+      "type": "promotion-review-section",
+      "blocks": {
+        "review_qNNM4g": {
+          "type": "review",
+          "settings": {
+            "featured_image": "shopify://shop_images/39988_2x_2f3174bb-9d4e-4f85-8877-1dc71813ad98.png",
+            "review_comment": "<p>I received the headphones as a gift this holiday season, and I absolutely love them! The sound quality is amazing, and they’re so comfortable to wear. Highly recommend!</p>",
+            "review_author": "Hayden W.",
+            "reviewe_location": "LOS ANGELES"
+          }
+        },
+        "review_WzhqzG": {
+          "type": "review",
+          "settings": {
+            "featured_image": "shopify://shop_images/39988_2x_1.png",
+            "review_comment": "<p>These headphones have been the perfect companion for my workouts! I gifted them to my best friend, and she can’t stop raving about them. Great sound and style!</p>",
+            "review_author": "Brandon R.",
+            "reviewe_location": "LOS ANGELES"
+          }
+        }
+      },
+      "block_order": [
+        "review_qNNM4g",
+        "review_WzhqzG"
+      ],
+      "settings": {}
+    },
+    "promotion_blog_section_gTHD7q": {
+      "type": "promotion-blog-section",
+      "blocks": {
+        "blog_nA4Dhj": {
+          "type": "blog",
+          "settings": {
+            "blog_post": "news/ifa2024"
+          }
+        },
+        "blog_wJceYF": {
+          "type": "blog",
+          "settings": {
+            "blog_post": "news/essential-accessories-for-keeping-your-wireless-gadgets-organized"
+          }
+        },
+        "blog_XBPTEc": {
+          "type": "blog",
+          "settings": {
+            "blog_post": "news/fast-charging_-how-it-works-and-why-it-s-important-for-modern-devices"
+          }
+        },
+        "blog_GW8q9t": {
+          "type": "blog",
+          "settings": {
+            "blog_post": "news/the-role-of-smartwatches-in-improving-personal-health-and-fitness"
+          }
+        }
+      },
+      "block_order": [
+        "blog_nA4Dhj",
+        "blog_wJceYF",
+        "blog_XBPTEc",
+        "blog_GW8q9t"
+      ],
+      "settings": {
+        "heading": "Gift the Gift of Sound",
+        "sub_heading": "Perfect Headphones For Everyone!"
+      }
+    },
+    "promotion_collection_banner_ykF6b9": {
+      "type": "promotion-collection-banner",
+      "blocks": {
+        "collection_ebFgey": {
+          "type": "collection",
+          "settings": {
+            "collection": "headphones",
+            "featured_image": "shopify://shop_images/39990_2x_1.png",
+            "custom_label": ""
+          }
+        },
+        "collection_rMmcKP": {
+          "type": "collection",
+          "settings": {
+            "collection": "true-wireless-earbuds",
+            "featured_image": "shopify://shop_images/39989_2x_1.png",
+            "custom_label": ""
+          }
+        },
+        "collection_ydMLpR": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "featured_image": "shopify://shop_images/39986_2x_3.png",
+            "custom_label": "Lorem ipsum"
+          }
+        }
+      },
+      "block_order": [
+        "collection_ebFgey",
+        "collection_rMmcKP",
+        "collection_ydMLpR"
+      ],
+      "settings": {
+        "heading": "Explore Our Exclusive Collection"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "promotion_banner_yEiC7a",
+    "promotion_page_header_section_GKedz6",
+    "promotion_featured_product_R79DxV",
+    "promotion_collection_list_qN9rKT",
+    "promotion_side_product_section_xYnUwC",
+    "promotion_review_section_mGrz3q",
+    "promotion_blog_section_gTHD7q",
+    "promotion_collection_banner_ykF6b9"
+  ]
+}

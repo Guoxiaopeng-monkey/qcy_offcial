@@ -1,0 +1,42 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_kWwQhE": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/16-1_68064dea-2441-4fd4-9cb3-0cfae56f3146.jpg",
+        "image_mobile": "shopify://shop_images/16-2_262e4f88-d204-4e8f-9ba2-749d82cbe8b1.jpg",
+        "heading": "Behind the Ear Headphones",
+        "text": "<p>Experience audio freedom with <strong>QCY Behind the Ear Headphones</strong>! Ideal for workouts, calls, or daily use, QCY offers clear sound with a secure, ergonomic fit. With wireless convenience and lasting comfort, these <strong>Behind the Ear Headphones</strong> elevate your active lifestyle.</p>",
+        "desktop_heading_color": "#121212",
+        "desktop_text_color": "#121212"
+      }
+    },
+    "collection_navigation_AnCJQE": {
+      "type": "collection-navigation",
+      "name": "Collection Navigation",
+      "settings": {
+        "text_color": "#333333",
+        "padding": 10
+      }
+    },
+    "main_collection_D4J9rG": {
+      "type": "main-collection",
+      "settings": {}
+    }
+  },
+  "order": [
+    "image_with_text_kWwQhE",
+    "collection_navigation_AnCJQE",
+    "main_collection_D4J9rG"
+  ]
+}

@@ -1,0 +1,47 @@
+{% assign review_title = "What Our Client Say's" %}
+
+{% if localization.language.iso_code == 'es' %}
+  {% assign review_title = "Calificaciones y reseñas" %}
+{% endif %}
+
+<style>
+  
+  .reviews-section{
+    padding:50px 0px;
+  }
+  .reviews-section .jdgm-rev-widg{
+    padding-left:0px;
+    padding-right:0px;
+  }
+  .reviews-section .jdgm-review-widget[data-from-snippet="true"]{
+    display:block !important;
+  }
+  .jdgm-rev-widg__summary-inner:before{
+      content: "{{ review_title }}";
+      font-family: 'Mulish-Bold';
+      margin-bottom:10px;
+  }
+</style>
+<div class="{{ section.settings.header_nav | handleize }}-scroll-section reviews-section section-scroll">
+  <div class="page-width">
+    {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true %}
+  </div>
+</div>
+{% schema %}
+  {
+      "name": "Review Section",
+      "templates": ["product"],
+      "limit": 1, 
+      "settings": [
+          {
+              "type": "text",
+              "id": "header_nav",
+              "label": "Header Nav",
+              "default": "Reviews"
+          }
+      ],
+      "presets" :[{
+          "name" : "Review Section"
+      }]
+  }
+{% endschema %} 

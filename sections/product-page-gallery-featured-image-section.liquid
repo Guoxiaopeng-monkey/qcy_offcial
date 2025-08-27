@@ -1,0 +1,299 @@
+{% style %}
+    .gallery-featured-image-section{
+        padding:50px 0px 50px;
+    }
+    .gallery-featured-list-container{
+        display:flex;
+        flex-direction: column;
+    }
+    .gallery-featured-item{
+        display:flex;
+        overflow:hidden;
+    }
+    .gallery-featured-list-container,
+    .gallery-featured-item{
+        gap:25px;
+    }
+    .gallery-image-item{
+        border-radius:10px;
+        overflow:hidden;
+        position:relative;
+        display:flex;
+    }
+    .gallery-image-item:hover img{
+        scale:1.03;
+    }
+    .gallery-image-item img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        transition: all 0.3s ease;
+    }
+    .gallery-content-detail{
+        position: absolute;
+        bottom: 25px;
+        padding: 0px 35px;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        width: 100%;
+        align-items: flex-end;
+        column-gap: 30px;
+    }
+    .gallery-content-detail .arrow-down-icon{
+        width:30px;
+        height:30px;
+        background-color:#fff;
+        border-radius:50px;
+    }
+    .gallery-image-item:hover .gallery-content-detail .arrow-down-icon{
+        background-color:#FF8832;
+    }
+    .gallery-image-item:hover .gallery-content-detail .arrow-down-icon .icon-path{
+        fill:#fff;
+    }
+    .gallery-two-col{
+      display:flex;
+      gap:10px;
+    }
+    .gallery-featured-container{
+      display:none;
+    }
+    .single-bg-image-container img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+    }
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+        .gallery-featured-image-section{
+            padding:50px 0px;
+        }
+        .gallery-featured-container{
+          display:flex;
+          flex-direction:column;
+          gap:10px;
+        }
+        .gallery-content-detail{
+          padding:0px 20px;
+        }
+        .gallery-featured-list-container{
+          display:none;
+        }
+    }
+
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) {
+        .gallery-featured-image-section{
+            padding:50px 0px;
+        }
+        .gallery-featured-container{
+          display:flex;
+          flex-direction:column;
+          gap:10px;
+        }
+        .gallery-content-detail{
+          padding:0px 20px;
+        }
+        .gallery-featured-list-container{
+          display:none;
+        }
+    }
+{% endstyle %}
+<div class="{{ section.settings.header_nav | handleize }}-scroll-section gallery-featured-image-section section-scroll">
+  <div class="page-width">
+      {% if section.settings.bg_image == blank %}
+        <div class="gallery-featured-list-container">
+            <div class="gallery-featured-item">
+                {% for block in section.blocks %}
+                  {% if forloop.index0 == 0   %}
+                    <div class="gallery-image-item col_50">
+                        <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}" alt="">
+                        {% if block.settings.heading != blank %}
+                        <div class="gallery-content-detail">
+                            <h4 class="mx-0 f-f-medium white-f">{{ block.settings.heading  }}</h4>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% elsif forloop.index0 == 1 %}
+                    <div class="gallery-image-item col_25">
+                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+                        {% if block.settings.heading != blank %}
+                        <div class="gallery-content-detail">
+                            <h4 class="mx-0 f-f-medium white-f">{{ block.settings.heading  }}</h4>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% elsif forloop.index0 == 2 %}
+                    <div class="gallery-image-item col_25">
+                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+                        {% if block.settings.heading != blank %}
+                        <div class="gallery-content-detail">
+                            <h4 class="mx-0 f-f-medium white-f">{{ block.settings.heading  }}</h4>
+                        </div>
+                        {% endif %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+            </div>
+            <div class="gallery-featured-item">
+                {% for block in section.blocks %}
+                  {% if forloop.index0 == 3   %}
+                    <div class="gallery-image-item col_40">
+                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+                        {% if block.settings.heading != blank %}
+                        <div class="gallery-content-detail">
+                            <h4 class="mx-0 f-f-medium white-f">{{ block.settings.heading  }}</h4>
+                        </div>
+                        {% endif %}
+                    </div>
+                  {% elsif forloop.index0 == 4 %}
+                    <div class="gallery-image-item col_60">
+                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+                        {% if block.settings.heading != blank %}
+                        <div class="gallery-content-detail">
+                            <h4 class="mx-0 f-f-medium white-f">{{ block.settings.heading  }}</h4>
+                        </div>
+                        {% endif %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="gallery-featured-container">
+            <div class="gallery-row">
+                {% for block in section.blocks %}
+                  {% if forloop.index0 == 0   %}
+                    <div class="gallery-image-item">
+                        <img loading="lazy" src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="">
+                        {% if block.settings.heading != blank %}
+                        <div class="gallery-content-detail">
+                            <h4 class="mx-0 f-f-medium white-f">{{ block.settings.heading  }}</h4>
+                        </div>
+                        {% endif %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+            </div>
+            <div class="gallery-row gallery-two-col">
+                {% for block in section.blocks %}
+                  {% if forloop.index0 == 1   %}
+                    <div class="gallery-image-item">
+                        <img src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="">
+                        {% if block.settings.heading != blank %}
+                        <div class="gallery-content-detail">
+                            <h4 class="mx-0 f-f-medium white-f">{{ block.settings.heading  }}</h4>
+                        </div>
+                        {% endif %}
+                    </div>
+                  {% elsif forloop.index0 == 2 %}
+                    <div class="gallery-image-item">
+                        <img src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="">
+                        {% if block.settings.heading != blank %}
+                        <div class="gallery-content-detail">
+                            <h4 class="mx-0 f-f-medium white-f">{{ block.settings.heading  }}</h4>
+                        </div>
+                        {% endif %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+            </div>
+            <div class="gallery-row">
+                {% for block in section.blocks %}
+                  {% if forloop.index0 == 3   %}
+                    <div class="gallery-image-item">
+                        <img src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="">
+                        {% if block.settings.heading != blank %}
+                        <div class="gallery-content-detail">
+                            <h4 class="mx-0 f-f-medium white-f">{{ block.settings.heading  }}</h4>
+                        </div>
+                        {% endif %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+            </div>
+            <div class="gallery-row">
+                {% for block in section.blocks %}
+                  {% if forloop.index0 == 4   %}
+                    <div class="gallery-image-item">
+                        <img src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="">
+                        {% if block.settings.heading != blank %}
+                        <div class="gallery-content-detail">
+                            <h4 class="mx-0 f-f-medium white-f">{{ block.settings.heading  }}</h4>
+                        </div>
+                        {% endif %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+      {% else %}
+      <div class="single-bg-image-container">
+          <img loading="lazy" src="{{ section.settings.bg_image |  img_url: 'master' }}" 
+          {% if section.settings.bg_image_mobile != blank %}
+            class="h-desktop"
+          {% endif %}
+            >
+          {% if section.settings.bg_image_mobile != blank %}
+            <img loading="lazy" src="{{ section.settings.bg_image_mobile |  img_url: 'master' }}" class="h-mobile">
+          {% endif %}
+      </div>
+      {% endif %}
+  
+  </div>
+</div>
+{% schema %}
+    {
+        "name": "Gallery Featured Image",
+        "templates": ["product"],
+        "limit": 1, 
+        "settings": [
+            {
+                "type": "text",
+                "id": "header_nav",
+                "label": "Header Nav",
+                "default": "Features"
+            },
+            {
+                "type": "image_picker",
+                "id": "bg_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "bg_image_mobile",
+                "label": "Background Image Mobile"
+            }
+        ],
+        "max_blocks": 5,
+        "blocks": [
+            {
+                "type": "item",
+                "name": "Item",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_mobile",
+                        "label": "Image - Mobile"
+                    },
+                    {
+                        "type": "product",
+                        "id": "heading",
+                        "label": "Heading"
+                    }
+                ]
+            }
+        ],
+        "presets" :[{
+            "name" : "Gallery Featured Image"
+        }]
+    }
+  {% endschema %} 

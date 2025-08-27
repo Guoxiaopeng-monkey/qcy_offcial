@@ -1,0 +1,148 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main_collection_D4J9rG": {
+      "type": "main-collection",
+      "disabled": true,
+      "settings": {}
+    },
+    "collections_grid_AneLYy": {
+      "type": "collections-grid",
+      "blocks": {
+        "collection_D6zwQg": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/40106_2x_8066e5de-3a3c-4c35-bccb-7bd6e86ff167.png",
+            "title": "Wireless Headphones",
+            "description": "Discover the freedom of exceptional sound with qcy's wireless headphones. Experience rich audio, advanced noise cancellation, and ultimate comfort—designed for every lifestyle and any journey.",
+            "collection": "headphones"
+          }
+        },
+        "collection_DW7ULe": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/40009_2x_538879b1-c466-43fd-abf0-659f1d05c6fb.png",
+            "title": "True Wireless Earbuds",
+            "description": "Experience powerful audio and exceptional comfort with QCY's true wireless earbuds! Whether you're enjoying your favorite music, taking calls, or working out, QCY delivers premium sound quality and wireless freedom that elevates your listening experience!",
+            "collection": "true-wireless-earbuds"
+          }
+        },
+        "collection_7WgkPe": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0235_83ae3fc5-7c8b-4c0b-9e78-8fa943f5b4a8.jpg",
+            "title": "Open-Ear Earbuds",
+            "description": "Experience Pure Sound Through Open-Ear Innovation",
+            "collection": "open-ear-earbuds"
+          }
+        },
+        "collection_EAR9PJ": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/40025_2x_07cc5d8a-3216-4a68-a5e3-bc4270492431.png",
+            "title": "Smart Watches",
+            "description": "Experience cutting-edge technology and sleek style with QCY's smart watches! Whether you're tracking your fitness, staying connected, or managing your day, QCY delivers premium performance and seamless functionality to elevate your everyday experience!",
+            "collection": "smart-watches"
+          }
+        },
+        "collection_tdmPGr": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/headphone_accessories.jpg",
+            "title": "Headphone Accessories",
+            "description": "Experience enhanced audio and ultimate convenience with QCY's headphone accessories! Whether you're immersing in music, taking calls, or on the move, QCY delivers premium quality and seamless functionality to elevate your listening experience!",
+            "collection": "accessories"
+          }
+        },
+        "collection_6pUCeW": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/over-ear_headphones.jpg",
+            "title": "Over Ear Headphones",
+            "description": "Dive into immersive audio with QCY over-ear headphones—built for comfort, long listening, and focus. With up to 60 hours of battery life, powerful noise cancelling, and clear call performance, they’re your perfect companion wherever life takes you.",
+            "collection": "over-ear-headphones"
+          }
+        },
+        "collection_NrhqLP": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/anc_headphones.jpg",
+            "title": "ANC Headphones",
+            "description": "Explore QCY’s ANC headphones—engineered to tune out the noise and dial in on what matters. With powerful noise cancellation, impressive sound quality, and long-lasting battery life, they’re built for your everyday hustle.",
+            "collection": "anc-headphones"
+          }
+        },
+        "collection_BtdQM4": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/1-2.jpg",
+            "title": "Gaming Headsets",
+            "description": "Dive into the ultimate gaming experience with QCY Gaming Headsets! Designed for gamers who demand precision, comfort, and crystal-clear audio, QCY delivers cutting-edge technology to enhance every moment of your gameplay. Whether you're battling in intense multiplayer matches or exploring immersive single-player worlds, our Gaming Headsets provide unparalleled sound quality and wireless freedom.",
+            "collection": ""
+          }
+        },
+        "collection_KwMX6H": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/40009_2x_538879b1-c466-43fd-abf0-659f1d05c6fb.png",
+            "title": "Earbuds",
+            "description": "Discover the freedom of exceptional sound with qcy's wireless headphones. Experience rich audio, advanced noise cancellation, and ultimate comfort—designed for every lifestyle and any journey.",
+            "collection": ""
+          }
+        },
+        "collection_TcJYJE": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/PC-3200x1440-H3-Pro.jpg",
+            "title": "ANC headphones",
+            "description": "Discover the freedom of exceptional sound with qcy's wireless headphones. Experience rich audio, advanced noise cancellation, and ultimate comfort—designed for every lifestyle and any journey.",
+            "collection": ""
+          }
+        },
+        "collection_LHJFiK": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/QCY-16.jpg",
+            "title": "TWS Earbuds",
+            "description": "Discover the freedom of exceptional sound with qcy's wireless headphones. Experience rich audio, advanced noise cancellation, and ultimate comfort—designed for every lifestyle and any journey.",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_D6zwQg",
+        "collection_DW7ULe",
+        "collection_7WgkPe",
+        "collection_EAR9PJ",
+        "collection_tdmPGr",
+        "collection_6pUCeW",
+        "collection_NrhqLP",
+        "collection_BtdQM4",
+        "collection_KwMX6H",
+        "collection_TcJYJE",
+        "collection_LHJFiK"
+      ],
+      "name": "QCY Collections",
+      "settings": {
+        "title": "QCY Collections",
+        "description": "Elevate your listening experience with our handpicked headphones, earbuds, and smart watches.",
+        "button_text": "Shop All"
+      }
+    }
+  },
+  "order": [
+    "main_collection_D4J9rG",
+    "collections_grid_AneLYy"
+  ]
+}

@@ -1,0 +1,40 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection_navigation_AnCJQE": {
+      "type": "collection-navigation",
+      "name": "Collection Navigation",
+      "settings": {
+        "text_color": "#333333",
+        "padding": 10
+      }
+    },
+    "main_collection_D4J9rG": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "custom_liquid_DLpnRx": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "collection_navigation_AnCJQE",
+    "main_collection_D4J9rG",
+    "custom_liquid_DLpnRx"
+  ]
+}

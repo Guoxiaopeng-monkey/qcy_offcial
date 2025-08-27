@@ -1,0 +1,200 @@
+<style>
+  .cart-sidebar-discount {
+      display: flex;
+  
+          {
+          % comment %
+      }
+  
+      flex-direction: column;
+  
+          {
+          % endcomment %
+      }
+  
+          {
+          % comment %
+      }
+  
+      width:300px;
+  
+          {
+          % endcomment %
+      }
+  }
+  
+  .cart-sidebar-discount input {
+      margin-top: 20px;
+      background: white;
+      border: 1px solid gray;
+      height: 50px;
+      outline: none;
+      font-size: 18px;
+      letter-spacing: .75px;
+      text-align: left;
+  }
+  
+  .cart-sidebar-discount .row-1 {
+      flex-direction: row-reverse;
+  }
+  
+  #apply-discount-btn {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    transition:all 0.3s ease;
+  }
+  #apply-discount-btn:hover{
+    background-color:#FF8832;
+    color:#fff;
+  }
+  span.applied-discount-code-value>small {
+      background: #eee;
+      padding: 0px 10px;
+      color: #000;
+      font-weight: bold;
+      border-radius: 20px;
+  }
+  
+  .loader {
+      border: 5px solid #f3f3f3;
+      border-top: 4px solid #000;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      animation: spin .5s linear infinite;
+  }
+  
+  #discount-code-error {
+      background: #ff00004f;
+      color: #e22120;
+      padding: 5px;
+      border-radius: 4px;
+      font-size: 13px;
+      line-height: 1;
+  }
+  .applied-discount-code-wrapper {
+      display: none;
+      align-items: center;
+      background: #FFF0E4;
+      padding: 3px 10px;
+      border-radius: 6px;
+      width: fit-content;
+      position:relative;
+      padding-right: 2.5rem;
+    margin-top:10px;
+  }
+  
+  .applied-discount-code-value {
+      font-size: 10px;
+      text-transform: uppercase;
+      line-height:normal;
+  }
+  
+  #discount-code-error:empty {
+      display: none;
+  }
+  
+  .applied-discount-code-value:empty+button {
+      display: none;
+  }
+  
+  @keyframes spin {
+      0% {
+          transform: rotate(0deg);
+      }
+  
+      100% {
+          transform: rotate(360deg);
+      }
+  }
+  
+  .discount {
+  }
+  
+  .containers {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom:10px;
+  }
+  
+  .rounded-containers {
+      display: flex;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #B9B9B9;
+      width: 100%;
+  }
+  
+  .rounded-containers input[type="text"] {
+      padding: 13px;
+      border: none;
+      outline: none;
+      width: 100%;
+  }
+  
+  .rounded-containers button {
+      padding: 0px 20px;
+      border: none;
+      background-color: #F1F1F1;
+      cursor: pointer;
+      color: #262626;
+  }
+  
+  .label-discounts {
+      color: black;
+      margin-bottom: 15px;
+      font-size: 13px;
+  }
+  
+  #clear-discount-btn {
+      border: none;
+      background-color: transparent;
+      font-weight: 700;
+      font-size: 12px;
+      position: absolute;
+      right: -0.5rem;
+      cursor:pointer;
+  }
+  #clear-discount-btn svg{
+    width:25px;
+    height:25px;
+  }
+  #clear-discount-btn svg path{
+    fill:#000;
+  }
+  
+</style>
+<div class="discount">
+    {% if label_display %}
+      <p class="label-discounts">
+          Enter Promo Code (Optional)
+          <br>
+          One promo code per order. Offers cannot be combined.
+      </p>
+    {% endif %}
+    <div class="containers">
+        <div class="rounded-containers">
+            <input type="text" placeholder="Discount code or gift card" id="discount-code-input" class="discount-code-input f-f-regular" autocomplete="on" >
+            <button id="apply-discount-btn" class="apply-discount-btn p f-f-bold">Apply</button>
+        </div>
+    </div>
+    <span id="applied-discount-code">
+        <span class="applied-discount-code-wrapper">
+            <span class="applied-discount-code-value f-f-regular"></span>
+            <button id="clear-discount-btn" class="clear-discount-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="53.469" height="53.468" viewBox="0 0 53.469 53.468">
+                  <g transform="translate(26.734) rotate(45)">
+                    <path fill="#fff" d="M1.181,2.363A1.19,1.19,0,0,1,0,1.181,1.19,1.19,0,0,1,1.181,0h18.9a1.19,1.19,0,0,1,1.181,1.181,1.19,1.19,0,0,1-1.181,1.181Z" transform="translate(8.27 17.722)"/>
+                    <path fill="#fff" d="M0,20.085V1.181A1.19,1.19,0,0,1,1.181,0,1.19,1.19,0,0,1,2.363,1.181v18.9a1.19,1.19,0,0,1-1.181,1.181A1.19,1.19,0,0,1,0,20.085Z" transform="translate(17.722 8.27)"/>
+                    <path opacity="0" fill="#fff" d="M37.808,0V37.808H0V0Z"/>
+                  </g>
+                </svg>
+            </button>
+        </span>
+    </span>
+    <span id="discount-code-error" class="discount-code-error"></span>
+</div>

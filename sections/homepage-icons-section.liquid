@@ -1,0 +1,252 @@
+{% stylesheet %}
+    .icons-section{
+        background-color:#f9f9f9;
+        padding:80px 0px;
+        overflow:hidden;
+    }
+    .icon-slider-section{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .icons-section .icon-item{
+        display:flex;
+        flex-direction:column;
+        gap:1rem;
+        align-items: center;
+    }
+    .icons-section .icon-item:nth-child(2){
+        border-left: 1px solid #D6D6D6;
+        border-right: 1px solid #D6D6D6;
+    }
+    .icons-section .icon-item .sub-heading{
+        margin-top:-15px;
+    }
+    .icon-img{
+        width:50px;
+        height:50px;
+    }
+    .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
+        display: -moz-inline-box;
+        -moz-box-orient: vertical;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        position: relative;
+    }
+    .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
+        *display: inline;
+    }
+    .odometer.odometer-auto-theme .odometer-digit, .odometer.odometer-theme-default .odometer-digit {
+        display: -moz-inline-box;
+        -moz-box-orient: vertical;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        position: relative;
+    }
+    .odometer.odometer-auto-theme .odometer-digit, .odometer.odometer-theme-default .odometer-digit {
+        *display: inline;
+    }
+    .odometer.odometer-auto-theme .odometer-digit .odometer-digit-spacer, .odometer.odometer-theme-default .odometer-digit .odometer-digit-spacer {
+        display: -moz-inline-box;
+        -moz-box-orient: vertical;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        visibility: hidden;
+    }
+    .odometer.odometer-auto-theme .odometer-digit .odometer-digit-spacer, .odometer.odometer-theme-default .odometer-digit .odometer-digit-spacer {
+        *display: inline;
+    }
+    .odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-default .odometer-digit .odometer-digit-inner {
+        text-align: left;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+    .odometer.odometer-auto-theme .odometer-digit .odometer-ribbon, .odometer.odometer-theme-default .odometer-digit .odometer-ribbon {
+        display: block;
+    }
+    .odometer.odometer-auto-theme .odometer-digit .odometer-ribbon-inner, .odometer.odometer-theme-default .odometer-digit .odometer-ribbon-inner {
+        display: block;
+        -webkit-backface-visibility: hidden;
+    }
+    .odometer.odometer-auto-theme .odometer-digit .odometer-value, .odometer.odometer-theme-default .odometer-digit .odometer-value {
+        display: block;
+        -webkit-transform: translateZ(0);
+    }
+    .odometer.odometer-auto-theme .odometer-digit .odometer-value.odometer-last-value, .odometer.odometer-theme-default .odometer-digit .odometer-value.odometer-last-value {
+        position: absolute;
+    }
+    .odometer.odometer-auto-theme.odometer-animating-up .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-up .odometer-ribbon-inner {
+        -webkit-transition: -webkit-transform 2s;
+        -moz-transition: -moz-transform 2s;
+        -ms-transition: -ms-transform 2s;
+        -o-transition: -o-transform 2s;
+        transition: transform 2s;
+    }
+    .odometer.odometer-auto-theme.odometer-animating-up.odometer-animating .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-up.odometer-animating .odometer-ribbon-inner {
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        -o-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+    .odometer.odometer-auto-theme.odometer-animating-down .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-down .odometer-ribbon-inner {
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        -o-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+    .odometer.odometer-auto-theme.odometer-animating-down.odometer-animating .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-down.odometer-animating .odometer-ribbon-inner {
+        -webkit-transition: -webkit-transform 2s;
+        -moz-transition: -moz-transform 2s;
+        -ms-transition: -ms-transform 2s;
+        -o-transition: -o-transform 2s;
+        transition: transform 2s;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+    .odometer-block span{
+        font-family: 'Poppins-SemiBold';
+    }
+    .odometer.odometer-auto-theme .odometer-value, .odometer.odometer-theme-default .odometer-value {
+        text-align: center;
+    }
+    .counter-both-container{
+      display:flex;
+    }
+
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px){
+        .icons-section{
+            padding:50px 0px;
+        }
+        .icons-section .icon-item:nth-child(2){
+            border:none;
+        }
+        .icons-section .icon-item{
+            gap:0px;
+        }
+        .icons-section .icon-item .heading{
+            font-size:26px;
+        }
+        .icons-section .icon-item .icon-img{
+            margin-bottom:10px;
+        }
+        .icons-section .icon-item .sub-heading{
+            margin-top:-5px;
+        }
+    }
+
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) {
+        .icons-section{
+            padding:50px 0px;
+        }
+        .icons-section .icon-item:nth-child(2){
+            border:none;
+        }
+        .icons-section .icon-item{
+            gap:0px;
+        }
+        .icons-section .icon-item .icon-img{
+            margin-bottom:10px;
+        }
+        .icons-section .icon-item .sub-heading{
+            margin-top:-5px;
+        }
+
+    }
+{% endstylesheet %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/odometer.min.js" integrity="sha512-v3fZyWIk7kh9yGNQZf1SnSjIxjAKsYbg6UQ+B+QxAZqJQLrN3jMjrdNwcxV6tis6S0s1xyVDZrDz9UoRLfRpWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div class="page-width">
+    <div class="icon-slider-section">
+        <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+                <div class="icon-item swiper-slide">
+                    <img loading="lazy" src="{{ block.settings.bg_image | img_url: 'master' }}" class="icon-img" alt="{{ block.settings.bg_image.alt | escape }}">
+                    {% if block.settings.heading == blank and block.settings.heading_2 != blank %}
+                      <div class="text-sm mx-0 odometer-block" data-value="{{ block.settings.heading_2 }}">
+                          <span>{{ block.settings.special_char }}</span>
+                          <div class="heading text-sm mx-0 center odometer-value"></div>
+                      </div>
+                    {% elsif block.settings.heading != blank and block.settings.heading_2 == blank  %} 
+                      <div class="text-sm mx-0 odometer-block" data-value="{{ block.settings.heading }}">
+                          <div class="heading text-sm mx-0 center odometer-value"></div>
+                          <span>{{ block.settings.special_char }}</span>
+                      </div>
+                    {% else %}
+                      <div class="counter-both-container">
+                        <div class="text-sm mx-0 odometer-block" data-value="{{ block.settings.heading }}">
+                            <div class="heading text-sm mx-0 center odometer-value"></div>
+                        </div>
+                        <span class="text-sm mx-0 f-f-poppin-semibold">{{ block.settings.special_char }}</span>
+                        <div class="text-sm mx-0 odometer-block" data-value="{{ block.settings.heading_2 }}">
+                            <div class="heading text-sm mx-0 center odometer-value"></div>
+                        </div>
+                      </div>
+                    {% endif %}
+                    <h4 class="sub-heading mx-0 f-f-regular center">
+                        {{ block.settings.sub_heading }}
+                    </h4>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "class": "icons-section",
+        "name": "Icons Section",
+        "templates": ["index"],
+        "limit": 1,
+        "max_blocks": 3,
+        "blocks": [
+          {
+              "type": "icon",
+              "name": "Icon",
+              "settings": [
+                  {
+                      "type": "image_picker",
+                      "id": "bg_image",
+                      "label": "Background Image"
+                  },
+                  {
+                      "type": "text",
+                      "id": "heading",
+                      "label": "Heading"
+                  },
+                  {
+                      "type": "text",
+                      "id": "special_char",
+                      "label": "Special Character"
+                  },
+                  {
+                      "type": "text",
+                      "id": "heading_2",
+                      "label": "Heading"
+                  },
+                  {
+                      "type": "text",
+                      "id": "sub_heading",
+                      "label": "Sub Heading"
+                  }
+              ]
+          }
+        ],
+        "presets" :[{
+            "name" : "Icons Section"
+        }]
+    }
+  {% endschema %} 

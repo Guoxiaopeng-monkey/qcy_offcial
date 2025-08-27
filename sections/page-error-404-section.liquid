@@ -1,0 +1,94 @@
+<style>
+  .error-404-section{
+    padding:80px 0px;
+  }
+  .error-404-section .page-width{
+    display:flex;    
+    gap: 5%;
+    align-items: center;
+  }
+  .error-img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+  }
+  .content-description{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    align-items: flex-start;
+  }
+  .content-description h4{
+    line-height:inherit;
+  }
+  .btn-homepage{
+    padding:10px 30px;
+    border-radius:50px;
+    background-color:#FF8832;
+  }
+
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .error-404-section .page-width{
+      flex-direction:column;
+      gap:50px;
+    }
+    .content-description{
+      align-items:center;
+    }
+    .content-description h4{
+      text-align:center;
+    }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+    .error-404-section .page-width{
+      flex-direction:column;
+      gap:50px;
+    }
+    .content-description{
+      align-items:center;
+    }
+    .content-description h4{
+      text-align:center;
+    }
+  }
+
+</style>
+<div class="page-width">
+  <div class="col_50">
+      <img loading="lazy" src="{{ section.settings.error_image | img_url: 'master' }}" class="error-img">
+  </div>
+  <div class="col_50 content-description">
+      <h1 class="text-md mx-0 f-f-bold">PAGE NOT FOUND</h1>
+      <h4 class="f-f-regular mx-0">The page you are looking for might have been removed had its name changed or is temporarily unavailable.</h4>
+      <a href="/" class="btn-homepage">
+        <p class="mx-0 f-f-regular white-f">
+        Go To Homepage
+        </p>
+      </a>
+      
+  </div>
+</div>
+{% schema %}
+    {
+      
+        "class": "error-404-section",
+        "name": "Error 404",
+        "templates": ["404"],
+        "limit": 1, 
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "error_image",
+                "label": "Error Image"
+            },
+        ],
+        "presets" :[{
+            "name" : "Error 404"
+        }]
+    }
+  {% endschema %} 

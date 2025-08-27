@@ -1,0 +1,251 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "support-search": {
+      "type": "support-search",
+      "blocks": {
+        "search_qwert1": {
+          "type": "search",
+          "settings": {
+            "search_item": "H3",
+            "search_url": "https://us.qcy.com/pages/support-center-h3"
+          }
+        },
+        "search_qwert2": {
+          "type": "search",
+          "settings": {
+            "search_item": "MeloBuds Neo",
+            "search_url": "https://us.qcy.com/pages/support-center-melobuds-neo"
+          }
+        },
+        "search_qwert3": {
+          "type": "search",
+          "settings": {
+            "search_item": "AilyBuds Pro+",
+            "search_url": "https://us.qcy.com/pages/support-center-ailybuds-pro-plus"
+          }
+        },
+        "search_qwert4": {
+          "type": "search",
+          "settings": {
+            "search_item": "Melobuds ANC",
+            "search_url": "https://us.qcy.com/pages/support-center-melobuds-anc"
+          }
+        },
+        "search_qwert5": {
+          "type": "search",
+          "settings": {
+            "search_item": "T13",
+            "search_url": "https://us.qcy.com/pages/support-center-t13"
+          }
+        }
+      },
+      "block_order": [
+        "search_qwert1",
+        "search_qwert2",
+        "search_qwert3",
+        "search_qwert4",
+        "search_qwert5"
+      ],
+      "settings": {
+        "title": "Support Center",
+        "background_desktop": "shopify://shop_images/39993.png",
+        "background_mobile": "shopify://shop_images/39993_1.png"
+      }
+    },
+    "support-detail": {
+      "type": "support-detail",
+      "settings": {}
+    },
+    "support-video": {
+      "type": "support-video",
+      "blocks": {
+        "video_qwer1": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/HT18英文版（已修改）.mp4",
+            "title": "How to Use MeloBuds N70"
+          }
+        }
+      },
+      "block_order": [
+        "video_qwer1"
+      ],
+      "settings": {
+        "title": "Support Video"
+      }
+    },
+    "faq-detailed": {
+      "type": "faq-detailed",
+      "blocks": {
+        "bluetooth_connection_wnjiJL": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "What can I do if my headphones won't connect to my device?",
+            "answer": "1. Clear the pairing records between the headphones and all of the previous devices. \n2. Re-pair your headphones and the device.\n\nIf that doesn’t work:\n- Try pairing with another device to check for compatibility issues.\n- Ensure there are no objects blocking the Bluetooth signal."
+          }
+        },
+        "bluetooth_connection_PNxXbU": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "What should I do if my headphons sound is choppy?",
+            "answer": "Please note that this may not indicate an issue with the headphones themselves, but could be related to the connected device or your environment. Bluetooth signals can be affected by obstacles like walls, appliances, Wi-Fi interference, and more. To ensure a stable connection, try to minimize such obstructions.\n\nTo resolve the issue, follow these troubleshooting steps:\n\n1. Fully charge and reset your headphones\n\n2. Check the performance by listening to downloaded music or videos to avoid potential streaming issues.\n\n3. Test the headphones with another Bluetooth device in a different location to see if the issue persists."
+          }
+        },
+        "bluetooth_connection_ym9WVd": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "Does QCY Crossky C30 use bone conduction?",
+            "answer": "No, QCY Crossky C30 uses air conduction."
+          }
+        },
+        "bluetooth_connection_a4EWDQ": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "Can the left and right ear clips be paired with two different devices separately?",
+            "answer": "No, they cannot. The ear clips can be connected to two devices at the same time using Dual Connection, but they can only play audio from one device at a time."
+          }
+        },
+        "bluetooth_connection_XYw7Uy": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "Can the left and right ear clips be used separately?",
+            "answer": "Yes, they can be used directly upon being taken out of the case, including when only removing a single earbud."
+          }
+        },
+        "app_control_3wH3wR": {
+          "type": "app-control",
+          "settings": {
+            "question": "Why does the QCY app ask for location access?",
+            "answer": "The app itself doesn’t normally need location access. However, when Bluetooth Low Energy (BLE) is used to find your earbuds, Android requires location permission.\nIf you prefer not to share your location, close the app and try pairing again."
+          }
+        },
+        "app_control_UEgHWR": {
+          "type": "app-control",
+          "settings": {
+            "question": "What should I do if my earbuds are not found on the QCY App?",
+            "answer": "1. Pair the earbuds with your phone.\n2. Open the QCY app, scroll to the bottom, and click \"\"Add Devices.\"\"\n3. If \"\"H3 Pro\"\" pops up, select it to connect.\n4. If not, click \"\"Set Up Manually\"\" and choose \"\"QCY Crossky C30\"\" from the list to connect."
+          }
+        },
+        "sound_anc_zDGhRx": {
+          "type": "sound-anc",
+          "settings": {
+            "question": "What can I do if the volume is low when connecting to my phone?",
+            "answer": "Try to re-pair your headphones: Clear the pairing records on your phone, then re-pair the earbuds to your device."
+          }
+        },
+        "sound_anc_RJkg6d": {
+          "type": "sound-anc",
+          "settings": {
+            "question": "Why can't the person on the other end of the call hear me, or why is my voice unclear?",
+            "answer": "We recommend trying the following steps:\n\n\n- Verify that the audio output device on your phone is set to \"QCY Crossky C30\"\n\n- If you're making the call through an app, try making a direct call using your phone's regular calling feature to check if the issue persists.\n\n- Test your earbuds with a different Bluetooth device in a different environment to see if the problem improves."
+          }
+        },
+        "sound_anc_UbgFBN": {
+          "type": "sound-anc",
+          "settings": {
+            "question": "What can I do if the headphones have poor sound quality?",
+            "answer": "You can try the following troubleshooting steps:\n\n- Check the audio source: Test different types of music and make sure the audio source is clear and free of distortion or noise.\n\n- Customize the EQ settings: Use the QCY app to try different EQ modes or customize the sound profile to suit your preferences."
+          }
+        },
+        "care_others_yjqKTm": {
+          "type": "care-others",
+          "settings": {
+            "question": "How do I clean Crossky C30?",
+            "answer": "You can use an alcohol pad or a regular wet wipe to gently clean the surface. Please do not soak them in water."
+          }
+        },
+        "battery_charging_8KYDcx": {
+          "type": "battery-charging",
+          "settings": {
+            "question": "What should I do if Crossky C30 ear clips or charging case charges slowly or does not charge?",
+            "answer": "1. Use a dry cloth or cotton swab with a bit of rubbing alcohol to clean the charging pins in the charging case and on the earbuds to ensure a better connection.\n2. Charge your charging case with a different charging cable and wall charger, and make sure the charging case has enough power."
+          }
+        },
+        "battery_charging_YeUKyy": {
+          "type": "battery-charging",
+          "settings": {
+            "question": "Why the battery levels of the left and right ear clips are inconsistent?",
+            "answer": "Due to different usage habits and varying battery health between the left and right ears, it is normal for there to be some difference in battery consumption between the two earbuds during use."
+          }
+        },
+        "bluetooth_connection_yVJ7QA": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "How can I enable multipoint connection?",
+            "answer": "To connect two devices:\nStep 1. Pair the headphones with device A.\nStep 2. Disable Bluetooth on device A, and the headphones will enter pairing mode.\nStep 3. Pair the headphone with device B.\nStep 3. Re-enable Bluetooth on device A and reconnect to the headphones.\n\nAfter this initial setup, the headphones will automatically connect to both devices next time."
+          }
+        }
+      },
+      "block_order": [
+        "bluetooth_connection_wnjiJL",
+        "bluetooth_connection_PNxXbU",
+        "bluetooth_connection_ym9WVd",
+        "bluetooth_connection_a4EWDQ",
+        "bluetooth_connection_XYw7Uy",
+        "app_control_3wH3wR",
+        "app_control_UEgHWR",
+        "sound_anc_zDGhRx",
+        "sound_anc_RJkg6d",
+        "sound_anc_UbgFBN",
+        "care_others_yjqKTm",
+        "battery_charging_8KYDcx",
+        "battery_charging_YeUKyy",
+        "bluetooth_connection_yVJ7QA"
+      ],
+      "settings": {
+        "title": "FAQ"
+      }
+    },
+    "manuals-support": {
+      "type": "manuals-support",
+      "blocks": {
+        "manual_12345": {
+          "type": "manual",
+          "settings": {
+            "title": "QCY MeloBuds N70",
+            "manual_url": "https://cdn.shopify.com/s/files/1/0639/3492/2809/files/HT18_-20250819.pdf?v=1755830753"
+          }
+        }
+      },
+      "block_order": [
+        "manual_12345"
+      ],
+      "settings": {
+        "title": "Manuals"
+      }
+    },
+    "more-help": {
+      "type": "more-help",
+      "settings": {
+        "title": "Still Need Help?",
+        "icon_1": "shopify://shop_images/1_6ae01342-29d9-466b-a884-f3e54bc4b04e.png",
+        "icon_2": "shopify://shop_images/2_13c56919-3d59-4a06-a552-3824ae5ea47b.png",
+        "icon_3": "shopify://shop_images/3_58022390-5f9e-4177-8125-651a16075847.png",
+        "icon_4": "shopify://shop_images/4_a0949a89-fc4a-4113-a381-ac8515de3bb4.png",
+        "icon_5": "shopify://shop_images/5.png",
+        "icon_6": "shopify://shop_images/6.png",
+        "tel_1": "+1(917)807-6754",
+        "email_1": "service@qcyearphone.com",
+        "email_2": "rice@qcyearphone.com",
+        "email_3": "pr@qcyearphone.com"
+      }
+    }
+  },
+  "order": [
+    "support-search",
+    "support-detail",
+    "support-video",
+    "faq-detailed",
+    "manuals-support",
+    "more-help"
+  ]
+}

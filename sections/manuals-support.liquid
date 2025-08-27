@@ -1,0 +1,58 @@
+<section class="manuals" data-anchor="manuals">
+    <div class="page-width section-content">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12 ms-auto">
+                <div class="row">
+
+                    <div class="col-12 text-center">
+                        <h2 class="title">
+                            {{ section.settings.title }}
+                        </h2>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="manuals">
+                            {% for block in section.blocks %}
+                                <a href="{{ block.settings.manual_url }}" target="_blank">
+                                    {{ block.settings.title }} <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/download.png?v=1730775174">
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Documents & Drivers",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "manual",
+            "name": "Manual",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "url",
+                    "id": "manual_url",
+                    "label": "URL"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,288 @@
+{% stylesheet %}
+    .slider-product-section{
+        background-color:#f9f9f9;
+        padding:80px 0px;
+        height:250vh;
+    }
+    .slider-product-section .inner-section{
+        overflow:hidden;
+        position: sticky;
+        top: 25%;
+    }
+    .product-slider-container .product-slide-item{
+        width:fit-content;
+        margin-right:10%;
+    }
+    .product-slide-image-container{
+        padding-left:80px;
+        position:relative;
+        width:fit-content;
+        display: flex;
+        align-items: center;
+        gap:50px;
+    }
+    .product-featured-slide-image{
+        position: absolute;
+        top: 30%;
+        left: 0;
+        width: 200px;
+        background: #fff;
+        border-radius: 50%;
+        padding: 50px;
+    }
+    .product-slide-content{
+        display:flex;
+        gap:5%;
+        align-items: center;
+    }
+    .product-slide-image{
+        width:550px;
+        height:100%;
+    }
+    .slide-content{
+        display:flex;
+        flex-direction:column;
+        gap:1rem;
+    }
+    .product-explore-btn{
+        display:flex;
+        gap:1rem;
+        border:1px solid #FF6600;
+        border-radius:32px;
+        background: transparent;
+        padding:1.5rem 3rem;
+        transition: all 0.3s ease;
+        width:fit-content;
+    }
+    .product-explore-btn:hover h5{
+        color:#fff !important;
+    }
+    .product-explore-btn:hover {
+        background: #FF6600;
+    }
+    .product-explore-btn:hover svg path{
+        fill:#fff;
+    }
+    .product-explore-btn svg{
+        transform: rotate(315deg);
+        width: 20px;
+        height: 20px;
+    }
+    .slider-product-section .product-slider-swiper-pagination{
+        display:none;
+    }
+
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+        .slider-product-section{
+            padding:50px 0px;
+        }
+        .product-slide-image-container{
+            padding-left:0px;
+            flex-direction: column-reverse;
+            gap:30px;
+        }
+        .product-slide-image-container .slide-content h2{
+            text-align:center;
+            font-size:45px;
+        }
+        .product-slide-image-container .slide-content{
+            align-items: center;
+        }
+        .product-slide-image-container .product-explore-btn svg{
+            display:none;
+        }
+        .product-featured-slide-image{
+            display:none;
+        }
+        .product-slide-image{
+            width:100%;
+        }
+        .product-slider-container .product-slide-item{
+            width:100%;
+            margin-right:0;
+        }
+        .slider-product-section .product-slider-swiper-pagination{
+            display:flex;
+        }
+        .slider-product-section .inner-section{
+          top:10%;
+        }
+        .product-explore-btn{
+          padding:1rem 2.5rem;
+        }
+    }
+
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) {
+        .slider-product-section{
+            padding:50px 0px;
+        } 
+        .product-slide-image-container{
+            padding-left:0px;
+            flex-direction: column-reverse;
+            gap:30px;
+        }
+        .product-slide-image-container .slide-content h2{
+            text-align:center;
+            font-size:45px;
+        }
+        .product-slide-image-container .slide-content{
+            align-items: center;
+        }
+        .product-slide-image-container .product-explore-btn svg{
+            display:none;
+        }
+        .product-featured-slide-image{
+            display:none;
+        }
+        .product-slide-image{
+            width:100%;
+        }
+        .product-slider-container .product-slide-item{
+            width:100%;
+            margin-right:50px;
+        }
+        .slider-product-section .product-slider-swiper-pagination{
+            display:flex;
+        }
+        .slider-product-section .inner-section{
+          top:15%;
+        }
+        .product-explore-btn{
+          padding:1rem 2.5rem;
+        }
+    }
+
+  /* TABLETS  */ 
+  @media only screen and (min-width: 768px) {
+    .slider-product-section .inner-section{
+      top:9%;
+    }
+  }
+   @media only screen and (min-width: 800px) {
+    .slider-product-section .inner-section{
+      top:9%;
+    }
+  }
+  @media (min-width: 1024px) and (orientation: portrait) {
+    .slider-product-section .inner-section{
+      top:9%;
+    }
+  }
+  
+   /* COMPUTERS */
+  @media (min-width: 1024px) and (orientation: landscape) {
+    .slider-product-section .inner-section{
+      top:9%;
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    .slider-product-section .inner-section{
+      top:9%;
+    }
+  }
+  @media only screen and (min-width: 1366px) {
+    .slider-product-section .inner-section{
+      top:9%;
+    }
+  }
+  @media only screen and (min-width: 1440px) {
+    .slider-product-section .inner-section{
+      top:9%;
+    }
+  }
+  @media only screen and (min-width: 1536px) {
+    .slider-product-section .inner-section{
+      top:9%;
+    }
+  }
+  @media only screen and (min-width: 1600px) {
+    .slider-product-section .inner-section{
+      top:15%;
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+    .slider-product-section .inner-section{
+      top:25%;
+    }
+  }
+
+
+{% endstylesheet %}
+<div class="inner-section">
+  <div class="page-width">
+      <div class="product-slider-container">
+          <div class="swiper-wrapper">
+  
+              {% for block in section.blocks %}
+                  <div class="product-slide-item swiper-slide">
+                      <div class="product-slide-content">
+                          <div class="product-slide-image-container">
+                              <img loading="lazy" class="product-slide-image" src="{{ block.settings.bg_image | img_url: 'master' }}" alt="{{ block.settings.bg_image.alt | escape }}">
+                              <img loading="lazy" class="product-featured-slide-image" src="{{ block.settings.custom_featured_image | img_url: 'master' }}" alt="{{ block.settings.custom_featured_image.alt | escape }}">
+                              <div class="slide-content">
+                                  <h2 class="heading text-xlg f-f-extra-bold mx-0">{{ block.settings.Heading }}</h2>
+                                  <a href="" class="product-explore-btn">
+                                      <h5 class="f-f-regular mx-0 main-color">
+                                          EXPLORE
+                                      </h5>
+                                      <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="512.000000pt" height="397.000000pt" viewBox="0 0 512.000000 397.000000" preserveAspectRatio="xMidYMid meet">
+                                          <g transform="translate(0.000000,397.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                                              <path d="M3165 3959 c-127 -30 -198 -178 -139 -291 10 -20 327 -359 703 -755 l684 -718 -2140 -5 -2139 -5 -41 -27 c-50 -33 -93 -113 -93 -173 0 -59 42 -137 92 -171 l41 -29 2149 -3 c1249 -1 2148 -6 2146 -11 -2 -5 -317 -334 -700 -730 -653 -676 -698 -725 -713 -773 -50 -170 112 -317 275 -252 32 13 224 206 916 923 482 498 883 919 891 936 9 16 18 59 20 95 4 55 1 71 -19 101 -37 59 -1734 1832 -1780 1861 -51 31 -98 39 -153 27z" fill="#FF8832"/>
+                                          </g>
+                                      </svg>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              {% endfor %}
+  
+          </div>
+      </div>
+      <div class="product-slider-swiper-pagination swiper-pagination-long"></div>
+  </div>
+</div>
+{% schema %}
+    {
+      
+        "class": "slider-product-section",
+        "name": "Product Slider",
+        "templates": ["index"],
+        "limit": 1,
+        "blocks": [
+          {
+              "type": "product",
+              "name": "Product",
+              "settings": [
+                  {
+                      "type": "product",
+                      "id": "product",
+                      "label": "Product"
+                  },
+                  {
+                      "type": "image_picker",
+                      "id": "custom_featured_image",
+                      "label": "Custom Featured Image"
+                  },
+                  {
+                      "type": "image_picker",
+                      "id": "bg_image",
+                      "label": "Background Image"
+                  },
+                  {
+                      "type": "text",
+                      "id": "Heading",
+                      "label": "Heading"
+                  }
+              ]
+          }
+        ],
+        "presets" :[{
+            "name" : "Product Slider"
+        }]
+    }
+  {% endschema %} 

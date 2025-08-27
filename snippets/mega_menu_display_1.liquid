@@ -1,0 +1,50 @@
+<div class="mega_menu_display">
+    <div class="d-flex heading col_75 {{ collection.products.size }}">
+        <h4 class="mx-0 f-f-bold">{{ tab_label }}</h4>
+        <div class="selector-more f-f-medium {% if collection.products.size < 5 or collection.products.size == blank %} hide {% endif %}">
+          <span>More</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+              <path d="M0 0h24v24H0V0z" fill="none"/>
+              <path fill="#000" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+          </svg>
+        </div>
+    </div>
+    <div class="collection-container">
+        <div class="col_75" >
+          <div class="container-list">
+            {% for product in collection.products limit: 8 %}
+              <div class="collection-product-item">
+              <a href="{{ product.url }}" class="container-item scroll-trigger animate--slide-in " style="--animation-order: {{ forloop.index }};">
+                  <img loading="lazy" class="fet-product-image" 
+                  {% if product.metafields.custom.custom_featured_product_image != blank %}
+                      src="{{ product.metafields.custom.custom_featured_product_image | img_url: '2048x2048' }}"
+                  {% else %}
+                      {% if product.selected_or_first_available_variant.featured_image %}
+                          src="{{ product.selected_or_first_available_variant.featured_image | img_url: '2048x2048' }}"
+                      {% else %}
+                          src="{{ product.featured_image | img_url: '2048x2048' }}"
+                      {% endif %}
+                  {% endif %}
+                  >
+                </a>
+                <h5 class="f-f-medium mx-0 center">
+                  {% if product.metafields.custom.custom_title != blank %}
+                    {{ product.metafields.custom.custom_title }}
+                  {% else %}
+                    {{ product.title }}
+                  {% endif %}
+                </h5>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col_25">
+        {% if featured_image != blank %}
+          <a href="{{ featured_url }}" class="featured-image-container">
+            <img loading="lazy" src="{{  featured_image | img_url: 'master'}}" class="featured_img_meg">
+            <h3 class="f-f-medium mx-0 white-f">{{ featured_label }}</h3>
+          </a>
+        {% endif %}
+        </div>
+    </div>
+</div>

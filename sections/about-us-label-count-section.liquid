@@ -1,0 +1,191 @@
+{% stylesheet %}
+  .about-us-count-label-section{
+    padding:100px 0px;
+  }
+  .about-us-count-label-section .count-label-list-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    justify-items: center;
+  }
+  .about-us-count-label-section .count-label-item{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    position:relative;
+  }
+  .about-us-count-label-section .count-label-item h2{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+  }
+  .about-us-count-label-section .count-label-item:after{
+     content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: #FFF0E4;
+    position: absolute;
+    top: 0;
+    right: -41%;
+  }
+  .about-us-count-label-section .count-label-item:last-child:after{
+    display:none;
+  }
+  .about-us-count-label-section .count-label-item .description{
+    color:#ACACAC;
+  }
+  
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .about-us-count-label-section{
+      padding:50px 0px;
+    }
+    .about-us-count-label-section .count-label-list-container{
+      grid-template-columns: 1fr;
+      row-gap:30px;
+    }
+    .about-us-count-label-section .count-label-item{
+      padding:0px 40px;
+    }
+    .about-us-count-label-section .count-label-item:after{
+      display:none;
+    }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+    .about-us-count-label-section{
+      padding:50px 0px;
+    }
+    .about-us-count-label-section .count-label-list-container{
+      grid-template-columns: 1fr;
+      row-gap:30px;
+    }
+    .about-us-count-label-section .count-label-item{
+      padding:0px 40px;
+    }
+    .about-us-count-label-section .count-label-item:after{
+      display:none;
+    }
+  }
+
+{% endstylesheet %}
+<div class="page-width">
+    <div class="count-label-list-container">
+      {% for block in section.blocks %}
+        <div class="count-label-item col_55">
+            <h2 class="text-xlg mx-0 main-color f-f-extra-bold center">
+              {{ block.settings.heading }} 
+              <div class="mx-0 odometer-block" data-value="{{ block.settings.special_char }}">
+                  <div class="heading mx-0 center odometer-value"></div>
+              </div>  
+              {{ block.settings.heading_1 }} 
+            </h2>
+            <h5 class="mx-0 center description text-cap">{{ block.settings.description | strip_html }} </h5>
+        </div>
+      {% endfor %}
+      {% comment %}
+        <div class="count-label-item col_55">
+            <h2 class="text-xlg mx-0 main-color f-f-extra-bold center">
+              <div class="mx-0 odometer-block" data-value="30">
+                  <div class="heading mx-0 center odometer-value"></div>
+              </div>
+              +
+            </h2>
+            <h5 class="mx-0 center description text-cap">countries and regions covered</h5>
+        </div>
+        <div class="count-label-item col_55">
+            <h2 class="text-xlg mx-0 main-color f-f-extra-bold center">
+              <div class="mx-0 odometer-block" data-value="30">
+                  <div class="heading mx-0 center odometer-value"></div>
+              </div>
+              M+
+            </h2>
+            <h5 class="mx-0 center description text-cap">Units Annual Shipment</h5>
+        </div>
+        {% endcomment %}
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/odometer.min.js" integrity="sha512-v3fZyWIk7kh9yGNQZf1SnSjIxjAKsYbg6UQ+B+QxAZqJQLrN3jMjrdNwcxV6tis6S0s1xyVDZrDz9UoRLfRpWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  
+   const createOdometer = (el, value) => {
+    const odometer = new Odometer({
+        el: el,
+        value: 0,
+    });
+
+    let hasRun = false;
+
+    const options = {
+        threshold: [0, 0.9],
+    };
+
+    const callback = (entries, observer) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+        if (!hasRun) {
+            odometer.update(value);
+            hasRun = true;
+        }
+        }
+    });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(el);
+};
+
+// Find all odometer blocks
+const odometerBlocks = document.querySelectorAll('.odometer-block');
+
+// Initialize odometers for each block
+odometerBlocks.forEach((block) => {
+    const odometerValue = block.getAttribute('data-value');
+    const odometerElement = block.querySelector('.odometer-value');
+    createOdometer(odometerElement, odometerValue);
+});
+</script>
+{% schema %}
+    {
+        "class": "values-scroll-section about-us-count-label-section section-scroll",
+        "name": "About Us Label Count",
+        "templates": ["page"],
+        "limit": 1,  
+        "max_blocks": 3,
+        "blocks": [
+          {
+              "type": "icon",
+              "name": "Icon",
+              "settings": [
+                  {
+                      "type": "text",
+                      "id": "heading",
+                      "label": "Before heading"
+                  },
+                  {
+                      "type": "text",
+                      "id": "special_char",
+                      "label": "Special Character"
+                  },
+                  {
+                      "type": "text",
+                      "id": "heading_1",
+                      "label": "after Heading"
+                  },
+                  {
+                      "type": "richtext",
+                      "id": "description",
+                      "label": "Description"
+                  }
+              ]
+          }
+        ],
+        "presets" :[{
+            "name" : "About Us Label Count"
+        }]
+    }
+{% endschema %} 

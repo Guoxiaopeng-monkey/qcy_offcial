@@ -1,0 +1,293 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "support-search": {
+      "type": "support-search",
+      "blocks": {
+        "search_qwert1": {
+          "type": "search",
+          "settings": {
+            "search_item": "H3",
+            "search_url": "https://us.qcy.com/pages/support-center-h3"
+          }
+        },
+        "search_qwert2": {
+          "type": "search",
+          "settings": {
+            "search_item": "MeloBuds Neo",
+            "search_url": "https://us.qcy.com/pages/support-center-melobuds-neo"
+          }
+        },
+        "search_qwert3": {
+          "type": "search",
+          "settings": {
+            "search_item": "AilyBuds Pro+",
+            "search_url": "https://us.qcy.com/pages/support-center-ailybuds-pro-plus"
+          }
+        },
+        "search_qwert4": {
+          "type": "search",
+          "settings": {
+            "search_item": "Melobuds ANC",
+            "search_url": "https://us.qcy.com/pages/support-center-melobuds-anc"
+          }
+        },
+        "search_qwert5": {
+          "type": "search",
+          "settings": {
+            "search_item": "T13",
+            "search_url": "https://us.qcy.com/pages/support-center-t13"
+          }
+        }
+      },
+      "block_order": [
+        "search_qwert1",
+        "search_qwert2",
+        "search_qwert3",
+        "search_qwert4",
+        "search_qwert5"
+      ],
+      "settings": {
+        "title": "Support Center",
+        "background_desktop": "shopify://shop_images/39993.png",
+        "background_mobile": "shopify://shop_images/39993_1.png"
+      }
+    },
+    "support-detail": {
+      "type": "support-detail",
+      "settings": {
+        "support_url": "https://us.qcy.com/pages/support-center-1"
+      }
+    },
+    "support-video": {
+      "type": "support-video",
+      "blocks": {
+        "video_1234": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/GT.mp4",
+            "title": "GT"
+          }
+        }
+      },
+      "block_order": [
+        "video_1234"
+      ],
+      "settings": {
+        "title": "Support Video"
+      }
+    },
+    "faq-detailed": {
+      "type": "faq-detailed",
+      "blocks": {
+        "wearing_t7He74": {
+          "type": "wearing",
+          "settings": {
+            "question": "Can I change the smartwatch strap myself?",
+            "answer": "Yes, it's very easy to change the strap on your own!\nMost smartwatch straps are designed to be interchangeable, letting you keep your watch clean and refreshed over time. You can easily switch to different colors and styles to match any outfit or occasion."
+          }
+        },
+        "wearing_cTYJYg": {
+          "type": "wearing",
+          "settings": {
+            "question": "What material is the watch band made of?",
+            "answer": "The band is made from food-grade silicone to minimize the risk of allergies. For the best fit, leave about a finger's width of space between the band and your wrist to allow for slight swelling after exercise or changes in temperature."
+          }
+        },
+        "battery_charging_KXnq7M": {
+          "type": "battery-charging",
+          "settings": {
+            "question": "How do I charge my smartwatch?",
+            "answer": "Use the included cable to connect the watch to a phone charger."
+          }
+        },
+        "battery_charging_UCU7iw": {
+          "type": "battery-charging",
+          "settings": {
+            "question": "What should I do if the watch won’t charge or turn on?",
+            "answer": "1. Regularly clean the charging contacts on both the watch and the charging cable using a cotton swab with a small amount of isopropyl alcohol.\n2. Fully charge the watch and restart it. If the watch hasn’t been used for a while, it may need a full charge first due to over-discharge protection."
+          }
+        },
+        "battery_charging_rredti": {
+          "type": "battery-charging",
+          "settings": {
+            "question": "Why is my watch battery draining so quickly?",
+            "answer": "Frequent screen use, notifications, and active tracking features shorten battery life. Consider disabling any continuous monitoring features you don’t need."
+          }
+        },
+        "battery_charging_3xjmRp": {
+          "type": "battery-charging",
+          "settings": {
+            "question": "What should I do if my watch stops working?",
+            "answer": "1. Charge it for two hours.\n2. Try a factory reset.\n3. Let it rest overnight and try again.\n4. Contact the seller if it remains unresponsive."
+          }
+        },
+        "software_firmware_FmWpHB": {
+          "type": "software-firmware",
+          "settings": {
+            "question": "What should I do if data won’t sync to my watch?",
+            "answer": "Try these steps:\n1. Reset your watch, remove it from the app, and pair it again.\n2. Make sure your phone is connected to the watch via Bluetooth.\n3. Uninstall and reinstall the app.\n4. Restart your phone.\n5. Ensure the app is allowed to run in the background, as some phones stop apps to conserve battery, which can disconnect your watch. Check your phone’s settings to prevent this."
+          }
+        },
+        "software_firmware_YNKqU4": {
+          "type": "software-firmware",
+          "settings": {
+            "question": "I can’t update my watch software. What can I try?",
+            "answer": "If you encounter issues while updating your watch, try these steps:\n1. Keep your phone and watch close, within 10 meters. Reconnect if they disconnect.\n2. Ensure a strong WiFi or mobile data connection.\n3. Make sure your watch battery is above 40% before upgrading."
+          }
+        },
+        "software_firmware_Jk3pbV": {
+          "type": "software-firmware",
+          "settings": {
+            "question": "My app isn’t working with my watch. What can I do?",
+            "answer": "1. Ensure Bluetooth is enabled, and your phone and watch are paired.\n2. Check your app store for updates to the smartwatch app.\n3. Restart your phone.\n4. Re-pair your watch with the app.\n5. Allow the app to run in the background to maintain connection; consult your phone’s manual to adjust battery settings if needed."
+          }
+        },
+        "software_firmware_XUmVJc": {
+          "type": "software-firmware",
+          "settings": {
+            "question": "How do I connect my watch to my phone?",
+            "answer": "1. Download the QCY app and enable necessary permissions.\n2. Turn on the watch, scan the displayed QR code with the app.\n3. Slide right to select your preferred language."
+          }
+        },
+        "bluetooth_connection_fcTNVA": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "Do I need to keep Bluetooth on while wearing my watch?",
+            "answer": "1. No, for step counting, sleep tracking, and alarm clock functions, you don’t need to keep the watch connected at all times. You can sync your watch with your phone after exercise if you only need it for activity tracking.\n2. For call alerts, message notifications, and \"Find Phone\" functionality, you need to keep your phone’s Bluetooth on and maintain the connection with the watch."
+          }
+        },
+        "bluetooth_connection_NVgbJm": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "The watch isn’t receiving alerts, messages, or calls. What should I do?",
+            "answer": "1. Make sure the smart reminder and call reminder options are enabled in the app, and sync to your watch.\n2. Ensure your phone is paired with the watch via Bluetooth (see “Syncing Data” if needed).\n3. Keep your watch connected to Bluetooth.\n4. Ensure notifications are enabled in your phone’s settings."
+          }
+        },
+        "bluetooth_connection_kiYBd4": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "The app can't find my watch. What should I try?",
+            "answer": "1. Confirm the watch is updated to the latest version.\n2. Close any background apps, restart Bluetooth, and try connecting again.\n3. Ensure your phone is compatible with your smartwatch"
+          }
+        },
+        "bluetooth_connection_FJXWFP": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "Bluetooth connection keeps dropping. How can I fix this?",
+            "answer": "1. Stay within 10 meters of your phone; greater distances weaken the Bluetooth signal.\nBarriers like the human body or metal jewelry can interfere with the connection.\nCheck if your phone’s Bluetooth is functioning correctly."
+          }
+        },
+        "watch_application_GaEHFb": {
+          "type": "watch-application",
+          "settings": {
+            "question": "Why can’t my watch monitor sleep data?",
+            "answer": "Make sure your watch is fully charged, fitted snugly, and worn overnight. some smartwatches require at least three hours of sleep to record accurate data."
+          }
+        },
+        "watch_application_twBtNK": {
+          "type": "watch-application",
+          "settings": {
+            "question": "How do I set up message notifications on my watch?",
+            "answer": "1. Pair the watch with your phone.\n2. Enable message notifications in the app.\n3. Allow permissions for the app on your phone.\n4. Select which apps you want to receive notifications from."
+          }
+        },
+        "watch_application_MraCWH": {
+          "type": "watch-application",
+          "settings": {
+            "question": "Why aren’t my steps accurate?",
+            "answer": "1. Input your height and weight in the app to improve accuracy.\n2. Try resetting the watch for better calibration."
+          }
+        },
+        "watch_application_RhWMYD": {
+          "type": "watch-application",
+          "settings": {
+            "question": "Why won’t my display activate when I raise my wrist?",
+            "answer": "1. Try different angles or speeds when raising your wrist.\n2. Ensure the \"DO NOT Disturb\" mode is off.\nSwing the watch to activate the sensor, or reset to factory settings if issues continue.\nContact the seller if the problem persists."
+          }
+        },
+        "watch_application_AQDUFM": {
+          "type": "watch-application",
+          "settings": {
+            "question": "Can I use the smartwatch without a smartphone?",
+            "answer": "Yes, the watch functions independently for time, calories burned, steps, distance, etc. However, you won’t be able to access history or notifications without connecting to the QCY App."
+          }
+        }
+      },
+      "block_order": [
+        "wearing_t7He74",
+        "wearing_cTYJYg",
+        "battery_charging_KXnq7M",
+        "battery_charging_UCU7iw",
+        "battery_charging_rredti",
+        "battery_charging_3xjmRp",
+        "software_firmware_FmWpHB",
+        "software_firmware_YNKqU4",
+        "software_firmware_Jk3pbV",
+        "software_firmware_XUmVJc",
+        "bluetooth_connection_fcTNVA",
+        "bluetooth_connection_NVgbJm",
+        "bluetooth_connection_kiYBd4",
+        "bluetooth_connection_FJXWFP",
+        "watch_application_GaEHFb",
+        "watch_application_twBtNK",
+        "watch_application_MraCWH",
+        "watch_application_RhWMYD",
+        "watch_application_AQDUFM"
+      ],
+      "settings": {
+        "title": "FAQ"
+      }
+    },
+    "manuals-support": {
+      "type": "manuals-support",
+      "blocks": {
+        "manual_12345": {
+          "type": "manual",
+          "settings": {
+            "title": "GT manual",
+            "manual_url": "https://cdn.shopify.com/s/files/1/0639/3492/2809/files/GT_Chinese_and_English_manual.pdf?v=1731474652"
+          }
+        }
+      },
+      "block_order": [
+        "manual_12345"
+      ],
+      "settings": {
+        "title": "Manuals"
+      }
+    },
+    "more-help": {
+      "type": "more-help",
+      "settings": {
+        "title": "Still Need Help?",
+        "icon_1": "shopify://shop_images/1_6ae01342-29d9-466b-a884-f3e54bc4b04e.png",
+        "icon_2": "shopify://shop_images/2_13c56919-3d59-4a06-a552-3824ae5ea47b.png",
+        "icon_3": "shopify://shop_images/3_58022390-5f9e-4177-8125-651a16075847.png",
+        "icon_4": "shopify://shop_images/4_a0949a89-fc4a-4113-a381-ac8515de3bb4.png",
+        "icon_5": "shopify://shop_images/5.png",
+        "icon_6": "shopify://shop_images/6.png",
+        "tel_1": "+(917) 807-6754",
+        "email_1": "service@qcyearphone.com",
+        "email_2": "rice@qcyearphone.com",
+        "email_3": "pr@qcyearphone.com"
+      }
+    }
+  },
+  "order": [
+    "support-search",
+    "support-detail",
+    "support-video",
+    "faq-detailed",
+    "manuals-support",
+    "more-help"
+  ]
+}

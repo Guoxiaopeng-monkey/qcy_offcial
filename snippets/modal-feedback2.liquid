@@ -1,0 +1,512 @@
+<style>
+  .contact-us-information-section{
+    padding:60px 0px 100px;
+  }
+  .contact-us-information-container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap:60px;
+    column-gap: 15%;
+    padding-top:50px;
+  }
+  .information-item{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+  }
+  .information-item a,
+  .information-item .submit-btn{
+    color:#4795E9;
+  }
+  .information-item .submit-btn{
+    cursor:pointer;
+  }
+
+
+
+  /* MODAL */
+  
+  .custom-modal-section{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    z-index: 100;
+    opacity: 0;
+    visibility:hidden;
+    transition: opacity 0.3s;
+  }
+  .custom-modal-section.open{
+    visibility:visible;
+    opacity:1;
+  }
+  .custom-modal-section .overlay{
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+  }
+  .custom-model-inner-section{
+    height:100%;
+    display:flex;
+  }
+  .contact-us-information-section .custom-modal-container{
+    background-color: #fff;
+    max-width: 650px;
+    border-radius: 4px;
+    padding: 30px 40px;
+    border: 2rem;
+    transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.6s;
+    position: relative;
+    margin: auto;
+    height:fit-content;
+    z-index:3;
+  }
+  .custom-modal-container.form-success .feedback-info-form{
+      display:none;
+  }
+  .custom-modal-section.open .custom-modal-container{
+    opacity:1;
+    transform: translateY(0);
+  }
+  .custom-info-form::-webkit-scrollbar {
+    width: 0px;
+  }
+  .custom-info-form::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  .custom-info-form::-webkit-scrollbar-thumb {
+    background: #F89320;
+  }
+  .custom-info-form::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  
+  .contact-us-information-section .custom-modal-container .custom-close{
+    position:absolute;
+    top:10px;
+    right:12px;
+    border-radius: 4px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color:#fff;
+  }
+  .custom-modal-container .custom-close svg{
+    width:14px;
+  }
+  .custom-modal-container .custom-close svg path{
+    stroke: #aaa;
+    stroke-width: 1px;
+  }
+  body.no-scroll{
+    overflow:hidden;
+  }
+
+  
+  .modal-heading{
+    padding-bottom:1rem;
+  }
+
+  
+  .feedback-info-form{
+    padding-top:20px;
+  }
+  .custom-input-box{
+    display:flex;
+    gap:10px;
+    padding-bottom:2.5rem;
+  }
+  .custom-input-box.bottom-input{
+    gap:10px;
+  }
+  .input-box-item{
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+  }
+  .custom-input-box select .placeholder{
+    color:#A8A8A8;
+  }
+  .custom-input-box select,
+  .custom-input-box input,
+  .custom-input-box textarea{
+    border: 1px solid #D7D7D7;
+    padding: 1.5rem 15px;
+    border-radius: 4px;
+    font-family: 'Mulish-Regular';
+    -webkit-appearance: none;
+    color: #A8A8A8;
+    width:100%;
+    transition: all 0.3s ease;
+  }
+  .hover-input:hover select,
+  .hover-input:hover input,
+  .hover-input:hover textarea{
+    border-color:#FF8832;
+    box-shadow: #ff88321c 0px 8px 24px;
+  }
+  .custom-input-box .input-name,
+  .custom-input-box .input-email{
+    position:relative;
+  }
+  .custom-input-box .input-name svg,
+  .custom-input-box .input-email svg{
+    position:absolute;
+    bottom: 20%;
+    left: 10px;
+    left: 10px;
+    width: 30px;
+    height: 28px;
+  }
+  .custom-input-box .input-name input,
+  .custom-input-box .input-email input{
+    padding-left:45px;
+  }
+  .btn-submit-container{
+    display:flex;
+    padding-top:10px;
+  }
+  .btn-submit-container button{
+    background-color: #FF8832;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    margin: auto;
+    padding:1.5rem 0px;
+    cursor:pointer;
+  }
+  .two-column{
+    display:flex;
+    gap:10px;
+  }
+
+  .select-tag-option{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: white;
+    top: 70%;
+    padding: 10px 0px;
+    z-index: 1;
+    width: 100%;
+    max-height: 350px; /* Set maximum height instead of fixed height */
+    overflow-y: auto; /* Enable scrolling when content exceeds max height */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    opacity:0;
+    visibility:hidden;
+  }
+  .select-tag-option::-webkit-scrollbar {
+    width: 5px;
+  }
+  .select-tag-option::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  .select-tag-option::-webkit-scrollbar-thumb {
+    background: #F89320;
+  }
+  .select-tag-option::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  .select-tag-option p{
+    padding:5px 10px;
+    transition: all 0.3s ease;
+    cursor:pointer;
+  }
+  .select-tag-option p:hover{
+    background-color:#aaaaaa26;
+  }
+  .custom-input-box.select-tag{
+    position:relative;
+  }
+  .custom-input-box input:focus + .select-tag-option{
+    opacity:1;
+    visibility:visible;
+  }
+  .input-form-fields h5{
+    padding-bottom:1rem;
+  }
+  .input-close {
+     width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 1rem;
+    top: 20%;
+    background-color: #ff883233;
+    border-radius: 50px;
+    display: flex;
+    padding: 7px;
+    visibility:hidden;
+  }
+  .custom-input-box input:not([value=""]) + .input-close {
+    visibility:visible;
+  }
+  /* ENDMODAL */
+  
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 30px;
+      grid-template-columns:100%;
+    }
+    .feedback-modal-container{
+        padding: 30px 20px;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+    }
+    .two-column{
+      flex-direction:column;
+    }
+    .custom-input-box{
+      flex-direction:column;
+    }
+    .contact-us-information-section .custom-modal-container{
+      padding:40px 20px 20px;
+    }
+    .select-tag-option{
+      max-height: 200px; /* Set maximum height instead of fixed height */
+    }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 30px;
+    }
+    .feedback-modal-container{
+        padding: 30px 20px;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+    }
+    .custom-input-box{
+      flex-direction:column;
+    }
+    .contact-us-information-section .custom-modal-container{
+      padding:40px 20px 20px;
+    }
+    .select-tag-option{
+      max-height: 200px; /* Set maximum height instead of fixed height */
+    }
+  }
+  /* TABLETS  */ 
+  @media only screen and (min-width: 768px) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 30px;
+    }
+  }
+   @media only screen and (min-width: 800px) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 30px;
+    }
+  }
+  @media (min-width: 1024px) and (orientation: portrait) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 30px;
+    }
+  }
+  
+   /* COMPUTERS */
+  @media (min-width: 1024px) and (orientation: landscape) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 30px;
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 40px;
+    }
+  }
+  @media only screen and (min-width: 1366px) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 40px;
+    }
+  }
+  @media only screen and (min-width: 1440px) {
+    .contact-us-information-container{
+      row-gap:50px;
+      column-gap: 50px;
+    }
+  }
+  @media only screen and (min-width: 1536px) {
+    .contact-us-information-container{
+      row-gap:50px;
+      column-gap: 10%;
+    }
+  }
+  @media only screen and (min-width: 1600px) {
+    .contact-us-information-container{
+      row-gap:60px;
+      column-gap: 13%;
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+    .contact-us-information-container{
+      row-gap:60px;
+      column-gap: 15%;
+    }
+  }
+
+</style>
+
+<div class="custom-modal-section">
+        <div class="overlay">
+        </div>
+        <div class="custom-model-inner-section">
+            <div class="custom-modal-container">
+                <span class="custom-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-close" viewBox="0 0 18 17">
+                        <path fill="currentColor" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path>
+                    </svg>
+                </span>
+                <h3 class="mx-0 f-f-regular main-color center modal-heading">Order Status</h3>
+                <p class="mx-0 f-f-Light">We will use your feedback in order to improve our services and elevate the overall customer experience. Thank you for your time. You can also click here to contact with our customer service</p>
+                <div class="feedback-info-form">
+                
+                    {% form 'contact', id: 'order_status' %}
+                        <input type="hidden" name="contact[form]" value="QCY - Contact Us">
+                        <div class="input-form-fields">
+                        
+                                <h5 class="f-f-medium mx-0">1. Which of our products are you currently using?</h5>
+                                <div class="custom-input-box hover-input select-tag col_75">
+                                    <input class="custom-input f-f-bpp p" type="text" placeholder="Select here" name="contact[product_title]">
+                                    <div class="select-tag-option search">
+                                    {% for product in collections.all.products %}
+                                        <p class="mx-0">{{ product.title }}</p>
+                                    {% endfor %}
+                                    </div>
+                                </div>
+                                <h5 class="f-f-medium mx-0"><span class="required-box main-color">*</span>2. What is the topic of your suggestions/comments?</h5>
+                                <div class="two-column">
+                                <div class="custom-input-box hover-input select-tag">
+                                    <input class="custom-input f-f-bpp p" type="text" placeholder="Select here" name="contact[services]" readonly required>
+                                    <div class="select-tag-option">
+                                        <p class="mx-0">Product</p>
+                                        <p class="mx-0">Service</p>
+                                        <p class="mx-0">Employee</p>
+                                        <p class="mx-0">About repair service</p>
+                                        <p class="mx-0">Sales</p>
+                                        <p class="mx-0">Others</p>
+                                    </div>
+                                    <span class="input-close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-close" viewBox="0 0 18 17">
+                                            <path fill="currentColor" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="custom-input-box hover-input select-tag follow-up">
+                                    <input class="custom-input f-f-bpp p" type="text" placeholder="Select here" name="contact[service_type]" readonly required>
+                                    <div class="select-tag-option">
+                                    </div>
+                                </div>
+                                </div>
+                                <h5 class="f-f-medium mx-0">3. Please let us know if you have any suggestions or ideas regarding our products and services.</h5>
+                                <div class="custom-input-box hover-input">
+                                    <textarea rows="4" cols="50" class="col_100 p" name="contact[body]"></textarea>
+                                </div>
+                            
+                                <div class="custom-input-box bottom-input">
+                                    <div class="input-box-item col_30">
+                                        <h5 class="f-f-medium mx-0">Your name</h5>
+                                        <div class="input-name hover-input">
+                                            <input type="text" name="contact[name]" class="col_100 p" required>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+                                                <g transform="translate(-0.067 -0.067)">
+                                                    <g transform="translate(2.647 2.647)">
+                                                        <path fill="#a8a8a8" d="M14.451,25.9A11.451,11.451,0,1,1,25.9,14.451,11.451,11.451,0,0,1,14.451,25.9Zm0-21.141a9.69,9.69,0,1,0,9.69,9.69A9.69,9.69,0,0,0,14.451,4.762Z" transform="translate(-3 -3)" />
+                                                        <path fill="#a8a8a8" d="M15.4,15.809a4.4,4.4,0,1,1,4.4-4.4A4.4,4.4,0,0,1,15.4,15.809Zm0-7.047A2.643,2.643,0,1,0,18.047,11.4,2.643,2.643,0,0,0,15.4,8.762Z" transform="translate(-3.953 -3.477)" />
+                                                        <path fill="#a8a8a8" d="M23.227,23.285A.881.881,0,0,1,22.575,23a10,10,0,0,0-7.355-3.242h-.81A9.927,9.927,0,0,0,7.5,22.545a.881.881,0,0,1-1.216-1.268A11.663,11.663,0,0,1,14.41,18h.81a11.8,11.8,0,0,1,8.65,3.805.881.881,0,0,1-.643,1.48Z" transform="translate(-3.364 -4.787)" />
+                                                    </g>
+                                                    <g transform="translate(0.067 0.067)">
+                                                        <rect fill="none" width="28" height="28" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="input-box-item hover-input col_30">
+                                        <h5 class="f-f-medium mx-0">Phone number</h5>
+                                        <input type="text" name="contact[phone_number]" class="col_100 p" required>
+                                    </div>
+                                    <div class="input-box-item hover-input col_40">
+                                        <h5 class="f-f-medium mx-0">Email address</h5>
+                                        <div class="input-email">
+                                            <input type="text" name="contact[email]" class="col_100 p" required>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26.28" height="26.28" viewBox="0 0 26.28 26.28">
+                                                <g>
+                                                    <g>
+                                                        <g>
+                                                            <path fill="#a8a8a8" d="M6.3,20.257c-4,0-6.3-2.3-6.3-6.3V6.3C0,2.3,2.3,0,6.3,0h10.95c4,0,6.3,2.3,6.3,6.3v7.665c0,4-2.3,6.3-6.3,6.3ZM1.642,6.3v7.665c0,3.132,1.522,4.654,4.654,4.654h10.95c3.132,0,4.654-1.522,4.654-4.654V6.3c0-3.132-1.522-4.654-4.654-4.654H6.3C3.165,1.642,1.642,3.165,1.642,6.3Z" transform="translate(1.369 3.011)" />
+                                                            <path fill="#a8a8a8" d="M3.737,4.2.31,1.463A.818.818,0,0,1,1.328.182L4.755,2.919a2.613,2.613,0,0,0,3.077,0L11.259.182a.808.808,0,0,1,1.15.131.808.808,0,0,1-.131,1.15L8.85,4.2A4.018,4.018,0,0,1,6.3,5.065,4.071,4.071,0,0,1,3.737,4.2Z" transform="translate(6.84 9.027)" />
+                                                            <path fill="none" opacity="0" d="M26.28,0V26.28H0V0Z" />
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            {% if form.posted_successfully? %}
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function() {
+                                        let form = document.querySelector("form");
+                                        if (form) {
+                                            form.scrollIntoView({ behavior: "instant" });
+                                        }
+                                    });
+                                </script>
+                                <div class="col-lg-12 text-center">
+                                    <p class="body fw-light black-f center mx-0" >
+                                        √ Your message has been submitted. We will reach you as soon as possible, thank you!
+                                    </p>
+                                </div>
+                            {% elsif form.errors %}
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function() {
+                                        let form = document.querySelector("form");
+                                        if (form) {
+                                            form.scrollIntoView({ behavior: "instant" });
+                                        }
+                                    });
+                                </script>
+                                <div class="col-lg-12 text-center">
+                                    <p class="body f-black fw-light center m-0">
+                                        <small>
+                                            There's a problem submitting your message. Try again. {{ form.errors | json }}
+                                        </small>
+                                    </p>
+                                </div>
+                            {% endif %}
+                            <div class="btn-submit-container">
+                                <button class="btn-background col_85" type="submit">
+                                <p class="mx-0 f-f-regular">Submit</p>
+                                </button>
+                            </div>
+                        </div>
+                    {% endform %}
+                
+                    
+                </div>
+            </div>
+        </div>
+    </div>

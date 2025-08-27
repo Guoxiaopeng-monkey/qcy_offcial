@@ -1,0 +1,449 @@
+<style>
+  .anti-counterfeiting-section{
+    padding:50px 0px;
+  }
+  .anti-counterfeiting-input{
+    position:relative;    
+    display: flex;
+    align-items: center;
+    border:1px solid #262626;
+    border-radius:50px;
+    overflow:hidden;
+    max-width:800px;
+    margin:auto;
+  }
+  .anti-counterfeiting-input input{
+    width:100%;
+    border:0;
+    padding:2rem 3rem;
+    background:transparent;
+    z-index:1;
+  }
+  .anti-counterfeiting-input input::placeholder{
+    opacity:0;
+  }
+  .anti-counterfeiting-input label{
+    position:absolute;
+    left:2.5rem;
+    color:#A8A8A8;
+    transition: all 0.3s ease;
+    z-index:0;
+  }
+  .anti-counterfeiting-input input:focus + label,
+  .anti-counterfeiting-input input:not(:placeholder-shown) + label{
+    opacity:0;
+  }
+  .anti-counterfeiting-details{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    padding-top:50px;
+    max-width:800px;
+    margin:auto;
+    position:relative;
+  }
+  .anti-counterfeiting-details .result-success,
+  .anti-counterfeiting-details .result-failed{
+    visibility:hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .anti-counterfeiting-details .result-success.active,
+  .anti-counterfeiting-details .result-failed.active{
+    visibility:visible;
+  }
+  .anti-counterfeiting-details h4{
+    color:#262626;
+  }
+  .btn-instruction{
+    color:#4795E9;
+    cursor:pointer;
+    width:fit-content;
+    margin:auto;
+    margin-top:50px;
+    place-self: center;
+  }
+  .anti-counterfeiting-container{
+    padding-top:30px;
+  }
+  .anti-counterfeiting-container .search-btn{
+    position:absolute;
+    right: 3rem;
+    cursor:pointer;
+    padding:0px;
+    border:none;
+    background:transparent;
+    z-index:2;
+  }
+  .anti-counterfeiting-container .search-btn svg{
+    width: 25px;
+    height: 25px;
+  }
+  .instruction-img{
+    margin:20px 0px;
+    height:fit-content;
+  }
+
+  /* MODAL */
+  
+  .custom-modal-section{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    z-index: 100;
+    opacity: 0;
+    visibility:hidden;
+    transition: opacity 0.3s 0.5s, visibility 0.3s ease 0.5s;
+  }
+  .custom-modal-section.open{
+    visibility:visible;
+    opacity:1;
+  }
+  .custom-modal-section .overlay{
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+  }
+  .custom-model-inner-section{
+    height:100%;
+    display:flex;
+    overflow:hidden;
+  }
+  .custom-modal-container{
+    background-color: #fff;
+    max-width: 650px;
+    border-radius: 4px;
+    padding: 50px 40px 70px;
+    border: 2rem;
+    transition: opacity 0.5s ease 0.6s, transform 0.5s ease 0.6s;
+    position: relative;
+    margin: auto;
+    height:fit-content;
+    z-index:3;
+    transform: translateY(100%);
+  }
+  .custom-modal-container h3,
+  .custom-modal-container h5{
+    color:#262626;
+  }
+  .custom-modal-container.form-success .feedback-info-form{
+      display:none;
+  }
+  .custom-modal-section.open .custom-modal-container{
+    opacity:1;
+    transform: translateY(0);
+  }
+  .custom-info-form::-webkit-scrollbar {
+    width: 0px;
+  }
+  .custom-info-form::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  .custom-info-form::-webkit-scrollbar-thumb {
+    background: #F89320;
+  }
+  .custom-info-form::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  .custom-modal-container .custom-close{
+    position:absolute;
+    top:10px;
+    right:12px;
+    border-radius: 4px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color:#fff;
+  }
+  .custom-modal-container .custom-close svg{
+    width:14px;
+  }
+  .custom-modal-container .custom-close svg path{
+    stroke: #aaa;
+    stroke-width: 1px;
+  }
+  body.no-scroll{
+    overflow:hidden;
+  }
+  .btn-instruction-container{
+    width:100%;
+    display:flex;
+    justify-content: center;
+  }
+
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .anti-counterfeiting-section{
+      padding:30px 0px;
+    }
+    .text-breadcrumb{
+      font-size:16px;
+    }
+    .anti-counterfeiting-input label,
+    .anti-counterfeiting-input input{
+      font-size:15px;
+    }
+    .anti-counterfeiting-input input{
+      padding:1.5rem;
+    }
+    .anti-counterfeiting-container .search-btn{
+      right:2rem;
+    }
+    .anti-counterfeiting-container .section-heading{
+      margin:40px 0px;
+    }
+    .custom-modal-container{
+      padding:50px 20px 70px;
+      height:100vh;
+    }
+    .anti-counterfeiting-container{
+      padding-top:0px;
+    }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+    .anti-counterfeiting-section{
+      padding:30px 0px;
+    }
+    .text-breadcrumb{
+      font-size:16px;
+    }
+    .anti-counterfeiting-input label,
+    .anti-counterfeiting-input input{
+      font-size:15px;
+    }
+    .anti-counterfeiting-input input{
+      padding:1.5rem;
+    }
+    .anti-counterfeiting-container .search-btn{
+      right:2rem;
+    }
+    .anti-counterfeiting-container .section-heading{
+      margin:40px 0px;
+    }
+    .custom-modal-container{
+      padding:50px 20px 70px;
+      height:100vh;
+    }
+    .anti-counterfeiting-container{
+      padding-top:0px;
+    }
+  }
+
+</style>
+<div class="page-width">
+    <div class="breadcrumbs-list">
+        <p class="mx-0 text-breadcrumb">
+          <a href="https://{{ request.host }}{% if localization.language.iso_code == 'es' %}/es{% endif %}/pages/support-center" class="text-breadcrumb">Support Center </a>
+          >
+          <a href="https://{{ request.host }}{% if localization.language.iso_code == 'es' %}/es{% endif %}/pages/support-center?tab=support-service" class="text-breadcrumb">Support Service</a> 
+          >
+          <span class="black-f">Anti-Counterfeiting Inquiry</span>
+        </p>
+    </div>
+    <div class="anti-counterfeiting-container">
+        <h1 class="f-f-bold section-heading text-cap center">{{ section.settings.title }}</h1>
+      <div class="anti-counterfeiting-input">
+        <input id="anti-input" type="input" name="anti-fake" class="h3 f-f-medium" placeholder="Enter 20-digit anti counterfeiting code" maxlength="20">
+        <label class="f-f-medium h3">Enter 20-digit anti counterfeiting code</label>
+        <button class="search-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32.974" height="33.041" viewBox="0 0 32.974 33.041">
+            <path d="m122.068 118.228-5.738-5.738a15.241 15.241 0 1 0-1.912 1.9l.008.008 5.738 5.738a1.348 1.348 0 1 0 1.907-1.907Zm-17.373-2.928a12.606 12.606 0 1 1 8.914-3.692 12.52 12.52 0 0 1-8.914 3.692" transform="translate(-89.489 -87.489)" style="fill:#262626"/>
+          </svg>
+        </button>
+      </div>
+      <div class="anti-counterfeiting-details">
+        <div class="result-success">
+          <h4 class="f-f-semibold mx-0 center">Query Results：The anti-counterfeit code <span class="verification_code"></span> corresponds to a genuine QCY product.</h4>
+          <h4 class="f-f-semibold mx-0 center">Query Count: <span id="query_result"></span></h4>
+          <h4 class="f-f-semibold mx-0 center">Initial Query Time: <span id="query_result_date"></span></h4>
+        </div>
+        <div class="result-failed">
+          <h4 class="f-f-semibold mx-0 center">The anti-counterfeiting code does not exist</h4>
+          <h4 class="f-f-semibold mx-0 center">Query Results：The anti-counterfeiting code you entered <span class="verification_code"></span></h4>
+          <h4 class="f-f-semibold mx-0 center">Not present! Please be cautious of counterfeiting.</h4>
+        </div>
+        <div class="loading__spinner hidden">
+          {{ 'loading-spinner.svg' | inline_asset_content }}
+        </div>
+
+      </div>
+      <div class="btn-instruction-container">
+        <h4 class="btn-instruction f-f-semibold mx-0 center">{{ section.settings.sub_title }}</h4>
+      </div>
+    </div>
+</div>
+<div class="custom-modal-section">
+    <div class="overlay">
+    </div>
+    <div class="custom-model-inner-section">
+      <div class="custom-modal-container">
+            <span class="custom-close">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-close" viewBox="0 0 18 17">
+                    <path fill="currentColor" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path>
+                </svg>
+            </span>
+          <h3 class="f-f-bold mx-0">{{ section.settings.heading_1 }}</h3>
+          <h5 class="f-f-medium mx-0">{{ section.settings.description_1 }}</h5>
+          <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/1111_2x_3f28f48e-ff9a-4a27-8850-f881064e4556.png?v=1730708479" class="instruction-img" width="55%" height="100%">
+          <h3 class="f-f-bold mx-0">{{ section.settings.heading_2 }}</h3>
+          <h5 class="f-f-medium mx-0">{{ section.settings.description_2 }}</h5>
+        </div>
+    </div>
+</div>
+{% javascript %}
+
+    $('.anti-counterfeiting-section .btn-instruction').click(() => {
+      $('.anti-counterfeiting-section .custom-modal-section').addClass('open');
+      $('body').addClass('no-scroll');
+    });
+    
+    $('.anti-counterfeiting-section .custom-modal-section .overlay, .anti-counterfeiting-section .custom-modal-section .custom-close').click(() => {
+      $('.anti-counterfeiting-section .custom-modal-section').removeClass('open');
+      $('body').removeClass('no-scroll');
+    });
+    $(document).ready(function() {
+        // Check if the URL contains 'contact_posted=true#contact_form'
+        if (window.location.href.indexOf('contact_posted=true#contact_form') !== -1) {
+            $('..custom-modal-section').addClass('open');
+            $('.custom-modal-container').addClass('form-success');
+            $('body').addClass('no-scroll');
+        }
+    });
+    
+    $('.result-failed').css('position','absolute');
+      
+    // Trigger on button click
+    $('.anti-counterfeiting-section .search-btn').click(function() {
+      if ($('#anti-input').val().trim() !== '') {
+        handleQuery();
+      } else {
+        
+      }
+    });
+    
+    // Trigger on Enter key press
+    $('#anti-input').keypress(function(event) {
+      if (event.which === 13) { // 13 is the Enter key code
+        event.preventDefault();  // Prevents form submission if inside a form
+        if ($('#anti-input').val().trim() !== '') {
+          handleQuery();
+        } else {
+          alert('Please enter a code.');
+        }
+      }
+    });
+    
+    // Function to handle the query
+    function handleQuery() {
+      console.log($('#anti-input').val());
+      DoQuery($('#anti-input').val());
+      $('.verification_code').text($('#anti-input').val());
+      $('.result-success').removeClass('active');
+      $('.result-failed').removeClass('active');
+      $('.anti-counterfeiting-details .loading__spinner').removeClass('hidden');
+    }
+    
+    function DoQuery(codedata)
+    {
+        var ip = 'unknown';
+        $.ajax({
+            type: "get",
+            url: "https://wlms.zx3315.cn/query/queryjson.aspx",
+            dataType: "jsonp",
+            jsonp: "callback",
+            data: "message=" + codedata + "&userinfo=" + ip,
+            success: function (msg) {
+              console.log(msg);
+              if(msg.status == 1){
+                $('#query_result').text(msg.QueryTimes);
+                $('#query_result_date').text(msg.QueryDate);
+                $('.result-success').addClass('active');
+                $('.result-failed').removeClass('active');
+                $('.result-success').css('position','relative');
+                $('.result-failed').css('position','absolute');
+                $('.anti-counterfeiting-details .loading__spinner').addClass('hidden');
+              }else{
+                $('.result-failed').addClass('active');
+                $('.result-success').removeClass('active');
+                $('.result-success').css('position','absolute');
+                $('.result-failed').css('position','relative');
+                $('.anti-counterfeiting-details .loading__spinner').addClass('hidden');
+              }
+            },
+            error: function (msg) {
+              console.log(msg);
+              $('.result-failed').addClass('active');
+              $('.result-success').removeClass('active');
+              $('.anti-counterfeiting-details .loading__spinner').addClass('hidden');
+      
+            }
+        });
+    }
+
+{% endjavascript %}
+{% schema %}
+    {
+        "class": "anti-counterfeiting-section",
+        "name": "Anti-Counterfeiting",
+        "templates": ["page"],
+        "limit": 1, 
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "Anti-Counterfeiting Inquiry"
+            },
+            {
+                "type": "text",
+                "id": "sub_title",
+                "label": "Sub Title",
+                "default": "Where to get the anti-counterfeiting code?"
+            },
+            {
+                "type": "text",
+                "id": "heading_1",
+                "label": "Heading 1",
+                "default": "STEP 1"
+            },
+            {
+                "type": "richtext",
+                "id": "description_1",
+                "label": "Description 1",
+                "default": "<p>Find the anti-counterfeiting code on the product packaging box.</p>"
+            },
+            {
+                "type": "text",
+                "id": "heading_2",
+                "label": "Heading 2",
+                "default": "STEP 2"
+            },
+            {
+                "type": "richtext",
+                "id": "description_2",
+                "label": "Description 2",
+                "default": "<p>Scratch the anti-counterfeiting code coating, you can see the 20-digit anti-counterfeiting code.</p>"
+            }
+        ],
+        "presets" :[{
+            "name" : "Anti-Counterfeiting"
+        }]
+    }
+  {% endschema %} 

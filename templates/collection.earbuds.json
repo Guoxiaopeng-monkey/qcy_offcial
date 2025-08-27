@@ -1,0 +1,58 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_cX7dLK": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify://shop_images/Earbuds.png",
+        "image_mobile": "shopify://shop_images/QCY.jpg",
+        "heading": "True Wireless Earbuds",
+        "text": "Experience powerful audio and exceptional comfort with QCY's true wireless earbuds! Whether you're enjoying your favorite music, taking calls, or working out, QCY delivers premium sound quality and wireless freedom that elevates your listening experience!",
+        "desktop_heading_color": "#000000",
+        "desktop_text_color": "#000000"
+      }
+    },
+    "collection_navigation_LzHQU6": {
+      "type": "collection-navigation",
+      "name": "Collection Navigation",
+      "settings": {
+        "text_color": "#333333",
+        "padding": 10
+      }
+    },
+    "main_collection_D4J9rG": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "rich_text_X4bHLx": {
+      "type": "rich-text",
+      "settings": {
+        "heading": "Discover Premium Audio with QCY True Wireless Earbuds",
+        "text": "<p>Transform Your Audio Experience with QCY True Wireless Earbuds.</p><p>Experience the freedom of true wireless technology with earbuds designed for life in motion. These lightweight, compact audio companions deliver exceptional sound while handling both music and calls with ease. Their ergonomic design ensures a secure fit in your ear canal, making them perfect for everything from daily commutes to intense workouts.</p><p>QCY stands at the forefront of premium audio technology, delivering exceptional earbuds that combine innovative features with superior sound performance. Our signature wireless earbuds showcase advanced acoustic architecture and professional-grade audio engineering, creating an immersive listening environment that brings your music to life. The state-of-the-art active noise cancellation technology reduces external disturbances by up to 98%, letting you focus purely on your audio content. For audiophiles seeking premium sound quality, our TWS earbuds support high-resolution audio standards and advanced codec compatibility, ensuring every note is reproduced with stunning clarity.</p><p>What sets our premium Bluetooth earbuds apart is the intelligent sound customization system. Users can fine-tune their audio experience through adjustable EQ settings or choose from expertly crafted sound profiles to match their preferences. What's more, QCY's <a href=\"https://www.qcy.com/collections/open-ear-earbuds\" target=\"_blank\" title=\"https://www.qcy.com/collections/open-ear-earbuds\">open-ear earbuds</a> redefine comfort in audio wear. With their flexible rotation system, these earbuds adapt perfectly to your ear contours, providing a stable fit without any pressure points, ensuring long-lasting comfort throughout your day.</p><p>To conclude, QCY earbuds represent the perfect fusion of technology and comfort—delivering crystal-clear sound, powerful noise cancellation, personalized audio settings, and ergonomic design, all working together to create your ideal listening experience. Discover the QCY difference and elevate your audio journey with our premium noise-cancelling earbuds today!</p>"
+      }
+    },
+    "product_page_faqs_section_pTyMzj": {
+      "type": "product-page-faqs-section",
+      "disabled": true,
+      "name": "FAQs",
+      "settings": {
+        "heading": "Frequently asked questions."
+      }
+    }
+  },
+  "order": [
+    "image_with_text_cX7dLK",
+    "collection_navigation_LzHQU6",
+    "main_collection_D4J9rG",
+    "rich_text_X4bHLx",
+    "product_page_faqs_section_pTyMzj"
+  ]
+}

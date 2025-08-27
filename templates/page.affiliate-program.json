@@ -1,0 +1,343 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "homepage_banner_section_3VFnCT": {
+      "type": "homepage-banner-section",
+      "blocks": {
+        "banner_image_jti9wR": {
+          "type": "Banner_Image",
+          "settings": {
+            "content_display": false,
+            "content_position_y": "content-desktop-y-top",
+            "content_position_x": "content-desktop-x-left",
+            "content_position_y_mobile": "content-mobile-y-top",
+            "sub_heading": "",
+            "text_color": "#121212",
+            "heading": "Join the QCY Affiliate Program",
+            "description": "<p>Want to share QCY with your community and earn a commission through purchases? </p>",
+            "image": "shopify://shop_images/20241211-142013.jpg",
+            "bg_image": "shopify://shop_images/20241211-142013.jpg",
+            "btn_heading": "Start Earning Now",
+            "url": "https://www.qcy.com/pages/affiliate-program#partner-section",
+            "overlay": false,
+            "overlay_opacity": 20
+          }
+        }
+      },
+      "block_order": [
+        "banner_image_jti9wR"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "affiliate_hero_JFR9Xi": {
+      "type": "affiliate-hero",
+      "settings": {
+        "title_line1": "Join the QCY",
+        "title_line2": "Affiliate Program",
+        "description": "Want to share QCY with your community and earn a commission through purchases?",
+        "cta_link": "#partner-section",
+        "cta_text": "Start Earning Now",
+        "title_size": 48,
+        "description_size": 18,
+        "hero_image_desktop": "shopify://shop_images/20241211-143943.jpg",
+        "hero_image_mobile": "shopify://shop_images/20241211-145536.jpg"
+      }
+    },
+    "affiliate_why_affiliate_Q74xmr": {
+      "type": "affiliate-why-affiliate",
+      "blocks": {
+        "feature_XtTwcc": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/7aa008da7f892afd9b835879826f5ed7.svg",
+            "text_before": "Up to",
+            "text_highlight": "15%",
+            "text_after": "Commission",
+            "description": "Up to 15% earnings for every purchase you make and extra bonus for monthly performance."
+          }
+        },
+        "feature_VynbNn": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/30.svg",
+            "text_before": "",
+            "text_highlight": "30",
+            "text_after": "Day Validity",
+            "description": "Earn commission when your friends/followers purchase through your link within 30 days."
+          }
+        },
+        "feature_y8fU8V": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Support.svg",
+            "text_before": "",
+            "text_highlight": "Dedicated",
+            "text_after": "Support",
+            "description": "Your affiliate manager will guide you and provide personalized assistance."
+          }
+        }
+      },
+      "block_order": [
+        "feature_XtTwcc",
+        "feature_VynbNn",
+        "feature_y8fU8V"
+      ],
+      "settings": {
+        "title": "Why Join the QCY Affiliate Program"
+      }
+    },
+    "affiliate_details_UjgmiM": {
+      "type": "affiliate-details",
+      "settings": {
+        "title": "More Details",
+        "image": "shopify://shop_images/image00005.webp",
+        "block1_title": "Variety of Affiliates",
+        "block1_items": "Forums\nBlogs \nSocial Group\nCommunity\nProduct Review Sites\nSocial Media\nPublishers",
+        "block2_title": "Who are Eligible?",
+        "block2_text": "We are open to tech enthusiasts, content creators, and publishers passionate about audio innovation. Whether you're a seasoned influencer or just starting out, if you have an engaged online audience, join us to collaborate.",
+        "icon": "shopify://shop_images/664e1012d97da7d0dddf27c9802d7bdb.png",
+        "cta_title": "Interested in becoming an affiliate?",
+        "button_text": "Start Now",
+        "button_link": "#partner-section"
+      }
+    },
+    "affiliate_how_it_works_bzkKff": {
+      "type": "affiliate-how-it-works",
+      "blocks": {
+        "step_DiWkDE": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/join.svg",
+            "title": "Join",
+            "description": "Apply for the QCY affiliate and get your unique referral link.",
+            "link_text": "Join Now",
+            "link_url": "#partner-section"
+          }
+        },
+        "step_iiVddn": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/share.svg",
+            "title": "Share",
+            "description": "Share your referral link through social media or email to your friends/followers.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "step_XzzbG8": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/earn.svg",
+            "title": "Earn",
+            "description": "Get commision every time your friend/follower purchase QCY product through your referral link.",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_DiWkDE",
+        "step_iiVddn",
+        "step_XzzbG8"
+      ],
+      "settings": {
+        "title": "Working With Us Is Simple"
+      }
+    },
+    "affiliate_partner_cta_9JHDWJ": {
+      "type": "affiliate-partner-cta",
+      "settings": {
+        "illustration": "shopify://shop_images/CTA-1.png",
+        "impact_logo": "shopify://shop_images/impact_logo_241214.png",
+        "impact_link": "https://app.impact.com/campaign-promo-signup/Hong-Kong-Hele-Electronics.brand?execution=e1s1#/?viewkey=signUpPreStart",
+        "impact_button_text": "Get Started",
+        "shareasale_logo": "shopify://shop_images/shareasale_logo_2412174.png",
+        "shareasale_link": "https://www.shareasale.com/shareasale.cfm?merchantID=162494",
+        "shareasale_button_text": "Get Started",
+        "contact_text": "Questions About Our Program? Email:",
+        "contact_email": "affiliate@qcyearphone.com"
+      }
+    },
+    "product_page_faqs_section_649cWT": {
+      "type": "product-page-faqs-section",
+      "blocks": {
+        "faqs_hGBRcy": {
+          "type": "faqs",
+          "settings": {
+            "heading": "What commission structure do you offer?",
+            "description": "<p>We offer competitive commission rates on all net sales generated through your affiliate links. The commission structure may vary depending on the product category and sales volume.</p>"
+          }
+        },
+        "faqs_MCNqn9": {
+          "type": "faqs",
+          "settings": {
+            "heading": "What marketing materials do you provide to affiliates?",
+            "description": "<p>We provide a variety of marketing materials such as banners, text links, product images, and exclusive promotions. Additionally, we offer guidance on best practices for promoting our products effectively.</p>"
+          }
+        },
+        "faqs_3Jeamx": {
+          "type": "faqs",
+          "settings": {
+            "heading": "How are affiliate sales tracked?",
+            "description": "<p>We use advanced tracking technology to monitor affiliate sales. Each affiliate is provided with a unique tracking link that tracks clicks, conversions, and commissions generated from their referrals.</p>"
+          }
+        },
+        "faqs_JbgydP": {
+          "type": "faqs",
+          "settings": {
+            "heading": "When and how do I receive payments?",
+            "description": "<p>Payments are typically processed on a monthly basis, and affiliates can choose their preferred payment method, including bank transfer or PayPal.</p>"
+          }
+        },
+        "faqs_FaF4Uy": {
+          "type": "faqs",
+          "settings": {
+            "heading": "Can I track my performance and earnings as an affiliate?",
+            "description": "<p>Yes, affiliates have access to a personalized dashboard where they can track their performance metrics, including clicks, conversions, and commissions earned in real time.</p>"
+          }
+        },
+        "faqs_aN8FTJ": {
+          "type": "faqs",
+          "settings": {
+            "heading": "Are there any incentives for top-performing affiliates?",
+            "description": "<p>We occasionally offer incentives, bonuses, and exclusive promotions to top-performing affiliates as a token of appreciation for their efforts and contributions to our success.</p>"
+          }
+        },
+        "faqs_4RnNGR": {
+          "type": "faqs",
+          "settings": {
+            "heading": "Are there any restrictions on how I can promote products?",
+            "description": "<p>While we encourage creativity in marketing our products, affiliates must adhere to our brand guidelines and avoid engaging in any unethical or misleading promotional practices.</p>"
+          }
+        },
+        "faqs_WBr4dU": {
+          "type": "faqs",
+          "settings": {
+            "heading": "Do you offer support to affiliates?",
+            "description": "<p>Yes, we have a dedicated affiliate support team available to assist you with any questions or issues you may encounter. Feel free to reach out to us for guidance or assistance at any time.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faqs_hGBRcy",
+        "faqs_MCNqn9",
+        "faqs_3Jeamx",
+        "faqs_JbgydP",
+        "faqs_FaF4Uy",
+        "faqs_aN8FTJ",
+        "faqs_4RnNGR",
+        "faqs_WBr4dU"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".faqs-section {background-color: #ffffff;}",
+        "h2.heading.text-md.f-f-bold.mx-0 {text-align: center;}"
+      ],
+      "settings": {
+        "heading": "FAQ"
+      }
+    },
+    "affiliate_faq_x4Vw3f": {
+      "type": "affiliate-faq",
+      "blocks": {
+        "faq_efjUKp": {
+          "type": "faq",
+          "settings": {
+            "question": "What commission structure do you offer?",
+            "answer": "<p>We offer competitive commission rates on all net sales generated through your affiliate links. The commission structure may vary depending on the product category and sales volume.</p>"
+          }
+        },
+        "faq_tTfdB7": {
+          "type": "faq",
+          "settings": {
+            "question": "What marketing materials do you provide to affiliates?",
+            "answer": "<p>We provide a variety of marketing materials such as banners, text links, product images, and exclusive promotions. Additionally, we offer guidance on best practices for promoting our products effectively.</p>"
+          }
+        },
+        "faq_XCzt9b": {
+          "type": "faq",
+          "settings": {
+            "question": "How are affiliate sales tracked?",
+            "answer": "<p>We use advanced tracking technology to monitor affiliate sales. Each affiliate is provided with a unique tracking link that tracks clicks, conversions, and commissions generated from their referrals.</p>"
+          }
+        },
+        "faq_zYYyb4": {
+          "type": "faq",
+          "settings": {
+            "question": "When and how do I receive payments?",
+            "answer": "<p>Payments are typically processed on a monthly basis, and affiliates can choose their preferred payment method, including bank transfer or PayPal.</p>"
+          }
+        },
+        "faq_aUUtVL": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I track my performance and earnings as an affiliate?",
+            "answer": "<p>Yes, affiliates have access to a personalized dashboard where they can track their performance metrics, including clicks, conversions, and commissions earned in real time.</p>"
+          }
+        },
+        "faq_UU3Ygx": {
+          "type": "faq",
+          "settings": {
+            "question": "Are there any incentives for top-performing affiliates?",
+            "answer": "<p>We occasionally offer incentives, bonuses, and exclusive promotions to top-performing affiliates as a token of appreciation for their efforts and contributions to our success.</p>"
+          }
+        },
+        "faq_jHHCER": {
+          "type": "faq",
+          "settings": {
+            "question": "Are there any restrictions on how I can promote products?",
+            "answer": "<p>While we encourage creativity in marketing our products, affiliates must adhere to our brand guidelines and avoid engaging in any unethical or misleading promotional practices.</p>"
+          }
+        },
+        "faq_wFTPMB": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you offer support to affiliates?",
+            "answer": "<p>FAYes, we have a dedicated affiliate support team available to assist you with any questions or issues you may encounter. Feel free to reach out to us for guidance or assistance at any time.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_efjUKp",
+        "faq_tTfdB7",
+        "faq_XCzt9b",
+        "faq_zYYyb4",
+        "faq_aUUtVL",
+        "faq_UU3Ygx",
+        "faq_jHHCER",
+        "faq_wFTPMB"
+      ],
+      "settings": {
+        "heading": "FAQ"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "homepage_banner_section_3VFnCT",
+    "affiliate_hero_JFR9Xi",
+    "affiliate_why_affiliate_Q74xmr",
+    "affiliate_details_UjgmiM",
+    "affiliate_how_it_works_bzkKff",
+    "affiliate_partner_cta_9JHDWJ",
+    "product_page_faqs_section_649cWT",
+    "affiliate_faq_x4Vw3f"
+  ]
+}

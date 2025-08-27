@@ -1,0 +1,41 @@
+<div class="custom-artice-card-item">
+  <div class="article-image">
+    <img loading="lazy" src="{{ article.image.src | image_url  }}" width="100%" height="100%"> 
+  </div>
+  <div class="article-details">
+    <a href="{{ article.url }}">
+      <h5 class="blog-post-title mx-0 f-f-bold article-title">{{ article.title| truncate: 100  }}</h5>
+    </a>
+    <p class="p-small mx-0 f-f-regular text-gray-f">{{ article.content |  strip_html | truncate: 150 }}</p>
+    <p class="p-small mx-0 f-f-regular text-gray-f article-date">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+        <defs>
+          <clipPath id="a">
+            <path data-name="矩形 10403" fill="#fff" stroke="#707070" d="M224 2257h18v18h-18z"/>
+          </clipPath>
+        </defs>
+        <g transform="translate(-224 -2257)" clip-path="url(#a)">
+          <g data-name="组 41445" fill="#666">
+            <path data-name="路径 63374" d="M237.099 2259.903h-.9v-.9h-.9v.9h-5.422v-.9h-.9v.9h-.9a1.81 1.81 0 0 0-1.8 1.8v9.931a1.81 1.81 0 0 0 1.8 1.8h9.028a1.81 1.81 0 0 0 1.8-1.8v-9.927a1.81 1.81 0 0 0-1.806-1.804m-9.028.9h.9v.9h.9v-.9h5.416v.9h.9v-.9h.9a.9.9 0 0 1 .9.9v1.806H227.17v-1.802a.9.9 0 0 1 .901-.902Zm9.028 11.734h-9.028a.9.9 0 0 1-.9-.9v-7.221h10.831v7.222a.9.9 0 0 1-.903.901Z"/>
+            <path data-name="路径 63375" d="M228.975 2266.221h7.221v.9h-7.221Zm0 2.736h7.221v.9h-7.221Z"/>
+          </g>
+        </g>
+      </svg>
+
+      {{ article.published_at | date: "%^b %d, %Y" }}
+    </p>
+    <div class="article-tag-bottom">
+      <span class="p-small mx-0 text-cap article-badge">
+        Guide
+      </span>
+      <a href="{{ article.url }}" class="article-link-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28.842" height="28.842" viewBox="0 0 28.842 28.842" transform="rotate(90)">
+          <g fill="#000">
+            <path d="M21.079 12.138 14.421 5.48l-6.658 6.658a.9.9 0 0 1-1.274-1.274l7.295-7.295a.907.907 0 0 1 1.274 0l7.295 7.295a.907.907 0 0 1 0 1.274.87.87 0 0 1-.637.264.9.9 0 0 1-.637-.264"/>
+            <path d="M13.52 24.636V4.409a.91.91 0 0 1 .9-.9.91.91 0 0 1 .9.9v20.227a.91.91 0 0 1-.9.9.91.91 0 0 1-.9-.9"/>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>

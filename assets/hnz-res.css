@@ -1,0 +1,3334 @@
+/* MOBILES ----------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 0px) {
+    .form-modal .container {
+        width: 100%;
+        max-height: 100%;
+        padding: 20px 30px;
+    }
+    .form-modal[data-modal="warranty-claim"] .container {
+        width: 100%;
+    }
+    .form-modal[data-modal="feedback"] .container {
+        width: 100%;
+    }
+    .form-modal .form-close {
+        top: 10px;
+    }
+    .form-modal .form-close::before {
+        left: 20px;
+    }
+    .form-modal .form-body .row {
+        --bs-gutter-x: 10px;
+        --bs-gutter-y: 15px;
+    }
+
+    .section-content {
+        --padding-tb: 30px;
+    }
+    
+    .support-search {
+        height: 88vh;
+    }
+    .support-search .section-content {
+        --padding-tb: 50px;
+    }
+    .support-search .title {
+        font-size: 38px;
+        margin-bottom: 30px;
+    }
+    .support-search .search-group {
+        width: 95%
+    }
+    .support-search .search-group input {
+        font-size: 16px;
+        padding: 0 10px 0 30px;
+        width: 100%;
+    }
+    .support-search .search-group .search-x {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .support-search .search-group .search-btn {
+        padding: 14px 32px 14px 22px;
+    }
+    .support-search .search-group .search-btn .svg-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+    .support-search .search-items {
+        margin-top: 30px;
+        font-size: 12px;
+    }
+    .support-search .search-items a {
+        padding: 6px 10px;
+    }
+
+    .support-nav .nav-items {
+        justify-content: start;
+        font-size: 14px;
+        gap: 30px;
+    }
+    .support-nav .nav-items span:last-child {
+        padding-right: 20px;
+    }
+    .support-nav .nav-items span {
+        padding: 10px 0;
+    }
+   
+    .product-support .title {
+        font-size: 24px;
+    }
+    .product-support .products-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .product-support .col-custom {
+        width: 50%;
+    }
+    .product-support .product-title {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .toggles {
+        margin: 30px 0;
+    }
+    .toggles span {
+        font-size: 12px;
+        padding: 10px 2px;
+    }
+    
+    .paginate.custom {
+        margin-top: 40px;
+        gap: 10px;
+    }
+    .paginate.custom .page {
+        font-size: 14px;
+        width: 38px;
+        height: 38px;
+    }
+    
+    .support-services .title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .support-services .services-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 20px;
+    }
+    .support-services .service .service-image {
+        justify-content: start;
+        padding: 30px 20px;
+        margin-bottom: 0;
+    }
+    .support-services .service .service-image img {
+        margin-right: 20px;
+        height: 40px;
+    }
+    .support-services .service span {
+        padding-bottom: 0;
+        font-size: 16px;
+    }
+    
+    .where-to-buy .title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .where-to-buy .btn-toggles {
+        margin: 0 auto 20px;
+        border-radius: 30px;
+    }
+    .where-to-buy .btn-toggles span {
+        font-size: 14px;
+        padding: 8px 25px;
+    }
+    .where-to-buy .store-navs {
+        margin-top: 20px;
+    }
+    .where-to-buy .filters {
+        margin: 20px 0;
+    }
+    .where-to-buy .filters .filter {
+        justify-content: space-between;
+    }
+    .where-to-buy .filter label {
+        font-size: 16px;
+    }
+    .where-to-buy .filter select {
+        padding: 12px 34px 12px 15px;
+        font-size: 14px;
+        background-size: 24px;
+        width: 58%;
+    }
+    .where-to-buy [data-store=retail-store] .filter select {
+        width: 58%;
+    }
+    .where-to-buy [data-store="retail-store"] .filters-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 20px;
+    }
+    .where-to-buy .filter-input input {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+    .where-to-buy .filter-input .search-btn {
+        padding: 11px 25px 11px 20px;
+    }
+    .where-to-buy .filter-input .search-btn .svg-wrapper {
+        width: 18px;
+        height: 18px;
+    }
+    .where-to-buy .locations {
+        padding: 20px;
+        height: auto;
+    }
+    .where-to-buy .location {
+        display: none;
+        padding-bottom: 20px;
+    }
+    .where-to-buy .location:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .where-to-buy .location .location-name {
+        font-size: 16px;
+    }
+    .where-to-buy .location .location-details {
+        font-size: 14px;
+    }
+    .where-to-buy .location .location-details img {
+        height: 16px;
+    }
+    .where-to-buy #map {
+        height: 480px;
+    }
+    .where-to-buy .stores-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .where-to-buy .col-custom {
+        width: 50%;
+    }
+    .where-to-buy .store-name {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    
+    .faq .title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .faq .accordion-item {
+        margin-bottom: 25px !important;
+    }
+    .faq .accordion-button {
+        font-size: 16px;
+        padding: 0 10px 20px 0;
+    }
+    .faq .accordion-body {
+        font-size: 14px;
+        padding: 0 0 20px;
+    }
+
+    .more-help .title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .more-help .helps-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .more-help .help {
+        padding: 20px 10px;
+    }
+    .more-help .help img {
+        height: 28px;
+    }
+    .more-help .help .help-title {
+        font-size: 16px;
+        margin: 10px 0 5px;
+    }
+    .more-help .help .help-text {
+        font-size: 14px;
+    }
+    .more-help .help a {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 390px) {
+    .form-modal .container {
+        width: 100%;
+        max-height: 100%;
+        padding: 20px 30px;
+    }
+    .form-modal[data-modal="warranty-claim"] .container {
+        width: 100%;
+    }
+    .form-modal[data-modal="feedback"] .container {
+        width: 100%;
+    }
+    .form-modal .form-close {
+        top: 10px;
+    }
+    .form-modal .form-close::before {
+        left: 20px;
+    }
+    .form-modal .form-body .row {
+        --bs-gutter-x: 10px;
+        --bs-gutter-y: 15px;
+    }
+    
+    .section-content {
+        --padding-tb: 30px;
+    }
+    
+    .support-search {
+        height: 88vh;
+    }
+    .support-search .section-content {
+        --padding-tb: 50px;
+    }
+    .support-search .title {
+        font-size: 38px;
+        margin-bottom: 30px;
+    }
+    .support-search .search-group {
+        width: 95%
+    }
+    .support-search .search-group input {
+        font-size: 16px;
+        padding: 0 10px 0 30px;
+        width: 100%;
+    }
+    .support-search .search-group .search-x {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .support-search .search-group .search-btn {
+        padding: 14px 32px 14px 22px;
+    }
+    .support-search .search-group .search-btn .svg-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+    .support-search .search-items {
+        margin-top: 30px;
+        font-size: 12px;
+    }
+    .support-search .search-items a {
+        padding: 6px 12px;
+    }
+
+    .support-nav .nav-items {
+        justify-content: start;
+        font-size: 14px;
+        gap: 30px;
+    }
+    .support-nav .nav-items span:last-child {
+        padding-right: 20px;
+    }
+    .support-nav .nav-items span {
+        padding: 10px 0;
+    }
+   
+    .product-support .title {
+        font-size: 24px;
+    }
+    .product-support .products-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .product-support .col-custom {
+        width: 50%;
+    }
+    .product-support .product-title {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .toggles {
+        margin: 30px 0;
+    }
+    .toggles span {
+        font-size: 12px;
+        padding: 10px 6px;
+    }
+    
+    .paginate.custom {
+        margin-top: 40px;
+        gap: 10px;
+    }
+    .paginate.custom .page {
+        font-size: 14px;
+        width: 38px;
+        height: 38px;
+    }
+    
+    .support-services .title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .support-services .services-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 20px;
+    }
+    .support-services .service .service-image {
+        justify-content: start;
+        padding: 30px 20px;
+        margin-bottom: 0;
+    }
+    .support-services .service .service-image img {
+        margin-right: 20px;
+        height: 40px;
+    }
+    .support-services .service span {
+        padding-bottom: 0;
+        font-size: 16px;
+    }
+    
+    .where-to-buy .title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .where-to-buy .btn-toggles {
+        margin: 0 auto 20px;
+        border-radius: 30px;
+    }
+    .where-to-buy .btn-toggles span {
+        font-size: 14px;
+        padding: 8px 25px;
+    }
+    .where-to-buy .store-navs {
+        margin-top: 20px;
+    }
+    .where-to-buy .filters {
+        margin: 20px 0;
+    }
+    .where-to-buy .filters .filter {
+        justify-content: space-between;
+    }
+    .where-to-buy .filter label {
+        font-size: 16px;
+    }
+    .where-to-buy .filter select {
+        padding: 12px 34px 12px 15px;
+        font-size: 14px;
+        background-size: 24px;
+        width: 58%;
+    }
+    .where-to-buy [data-store=retail-store] .filter select {
+        width: 58%;
+    }
+    .where-to-buy [data-store="retail-store"] .filters-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 20px;
+    }
+    .where-to-buy .filter-input input {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+    .where-to-buy .filter-input .search-btn {
+        padding: 11px 25px 11px 20px;
+    }
+    .where-to-buy .filter-input .search-btn .svg-wrapper {
+        width: 18px;
+        height: 18px;
+    }
+    .where-to-buy .locations {
+        padding: 20px;
+        height: auto;
+    }
+    .where-to-buy .location {
+        display: none;
+        padding-bottom: 20px;
+    }
+    .where-to-buy .location:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .where-to-buy .location .location-name {
+        font-size: 16px;
+    }
+    .where-to-buy .location .location-details {
+        font-size: 14px;
+    }
+    .where-to-buy .location .location-details img {
+        height: 16px;
+    }
+    .where-to-buy #map {
+        height: 480px;
+    }
+    .where-to-buy .stores-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .where-to-buy .col-custom {
+        width: 50%;
+    }
+    .where-to-buy .store-name {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    
+    .faq .title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .faq .accordion-item {
+        margin-bottom: 25px !important;
+    }
+    .faq .accordion-button {
+        font-size: 16px;
+        padding: 0 10px 20px 0;
+    }
+    .faq .accordion-body {
+        font-size: 14px;
+        padding: 0 0 20px;
+    }
+
+    .more-help .title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .more-help .helps-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .more-help .help {
+        padding: 20px 10px;
+    }
+    .more-help .help img {
+        height: 28px;
+    }
+    .more-help .help .help-title {
+        font-size: 16px;
+        margin: 10px 0 5px;
+    }
+    .more-help .help .help-text {
+        font-size: 14px;
+    }
+    .more-help .help a {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    .form-modal .container {
+        width: 100%;
+        max-height: 100%;
+        padding: 20px 30px;
+    }
+    .form-modal[data-modal="warranty-claim"] .container {
+        width: 100%;
+    }
+    .form-modal[data-modal="feedback"] .container {
+        width: 100%;
+    }
+    .form-modal .form-close {
+        top: 10px;
+    }
+    .form-modal .form-close::before {
+        left: 20px;
+    }
+    .form-modal .form-body .row {
+        --bs-gutter-x: 10px;
+        --bs-gutter-y: 15px;
+    }
+
+    .section-content {
+        --padding-tb: 30px;
+    }
+    
+    .support-search {
+        height: 88vh;
+    }
+    .support-search .section-content {
+        --padding-tb: 50px;
+    }
+    .support-search .title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    .support-search .search-group {
+        width: 95%
+    }
+    .support-search .search-group input {
+        font-size: 16px;
+        padding: 0 10px 0 30px;
+        width: 100%;
+    }
+    .support-search .search-group .search-x {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .support-search .search-group .search-btn {
+        padding: 14px 32px 14px 22px;
+    }
+    .support-search .search-group .search-btn .svg-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+    .support-search .search-items {
+        margin-top: 30px;
+        font-size: 12px;
+    }
+    .support-search .search-items a {
+        padding: 6px 12px;
+    }
+
+    .support-nav .nav-items {
+        justify-content: start;
+        font-size: 14px;
+        gap: 30px;
+    }
+    .support-nav .nav-items span:last-child {
+        padding-right: 20px;
+    }
+    .support-nav .nav-items span {
+        padding: 10px 0;
+    }
+   
+    .product-support .title {
+        font-size: 26px;
+    }
+    .product-support .products-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .product-support .col-custom {
+        width: 50%;
+    }
+    .product-support .product-title {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .toggles {
+        margin: 30px 0;
+    }
+    .toggles span {
+        font-size: 14px;
+        padding: 10px 4px;
+    }
+    
+    .paginate.custom {
+        margin-top: 40px;
+        gap: 10px;
+    }
+    .paginate.custom .page {
+        font-size: 14px;
+        width: 38px;
+        height: 38px;
+    }
+    
+    .support-services .title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .support-services .services-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 20px;
+    }
+    .support-services .service .service-image {
+        justify-content: start;
+        padding: 30px 20px;
+        margin-bottom: 0;
+    }
+    .support-services .service .service-image img {
+        margin-right: 20px;
+        height: 42px;
+    }
+    .support-services .service span {
+        padding-bottom: 0;
+        font-size: 16px;
+    }
+    
+    .where-to-buy .title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .where-to-buy .btn-toggles {
+        margin: 0 auto 20px;
+        border-radius: 30px;
+    }
+    .where-to-buy .btn-toggles span {
+        font-size: 14px;
+        padding: 8px 25px;
+    }
+    .where-to-buy .store-navs {
+        margin-top: 20px;
+    }
+    .where-to-buy .filters {
+        margin: 20px 0;
+    }
+    .where-to-buy .filters .filter {
+        justify-content: space-between;
+    }
+    .where-to-buy .filter label {
+        font-size: 16px;
+    }
+    .where-to-buy .filter select {
+        padding: 12px 34px 12px 15px;
+        font-size: 14px;
+        background-size: 24px;
+        width: 62%;
+    }
+    .where-to-buy [data-store=retail-store] .filter select {
+        width: 62%;
+    }
+    .where-to-buy [data-store="retail-store"] .filters-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 20px;
+    }
+    .where-to-buy .filter-input input {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+    .where-to-buy .filter-input .search-btn {
+        padding: 11px 25px 11px 20px;
+    }
+    .where-to-buy .filter-input .search-btn .svg-wrapper {
+        width: 18px;
+        height: 18px;
+    }
+    .where-to-buy .locations {
+        padding: 20px;
+        height: auto;
+    }
+    .where-to-buy .location {
+        display: none;
+        padding-bottom: 20px;
+    }
+    .where-to-buy .location:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .where-to-buy .location .location-name {
+        font-size: 16px;
+    }
+    .where-to-buy .location .location-details {
+        font-size: 14px;
+    }
+    .where-to-buy .location .location-details img {
+        height: 16px;
+    }
+    .where-to-buy #map {
+        height: 480px;
+    }
+    .where-to-buy .stores-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .where-to-buy .col-custom {
+        width: 50%;
+    }
+    .where-to-buy .store-name {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    
+    .faq .title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .faq .accordion-item {
+        margin-bottom: 25px !important;
+    }
+    .faq .accordion-button {
+        font-size: 16px;
+        padding: 0 10px 20px 0;
+    }
+    .faq .accordion-body {
+        font-size: 14px;
+        padding: 0 0 20px;
+    }
+
+    .more-help .title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .more-help .helps-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .more-help .help {
+        padding: 20px 10px;
+    }
+    .more-help .help img {
+        height: 30px;
+    }
+    .more-help .help .help-title {
+        font-size: 16px;
+        margin: 10px 0 5px;
+    }
+    .more-help .help .help-text {
+        font-size: 14px;
+    }
+    .more-help .help a {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 428px) {
+    .form-modal .container {
+        width: 100%;
+        max-height: 100%;
+        padding: 20px 30px;
+    }
+    .form-modal[data-modal="warranty-claim"] .container {
+        width: 100%;
+    }
+    .form-modal[data-modal="feedback"] .container {
+        width: 100%;
+    }
+    .form-modal .form-close {
+        top: 10px;
+    }
+    .form-modal .form-close::before {
+        left: 20px;
+    }
+    .form-modal .form-body .row {
+        --bs-gutter-x: 10px;
+        --bs-gutter-y: 15px;
+    }
+
+    .section-content {
+        --padding-tb: 30px;
+    }
+    
+    .support-search {
+        height: 88vh;
+    }
+    .support-search .section-content {
+        --padding-tb: 50px;
+    }
+    .support-search .title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    .support-search .search-group {
+        width: 95%
+    }
+    .support-search .search-group input {
+        font-size: 16px;
+        padding: 0 10px 0 30px;
+        width: 100%;
+    }
+    .support-search .search-group .search-x {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .support-search .search-group .search-btn {
+        padding: 14px 32px 14px 22px;
+    }
+    .support-search .search-group .search-btn .svg-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+    .support-search .search-items {
+        margin-top: 30px;
+        font-size: 12px;
+    }
+    .support-search .search-items a {
+        padding: 6px 16px;
+    }
+
+    .support-nav .nav-items {
+        justify-content: start;
+        font-size: 14px;
+        gap: 30px;
+    }
+    .support-nav .nav-items span:last-child {
+        padding-right: 20px;
+    }
+    .support-nav .nav-items span {
+        padding: 10px 0;
+    }
+   
+    .product-support .title {
+        font-size: 26px;
+    }
+    .product-support .products-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .product-support .col-custom {
+        width: 50%;
+    }
+    .product-support .product-title {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .toggles {
+        margin: 40px 0;
+    }
+    .toggles span {
+        font-size: 14px;
+        padding: 10px 6px;
+    }
+    
+    .paginate.custom {
+        margin-top: 40px;
+        gap: 10px;
+    }
+    .paginate.custom .page {
+        font-size: 14px;
+        width: 38px;
+        height: 38px;
+    }
+    
+    .support-services .title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .support-services .services-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 20px;
+    }
+    .support-services .service .service-image {
+        justify-content: start;
+        padding: 30px 20px;
+        margin-bottom: 0;
+    }
+    .support-services .service .service-image img {
+        margin-right: 20px;
+        height: 42px;
+    }
+    .support-services .service span {
+        padding-bottom: 0;
+        font-size: 16px;
+    }
+    
+    .where-to-buy .title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .where-to-buy .btn-toggles {
+        margin: 0 auto 20px;
+        border-radius: 30px;
+    }
+    .where-to-buy .btn-toggles span {
+        font-size: 14px;
+        padding: 8px 25px;
+    }
+    .where-to-buy .store-navs {
+        margin-top: 20px;
+    }
+    .where-to-buy .filters {
+        margin: 20px 0;
+    }
+    .where-to-buy .filters .filter {
+        justify-content: space-between;
+    }
+    .where-to-buy .filter label {
+        font-size: 16px;
+    }
+    .where-to-buy .filter select {
+        padding: 12px 34px 12px 15px;
+        font-size: 14px;
+        background-size: 24px;
+        width: 68%;
+    }
+    .where-to-buy [data-store=retail-store] .filter select {
+        width: 68%;
+    }
+    .where-to-buy [data-store="retail-store"] .filters-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 20px;
+    }
+    .where-to-buy .filter-input input {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+    .where-to-buy .filter-input .search-btn {
+        padding: 11px 25px 11px 20px;
+    }
+    .where-to-buy .filter-input .search-btn .svg-wrapper {
+        width: 18px;
+        height: 18px;
+    }
+    .where-to-buy .locations {
+        padding: 20px;
+        height: auto;
+    }
+    .where-to-buy .location {
+        display: none;
+        padding-bottom: 20px;
+    }
+    .where-to-buy .location:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .where-to-buy .location .location-name {
+        font-size: 16px;
+    }
+    .where-to-buy .location .location-details {
+        font-size: 14px;
+    }
+    .where-to-buy .location .location-details img {
+        height: 16px;
+    }
+    .where-to-buy #map {
+        height: 480px;
+    }
+    .where-to-buy .stores-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .where-to-buy .col-custom {
+        width: 50%;
+    }
+    .where-to-buy .store-name {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    
+    .faq .title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .faq .accordion-item {
+        margin-bottom: 25px !important;
+    }
+    .faq .accordion-button {
+        font-size: 16px;
+        padding: 0 10px 20px 0;
+    }
+    .faq .accordion-body {
+        font-size: 14px;
+        padding: 0 0 20px;
+    }
+
+    .more-help .title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .more-help .helps-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .more-help .help {
+        padding: 20px 10px;
+    }
+    .more-help .help img {
+        height: 30px;
+    }
+    .more-help .help .help-title {
+        font-size: 16px;
+        margin: 10px 0 5px;
+    }
+    .more-help .help .help-text {
+        font-size: 14px;
+    }
+    .more-help .help a {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    .form-modal .container {
+        width: 100%;
+        max-height: 100%;
+        padding: 20px 30px;
+    }
+    .form-modal[data-modal="warranty-claim"] .container {
+        width: 100%;
+    }
+    .form-modal[data-modal="feedback"] .container {
+        width: 100%;
+    }
+    .form-modal .form-close {
+        top: 10px;
+    }
+    .form-modal .form-close::before {
+        left: 20px;
+    }
+    .form-modal .form-body .row {
+        --bs-gutter-x: 10px;
+        --bs-gutter-y: 15px;
+    }
+
+    .section-content {
+        --padding-tb: 30px;
+    }
+    
+    .support-search {
+        height: 88vh;
+    }
+    .support-search .section-content {
+        --padding-tb: 50px;
+    }
+    .support-search .title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    .support-search .search-group {
+        width: 95%
+    }
+    .support-search .search-group input {
+        font-size: 16px;
+        padding: 0 10px 0 30px;
+        width: 100%;
+    }
+    .support-search .search-group .search-x {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .support-search .search-group .search-btn {
+        padding: 14px 32px 14px 22px;
+    }
+    .support-search .search-group .search-btn .svg-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+    .support-search .search-items {
+        margin-top: 30px;
+        font-size: 14px;
+    }
+    .support-search .search-items a {
+        padding: 6px 16px;
+    }
+
+    .support-nav .nav-items {
+        justify-content: start;
+        font-size: 14px;
+        gap: 30px;
+    }
+    .support-nav .nav-items span:last-child {
+        padding-right: 20px;
+    }
+    .support-nav .nav-items span {
+        padding: 10px 0;
+    }
+   
+    .product-support .title {
+        font-size: 28px;
+    }
+    .product-support .products-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .product-support .col-custom {
+        width: 50%;
+    }
+    .product-support .product-title {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .toggles {
+        margin: 40px 0;
+    }
+    .toggles span {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+    
+    .paginate.custom {
+        margin-top: 40px;
+        gap: 10px;
+    }
+    .paginate.custom .page {
+        font-size: 14px;
+        width: 38px;
+        height: 38px;
+    }
+    
+    .support-services .title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .support-services .services-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 20px;
+    }
+    .support-services .service .service-image {
+        justify-content: start;
+        padding: 30px 20px;
+        margin-bottom: 0;
+    }
+    .support-services .service .service-image img {
+        margin-right: 20px;
+        height: 44px;
+    }
+    .support-services .service span {
+        padding-bottom: 0;
+        font-size: 18px;
+    }
+    
+    .where-to-buy .title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .where-to-buy .btn-toggles {
+        margin: 0 auto 20px;
+        border-radius: 30px;
+    }
+    .where-to-buy .btn-toggles span {
+        font-size: 14px;
+        padding: 8px 25px;
+    }
+    .where-to-buy .store-navs {
+        margin-top: 20px;
+    }
+    .where-to-buy .filters {
+        margin: 20px 0;
+    }
+    .where-to-buy .filters .filter {
+        justify-content: space-between;
+    }
+    .where-to-buy .filter label {
+        font-size: 16px;
+    }
+    .where-to-buy .filter select {
+        padding: 12px 34px 12px 15px;
+        font-size: 14px;
+        background-size: 24px;
+        width: 68%;
+    }
+    .where-to-buy [data-store=retail-store] .filter select {
+        width: 68%;
+    }
+    .where-to-buy [data-store="retail-store"] .filters-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 20px;
+    }
+    .where-to-buy .filter-input input {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+    .where-to-buy .filter-input .search-btn {
+        padding: 11px 25px 11px 20px;
+    }
+    .where-to-buy .filter-input .search-btn .svg-wrapper {
+        width: 18px;
+        height: 18px;
+    }
+    .where-to-buy .locations {
+        padding: 20px;
+        height: auto;
+    }
+    .where-to-buy .location {
+        display: none;
+        padding-bottom: 20px;
+    }
+    .where-to-buy .location:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .where-to-buy .location .location-name {
+        font-size: 16px;
+    }
+    .where-to-buy .location .location-details {
+        font-size: 14px;
+    }
+    .where-to-buy .location .location-details img {
+        height: 16px;
+    }
+    .where-to-buy #map {
+        height: 480px;
+    }
+    .where-to-buy .stores-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .where-to-buy .col-custom {
+        width: 50%;
+    }
+    .where-to-buy .store-name {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    
+    .faq .title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .faq .accordion-item {
+        margin-bottom: 25px !important;
+    }
+    .faq .accordion-button {
+        font-size: 16px;
+        padding: 0 10px 20px 0;
+    }
+    .faq .accordion-body {
+        font-size: 14px;
+        padding: 0 0 20px;
+    }
+
+    .more-help .title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .more-help .helps-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .more-help .help {
+        padding: 20px 10px;
+    }
+    .more-help .help img {
+        height: 32px;
+    }
+    .more-help .help .help-title {
+        font-size: 16px;
+        margin: 10px 0 5px;
+    }
+    .more-help .help .help-text {
+        font-size: 14px;
+    }
+    .more-help .help a {
+        font-size: 14px;
+    }
+}
+
+/* TABLETS ----------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 768px) {
+    .form-modal .container {
+        width: 90%;
+        max-height: 80%;
+        padding: 20px 30px;
+    }
+    .form-modal[data-modal="warranty-claim"] .container {
+        width: 90%;
+    }
+    .form-modal[data-modal="feedback"] .container {
+        width: 90%;
+    }
+    .form-modal .form-close {
+        top: 10px;
+    }
+    .form-modal .form-close::before {
+        left: 20px;
+    }
+    .form-modal .form-body .row {
+        --bs-gutter-x: 10px;
+        --bs-gutter-y: 15px;
+    }
+
+    .section-content {
+        --padding-tb: 30px;
+    }
+    
+    .support-search {
+        height: 80vh;
+    }
+    .support-search .section-content {
+        --padding-tb: 50px;
+    }
+    .support-search .title {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+    .support-search .search-group {
+        width: fit-content;
+    }
+    .support-search .search-group input {
+        font-size: 16px;
+        padding: 0 10px 0 30px;
+        width: 400px;
+    }
+    .support-search .search-group .search-x {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .support-search .search-group .search-btn {
+        padding: 14px 32px 14px 22px;
+    }
+    .support-search .search-group .search-btn .svg-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+    .support-search .search-items {
+        margin-top: 30px;
+        font-size: 14px;
+    }
+    .support-search .search-items a {
+        padding: 6px 16px;
+    }
+
+    .support-nav .nav-items {
+        justify-content: center;
+        font-size: 16px;
+        gap: 30px;
+    }
+    .support-nav .nav-items span:last-child {
+        padding-right: 0;
+    }
+    .support-nav .nav-items span {
+        padding: 10px 0;
+    }
+   
+    .product-support .title {
+        font-size: 32px;
+    }
+    .product-support .products-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .product-support .col-custom {
+        width: 50%;
+    }
+    .product-support .product-title {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .toggles {
+        margin: 40px 0;
+    }
+    .toggles span {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+    
+    .paginate.custom {
+        margin-top: 40px;
+        gap: 10px;
+    }
+    .paginate.custom .page {
+        font-size: 14px;
+        width: 38px;
+        height: 38px;
+    }
+    
+    .support-services .title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .support-services .services-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 20px;
+    }
+    .support-services .service .service-image {
+        justify-content: start;
+        padding: 30px 20px;
+        margin-bottom: 0;
+    }
+    .support-services .service .service-image img {
+        margin-right: 20px;
+        height: 44px;
+    }
+    .support-services .service span {
+        padding-bottom: 0;
+        font-size: 18px;
+    }
+    
+    .where-to-buy .title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .where-to-buy .btn-toggles {
+        margin: 0 auto 20px;
+        border-radius: 30px;
+    }
+    .where-to-buy .btn-toggles span {
+        font-size: 14px;
+        padding: 8px 25px;
+    }
+    .where-to-buy .store-navs {
+        margin-top: 20px;
+    }
+    .where-to-buy .filters {
+        margin: 20px 0;
+    }
+    .where-to-buy .filters .filter {
+        justify-content: space-between;
+    }
+    .where-to-buy .filter label {
+        font-size: 16px;
+    }
+    .where-to-buy .filter select {
+        padding: 12px 34px 12px 15px;
+        font-size: 14px;
+        background-size: 24px;
+        width: 68%;
+    }
+    .where-to-buy [data-store=retail-store] .filter select {
+        width: 68%;
+    }
+    .where-to-buy [data-store="retail-store"] .filters-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 20px;
+    }
+    .where-to-buy .filter-input input {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+    .where-to-buy .filter-input .search-btn {
+        padding: 11px 25px 11px 20px;
+    }
+    .where-to-buy .filter-input .search-btn .svg-wrapper {
+        width: 18px;
+        height: 18px;
+    }
+    .where-to-buy .locations {
+        padding: 20px;
+        height: auto;
+    }
+    .where-to-buy .location {
+        display: none;
+        padding-bottom: 20px;
+    }
+    .where-to-buy .location:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .where-to-buy .location .location-name {
+        font-size: 16px;
+    }
+    .where-to-buy .location .location-details {
+        font-size: 14px;
+    }
+    .where-to-buy .location .location-details img {
+        height: 16px;
+    }
+    .where-to-buy #map {
+        height: 480px;
+    }
+    .where-to-buy .stores-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .where-to-buy .col-custom {
+        width: 50%;
+    }
+    .where-to-buy .store-name {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    
+    .faq .title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .faq .accordion-item {
+        margin-bottom: 25px !important;
+    }
+    .faq .accordion-button {
+        font-size: 16px;
+        padding: 0 10px 20px 0;
+    }
+    .faq .accordion-body {
+        font-size: 14px;
+        padding: 0 0 20px;
+    }
+
+    .more-help .title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .more-help .helps-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+    .more-help .help {
+        padding: 20px 10px;
+    }
+    .more-help .help img {
+        height: 32px;
+    }
+    .more-help .help .help-title {
+        font-size: 16px;
+        margin: 10px 0 5px;
+    }
+    .more-help .help .help-text {
+        font-size: 14px;
+    }
+    .more-help .help a {
+        font-size: 14px;
+    }
+}
+
+
+/* COMPUTERS --------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 1280px) {
+    .form-modal .container {
+        width: 50%;
+        max-height: 90%;
+        padding: 30px 40px;
+    }
+    .form-modal[data-modal="warranty-claim"] .container {
+        width: 55%;
+    }
+    .form-modal[data-modal="feedback"] .container {
+        width: 45%;
+    }
+    .form-modal .form-close {
+        top: 10px;
+    }
+    .form-modal .form-close::before {
+        left: 30px;
+    }
+    .form-modal .form-body .row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+
+    .section-content {
+        --padding-tb: 50px;
+    }
+    
+    .support-search {
+        height: 50vh;
+    }
+    .support-search .section-content {
+        --padding-tb: 50px;
+    }
+    .support-search .title {
+        font-size: 44px;
+        margin-bottom: 30px;
+    }
+    .support-search .search-group {
+        width: fit-content;
+    }
+    .support-search .search-group input {
+        font-size: 16px;
+        padding: 0 10px 0 30px;
+        width: 330px;
+    }
+    .support-search .search-group .search-x {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .support-search .search-group .search-btn {
+        padding: 14px 32px 14px 22px;
+    }
+    .support-search .search-group .search-btn .svg-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+    .support-search .search-items {
+        margin-top: 30px;
+        font-size: 14px;
+    }
+    .support-search .search-items a {
+        padding: 6px 16px;
+    }
+
+    .support-nav .nav-items {
+        justify-content: center;
+        font-size: 16px;
+        gap: 50px;
+    }
+    .support-nav .nav-items span:last-child {
+        padding-right: 0;
+    }
+    .support-nav .nav-items span {
+        padding: 20px 0;
+    }
+   
+    .product-support .title {
+        font-size: 32px;
+    }
+    .product-support .products-row {
+        --bs-gutter-x: 25px;
+        --bs-gutter-y: 25px;
+    }
+    .product-support .col-custom {
+        width: 20%;
+    }
+    .product-support .product-title {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .toggles {
+        margin: 30px 0;
+    }
+    .toggles span {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+    
+    .paginate.custom {
+        margin-top: 50px;
+        gap: 10px;
+    }
+    .paginate.custom .page {
+        font-size: 14px;
+        width: 42px;
+        height: 42px;
+    }
+    
+    .support-services .title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .support-services .services-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .support-services .service .service-image {
+        justify-content: center;
+        padding: 60px 20px;
+        margin-bottom: 20px;
+    }
+    .support-services .service .service-image img {
+        margin-right: 0;
+        height: 54px;
+    }
+    .support-services .service span {
+        padding-bottom: 10px;
+        font-size: 16px;
+    }
+    
+    .where-to-buy .title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .where-to-buy .btn-toggles {
+        margin: 0 auto 20px;
+        border-radius: 30px;
+    }
+    .where-to-buy .btn-toggles span {
+        font-size: 14px;
+        padding: 8px 25px;
+    }
+    .where-to-buy .store-navs {
+        margin-top: 20px;
+    }
+    .where-to-buy .filters {
+        margin: 20px 0;
+    }
+    .where-to-buy .filters .filter {
+        justify-content: flex-start;
+    }
+    .where-to-buy .filter label {
+        font-size: 16px;
+    }
+    .where-to-buy .filter select {
+        padding: 12px 34px 12px 15px;
+        font-size: 14px;
+        background-size: 24px;
+        width: 300px;
+    }
+    .where-to-buy [data-store=retail-store] .filter select {
+        width: 100%;
+    }
+    .where-to-buy [data-store="retail-store"] .filters-row {
+        --bs-gutter-x: 40px;
+        --bs-gutter-y: 0;
+    }
+    .where-to-buy .filter-input input {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+    .where-to-buy .filter-input .search-btn {
+        padding: 11px 25px 11px 20px;
+    }
+    .where-to-buy .filter-input .search-btn .svg-wrapper {
+        width: 18px;
+        height: 18px;
+    }
+    .where-to-buy .locations {
+        padding: 20px;
+        height: 480px;
+    }
+    .where-to-buy .location {
+        display: block;
+        padding-bottom: 20px;
+    }
+    .where-to-buy .location:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .where-to-buy .location .location-name {
+        font-size: 16px;
+    }
+    .where-to-buy .location .location-details {
+        font-size: 14px;
+    }
+    .where-to-buy .location .location-details img {
+        height: 16px;
+    }
+    .where-to-buy #map {
+        height: 480px;
+    }
+    .where-to-buy .stores-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 30px;
+    }
+    .where-to-buy .col-custom {
+        width: 20%;
+    }
+    .where-to-buy .store-name {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    
+    .faq .title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    .faq .accordion-item {
+        margin-bottom: 25px !important;
+    }
+    .faq .accordion-button {
+        font-size: 18px;
+        padding: 0 10px 20px 0;
+    }
+    .faq .accordion-body {
+        font-size: 16px;
+        padding: 0 0 20px;
+    }
+
+    .more-help .title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    .more-help .helps-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .more-help .help {
+        padding: 40px;
+    }
+    .more-help .help img {
+        height: 36px;
+    }
+    .more-help .help .help-title {
+        font-size: 20px;
+        margin: 20px 0 10px;
+    }
+    .more-help .help .help-text {
+        font-size: 16px;
+    }
+    .more-help .help a {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .form-modal .container {
+        width: 50%;
+        max-height: 90%;
+        padding: 30px 40px;
+    }
+    .form-modal[data-modal="warranty-claim"] .container {
+        width: 55%;
+    }
+    .form-modal[data-modal="feedback"] .container {
+        width: 45%;
+    }
+    .form-modal .form-close {
+        top: 10px;
+    }
+    .form-modal .form-close::before {
+        left: 30px;
+    }
+    .form-modal .form-body .row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+
+    .section-content {
+        --padding-tb: 50px;
+    }
+    
+    .support-search {
+        height: 50vh;
+    }
+    .support-search .section-content {
+        --padding-tb: 50px;
+    }
+    .support-search .title {
+        font-size: 46px;
+        margin-bottom: 30px;
+    }
+    .support-search .search-group {
+        width: fit-content;
+    }
+    .support-search .search-group input {
+        font-size: 16px;
+        padding: 0 10px 0 30px;
+        width: 350px;
+    }
+    .support-search .search-group .search-x {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .support-search .search-group .search-btn {
+        padding: 14px 32px 14px 22px;
+    }
+    .support-search .search-group .search-btn .svg-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+    .support-search .search-items {
+        margin-top: 30px;
+        font-size: 14px;
+    }
+    .support-search .search-items a {
+        padding: 6px 16px;
+    }
+
+    .support-nav .nav-items {
+        justify-content: center;
+        font-size: 16px;
+        gap: 50px;
+    }
+    .support-nav .nav-items span:last-child {
+        padding-right: 0;
+    }
+    .support-nav .nav-items span {
+        padding: 20px 0;
+    }
+   
+    .product-support .title {
+        font-size: 34px;
+    }
+    .product-support .products-row {
+        --bs-gutter-x: 25px;
+        --bs-gutter-y: 25px;
+    }
+    .product-support .col-custom {
+        width: 20%;
+    }
+    .product-support .product-title {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .toggles {
+        margin: 30px 0;
+    }
+    .toggles span {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+    
+    .paginate.custom {
+        margin-top: 50px;
+        gap: 10px;
+    }
+    .paginate.custom .page {
+        font-size: 14px;
+        width: 42px;
+        height: 42px;
+    }
+    
+    .support-services .title {
+        font-size: 34px;
+        margin-bottom: 30px;
+    }
+    .support-services .services-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .support-services .service .service-image {
+        justify-content: center;
+        padding: 60px 20px;
+        margin-bottom: 20px;
+    }
+    .support-services .service .service-image img {
+        margin-right: 0;
+        height: 56px;
+    }
+    .support-services .service span {
+        padding-bottom: 10px;
+        font-size: 16px;
+    }
+    
+    .where-to-buy .title {
+        font-size: 34px;
+        margin-bottom: 30px;
+    }
+    .where-to-buy .btn-toggles {
+        margin: 0 auto 20px;
+        border-radius: 30px;
+    }
+    .where-to-buy .btn-toggles span {
+        font-size: 14px;
+        padding: 8px 25px;
+    }
+    .where-to-buy .store-navs {
+        margin-top: 20px;
+    }
+    .where-to-buy .filters {
+        margin: 20px 0;
+    }
+    .where-to-buy .filters .filter {
+        justify-content: flex-start;
+    }
+    .where-to-buy .filter label {
+        font-size: 16px;
+    }
+    .where-to-buy .filter select {
+        padding: 12px 34px 12px 15px;
+        font-size: 14px;
+        background-size: 24px;
+        width: 300px;
+    }
+    .where-to-buy [data-store=retail-store] .filter select {
+        width: 100%;
+    }
+    .where-to-buy [data-store="retail-store"] .filters-row {
+        --bs-gutter-x: 40px;
+        --bs-gutter-y: 0;
+    }
+    .where-to-buy .filter-input input {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+    .where-to-buy .filter-input .search-btn {
+        padding: 11px 25px 11px 20px;
+    }
+    .where-to-buy .filter-input .search-btn .svg-wrapper {
+        width: 18px;
+        height: 18px;
+    }
+    .where-to-buy .locations {
+        padding: 20px;
+        height: 480px;
+    }
+    .where-to-buy .location {
+        display: block;
+        padding-bottom: 20px;
+    }
+    .where-to-buy .location:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .where-to-buy .location .location-name {
+        font-size: 16px;
+    }
+    .where-to-buy .location .location-details {
+        font-size: 14px;
+    }
+    .where-to-buy .location .location-details img {
+        height: 16px;
+    }
+    .where-to-buy #map {
+        height: 480px;
+    }
+    .where-to-buy .stores-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 30px;
+    }
+    .where-to-buy .col-custom {
+        width: 20%;
+    }
+    .where-to-buy .store-name {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    
+    .faq .title {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+    .faq .accordion-item {
+        margin-bottom: 25px !important;
+    }
+    .faq .accordion-button {
+        font-size: 18px;
+        padding: 0 10px 20px 0;
+    }
+    .faq .accordion-body {
+        font-size: 16px;
+        padding: 0 0 20px;
+    }
+
+    .more-help .title {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+    .more-help .helps-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .more-help .help {
+        padding: 40px;
+    }
+    .more-help .help img {
+        height: 36px;
+    }
+    .more-help .help .help-title {
+        font-size: 20px;
+        margin: 20px 0 10px;
+    }
+    .more-help .help .help-text {
+        font-size: 16px;
+    }
+    .more-help .help a {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .form-modal .container {
+        width: 50%;
+        max-height: 90%;
+        padding: 30px 40px;
+    }
+    .form-modal[data-modal="warranty-claim"] .container {
+        width: 55%;
+    }
+    .form-modal[data-modal="feedback"] .container {
+        width: 45%;
+    }
+    .form-modal .form-close {
+        top: 10px;
+    }
+    .form-modal .form-close::before {
+        left: 30px;
+    }
+    .form-modal .form-body .row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+
+    .section-content {
+        --padding-tb: 50px;
+    }
+    
+    .support-search {
+        height: 50vh;
+    }
+    .support-search .section-content {
+        --padding-tb: 50px;
+    }
+    .support-search .title {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+    .support-search .search-group {
+        width: fit-content;
+    }
+    .support-search .search-group input {
+        font-size: 16px;
+        padding: 0 10px 0 30px;
+        width: 350px;
+    }
+    .support-search .search-group .search-x {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .support-search .search-group .search-btn {
+        padding: 14px 32px 14px 22px;
+    }
+    .support-search .search-group .search-btn .svg-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+    .support-search .search-items {
+        margin-top: 30px;
+        font-size: 14px;
+    }
+    .support-search .search-items a {
+        padding: 6px 16px;
+    }
+
+    .support-nav .nav-items {
+        justify-content: center;
+        font-size: 16px;
+        gap: 50px;
+    }
+    .support-nav .nav-items span:last-child {
+        padding-right: 0;
+    }
+    .support-nav .nav-items span {
+        padding: 20px 0;
+    }
+   
+    .product-support .title {
+        font-size: 36px;
+    }
+    .product-support .products-row {
+        --bs-gutter-x: 25px;
+        --bs-gutter-y: 25px;
+    }
+    .product-support .col-custom {
+        width: 20%;
+    }
+    .product-support .product-title {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .toggles {
+        margin: 30px 0;
+    }
+    .toggles span {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+    
+    .paginate.custom {
+        margin-top: 50px;
+        gap: 10px;
+    }
+    .paginate.custom .page {
+        font-size: 14px;
+        width: 42px;
+        height: 42px;
+    }
+    
+    .support-services .title {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    .support-services .services-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .support-services .service .service-image {
+        justify-content: center;
+        padding: 80px 20px;
+        margin-bottom: 20px;
+    }
+    .support-services .service .service-image img {
+        margin-right: 0;
+        height: 60px;
+    }
+    .support-services .service span {
+        padding-bottom: 10px;
+        font-size: 16px;
+    }
+    
+    .where-to-buy .title {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    .where-to-buy .btn-toggles {
+        margin: 0 auto 20px;
+        border-radius: 30px;
+    }
+    .where-to-buy .btn-toggles span {
+        font-size: 14px;
+        padding: 8px 30px;
+    }
+    .where-to-buy .store-navs {
+        margin-top: 20px;
+    }
+    .where-to-buy .filters {
+        margin: 20px 0;
+    }
+    .where-to-buy .filters .filter {
+        justify-content: flex-start;
+    }
+    .where-to-buy .filter label {
+        font-size: 16px;
+    }
+    .where-to-buy .filter select {
+        padding: 12px 34px 12px 15px;
+        font-size: 14px;
+        background-size: 24px;
+        width: 340px;
+    }
+    .where-to-buy [data-store=retail-store] .filter select {
+        width: 100%;
+    }
+    .where-to-buy [data-store="retail-store"] .filters-row {
+        --bs-gutter-x: 40px;
+        --bs-gutter-y: 0;
+    }
+    .where-to-buy .filter-input input {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+    .where-to-buy .filter-input .search-btn {
+        padding: 11px 25px 11px 20px;
+    }
+    .where-to-buy .filter-input .search-btn .svg-wrapper {
+        width: 18px;
+        height: 18px;
+    }
+    .where-to-buy .locations {
+        padding: 20px;
+        height: 520px;
+    }
+    .where-to-buy .location {
+        display: block;
+        padding-bottom: 20px;
+    }
+    .where-to-buy .location:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .where-to-buy .location .location-name {
+        font-size: 16px;
+    }
+    .where-to-buy .location .location-details {
+        font-size: 14px;
+    }
+    .where-to-buy .location .location-details img {
+        height: 16px;
+    }
+    .where-to-buy #map {
+        height: 520px;
+    }
+    .where-to-buy .stores-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 30px;
+    }
+    .where-to-buy .col-custom {
+        width: 20%;
+    }
+    .where-to-buy .store-name {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    
+    .faq .title {
+        font-size: 46px;
+        margin-bottom: 30px;
+    }
+    .faq .accordion-item {
+        margin-bottom: 25px !important;
+    }
+    .faq .accordion-button {
+        font-size: 18px;
+        padding: 0 10px 20px 0;
+    }
+    .faq .accordion-body {
+        font-size: 16px;
+        padding: 0 0 20px;
+    }
+
+    .more-help .title {
+        font-size: 46px;
+        margin-bottom: 30px;
+    }
+    .more-help .helps-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .more-help .help {
+        padding: 40px;
+    }
+    .more-help .help img {
+        height: 38px;
+    }
+    .more-help .help .help-title {
+        font-size: 20px;
+        margin: 20px 0 10px;
+    }
+    .more-help .help .help-text {
+        font-size: 16px;
+    }
+    .more-help .help a {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+    .form-modal .container {
+        width: 50%;
+        max-height: 90%;
+        padding: 30px 40px;
+    }
+    .form-modal[data-modal="warranty-claim"] .container {
+        width: 50%;
+    }
+    .form-modal[data-modal="feedback"] .container {
+        width: 40%;
+    }
+    .form-modal .form-close {
+        top: 10px;
+    }
+    .form-modal .form-close::before {
+        left: 30px;
+    }
+    .form-modal .form-body .row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+
+    .section-content {
+        --padding-tb: 50px;
+    }
+    
+    .support-search {
+        height: 50vh;
+    }
+    .support-search .section-content {
+        --padding-tb: 50px;
+    }
+    .support-search .title {
+        font-size: 52px;
+        margin-bottom: 40px;
+    }
+    .support-search .search-group {
+        width: fit-content;
+    }
+    .support-search .search-group input {
+        font-size: 16px;
+        padding: 0 10px 0 30px;
+        width: 360px;
+    }
+    .support-search .search-group .search-x {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .support-search .search-group .search-btn {
+        padding: 16px 35px 16px 25px;
+    }
+    .support-search .search-group .search-btn .svg-wrapper {
+        width: 22px;
+        height: 22px;
+    }
+    .support-search .search-items {
+        margin-top: 30px;
+        font-size: 14px;
+    }
+    .support-search .search-items a {
+        padding: 6px 16px;
+    }
+
+    .support-nav .nav-items {
+        justify-content: center;
+        font-size: 16px;
+        gap: 50px;
+    }
+    .support-nav .nav-items span:last-child {
+        padding-right: 0;
+    }
+    .support-nav .nav-items span {
+        padding: 20px 0;
+    }
+   
+    .product-support .title {
+        font-size: 38px;
+    }
+    .product-support .products-row {
+        --bs-gutter-x: 25px;
+        --bs-gutter-y: 25px;
+    }
+    .product-support .col-custom {
+        width: 20%;
+    }
+    .product-support .product-title {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    .toggles {
+        margin: 30px 0;
+    }
+    .toggles span {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+    
+    .paginate.custom {
+        margin-top: 50px;
+        gap: 10px;
+    }
+    .paginate.custom .page {
+        font-size: 14px;
+        width: 42px;
+        height: 42px;
+    }
+    
+    .support-services .title {
+        font-size: 38px;
+        margin-bottom: 30px;
+    }
+    .support-services .services-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .support-services .service .service-image {
+        justify-content: center;
+        padding: 90px 20px;
+        margin-bottom: 20px;
+    }
+    .support-services .service .service-image img {
+        margin-right: 0;
+        height: 64px;
+    }
+    .support-services .service span {
+        padding-bottom: 10px;
+        font-size: 16px;
+    }
+    
+    .where-to-buy .title {
+        font-size: 38px;
+        margin-bottom: 30px;
+    }
+    .where-to-buy .btn-toggles {
+        margin: 0 auto 20px;
+        border-radius: 30px;
+    }
+    .where-to-buy .btn-toggles span {
+        font-size: 16px;
+        padding: 8px 30px;
+    }
+    .where-to-buy .store-navs {
+        margin-top: 20px;
+    }
+    .where-to-buy .filters {
+        margin: 20px 0;
+    }
+    .where-to-buy .filters .filter {
+        justify-content: flex-start;
+    }
+    .where-to-buy .filter label {
+        font-size: 18px;
+    }
+    .where-to-buy .filter select {
+        padding: 14px 36px 14px 15px;
+        font-size: 14px;
+        background-size: 24px;
+        width: 340px;
+    }
+    .where-to-buy [data-store=retail-store] .filter select {
+        width: 100%;
+    }
+    .where-to-buy [data-store="retail-store"] .filters-row {
+        --bs-gutter-x: 40px;
+        --bs-gutter-y: 0;
+    }
+    .where-to-buy .filter-input input {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+    .where-to-buy .filter-input .search-btn {
+        padding: 12px 30px 12px 25px;
+    }
+    .where-to-buy .filter-input .search-btn .svg-wrapper {
+        width: 18px;
+        height: 18px;
+    }
+    .where-to-buy .locations {
+        padding: 20px;
+        height: 530px;
+    }
+    .where-to-buy .location {
+        display: block;
+        padding-bottom: 20px;
+    }
+    .where-to-buy .location:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .where-to-buy .location .location-name {
+        font-size: 16px;
+    }
+    .where-to-buy .location .location-details {
+        font-size: 14px;
+    }
+    .where-to-buy .location .location-details img {
+        height: 16px;
+    }
+    .where-to-buy #map {
+        height: 530px;
+    }
+    .where-to-buy .stores-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 30px;
+    }
+    .where-to-buy .col-custom {
+        width: 20%;
+    }
+    .where-to-buy .store-name {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    
+    .faq .title {
+        font-size: 48px;
+        margin-bottom: 30px;
+    }
+    .faq .accordion-item {
+        margin-bottom: 25px !important;
+    }
+    .faq .accordion-button {
+        font-size: 18px;
+        padding: 0 10px 20px 0;
+    }
+    .faq .accordion-body {
+        font-size: 16px;
+        padding: 0 0 20px;
+    }
+
+    .more-help .title {
+        font-size: 48px;
+        margin-bottom: 30px;
+    }
+    .more-help .helps-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .more-help .help {
+        padding: 50px;
+    }
+    .more-help .help img {
+        height: 40px;
+    }
+    .more-help .help .help-title {
+        font-size: 20px;
+        margin: 20px 0 10px;
+    }
+    .more-help .help .help-text {
+        font-size: 16px;
+    }
+    .more-help .help a {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .form-modal .container {
+        width: 50%;
+        max-height: 90%;
+        padding: 30px 40px;
+    }
+    .form-modal[data-modal="warranty-claim"] .container {
+        width: 50%;
+    }
+    .form-modal[data-modal="feedback"] .container {
+        width: 40%;
+    }
+    .form-modal .form-close {
+        top: 10px;
+    }
+    .form-modal .form-close::before {
+        left: 30px;
+    }
+    .form-modal .form-body .row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+
+    .section-content {
+        --padding-tb: 50px;
+    }
+    
+    .support-search {
+        height: 50vh;
+    }
+    .support-search .section-content {
+        --padding-tb: 50px;
+    }
+    .support-search .title {
+        font-size: 54px;
+        margin-bottom: 40px;
+    }
+    .support-search .search-group {
+        width: fit-content;
+    }
+    .support-search .search-group input {
+        font-size: 16px;
+        padding: 0 10px 0 30px;
+        width: 360px;
+    }
+    .support-search .search-group .search-x {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .support-search .search-group .search-btn {
+        padding: 16px 35px 16px 25px;
+    }
+    .support-search .search-group .search-btn .svg-wrapper {
+        width: 22px;
+        height: 22px;
+    }
+    .support-search .search-items {
+        margin-top: 30px;
+        font-size: 14px;
+    }
+    .support-search .search-items a {
+        padding: 6px 16px;
+    }
+
+    .support-nav .nav-items {
+        justify-content: center;
+        font-size: 16px;
+        gap: 50px;
+    }
+    .support-nav .nav-items span:last-child {
+        padding-right: 0;
+    }
+    .support-nav .nav-items span {
+        padding: 20px 0;
+    }
+   
+    .product-support .title {
+        font-size: 40px;
+    }
+    .product-support .products-row {
+        --bs-gutter-x: 25px;
+        --bs-gutter-y: 25px;
+    }
+    .product-support .col-custom {
+        width: 20%;
+    }
+    .product-support .product-title {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    .toggles {
+        margin: 30px 0;
+    }
+    .toggles span {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+    
+    .paginate.custom {
+        margin-top: 50px;
+        gap: 10px;
+    }
+    .paginate.custom .page {
+        font-size: 14px;
+        width: 42px;
+        height: 42px;
+    }
+    
+    .support-services .title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    .support-services .services-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .support-services .service .service-image {
+        justify-content: center;
+        padding: 90px 20px;
+        margin-bottom: 20px;
+    }
+    .support-services .service .service-image img {
+        margin-right: 0;
+        height: 68px;
+    }
+    .support-services .service span {
+        padding-bottom: 10px;
+        font-size: 18px;
+    }
+    
+    .where-to-buy .title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    .where-to-buy .btn-toggles {
+        margin: 0 auto 20px;
+        border-radius: 30px;
+    }
+    .where-to-buy .btn-toggles span {
+        font-size: 16px;
+        padding: 8px 30px;
+    }
+    .where-to-buy .store-navs {
+        margin-top: 20px;
+    }
+    .where-to-buy .filters {
+        margin: 20px 0;
+    }
+    .where-to-buy .filters .filter {
+        justify-content: flex-start;
+    }
+    .where-to-buy .filter label {
+        font-size: 18px;
+    }
+    .where-to-buy .filter select {
+        padding: 14px 36px 14px 15px;
+        font-size: 16px;
+        background-size: 24px;
+        width: 340px;
+    }
+    .where-to-buy [data-store=retail-store] .filter select {
+        width: 100%;
+    }
+    .where-to-buy [data-store="retail-store"] .filters-row {
+        --bs-gutter-x: 40px;
+        --bs-gutter-y: 0;
+    }
+    .where-to-buy .filter-input input {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .where-to-buy .filter-input .search-btn {
+        padding: 12px 30px 12px 25px;
+    }
+    .where-to-buy .filter-input .search-btn .svg-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+    .where-to-buy .locations {
+        padding: 20px;
+        height: 550px;
+    }
+    .where-to-buy .location {
+        display: block;
+        padding-bottom: 20px;
+    }
+    .where-to-buy .location:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .where-to-buy .location .location-name {
+        font-size: 16px;
+    }
+    .where-to-buy .location .location-details {
+        font-size: 14px;
+    }
+    .where-to-buy .location .location-details img {
+        height: 16px;
+    }
+    .where-to-buy #map {
+        height: 550px;
+    }
+    .where-to-buy .stores-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 30px;
+    }
+    .where-to-buy .col-custom {
+        width: 20%;
+    }
+    .where-to-buy .store-name {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    
+    .faq .title {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+    .faq .accordion-item {
+        margin-bottom: 25px !important;
+    }
+    .faq .accordion-button {
+        font-size: 18px;
+        padding: 0 10px 20px 0;
+    }
+    .faq .accordion-body {
+        font-size: 16px;
+        padding: 0 0 20px;
+    }
+
+    .more-help .title {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+    .more-help .helps-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .more-help .help {
+        padding: 50px;
+    }
+    .more-help .help img {
+        height: 42px;
+    }
+    .more-help .help .help-title {
+        font-size: 20px;
+        margin: 20px 0 10px;
+    }
+    .more-help .help .help-text {
+        font-size: 16px;
+    }
+    .more-help .help a {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .form-modal .container {
+        width: 50%;
+        max-height: 80%;
+        padding: 30px 40px;
+    }
+    .form-modal[data-modal="warranty-claim"] .container {
+        width: 50%;
+    }
+    .form-modal[data-modal="feedback"] .container {
+        width: 34%;
+    }
+    .form-modal .form-close {
+        top: 10px;
+    }
+    .form-modal .form-close::before {
+        left: 30px;
+    }
+    .form-modal .form-body .row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+
+    .section-content {
+        --padding-tb: 50px;
+    }
+    
+    .support-search {
+        height: 50vh;
+    }
+    .support-search .section-content {
+        --padding-tb: 50px;
+    }
+    .support-search .title {
+        font-size: 58px;
+        margin-bottom: 40px;
+    }
+    .support-search .search-group {
+        width: fit-content;
+    }
+    .support-search .search-group input {
+        font-size: 18px;
+        padding: 0 10px 0 30px;
+        width: 380px;
+    }
+    .support-search .search-group .search-x {
+        padding: 0 15px;
+        font-size: 18px;
+    }
+    .support-search .search-group .search-btn {
+        padding: 18px 40px 18px 30px;
+    }
+    .support-search .search-group .search-btn .svg-wrapper {
+        width: 25px;
+        height: 25px;
+    }
+    .support-search .search-items {
+        margin-top: 30px;
+        font-size: 16px;
+    }
+    .support-search .search-items a {
+        padding: 6px 18px;
+    }
+
+    .support-nav .nav-items {
+        justify-content: center;
+        font-size: 16px;
+        gap: 50px;
+    }
+    .support-nav .nav-items span:last-child {
+        padding-right: 0;
+    }
+    .support-nav .nav-items span {
+        padding: 20px 0;
+    }
+   
+    .product-support .title {
+        font-size: 42px;
+    }
+    .product-support .products-row {
+        --bs-gutter-x: 25px;
+        --bs-gutter-y: 25px;
+    }
+    .product-support .col-custom {
+        width: 20%;
+    }
+    .product-support .product-title {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    .toggles {
+        margin: 30px 0;
+    }
+    .toggles span {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+    
+    .paginate.custom {
+        margin-top: 50px;
+        gap: 10px;
+    }
+    .paginate.custom .page {
+        font-size: 16px;
+        width: 44px;
+        height: 44px;
+    }
+    
+    .support-services .title {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+    .support-services .services-row {
+        --bs-gutter-x: 40px;
+        --bs-gutter-y: 40px;
+    }
+    .support-services .service .service-image {
+        justify-content: center;
+        padding: 100px 20px;
+        margin-bottom: 20px;
+    }
+    .support-services .service .service-image img {
+        margin-right: 0;
+        height: 74px;
+    }
+    .support-services .service span {
+        padding-bottom: 10px;
+        font-size: 18px;
+    }
+    
+    .where-to-buy .title {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+    .where-to-buy .btn-toggles {
+        margin: 0 auto 20px;
+        border-radius: 30px;
+    }
+    .where-to-buy .btn-toggles span {
+        font-size: 16px;
+        padding: 8px 30px;
+    }
+    .where-to-buy .store-navs {
+        margin-top: 20px;
+    }
+    .where-to-buy .filters {
+        margin: 20px 0;
+    }
+    .where-to-buy .filters .filter {
+        justify-content: flex-start;
+    }
+    .where-to-buy .filter label {
+        font-size: 18px;
+    }
+    .where-to-buy .filter select {
+        padding: 14px 36px 14px 15px;
+        font-size: 16px;
+        background-size: 24px;
+        width: 350px;
+    }
+    .where-to-buy [data-store=retail-store] .filter select {
+        width: 100%;
+    }
+    .where-to-buy [data-store="retail-store"] .filters-row {
+        --bs-gutter-x: 50px;
+        --bs-gutter-y: 0;
+    }
+    .where-to-buy .filter-input input {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .where-to-buy .filter-input .search-btn {
+        padding: 12px 30px 12px 25px;
+    }
+    .where-to-buy .filter-input .search-btn .svg-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+    .where-to-buy .locations {
+        padding: 20px;
+        height: 600px;
+    }
+    .where-to-buy .location {
+        display: block;
+        padding-bottom: 20px;
+    }
+    .where-to-buy .location:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .where-to-buy .location .location-name {
+        font-size: 18px;
+    }
+    .where-to-buy .location .location-details {
+        font-size: 16px;
+    }
+    .where-to-buy .location .location-details img {
+        height: 18px;
+    }
+    .where-to-buy #map {
+        height: 600px;
+    }
+    .where-to-buy .stores-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 30px;
+    }
+    .where-to-buy .col-custom {
+        width: 20%;
+    }
+    .where-to-buy .store-name {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    
+    .faq .title {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+    .faq .accordion-item {
+        margin-bottom: 25px !important;
+    }
+    .faq .accordion-button {
+        font-size: 18px;
+        padding: 0 10px 20px 0;
+    }
+    .faq .accordion-body {
+        font-size: 16px;
+        padding: 0 0 20px;
+    }
+
+    .more-help .title {
+        font-size: 54px;
+        margin-bottom: 30px;
+    }
+    .more-help .helps-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .more-help .help {
+        padding: 50px;
+    }
+    .more-help .help img {
+        height: 44px;
+    }
+    .more-help .help .help-title {
+        font-size: 22px;
+        margin: 20px 0 10px;
+    }
+    .more-help .help .help-text {
+        font-size: 18px;
+    }
+    .more-help .help a {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 2560px) {
+    .form-modal .container {
+        width: 50%;
+        max-height: 80%;
+        padding: 30px 40px;
+    }
+    .form-modal[data-modal="warranty-claim"] .container {
+        width: 50%;
+    }
+    .form-modal[data-modal="feedback"] .container {
+        width: 34%;
+    }
+    .form-modal .form-close {
+        top: 10px;
+    }
+    .form-modal .form-close::before {
+        left: 30px;
+    }
+    .form-modal .form-body .row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
+
+    .section-content {
+        --padding-tb: 50px;
+    }
+    
+    .support-search {
+        height: 50vh;
+    }
+    .support-search .section-content {
+        --padding-tb: 50px;
+    }
+    .support-search .title {
+        font-size: 58px;
+        margin-bottom: 40px;
+    }
+    .support-search .search-group {
+        width: fit-content;
+    }
+    .support-search .search-group input {
+        font-size: 18px;
+        padding: 0 10px 0 30px;
+        width: 380px;
+    }
+    .support-search .search-group .search-x {
+        padding: 0 15px;
+        font-size: 18px;
+    }
+    .support-search .search-group .search-btn {
+        padding: 18px 40px 18px 30px;
+    }
+    .support-search .search-group .search-btn .svg-wrapper {
+        width: 25px;
+        height: 25px;
+    }
+    .support-search .search-items {
+        margin-top: 30px;
+        font-size: 16px;
+    }
+    .support-search .search-items a {
+        padding: 6px 18px;
+    }
+
+    .support-nav .nav-items {
+        justify-content: center;
+        font-size: 16px;
+        gap: 50px;
+    }
+    .support-nav .nav-items span:last-child {
+        padding-right: 0;
+    }
+    .support-nav .nav-items span {
+        padding: 20px 0;
+    }
+   
+    .product-support .title {
+        font-size: 42px;
+    }
+    .product-support .products-row {
+        --bs-gutter-x: 25px;
+        --bs-gutter-y: 25px;
+    }
+    .product-support .col-custom {
+        width: 20%;
+    }
+    .product-support .product-title {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    .toggles {
+        margin: 30px 0;
+    }
+    .toggles span {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+    
+    .paginate.custom {
+        margin-top: 50px;
+        gap: 10px;
+    }
+    .paginate.custom .page {
+        font-size: 16px;
+        width: 44px;
+        height: 44px;
+    }
+    
+    .support-services .title {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+    .support-services .services-row {
+        --bs-gutter-x: 40px;
+        --bs-gutter-y: 40px;
+    }
+    .support-services .service .service-image {
+        justify-content: center;
+        padding: 100px 20px;
+        margin-bottom: 20px;
+    }
+    .support-services .service .service-image img {
+        margin-right: 0;
+        height: 74px;
+    }
+    .support-services .service span {
+        padding-bottom: 10px;
+        font-size: 18px;
+    }
+    
+    .where-to-buy .title {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+    .where-to-buy .btn-toggles {
+        margin: 0 auto 20px;
+        border-radius: 30px;
+    }
+    .where-to-buy .btn-toggles span {
+        font-size: 16px;
+        padding: 8px 30px;
+    }
+    .where-to-buy .store-navs {
+        margin-top: 20px;
+    }
+    .where-to-buy .filters {
+        margin: 20px 0;
+    }
+    .where-to-buy .filters .filter {
+        justify-content: flex-start;
+    }
+    .where-to-buy .filter label {
+        font-size: 18px;
+    }
+    .where-to-buy .filter select {
+        padding: 14px 36px 14px 15px;
+        font-size: 16px;
+        background-size: 24px;
+        width: 350px;
+    }
+    .where-to-buy [data-store=retail-store] .filter select {
+        width: 100%;
+    }
+    .where-to-buy [data-store="retail-store"] .filters-row {
+        --bs-gutter-x: 50px;
+        --bs-gutter-y: 0;
+    }
+    .where-to-buy .filter-input input {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .where-to-buy .filter-input .search-btn {
+        padding: 12px 30px 12px 25px;
+    }
+    .where-to-buy .filter-input .search-btn .svg-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+    .where-to-buy .locations {
+        padding: 20px;
+        height: 600px;
+    }
+    .where-to-buy .location {
+        display: block;
+        padding-bottom: 20px;
+    }
+    .where-to-buy .location:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .where-to-buy .location .location-name {
+        font-size: 18px;
+    }
+    .where-to-buy .location .location-details {
+        font-size: 16px;
+    }
+    .where-to-buy .location .location-details img {
+        height: 18px;
+    }
+    .where-to-buy #map {
+        height: 600px;
+    }
+    .where-to-buy .stores-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 30px;
+    }
+    .where-to-buy .col-custom {
+        width: 20%;
+    }
+    .where-to-buy .store-name {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    
+    .faq .title {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+    .faq .accordion-item {
+        margin-bottom: 25px !important;
+    }
+    .faq .accordion-button {
+        font-size: 18px;
+        padding: 0 10px 20px 0;
+    }
+    .faq .accordion-body {
+        font-size: 16px;
+        padding: 0 0 20px;
+    }
+
+    .more-help .title {
+        font-size: 54px;
+        margin-bottom: 30px;
+    }
+    .more-help .helps-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .more-help .help {
+        padding: 50px;
+    }
+    .more-help .help img {
+        height: 44px;
+    }
+    .more-help .help .help-title {
+        font-size: 22px;
+        margin: 20px 0 10px;
+    }
+    .more-help .help .help-text {
+        font-size: 18px;
+    }
+    .more-help .help a {
+        font-size: 18px;
+    }
+}

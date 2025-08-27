@@ -1,0 +1,962 @@
+<style>
+  #shopify-section-{{ section.id }}{
+    background-color:{{ section.settings.background }};
+  }
+  .side-product-section{
+    padding:80px 0px;
+  }
+  .side-product-section .side-product-container-list{
+    display:flex;
+    flex-direction:column;
+    gap: 80px;
+  }
+  .side-product-section .left-product-container, 
+  .side-product-section .right-product-container{
+    display:flex;
+  }
+  .side-product-section .bg-featured-product-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .side-product-section .product-details-content{
+      padding:0px 80px;
+      display:flex;
+      flex-direction:column;    
+      justify-content: center;
+      gap:1.5rem;
+  }
+  .side-content-price{
+    display:flex;
+    gap:1rem;
+    align-items: center;
+  }
+  .side-content-price .price-container{
+    display:flex;
+    gap:1rem;
+    align-items: center;
+  }
+  .discount-note-section{
+    background-color: #FFF0E4;
+    padding: 5px 2rem;
+    border-radius: 5px;
+  }
+  .product-bg-featured-image{
+    position:relative;
+    overflow:hidden;
+  }
+  .left-product-container .product-bg-featured-image{
+      border-top-right-radius:20px;
+      border-bottom-right-radius:20px;
+  }
+  .right-product-container .product-bg-featured-image{
+      border-top-left-radius:20px;
+      border-bottom-left-radius:20px;
+      display:flex;
+  }
+  .discount-banner{
+    background: #FFF0E4;
+    width: fit-content;
+    padding: 0.5rem 1.5rem;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 20px;
+  }
+  .discount-banner:after {
+      content: "";
+      display: block;
+      background-color: #FFF0E4;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      width: 100%;
+      height: 20px;
+      position: absolute;
+      transform: scaleY(-1);
+      left: 0;
+      margin-top: 5px;
+  }
+  .left-product-container .discount-banner,
+  .right-product-container .discount-banner{
+      padding:0.5rem 2.5rem;
+  }
+  .left-product-container .discount-banner:before,
+  .right-product-container .discount-banner:before{
+      height:30px;
+    
+  }
+  .left-product-container .discount-banner{
+    left:unset;
+    right:50px;
+  }
+  .right-product-container .discount-banner{
+    left:50px;
+    right:unset;
+  }
+  .side-product-section .product-buttons{
+    display:flex;
+    gap:20px;
+    padding-top:20px;
+  }
+  .product-buttons .buy-now-btn,
+  .product-buttons .add-to-cart-btn{
+    padding:1rem 2rem;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:50px;
+  }
+  .product-buttons .loading .add-to-cart-btn{
+    color:#F1F1F1;
+  }
+  .product-buttons .buy-now-btn{
+    background-color:#FF8832;
+    color:#fff;
+  }
+  .product-buttons .add-to-cart-btn{
+    background-color:#F1F1F1;
+    color:#000;
+  }
+  .side-product-section .featured-specs-content{
+      display: flex;
+      column-gap: 15px;
+      position: absolute;
+      bottom: 50px;
+      max-width: 1150px;
+      margin: auto;
+      left: 0;
+      right: 0;
+      justify-content: center;
+  }
+  .side-product-section .featured-specs-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+  }
+  .side-product-section .feat-specs-icon{
+      height:30px;
+      width:40px;
+      object-fit:contain;
+  }
+  .side-product-section .product-buttons .add-to-cart-btn span{
+    padding:0px;
+  }
+
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+      .side-product-section{
+        padding:50px 0px;
+      }
+      .right-product-container{
+        flex-direction:column;
+        box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.1);
+        border-radius:10px;
+        overflow:hidden;
+      }
+      .left-product-container{
+        flex-direction:column-reverse;
+        box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.1);
+        border-radius:10px;
+        overflow:hidden;
+      }
+      .side-product-section .product-details-content{
+        padding:0px 20px;
+      }
+      .side-product-section .product-details-content .short-description{
+        display:none;
+      }
+      .side-product-section .product-details-content{
+        padding:20px 20px;
+        gap:5px;
+      }
+      .discount-note-section{
+        padding:5px 10px;
+      }
+      .discount-note-section p{
+        font-size:10px;
+      }
+      .side-content-price{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .side-content-price .original-price{
+        font-size:22px;
+      }
+      .side-content-price .compare-price{
+        font-size:18px;
+      }
+      .side-product-section .featured-specs-content{
+        display:none;
+      }
+      .right-product-container .discount-banner{
+        left:20px;
+      }
+      .countdown-list-container.hide-countdown{
+        display:none;
+      }
+      .side-product-section .product-buttons{
+        flex-direction:column;
+        gap:10px;
+      }
+      .side-product-section .side-product-container-list{
+        gap:50px;
+      }
+      .right-product-container .product-bg-featured-image{
+        border-radius:20px;
+      }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+      .side-product-section{
+        padding:50px 0px;
+      }
+      .right-product-container{
+        flex-direction:column;
+        box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.1);
+        border-radius:10px;
+        overflow:hidden;
+      }
+      .left-product-container{
+        flex-direction:column-reverse;
+        box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.1);
+        border-radius:10px;
+        overflow:hidden;
+      }
+      .side-product-section .product-details-content{
+        padding:0px 20px;
+      }
+      .side-product-section .product-details-content .short-description{
+        display:none;
+      }
+      .side-product-section .product-details-content{
+        padding:25px 20px;
+      }
+      .discount-note-section{
+        padding:5px 10px;
+      }
+      .discount-note-section p{
+        font-size:10px;
+      }
+      .side-content-price{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .side-content-price .original-price{
+        font-size:22px;
+      }
+      .side-content-price .compare-price{
+        font-size:18px;
+      }
+      .side-product-section .featured-specs-content{
+        display:none;
+      }
+      .right-product-container .discount-banner{
+        left:20px;
+      }
+      .countdown-list-container.hide-countdown{
+        display:none;
+      }
+      .side-product-section .product-buttons{
+        gap:15px;
+      }
+      .side-product-section .side-product-container-list{
+        gap:50px;
+      }
+      .right-product-container .product-bg-featured-image{
+        border-radius:20px;
+      }
+    }
+    @media (min-width: 1024px) and (orientation: portrait) {
+      .side-content-price{
+          flex-direction: column;
+          align-items: flex-start;
+      }
+      .side-product-section .product-details-content{
+        padding:0px 30px;
+      }
+      .side-product-section .left-product-container, .side-product-section .right-product-container{
+        gap:30px;
+      }
+    }
+    
+     /* COMPUTERS */
+    @media (min-width: 1024px) and (orientation: landscape) {
+      .side-content-price{
+          flex-direction: column;
+          align-items: flex-start;
+      }
+      .side-product-section .product-details-content{
+        padding:0px 30px;
+      }
+      .side-product-section .left-product-container, .side-product-section .right-product-container{
+        gap:30px;
+      }
+    }
+    @media only screen and (min-width: 1280px) {
+      .side-content-price{
+          flex-direction: column;
+          align-items: flex-start;
+      }
+      .side-product-section .product-details-content{
+        padding:0px 40px;
+      }
+      .side-product-section .left-product-container, .side-product-section .right-product-container{
+        gap:30px;
+      }
+    }
+    @media only screen and (min-width: 1366px) {
+      .side-content-price{
+          flex-direction: row;    
+          align-items: center;
+      }
+      .side-product-section .product-details-content{
+        padding:0px 50px;
+      }
+      .side-product-section .left-product-container, .side-product-section .right-product-container{
+        gap:30px;
+      }
+    }
+    @media only screen and (min-width: 1440px) {
+      .side-content-price{
+          flex-direction: row;    
+          align-items: center;
+      }
+      .side-product-section .product-details-content{
+        padding:0px 60px;
+      }
+      .side-product-section .left-product-container, .side-product-section .right-product-container{
+        gap:30px;
+      }
+    }
+    @media only screen and (min-width: 1536px) {
+      .side-content-price{
+          flex-direction: row;    
+          align-items: center;
+      }
+      .side-product-section .product-details-content{
+        padding:0px 60px;
+      }
+      .side-product-section .left-product-container, .side-product-section .right-product-container{
+        gap:20px;
+      }
+    }
+    @media only screen and (min-width: 1600px) {
+      .side-content-price{
+          flex-direction: row;    
+          align-items: center;
+      }
+      .side-product-section .product-details-content{
+        padding:0px 70px;
+      }
+      .side-product-section .left-product-container, .side-product-section .right-product-container{
+        gap:0px;
+      }
+    }
+    @media only screen and (min-width: 1920px) {
+      .side-content-price{
+          flex-direction: row;    
+          align-items: center;
+      }
+      .side-product-section .product-details-content{
+        padding:0px 80px;
+      }
+      .side-product-section .left-product-container, .side-product-section .right-product-container{
+        gap:0px;
+      }
+    }
+
+</style>
+<div class="{{ section.settings.product_header | handleize }}-section side-product-section section-scroll">
+  <div class="page-width">
+    <div class="side-product-container-list">
+        {% for block in section.blocks %}
+            {% if block.type == 'left_product' %}
+              <div class="left-product-container">
+                <div class="col_50 product-details-content">
+                  <a href="{{ block.settings.product.url }}" class="black-f">
+                      <h2 class="text-md mx-0 f-f-bold" style="color:{{ section.settings.primary_color }};">{{ block.settings.product.title }}</h2>
+                  </a>
+                  <h4 class="short-description f-f-semibold text-cap mx-0" style="color:{{ section.settings.primary_color }};">{{ block.settings.product.metafields.custom.short_description }}</h4>
+                  <div class="side-content-price">
+                    <div class="price-container">
+                      <h3 class="original-price text-sm mx-0 f-f-bold" style="color:{{ section.settings.secondary_color }};">{{ block.settings.product.selected_or_first_available_variant.price | money }}</h3>
+                      <h3 class="compare-price mx-0 price-gray-f">{{ block.settings.product.selected_or_first_available_variant.compare_at_price | money }}</h3>
+                    </div>
+                    {% if block.settings.discount_note != blank %}
+                      <div class="discount-note-section" style="background-color:{{ block.settings.background_badge }};">
+                        <p class="mx-0 f-f-semibold" style="color:{{ block.settings.secondary_color }};">{{ block.settings.discount_note }}</p>
+                      </div>
+                    {% endif %}
+                  </div>
+                  <p class="text-gray-f mx-0" style="color:{{ section.settings.description_color }};">Experience every frequency with superior precision and clarity. Maximize your immersion with lossless streaming, spatial audio with dynamic head tracking, and world-class Active Noise Cancellation. </p>
+                  {% render 'promotion-card-time-offer', data_date: block.settings.date_picker %}
+                  <div class="product-buttons">
+                    <a href="{{ block.settings.product.url }}" class="h5 buy-now-btn f-f-semibold">Buy now</a>
+                    {% assign product_form_id = 'quick-add-' | append: section.id | append: block.settings.product.id %}
+                        <div class="quick-add no-js-hidden add-to-cart-btn">
+                            <product-page-form data-section-id="{{ section.id }}">
+                                {%- form 'product', block.settings.product, id: block.settings.product.id, class: 'form add_cart_form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                                <input type="hidden" name="id" value="{{ block.settings.product.selected_or_first_available_variant.id }}" class="product-variant-id" {% if block.settings.product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
+                                <button id="{{ product_form_id }}-submit" type="submit" name="add" class="quick-add__submit " aria-haspopup="dialog" aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ block.settings.product.id }}" aria-live="polite" data-sold-out-message="true" {% if block.settings.product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
+                                    <span class="hidden">
+                                        {%- if block.settings.product.selected_or_first_available_variant.available -%}
+                                        {{ 'products.product.add_to_cart' | t }}
+                                        {%- else -%}
+                                        {{ 'products.product.sold_out' | t }}
+                                        {%- endif -%}
+                                    </span>
+                                    <span class="sold-out-message hidden">
+                                        {{ 'products.product.sold_out' | t }}
+                                    </span>
+                                    {%- if horizontal_quick_add -%}
+                                    <span class="icon-wrap hidden">
+                                        {{- 'icon-plus.svg' | inline_asset_content -}}
+                                    </span>
+                                    {%- endif -%}
+                                    <span class="h5 add-to-cart-btn f-f-semibold">Add To Cart</span>
+                                    {%- render 'loading-spinner' -%}
+                                </button>
+                                {%- endform -%}
+                            </product-page-form>
+                        </div>
+                  </div>
+                </div>
+                <a href="{{ block.settings.product.url }}" class="col_50 product-bg-featured-image">
+
+                  {% assign amount_discount = block.settings.product.selected_or_first_available_variant.compare_at_price | minus: block.settings.product.selected_or_first_available_variant.price %}
+                  {% assign percentage_discount = amount_discount | times: 100 | divided_by: block.settings.product.selected_or_first_available_variant.compare_at_price | round %}
+                  {% if block.settings.product.metafields.custom.discount_badge %}
+                    {% if block.settings.product.selected_or_first_available_variant.compare_at_price != blank %}
+                        <div class="discount-banner">
+                            <h5 class="h3 main-color f-f-bold mx-0 l-h-normal">{{ percentage_discount }}%</h5>
+                            <h5 class="h3 main-color f-f-bold mx-0 l-h-normal">OFF</h5>
+                        </div>
+                    {% endif %}
+                  {% else %}
+                    {% if block.settings.product.selected_or_first_available_variant.compare_at_price != blank %}
+                        <div class="discount-banner">
+                            <p class="mx-0 main-color f-f-regular l-h-normal">Save</p>
+                            <h5 class="h3 main-color f-f-bold mx-0 l-h-normal">{{ amount_discount | money }}</h5>
+                        </div>
+                    {% endif %}
+                  {% endif %}
+                  
+                  {% if block.settings.enabled_icons_list  %}
+                    {% if block.settings.heading_1 == blank %}
+                    <div class="featured-specs-content">
+                      <div class="featured-specs-item col_25" >
+                          <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/330381_cloud_music_sound_soundcloud_icon_2x_ff0d97f5-0394-4128-9321-8f4042ddcc38.png?v=1728315164" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">3-Mic</h5>
+                      </div>
+                      <div class="featured-specs-item col_25" >
+                          <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/mic_2x_11f3a4a3-ca07-479a-a57f-7a90e7d4c8c5.png?v=1728315164" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">Hi-Res Sound</h5>
+                      </div>
+                      <div class="featured-specs-item col_25" >
+                          <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/8665788_music_sound_icon_2x_1.png?v=1729670126" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">3D Sound</h5>
+                      </div>
+                      <div class="featured-specs-item col_25">
+                          <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/layer1_2x_8a665119-45cd-44ba-8aaa-3539e4b28362.png?v=1728315164" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">Dual Connection</h5>
+                      </div>
+                    </div>
+                    {% else %}
+                    <div class="featured-specs-content">
+                      <div class="featured-specs-item col_25" >
+                          <img loading="lazy" src="{{ block.settings.image_1 | img_url: 'master' }}" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">{{ block.settings.heading_1 }}</h5>
+                      </div>
+                      <div class="featured-specs-item col_25" >
+                          <img loading="lazy" src="{{ block.settings.image_2 | img_url: 'master' }}" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">{{ block.settings.heading_2 }}</h5>
+                      </div>
+                      <div class="featured-specs-item col_25" >
+                          <img loading="lazy" src="{{ block.settings.image_3 | img_url: 'master' }}" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">{{ block.settings.heading_3 }}</h5>
+                      </div>
+                      <div class="featured-specs-item col_25">
+                          <img loading="lazy" src="{{ block.settings.image_4 | img_url: 'master' }}" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">{{ block.settings.heading_4 }}</h5>
+                      </div>
+                    </div>
+                    {% endif %}
+                  {% endif %}
+                  <img loading="lazy" src="{{ block.settings.featured_image | img_url: "master" }}" class="bg-featured-product-image">
+                </a>
+              </div>
+            {% else %}
+              <div class="right-product-container">
+                <a href="{{ block.settings.product.url }}" class="col_50 product-bg-featured-image">
+
+
+                  {% assign amount_discount = block.settings.product.selected_or_first_available_variant.compare_at_price | minus: block.settings.product.selected_or_first_available_variant.price %}
+                  {% assign percentage_discount = amount_discount | times: 100 | divided_by: block.settings.product.selected_or_first_available_variant.compare_at_price | round %}
+                  {% if block.settings.product.metafields.custom.discount_badge %}
+                    {% if block.settings.product.selected_or_first_available_variant.compare_at_price != blank %}
+                        <div class="discount-banner">
+                            <h5 class="h3 main-color f-f-bold mx-0 l-h-normal">{{ percentage_discount }}%</h5>
+                            <h5 class="h3 main-color f-f-bold mx-0 l-h-normal">OFF</h5>
+                        </div>
+                    {% endif %}
+                  {% else %}
+                    {% if block.settings.product.selected_or_first_available_variant.compare_at_price != blank %}
+                        <div class="discount-banner">
+                            <p class="mx-0 main-color f-f-regular l-h-normal">Save</p>
+                            <h5 class="h3 main-color f-f-bold mx-0 l-h-normal">{{ amount_discount | money }}</h5>
+                        </div>
+                    {% endif %}
+                  {% endif %}
+                  
+                  {% if block.settings.enabled_icons_list  %}
+                    {% if block.settings.heading_1 == blank %}
+                    <div class="featured-specs-content">
+                      <div class="featured-specs-item col_25" >
+                          <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/330381_cloud_music_sound_soundcloud_icon_2x_ff0d97f5-0394-4128-9321-8f4042ddcc38.png?v=1728315164" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">3-Mic</h5>
+                      </div>
+                      <div class="featured-specs-item col_25" >
+                          <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/mic_2x_11f3a4a3-ca07-479a-a57f-7a90e7d4c8c5.png?v=1728315164" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">Hi-Res Sound</h5>
+                      </div>
+                      <div class="featured-specs-item col_25" >
+                          <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/8665788_music_sound_icon_2x_1.png?v=1729670126" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">3D Sound</h5>
+                      </div>
+                      <div class="featured-specs-item col_25">
+                          <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/layer1_2x_8a665119-45cd-44ba-8aaa-3539e4b28362.png?v=1728315164" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">Dual Connection</h5>
+                      </div>
+                    </div>
+                    {% else %}
+                    <div class="featured-specs-content">
+                      <div class="featured-specs-item col_25" >
+                          <img src="{{ block.settings.image_1 | img_url: 'master' }}" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">{{ block.settings.heading_1 }}</h5>
+                      </div>
+                      <div class="featured-specs-item col_25" >
+                          <img src="{{ block.settings.image_2 | img_url: 'master' }}" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">{{ block.settings.heading_2 }}</h5>
+                      </div>
+                      <div class="featured-specs-item col_25" >
+                          <img src="{{ block.settings.image_3 | img_url: 'master' }}" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">{{ block.settings.heading_3 }}</h5>
+                      </div>
+                      <div class="featured-specs-item col_25">
+                          <img src="{{ block.settings.image_4 | img_url: 'master' }}" alt="" class="feat-specs-icon">
+                          <h5 class="mx-0 white-f l-h-normal f-f-bold">{{ block.settings.heading_4 }}</h5>
+                      </div>
+                    </div>
+                    {% endif %}
+                  {% endif %}
+                  <img src="{{ block.settings.featured_image | img_url: "master" }}" class="bg-featured-product-image">
+                </a>
+                <div class="col_50 product-details-content">
+                  <a href="{{ block.settings.product.url }}" class="black-f">
+                      <h2 class="text-md mx-0 f-f-bold" style="color:{{ section.settings.primary_color }};">{{ block.settings.product.title }}</h2>
+                  </a>
+                  <h4 class="short-description f-f-semibold text-cap mx-0" style="color:{{ section.settings.primary_color }};">{{ block.settings.product.metafields.custom.short_description }}</h4>
+                  <div class="side-content-price">
+                    <div class="price-container">
+                      <h3 class="original-price text-sm mx-0 f-f-bold" style="color:{{ section.settings.secondary_color }};">{{ block.settings.product.selected_or_first_available_variant.price | money }}</h3>
+                      <h3 class="compare-price mx-0 price-gray-f">{{ block.settings.product.selected_or_first_available_variant.compare_at_price | money }}</h3>
+                    </div>
+                    {% if block.settings.discount_note != blank %}
+                      <div class="discount-note-section" style="background-color:{{ block.settings.background_badge }};">
+                        <p class="mx-0 f-f-semibold" style="color:{{ block.settings.secondary_color }};">{{ block.settings.discount_note }}</p>
+                      </div>
+                    {% endif %}
+                  </div>
+                  <p class="text-gray-f mx-0" style="color:{{ section.settings.description_color }};">Experience every frequency with superior precision and clarity. Maximize your immersion with lossless streaming, spatial audio with dynamic head tracking, and world-class Active Noise Cancellation. </p>                
+                  {% render 'promotion-card-time-offer', data_date: block.settings.date_picker %}
+                  <div class="product-buttons">
+                    <a href="{{ block.settings.product.url }}" class="h5 buy-now-btn f-f-semibold">Buy now</a>
+                    
+                  {% assign product_form_id = 'quick-add-' | append: section.id | append: block.settings.product.id %}
+                      <div class="quick-add no-js-hidden add-to-cart-btn">
+                          <product-page-form data-section-id="{{ section.id }}">
+                              {%- form 'product', block.settings.product, id: block.settings.product.id, class: 'form add_cart_form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                              <input type="hidden" name="id" value="{{ block.settings.product.selected_or_first_available_variant.id }}" class="product-variant-id" {% if block.settings.product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
+                              <button id="{{ product_form_id }}-submit" type="submit" name="add" class="quick-add__submit " aria-haspopup="dialog" aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ block.settings.product.id }}" aria-live="polite" data-sold-out-message="true" {% if block.settings.product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
+                                  <span class="hidden">
+                                      {%- if block.settings.product.selected_or_first_available_variant.available -%}
+                                      {{ 'products.product.add_to_cart' | t }}
+                                      {%- else -%}
+                                      {{ 'products.product.sold_out' | t }}
+                                      {%- endif -%}
+                                  </span>
+                                  <span class="sold-out-message hidden">
+                                      {{ 'products.product.sold_out' | t }}
+                                  </span>
+                                  {%- if horizontal_quick_add -%}
+                                  <span class="icon-wrap hidden">
+                                      {{- 'icon-plus.svg' | inline_asset_content -}}
+                                  </span>
+                                  {%- endif -%}
+                                  <span class="h5 add-to-cart-btn f-f-semibold">Add To Cart</span>
+                                  {%- render 'loading-spinner' -%}
+                              </button>
+                              {%- endform -%}
+                          </product-page-form>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+    </div>
+  </div>
+</div>
+{% javascript %}
+  
+$(document).ready(function() {
+    $('.countdown-list-container').each(function() {
+        // Get the data-time-offer attribute
+        var timeOffer = $(this).data('time-offer');
+
+        // Check if the timeOffer value exists
+        if (!timeOffer) {
+            $(this).addClass('hide-countdown'); // Add class if no data-time-offer value
+            return; // Skip further processing for this card
+        }
+
+        // Convert DD/MM/YYYY HH:MM:SS to YYYY-MM-DDTHH:MM:SS
+        var parts = timeOffer.split(' '); // Split date and time
+        var dateParts = parts[0].split('/'); // Split date by '/'
+        var timeParts = parts[1].split(':'); // Split time by ':'
+
+        // Construct the new date string
+        var formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}T${timeParts[0]}:${timeParts[1]}:${timeParts[2]}`;
+        
+        // Create a target date object
+        var targetDate = new Date(formattedDate).getTime();
+        console.log("Target Date:", targetDate); // Check the output
+
+        // Update the countdown every 1 second
+        var countdownInterval = setInterval(() => {
+            // Get the current time
+            var now = new Date().getTime();
+
+            // Calculate the difference
+            var timeDifference = targetDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            // Add leading zeros if the value is less than 10
+            days = days < 10 ? '0' + days : days;
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            // Display the result in the respective HTML elements within the current card
+            $(this).find('.card-day-sec').text(days);
+            $(this).find('.card-hour-sec').text(hours);
+            $(this).find('.card-minute-sec').text(minutes);
+            $(this).find('.card-second-sec').text(seconds);
+
+            // Check if the countdown is finished
+            if (timeDifference < 0) {
+                clearInterval(countdownInterval);
+                $(this).find('.card-day-sec, .card-hour-sec, .card-minute-sec, .card-second-sec').text('00');
+                
+                // Remove class when the countdown ends
+                $(this).addClass('hide-countdown'); // Add a class to hide the element
+            } else {
+                // Check if the current date and time equals the target date
+                var currentDate = new Date();
+                if (currentDate.getFullYear() === dateParts[2] && 
+                    currentDate.getMonth() + 1 === parseInt(dateParts[1]) && 
+                    currentDate.getDate() === parseInt(dateParts[0]) &&
+                    currentDate.getHours() === parseInt(timeParts[0]) &&
+                    currentDate.getMinutes() === parseInt(timeParts[1])) {
+                    
+                    $(this).removeClass('hide-countdown'); // Remove class if the current date matches
+                }
+            }
+        }, 1000);
+    });
+});
+
+
+{% endjavascript %}
+{% schema %}
+    {
+        "name": "Side Product",
+        "templates": ["page"],
+        "settings": [
+            {
+                "type": "text",
+                "id": "product_header",
+                "label": "Product Header"
+            },
+            {
+                  "type": "color",
+                  "id": "background",
+                  "label": "Background",
+                  "default":"#fff"
+              },
+              {
+                  "type": "color",
+                  "id": "primary_color",
+                  "label": "Primary Color",
+                  "default":"#1a1a1a"
+              },
+              {
+                  "type": "color",
+                  "id": "description_color",
+                  "label": "Description Color",
+                  "default":"#666"
+              },
+              {
+                  "type": "color",
+                  "id": "secondary_color",
+                  "label": "Secondary Color",
+                  "default":"#ff8832"
+              },
+              {
+                  "type": "color",
+                  "id": "background_badge",
+                  "label": "Background Badge",
+                  "default":"#FFF0E4"
+              }
+        ],
+        "blocks": [
+            {
+                "type": "left_product",
+                "name": "Left Product",
+                "settings": [
+                    {
+                        "type": "product",
+                        "id": "product",
+                        "label": "Product"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "featured_image",
+                        "label": "Featured Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "date_picker",
+                        "label": "Choose date",
+                        "default": "12-24-2022",
+                        "info": "e.g. mm-dd-yyyy"
+                    },
+                    {
+                        "type": "text",
+                        "id": "discount_note",
+                        "label": "Discount Note",
+                        "default": "Extra $15 Off for 2 Headphones"
+                    },
+                    {
+                        "type": "color",
+                        "id": "secondary_color",
+                        "label": "Secondary Color",
+                        "default":"#ff8832"
+                    },
+                    {
+                        "type": "color",
+                        "id": "background_badge",
+                        "label": "Background Badge",
+                        "default":"#FFF0E4"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "enabled_icons_list",
+                        "label": "Enabled Icons List",
+                        "default": true
+                    },
+                    {
+                        "type": "header",
+                        "content": "Icon 1"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading_1",
+                        "label": "Heading 1"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_1",
+                        "label": "image 1"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Icon 2"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading_2",
+                        "label": "Heading 2"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_2",
+                        "label": "image 2"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Icon 3"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading_3",
+                        "label": "Heading 3"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_3",
+                        "label": "image 3"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Icon 4"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading_4",
+                        "label": "Heading 4"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_4",
+                        "label": "image 4"
+                    }
+                ]
+            },
+            {
+                "type": "right_product",
+                "name": "Right Product",
+                "settings": [
+                    {
+                        "type": "product",
+                        "id": "product",
+                        "label": "Product"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "featured_image",
+                        "label": "Featured Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "date_picker",
+                        "label": "Choose date",
+                        "info": "e.g. 25/11/2024 09:57:19 | dd/MM/YYYY hh:mm:ss"
+                    },
+                    {
+                        "type": "text",
+                        "id": "discount_note",
+                        "label": "Discount Note",
+                        "default": "Extra $15 Off for 2 Headphones"
+                    },
+                    {
+                        "type": "color",
+                        "id": "secondary_color",
+                        "label": "Secondary Color",
+                        "default":"#ff8832"
+                    },
+                    {
+                        "type": "color",
+                        "id": "background_badge",
+                        "label": "Background Badge",
+                        "default":"#FFF0E4"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "enabled_icons_list",
+                        "label": "Enabled Icons List",
+                        "default": true
+                    },
+                    {
+                        "type": "header",
+                        "content": "Icon 1"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading_1",
+                        "label": "Heading 1"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_1",
+                        "label": "image 1"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "description_1",
+                        "label": "Description 1"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Icon 2"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading_2",
+                        "label": "Heading 2"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_2",
+                        "label": "image 2"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "description_2",
+                        "label": "Description 2"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Icon 3"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading_3",
+                        "label": "Heading 3"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_3",
+                        "label": "image 3"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "description_3",
+                        "label": "Description 3"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Icon 4"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading_4",
+                        "label": "Heading 4"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_4",
+                        "label": "image 4"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "description_4",
+                        "label": "Description 4"
+                    }
+                ]
+            }
+        ],
+        "presets" :[{
+            "name" : "Side Product"
+        }]
+    }
+  {% endschema %} 

@@ -1,0 +1,141 @@
+{% stylesheet %}
+    .featured-video-section{
+        background-color:#000;
+    }
+    .featured-video-section .background-video-container{
+        height:250vh;
+    }
+    .featured-video-section .content-slider-section{
+        overflow: hidden;
+        height: 100%;
+    }
+    .featured-video-section .content-slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .featured-video-section .content-slide h2{
+      opacity:0;
+      transition: opacity 0.3s ease;
+    }
+    .featured-video-section .content-slide.swiper-slide-active h2{
+      opacity:1;
+    }
+    .featured-video-section .inner-video-section{
+        position: sticky;
+        top: 60px;
+        height:90vh;
+        width:100%;
+    }
+    .featured-video-section .content-slider-section-container{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .featured-video-section .inner-video-section .video-tag{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+  
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+      .featured-video-section .content-slide h2{
+        font-size:36px;
+      }
+      .scroll-detail-icons .scoll-icons-item{
+        width:50%;
+      }
+    }
+    
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px){
+      .featured-video-section .content-slide h2{
+        font-size:36px;
+      }
+      .scroll-detail-icons .scoll-icons-item{
+        width:50%;
+      }
+    }
+
+{% endstylesheet %}
+<div class="background-video-container">
+  <div class="inner-video-section">
+      <video class="video-tag" autoplay muted loop playsinline>
+          <source src="{{ section.settings.video.sources[1].url }}" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+    <div class="content-slider-section-container">
+      <div class="content-slider-section col_70 my-auto" data-aos="fade-up" data-aos-delay="400" data-aos-duration="500" data-aos-once="true">
+          <div class="swiper-wrapper">
+              <div class="content-slide swiper-slide">
+                    <h2 class="text-lg f-f-bold white-f mx-0 center">High-fidelity audio</h2>
+              </div>
+              <div class="content-slide swiper-slide">
+                    <h2 class="text-lg f-f-bold white-f mx-0 center">Personalized Spatial Audio for theater-like sound that surrounds you.</h2>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+{% javascript %}
+    var content_slide_section = new Swiper('.content-slider-section', {
+      direction: "vertical",
+      slidesPerView: 1,
+      speed: 800,
+      creativeEffect: {
+        prev: {
+          translate: [0, "100%", 0],
+          opacity:0,
+        },
+        next: {
+          translate: [0, "100%", 0],
+          opacity:1,
+        },
+      },
+  });
+
+    
+  let currentFrame_video_section = 0;
+  const totalFrames_video_section = 2;
+  const totalSlides_video_section = content_slide_section.slides.length;
+  
+  $(window).scroll(() => {
+      if ($(window).scrollTop() > $('.featured-video-section').offset().top) {
+          currentFrame_video_section = Math.min(Math.max(
+              Math.floor((($(window).scrollTop() - $('.featured-video-section').offset().top) / ($('.featured-video-section').outerHeight() - $(window).outerHeight())) * totalFrames_video_section), 0), totalFrames_video_section - 1);
+          setInitialState_vidoe_section(currentFrame_video_section, totalSlides_video_section);
+      }
+  });
+  
+  setInitialState_vidoe_section(currentFrame_video_section, totalSlides_video_section);
+  
+  function setInitialState_vidoe_section(frame, slides) {
+      content_slide_section.slideTo(Math.floor(frame / Math.ceil(totalFrames_video_section / slides)));
+        console.log(Math.floor(frame / Math.ceil(totalFrames_video_section / slides)));
+  }
+
+{% endjavascript %}
+{% schema %}
+    {
+        "class": "featured-video-section",
+        "name": "Featured Video",
+        "templates": ["product"],
+        "limit": 1, 
+        "settings": [
+            {
+                "type": "video",
+                "id": "video",
+                "label": "Video"
+            }
+        ],
+        "presets" :[{
+            "name" : "Featured Video"
+        }]
+    }
+  {% endschema %} 

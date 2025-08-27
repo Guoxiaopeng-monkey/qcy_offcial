@@ -1,0 +1,136 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "support-search": {
+      "type": "support-search",
+      "blocks": {
+        "search_qwert1": {
+          "type": "search",
+          "settings": {
+            "search_item": "H3",
+            "search_url": "https://us.qcy.com/pages/support-center-h3"
+          }
+        },
+        "search_qwert2": {
+          "type": "search",
+          "settings": {
+            "search_item": "MeloBuds Neo",
+            "search_url": "https://us.qcy.com/pages/support-center-melobuds-neo"
+          }
+        },
+        "search_qwert3": {
+          "type": "search",
+          "settings": {
+            "search_item": "AilyBuds Pro+",
+            "search_url": "https://us.qcy.com/pages/support-center-ailybuds-pro-plus"
+          }
+        },
+        "search_qwert4": {
+          "type": "search",
+          "settings": {
+            "search_item": "Melobuds ANC",
+            "search_url": "https://us.qcy.com/pages/support-center-melobuds-anc"
+          }
+        },
+        "search_qwert5": {
+          "type": "search",
+          "settings": {
+            "search_item": "T13",
+            "search_url": "https://us.qcy.com/pages/support-center-t13"
+          }
+        }
+      },
+      "block_order": [
+        "search_qwert1",
+        "search_qwert2",
+        "search_qwert3",
+        "search_qwert4",
+        "search_qwert5"
+      ],
+      "settings": {
+        "title": "Support Center",
+        "background_desktop": "shopify://shop_images/39993.png",
+        "background_mobile": "shopify://shop_images/39993_1.png"
+      }
+    },
+    "support-nav": {
+      "type": "support-nav",
+      "settings": {}
+    },
+    "product-support": {
+      "type": "product-support",
+      "settings": {
+        "title": "Product Support"
+      }
+    },
+    "support-service": {
+      "type": "support-service",
+      "settings": {
+        "title": "Support Service",
+        "image_1": "shopify://shop_images/43885.png",
+        "image_2": "shopify://shop_images/shield-tick.png",
+        "image_3": "shopify://shop_images/sms.png",
+        "url_1": "/apps/17track",
+        "url_2": "shopify://pages/anti-fake-verification"
+      }
+    },
+    "where-to-buy": {
+      "type": "where-to-buy",
+      "settings": {
+        "title": "Where To Buy"
+      }
+    },
+    "after-sales-policy": {
+      "type": "after-sales-policy",
+      "settings": {
+        "title": "After-Sales Policy",
+        "image_1": "shopify://shop_images/42849.png",
+        "image_2": "shopify://shop_images/back-square.png",
+        "image_3": "shopify://shop_images/truck-fast.png",
+        "url_1": "https://www.qcy.com/pages/warranty-policy",
+        "url_2": "https://www.qcy.com/pages/return-refund-policy",
+        "url_3": "https://www.qcy.com/pages/shipping-policy"
+      }
+    },
+    "faq-support": {
+      "type": "faq-support",
+      "settings": {
+        "title": "FAQ"
+      }
+    },
+    "more-help": {
+      "type": "more-help",
+      "settings": {
+        "title": "Still Need Help?",
+        "icon_1": "shopify://shop_images/1_6ae01342-29d9-466b-a884-f3e54bc4b04e.png",
+        "icon_2": "shopify://shop_images/2_13c56919-3d59-4a06-a552-3824ae5ea47b.png",
+        "icon_3": "shopify://shop_images/3_58022390-5f9e-4177-8125-651a16075847.png",
+        "icon_4": "shopify://shop_images/4_a0949a89-fc4a-4113-a381-ac8515de3bb4.png",
+        "icon_5": "shopify://shop_images/5.png",
+        "icon_6": "shopify://shop_images/6.png",
+        "tel_1": "+1(917) 204-6570",
+        "email_1": "service@qcyearphone.com",
+        "email_2": "rice@qcyearphone.com",
+        "email_3": "pr@qcyearphone.com"
+      }
+    }
+  },
+  "order": [
+    "support-search",
+    "support-nav",
+    "product-support",
+    "support-service",
+    "where-to-buy",
+    "after-sales-policy",
+    "faq-support",
+    "more-help"
+  ]
+}

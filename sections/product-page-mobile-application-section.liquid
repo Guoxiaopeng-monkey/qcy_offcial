@@ -1,0 +1,405 @@
+<style>
+   .mobile-application-slider-section{
+    position:relative;
+  }
+  .mobile-application-slider-section .mobile-application-container{
+    display: flex;
+    align-items: center;
+    gap:60px;
+    height:100vh;
+    pointer-events: none;
+  }
+  .mobile-application-slider-section .mobile-application-container .col_55{
+    height:100%;
+  }
+  .mobile-application-slider-section .mobile-application-container .col_45,
+  .mobile-application-slider-section .mobile-application-container .col_70,
+  .mobile-application-slider-section .mobile-application-container .swiper-mobile-app-content{
+    height:500px;
+  }
+  .mobile-application-slider-section .mobile-application-container .swiper-mobile-app-content{
+    overflow:hidden;
+  }
+  .mobile-application-slider-section .featured-bg-product-image{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:50px;
+  }
+  .mobile-application-slider-section .text-content{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+  }
+  .mobile-slider-container{
+     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile-application-slider-section .mobile-application-bg-container{
+    position:relative;
+    top:5%;
+    left:-4%;
+  }
+  .mobile-application-slider-section .mobile-application-bg-container .mobile-application-content-slider{
+    position:absolute;
+    top:0;
+    overflow: hidden;
+    z-index: 0;
+    border-radius:15px;
+  }
+  .mobile-apps-img{
+    width:100%;
+    height:100%;
+  }
+  .mobile-application-slider-section .mobile-container-img{
+    position: relative;
+    z-index: 1;    
+    transition: all 0.5s ease;
+    width: 100%;
+    height: 100%;
+  }
+  .mobile-application-slider-section .swiper-mobile-app{
+    padding:8px;
+    overflow:hidden;
+  }
+  .mobile-application-slider-section .mobile-app-content-slide{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    justify-content: center;
+  }
+  .mobile-application-slider-section .mobile-app-slide{
+    position:unset !important;
+    z-index:unset !important;
+  }
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .mobile-application-slider-section .mobile-application-bg-container,
+    .swiper-mobile-app{
+      height:250px;
+      width:120px;
+    }
+    .mobile-application-slider-section .mobile-application-container{
+      flex-direction:column;
+      gap:20px;
+    }
+    .mobile-application-slider-section .mobile-application-container .col_45,
+    .mobile-application-slider-section .mobile-application-container .col_70,
+    .mobile-application-slider-section .mobile-application-container .swiper-mobile-app-content{
+      height:300px;
+    }
+    .mobile-application-slider-section .featured-bg-product-image{
+      padding:0px;
+    }
+    .mobile-application-slider-section .swiper-mobile-app{
+      padding:4px;
+    }
+    .mobile-application-slider-section .mobile-application-bg-container{
+      top:0;
+      left:0;
+    }
+    .mobile-slider-container{
+        justify-content: flex-end;
+        padding-right: 40px;
+        height: fit-content;
+        top: 13%;
+    }
+    .mobile-application-slider-section .mobile-application-container .col_55,
+    .mobile-application-slider-section .mobile-application-container{
+      height:fit-content;
+    }
+    .mobile-application-slider-section .mobile-app-content-slide{
+        justify-content: flex-start;
+    }
+    .mobile-application-slider-section .mobile-application-container .col_55{
+      padding-right:20%;
+    }
+    .inner-section-mobile-app{
+      top:30px !important;
+    }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+    .mobile-application-slider-section .mobile-application-bg-container,
+    .swiper-mobile-app{
+      height:250px;
+      width:120px;
+    }
+    .mobile-application-slider-section .mobile-application-container{
+      flex-direction:column;
+      gap:20px;
+    }
+    .mobile-application-slider-section .mobile-application-container .col_45,
+    .mobile-application-slider-section .mobile-application-container .col_70,
+    .mobile-application-slider-section .mobile-application-container .swiper-mobile-app-content{
+      height:300px;
+    }
+    .mobile-application-slider-section .featured-bg-product-image{
+      padding:0px;
+    }
+    .mobile-application-slider-section .swiper-mobile-app{
+      padding:4px;
+    }
+    .mobile-application-slider-section .mobile-application-bg-container{
+      top:0;
+      left:0;
+    }
+    .mobile-slider-container{
+      justify-content: flex-end;
+      padding-right: 40px;
+      height:fit-content;
+      top:15%;
+    }
+    .mobile-application-slider-section .mobile-application-container .col_55,
+    .mobile-application-slider-section .mobile-application-container{
+      height:fit-content;
+    }
+    .mobile-application-slider-section .mobile-app-content-slide{
+        justify-content: flex-start;
+    }
+    .mobile-application-slider-section .mobile-application-container .col_55{
+      padding-right:20%;
+    }
+    .inner-section-mobile-app{
+      top:30px !important;
+    }
+  }
+  /* TABLETS  */ 
+  @media only screen and (min-width: 768px) {
+    .mobile-application-slider-section .mobile-application-bg-container,
+    .swiper-mobile-app{
+      height:250px;
+    }
+  }
+   @media only screen and (min-width: 800px) {
+    .mobile-application-slider-section .mobile-application-bg-container,
+    .swiper-mobile-app{
+      height:250px;
+    }
+  }
+  @media (min-width: 1024px) and (orientation: portrait) {
+    .mobile-application-slider-section .mobile-application-bg-container,
+    .swiper-mobile-app{
+      height:250px;
+    }
+  }
+  
+   /* COMPUTERS */
+  @media (min-width: 1024px) and (orientation: landscape) {
+    .mobile-application-slider-section .mobile-application-bg-container,
+    .swiper-mobile-app{
+      height:350px;
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    .mobile-application-slider-section .mobile-application-bg-container,
+    .swiper-mobile-app{
+      height:380px;
+    }
+  }
+  @media only screen and (min-width: 1366px) {
+    .mobile-application-slider-section .mobile-application-bg-container,
+    .swiper-mobile-app{
+      height:380px;
+    }
+  }
+  @media only screen and (min-width: 1440px) {
+    .mobile-application-slider-section .mobile-application-bg-container,
+    .swiper-mobile-app{
+      height:400px;
+    }
+  }
+  @media only screen and (min-width: 1536px) {
+    .mobile-application-slider-section .mobile-application-bg-container,
+    .swiper-mobile-app{
+      height:420px;
+    }
+  }
+  @media only screen and (min-width: 1600px) {
+    .mobile-application-slider-section .mobile-application-bg-container,
+    .swiper-mobile-app{
+      height:500px;
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+    .mobile-application-slider-section .mobile-application-bg-container,
+    .swiper-mobile-app{
+      height:550px;
+    }
+  }
+</style>
+<div class="inner-section-mobile-app">
+  <div class="page-width">
+    <div class="mobile-application-container">
+        <div class="col_55">
+          <img loading="lazy" src="
+            {% if section.settings.bg_image == blank %}
+            https://cdn.shopify.com/s/files/1/0639/3492/2809/files/42338_2x_1.png?v=1728919400
+            {% else %}
+            {{ section.settings.bg_image | img_url: 'master' }}
+            {% endif %}
+            " class="featured-bg-product-image">
+        </div>
+        <div class="col_45">
+          <div class="col_70 text-content my-auto">
+            <div class="swiper-mobile-app-content">
+                <div class="swiper-wrapper">
+                {% if section.blocks.size == 0 %}
+                    <div class="mobile-app-content-slide swiper-slide">
+                      <h2 class="text-md f-f-bold t-cap mx-0">One-tap setup</h2>
+                      <h5 class="f-f-regular mx-0">The QCY APP supports quick pairing functionality, making it easy for users to connect their headsets.</h5>
+                    </div>
+                    <div class="mobile-app-content-slide swiper-slide">
+                      <h2 class="text-md f-f-bold t-cap mx-0">Sound Adjustment</h2>
+                      <h5 class="f-f-regular mx-0">The application offers an equalizer (EQ) option, allowing users to adjust the sound according to their personal preferences.</h5>
+                    </div>
+                    <div class="mobile-app-content-slide swiper-slide">
+                      <h2 class="text-md f-f-bold t-cap mx-0">Customizable Noise Cancellation</h2>
+                      <h5 class="f-f-regular mx-0">Users can customize the level of noise cancellation to suit different usage scenarios and needs.</h5>
+                    </div>
+                  {% else %}
+                    {% for block in section.blocks %}
+                    <div class="mobile-app-content-slide swiper-slide">
+                      <h2 class="text-md f-f-bold t-cap mx-0">{{ block.settings.heading }}</h2>
+                      <h5 class="f-f-regular mx-0">{{ block.settings.description | replace: '<p>','' | replace: '</p>','' }}</h5>
+                    </div>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+    <div class="mobile-slider-container">
+        <div class="mobile-application-bg-container">
+            <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/01-Free-iPhone-15-Pro-Mockup_2x_d9d3e60e-a03f-4464-b334-809f002baf91.png?v=1728920191" class="mobile-container-img">
+            <div class="mobile-application-content-slider">
+              <div class="swiper-mobile-app">
+                <div class="swiper-wrapper">
+                {% if section.blocks.size == 0 %}
+                    <div class="mobile-app-slide swiper-slide">
+                        <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/39917_2x_a7cb37ea-9f6b-40ab-a570-09aa4d45a0a7.png?v=1728925759" class="mobile-apps-img">
+                    </div>
+                    <div class="mobile-app-slide swiper-slide">
+                        <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/39918_2x_1.png?v=1728922122" class="mobile-apps-img">
+                    </div> 
+                    <div class="mobile-app-slide swiper-slide">
+                        <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/39919_2x_1.png?v=1728924014" class="mobile-apps-img">
+                    </div>
+                  {% else %}
+                    {% for block in section.blocks %}
+                      <div class="mobile-app-slide swiper-slide">
+                          <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}" class="mobile-apps-img">
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              </div> 
+            </div> 
+        </div>
+    </div>
+  </div>
+</div>
+<script>
+  // Ensure GSAP and ScrollTrigger are loaded
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Swiper initialization
+  const swiper_mobile_app = new Swiper('.swiper-mobile-app', {
+    direction: "vertical",
+    slidesPerView: 1,
+    allowTouchMove: false,
+    speed: 800,
+    effect: "creative",
+    creativeEffect: {
+      prev: { translate: [0, "0%", 0] },
+      next: { translate: [0, "100%", 0] },
+    },
+  });
+
+  const mobile_app_content = new Swiper('.swiper-mobile-app-content', {
+    direction: "vertical",
+    allowTouchMove: false,
+    slidesPerView: 1,
+    speed: 800,
+  });
+
+  // ScrollTrigger for pinning and syncing slides
+  ScrollTrigger.create({
+    trigger: ".inner-section-mobile-app", // Element to pin
+    start: "top top", // Pin starts when the top of the element hits the top of the viewport
+    end: () => `+=${swiper_mobile_app.slides.length * window.innerHeight}`, // Total height for the pin (number of slides * viewport height)
+    pin: true, // Pin the element
+    pinSpacing: true, // Maintain space after the pinned section
+    scrub: true, // Smooth scrolling behavior
+    onUpdate: (self) => {
+      const progress = self.progress; // Progress of the scroll (0 to 1)
+      const currentSlide = Math.floor(progress * swiper_mobile_app.slides.length); // Determine the current slide
+
+      // Sync Swiper to the scroll progress
+      if (swiper_mobile_app.activeIndex !== currentSlide) {
+        swiper_mobile_app.slideTo(currentSlide);
+        mobile_app_content.slideTo(currentSlide);
+      }
+    },
+    onLeave: () => {
+      console.log("Scrolled past inner-section-mobile-app");
+    },
+    onLeaveBack: () => {
+      console.log("Scrolled back to inner-section-mobile-app");
+    },
+    markers: false, // Optional: Debugging markers
+  });
+</script>
+{% schema %}
+    {
+        "class": "mobile-application-slider-section",
+        "name": "Mobile App Slider",
+        "templates": ["product"],
+        "limit": 1, 
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "bg_image",
+                "label": "Background Image"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "content",
+                "name": "Content",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Heading"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "description",
+                        "label": "Description"
+                    }
+                    
+                ]
+            }
+        ],
+        "presets" :[{
+            "name" : "Mobile App Slider"
+        }]
+    }
+  {% endschema %} 

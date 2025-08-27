@@ -1,0 +1,996 @@
+<style>
+  .main-article-section{
+    padding:50px 0px ;
+    background-color:#FBFBFB;
+    overflow:hidden;
+  }
+  .main-article-section .inner-article-section{
+    background-color:#fff;
+    padding:2rem 4rem;
+  }
+  @media screen and (min-width: 750px) {
+    .main-article-section .article-container{
+      padding:0px 3rem;
+    }
+  }
+  .main-article-section .inner-article-section{
+    display:flex;
+    gap:5rem;
+  }
+  .main-article-section .article-upper-content{
+    border-bottom: 1px solid #D7D7D7;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom:20px;
+  }
+  .main-article-section .article-except-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .main-article-section .article-except-container .social-share{
+    display: flex;
+    gap: 10px; 
+  }
+  .main-article-section .article-except-container .social-link{
+    cursor:pointer;
+    display:flex;
+  }
+  .main-article-section .article-except-container .social-link:hover svg circle,
+  .main-article-section .article-except-container .social-link:hover svg ellipse{
+    fill:#FF8832 !important;
+  }
+  .main-article-section .article-except-container .social-link:hover svg path{
+    fill:#fff !important;
+    stroke:#fff;
+  }
+  .main-article-section .side-content{
+    border-bottom: 1px solid #D7D7D7;
+  }
+  .main-article-section .article-main-content .article-content img{
+    height:auto;
+  }
+  .product-article .featured-image-column img{
+    height:300px;
+    object-fit:contain;
+  }
+  .main-article-section .article-main-content {
+    padding-bottom:30px;
+    border-bottom: 1px solid #D7D7D7;
+  }
+  .main-article-section .article-main-content ul{
+    list-style:inside;
+    padding:0px;
+  }
+  .main-article-section .promotion-deals{
+     margin: 16px 0px 0px;
+    border-bottom: 1px solid #D7D7D7;
+    padding-bottom: 24px;
+    display: flex;
+  }
+  .main-article-section .subscription-exclusive-container{
+    padding: 24px 0px;
+    border-bottom: 1px solid #D7D7D7;
+  }
+  .main-article-section .recommended-products-container{
+  }
+  .main-article-section .subscription-exclusive{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    background: #F8F8F8;
+    padding: 20px;
+    box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.12);
+    border-radius: 20px;
+  }
+  .main-article-section .side-bar-sticky{
+    position:sticky;
+    top:90px;
+  }
+  .modal-copy-link{
+    transition: visibility 0.2s ease 0.2s, opacity 0.3s ease 0.3s, transform 0.2s ease 0.4s;
+    position: fixed;
+    max-width: 300px;
+    bottom: 30px;
+    visibility: hidden;
+    opacity: 0;
+    background: #EEF1F3;
+    display: flex;
+    padding: 20px 30px;
+    border-radius: 50px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    transform: translateY(100%);
+  }
+  .modal-copy-link.active{
+    visibility:visible;
+    opacity:1;
+    transform: translateY(0);
+  }
+  .modal-copy-link span{
+    width:20px;
+    display:flex;
+    cursor:pointer;
+  }
+  
+  .article-recommended-section .recommended-article-list-container{
+    padding-top:30px;
+  }
+  .article-recommended-section .recommended-article-list-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap:25px;
+    row-gap:40px;
+  }
+  .article-recommended-section .recommended-article-list-container .article-featured-image{
+    height:280px;
+    overflow:hidden;
+  }
+  .article-recommended-section .recommended-article-list-container .article-featured-image img{
+    object-fit:cover;
+  }
+  .article-recommended-section .recommended-article-list-container .article-item{
+    box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 280px;
+  }
+  .article-recommended-section .recommended-article-list-container .article-item .article-featured-image img,
+  .article-recommended-section .recommended-article-list-container .article-item .article-details .article-title{
+    transition: all 0.5s ease;
+  }
+  .article-recommended-section .recommended-article-list-container .article-item:hover .article-featured-image img{
+    scale:1.1;
+  }
+  .article-recommended-section .recommended-article-list-container .article-item:hover .article-details .article-title{
+    color:#FF8832;
+  }
+  .article-recommended-section .recommended-article-list-container .article-item .article-details{
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: -webkit-fill-available;
+  }
+  .article-recommended-section .article-except{
+    padding-top: 10px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .subscription-exclusive .validation-checkbox{
+      align-items: center;
+      gap:6px;
+  }
+  .subscription-exclusive .validation-input p{
+    font-size:10px;
+    line-height:normal;
+  }
+  .subscription-exclusive .custom-exclusive{
+     border: 1px solid #FFF0E4;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius:50px;
+    overflow:hidden;
+  }
+  .subscription-exclusive .custom-exclusive input{
+    width:100%;
+    width: 100%;
+    padding: 15px;
+    border: none;
+  }
+  .subscription-exclusive .custom-exclusive input:focus~label,
+  .subscription-exclusive .custom-exclusive input:not(:placeholder-shown)~label{
+      opacity:0;
+  }
+  .subscription-exclusive .custom-exclusive input::placeholder{
+      color:transparent;
+  }
+  .subscription-exclusive .custom-exclusive label{
+    position:absolute;
+    left:15px;
+  }
+  .subscription-exclusive .btn-subscript-exclusive{
+    width:100%;
+    background:#000;
+    border-radius:50px;
+    color:#fff;
+    padding: 14px;
+    margin-top:10px;
+    border:none;
+  }
+  .subscription-exclusive .checkmark{
+    width: 15px;
+    height: 15px;
+    top: 0;
+    background-color: #fff;
+    border: 1px solid #979797;
+  }
+  .subscription-exclusive .validation-input .checkmark:after{
+    left: 4px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border-width: 0 2px 2px 0;
+  }
+  .recommended-product-list-container{
+    display:grid;
+    grid-template-columns:1fr;
+    row-gap:25px;
+    column-gap:10px;
+    padding-top:20px;
+  }
+  .recommended-product-list-container .product-image-container{
+    padding-top:0px;
+    padding-bottom:0px;
+  }
+  .price-n-button .price .original-price{
+    font-size:16px;
+  }
+  .price-n-button .price .compare-price{
+    font-size:14px;
+  }
+  .price-n-button .learn-more-btn p{
+    font-size:10px;
+  }
+  .main-article-section .badge-discount-banner h5{
+    font-size:18px;
+  }
+  
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .main-article-section{
+      padding-top:20px;
+    }
+    .main-article-section .inner-article-section{
+      flex-direction:column;
+      gap:30px;
+      padding:2rem;
+    }
+    .main-article-section .page-width{
+      padding:0px;
+    }
+    .main-article-section .side-content{
+      display:none;
+    }
+    .article-recommended-section{
+      padding-bottom:20px;
+      position:relative;
+    }
+    .article-recommended-section .recommended-article-list-container{
+      grid-template-columns: 1fr;
+      row-gap:0px;
+    }
+    .recommended-product-list-container{
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .main-article-section .article-main-content{
+      padding-bottom:0px;
+    }
+    .product-article .featured-image-column img{
+      height:250px;
+    }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+    .main-article-section{
+      padding-top:30px;
+    }
+    .main-article-section .inner-article-section{
+      flex-direction:column;
+      gap:30px;
+    }
+    .main-article-section .side-content{
+      display:none;
+    }
+    .article-recommended-section{
+      padding-bottom:20px;
+      position:relative;
+    }
+    .article-recommended-section .recommended-article-list-container{
+      grid-template-columns: 1fr;
+      row-gap:0px;
+    }
+    .recommended-product-list-container{
+      grid-template-columns: 1fr 1fr;
+      gap:15px;
+    }
+    .main-article-section .article-main-content{
+      padding-bottom:0px;
+    }
+    .product-article .featured-image-column img{
+      height:280px;
+    }
+  }
+
+  .product-article{
+    background:#FCF9F6;
+    border-radius:10px;
+    padding:15px 45px;
+    display:flex;
+    gap:50px;
+    align-items: center;
+  }
+  .product-article .featured-image-column{
+    display:flex;
+  }
+  .product-article .featured-image-column img{
+    mix-blend-mode: multiply;
+  }
+  .product-detail-price,
+  .product-detail-buttons{
+    display:flex;    
+    align-items: center;
+    gap:10px;
+  }
+  .product-detail-buttons{
+    padding-top:10px;
+  }
+  .product-detail-buttons .add-to-cart-btn{
+    background-color: #f1f1f1;
+    padding: 1.2rem;
+    border-radius: 50px;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+  .product-detail-buttons .add-to-cart-btn:hover{
+    background-color: #000;
+  }
+  .product-detail-buttons .add-to-cart-btn:hover svg path,
+  .product-detail-buttons .add-to-cart-btn:hover svg circle{
+    stroke:#fff;
+  }
+  .product-detail-buttons .learn-more-btn{
+    border-radius: 50px;
+    padding: 1.2rem 2rem;
+    background-color: #f1f1f1;
+    color:#000;
+  }
+  .product-detail-buttons .learn-more-btn:hover{
+    background-color: #FF8832;
+    color:#fff;
+  }
+  .product-detail-content{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+  }
+  .main-article-section .product-detail-content ul{
+    list-style: none;
+    margin:0px;
+    
+  }
+  .product-detail-content ul strong{
+    font-weight:normal;
+  }
+
+  
+  .mobile-blogs-slider-arrows{
+      position:absolute;
+      top:50%;
+      left:0;
+      right:0;
+      margin:auto;
+      width:100%;
+      max-width:var(--page-width);
+      padding:0px 0px;
+      display:flex;
+      flex-direction:row-reverse;
+      justify-content: space-between;
+  }
+  .mobile-blogs-slider-arrows .mobile-blogs-button-prev, 
+  .mobile-blogs-slider-arrows .mobile-blogs-button-next{
+      background: #DBDBDB;
+      border-radius: 50px;
+      display: flex;
+      cursor: pointer;
+      z-index: 2;
+      width:fit-content;
+      transition: all 0.3s ease;
+      position:relative;
+  }
+  .mobile-blogs-slider-arrows .mobile-blogs-button-prev{
+    left:-15px;
+  }
+  .mobile-blogs-slider-arrows .mobile-blogs-button-next{
+    right:-15px;
+  }
+  .mobile-blogs-slider-arrows .mobile-blogs-button-prev:hover, 
+  .mobile-blogs-slider-arrows .mobile-blogs-button-next:hover{
+      background: #FF8832;
+  }
+
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .product-article{
+      flex-direction:column;
+      gap:20px;
+      padding: 20px 20px;
+    }
+    .product-detail-content{
+      gap:10px;
+    }
+    .mobile-blogs-slider-arrows .mobile-blogs-button-prev, 
+    .mobile-blogs-slider-arrows .mobile-blogs-button-next{
+          background: #dbdbdb6e;
+    }
+    .mobile-blogs-slider-arrows .mobile-blogs-button-prev svg, 
+    .mobile-blogs-slider-arrows .mobile-blogs-button-next svg{
+        width:45px;
+        height:45px;
+    }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+    .product-article{
+      flex-direction:column;
+      gap:20px;        
+      padding: 20px 20px;
+    }
+    .product-detail-content{
+      gap:10px;
+    }
+    .mobile-blogs-slider-arrows .mobile-blogs-button-prev, 
+    .mobile-blogs-slider-arrows .mobile-blogs-button-next{
+          background: #dbdbdb6e;
+    }
+    .mobile-blogs-slider-arrows .mobile-blogs-button-prev svg, 
+    .mobile-blogs-slider-arrows .mobile-blogs-button-next svg{
+        width:45px;
+        height:45px;
+    }
+  }
+
+/* TABLETS  */ 
+@media only screen and (min-width: 768px) {
+}
+ @media only screen and (min-width: 800px) {
+}
+@media (min-width: 1024px) and (orientation: portrait) {
+}
+
+ /* COMPUTERS */
+@media (min-width: 1024px) and (orientation: landscape) {
+}
+@media only screen and (min-width: 1280px) {
+  .main-article-section .article-container{
+      padding: 0px 5rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  .main-article-section .article-container{
+      padding: 0px 5rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .main-article-section .article-container{
+      padding: 0px 5rem;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  .main-article-section .article-container{
+      padding: 0px 8rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .main-article-section .article-container{
+      padding: 0px 15rem;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .main-article-section .article-container{
+      padding: 0px 20rem;
+  }
+}
+
+</style>
+{{ 'variant-button.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'custom-product-card.aio.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-add.aio.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-page-form.aio.min.js' | asset_url }}" defer="defer"></script>
+<div class="page-width article-container">
+  <div class="inner-article-section">
+    <div class="article-upper-content col_75">
+      
+      <div class="breadcrumbs-list">
+          <p class="mx-0 text-breadcrumb">
+            <a href="{{ shop.url }}
+              {%- if localization.language.iso_code == 'en' -%}
+              {%- else -%}
+                /{{- localization.language.iso_code -}}
+              {%- endif -%}
+              " class="text-breadcrumb">Home</a>
+            >
+            <a href="
+            {%- if localization.language.iso_code == 'en' -%}
+            {%- else -%}
+              /{{- localization.language.iso_code -}}
+            {%- endif -%}
+              /pages/blogs" class="text-breadcrumb">Blog</a> 
+            >
+            <span class="black-f">{{ blog.title }}</span>
+          </p>
+      </div>
+      
+      <h1 class="text-md f-f-bold article-title mx-0">{{ article.title }}</h1>
+      
+      <div class="article-except-container">
+          <h5 class="f-f-regular mx-0">{{ article.published_at | date: "%^b %d, %Y" }}</h5>
+          <div class="social-share">
+            {%- assign share_url = shop.url | append: article.url -%}
+            <a href="https://www.facebook.com/sharer.php?u={{ share_url }}" class="social-link" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                <circle cx="15" cy="15" r="15" style="fill:#f5f5f5"/>
+                <path d="M7.487 5.407H5.026V3.744a1.283 1.283 0 0 1 1.446-1.387h1.119V.173A14 14 0 0 0 5.6 0a3.13 3.13 0 0 0-3.347 3.452v1.955H0v2.566h2.253v6.2a9 9 0 0 0 2.773 0v-6.2h2.068Z" transform="translate(10.752 7.93)" style="fill:#484848;isolation:isolate"/>
+              </svg>
+            </a>
+            <a href="{{ settings.social_instagram_link }}" class="social-link" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                <defs>
+                  <style>
+                    .c{isolation:isolate;fill:#484848}
+                  </style>
+                </defs>
+                <g transform="translate(.1 -.031)">
+                  <circle cx="15" cy="15" r="15" transform="translate(-.1 .031)" style="fill:#f5f5f5"/>
+                  <g style="isolation:isolate">
+                    <path class="c" d="M18.369 8.052a4.7 4.7 0 0 1 1.591.295 2.65 2.65 0 0 1 .985.64 2.6 2.6 0 0 1 .64.985 4.7 4.7 0 0 1 .295 1.591c.04.9.05 1.176.05 3.464s-.01 2.563-.05 3.464a4.7 4.7 0 0 1-.295 1.591 2.83 2.83 0 0 1-1.625 1.625 4.7 4.7 0 0 1-1.591.295c-.9.04-1.176.05-3.464.05s-2.563-.01-3.464-.05a4.7 4.7 0 0 1-1.591-.295 2.65 2.65 0 0 1-.985-.64 2.6 2.6 0 0 1-.64-.985 4.7 4.7 0 0 1-.296-1.592c-.04-.9-.05-1.176-.05-3.464s.01-2.563.05-3.464a4.7 4.7 0 0 1 .3-1.591 2.65 2.65 0 0 1 .64-.985 2.6 2.6 0 0 1 .985-.64 4.7 4.7 0 0 1 1.591-.295c.9-.04 1.172-.05 3.464-.05s2.559.01 3.46.051m-6.998-1.545a6.3 6.3 0 0 0-2.08.4 4.2 4.2 0 0 0-1.522.99 4.2 4.2 0 0 0-.991 1.518 6.3 6.3 0 0 0-.4 2.08c-.039.918-.049 1.21-.049 3.538s.01 2.624.05 3.534a6.3 6.3 0 0 0 .4 2.08 4.2 4.2 0 0 0 .992 1.521 4.2 4.2 0 0 0 1.518.988 6.3 6.3 0 0 0 2.08.4c.915.04 1.206.05 3.534.05s2.62-.01 3.534-.05a6.3 6.3 0 0 0 2.08-.4 4.38 4.38 0 0 0 2.506-2.506 6.3 6.3 0 0 0 .4-2.08c.04-.915.05-1.206.05-3.534s-.01-2.62-.05-3.534a6.3 6.3 0 0 0-.4-2.08 4 4 0 0 0-.982-1.524 4.2 4.2 0 0 0-1.518-.989 6.3 6.3 0 0 0-2.08-.4c-.914-.042-1.214-.052-3.538-.052s-2.62.01-3.534.05"/>
+                    <path class="c" d="M10.5 15.033a4.405 4.405 0 1 0 4.405-4.405 4.406 4.406 0 0 0-4.405 4.405m1.548 0a2.857 2.857 0 1 1 2.857 2.858 2.86 2.86 0 0 1-2.857-2.858m7.436-3.551a1.028 1.028 0 1 1 1.029-1.029 1.03 1.03 0 0 1-1.029 1.029"/>
+                  </g>
+                </g>
+              </svg>
+            </a>
+            <a href="mailto:?&subject={{ article.title | escape }}&body={{ share_url }}" class="social-link" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30">
+                <defs>
+                  <style>
+                    .c{isolation:isolate;fill:#484848;stroke:#484848;stroke-width:.2px}
+                  </style>
+                </defs>
+                <g transform="translate(.479 -.031)">
+                  <ellipse cx="15.5" cy="15" rx="15.5" ry="15" transform="translate(-.479 .031)" style="fill:#f5f5f5"/>
+                  <g style="isolation:isolate">
+                    <path class="c" d="M10.771 22.893c-3.102 0-4.887-1.785-4.887-4.887v-5.95c0-3.102 1.785-4.887 4.887-4.887h8.5c3.1 0 4.887 1.785 4.887 4.887v5.95c0 3.1-1.785 4.887-4.887 4.887ZM7.159 12.056v5.95c0 2.431 1.181 3.612 3.612 3.612h8.5c2.431 0 3.612-1.181 3.612-3.612v-5.95c0-2.431-1.181-3.612-3.612-3.612h-8.5c-2.431 0-3.612 1.181-3.612 3.612Z"/>
+                    <path class="c" d="m13.032 15.099-2.66-2.125a.635.635 0 0 1 .79-.994l2.66 2.125a2.03 2.03 0 0 0 2.388 0l2.662-2.125a.627.627 0 0 1 .892.1.627.627 0 0 1-.1.892l-2.662 2.127a3.12 3.12 0 0 1-1.98.671 3.16 3.16 0 0 1-1.99-.671Z"/>
+                  </g>
+                </g>
+              </svg>
+              </a>
+              <span class="social-link copy-link" data-share-link="{{ share_url }}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                  <defs>
+                    <style>
+                      .c{isolation:isolate;fill:#484848;stroke:#484848;stroke-width:.2px}
+                    </style>
+                  </defs>
+                  <g transform="translate(-.031 -.031)">
+                    <circle cx="15" cy="15" r="15" transform="translate(.031 .031)" style="fill:#f5f5f5"/>
+                    <g style="isolation:isolate">
+                      <path class="c" d="M9.104 20.95a5.07 5.07 0 0 1 0-7.157.584.584 0 0 1 .822.823 3.886 3.886 0 1 0 5.51-.005.584.584 0 0 1 .825-.826 5.077 5.077 0 0 1 0 7.165 5 5 0 0 1-3.575 1.48 5.05 5.05 0 0 1-3.582-1.48Z"/>
+                      <path class="c" d="M20.124 16.543a.59.59 0 0 1 0-.826 4.089 4.089 0 1 0-5.779 0 .584.584 0 0 1-.826.826 5.256 5.256 0 1 1 7.438.008.62.62 0 0 1-.421.164.58.58 0 0 1-.412-.172Z"/>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+              <div class="modal-copy-link">
+                <h4 class="f-f-regular mx-0">Link Copied!</h4>
+                <span class="btn-close">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-close" viewBox="0 0 18 17">
+                      <path fill="currentColor" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path>
+                  </svg>
+                </span>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="side-content col_25">
+    </div>
+  </div>
+  <div class="inner-article-section">
+    <div class="article-main-content col_75">
+      <div class="article-content">
+        {{ article.content | replace: '<img', '<img loading="lazy"' }}
+      </div>
+      
+      <div class="article-recommended-section h-mobile">
+        <h3 class="f-f-semibold mx-0 black-f">Recommend Posts</h3>
+        <div class="recommended-article-list-container mobile-blogs-slider">
+          <div class="swiper-wrapper">
+          {% assign total_limit = 5 %}
+          {% assign article_count = 0 %}
+          
+          {% for link in linklists.blogs.links %}
+              {% assign blog = link.object %}
+              {% for post in blog.articles %}
+                {% if article.id != post.id %}
+                  {% if article_count >= total_limit %}
+                      {% break %}
+                  {% endif %}
+                  <div class="article-item content swiper-slide" data-published-at="{{ post.published_at }}" data-search-term="{{ post.title | downcase }}">
+                      <a href="{{ post.url }}" class="article-featured-image">
+                          <img loading="lazy" src="{{ post.image.src | image_url }}" width="100%" height="100%">
+                      </a>
+                      <div class="article-details">
+                          <div class="">
+                              <a href="{{ post.url }}" class="article-title f-f-bold mx-0 h5">{{ post.title }}</a>
+                              <p class="blog-description p-small f-f-regular mx-0 ">{{ post.content | strip_html | truncate: 100 }}</p>
+                          </div>
+                          <div class="article-except">
+                              <p class="p-small mx-0">{{ post.published_at | date: "%^b %d, %Y" }}</p>
+                              <div class="article-tag-container">
+                                  <a href="{{ link.url }}" class="p article-tag mx-0 f-f-medium black-f">{{ link.title }}</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+          
+                  {% assign article_count = article_count | plus: 1 %}
+                  {% endif %}
+              {% endfor %}
+              {% if article_count >= total_limit %}
+                  {% break %}
+              {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+        
+        <div class="mobile-blogs-slider-arrows">
+            <div class="mobile-blogs-button-next">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52">
+                    <g id="right_normal" transform="translate(-1835 -559)">
+                        <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" transform="translate(1835 559)" fill="transparent"></rect>
+                        <path id="路径_4" data-name="路径 4" d="M253.944,103.831a.906.906,0,0,1-.7-.3.97.97,0,0,1,.1-1.4l6.385-5.786a.748.748,0,0,0,0-1.2l-6.485-5.487a.99.99,0,0,1,1.3-1.5l6.385,5.487a2.808,2.808,0,0,1,1,2.1,2.871,2.871,0,0,1-.9,2.1l-6.385,5.786a1.85,1.85,0,0,1-.7.2Z" transform="translate(1604.091 489.128)" fill="#fff"></path>
+                    </g>
+                </svg>
+            </div>
+            <div class="mobile-blogs-button-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" id="left_normal" width="53" height="52" viewBox="0 0 53 52">
+                    <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" fill="transparent"></rect>
+                    <path id="路径_4" data-name="路径 4" d="M260.873,103.831a.906.906,0,0,0,.7-.3.97.97,0,0,0-.1-1.4l-6.385-5.786a.748.748,0,0,1,0-1.2l6.485-5.487a.99.99,0,0,0-1.3-1.5l-6.385,5.487a2.808,2.808,0,0,0-1,2.1,2.871,2.871,0,0,0,.9,2.1l6.385,5.786a1.85,1.85,0,0,0,.7.2Z" transform="translate(-230.909 -69.872)" fill="#fff"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="mobile-blogs-slider-swiper-pagination swiper-pagination-long"></div>
+      </div>
+    </div>
+    <div class="side-content_lower col_25">
+      <div class="side-bar-sticky">
+        {% if section.settings.banner %}
+          <a href="{{ section.settings.url }}" class="promotion-deals">
+            <img loading="lazy" src="{{ section.settings.banner | img_url: 'master' }}" width="100%" height="100%">
+          </a>
+        {% endif %}
+        {% if section.settings.hide_offers %}
+        {% else %}
+        <div class="subscription-exclusive-container">
+          <div class="subscription-exclusive">
+            <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/43504_2x_61581100-762c-4442-b3a4-949cb6b14934.png?v=1730824183" width="100%" height="100%">
+            <p class="p-small f-f-semibold mx-0 black-f text-cap center">Subscribe now to enjoy your discount!</p>
+            {% form 'customer', class: 'newsletter-form' %}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <div class="newsletter-form__field-wrapper">
+                    <div class="custom-exclusive">
+                        <input
+                            id="subscription-exclusive-input"
+                            type="email"
+                            name="contact[email]"
+                            value="{{ form.email }}"
+                            aria-required="true"
+                            autocorrect="off"
+                            autocapitalize="off"
+                            autocomplete="email"
+                            placeholder="{{ 'newsletter.label' | t }}"
+                            required
+                          >
+                        <label class="p-small f-f-regular" for="subscription-exclusive-input">
+                            Enter Your Email
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-subscript-exclusive p-small f-f-semibold mx-0" name="commit" aria-label="{{ 'newsletter.button_label' | t }}">
+                        Subscribe Now
+                    </button>
+                    {%- if form.errors -%}
+                        <small class="newsletter-form__message form__message p my-auto" id="Newsletter-error--{{ section.id }}">
+                            <span class="svg-wrapper">
+                                {{- 'icon-error.svg' | inline_asset_content -}}
+                            </span>
+                            {{- form.errors.translated_fields.email | capitalize }}
+                            {{ form.errors.messages.email -}}
+                        </small>
+                    {%- endif -%}
+                </div>
+                <div class="validation-input">
+                    <label for="validation-checkbox-exclusive" class="validation-checkbox">
+                        <p class="mx-0 f-f-regular">I Agree To Qcy's Terms Of Service And Privacy Policy</p>
+                        <input type="checkbox" id="validation-checkbox-exclusive" name="validation" value="I Agree To Qcy's Terms Of Service And Privacy Policy" required>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                {%- if form.posted_successfully? -%}
+                    <h3 class="newsletter-form__message newsletter-form__message--success form__message p my-auto" tabindex="-1" autofocus >
+                        <span class="svg-wrapper">
+                            {{- 'icon-success.svg' | inline_asset_content -}}
+                        </span>
+                        {{- 'newsletter.success' | t }}
+                    </h3>
+                {%- endif -%}
+            {% endform %}
+          </div>
+        </div>
+        {% endif %}
+        <div class="recommended-products-container">
+          <h3 class="f-f-semibold mx-0 ">Recommended</h3>
+          <div class="recommended-product-list-container">
+            {% if article.metafields.custom.products %}
+              {% for product in article.metafields.custom.products.value limit: 5 %}
+                    {% render 'custom-card-product', product: product %}
+              {% endfor %}
+            {% else %}
+              {% for product in collections.all.products limit: 2 %}
+                    {% render 'custom-card-product', product: product %}
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ 'custom-product-card-variant.aio.min.js' | asset_url | script_tag }}
+{% javascript %}
+$(document).ready(function() {
+  $('.copy-link').on('click', function() {
+    // Get the share link from the data attribute
+    const shareLink = $(this).data('share-link');
+
+    // Create a temporary input element to copy the link
+    const tempInput = $('<input>');
+    $('body').append(tempInput);
+    tempInput.val(shareLink).select();
+    document.execCommand('copy');
+    tempInput.remove();
+
+    // Optional: Show a confirmation message
+    $('.modal-copy-link').addClass('active');
+    setTimeout(function() {
+      $('.modal-copy-link').removeClass('active');
+    }, 2000); // 500 milliseconds = 0.5 seconds
+    
+  });
+  $('.btn-close').on('click', function() {
+    $('.modal-copy-link').removeClass('active');
+  });
+});
+
+
+  var article_blog_list_slider = new Swiper('.mobile-blogs-slider', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        allowTouchMove: true,
+        navigation: {
+            nextEl: '.mobile-blogs-button-next',
+            prevEl: '.mobile-blogs-button-prev',
+        },
+        pagination: {
+            el: '.mobile-blogs-slider-swiper-pagination',
+            clickable: true,
+        }
+    });
+{% endjavascript %}
+<script>
+  var products_judgeme = [
+    {% for product in collections['all'].products %}
+      {
+        "handle": "{{ product.handle }}",
+       "judgeme_badge": {{ product.metafields.judgeme.badge | json }}
+      }{% if forloop.last == false %},{% endif %}
+    {% endfor %}
+  ];
+
+  console.log(products_judgeme);
+  
+$('.product-article').each(function() {
+    var productHandle = $(this).data('product-handle'); // Get the product handle from the data attribute
+    var $productArticle = $(this); // Store reference to the product-article element
+    var productBadge = products_judgeme.find(function(product) {
+      return product.handle === productHandle;
+    });
+    $.ajax({
+        url: `/products/${productHandle}.js`,  // Endpoint using the handle
+        method: 'GET',
+        dataType: 'json',
+        success: function(product) {
+            // Append HTML to the correct .product-article element
+          
+         
+            // Limit the description to 200 characters
+            var limitedDescription = product.description.length > 150
+                ? product.description.substring(0, 150) + '...' 
+                : product.description;
+          
+            $productArticle.html(`
+              <div class="col_40 featured-image-column">
+                <img loading="lazy" src="${product.featured_image}" width="100%" height="100%">
+              </div>
+              <div class="col_60 product-detail-content">
+                <h2 class="text-sm mx-0 black-f f-f-bold">${product.title}</h2>
+                <div class="judgeme-badge-container">
+                ${productBadge.judgeme_badge}
+                </div>
+                <div class="product-detail-price">
+                  <h3 class="f-f-bold mx-0">${formatMoney(product.variants[0].price, "{{ shop.money_format }}")}</h3> 
+                  <h3 class="compare-price-color mx-0 f-f-light text-strike">${formatMoney(product.variants[0].compare_at_price, "{{ shop.money_format }}")}</h3> 
+                </div>
+                <div class="mx-0 text-gray-f">${limitedDescription}</div>
+                <div class="product-detail-buttons">
+                  <button class="add-to-cart-btn" data-variant-id="${product.variants[0].id}">
+                      <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                          <g transform="translate(0.72 0.889)">
+                              <rect fill="none" width="21" height="21" transform="translate(-0.72 -0.889)" />
+                              <path d="M28.863,36.251H20.119L17.983,24.505a.613.613,0,0,0-.6-.505H16" transform="translate(-15.021 -22.422)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                              <circle cx="1.248" cy="1.248" r="1.248" transform="translate(5.038 13.829)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                              <circle cx="1.248" cy="1.248" r="1.248" transform="translate(12.716 13.829)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                              <path d="M49.11,70.125h9.617a1.217,1.217,0,0,0,1.2-1L60.863,64H48" transform="translate(-44.571 -59.359)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                          </g>
+                      </svg>
+                      <div class="loading__spinner hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="spinner" viewBox="0 0 66 66"><circle stroke-width="6" cx="33" cy="33" r="30" fill="none" class="path"/></svg>
+                      </div>
+                  </button>
+                  <a href="${product.url}" target="_blank" class="p learn-more-btn mx-0 line-height-normal">Learn More</a>
+                </div>
+            </div>
+            `);
+
+            // Initialize the Add to Cart button functionality for this product
+            reloadFunction($productArticle);
+
+          
+          
+        },
+        error: function(error) {
+            console.error("Error fetching product:", error);
+        }
+    });
+
+    function reloadFunction($productElement) {
+        $productElement.find('.add-to-cart-btn').click(function() {
+            var $button = $(this); // Store reference to the clicked button
+            var variantId = $button.data('variant-id'); // Get variant ID from the data attribute
+            var formData = `id=${variantId}&quantity=1`; // Form data as URL-encoded string
+        
+            // Disable button to prevent multiple clicks
+            $button.prop('disabled', true);
+            $button.find('.cart-icon').css('visibility', 'hidden');
+            $button.find('.loading__spinner').removeClass('hidden');
+        
+            $.ajax({
+                type: 'POST',
+                url: '/cart/add.js',
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    // Fetch the updated cart contents
+                    $.ajax({
+                        type: 'GET',
+                        url: '/cart',
+                        dataType: 'html',
+                        success: function(data) {
+                            var parser = new DOMParser();
+                            var doc = parser.parseFromString(data, 'text/html');
+                            var cartDrawerContent = doc.querySelector('#CartDrawer .drawer__inner');
+                            document.querySelector('#CartDrawer .drawer__inner').innerHTML = cartDrawerContent.innerHTML;
+                            $('cart-drawer').removeClass('is-empty');
+                            document.querySelector('cart-drawer').open();
+        
+                            // Re-enable button after cart update
+                            $button.prop('disabled', false);
+                            $button.find('.cart-icon').css('visibility', 'visible');
+                            $button.find('.loading__spinner').addClass('hidden');
+                        },
+                        error: function(error) {
+                            console.log('Error fetching cart:', error);
+                            $button.prop('disabled', false); // Re-enable on error
+                            $button.find('.cart-icon').css('visibility', 'visible');
+                            $button.find('.loading__spinner').addClass('hidden');
+                        }
+                    });
+                },
+                error: function(xhr) {
+                    alert('Error adding item to cart: ' + (xhr.responseJSON ? xhr.responseJSON.description : 'Unknown error'));
+                    $button.prop('disabled', false); // Re-enable on error
+                }
+            });
+        });
+
+    }
+
+});
+
+function formatMoney(cents, format) {
+  if (typeof cents == 'string') { cents = cents.replace('.',''); }
+  var value = '';
+  var placeholderRegex = /\{\{\s*(\w+)\s*\}\}/;
+  var formatString = (format || this.money_format);
+
+  function defaultOption(opt, def) {
+     return (typeof opt == 'undefined' ? def : opt);
+  }
+
+  function formatWithDelimiters(number, precision, thousands, decimal) {
+    precision = defaultOption(precision, 2);
+    thousands = defaultOption(thousands, ',');
+    decimal   = defaultOption(decimal, '.');
+
+    if (isNaN(number) || number == null) { return 0; }
+
+    number = (number/100.0).toFixed(precision);
+
+    var parts   = number.split('.'),
+        dollars = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1' + thousands),
+        cents   = parts[1] ? (decimal + parts[1]) : '';
+
+    return dollars + cents;
+  }
+
+  switch(formatString.match(placeholderRegex)[1]) {
+    case 'amount':
+      value = formatWithDelimiters(cents, 2);
+      break;
+    case 'amount_no_decimals':
+      value = formatWithDelimiters(cents, 0);
+      break;
+    case 'amount_with_comma_separator':
+      value = formatWithDelimiters(cents, 2, '.', ',');
+      break;
+    case 'amount_no_decimals_with_comma_separator':
+      value = formatWithDelimiters(cents, 0, '.', ',');
+      break;
+  }
+
+  return formatString.replace(placeholderRegex, value);
+};
+
+  
+</script>
+{% schema %}
+    {
+        "class": "main-article-section",
+        "name": "Main Article Section",
+        "templates": ["article"],
+        "settings": [
+            {
+                "type": "url",
+                "id": "url",
+                "label": "URL"
+            },
+            {
+                "type": "checkbox",
+                "id": "hide_offers",
+                "label": "Hide Offers",
+                "default": false
+            }
+        ],
+        "presets" :[{
+          "name" : "Main Article Section"
+        }]
+    }
+{% endschema %} 

@@ -1,0 +1,5 @@
+/*
+Generated time: July 29, 2025 01:14
+This file was created by the app developer. Feel free to contact the original developer with any questions. It was minified (compressed) by AVADA. AVADA do NOT own this script.
+*/
+.totals{display:flex;justify-content:center;align-items:flex-end}.totals>*{margin:0}.totals>h2{font-size:calc(var(--font-heading-scale) * 1.6rem)}.totals *{line-height:1}.totals>*+*{margin-left:2rem}.totals__total{margin-top:.5rem}.cart__ctas+.totals{margin-top:2rem}

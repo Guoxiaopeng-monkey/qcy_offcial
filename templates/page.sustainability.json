@@ -1,0 +1,233 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "promotion_banner_TNjAqc": {
+      "type": "promotion-banner",
+      "settings": {
+        "background": "shopify://shop_images/banner_1920x650_0b5df037-28b0-40e0-ab7b-1cc2fa55a740.jpg",
+        "background_mobile": "shopify://shop_images/Sustainability_at_mobile.png",
+        "sub_heading": "",
+        "heading": "",
+        "description": "",
+        "countdown_display": false,
+        "date_time": "Nov 14, 2024 14:00:00",
+        "primary_color": "#ffffff",
+        "description_color": "#ffffff",
+        "secondary_color": "#ff8832",
+        "content_position_y": "content-desktop-y-center",
+        "content_position_x": "content-desktop-x-left",
+        "content_position_y_mobile": "content-mobile-y-center"
+      }
+    },
+    "custom_slider_with_heading_nXfzme": {
+      "type": "custom-slider-with-heading",
+      "blocks": {
+        "text_image_hzmeg7": {
+          "type": "text_image",
+          "settings": {
+            "right_content": false,
+            "image": "shopify://shop_images/less_plastic.png",
+            "sub_heading": "",
+            "heading": "Less Wrapping Plastic",
+            "description": "<p>We are gradually reducing the plastic content of packaging materials by using alternatives such as paper, recycled fibers, and biodegradable plastics. For example, plastic film wraps are being replaced with paper boxes or wraps in our new products in 2024. </p>"
+          }
+        },
+        "text_image_48fMiR": {
+          "type": "text_image",
+          "settings": {
+            "right_content": false,
+            "image": "shopify://shop_images/printing.jpg",
+            "sub_heading": "",
+            "heading": "Sustainable Printing",
+            "description": "<p>We use degradable environmental-friendly soy ink in place of petroleum inks. which spruces up the printing, while also ensuring that the packaging is safer and more eco-friendly.</p>"
+          }
+        },
+        "text_image_FCApmd": {
+          "type": "text_image",
+          "settings": {
+            "right_content": false,
+            "image": "shopify://shop_images/reduce_material.jpg",
+            "sub_heading": "",
+            "heading": "Streamlined Packaging",
+            "description": "<p>We’ve been improving our packaging to use less material and remove components that serve no obvious purpose for users. This not only cuts down on waste but also makes shipping more efficient, allowing more headphones to fit into each shipment and saving energy in the process.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_image_hzmeg7",
+        "text_image_48fMiR",
+        "text_image_FCApmd"
+      ],
+      "settings": {
+        "animation_fade": false,
+        "background_color": "#ffffff",
+        "heading_black": "Eco-Friendly",
+        "heading_green": "Packaging"
+      }
+    },
+    "side_by_side_colorful_dV4T63": {
+      "type": "side-by-side-colorful",
+      "blocks": {
+        "left_content_NVbHwH": {
+          "type": "left_content",
+          "settings": {
+            "bg_image": "shopify://shop_images/PCR.png",
+            "heading_part1": "Eco-Friendly",
+            "heading_part2": "Materials",
+            "heading_part3": "",
+            "description": "<p>The QCY H3 Pro prioritizes sustainability by replacing 80% of traditional plastic in its body with post-consumer recycled plastic, reducing waste and conserving resources. Its ear cushions use bio-based leather made from organic materials like fruit peels and coffee grounds, cutting greenhouse gas emissions and supporting eco-friendly practices.</p>",
+            "heading_1": "",
+            "unit_1": "",
+            "label_1": "",
+            "heading_2": "",
+            "unit_2": "",
+            "label_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "left_content_NVbHwH"
+      ],
+      "custom_css": [
+        ".text-md {font-weight: bold;}",
+        ".side-by-side-content-section {background: #f8f8f8;}"
+      ],
+      "settings": {}
+    },
+    "side_by_side_colorful_LhypMh": {
+      "type": "side-by-side-colorful",
+      "blocks": {
+        "right_content_RrynHi": {
+          "type": "right_content",
+          "settings": {
+            "bg_image": "shopify://shop_images/design.png",
+            "heading_part1": "Built to",
+            "heading_part2": "Last Long",
+            "heading_part3": "",
+            "description": "<p>Sustainability is at the heart of our product design. We focus on creating durable, high-quality products that last, conducting strict durability tests, and providing firmware updates to keep our products running smoothly for years.</p>",
+            "heading_1": "",
+            "unit_1": "",
+            "label_1": "",
+            "heading_2": "",
+            "unit_2": "",
+            "label_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "right_content_RrynHi"
+      ],
+      "custom_css": [],
+      "settings": {}
+    },
+    "side_by_side_colorful_zwhc9P": {
+      "type": "side-by-side-colorful",
+      "blocks": {
+        "left_content_qqzywp": {
+          "type": "left_content",
+          "settings": {
+            "bg_image": "shopify://shop_images/green_logistics.jpg",
+            "heading_part1": "Green",
+            "heading_part2": "Logistics",
+            "heading_part3": "",
+            "description": "<p>Since 2022, we have expanded our overseas warehouses and optimized inventory and shipping routes to reduce long-distance transportation. By storing goods closer to customers, we have significantly lowered fuel consumption and greenhouse gas emissions, minimizing our environmental impact.</p>",
+            "heading_1": "",
+            "unit_1": "",
+            "label_1": "",
+            "heading_2": "",
+            "unit_2": "",
+            "label_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "left_content_qqzywp"
+      ],
+      "custom_css": [
+        ".text-md {font-weight: bold;}",
+        ".side-by-side-content-section {background: #f8f8f8;}"
+      ],
+      "settings": {}
+    },
+    "side_by_side_colorful_p9LgrB": {
+      "type": "side-by-side-colorful",
+      "blocks": {
+        "right_content_dH9Cei": {
+          "type": "right_content",
+          "settings": {
+            "bg_image": "shopify://shop_images/low-carbon.jpg",
+            "heading_part1": "Low-Carbon",
+            "heading_part2": "Manufacturing",
+            "heading_part3": "",
+            "description": "<p>We plan to launch solar PV power projects in 2025, as part of our commitment to sustainable manufacturing, harnessing clean, renewable energy to power our production processes. This initiative marks a significant step toward reducing our carbon footprint and brings us closer to achieving our goal of carbon neutrality. </p>",
+            "heading_1": "",
+            "unit_1": "",
+            "label_1": "",
+            "heading_2": "",
+            "unit_2": "",
+            "label_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "right_content_dH9Cei"
+      ],
+      "settings": {}
+    },
+    "about_us_award_2_Jxy9me": {
+      "type": "about-us-award-2",
+      "blocks": {
+        "award_HYKHm4": {
+          "type": "award",
+          "settings": {
+            "description": "",
+            "image": "shopify://shop_images/3_9fb90529-fbe2-4894-86f2-d773e2eb3072.png",
+            "sub_heading": ""
+          }
+        },
+        "award_cX3kEc": {
+          "type": "award",
+          "settings": {
+            "description": "",
+            "image": "shopify://shop_images/carbon_free_25e3c9f2-5f88-4ada-aa08-4752b329c638.png",
+            "sub_heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "award_HYKHm4",
+        "award_cX3kEc"
+      ],
+      "settings": {
+        "heading": "We’ve Made Significant Progress",
+        "description": "QCY has obtained certifications and accreditations that align with its sustainability-focused initiatives in various key areas. We are constantly working to grow and expand the list."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "promotion_banner_TNjAqc",
+    "custom_slider_with_heading_nXfzme",
+    "side_by_side_colorful_dV4T63",
+    "side_by_side_colorful_LhypMh",
+    "side_by_side_colorful_zwhc9P",
+    "side_by_side_colorful_p9LgrB",
+    "about_us_award_2_Jxy9me"
+  ]
+}

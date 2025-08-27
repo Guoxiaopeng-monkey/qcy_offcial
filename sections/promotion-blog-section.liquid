@@ -1,0 +1,381 @@
+<style>
+  #shopify-section-{{ section.id }}{
+    background-color:{{ section.settings.background }};
+  }
+  .promotion-blog-section{
+    padding:50px 0px 80px;
+    position:relative;
+  }
+  .promotion-blog-section .page-width{
+    position:relative;
+  }
+  .promotion-blog-section .heading{
+    padding-bottom:10px;
+  }
+  .promotion-blog-section .article-featured-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:flex;
+  }
+  .promotion-blog-section .promotion-full-width-article{
+    background-color: #FFF0E4;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:30px;
+    display:flex;
+  }
+  .promotion-blog-section .promotion-full-width-article .article-blog-details{
+      padding:50px 80px;
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+  }
+  .promotion-blog-section .article-btn-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top:10px;
+  }
+  .promotion-blog-section .promotion-full-width-article  .article-btn-details{
+    padding-top:30px;
+  }
+  .promotion-blog-section .article-learn-more-btn{
+    display:flex;
+    background-color:#000;
+    border-radius:50px;
+    padding:5px 2rem;
+    transition: all 0.3s ease;
+  }
+  .promotion-blog-section .article-learn-more-btn:hover{
+    background-color:#FF8832;
+  }
+  .promotion-blog-section .promotion-blog-list{
+    padding-top:50px;
+    padding-right: 10px;
+    overflow: hidden;
+  }
+  .promotion-blog-section .promotion-blog-list.two-column{
+    display: grid;
+    grid-template-columns: repeat(2, 33%);
+    gap: 20px;
+    justify-content: center;
+    padding-right: 0px;
+  }
+  .promotion-blog-section .promotion-blog-list.three-column{
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    gap: 20px;
+    justify-content: center;
+    padding-right: 0px;
+  }
+  .promotion-blog-section .article-item{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    height:100%;
+    border-radius:10px;
+    border:1px solid #DFDFDF;
+    overflow:hidden;
+  }
+  .promotion-blog-section .article-details-container{
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .promotion-blog-section .article-item img{
+    height:300px;
+  }
+
+  
+  .article-section-slider-arrows{
+      position:absolute;
+      top:50%;
+      left:0;
+      right:0;
+      margin:auto;
+      width:100%;
+      max-width:var(--page-width);
+      padding:0px 20px;
+      display:flex;
+      flex-direction:row-reverse;
+      justify-content: space-between;
+  }
+  .article-section-slider-arrows .article-section-button-prev, 
+  .article-section-slider-arrows .article-section-button-next{
+      background: #000;
+      border-radius: 50px;
+      display: flex;
+      cursor: pointer;
+      z-index: 2;
+      width:fit-content;
+      transition: all 0.3s ease;
+      position:relative;
+  }
+  .article-section-slider-arrows .article-section-button-prev:hover, 
+  .article-section-slider-arrows .article-section-button-next:hover{
+      background: #FF8832;
+  }
+  
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .article-section-slider-arrows{
+      padding:0px 5px;
+    }
+    .article-section-slider-arrows .article-section-button-prev, 
+    .article-section-slider-arrows .article-section-button-next{
+      background:#dbdbdbc7;
+    }
+    .article-section-slider-arrows .article-section-button-prev svg, 
+    .article-section-slider-arrows .article-section-button-next svg{
+      height:40px;
+      width:40px;
+    }
+    .promotion-blog-section{
+      padding-bottom:40px;
+    }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+    .article-section-slider-arrows{
+      padding:0px 5px;
+    }
+    .article-section-slider-arrows .article-section-button-prev, 
+    .article-section-slider-arrows .article-section-button-next{
+      background:#dbdbdbc7;
+    }
+    .article-section-slider-arrows .article-section-button-prev svg, 
+    .article-section-slider-arrows .article-section-button-next svg{
+      height:40px;
+      width:40px;
+    }
+    .promotion-blog-section{
+      padding-bottom:40px;
+    }
+  }
+
+</style>
+<div class="page-width">
+    <h2 class="heading section-heading f-f-bold mx-0 center" style="color:{{ section.settings.primary_color }};">{{ section.settings.heading }}</h2>
+    <h4 class="f-f-regular mx-0 center" style="color:{{ section.settings.primary_color }};">{{ section.settings.sub_heading }}</h4>
+    {% if section.blocks.size == 1 %}
+        {% for block in section.blocks %}
+        <div class="promotion-full-width-article">
+            <div class="col_55">
+              <img loading="lazy" src="
+                {% if block.settings.featured_image != blank %}
+                  {{ block.settings.featured_image | img_url: 'master' }}
+                {% else %}
+                  {{ block.settings.blog_post.image.src | img_url: 'master' }}
+                {% endif %}
+                " class="article-featured-image">
+            </div>
+            <div class="col_45 article-blog-details">
+                <h2 class="f-f-bold mx-0" style="color:{{ section.settings.primary_color }};">{{ block.settings.blog_post.title }}</h2>
+                <p class="blog-description f-f-regular mx-0" style="color:{{ section.settings.description_color }};">{{ block.settings.blog_post.content |  strip_html | truncate: 200 }}</p>
+                <div class="article-btn-details">
+                    <p class="mx-0 blog-date-time" style="color:{{ section.settings.description_color }};">{{ block.settings.blog_post.published_at | date: "%b %d, %Y" }}</p>
+                    <a href="{{ block.settings.blog_post.url }}" class="article-learn-more-btn">
+                      <p class="mx-0 white-f">Learn More</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+          {% endfor %}
+      {% elsif section.blocks.size == 2 %}
+        <div class="promotion-blog-list two-column">
+        {% for block in section.blocks %}
+          <div class="article-item">
+              <img src="
+                {% if block.settings.featured_image != blank %}
+                  {{ block.settings.featured_image | img_url: 'master' }}
+                {% else %}
+                  {{ block.settings.blog_post.image.src | img_url: 'master' }}
+                {% endif %}
+                " class="article-featured-image">
+              <div class="article-details-container">
+                <h2 class="f-f-bold mx-0" style="color:{{ section.settings.primary_color }};">{{ block.settings.blog_post.title }}</h2>
+                <p class="blog-description f-f-regular mx-0 l-h-normal" style="color:{{ section.settings.description_color }};">{{ block.settings.blog_post.content |  strip_html | truncate: 100 }}</p>
+                <div class="article-btn-details">
+                    <p class="mx-0 blog-date-time" style="color:{{ section.settings.description_color }};">{{ block.settings.blog_post.published_at | date: "%b %d, %Y" }}</p>
+                    <a href="{{ block.settings.blog_post.url }}" class="article-learn-more-btn">
+                      <p class="mx-0 white-f">Learn More</p>
+                    </a>
+                </div>
+              </div>
+          </div>
+        {% endfor %}
+        </div>
+      {% elsif section.blocks.size == 3 %}
+        <div class="promotion-blog-list three-column">
+        {% for block in section.blocks %}
+          <div class="article-item">
+              <img src="
+                {% if block.settings.featured_image != blank %}
+                  {{ block.settings.featured_image | img_url: 'master' }}
+                {% else %}
+                  {{ block.settings.blog_post.image.src | img_url: 'master' }}
+                {% endif %}
+                " class="article-featured-image">
+              <div class="article-details-container">
+                <h5 class="mx-0 f-f-bold" style="color:{{ section.settings.primary_color }};">{{ block.settings.blog_post.title }}</h5>
+                <p class="blog-description f-f-regular mx-0 l-h-normal" style="color:{{ section.settings.description_color }};">{{ block.settings.blog_post.content |  strip_html | truncate: 100 }}</p>
+                <div class="article-btn-details">
+                    <p class="mx-0 blog-date-time" style="color:{{ section.settings.description_color }};">{{ block.settings.blog_post.published_at | date: "%b %d, %Y" }}</p>
+                    <a href="{{ block.settings.blog_post.url }}" class="article-learn-more-btn">
+                      <p class="mx-0 white-f">Learn More</p>
+                    </a>
+                </div>
+              </div>
+          </div>
+        {% endfor %}
+        </div>
+    {% else %}
+      
+        <div class="promotion-blog-list">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="article-item swiper-slide">
+                  <img loading="lazy" src="
+                    {% if block.settings.featured_image != blank %}
+                      {{ block.settings.featured_image | img_url: 'master' }}
+                    {% else %}
+                      {{ block.settings.blog_post.image.src | img_url: 'master' }}
+                    {% endif %}
+                    " class="article-featured-image">
+                  <div class="article-details-container">
+                    <h5 class="mx-0 f-f-bold" style="color:{{ section.settings.primary_color }};">{{ block.settings.blog_post.title }}</h5>
+                    <p class="blog-description f-f-regular mx-0 l-h-normal" style="color:{{ section.settings.description_color }};">{{ block.settings.blog_post.content |  strip_html | truncate: 100 }}</p>
+                    <div class="article-btn-details">
+                        <p class="mx-0 blog-date-time" style="color:{{ section.settings.description_color }};">{{ block.settings.blog_post.published_at | date: "%b %d, %Y" }}</p>
+                        <a href="{{ block.settings.blog_post.url }}" class="article-learn-more-btn">
+                          <p class="mx-0 white-f">Learn More</p>
+                        </a>
+                    </div>
+                  </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      
+    {% endif %}
+</div>
+    {% if section.blocks.size >= 4 %}
+      <div class="article-section-slider-arrows ">
+          <div class="article-section-button-prev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52">
+                 <g id="right_normal" transform="translate(-1835 -559)">
+                     <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" transform="translate(1835 559)" fill="transparent"></rect>
+                     <path id="路径_4" data-name="路径 4" d="M253.944,103.831a.906.906,0,0,1-.7-.3.97.97,0,0,1,.1-1.4l6.385-5.786a.748.748,0,0,0,0-1.2l-6.485-5.487a.99.99,0,0,1,1.3-1.5l6.385,5.487a2.808,2.808,0,0,1,1,2.1,2.871,2.871,0,0,1-.9,2.1l-6.385,5.786a1.85,1.85,0,0,1-.7.2Z" transform="translate(1604.091 489.128)" fill="#fff"></path>
+                 </g>
+             </svg>
+          </div>
+          <div class="article-section-button-next">
+              <svg xmlns="http://www.w3.org/2000/svg" id="left_normal" width="53" height="52" viewBox="0 0 53 52">
+                  <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" fill="transparent"></rect>
+                  <path id="路径_4" data-name="路径 4" d="M260.873,103.831a.906.906,0,0,0,.7-.3.97.97,0,0,0-.1-1.4l-6.385-5.786a.748.748,0,0,1,0-1.2l6.485-5.487a.99.99,0,0,0-1.3-1.5l-6.385,5.487a2.808,2.808,0,0,0-1,2.1,2.871,2.871,0,0,0,.9,2.1l6.385,5.786a1.85,1.85,0,0,0,.7.2Z" transform="translate(-230.909 -69.872)" fill="#fff"></path>
+              </svg>
+          </div>
+      </div>
+    {% endif %}
+{% if section.blocks.size >= 4 %}
+<script>
+    var swiper = new Swiper('.promotion-blog-list', {
+        grabCursor: true,
+        slidesPerView: 3,
+        spaceBetween: 15,
+        speed: 600,
+        navigation: {
+            nextEl: '.article-section-button-prev',
+            prevEl: '.article-section-button-next',
+        },
+        breakpoints: {
+              // when window width is >= 320px (mobile)
+              320: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+              },
+              // when window width is >= 768px (tablet)
+              768: {
+                  slidesPerView: 2,
+              },
+              // when window width is >= 1024px (desktop)
+              1024: {
+                  slidesPerView: 2,
+              },
+              1524: {
+                  slidesPerView: 3,
+              },
+              // when window width is >= 1024px (desktop)
+              1680: {
+                  slidesPerView: 3,
+              }
+        }
+    });  
+</script>
+{% endif %}
+{% schema %}
+  {
+    
+      "class": "promotion-blog-section",
+      "name": "Promotion Blog",
+      "templates": ["page"],
+      "settings": [
+          {
+              "type": "text",
+              "id": "heading",
+              "label": "Heading",
+              "default":"Gift the Gift of Sound"
+          },
+          {
+              "type": "text",
+              "id": "sub_heading",
+              "label": "Sub Heading",
+              "default":"Perfect Headphones For Everyone!"
+          },
+          {
+              "type": "color",
+              "id": "background",
+              "label": "Background",
+              "default":"#fff"
+          },
+          {
+              "type": "color",
+              "id": "primary_color",
+              "label": "Primary Color",
+              "default":"#1a1a1a"
+          },
+          {
+              "type": "color",
+              "id": "description_color",
+              "label": "Description Color",
+              "default":"#5d5d5d"
+          }
+      ],
+      "blocks": [
+          {
+              "type": "blog",
+              "name": "Blog",
+              "settings": [
+                  {
+                      "type": "article",
+                      "id": "blog_post",
+                      "label": "Blog Post"
+                  },
+                  {
+                      "type": "image_picker",
+                      "id": "featured_image",
+                      "label": "Custom Featured Image"
+                  }
+              ]
+          }
+      ],
+      "presets" :[{
+          "name" : "Promotion Blog"
+      }]
+  }
+{% endschema %} 

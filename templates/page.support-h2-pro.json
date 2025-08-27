@@ -1,0 +1,251 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "support-search": {
+      "type": "support-search",
+      "blocks": {
+        "search_qwert1": {
+          "type": "search",
+          "settings": {
+            "search_item": "H3",
+            "search_url": "https://us.qcy.com/pages/support-center-h3"
+          }
+        },
+        "search_qwert2": {
+          "type": "search",
+          "settings": {
+            "search_item": "MeloBuds Neo",
+            "search_url": "https://us.qcy.com/pages/support-center-melobuds-neo"
+          }
+        },
+        "search_qwert3": {
+          "type": "search",
+          "settings": {
+            "search_item": "AilyBuds Pro+",
+            "search_url": "https://us.qcy.com/pages/support-center-ailybuds-pro-plus"
+          }
+        },
+        "search_qwert4": {
+          "type": "search",
+          "settings": {
+            "search_item": "Melobuds ANC",
+            "search_url": "https://us.qcy.com/pages/support-center-melobuds-anc"
+          }
+        },
+        "search_qwert5": {
+          "type": "search",
+          "settings": {
+            "search_item": "T13",
+            "search_url": "https://us.qcy.com/pages/support-center-t13"
+          }
+        }
+      },
+      "block_order": [
+        "search_qwert1",
+        "search_qwert2",
+        "search_qwert3",
+        "search_qwert4",
+        "search_qwert5"
+      ],
+      "settings": {
+        "title": "Support Center",
+        "background_desktop": "shopify://shop_images/39993.png",
+        "background_mobile": "shopify://shop_images/39993_1.png"
+      }
+    },
+    "support-detail": {
+      "type": "support-detail",
+      "settings": {}
+    },
+    "support-video": {
+      "type": "support-video",
+      "blocks": {
+        "video_1234": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/How to Use H2 Pro.mp4",
+            "title": "How to Use H2 Pro"
+          }
+        }
+      },
+      "block_order": [
+        "video_1234"
+      ],
+      "settings": {
+        "title": "Support Video"
+      }
+    },
+    "faq-detailed": {
+      "type": "faq-detailed",
+      "blocks": {
+        "bluetooth_connection_JjDLHJ": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "What can I do if my headphones won't connect to my device?",
+            "answer": "1. Clear the pairing records between the headphones and all of the previous devices. \n2. Re-pair your headphones and the device.\n\nIf that doesn’t work:\n- Try pairing with another device to check for compatibility issues.\n- Ensure there are no objects blocking the Bluetooth signal."
+          }
+        },
+        "bluetooth_connection_Uw7HQw": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "How can I enable multipoint connection?",
+            "answer": ""
+          }
+        },
+        "bluetooth_connection_RAn7R6": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "How to reset headphones?",
+            "answer": "To reset H2 Pro:\n1. Press and hold both VOL+ and VOL- buttons for 10 seconds\n2. The headphones' LED will flash red 3 times, indicating a successful reset."
+          }
+        },
+        "bluetooth_connection_7rh9rF": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "What should I do if my headphons sound is choppy?",
+            "answer": "Please note that this may not indicate an issue with the headphones themselves, but could be related to the connected device or your environment. Bluetooth signals can be affected by obstacles like walls, appliances, Wi-Fi interference, and more. To ensure a stable connection, try to minimize such obstructions.\n\nTo resolve the issue, follow these troubleshooting steps:\n\n1. Fully charge and reset your headphones\n\n2. Check the performance by listening to downloaded music or videos to avoid potential streaming issues.\n\n3. Test the headphones with another Bluetooth device in a different location to see if the issue persists."
+          }
+        },
+        "battery_charging_jwEqRC": {
+          "type": "battery-charging",
+          "settings": {
+            "question": "My headphones' battery runs out too quickly. What can I do?",
+            "answer": "To get more battery life from your headphones, try these tips:\n- Lower the volume.\n- Turn off ANC \n- Disable smart features and Spatial Audio.\n- Power off the headphones when you're not using them."
+          }
+        },
+        "app_control_UewfTL": {
+          "type": "app-control",
+          "settings": {
+            "question": "Why does the QCY app ask for location access?",
+            "answer": "The app itself doesn’t normally need location access. However, when Bluetooth Low Energy (BLE) is used to find your earbuds, Android requires location permission.\nIf you prefer not to share your location, close the app and try pairing again."
+          }
+        },
+        "app_control_CtyhYM": {
+          "type": "app-control",
+          "settings": {
+            "question": "What should I do if my earbuds are not found on the QCY App?",
+            "answer": "1. Pair the earbuds with your phone.\n2. Open the QCY app, scroll to the bottom, and click \"Add Devices.\"\n3. If \"H3 Pro\" pops up, select it to connect.\n4. If not, click \"Set Up Manually\" and choose \"H3 Pro\" from the list to connect."
+          }
+        },
+        "sound_anc_mTWi7h": {
+          "type": "sound-anc",
+          "settings": {
+            "question": "What can I do if the volume is low when connecting to my phone?",
+            "answer": "Try to re-pair your headphones: Clear the pairing records on your phone, then re-pair the earbuds to your device."
+          }
+        },
+        "sound_anc_6byVyQ": {
+          "type": "sound-anc",
+          "settings": {
+            "question": "Why can't the person on the other end of the call hear me, or why is my voice unclear?",
+            "answer": "We recommend trying the following steps:\n\n\n- Verify that the audio output device on your phone is set to \"QCY H2 Pro\"\n\n- If you're making the call through an app, try making a direct call using your phone's regular calling feature to check if the issue persists.\n\n- Test your earbuds with a different Bluetooth device in a different environment to see if the problem improves."
+          }
+        },
+        "sound_anc_Br3zKJ": {
+          "type": "sound-anc",
+          "settings": {
+            "question": "What can I do if the headphones have poor sound quality?",
+            "answer": "You can try the following troubleshooting steps:\n\n- Check the audio source: Test different types of music and make sure the audio source is clear and free of distortion or noise.\n\n- Customize the EQ settings: Use the QCY app to try different EQ modes or customize the sound profile to suit your preferences."
+          }
+        },
+        "sound_anc_AkpYr3": {
+          "type": "sound-anc",
+          "settings": {
+            "question": "What is adaptive noise canceling?",
+            "answer": "Real-time monitoring of changes in the environment and audio leakage to adjust noise-cancellation capabilities. With adaptive noise canceling, you can experience the optimal effect of noise reduction and maximum tranquility. Please note that this feature is off by default and can be enabled via the QCY app."
+          }
+        },
+        "care_others_c4yTQR": {
+          "type": "care-others",
+          "settings": {
+            "question": "How do I update the firmware?",
+            "answer": "Update the fireware on the QCY App, Before updating:\n1. Ensure your headphones have at least 20% battery.\n2. Make sure both earbuds are connected to the QCY app.\n3. Don’t use the earbuds during the update.\n4. Keep the earbuds in the charging case with the lid open."
+          }
+        },
+        "bluetooth_connection_AB7A6Q": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "What's the difference between connecting the H3 Pro via AUX cable and using Bluetooth?",
+            "answer": "When using the AUX cable, you can still enjoy ANC, but the headphones will turn off, and the Bluetooth chip will stop functioning. The main differences are:\n- The app cannot connect, and EQ settings (both presets and custom) are disabled.\n- AUX connection does not consume battery power, as the headphones are powered through the cable.\n- There is no delay when using the AUX cable."
+          }
+        }
+      },
+      "block_order": [
+        "bluetooth_connection_JjDLHJ",
+        "bluetooth_connection_Uw7HQw",
+        "bluetooth_connection_RAn7R6",
+        "bluetooth_connection_7rh9rF",
+        "battery_charging_jwEqRC",
+        "app_control_UewfTL",
+        "app_control_CtyhYM",
+        "sound_anc_mTWi7h",
+        "sound_anc_6byVyQ",
+        "sound_anc_Br3zKJ",
+        "sound_anc_AkpYr3",
+        "care_others_c4yTQR",
+        "bluetooth_connection_AB7A6Q"
+      ],
+      "settings": {
+        "title": "FAQ"
+      }
+    },
+    "manuals-support": {
+      "type": "manuals-support",
+      "blocks": {
+        "manual_12345": {
+          "type": "manual",
+          "settings": {
+            "title": "H2 Pro manual",
+            "manual_url": "https://cdn.shopify.com/s/files/1/0639/3492/2809/files/H2_Pro_Chinese_and_English_manual.pdf?v=1731465506"
+          }
+        },
+        "manual_TaEipV": {
+          "type": "manual",
+          "settings": {
+            "title": "H2 Pro manual-Italian",
+            "manual_url": "https://cdn.shopify.com/s/files/1/0639/3492/2809/files/H2_Pro_V3-20250617_1.pdf?v=1750673447"
+          }
+        }
+      },
+      "block_order": [
+        "manual_12345",
+        "manual_TaEipV"
+      ],
+      "settings": {
+        "title": "Manuals"
+      }
+    },
+    "more-help": {
+      "type": "more-help",
+      "settings": {
+        "title": "Still Need Help?",
+        "icon_1": "shopify://shop_images/1_6ae01342-29d9-466b-a884-f3e54bc4b04e.png",
+        "icon_2": "shopify://shop_images/2_13c56919-3d59-4a06-a552-3824ae5ea47b.png",
+        "icon_3": "shopify://shop_images/3_58022390-5f9e-4177-8125-651a16075847.png",
+        "icon_4": "shopify://shop_images/4_a0949a89-fc4a-4113-a381-ac8515de3bb4.png",
+        "icon_5": "shopify://shop_images/5.png",
+        "icon_6": "shopify://shop_images/6.png",
+        "tel_1": "+1(917)807-6754",
+        "email_1": "service@qcyearphone.com",
+        "email_2": "rice@qcyearphone.com",
+        "email_3": "pr@qcyearphone.com"
+      }
+    }
+  },
+  "order": [
+    "support-search",
+    "support-detail",
+    "support-video",
+    "faq-detailed",
+    "manuals-support",
+    "more-help"
+  ]
+}

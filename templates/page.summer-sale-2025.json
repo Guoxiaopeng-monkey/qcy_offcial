@@ -1,0 +1,366 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "promotion_banner_yEiC7a": {
+      "type": "promotion-banner",
+      "settings": {
+        "background": "shopify://shop_images/kv-PC_bfb6ca61-4fea-42f1-8336-ce647f2c6444.jpg",
+        "background_mobile": "shopify://shop_images/kv-M.jpg",
+        "sub_heading": "Summer Sound Savings🌴",
+        "sub_heading_font_size": 32,
+        "sub_heading_weight": "f-f-semibold",
+        "sub_heading_color": "#121212",
+        "heading": "UP TO 50% OFF !",
+        "heading_weight": "f-f-extra-bold",
+        "heading_font_size": 45,
+        "heading_color": "#121212",
+        "description": "",
+        "description_font_size": 25,
+        "description_weight": "f-f-black",
+        "description_color": "#ffffff",
+        "countdown_display": false,
+        "date_time": "Sep 15, 2025 00:00:00 PST",
+        "primary_color": "#121212",
+        "secondary_color": "#121212",
+        "content_position_y": "content-desktop-y-center",
+        "content_position_x": "content-desktop-x-left",
+        "content_position_y_mobile": "content-mobile-y-bottom"
+      }
+    },
+    "promotion_page_header_section_GKedz6": {
+      "type": "promotion-page-header-section",
+      "blocks": {
+        "header_menu_Y9QUV3": {
+          "type": "header_menu",
+          "settings": {
+            "header_menu": "Headphones"
+          }
+        },
+        "header_menu_mnyGLC": {
+          "type": "header_menu",
+          "disabled": true,
+          "settings": {
+            "header_menu": "Open-Ear Earbuds"
+          }
+        },
+        "header_menu_NLUDzX": {
+          "type": "header_menu",
+          "disabled": true,
+          "settings": {
+            "header_menu": "Earbuds"
+          }
+        }
+      },
+      "block_order": [
+        "header_menu_Y9QUV3",
+        "header_menu_mnyGLC",
+        "header_menu_NLUDzX"
+      ],
+      "disabled": true,
+      "settings": {
+        "background": "#5f7dea",
+        "text_color": "#000000"
+      }
+    },
+    "promotion_featured_product_R79DxV": {
+      "type": "promotion-featured-product",
+      "disabled": true,
+      "settings": {
+        "hide_featured_product": false,
+        "background": "#ffffff",
+        "primary_color": "#1a1a1a",
+        "secondary_color": "#ff8832",
+        "product_header": "Promotion 1",
+        "bg_image": "shopify://shop_images/39985_2x_1.png",
+        "bg_image_mobile": "shopify://shop_images/39985_2x_2.png",
+        "sub_heading": "Holiday Bonus Gift",
+        "heading": "<p>Spend More to Unlock a <strong>Free Surprise!</strong></p>",
+        "link_heading": "Bonus Gifts Guidelines >",
+        "modal_heading": "Bonus Gifts Guidelines",
+        "modal_description": "<p>Lorem Ipsum Odor Amet. Consectetuer Adipiscing Ellt. Rutrum Lorem Condimentum Diam Etiam Viverra Eleifend. Donec Commodo. Enim Locus Ante Augue Dapibus Cursus Nec Justo Lacus Vivamus. Uttrices Arcu Bibendum Vulputate Cras; Erat Mattis Dictum Nam Frtngilla. Varius Qu•sque Cras Velit ld Netus. Sagittis Lacus Ridiculus Ullamcorper Maecenas Dictumst F•nibus Orci Sodales.</p><p>Condimentum Lectus Erat Blandit Commodo. Sed Conubia Interdum Posuere. Tempor Morbi Vehicula Eget Eletfend. Consectetur Congue Vulputate. Consectetur Nec Urna ut Hac Ntsl. Accumsan Ultricies Nibh Dolor: Varius Eleifend ld Cursus Eros. Mauris Ullamcorper Velit Curae Hac Lacinia Aliquet Trisuque Nascetur. Egestas Consectctur Mollis Senectus Morbi Quam Massa Euismod. Facil•sis Consectetur Pharetra Ex Maecenas Netus Mus Quisque.</p><p>Mus Libero Prims Natoque Fames Ipsum Malesuada; Curabitur Conubla Dis.<br/>Pharetra Convallis Quis Locus Aenean Cubillo Locus. At Facilisis Rhoncus<br/>Elementum Consectetur Felis Ac Fames. Scelerisque Maecenas Nam Tortor<br/>Eros Sed Conubia. Vellt Curabltur Lacinia Dolor Fells Integer Orci Accumsan<br/>Platea. Ac Adipiscing Lobortis Facilisi Eleifend: Sagittis Duis. Elegfend Egestas<br/>Integer Diam Rhoncus: Phasellus Consectetur Efficrtur. Eu Felis Suscipit Odio<br/>Dui Metus Bibendum Libero Curabitur.</p><p>Elcmcntum Ac Inceptos Quis Rhoncus; Est Sagitus Taciti. Ad Inceptos</p>"
+      }
+    },
+    "promotion_collection_list_tTNUEk": {
+      "type": "promotion-collection-list",
+      "settings": {
+        "product_header": "Headphones",
+        "background": "#f2f8fd",
+        "primary_color": "#000000",
+        "secondary_color": "#000000",
+        "sub_heading": "",
+        "heading": "<p>📣<strong>Big Savings on Must-Have Picks</strong>📣</p>",
+        "collection": "summer-sale-2025",
+        "link_heading": "",
+        "modal_heading": "Bonus Gifts Guidelines 2",
+        "modal_description": "<p>Lorem Ipsum Odor Amet. Consectetuer Adipiscing Ellt. Rutrum Lorem Condimentum Diam Etiam Viverra Eleifend. Donec Commodo. Enim Locus Ante Augue Dapibus Cursus Nec Justo Lacus Vivamus. Uttrices Arcu Bibendum Vulputate Cras; Erat Mattis Dictum Nam Frtngilla. Varius Qu•sque Cras Velit ld Netus. Sagittis Lacus Ridiculus Ullamcorper Maecenas Dictumst F•nibus Orci Sodales.</p><p>Condimentum Lectus Erat Blandit Commodo. Sed Conubia Interdum Posuere. Tempor Morbi Vehicula Eget Eletfend. Consectetur Congue Vulputate. Consectetur Nec Urna ut Hac Ntsl. Accumsan Ultricies Nibh Dolor: Varius Eleifend ld Cursus Eros. Mauris Ullamcorper Velit Curae Hac Lacinia Aliquet Trisuque Nascetur. Egestas Consectctur Mollis Senectus Morbi Quam Massa Euismod. Facil•sis Consectetur Pharetra Ex Maecenas Netus Mus Quisque.</p><p>Mus Libero Prims Natoque Fames Ipsum Malesuada; Curabitur Conubla Dis.<br/>Pharetra Convallis Quis Locus Aenean Cubillo Locus. At Facilisis Rhoncus<br/>Elementum Consectetur Felis Ac Fames. Scelerisque Maecenas Nam Tortor<br/>Eros Sed Conubia. Vellt Curabltur Lacinia Dolor Fells Integer Orci Accumsan<br/>Platea. Ac Adipiscing Lobortis Facilisi Eleifend: Sagittis Duis. Elegfend Egestas<br/>Integer Diam Rhoncus: Phasellus Consectetur Efficrtur. Eu Felis Suscipit Odio<br/>Dui Metus Bibendum Libero Curabitur.</p><p>Elcmcntum Ac Inceptos Quis Rhoncus; Est Sagitus Taciti. Ad Inceptos</p>",
+        "background_product_item": "#ffffff",
+        "background_add_to_cart": "#f1f1f1",
+        "background_icon": "#000000",
+        "background_buy_now": "#f1f1f1",
+        "background_text": "#000000"
+      }
+    },
+    "promotion_collection_list_BpbK6G": {
+      "type": "promotion-collection-list",
+      "disabled": true,
+      "settings": {
+        "product_header": "Open-Ear Earbuds",
+        "background": "#f7e7cf",
+        "primary_color": "#1a1a1a",
+        "secondary_color": "#ff8832",
+        "sub_heading": "",
+        "heading": "<p>🎈<em>Stable & Breathable Open-Ear </em>🎈</p>",
+        "collection": "pd-earbuds",
+        "link_heading": "",
+        "modal_heading": "Bonus Gifts Guidelines 2",
+        "modal_description": "<p>Lorem Ipsum Odor Amet. Consectetuer Adipiscing Ellt. Rutrum Lorem Condimentum Diam Etiam Viverra Eleifend. Donec Commodo. Enim Locus Ante Augue Dapibus Cursus Nec Justo Lacus Vivamus. Uttrices Arcu Bibendum Vulputate Cras; Erat Mattis Dictum Nam Frtngilla. Varius Qu•sque Cras Velit ld Netus. Sagittis Lacus Ridiculus Ullamcorper Maecenas Dictumst F•nibus Orci Sodales.</p><p>Condimentum Lectus Erat Blandit Commodo. Sed Conubia Interdum Posuere. Tempor Morbi Vehicula Eget Eletfend. Consectetur Congue Vulputate. Consectetur Nec Urna ut Hac Ntsl. Accumsan Ultricies Nibh Dolor: Varius Eleifend ld Cursus Eros. Mauris Ullamcorper Velit Curae Hac Lacinia Aliquet Trisuque Nascetur. Egestas Consectctur Mollis Senectus Morbi Quam Massa Euismod. Facil•sis Consectetur Pharetra Ex Maecenas Netus Mus Quisque.</p><p>Mus Libero Prims Natoque Fames Ipsum Malesuada; Curabitur Conubla Dis.<br/>Pharetra Convallis Quis Locus Aenean Cubillo Locus. At Facilisis Rhoncus<br/>Elementum Consectetur Felis Ac Fames. Scelerisque Maecenas Nam Tortor<br/>Eros Sed Conubia. Vellt Curabltur Lacinia Dolor Fells Integer Orci Accumsan<br/>Platea. Ac Adipiscing Lobortis Facilisi Eleifend: Sagittis Duis. Elegfend Egestas<br/>Integer Diam Rhoncus: Phasellus Consectetur Efficrtur. Eu Felis Suscipit Odio<br/>Dui Metus Bibendum Libero Curabitur.</p><p>Elcmcntum Ac Inceptos Quis Rhoncus; Est Sagitus Taciti. Ad Inceptos</p>",
+        "background_product_item": "#ffffff",
+        "background_add_to_cart": "#f1f1f1",
+        "background_icon": "#000000",
+        "background_buy_now": "#f1f1f1",
+        "background_text": "#000000"
+      }
+    },
+    "promotion_collection_list_qN9rKT": {
+      "type": "promotion-collection-list",
+      "disabled": true,
+      "settings": {
+        "product_header": "Earbuds",
+        "background": "#f7e7cf",
+        "primary_color": "#121010",
+        "secondary_color": "#000000",
+        "sub_heading": "",
+        "heading": "<p>🌟<em>Immersive Sound, Anytime Anywhere</em>🌟</p>",
+        "collection": "celebrate-2025-sale",
+        "link_heading": "",
+        "modal_heading": "Bonus Gifts Guidelines 2",
+        "modal_description": "<p>Lorem Ipsum Odor Amet. Consectetuer Adipiscing Ellt. Rutrum Lorem Condimentum Diam Etiam Viverra Eleifend. Donec Commodo. Enim Locus Ante Augue Dapibus Cursus Nec Justo Lacus Vivamus. Uttrices Arcu Bibendum Vulputate Cras; Erat Mattis Dictum Nam Frtngilla. Varius Qu•sque Cras Velit ld Netus. Sagittis Lacus Ridiculus Ullamcorper Maecenas Dictumst F•nibus Orci Sodales.</p><p>Condimentum Lectus Erat Blandit Commodo. Sed Conubia Interdum Posuere. Tempor Morbi Vehicula Eget Eletfend. Consectetur Congue Vulputate. Consectetur Nec Urna ut Hac Ntsl. Accumsan Ultricies Nibh Dolor: Varius Eleifend ld Cursus Eros. Mauris Ullamcorper Velit Curae Hac Lacinia Aliquet Trisuque Nascetur. Egestas Consectctur Mollis Senectus Morbi Quam Massa Euismod. Facil•sis Consectetur Pharetra Ex Maecenas Netus Mus Quisque.</p><p>Mus Libero Prims Natoque Fames Ipsum Malesuada; Curabitur Conubla Dis.<br/>Pharetra Convallis Quis Locus Aenean Cubillo Locus. At Facilisis Rhoncus<br/>Elementum Consectetur Felis Ac Fames. Scelerisque Maecenas Nam Tortor<br/>Eros Sed Conubia. Vellt Curabltur Lacinia Dolor Fells Integer Orci Accumsan<br/>Platea. Ac Adipiscing Lobortis Facilisi Eleifend: Sagittis Duis. Elegfend Egestas<br/>Integer Diam Rhoncus: Phasellus Consectetur Efficrtur. Eu Felis Suscipit Odio<br/>Dui Metus Bibendum Libero Curabitur.</p><p>Elcmcntum Ac Inceptos Quis Rhoncus; Est Sagitus Taciti. Ad Inceptos</p>",
+        "background_product_item": "#ffffff",
+        "background_add_to_cart": "#ff8832",
+        "background_icon": "#000000",
+        "background_buy_now": "#ff8832",
+        "background_text": "#000000"
+      }
+    },
+    "promotion_side_product_section_xYnUwC": {
+      "type": "promotion-side-product-section",
+      "blocks": {
+        "right_product_ziY8fi": {
+          "type": "right_product",
+          "settings": {
+            "product": "qcy-h3-wireless-headphone",
+            "featured_image": "shopify://shop_images/T33_S_-_-3_3084d3fd-c29e-49eb-8b30-bdc52043dc3c.png",
+            "date_picker": "25/11/2024 09:57:19",
+            "discount_note": "Extra $15 Off for 2 Headphones",
+            "secondary_color": "#ff8832",
+            "background_badge": "#fff0e4",
+            "enabled_icons_list": true,
+            "heading_1": "111",
+            "image_1": "shopify://shop_images/icons8-_-50.png",
+            "description_1": "",
+            "heading_2": "",
+            "description_2": "",
+            "heading_3": "",
+            "description_3": "",
+            "heading_4": "",
+            "description_4": ""
+          }
+        },
+        "left_product_jjbbwC": {
+          "type": "left_product",
+          "settings": {
+            "product": "qcy-h3-wireless-headphone",
+            "featured_image": "shopify://shop_images/39992_2x_2.png",
+            "date_picker": "",
+            "discount_note": "Extra $15 Off for 2 Headphones",
+            "secondary_color": "#ff8832",
+            "background_badge": "#fff0e4",
+            "enabled_icons_list": true,
+            "heading_1": "",
+            "heading_2": "",
+            "heading_3": "",
+            "heading_4": ""
+          }
+        },
+        "right_product_VG87MA": {
+          "type": "right_product",
+          "settings": {
+            "product": "qcy-h3-wireless-headphone",
+            "featured_image": "shopify://shop_images/39992_2x_1.png",
+            "date_picker": "25/10/2024 09:57:19",
+            "discount_note": "Extra $15 Off for 2 Headphones",
+            "secondary_color": "#ff8832",
+            "background_badge": "#fff0e4",
+            "enabled_icons_list": true,
+            "heading_1": "",
+            "description_1": "",
+            "heading_2": "",
+            "description_2": "",
+            "heading_3": "",
+            "description_3": "",
+            "heading_4": "",
+            "description_4": ""
+          }
+        }
+      },
+      "block_order": [
+        "right_product_ziY8fi",
+        "left_product_jjbbwC",
+        "right_product_VG87MA"
+      ],
+      "disabled": true,
+      "settings": {
+        "product_header": "Promotion 3",
+        "background": "#f2f8fd",
+        "primary_color": "#1a1a1a",
+        "description_color": "#666666",
+        "secondary_color": "#ff8832",
+        "background_badge": "#fff0e4"
+      }
+    },
+    "promotion_review_section_mGrz3q": {
+      "type": "promotion-review-section",
+      "blocks": {
+        "review_qNNM4g": {
+          "type": "review",
+          "settings": {
+            "featured_image": "shopify://shop_images/39988_2x_2f3174bb-9d4e-4f85-8877-1dc71813ad98.png",
+            "review_comment": "<p>I received the headphones as a gift this holiday season, and I absolutely love them! The sound quality is amazing, and they’re so comfortable to wear. Highly recommend!</p>",
+            "review_author": "Hayden W.",
+            "reviewe_location": "LOS ANGELES"
+          }
+        },
+        "review_WzhqzG": {
+          "type": "review",
+          "settings": {
+            "featured_image": "shopify://shop_images/39988_2x_1.png",
+            "review_comment": "<p>These headphones have been the perfect companion for my workouts! I gifted them to my best friend, and she can’t stop raving about them. Great sound and style!</p>",
+            "review_author": "Brandon R.",
+            "reviewe_location": "LOS ANGELES"
+          }
+        }
+      },
+      "block_order": [
+        "review_qNNM4g",
+        "review_WzhqzG"
+      ],
+      "disabled": true,
+      "settings": {
+        "background": "#fff0e4",
+        "primary_color": "#1a1a1a"
+      }
+    },
+    "promotion_blog_section_gTHD7q": {
+      "type": "promotion-blog-section",
+      "blocks": {
+        "blog_nA4Dhj": {
+          "type": "blog",
+          "settings": {
+            "blog_post": "news/ifa2024"
+          }
+        },
+        "blog_wJceYF": {
+          "type": "blog",
+          "settings": {
+            "blog_post": "news/essential-accessories-for-keeping-your-wireless-gadgets-organized"
+          }
+        },
+        "blog_XBPTEc": {
+          "type": "blog",
+          "settings": {
+            "blog_post": "news/fast-charging_-how-it-works-and-why-it-s-important-for-modern-devices"
+          }
+        },
+        "blog_GW8q9t": {
+          "type": "blog",
+          "settings": {
+            "blog_post": "news/the-role-of-smartwatches-in-improving-personal-health-and-fitness"
+          }
+        }
+      },
+      "block_order": [
+        "blog_nA4Dhj",
+        "blog_wJceYF",
+        "blog_XBPTEc",
+        "blog_GW8q9t"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Gift the Gift of Sound",
+        "sub_heading": "Perfect Headphones For Everyone!",
+        "background": "#ffffff",
+        "primary_color": "#1a1a1a",
+        "description_color": "#5d5d5d"
+      }
+    },
+    "promotion_collection_banner_ykF6b9": {
+      "type": "promotion-collection-banner",
+      "blocks": {
+        "collection_ebFgey": {
+          "type": "collection",
+          "settings": {
+            "collection": "headphones",
+            "featured_image": "shopify://shop_images/39990_2x_1.png",
+            "custom_label": ""
+          }
+        },
+        "collection_rMmcKP": {
+          "type": "collection",
+          "settings": {
+            "collection": "true-wireless-earbuds",
+            "featured_image": "shopify://shop_images/39989_2x_1.png",
+            "custom_label": ""
+          }
+        },
+        "collection_ydMLpR": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "featured_image": "shopify://shop_images/39986_2x_3.png",
+            "custom_label": "Lorem ipsum"
+          }
+        }
+      },
+      "block_order": [
+        "collection_ebFgey",
+        "collection_rMmcKP",
+        "collection_ydMLpR"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Explore Our Exclusive Collection",
+        "background": "#ffffff",
+        "primary_color": "#1a1a1a"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "promotion_banner_yEiC7a",
+    "promotion_page_header_section_GKedz6",
+    "promotion_featured_product_R79DxV",
+    "promotion_collection_list_tTNUEk",
+    "promotion_collection_list_BpbK6G",
+    "promotion_collection_list_qN9rKT",
+    "promotion_side_product_section_xYnUwC",
+    "promotion_review_section_mGrz3q",
+    "promotion_blog_section_gTHD7q",
+    "promotion_collection_banner_ykF6b9"
+  ]
+}

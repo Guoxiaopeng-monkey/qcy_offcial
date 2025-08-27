@@ -1,0 +1,157 @@
+{% stylesheet %}
+    .product-header-container{
+        box-shadow: 0px -3px 6px 1px rgba(0, 0, 0, 0.1);
+        background-color:#fff;
+    }
+    .product-header-section .product-header-menu{
+        display:flex;    
+        justify-content: space-evenly;
+    }
+    .product-header-section .product-header-menu .list-menu-link{
+        padding:1.5rem 0px;
+        transition: all 0.3s ease;
+        border-bottom: 3px solid #fff;
+        cursor:pointer;
+    }
+    .product-header-section .product-header-menu .list-menu-link.active{
+        border-bottom: 3px solid #FF8832;
+    }
+    .shopify-section-header-sticky{
+        opacity:1;
+        visibility:visible;
+        transition: visibility 0.1s ease, opacity 0.5s ease;
+    }
+    .header-hide {
+        opacity:0;
+        visibility:hidden;
+    }
+    .product-header-sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 4; /* Make sure it's above other content */
+    }
+  
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+        .product-header-section .product-header-menu .list-menu-link{
+            font-size:15px;
+        }
+    }
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px){
+        .product-header-section .product-header-menu .list-menu-link{
+            font-size:16px;
+        }
+    }
+{% endstylesheet %}
+<div class="product-header-container">
+    <div class="page-width">
+        <div class="product-header-menu">
+          {% for block in section.blocks %}
+            <h4 data-scroll="{{ block.settings.header_menu | handleize }}-scroll-section" class="list-menu-link mx-0 f-f-bold {% if forloop.index == 1 %}active{% endif %}" style="color:{{ section.settings.text_color }}">{{ block.settings.header_menu }}</h4>
+          {% endfor %}
+          {% comment %}
+            <h4 data-scroll="features-scroll-section" class="list-menu-link mx-0 f-f-bold active">Features</h4>
+            <h4 data-scroll="specification-scroll-section" class="list-menu-link mx-0 f-f-bold">Specifications</h4>
+            <h4 data-scroll="reviews-scroll-section" class="list-menu-link mx-0 f-f-bold">Reviews</h4>
+          {% endcomment %}
+        </div>
+    </div>
+</div>
+{% javascript %}
+    $('.product-header-section').each(function(){
+        var $container = $(this); 
+        $container.find('.product-header-menu .list-menu-link').click(function(){
+            $('.product-header-menu .list-menu-link').removeClass('active');
+            $(this).addClass('active');
+            
+            var targetOffset_click = $('.'+$(this).attr('data-scroll')).offset().top  - 50;
+            $("html, body").animate({
+                scrollTop: targetOffset_click
+            }, 5);
+        });
+        
+    });
+
+    $(window).on('scroll', function() {
+        // Get the top offset of the .product-header-section
+        var productHeaderTop = $('.product-header-section').offset().top;
+        var scrollPosition = $(window).scrollTop();
+
+        // Check the scroll position
+        if ($(window).scrollTop() >= productHeaderTop) {
+            // Make the .product-header-section sticky
+            $('.product-header-container').addClass('product-header-sticky');
+            // Hide the header
+            $('.shopify-section-header-sticky').addClass('header-hide');
+            $('.announcement-bar-section').addClass('header-hide');
+        } else {
+            // Remove the sticky class when scrolling above the section
+            $('.product-header-container').removeClass('product-header-sticky');
+            // Show the header again
+            $('.shopify-section-header-sticky').removeClass('header-hide');
+            $('.announcement-bar-section').removeClass('header-hide');
+        }
+        
+        $(".section-scroll").each(function() {
+            var sectionTop = $(this).offset().top - 100;
+            var sectionBottom = sectionTop + $(this).outerHeight();
+
+            var targetButton = $('.product-header-menu .list-menu-link[data-scroll="' + $(this).attr('class').split(' ')[1] + '"]');
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                targetButton.addClass("active");
+            } else {
+                targetButton.removeClass("active");
+            }
+
+        });
+    });
+
+{% endjavascript %}
+{% schema %}
+    {
+        "class": "product-header-section",
+        "name": "Product Page Header",
+        "templates": ["product"],
+        "limit": 1, 
+        "blocks": [
+            {
+                "type": "header_menu",
+                "name": "Header Menu",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "header_menu",
+                        "label": "Header Menu"
+                    }
+                ]
+            }
+        ],
+        "presets" :[{
+            "name" : "Product Page Header",
+            "blocks": [
+                  {
+                      "type": "header_menu",
+                      "settings": {
+                          "header_menu": "Features"
+                      }
+                  },
+                  {
+                      "type": "header_menu",
+                      "settings": {
+                          "header_menu": "Specification"
+                      }
+                  },
+                  {
+                      "type": "header_menu",
+                      "settings": {
+                          "header_menu": "Reviews"
+                      }
+                  }
+              ]
+        }]
+    }
+{% endschema %} 

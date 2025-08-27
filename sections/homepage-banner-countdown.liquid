@@ -1,0 +1,361 @@
+<style>
+  .promotion-banner{
+    position:relative;
+  }
+  .promotion-banner .page-width{
+    display:flex;
+    flex-direction:column;
+    position:absolute;    
+    top: 0;
+    width: 100%;
+    height:100%;
+    left: 0;
+    right: 0;
+  }
+  .promotion-banner .background-image{
+    object-fit:cover;
+  }
+  .promotion-banner .day-box,
+  .promotion-banner .hour-box,
+  .promotion-banner .minutes-box,
+  .promotion-banner .second-box{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+  }
+  .promotion-banner .day-box span,
+  .promotion-banner .hour-box span,
+  .promotion-banner .minutes-box span,
+  .promotion-banner .second-box span{
+    background-color:#fff;
+    padding: 1rem 1.5rem;
+    border-radius:4px;
+    position:relative;
+  }
+  .promotion-banner .day-box span:before,
+  .promotion-banner .hour-box span:before,
+  .promotion-banner .minutes-box span:before{
+    content:":";
+    color:#fff;
+    position:absolute;
+    right:-48%;
+  }
+  .count-down-container{
+    display:flex;
+    flex-direction: column;
+    padding-top:30px;
+    gap:1.5rem;
+  }
+  .count-down-list{
+    display:flex;
+    gap:50px;
+  }
+  
+  .content-desktop-y-top{
+      justify-content: flex-start;
+  }
+  .content-desktop-y-center{
+      justify-content: center;
+  }
+  .content-desktop-y-bottom{
+      justify-content: flex-end;
+  }
+
+  .content-desktop-x-left{
+      align-items: flex-start;
+  }
+  .content-desktop-x-center{
+      align-items: center;
+  }
+  .content-desktop-x-right{
+      align-items: flex-end;
+  }
+  
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+      .promotion-banner{
+        
+      }
+      .promotion-banner .page-width{    
+        align-items: center;
+        justify-content: flex-start;
+        padding-top:40px;
+      }
+      .count-down-container{
+        align-items: center;
+      }
+      .count-down-list{
+        gap:20px;
+      }
+      .promotion-banner .day-box span, 
+      .promotion-banner .hour-box span, 
+      .promotion-banner .minutes-box span, 
+      .promotion-banner .second-box span{
+        padding:0.8rem 1.3rem;
+      }
+      .promotion-banner .section-heading{
+        text-align:center;
+      }
+      .content-mobile-y-top{
+          justify-content: flex-start;
+      }
+      .content-mobile-y-center{
+          justify-content: center;
+      }
+      .content-mobile-y-bottom{
+          justify-content: flex-end;
+      }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+      .promotion-banner{
+        height:65vh;
+        background-image:url(https://cdn.shopify.com/s/files/1/0639/3492/2809/files/44100_2x_ec88d86d-d166-4f1c-ab51-d9e0d45c7208.png?v=1729074119);
+      }
+      .promotion-banner .page-width{    
+        align-items: center;
+        justify-content: flex-start;
+        padding-top:40px;
+      }
+      .count-down-container{
+        align-items: center;
+      }
+      .count-down-list{
+        gap:20px;
+      }
+      .promotion-banner .day-box span, 
+      .promotion-banner .hour-box span, 
+      .promotion-banner .minutes-box span, 
+      .promotion-banner .second-box span{
+        padding:0.8rem 1.3rem;
+      }
+      .promotion-banner .section-heading{
+        text-align:center;
+      }
+      .content-mobile-y-top{
+          justify-content: flex-start;
+      }
+      .content-mobile-y-center{
+          justify-content: center;
+      }
+      .content-mobile-y-bottom{
+          justify-content: flex-end;
+      }
+  }
+
+</style>
+<img loading="lazy" src="{{ section.settings.background | img_url: 'master' }}" width="100%" height="100%" class="background-image 
+  {% if section.settings.background_mobile != blank %}
+    h-desktop
+  {% endif %}" >
+{% if section.settings.background_mobile != blank %}
+  <img loading="lazy" src="{{ section.settings.background_mobile | img_url: 'master' }}" class="background-image h-mobile" width="100%" height="100%"> 
+{% endif %}
+<div class="page-width {{ section.settings.content_position_y }}  {{ section.settings.content_position_x }} {{ section.settings.content_position_y_mobile }}">
+  <h2 class="sub-heading text-sm f-f-semibold mx-0" data-aos="fade-up" data-aos-easing="ease" data-aos-duration="500" data-aos-once="true" style="color:{{ section.settings.primary_color }};">{{ section.settings.sub_heading }}</h2>
+  <h2 class="heading section-heading f-f-bold mx-0" data-aos="fade-up" data-aos-easing="ease" data-aos-duration="600" data-aos-once="true" style="color:{{ section.settings.primary_color }};">{{ section.settings.heading }}</h2>
+  <div class="count-down-container">
+    <h4 class="f-f-regular mx-0 text-cap" data-aos="fade-up" data-aos-easing="ease" data-aos-duration="700" data-aos-once="true" style="color:{{ section.settings.description_color }};">{{ section.settings.description | replace: '<p>','' | replace: '</p>','' }}</h4>
+    {% if section.settings.countdown_display %}
+      <div class="count-down-list">
+        <div class="day-box">
+          <span class="day-sec text-sm f-f-medium mx-0 center" style="color:{{ section.settings.secondary_color }};">30</span>
+          <p class="white-f mx-0 f-f-regular center">Days</p>
+        </div>
+        <div class="hour-box">
+          <span class="hour-sec text-sm f-f-medium mx-0 center" style="color:{{ section.settings.secondary_color }};">24</span>
+          <p class="white-f mx-0 f-f-regular center">Hours</p>
+        </div>
+        <div class="minutes-box">
+          <span class="minute-sec text-sm f-f-medium mx-0 center" style="color:{{ section.settings.secondary_color }};">60</span>
+          <p class="white-f mx-0 f-f-regular center">Minutes</p>
+        </div>
+        <div class="second-box">
+          <span class="second-sec text-sm f-f-medium mx-0 center" style="color:{{ section.settings.secondary_color }};">60</span>
+          <p class="white-f mx-0 f-f-regular center">Seconds</p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+<script>
+  
+  // Set the target date and time
+  var targetDate = new Date("{{ section.settings.date_time }}").getTime();
+
+  // Update the countdown every 1 second
+  var countdownInterval = setInterval(function() {
+      // Get the current time
+      var now = new Date().getTime();
+      
+      // Calculate the difference
+      var timeDifference = targetDate - now;
+      
+      // Calculate days, hours, minutes, and seconds
+      var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+      
+      // Add leading zeros if the value is less than 10
+      days = days < 10 ? '0' + days : days;
+      hours = hours < 10 ? '0' + hours : hours;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      
+      // Display the result in the respective HTML elements
+      $('.day-sec').text(days);
+      $('.hour-sec').text(hours);
+      $('.minute-sec').text(minutes);
+      $('.second-sec').text(seconds);
+      
+      // If the countdown is finished, clear the interval
+      if (timeDifference < 0) {
+          clearInterval(countdownInterval);
+          $('.day-sec, .hour-sec, .minute-sec, .second-sec').text('00');
+      }
+  }, 1000);
+  
+</script>
+{% schema %}
+    {
+      
+        "class": "promotion-banner",
+        "name": "Banner Countdown",
+        "templates": ["index"],
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "background",
+                "label": "Background Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "background_mobile",
+                "label": "Background Image - Mobile"
+            },
+            {
+                "type": "text",
+                "id": "sub_heading",
+                "label": "Sub Heading",
+                "default": "Celebrate Sound"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "Unwrap Our Holiday Deals!"
+            },
+            {
+                "type": "text",
+                "id": "description",
+                "label": "Description",
+                "default": "limited-time offer: sep.1 - 30"
+            },
+            {
+                "type": "checkbox",
+                "id": "countdown_display",
+                "label": "Countdown Display",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "date_time",
+                "label": "Date & Time",
+                "default": "Nov 14, 2024 14:00:00"
+            },
+            {
+                "type": "color",
+                "id": "primary_color",
+                "label": "Primary Color",
+                "default":"#fff"
+            },
+            {
+                "type": "color",
+                "id": "description_color",
+                "label": "Description Color",
+                "default":"#fff"
+            },
+            {
+                "type": "color",
+                "id": "secondary_color",
+                "label": "Secondary Color",
+                "default":"#ff8832"
+            },
+            {
+                "type": "header",
+                "content": "Content Position"
+            },
+            {
+                "type": "select",
+                "id": "content_position_y",
+                "label": "Content Position Y",
+                "options": [
+                    {
+                      "value": "content-desktop-y-top",
+                      "label": "Top"
+                    },
+                    {
+                      "value": "content-desktop-y-center",
+                      "label": "Center"
+                    },
+                    {
+                      "value": "content-desktop-y-bottom",
+                      "label": "Bottom"
+                    }
+                ],
+                "default": "content-desktop-y-center"
+            },
+            {
+                "type": "select",
+                "id": "content_position_x",
+                "label": "Content Position X",
+                "options": [
+                    {
+                      "value": "content-desktop-x-left",
+                      "label": "Left"
+                    },
+                    {
+                      "value": "content-desktop-x-center",
+                      "label": "Center"
+                    },
+                    {
+                      "value": "content-desktop-x-right",
+                      "label": "right"
+                    }
+                ],
+                "default": "content-desktop-x-left"
+            },
+            {
+                "type": "header",
+                "content": "Content Position - Mobile"
+            },
+            {
+                "type": "select",
+                "id": "content_position_y_mobile",
+                "label": "Content Position Y",
+                "options": [
+                    {
+                      "value": "content-mobile-y-top",
+                      "label": "Top"
+                    },
+                    {
+                      "value": "content-mobile-y-center",
+                      "label": "Center"
+                    },
+                    {
+                      "value": "content-mobile-y-bottom",
+                      "label": "Bottom"
+                    }
+                ],
+                "default": "content-mobile-y-center"
+            }
+        ],
+        "presets" :[{
+            "name" : "Banner Countdown"
+        }]
+    }
+  {% endschema %} 

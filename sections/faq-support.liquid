@@ -1,0 +1,386 @@
+
+{% assign support_faq = shop.metaobjects['faq_support'].values %}
+{% assign seen_categories = '' %}
+{% assign categories_array = '' %}
+
+{% for item in support_faq %}
+  {% assign category_value = item.type.value | strip %}
+  {% assign category_key = category_value | downcase %}
+
+  {% unless seen_categories contains category_key %}
+    {% capture seen_categories %}{{ seen_categories }},{{ category_key }}{% endcapture %}
+    {% capture categories_array %}{{ categories_array }},{{ category_value }}{% endcapture %}
+  {% endunless %}
+{% endfor %}
+{% assign unique_categories = categories_array | remove_first: ',' | split: ',' %}
+
+
+<section class="faq" data-anchor="faq">
+    <div class="page-width section-content">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="title">
+                    {{ section.settings.title }}
+                </h2>
+                <div class="toggles">
+                    {% for category in unique_categories %}
+                        <span data-toggle="{{ category | handleize }}">
+                            {{ category }}
+                        </span>
+                    {% endfor %}
+                    {% comment %}
+                    {% if data_1.size > 0 %}
+                        <span data-toggle="delivery">
+                            {{ key_1 }}
+                        </span>
+                    {% endif %}
+                    {% if data_2.size > 0 %}
+                        <span data-toggle="payment-refund">
+                            {{ key_2 }}
+                        </span>
+                    {% endif %}
+                    {% if data_3.size > 0 %}
+                        <span data-toggle="after-sales">
+                            {{ key_3 }}
+                        </span>
+                    {% endif %}
+                    {% if data_4.size > 0 %}
+                        <span data-toggle="qcy-app">
+                            {{ key_4 }}
+                        </span>
+                    {% endif %}
+                    {% endcomment %}
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="nav-toggles">
+                    {% for category in unique_categories %}
+                      <div class="nav-toggle" data-toggle="{{ category | handleize }}">
+                        <div class="row">
+                              
+                            {% assign items_per_page = 5 %}
+                            {% assign index = 0 %}
+                      
+                                <div class="col-12">
+                                    <div class="accordion" id="accordion-{{ category | handleize }}">
+                                      
+                                    {% for item in support_faq %}
+                                      {% if item.type.value == category %}
+                                        {% assign page_number = index | divided_by: items_per_page | plus: 1 %}
+                                              <div class="accordion-item" data-page="{{ page_number }}">
+                                                  <h2 class="accordion-header" id="headingD-{{ forloop.index }}">
+                                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseD-{{ forloop.index }}" aria-expanded="false" aria-controls="collapseD-{{ forloop.index }}">
+                                                          {{ item.question }}
+                                                      </button>
+                                                  </h2>
+                                                  <div id="collapseD-{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="headingD-{{ forloop.index }}" data-bs-parent="#accordion-{{ category | handleize }}">
+                                                      <div class="accordion-body">
+                                                          {{ item.answer | newline_to_br }}
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          {% assign index = index | plus: 1 %}
+                                        {% endif %}
+                                      {% endfor %}
+                      
+                                    </div>
+                                </div>
+
+                                {% assign total_items = index %}
+                                {% assign total_pages = total_items | divided_by: items_per_page %}
+                                {% assign remainder = total_items | modulo: items_per_page %}
+                                {% if remainder != 0 %}
+                                  {% assign total_pages = total_pages | plus: 1 %}
+                                {% endif %}
+                        
+                                {% if total_items > items_per_page %}
+                                  <div class="paginate custom" data-total="{{ total_pages }}">
+                                    <a class="page disable" href="javascript:void(0)">
+                                      <i class="fa-solid fa-chevron-left"></i>
+                                    </a>
+                                    {% for i in (1..total_pages) %}
+                                      <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                    {% endfor %}
+                                    <a class="page" href="javascript:void(0)" data-i="2">
+                                      <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                  </div>
+                                {% endif %}
+                      
+                            </div>
+  
+                      </div>
+                    {% endfor %}
+                    {% comment %}
+                    <div class="nav-toggle" data-toggle="delivery">
+                        {% if shop.metaobjects['faq_support'].values_count > 0 %}
+                            {% paginate shop.metaobjects['faq_support'].values by 999 %}
+                                {% assign _data = shop.metaobjects['faq_support'].values | where: 'type', key_1 | sort: 'question' %}
+                                
+                                {% if _data.size > 0 %}
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="accordion" id="accordion-delivery">
+                                                {% for item in _data %}
+                                                    <div class="accordion-item" data-page="{{ forloop.index | minus: 1 | divided_by: 5 | plus: 1 }}">
+                                                        <h2 class="accordion-header" id="headingD-{{ forloop.index }}">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseD-{{ forloop.index }}" aria-expanded="false" aria-controls="collapseD-{{ forloop.index }}">
+                                                                {{ item.question }}
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseD-{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="headingD-{{ forloop.index }}" data-bs-parent="#accordion-delivery">
+                                                            <div class="accordion-body">
+                                                                {{ item.answer | newline_to_br }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+
+                                        {% if _data.size > 5 %}
+
+                                            {% assign items_per_page = 5 %}
+                                            {% assign total_items = _data.size %}
+                                            {% assign total_pages = total_items | divided_by: items_per_page %}
+                                            {% assign remainder = total_items | modulo: items_per_page %}
+        
+                                            {% assign page_total = total_pages %}
+                                            {% if remainder != 0 %}
+                                                {% assign page_total = page_total | plus: 1 %}
+                                            {% endif %}
+        
+                                            <div class="paginate custom" data-total="{{ page_total }}">
+                                                <a class="page disable" href="javascript:void(0)">
+                                                    <i class="fa-solid fa-chevron-left"></i>
+                                                </a>
+        
+                                                {% if remainder != 0 %}
+                                                    {% assign total_pages = total_pages | plus: 1 %}
+                                                {% endif %}
+        
+                                                {% for i in (1..total_pages) %}
+                                                    <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                                {% endfor %}
+        
+                                                <a class="page" href="javascript:void(0)" data-i="2">
+                                                    <i class="fa-solid fa-chevron-right"></i>
+                                                </a>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+
+                                {% endif %}
+                        
+                            {% endpaginate %}
+                        {% endif %}
+                    </div>
+                    <div class="nav-toggle" data-toggle="payment-refund">
+                        {% if shop.metaobjects['faq_support'].values_count > 0 %}
+                            {% paginate shop.metaobjects['faq_support'].values by 999 %}
+                                {% assign _data = shop.metaobjects['faq_support'].values | where: 'type', key_2 | sort: 'question' %}
+                                
+                                {% if _data.size > 0 %}
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="accordion" id="accordion-payment-refund">
+                                                {% for item in _data %}
+                                                    <div class="accordion-item" data-page="{{ forloop.index | minus: 1 | divided_by: 5 | plus: 1 }}">
+                                                        <h2 class="accordion-header" id="headingPR-{{ forloop.index }}">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePR-{{ forloop.index }}" aria-expanded="false" aria-controls="collapsePR-{{ forloop.index }}">
+                                                                {{ item.question }}
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapsePR-{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="headingPR-{{ forloop.index }}" data-bs-parent="#accordion-payment-refund">
+                                                            <div class="accordion-body">
+                                                                {{ item.answer | newline_to_br }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+
+                                        {% if _data.size > 5 %}
+
+                                            {% assign items_per_page = 5 %}
+                                            {% assign total_items = _data.size %}
+                                            {% assign total_pages = total_items | divided_by: items_per_page %}
+                                            {% assign remainder = total_items | modulo: items_per_page %}
+        
+                                            {% assign page_total = total_pages %}
+                                            {% if remainder != 0 %}
+                                                {% assign page_total = page_total | plus: 1 %}
+                                            {% endif %}
+        
+                                            <div class="paginate custom" data-total="{{ page_total }}">
+                                                <a class="page disable" href="javascript:void(0)">
+                                                    <i class="fa-solid fa-chevron-left"></i>
+                                                </a>
+        
+                                                {% if remainder != 0 %}
+                                                    {% assign total_pages = total_pages | plus: 1 %}
+                                                {% endif %}
+        
+                                                {% for i in (1..total_pages) %}
+                                                    <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                                {% endfor %}
+        
+                                                <a class="page" href="javascript:void(0)" data-i="2">
+                                                    <i class="fa-solid fa-chevron-right"></i>
+                                                </a>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+
+                                {% endif %}
+                            {% endpaginate %}
+                        {% endif %}
+                    </div>
+                    <div class="nav-toggle" data-toggle="after-sales">
+                        {% if shop.metaobjects['faq_support'].values_count > 0 %}
+                            {% paginate shop.metaobjects['faq_support'].values by 999 %}
+                                {% assign _data = shop.metaobjects['faq_support'].values | where: 'type', key_3 | sort: 'question' %}
+                                
+                                {% if _data.size > 0 %}
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="accordion" id="accordion-after-sales">
+                                                {% for item in _data %}
+                                                    <div class="accordion-item" data-page="{{ forloop.index | minus: 1 | divided_by: 5 | plus: 1 }}">
+                                                        <h2 class="accordion-header" id="headingAS-{{ forloop.index }}">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAS-{{ forloop.index }}" aria-expanded="false" aria-controls="collapseAS-{{ forloop.index }}">
+                                                                {{ item.question }}
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseAS-{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="headingAS-{{ forloop.index }}" data-bs-parent="#accordion-after-sales">
+                                                            <div class="accordion-body">
+                                                                {{ item.answer | newline_to_br }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+
+                                        {% if _data.size > 5 %}
+
+                                            {% assign items_per_page = 5 %}
+                                            {% assign total_items = _data.size %}
+                                            {% assign total_pages = total_items | divided_by: items_per_page %}
+                                            {% assign remainder = total_items | modulo: items_per_page %}
+        
+                                            {% assign page_total = total_pages %}
+                                            {% if remainder != 0 %}
+                                                {% assign page_total = page_total | plus: 1 %}
+                                            {% endif %}
+        
+                                            <div class="paginate custom" data-total="{{ page_total }}">
+                                                <a class="page disable" href="javascript:void(0)">
+                                                    <i class="fa-solid fa-chevron-left"></i>
+                                                </a>
+        
+                                                {% if remainder != 0 %}
+                                                    {% assign total_pages = total_pages | plus: 1 %}
+                                                {% endif %}
+        
+                                                {% for i in (1..total_pages) %}
+                                                    <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                                {% endfor %}
+        
+                                                <a class="page" href="javascript:void(0)" data-i="2">
+                                                    <i class="fa-solid fa-chevron-right"></i>
+                                                </a>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+
+                                {% endif %}
+                            {% endpaginate %}
+                        {% endif %}
+                    </div>
+                    <div class="nav-toggle" data-toggle="qcy-app">
+                        {% if shop.metaobjects['faq_support'].values_count > 0 %}
+                            {% paginate shop.metaobjects['faq_support'].values by 999 %}
+                                {% assign _data = shop.metaobjects['faq_support'].values | where: 'type', key_4 | sort: 'question' %}
+                                
+                                {% if _data.size > 0 %}
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="accordion" id="accordion-qcy-app">
+                                                {% for item in _data %}
+                                                    <div class="accordion-item" data-page="{{ forloop.index | minus: 1 | divided_by: 5 | plus: 1 }}">
+                                                        <h2 class="accordion-header" id="headingQA-{{ forloop.index }}">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQA-{{ forloop.index }}" aria-expanded="false" aria-controls="collapseQA-{{ forloop.index }}">
+                                                                {{ item.question }}
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseQA-{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="headingQA-{{ forloop.index }}" data-bs-parent="#accordion-qcy-app">
+                                                            <div class="accordion-body">
+                                                                {{ item.answer | newline_to_br }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+
+                                        {% if _data.size > 5 %}
+
+                                            {% assign items_per_page = 5 %}
+                                            {% assign total_items = _data.size %}
+                                            {% assign total_pages = total_items | divided_by: items_per_page %}
+                                            {% assign remainder = total_items | modulo: items_per_page %}
+        
+                                            {% assign page_total = total_pages %}
+                                            {% if remainder != 0 %}
+                                                {% assign page_total = page_total | plus: 1 %}
+                                            {% endif %}
+        
+                                            <div class="paginate custom" data-total="{{ page_total }}">
+                                                <a class="page disable" href="javascript:void(0)">
+                                                    <i class="fa-solid fa-chevron-left"></i>
+                                                </a>
+        
+                                                {% if remainder != 0 %}
+                                                    {% assign total_pages = total_pages | plus: 1 %}
+                                                {% endif %}
+        
+                                                {% for i in (1..total_pages) %}
+                                                    <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                                {% endfor %}
+        
+                                                <a class="page" href="javascript:void(0)" data-i="2">
+                                                    <i class="fa-solid fa-chevron-right"></i>
+                                                </a>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+
+                                {% endif %}
+                            {% endpaginate %}
+                        {% endif %}
+                    </div>
+                    {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "FAQ Support",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        }
+    ]
+}
+{% endschema %}

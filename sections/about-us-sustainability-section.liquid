@@ -1,0 +1,212 @@
+<style>
+  .about-us-sustainability-section{
+    padding-bottom:80px;
+  }
+  .sustainability-section{
+    height:120vh;
+    background-image:url(https://cdn.shopify.com/s/files/1/0639/3492/2809/files/1121_2x_1.png?v=1729166407);
+    background-size:cover;
+    padding-top:32vh;
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .sustainability-inner-section{
+    margin:auto;
+    margin-top:-23%;
+    border-radius:40px;
+    position:relative;
+  }
+  .sustainability-inner-section:before{
+    content: "";
+    background-color: #FFF0E4;
+    height: 100%;
+    border-radius: 40px;
+    width: 90%;
+    display: block;
+    position: absolute;
+    z-index: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    transition: all 0.5s ease;
+    transition-delay: 1s;
+  }
+  .sustainability-inner-section.aos-animate:before{
+    width:100%;
+  }
+  .sustainability-inner-section .page-width{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding:80px 50px ;
+    position:relative;
+    z-index:1;
+    overflow:hidden;
+    max-width:1400px;
+  }
+  .sustainability-item{
+    display:flex;
+    flex-direction:column;
+    gap:50px;
+  }
+  .sustainability-item img{
+    width:100%;
+  }
+  .content-bottom-details{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:0px 20px;
+  }
+  .about-us-sustainability-section .swiper-pagination-long{
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 30px;
+  }
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .about-us-sustainability-section{
+      padding-bottom:30px;
+    }
+    .about-us-sustainability-section .section-heading{
+      text-align:left;
+    }
+    .sustainability-inner-section{
+      width:92%;
+      border-radius:20px;
+      margin-top:-55vh;
+    }
+    .sustainability-inner-section .page-width{
+      padding:35px 25px;
+    }
+    .sustainability-section{
+      height:85vh;
+      padding-top: 70px;
+      background-position:center;
+    }
+    .sustainability-item{
+      gap:20px;
+    }
+    
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+    .about-us-sustainability-section{
+      padding-bottom:30px;
+    }
+    .about-us-sustainability-section .section-heading{
+      text-align:left;
+    }
+    .sustainability-inner-section{
+      width:92%;
+      border-radius:20px;
+      margin-top:-35%;
+    }
+    .sustainability-inner-section .page-width{
+      padding:35px 25px;
+    }
+    .sustainability-section{
+      height:90vh;
+      padding-top: 70px;
+      background-position:center;
+    }
+    .sustainability-item{
+      gap:20px;
+    }
+  }
+
+</style>
+<div class="sustainability-section">
+  <h2 class="mx-0 my-auto f-f-bold section-heading text-cap center">Our Commitment: <br>Harmonizing Music with Nature</h2>
+</div>
+<div class="sustainability-inner-section" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="350" data-aos-duration="500" data-aos-once="true">
+  <div class="page-width sustainability-section-slider">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="sustainability-item swiper-slide">
+            <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}">
+            <div class="content-bottom-details">
+              <h3 class="mx-0 center f-f-bold">{{ block.settings.heading }}</h3>
+              <h5 class="mx-0 center f-f-regular">{{ block.settings.description | replace: '<p>','' | replace: '</p>','' }}</h5>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+  </div>
+  <div class="sustainability-section-slider-swiper-pagination swiper-pagination-long"></div>
+</div>
+{% javascript %}
+  
+  var about_us_sustainability_slider = new Swiper('.sustainability-section-slider', {
+      slidesPerView: 3,
+      spaceBetween: 50,
+      speed: 800,
+      pagination: {
+          el: '.sustainability-section-slider-swiper-pagination',
+          clickable: true,
+      },
+      breakpoints: {
+          // when window width is >= 320px (mobile)
+          320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+          },
+          // when window width is >= 768px (tablet)
+          768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+          },
+          // when window width is >= 1024px (desktop)
+          1024: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+          },
+          1524: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+          },
+          // when window width is >= 1024px (desktop)
+          1680: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+          }
+      }
+  });
+{% endjavascript %}
+{% schema %}
+    {
+        "class": "sustainability-scroll-section about-us-sustainability-section section-scroll",
+        "name": "About Us Sustainability",
+        "templates": ["page"],
+        "max_blocks": 3, 
+        "blocks": [
+          {
+              "type": "sustainability",
+              "name": "Sustainability",
+              "settings": [
+                  {
+                      "type": "image_picker",
+                      "id": "image",
+                      "label": "Image"
+                  },
+                  {
+                      "type": "text",
+                      "id": "heading",
+                      "label": "Heading"
+                  },
+                  {
+                      "type": "richtext",
+                      "id": "description",
+                      "label": "Description"
+                  }
+              ]
+          }
+        ],
+        "presets" :[{
+            "name" : "About Us Sustainability"
+        }]
+    }
+{% endschema %} 

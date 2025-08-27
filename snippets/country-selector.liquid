@@ -1,0 +1,250 @@
+<style>
+    .country-selector{
+        padding-right: 1rem;;
+        position:relative;
+    }
+    .country-flag{
+        width:23px;
+        height:23px;
+    }
+    .country-menu-selector{
+        display:flex;
+        gap:1rem;
+        align-items: center;
+    }
+    .country-menu-selector .current-currency-selector{
+        cursor: pointer;
+    }
+    .country-menu-list{
+        background-color: #fff;
+        padding: 10px 10px;
+        position: absolute;
+        left: -50px;
+        top: 48px; 
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        opacity: 0;
+        transition: opacity 0.1s ease;
+        display: none;
+        border-left: 1px solid #0000000a;
+        border-bottom: 1px solid #0000000a;
+        border-right: 1px solid #0000000a;
+    }
+    .currency-menu-list{
+         background-color: #fff;
+        padding: 10px 10px;
+        position: absolute;
+        left: -10px;
+        top: 48px; 
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        opacity: 0;
+        transition: opacity 0.1s ease;
+        width: 280px;
+        display: none;
+        border-left: 1px solid #0000000a;
+        border-bottom: 1px solid #0000000a;
+        border-right: 1px solid #0000000a;
+    }
+    
+    .dropdown-above .country-menu-list,
+    .dropdown-above .currency-menu-list{
+        top:auto;
+        bottom:40px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    .dropdown-above .country-menu-list{
+        left:-80px;
+    }
+    .dropdown-above .currency-menu-list{
+        left:-60px;
+    }
+    .footer .current-currency-selector{
+        color:#fff;
+    }
+    .current-country-selector{
+        cursor: pointer;
+    }
+    .country-menu-list.active,
+    .currency-menu-list.active{
+        opacity: 1;
+        display: block;
+    }
+    .country-menu-list ul,
+    .currency-menu-list ul{
+        list-style: none;
+        padding: 0;
+        margin:0px;
+    }
+    .country-menu-list li a,
+    .currency-menu-list li button{
+        display:flex;
+        gap: 1rem;
+        padding:5px 20px;
+        border-radius: 5px;
+        text-align:left;
+    }
+    .country-menu-list li a:hover,
+    .currency-menu-list li button:hover{
+        background-color: #fff0e3;
+    }
+    .currency-menu-list li button{
+      background:transparent;
+      border:none;
+      width:100%;
+      cursor:pointer;
+    }
+</style>
+<div class="country-selector {{ section }}  {{ localization.language.iso_code }}">
+    <div class="country-menu-selector d-flex">
+        {% if country_setting %}
+          <div class="current-country-selector-container">
+           {% if localization.language.iso_code == 'en' %}
+            <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/united_states-mobile.png?v=1751358359" class="current-country-selector country-flag prevent-select"  alt="The current page is in English" >
+           {% elsif localization.language.iso_code == 'de' %}
+            <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/42797_2x_3a58c2e2-6bb6-4126-af0d-e1d8d4a95cab.png?v=1727756066" class="current-country-selector country-flag prevent-select" alt="The current page is in German">
+           {% elsif localization.language.iso_code == 'es' %}
+            <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/42801_2x_fb97d2f5-7d11-4206-b9b5-e4e0da7ae8f9.png?v=1727756066" class="current-country-selector country-flag prevent-select" alt="The current page is in Spanish" >
+           {% elsif localization.language.iso_code == 'it' %}
+            <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/42928_2x_e5d58886-bca5-414b-b7d7-693c272a23af.png?v=1727756066" class="current-country-selector country-flag prevent-select" alt="The current page is in Italian">
+            {% elsif localization.language.iso_code == 'pt-BR' %}
+            <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/Brazil-mobile.png?v=1751358938" class="current-country-selector country-flag prevent-select" alt="The current page is in Portuguese"> 
+           {% endif %}
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" height="13" width="13" viewBox="0 0 1.238 1.238" xml:space="preserve">
+              <path d="M1.221 0.298a0.057 0.057 0 0 0 -0.08 0L0.619 0.82 0.096 0.298a0.056 0.056 0 0 0 -0.08 0.08L0.579 0.94a0.057 0.057 0 0 0 0.08 0L1.221 0.377a0.057 0.057 0 0 0 0 -0.08"/>
+            </svg> -->
+          </div>
+        {% endif %}
+      
+        {% if currency_setting %}
+          <div class="current-currency-selector-container">
+            <p class="mx-0 black-f current-currency-selector prevent-select" lang="en">{{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})</p>
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" height="13" width="13" viewBox="0 0 1.238 1.238" xml:space="preserve">
+              <path d="M1.221 0.298a0.057 0.057 0 0 0 -0.08 0L0.619 0.82 0.096 0.298a0.056 0.056 0 0 0 -0.08 0.08L0.579 0.94a0.057 0.057 0 0 0 0.08 0L1.221 0.377a0.057 0.057 0 0 0 0 -0.08"/>
+            </svg> -->
+          </div>
+        {% endif %}
+    </div>
+    <div class="country-menu-list">
+        <ul>
+            <li>
+                <a href="/" class="country-link" data-locale="en">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/united_states-mobile.png?v=1751358359" class="country-flag" alt="United States Flag" >
+                    <p class="mx-0 black-f f-f-medium prevent-select">English</p>
+                </a>
+            </li>
+           <li>
+                <a href="/es" class="country-link" data-locale="es">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/42801_2x_fb97d2f5-7d11-4206-b9b5-e4e0da7ae8f9.png?v=1727756066" class="country-flag" alt="Spanish Flag">
+                    <p class="mx-0 black-f f-f-medium prevent-select">Español</p>
+                </a>
+            </li>
+           <li>
+                <a href="/de" class="country-link" data-locale="de">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/42797_2x_3a58c2e2-6bb6-4126-af0d-e1d8d4a95cab.png?v=1727756066" class="country-flag" alt="Germany Flag">
+                    <p class="mx-0 black-f f-f-medium prevent-select">Deutsch</p>
+                </a>
+            </li>
+           <li>
+                <a href="/it" class="country-link" data-locale="it">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/42928_2x_e5d58886-bca5-414b-b7d7-693c272a23af.png?v=1727756066" class="country-flag" alt="Italy Flag">
+                    <p class="mx-0 black-f f-f-medium prevent-select">Italiano</p>
+                </a>
+            </li>
+          <li>
+                <a href="/pt" class="country-link" data-locale="pt-BR">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/Brazil-mobile.png?v=1751358938" class="country-flag" alt="Brasil Flag">
+                    <p class="mx-0 black-f f-f-medium prevent-select">Portugal</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="currency-menu-list">
+      <ul>
+          <localization-form>
+          {%- form 'localization', id: 'header-country-selector' -%}
+              {%- for country in localization.available_countries -%}
+                  {%- if country.currency.iso_code == 'CAD' -%}
+                  <li>
+                      <button type="submit" class="black-f f-f-medium prevent-select" name="country_code" value="{{ country.iso_code }}">
+                          <p class="mx-0 black-f f-f-medium prevent-select">
+                              {{ country.name }} ({{ country.currency.iso_code }}{% if country.currency.symbol %} {{ country.currency.symbol }}{% endif %})
+                          </p>
+                      </button>
+                  </li>
+                  {%- elsif 
+                     country.name == 'France' or 
+                     country.name == 'Frankreich' or 
+                     country.name == '法國' or 
+                     country.name == 'フランス' or 
+                     country.name == 'Francia' -%}
+                  <li>
+                      <button type="submit" class="black-f f-f-medium prevent-select" name="country_code" value="{{ country.iso_code }}">
+                          <p class="mx-0 black-f f-f-medium prevent-select">
+                              {{ country.name }} ({{ country.currency.iso_code }}{% if country.currency.symbol %} {{ country.currency.symbol }}{% endif %})
+                          </p>
+                      </button>
+                  </li>
+                  {%- elsif country.currency.iso_code == 'CNY' -%}
+                  <li>
+                      <button type="submit" class="black-f f-f-medium prevent-select" name="country_code" value="{{ country.iso_code }}">
+                          <p class="mx-0 black-f f-f-medium prevent-select">
+                              {{ country.name }} ({{ country.currency.iso_code }}{% if country.currency.symbol %} {{ country.currency.symbol }}{% endif %})
+                          </p>
+                      </button>
+                  </li>
+                  {%- elsif country.currency.iso_code == 'HKD' -%}
+                  <li>
+                      <button type="submit" class="black-f f-f-medium prevent-select" name="country_code" value="{{ country.iso_code }}">
+                          <p class="mx-0 black-f f-f-medium prevent-select">
+                              {{ country.name }} ({{ country.currency.iso_code }}{% if country.currency.symbol %} {{ country.currency.symbol }}{% endif %})
+                          </p>
+                      </button>
+                  </li>
+                  {%- elsif country.currency.iso_code == 'JPY' -%}
+                  <li>
+                      <button type="submit" class="black-f f-f-medium prevent-select" name="country_code" value="{{ country.iso_code }}">
+                          <p class="mx-0 black-f f-f-medium prevent-select">
+                              {{ country.name }} ({{ country.currency.iso_code }}{% if country.currency.symbol %} {{ country.currency.symbol }}{% endif %})
+                          </p>
+                      </button>
+                  </li>
+                  {%- elsif 
+                     country.name == 'United Kingdom' or 
+                     country.name == 'Vereinigtes Königreich' or 
+                     country.name == '英國' or 
+                     country.name == 'イギリス' or 
+                     country.name == 'Reino Unido' or 
+                     country.name == 'Royaume-Uni' or 
+                     country.name == 'Regno Unito'  -%}
+                  <li>
+                      <button type="submit" class="black-f f-f-medium prevent-select" name="country_code" value="{{ country.iso_code }}">
+                          <p class="mx-0 black-f f-f-medium prevent-select">
+                              {{ country.name }} ({{ country.currency.iso_code }}{% if country.currency.symbol %} {{ country.currency.symbol }}{% endif %})
+                          </p>
+                      </button>
+                  </li>
+                  {%- elsif 
+                     country.name == 'United States' or 
+                     country.name == 'Vereinigtes Königreich' or 
+                     country.name == '英國' or 
+                     country.name == 'イギリス' or 
+                     country.name == 'Estados Unidos' or 
+                     country.name == 'États-Unis' or 
+                     country.name == 'Stati Uniti' -%}
+                  <li>
+                      <button type="submit" class="black-f f-f-medium prevent-select" name="country_code" value="{{ country.iso_code }}">
+                          <p class="mx-0 black-f f-f-medium prevent-select">
+                              {{ country.name }} ({{ country.currency.iso_code }}{% if country.currency.symbol %} {{ country.currency.symbol }}{% endif %})
+                          </p>
+                      </button>
+                  </li>
+                  {%- endif -%}
+              {%- endfor -%}
+          {%- endform -%}
+      </localization-form>
+      </ul>
+  </div>
+
+</div>

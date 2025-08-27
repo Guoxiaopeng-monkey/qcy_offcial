@@ -1,0 +1,30 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog_banner_section_zkL9wB": {
+      "type": "blog-banner-section",
+      "settings": {
+        "image": "shopify://shop_images/QCY_Blog.png",
+        "image_mobile": "shopify://shop_images/Blog.jpg",
+        "custom_title": "Blog",
+        "custom_description": "<p>Welcome to our QCY's blog, where you'll find the latest news, reviews, and tips to help you choose the perfect headphones.</p>"
+      }
+    },
+    "main_blog_section_aqy3yx": {
+      "type": "main-blog-section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "blog_banner_section_zkL9wB",
+    "main_blog_section_aqy3yx"
+  ]
+}

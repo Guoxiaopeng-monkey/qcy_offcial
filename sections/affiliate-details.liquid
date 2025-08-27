@@ -1,0 +1,258 @@
+<div class="affiliate-details-wrapper">
+  <div class="affiliate-details">
+    <h2 class="affiliate-details-section-title">{{ section.settings.title }}</h2>
+    <div class="affiliate-details-container">
+      <div class="affiliate-details-left-column">
+        {%- if section.settings.image != blank -%}
+          <img src="{{ section.settings.image | img_url: 'master' }}" 
+               alt="{{ section.settings.image.alt | escape }}"
+               loading="lazy"
+               width="{{ section.settings.image.width }}"
+               height="{{ section.settings.image.height }}">
+        {%- endif -%}
+      </div>
+      <div class="affiliate-details-right-column">
+        <div class="affiliate-details-info-row">
+          <div class="affiliate-details-info-block">
+            <h3>{{ section.settings.block1_title }}</h3>
+            <ul>
+              {%- assign items = section.settings.block1_items | newline_to_br | split: '<br />' -%}
+              {%- for item in items -%}
+                <li>{{ item | strip }}</li>
+              {%- endfor -%}
+            </ul>
+          </div>
+          <div class="affiliate-details-info-block">
+            <h3>{{ section.settings.block2_title }}</h3>
+            <p>{{ section.settings.block2_text }}</p>
+          </div>
+        </div>
+        <div class="affiliate-details-cta-row">
+          <img loading="lazy" src="{{ section.settings.icon | img_url: 'small' }}" alt="" class="affiliate-details-cta-icon">
+          <h3 class="affiliate-details-cta-text">{{ section.settings.cta_title }}</h3>
+          <a href="{{ section.settings.button_link }}" class="affiliate-details-cta-button">
+            {{ section.settings.button_text }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.affiliate-details-wrapper {
+  background-color: #F9F9F9;
+}
+.affiliate-details {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.affiliate-details-section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #333;
+  font-weight:700;
+}
+.affiliate-details-container {
+  display: flex;
+  gap: 40px;
+}
+.affiliate-details-left-column {
+  flex: 0.6;
+}
+.affiliate-details-left-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.affiliate-details-right-column {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.affiliate-details-info-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.affiliate-details-info-block {
+  flex: 1;
+  background: #FFFFFF;
+  padding: 25px;
+  border-radius: 8px;
+}
+.affiliate-details-info-block h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #333;
+}
+.affiliate-details-info-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.affiliate-details-info-block li {
+  margin-bottom: 10px;
+  color: #666;
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.4;
+  max-width: 100%;
+  padding-left: 15px;
+  position: relative;
+  display: block;
+}
+.affiliate-details-info-block li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #FF8832;
+}
+.affiliate-details-info-block p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+.affiliate-details-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  background: #FFFFFF;
+  border-radius: 12px;
+}
+.affiliate-details-cta-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.affiliate-details-cta-text {
+  margin: 0;
+  flex-grow: 1;
+  font-size: 18px;
+  color: #333;
+}
+.affiliate-details-cta-button {
+  background: #FF8832;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.affiliate-details-cta-button:hover {
+  background: #000000;
+  transform: translateY(-1px);
+}
+
+@media screen and (max-width: 768px) {
+  .affiliate-details {
+    padding: 40px 15px;
+  }
+  .affiliate-details-container {
+    flex-direction: column;
+  }
+  .affiliate-details-info-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .affiliate-details-cta-row {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .affiliate-details-cta-text {
+    margin-bottom: 15px;
+  }
+  .affiliate-details-section-title {
+    font-size: 24px;
+    font-weight:600;
+  }
+  .affiliate-details-info-block h3 {
+    font-size: 18px;
+  }
+  .affiliate-details-cta-text {
+    font-size: 16px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Affiliate Details",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "More Details"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Image"
+    },
+    {
+      "type": "text",
+      "id": "block1_title",
+      "label": "First Block Title",
+      "default": "Variety of Affiliates"
+    },
+    {
+      "type": "textarea",
+      "id": "block1_items",
+      "label": "First Block Items (one per line)",
+      "default": "Forums\nBlogs\nProduct Review Sites\nSocial Media Sites\nPublishers"
+    },
+    {
+      "type": "text",
+      "id": "block2_title",
+      "label": "Second Block Title",
+      "default": "Who are Eligible?"
+    },
+    {
+      "type": "textarea",
+      "id": "block2_text",
+      "label": "Second Block Text",
+      "default": "We are open to tech enthusiasts, content creators, and publishers passionate about audio innovation. Whether you're a seasoned influencer or just starting out, if you have an engaged online audience, join us to collaborate."
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "CTA Icon"
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "CTA Title",
+      "default": "Interested in becoming an affiliate?"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Start Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Affiliate Details",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

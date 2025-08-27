@@ -1,0 +1,579 @@
+<style>
+  .contact-us-information-section{
+    padding:60px 0px 100px;
+  }
+  .contact-us-information-container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap:60px;
+    column-gap: 15%;
+    padding-top:50px;
+  }
+  .information-item{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+  }
+  .information-item a,
+  .information-item .submit-btn{
+    color:#4795E9;
+  }
+  .information-item .submit-btn{
+    cursor:pointer;
+  }
+
+
+
+  /* MODAL */
+  
+  .custom-modal-section{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    z-index: 100;
+    opacity: 0;
+    visibility:hidden;
+    transition: opacity 0.3s;
+  }
+  .custom-modal-section.open{
+    visibility:visible;
+    opacity:1;
+  }
+  .custom-modal-section .overlay{
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+  }
+  .custom-model-inner-section{
+    height:100%;
+    display:flex;
+  }
+  .contact-us-information-section .custom-modal-container{
+    background-color: #fff;
+    max-width: 650px;
+    border-radius: 4px;
+    padding: 30px 40px;
+    border: 2rem;
+    transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.6s;
+    position: relative;
+    margin: auto;
+    height:fit-content;
+    z-index:3;
+  }
+  .custom-modal-container.form-success .feedback-info-form{
+      display:none;
+  }
+  .custom-modal-section.open .custom-modal-container{
+    opacity:1;
+    transform: translateY(0);
+  }
+  .custom-info-form::-webkit-scrollbar {
+    width: 0px;
+  }
+  .custom-info-form::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  .custom-info-form::-webkit-scrollbar-thumb {
+    background: #F89320;
+  }
+  .custom-info-form::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  
+  .contact-us-information-section .custom-modal-container .custom-close{
+    position:absolute;
+    top:10px;
+    right:12px;
+    border-radius: 4px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color:#fff;
+  }
+  .custom-modal-container .custom-close svg{
+    width:14px;
+  }
+  .custom-modal-container .custom-close svg path{
+    stroke: #aaa;
+    stroke-width: 1px;
+  }
+  body.no-scroll{
+    overflow:hidden;
+  }
+
+  
+  .modal-heading{
+    padding-bottom:1rem;
+  }
+
+  
+  .feedback-info-form{
+    padding-top:20px;
+  }
+  .custom-input-box{
+    display:flex;
+    gap:10px;
+    padding-bottom:2.5rem;
+  }
+  .custom-input-box.bottom-input{
+    gap:10px;
+  }
+  .input-box-item{
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+  }
+  .custom-input-box select .placeholder{
+    color:#A8A8A8;
+  }
+  .custom-input-box select,
+  .custom-input-box input,
+  .custom-input-box textarea{
+    border: 1px solid #D7D7D7;
+    padding: 1.5rem 15px;
+    border-radius: 4px;
+    font-family: 'Mulish-Regular';
+    -webkit-appearance: none;
+    color: #A8A8A8;
+    width:100%;
+    transition: all 0.3s ease;
+  }
+  .hover-input:hover select,
+  .hover-input:hover input,
+  .hover-input:hover textarea{
+    border-color:#FF8832;
+    box-shadow: #ff88321c 0px 8px 24px;
+  }
+  .custom-input-box .input-name,
+  .custom-input-box .input-email{
+    position:relative;
+  }
+  .custom-input-box .input-name svg,
+  .custom-input-box .input-email svg{
+    position:absolute;
+    bottom: 20%;
+    left: 10px;
+    left: 10px;
+    width: 30px;
+    height: 28px;
+  }
+  .custom-input-box .input-name input,
+  .custom-input-box .input-email input{
+    padding-left:45px;
+  }
+  .btn-submit-container{
+    display:flex;
+    padding-top:10px;
+  }
+  .btn-submit-container button{
+    background-color: #FF8832;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    margin: auto;
+    padding:1.5rem 0px;
+    cursor:pointer;
+  }
+  .two-column{
+    display:flex;
+    gap:10px;
+  }
+
+  .select-tag-option{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: white;
+    top: 70%;
+    padding: 10px 0px;
+    z-index: 1;
+    width: 100%;
+    max-height: 350px; /* Set maximum height instead of fixed height */
+    overflow-y: auto; /* Enable scrolling when content exceeds max height */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    opacity:0;
+    visibility:hidden;
+  }
+  .select-tag-option::-webkit-scrollbar {
+    width: 5px;
+  }
+  .select-tag-option::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  .select-tag-option::-webkit-scrollbar-thumb {
+    background: #F89320;
+  }
+  .select-tag-option::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  .select-tag-option p{
+    padding:5px 10px;
+    transition: all 0.3s ease;
+    cursor:pointer;
+  }
+  .select-tag-option p:hover{
+    background-color:#aaaaaa26;
+  }
+  .custom-input-box.select-tag{
+    position:relative;
+  }
+  .custom-input-box input:focus + .select-tag-option{
+    opacity:1;
+    visibility:visible;
+  }
+  .input-form-fields h5{
+    padding-bottom:1rem;
+  }
+  .input-close {
+     width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 1rem;
+    top: 20%;
+    background-color: #ff883233;
+    border-radius: 50px;
+    display: flex;
+    padding: 7px;
+    visibility:hidden;
+  }
+  .custom-input-box input:not([value=""]) + .input-close {
+    visibility:visible;
+  }
+  /* ENDMODAL */
+  
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 30px;
+      grid-template-columns:100%;
+    }
+    .feedback-modal-container{
+        padding: 30px 20px;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+    }
+    .two-column{
+      flex-direction:column;
+    }
+    .custom-input-box{
+      flex-direction:column;
+    }
+    .contact-us-information-section .custom-modal-container{
+      padding:40px 20px 20px;
+    }
+    .select-tag-option{
+      max-height: 200px; /* Set maximum height instead of fixed height */
+    }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 30px;
+    }
+    .feedback-modal-container{
+        padding: 30px 20px;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+    }
+    .custom-input-box{
+      flex-direction:column;
+    }
+    .contact-us-information-section .custom-modal-container{
+      padding:40px 20px 20px;
+    }
+    .select-tag-option{
+      max-height: 200px; /* Set maximum height instead of fixed height */
+    }
+  }
+  /* TABLETS  */ 
+  @media only screen and (min-width: 768px) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 30px;
+    }
+  }
+   @media only screen and (min-width: 800px) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 30px;
+    }
+  }
+  @media (min-width: 1024px) and (orientation: portrait) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 30px;
+    }
+  }
+  
+   /* COMPUTERS */
+  @media (min-width: 1024px) and (orientation: landscape) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 30px;
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 40px;
+    }
+  }
+  @media only screen and (min-width: 1366px) {
+    .contact-us-information-container{
+      row-gap:40px;
+      column-gap: 40px;
+    }
+  }
+  @media only screen and (min-width: 1440px) {
+    .contact-us-information-container{
+      row-gap:50px;
+      column-gap: 50px;
+    }
+  }
+  @media only screen and (min-width: 1536px) {
+    .contact-us-information-container{
+      row-gap:50px;
+      column-gap: 10%;
+    }
+  }
+  @media only screen and (min-width: 1600px) {
+    .contact-us-information-container{
+      row-gap:60px;
+      column-gap: 13%;
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+    .contact-us-information-container{
+      row-gap:60px;
+      column-gap: 15%;
+    }
+  }
+
+</style>
+<div class="page-width">
+  <h2 class="mx-0 f-f-bold section-heading text-cap ">{{ section.settings.title }}</h2>
+  <div class="contact-us-information-container">
+    {% for block in section.blocks %}
+      <div class="information-item">
+      {% if block.type == 'feedback' %}
+        <h4 class="f-f-regular mx-0">Feedback</h4>
+        <h4 class="submit-btn f-f-semibold mx-0">Submit Here</h4>
+        
+      {% else %}
+        <h4 class="f-f-regular mx-0">{{ block.settings.heading }}</h4>
+        <h4 class="f-f-semibold mx-0">{{ block.settings.description | replace: '<p>','' | replace: '</p>','' }}</h4>
+      {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{%  render 'modal-feedback2' %}
+
+{% javascript %}  
+  
+  $('.submit-btn').click(() => {
+    $('.custom-modal-section').addClass('open');
+    $('body').addClass('no-scroll');
+  });
+  
+  $('.custom-modal-section .overlay, .custom-modal-section .custom-close').click(() => {
+    $('.custom-modal-section').removeClass('open');
+    $('body').removeClass('no-scroll');
+  });
+
+$('.custom-input-box').each(function(){
+    var $container = $(this);
+    var $input = $container.find('.custom-input');
+    var $options = $container.find('.select-tag-option p');
+    var $followUpContainer = $('.custom-input-box.follow-up');
+    var $followUpInput = $followUpContainer.find('.custom-input');
+    var $followUpOptions = $followUpContainer.find('.select-tag-option');
+
+    // Define the options based on the selected service
+    var optionsMapping = {
+        'Product': [
+            'Product quantity',
+            'Product features',
+            "The Product didn't meet your expectation"
+        ],
+        'Service': [
+            'Solution Provided',
+            'Procedure Efficiency',
+            'Service Policy'
+        ],
+        'Employee': [
+            'Service Attitude',
+            'Professionalism',
+            'Promise not Fulfilled',
+            'Response Time'
+        ],
+        'About repair service': [
+            'Repair period',
+            'Repair cost',
+            'Payment issue',
+            'Diagnose result',
+            'Multiple repairs',
+            'Invoice issue',
+            'Logistic issue'
+        ],
+        'Sales': [
+            "Purchase issue",
+            "Return or replacement issue",
+            "Logistic issue",
+            "Sales employee"
+        ],
+        'Others': [
+            "Feedback",
+            "Praise",
+            "Complaint",
+            "Others",
+            "I will write it down in the textbox below"
+        ]
+    };
+
+    // Handle click on product option
+    $options.click(function(event){
+        var selectedText = $(this).text();
+
+        // Set the value and placeholder in the services-follow input
+        $input.val(selectedText).attr('placeholder', selectedText);
+
+        // Clear the visible text on focus, but retain the value
+        $input.focus(function() {
+            $(this).val(''); // Clear the input text when focused
+        }).blur(function() {
+            // If no new text is entered, restore the selected value
+            if (!$(this).val()) {
+                $(this).val(selectedText);
+            }
+        });
+
+        // Update the follow-up options based on the selected service
+        if (optionsMapping[selectedText]) {
+            $followUpOptions.empty(); // Clear previous options
+            optionsMapping[selectedText].forEach(function(option) {
+                $followUpOptions.append('<p class="mx-0">' + option + '</p>');
+            });
+        } else {
+            $followUpOptions.empty(); // Clear if no mapping exists
+        }
+    });
+
+    // Handle click on follow-up options
+    $followUpOptions.on('click', 'p', function() {
+        var followUpSelectedText = $(this).text();
+
+        // Set the value and placeholder in the follow-up input
+        $followUpInput.val(followUpSelectedText).attr('placeholder', followUpSelectedText);
+
+        // Clear the visible text on focus, but retain the value
+        $followUpInput.focus(function() {
+            $(this).val(''); // Clear the input text when focused
+        }).blur(function() {
+            // If no new text is entered, restore the selected value
+            if (!$(this).val()) {
+                $(this).val(followUpSelectedText);
+            }
+        });
+    });
+
+    // Filter options based on input value for services-follow
+    $input.on('input', function() {
+        var searchText = $(this).val().toLowerCase();
+
+        // Show or hide options based on search text
+        $options.each(function() {
+            var optionText = $(this).text().toLowerCase();
+            if (optionText.includes(searchText)) {
+                $(this).show(); // Show matching option
+            } else {
+                $(this).hide(); // Hide non-matching option
+            }
+        });
+    });
+
+    // Filter options based on input value for follow-up
+    $followUpInput.on('input', function() {
+        var searchText = $(this).val().toLowerCase();
+
+        // Show or hide options based on search text
+        $followUpOptions.children('p').each(function() {
+            var optionText = $(this).text().toLowerCase();
+            if (optionText.includes(searchText)) {
+                $(this).show(); // Show matching option
+            } else {
+                $(this).hide(); // Hide non-matching option
+            }
+        });
+    });
+});
+  
+$(document).ready(function() {
+    // Check if the URL contains 'contact_posted=true#contact_form'
+    if (window.location.href.indexOf('contact_posted=true#contact_form') !== -1) {
+        $('.custom-modal-section').addClass('open');
+        $('.custom-modal-container').addClass('form-success');
+        $('body').addClass('no-scroll');
+    }
+});
+
+  
+{% endjavascript %}
+{% schema %}
+    {
+        "class": "contact-us-information-section",
+        "name": "Contact Us Information",
+        "templates": ["page"],
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "Contact Us"
+            }
+        ],
+        "blocks": [
+          {
+              "type": "information",
+              "name": "Information",
+              "settings": [
+                  {
+                      "type": "text",
+                      "id": "heading",
+                      "label": "Heading"
+                  },
+                  {
+                      "type": "richtext",
+                      "id": "description",
+                      "label": "Description"
+                  }
+              ]
+          },
+          {
+              "type": "feedback",
+              "name": "Feedback",
+          }
+        ],
+        "presets" :[{
+            "name" : "Contact Us Information"
+        }]
+    }
+{% endschema %} 

@@ -1,0 +1,22 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_error_404_section_BxeknV": {
+      "type": "page-error-404-section",
+      "settings": {
+        "error_image": "shopify://shop_images/43583_2x_545c5d86-5e8e-4b09-9d6b-40c558b4e808.png"
+      }
+    }
+  },
+  "order": [
+    "page_error_404_section_BxeknV"
+  ]
+}

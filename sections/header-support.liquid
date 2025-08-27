@@ -1,0 +1,120 @@
+{% style %}
+    .header-support-section{
+        padding:8px 0px;
+        background: {{ section.settings.bg_color }};
+        overflow:hidden;
+    }
+    .header-support-section img,
+    .header-support-slider img{
+        max-width:20px;
+        max-height:20px;
+        object-fit:contain;
+    }
+    .header-support-section .support-item{
+        width:fit-content;
+    }
+{% endstyle %}
+<div class="header-support">
+    <div class="d-lg-block d-md-block d-sm-none">
+        <div class="page-width">
+            <div class="row justify-content-between">
+                {% for block in section.blocks %}
+                  <div class="support-item d-flex align-items-center justify-content-center gap-2">
+                      <img loading="lazy" src="{{ block.settings.icon | img_url: 'master' }}" 
+                        alt="{{ block.settings.icon.alt | escape }}"
+                        class="icon" height="100" width="100">
+                      <span class="f-f-regular p" style="color:{{ section.settings.text_color }}">
+                        {{ block.settings.label }}
+                      </span>
+                  </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="d-lg-none d-md-none d-sm-block">
+        <div class="page-width">
+        <div class="header-support-slider">
+            <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                    <div class="swiper-slide">
+                        <div class="d-flex align-items-center justify-content-center gap-2">
+                            <img loading="lazy" src="{{ block.settings.icon | img_url: 'master' }}" 
+                              alt="{{ block.settings.icon.alt | escape }}"
+                              class="icon" height="100" width="100">
+                            <span class="f-f-regular p" style="color:{{ section.settings.text_color }}">
+                              {{ block.settings.label }}
+                            </span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+  new Swiper('.header-support-section .header-support-slider', {
+      slidesPerView: 1,
+      speed: 600,
+      lazy: true,
+      autoplay: {
+        delay: 5000,
+      },
+      pagination: {
+          el: '.banner-swiper-pagination',
+          clickable: true,
+      },
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+  });  
+</script>
+{% schema %}
+  {
+      "class": "header-support-section",
+      "name": "Header Support",
+      "limit": 1, 
+      "settings": [
+          {
+              "type": "color",
+              "id": "bg_color",
+              "label": "Background Color",
+              "default": "#FFFFFF"
+          },
+          {
+              "type": "color",
+              "id": "text_color",
+              "label": "Text Color",
+              "default": "#282828"
+          },
+          {
+              "type": "text",
+              "id": "animation_delay",
+              "label": "Animation Delay",
+              "default": "5000",
+              "info": "a"
+          }
+      ],
+      "blocks": [
+          {
+              "type": "support",
+              "name": "Support",
+              "settings": [
+                  {
+                       "type": "image_picker",
+                       "id": "icon",
+                       "label": "Icon"
+                   
+                  },
+                  {
+                        "type": "text",
+                        "id": "label",
+                        "label": "Label"
+                  }
+              ]
+          }
+      ],
+  }
+{% endschema %} 

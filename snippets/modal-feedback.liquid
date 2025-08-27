@@ -1,0 +1,74 @@
+<div class="form-modal" data-modal="feedback">
+    <div class="overlay"></div>
+    <div class="container">
+        <i class="fa-solid fa-xmark form-close"></i>
+        <div class="form-header">
+            <h5>Feedback</h5>
+            <p>
+                We will use your feedback in order to improve our services and elevate the overall customer experience with Insta360. Thank you for your time.
+                You can also click here to contact with our customer service
+            </p>
+        </div>
+        {% form 'contact' %}
+
+            <input type="hidden" name="contact[form]" value="QCY - Feedback">
+
+            <div class="form-body">
+                <div class="row">
+                    <div class="col-12">
+                        <label>1. Which of our products are you currently using? <span>*</span></label>
+                        <select name="contact[product]" required>
+                            <option value="" selected disabled>Select Product</option>
+                            <option value="Product A">Product A</option>
+                            <option value="Product B">Product B</option>
+                            <option value="Product C">Product C</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label>What is the topic of your suggestion/comments? <span>*</span></label>
+                        <div class="input">
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <select name="contact[topic_1]" required>
+                                    <option value="" selected disabled>Select Topic</option>
+                                    <option value="topic A">topic A</option>
+                                    <option value="topic B">topic B</option>
+                                    <option value="topic C">topic C</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <select name="contact[topic_2]" required>
+                                    <option value="" selected disabled>Select Topic</option>
+                                    <option value="Topic 1">Topic 1</option>
+                                    <option value="Topic 2">Topic 2</option>
+                                    <option value="Topic 3">Topic 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label>Please let us know if you have any suggestions or ideas regarding our products and services <span>*</span></label>
+                        <textarea name="contact[body]" rows="5" required></textarea>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <label>Your Name  <span>*</span></label>
+                        <input type="text" name="contact[name]" required>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <label>Phone Number  <span>*</span></label>
+                        <input type="text" name="contact[phone_number]" required>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <label>Email Address  <span>*</span></label>
+                        <input type="text" name="contact[email]" required>
+                    </div>
+                    <div class="col-8 mx-auto">
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        {% endform %}
+    </div>
+</div>

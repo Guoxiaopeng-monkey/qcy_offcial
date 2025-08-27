@@ -1,0 +1,729 @@
+/* FONT COLOR */
+.white-f,
+.white-f span,
+.white-f p, 
+.white-f a,
+.white-f b,
+.white-f h1,
+.white-f h2,
+.white-f h3,
+.white-f h4,
+.white-f h5,
+.white-f h6{
+    color: #fff ;
+}
+body, 
+.text-main-color{
+    color: #262626 !important;
+}
+a{
+  color:#FF6600;
+}
+.main-color{
+    color:#FF8832 !important;
+}
+.compare-price-color{
+  color:#999999 !important;
+}
+.discount-color{
+    color:#E23535 ;
+}
+.black-f{
+    color: #1A1A1A;
+}
+.gray-f{
+  color: #5D5D5D  !important;
+}
+.text-total-color{
+  color:#A8A8A8 !important;
+}
+.article-title{
+  color:#333333 ;
+}
+.text-gray-f{
+  color:#666666 !important;
+}
+.text-breadcrumb{
+  color:#ABABAB !important;
+}
+.white-gray-f, .white-gray-f p{
+    color:#ffffff82;
+}   
+.price-gray-f{
+    color: #999999 ;
+}
+
+/* FONT WEIGHT */
+.f-w-300{
+    font-weight: 300 !important;
+}
+.f-w-600{
+    font-weight: 600 !important;
+}
+.f-w-bold{
+    font-weight: bold !important;
+}
+.f-w-normal{
+    font-weight: normal !important;
+}
+.text-cap{
+    text-transform: capitalize;
+}
+.text-up{
+    text-transform: uppercase;
+}
+.text-underline{
+    text-decoration: underline;
+}
+.text-strike{
+    text-decoration: line-through;
+}
+.line-height-normal{
+  line-height:normal;
+}
+.l-h-normal{
+    line-height: normal;
+}
+/* OPACITY */
+.op-7{
+    opacity: 0.7;
+}
+
+.mx-0{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.my-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+p, span, a{
+    font-family: 'Mulish-Regular';
+}
+h1, .h1{
+    font-family: 'Mulish-Regular';
+}
+h2, .h2{
+    font-family: 'Mulish-Regular';
+}
+h3, .h3{
+    font-family: 'Mulish-Regular';
+}
+h4, .h4{
+    font-family: 'Mulish-Regular';
+}
+h5, .h5{
+    font-family: 'Mulish-Regular';
+}
+h6, .h6{
+    font-family: 'Mulish-Regular';
+}
+
+.f-f-monst-medium{
+    font-family: 'Montserrat-Medium';
+}
+.f-f-extralight{
+    font-family: 'Mulish-ExtraLight';
+}
+.f-f-light{
+    font-family: 'Mulish-Light';
+}
+.f-f-regular{
+    font-family: 'Mulish-Regular';
+}
+.f-f-medium{
+    font-family: 'Mulish-Medium';
+}
+.f-f-semibold{
+    font-family: 'Mulish-SemiBold';
+}
+.f-f-bold{
+    font-family: 'Mulish-Bold';
+}
+.f-f-extra-bold{
+    font-family: 'Mulish-ExtraBold';
+}
+.f-f-black{
+    font-family: 'Mulish-Black';
+}
+.f-f-poppin-semibold{
+    font-family: 'Poppins-SemiBold';
+}
+
+.text-small{
+  font-size:14px;
+}
+
+
+/* FOR MOBILE PHONE */
+@media only screen and (max-width: 768px) {
+    .text-xlg{
+        font-size:45px;
+    }
+    .text-lg{
+        font-size: 35px;
+    }
+    .section-heading{
+        font-size: 25px;
+    }
+    .text-md{
+        font-size: 24px;
+    }
+    .text-sm{
+        font-size: 22px;
+    }
+    h2, .h2{
+        font-size: 22px ;
+    }
+    h3, .h3{
+        font-size: 18px;
+    }
+    h4, .h4{
+        font-size: 16px;
+    }
+    h5, .h5{
+        font-size:15px;
+    }
+    h6, .h6{
+        font-size:14px;
+    }
+    p, .p{
+        font-size:14px;
+    }
+    .header__menu-item span.h5{
+      font-size:14px;
+    }
+    .discount-banner .discount-percentage{
+        font-size: 28px;
+    }
+    .discount-banner .discount-count{
+        font-size:15px;
+        line-height: 15px;
+        margin-top:3px;
+    }
+    .jdgm-rev-widg__summary-inner:before{
+        font-size: 20px;
+    }
+}
+/* TABLETS  */ 
+@media only screen and (min-width: 768px) {
+    .text-xlg{
+        font-size:55px;
+    }
+    .text-lg{
+        font-size: 45px;
+    }
+    .section-heading{
+        font-size: 28px;
+    }
+    .text-md{
+        font-size: 30px;
+    }
+    .text-sm{
+        font-size: 24px ;
+    }
+    h2, .h2{
+        font-size: 24px ;
+    }
+    h3, .h3{
+        font-size: 22px;
+    }
+    h4, .h4{
+        font-size: 15px;
+    }
+    h5, .h5{
+        font-size:14px;
+    }
+    h6, .h6{
+        font-size:14px;
+    }
+    p, .p{
+        font-size:14px;
+    }
+    .header__menu-item span.h5{
+      font-size:14px;
+    }
+    .discount-banner .discount-percentage{
+        font-size: 45px;
+    }
+    .discount-banner .discount-count{
+        font-size:18px;
+        line-height: 18px;
+        margin-top:5px;
+    }
+    .jdgm-rev-widg__summary-inner:before{
+        font-size: 25px;
+    }
+}
+ @media only screen and (min-width: 800px) {
+    .text-xlg{
+        font-size:50px;
+    }
+    .text-lg{
+        font-size: 30px;
+    }
+    .section-heading{
+        font-size: 26px;
+    }
+    .text-md{
+        font-size: 24px;
+    }
+    .text-sm{
+        font-size: 24px ;
+    }
+    h2, .h2{
+        font-size: 24px ;
+    }
+    h3, .h3{
+        font-size: 20px;
+    }
+    h4, .h4{
+        font-size: 18px;
+    }
+    h5, .h5{
+        font-size:17px;
+    }
+    h6, .h6{
+        font-size:15px;
+    }
+    p, .p{
+        font-size:15px;
+    }
+    .p-small, .p-small p{
+        font-size:14px;
+    }
+    .header__menu-item span.h5{
+      font-size:14px;
+    }
+    .discount-banner .discount-percentage{
+        font-size: 47px;
+    }
+    .discount-banner .discount-count{
+        font-size:20px;
+        line-height: 20px;
+        margin-top:10px;
+    }
+    .jdgm-rev-widg__summary-inner:before{
+        font-size: 32px;
+    }
+}
+@media (min-width: 1024px) and (orientation: portrait) {
+    .text-xlg{
+        font-size:53px;
+    }
+    .text-lg{
+        font-size: 33px;
+    }
+    .section-heading{
+        font-size: 27px;
+    }
+    .text-md{
+        font-size: 25px;
+    }
+    .text-sm{
+        font-size: 24px ;
+    }
+    h2, .h2{
+        font-size: 24px ;
+    }
+    h3, .h3{
+        font-size: 20px;
+    }
+    h4, .h4{
+        font-size: 18px;
+    }
+    h5, .h5{
+        font-size:17px;
+    }
+    h6, .h6{
+        font-size:15px;
+    }
+    p, .p{
+        font-size:15px;
+    }
+    .p-small, .p-small p{
+        font-size:14px;
+    }
+    .header__menu-item span.h5{
+      font-size:14px;
+    }
+    .discount-banner .discount-percentage{
+        font-size: 47px;
+    }
+    .discount-banner .discount-count{
+        font-size:20px;
+        line-height: 20px;
+        margin-top:10px;
+    }
+    .jdgm-rev-widg__summary-inner:before{
+        font-size: 32px;
+    }
+}
+
+ /* COMPUTERS */
+@media (min-width: 1024px) and (orientation: landscape) {
+    .text-xlg{
+        font-size:55px;
+    }
+    .text-lg{
+        font-size: 35px;
+    }
+    .section-heading{
+        font-size: 29px;
+    }
+    .text-md{
+        font-size: 28px;
+    }
+    .text-sm{
+        font-size: 24px;
+    }
+    h2, .h2{
+        font-size: 24px ;
+    }
+    h3, .h3{
+        font-size: 20px;
+    }
+    h4, .h4{
+        font-size: 18px;
+    }
+    h5, .h5{
+        font-size:17px;
+    }
+    h6, .h6{
+        font-size:15px;
+    }
+    p, .p{
+        font-size:15px;
+    }
+    .p-small, .p-small p{
+        font-size:14px;
+    }
+    .header__menu-item span.h5{
+      font-size:14px;
+    }
+    .discount-banner .discount-percentage{
+        font-size: 47px;
+    }
+    .discount-banner .discount-count{
+        font-size:20px;
+        line-height: 20px;
+        margin-top:10px;
+    }
+    .jdgm-rev-widg__summary-inner:before{
+        font-size: 32px;
+    }
+}
+@media only screen and (min-width: 1280px) {
+    .text-xlg{
+        font-size:57px;
+    }
+    .text-lg{
+        font-size: 37px;
+    }
+    .section-heading{
+        font-size: 30px;
+    }
+    .text-md{
+        font-size: 29px;
+    }
+    .text-sm{
+        font-size: 25px;
+    }
+    h2, .h2{
+        font-size: 25px ;
+    }
+    h3, .h3{
+        font-size: 20px;
+    }
+    h4, .h4{
+        font-size: 18px;
+    }
+    h5, .h5{
+        font-size:17px;
+    }
+    h6, .h6{
+        font-size:15px;
+    }
+    p, .p{
+        font-size:15px;
+    }
+    .p-small, .p-small p{
+        font-size:14px;
+    }
+    .header__menu-item span.h5{
+      font-size:14px;
+    }
+    .discount-banner .discount-percentage{
+        font-size: 47px;
+    }
+    .discount-banner .discount-count{
+        font-size:20px;
+        line-height: 20px;
+        margin-top:10px;
+    }
+    .jdgm-rev-widg__summary-inner:before{
+        font-size: 32px;
+    }
+}
+@media only screen and (min-width: 1366px) {
+    .text-xlg{
+        font-size:59px;
+    }
+    .text-lg{
+        font-size: 39px;
+    }
+    .section-heading{
+        font-size: 31px;
+    }
+    .text-md{
+        font-size: 30px;
+    }
+    .text-sm{
+        font-size: 25px;
+    }
+    h2, .h2{
+        font-size: 25px ;
+    }
+    h3, .h3{
+        font-size: 20px;
+    }
+    h4, .h4{
+        font-size: 18px;
+    }
+    h5, .h5{
+        font-size:17px;
+    }
+    h6, .h6{
+        font-size:15px;
+    }
+    p, .p{
+        font-size:15px;
+    }
+    .p-small, .p-small p{
+        font-size:14px;
+    }
+    .header__menu-item span.h5{
+      font-size:14px;
+    }
+    .discount-banner .discount-percentage{
+        font-size: 47px;
+    }
+    .discount-banner .discount-count{
+        font-size:20px;
+        line-height: 20px;
+        margin-top:10px;
+    }
+    .jdgm-rev-widg__summary-inner:before{
+        font-size: 32px;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    .text-xlg{
+        font-size:59px;
+    }
+    .text-lg{
+        font-size: 39px;
+    }
+    .section-heading{
+        font-size: 31px;
+    }
+    .text-md{
+        font-size: 30px;
+    }
+    .text-sm{
+        font-size: 26px;
+    }
+    h2, .h2{
+        font-size: 26px ;
+    }
+    h3, .h3{
+        font-size: 20px;
+    }
+    h4, .h4{
+        font-size: 18px;
+    }
+    h5, .h5{
+        font-size:17px;
+    }
+    h6, .h6{
+        font-size:15px;
+    }
+    p, .p{
+        font-size:15px;
+    }
+    .p-small, .p-small p{
+        font-size:14px;
+    }
+    .header__menu-item span.h5{
+      font-size:15px;
+    }
+    .discount-banner .discount-percentage{
+        font-size: 47px;
+    }
+    .discount-banner .discount-count{
+        font-size:20px;
+        line-height: 20px;
+        margin-top:10px;
+    }
+    .jdgm-rev-widg__summary-inner:before{
+        font-size: 32px;
+    }
+}
+@media only screen and (min-width: 1536px) {
+    .text-xlg{
+        font-size:65px;
+    }
+    .text-lg{
+        font-size: 45px;
+    }
+    .section-heading{
+        font-size: 35px;
+    }
+    .text-md{
+        font-size: 32px;
+    }
+    .text-sm{
+        font-size: 26px;
+    }
+    h2, .h2{
+        font-size: 26px ;
+    }
+    h3, .h3{
+        font-size: 20px;
+    }
+    h4, .h4{
+        font-size: 18px;
+    }
+    h5, .h5{
+        font-size:17px;
+    }
+    h6, .h6{
+        font-size:15px;
+    }
+    p, .p{
+        font-size:15px;
+    }
+    .p-small, .p-small p{
+        font-size:14px;
+    }
+    .header__menu-item span.h5{
+      font-size:15px;
+    }
+    .discount-banner .discount-percentage{
+        font-size: 50px;
+    }
+    .discount-banner .discount-count{
+        font-size:20px;
+        line-height: 20px;
+        margin-top:10px;
+    }
+    .jdgm-rev-widg__summary-inner:before{
+        font-size: 35px;
+    }
+}
+@media only screen and (min-width: 1600px) {
+    .text-xlg{
+        font-size:68px;
+    }
+    .text-lg{
+        font-size: 48px;
+    }
+    .section-heading{
+        font-size: 38px;
+    }
+    .text-md{
+        font-size: 33px;
+    }
+    .text-sm{
+        font-size: 27px;
+    }
+    h2, .h2{
+        font-size: 27px ;
+    }
+    h3, .h3{
+        font-size: 20px;
+    }
+    h4, .h4{
+        font-size: 18px;
+    }
+    h5, .h5{
+        font-size:17px;
+    }
+    h6, .h6{
+        font-size:15px;
+    }
+    p, .p{
+        font-size:15px;
+    }
+    .p-small, .p-small p{
+        font-size:14px;
+    }
+    .header__menu-item span.h5{
+      font-size:16px;
+    }
+    .discount-banner .discount-percentage{
+        font-size: 53px;
+    }
+    .discount-banner .discount-count{
+        font-size:21px;
+        line-height: 21px;
+        margin-top:10px;
+    }
+    .jdgm-rev-widg__summary-inner:before{
+        font-size: 38px;
+    }
+}
+@media only screen and (min-width: 1920px) {
+    .text-xlg{
+        font-size:70px;
+    }
+    .text-lg{
+        font-size: 50px;
+    }
+    .section-heading{
+        font-size: 40px;
+    }
+    .text-md{
+        font-size: 35px;
+    }
+    .text-sm{
+        font-size: 28px;
+    }
+    h2, .h2{
+        font-size: 28px ;
+    }
+    h3, .h3{
+        font-size: 22px;
+    }
+    h4, .h4{
+        font-size: 20px;
+    }
+    h5, .h5{
+        font-size:18px;
+    }
+    h6, .h6{
+        font-size:16px;
+    }
+    p, .p{
+        font-size:16px;
+    }
+    .p-small, .p-small p{
+        font-size:14px;
+    }
+    .header__menu-item span.h5{
+      font-size:17px;
+    }
+    .discount-banner .discount-percentage{
+        font-size: 55px;
+    }
+    .discount-banner .discount-count{
+        font-size:22px;
+        line-height: 22px;
+        margin-top:10px;
+    }
+    .jdgm-rev-widg__summary-inner:before{
+        font-size: 40px;
+    }
+}

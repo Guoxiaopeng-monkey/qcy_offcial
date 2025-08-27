@@ -1,0 +1,60 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_qxw3z9": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/anc-headphones.jpg",
+        "image_mobile": "shopify://shop_images/anc-headphones.jpg",
+        "heading": "ANC Headphones",
+        "text": "Explore QCY’s ANC headphones—engineered to tune out the noise and dial in on what matters. With powerful noise cancellation, impressive sound quality, and long-lasting battery life, they’re built for your everyday hustle.",
+        "desktop_heading_color": "#ffffff",
+        "desktop_text_color": "#ffffff"
+      }
+    },
+    "collection_navigation_EPaD7r": {
+      "type": "collection-navigation",
+      "name": "Collection Navigation",
+      "settings": {
+        "text_color": "#333333",
+        "padding": 10
+      }
+    },
+    "main_collection_D4J9rG": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "rich_text_gAVP8X": {
+      "type": "rich-text",
+      "name": "Rich Text",
+      "settings": {
+        "heading": "What Benefits Can QCY ANC Headphones Offer?",
+        "text": "<p><strong>Smart Noise Cancelling for Real-World Use</strong><br/>QCY’s adaptive ANC system with four distinct modes lets you block out distractions wherever you are—on the train, in a meeting, or just unwinding. It adjusts to your surroundings to give you a focused, uninterrupted listening experience.</p><p><strong>Hi-Res Audio That’s Easy on the Ears—and the Wallet</strong><br/>With LDAC support and precision-tuned drivers, QCY ANC headphones deliver vibrant audio with punchy bass and crisp details. Whether you're into deep beats or delicate vocals, enjoy a sound experience that feels premium without the high price tag.</p><p><strong>Built to Last, Charge Less Often</strong><br/>Up to 60 hours of playtime means you won’t need to keep reaching for the charger. QCY headphones are perfect for long flights, weekend trips, or back-to-back meetings—whatever your schedule demands.</p>"
+      }
+    },
+    "rich_text_iVdnBP": {
+      "type": "rich-text",
+      "name": "Rich Text",
+      "settings": {
+        "heading": "More Features on QCY ANC Headphones",
+        "text": "<p><strong>Custom Sound That Fits You</strong><br/>Use the QCY app to personalize your EQ settings and create your ideal sound profile. Whether you're into bass-heavy playlists or chill acoustics, your audio adapts to your vibe.</p><p><strong>Hear the World When You Need To</strong><br/>Activate Transparency Mode to stay aware of your surroundings—without taking off your headphones. Great for crossing streets, quick chats, or hearing airport announcements.</p><p><strong>Switch Devices Without Missing a Beat</strong><br/>QCY ANC headphones support dual-device connectivity, so you can jump between phone calls and streaming on your laptop without disconnecting. Smooth transitions, no hassle.</p>"
+      }
+    }
+  },
+  "order": [
+    "image_with_text_qxw3z9",
+    "collection_navigation_EPaD7r",
+    "main_collection_D4J9rG",
+    "rich_text_gAVP8X",
+    "rich_text_iVdnBP"
+  ]
+}

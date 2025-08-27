@@ -1,0 +1,53 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_HaUTA4": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/13_61482a37-ba22-4074-b5bc-6efc6c74f576.jpg",
+        "image_mobile": "shopify://shop_images/12_833493f8-2294-4555-8e59-eca2d5d6928b.jpg",
+        "heading": "Headphone Accessories",
+        "text": "<p>Experience enhanced audio and ultimate convenience with QCY's headphone accessories! Whether you're immersing in music, taking calls, or on the move, QCY delivers premium quality and seamless functionality to elevate your listening experience!</p>",
+        "desktop_heading_color": "#000000",
+        "desktop_text_color": "#000000"
+      }
+    },
+    "collection_navigation_AnCJQE": {
+      "type": "collection-navigation",
+      "name": "Collection Navigation",
+      "settings": {
+        "text_color": "#333333",
+        "padding": 10
+      }
+    },
+    "main_collection_D4J9rG": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "custom_liquid_DLpnRx": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image_with_text_HaUTA4",
+    "collection_navigation_AnCJQE",
+    "main_collection_D4J9rG",
+    "custom_liquid_DLpnRx"
+  ]
+}

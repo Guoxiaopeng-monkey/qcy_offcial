@@ -1,0 +1,75 @@
+<section class="support-video" data-anchor="support-video">
+    <div class="page-width section-content">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12 ms-auto">
+
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="title">
+                            {{ section.settings.title }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="row videos-row">
+                    {% for block in section.blocks %}
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="video">
+                                <img loading="lazy" class="play-btn" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/video_play.png?v=1730862423">
+                                <video poster="{{ block.settings.video.preview_image | img_url: 'master' }}">
+                                    <source src="{{ block.settings.video.sources[1].url }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <p class="video-title">
+                                {{ block.settings.title }}
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="video-watch">
+        <div class="overlay"></div>
+        <div class="wrapper">
+            <i class="fa-solid fa-xmark video-close"></i>
+            <div class="video-container">
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% schema %}
+{
+    "name": "Support Video",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        }    
+    ],
+    "blocks": [
+        {
+            "type": "video",
+            "name": "Video",
+            "settings": [
+                {
+                    "type": "video",
+                    "id": "video",
+                    "label": "Video"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

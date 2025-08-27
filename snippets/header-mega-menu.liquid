@@ -1,0 +1,123 @@
+{% comment %}
+  Renders a megamenu for the header.
+
+  Usage:
+  {% render 'header-mega-menu' %}
+{% endcomment %}
+
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+      <li>
+        {%- if link.links != blank -%}
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+              <summary
+                id="HeaderMenu-{{ link.handle }}"
+                class="header__menu-item list-menu__item link focus-inset"
+                {% if link.current %}
+                  aria-current="page"
+                {% endif %}
+                >
+                
+                <a href="{{ link.url }}" 
+                  >  
+                    <span class="f-f-medium h5 t-up"
+                      {%- if link.child_active %}
+                        class="header__active-menu-item f-f-bpb h4 t-up"
+                      {% endif %}
+                      >
+                       {{- link.title | escape -}}
+                    </span>
+                </a>
+              </summary>
+
+
+              <div
+                id="MegaMenu-Content-{{ forloop.index }}"
+                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup  {{ link.title | handleize }}"
+                tabindex="-1"
+                >
+                <div class="page-width">
+                  {% for block in section.blocks %}
+                    
+                    {% if block.type == 'mega_menu_1' %}
+                    
+                      {% if block.settings.mega_menu_title == link.title %}
+                        {% render 'mega_menu_display_1',
+                        mega_menu_title: block.settings.mega_menu_title,
+                        tab_label: link.title,
+                        collection: block.settings.collection,
+                        featured_image: block.settings.featured_image,
+                        featured_label: block.settings.featured_label ,
+                        featured_url: block.settings.featured_url   
+                        
+                        
+                        %}
+                      {% endif %}
+                    {% elsif block.type == 'mega_menu_2' %}
+                      {% if block.settings.mega_menu_title == link.title %}
+                        {% render 'mega_menu_display_2',
+                          menu_list: block.settings.column_link,
+                          heading_1: block.settings.heading_1,
+                          heading_2: block.settings.heading_2,
+                          heading_3: block.settings.heading_3,
+                          heading_4: block.settings.heading_4,
+                          description_1: block.settings.description_1,
+                          description_2: block.settings.description_2,
+                          description_3: block.settings.description_3,
+                          description_4: block.settings.description_4,
+                          url_1: block.settings.url_1,
+                          url_2: block.settings.url_2,
+                          url_3: block.settings.url_3,
+                          url_4: block.settings.url_4,
+                          featured_image: block.settings.featured_image,
+                          featured_label: block.settings.featured_label ,
+                          featured_description: block.settings.featured_description ,
+                          featured_url: block.settings.featured_url 
+                        %}
+                      {% endif %}
+                    {% elsif block.type == 'mega_menu_3' %}
+                      {% if block.settings.mega_menu_title == link.title %}
+                        {% render 'mega_menu_display_3' %}
+                      {% endif %}
+                    {% elsif block.type == 'menu_list'  %}
+                      {% if block.settings.mega_menu_title == link.title %}
+                        {% render 'menu-block', 
+                        link_menu: link %}
+                      {% endif %}
+                    {% elsif block.type == 'menu_list_column'  %}
+                      {% if block.settings.mega_menu_title == link.title %}
+                        {% render 'menu-block-column', 
+                        link_menu: block.settings.menu_list %}
+                      {% endif %}
+                    {% endif %}
+
+
+                  {% endfor %}
+                </div>
+              </div>
+
+
+            </details>
+          </header-menu>
+        {%- else -%}
+          <a
+            id="HeaderMenu-{{ link.handle }}"
+            href="{{ link.url }}"
+            class="header__menu-item t-up main_menu_item list-menu__item link link--text focus-inset 
+              {%- if link.current %}
+                header__active-menu-item
+              {% endif %}
+            "
+          >
+            <span class="f-f-medium h5 "
+            >
+              {{- link.title | escape -}}
+            </span>
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>

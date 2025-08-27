@@ -1,0 +1,145 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "buy_now_label": "Buy Now"
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "membership_discount_7rk9rF": {
+          "type": "membership_discount",
+          "disabled": true,
+          "settings": {
+            "percentage": "5",
+            "unit": "%",
+            "status": "OFF",
+            "description": "Join now for an extra 5% member discount!",
+            "link_label": "Become a member >",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "vendor",
+        "price",
+        "description",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "share",
+        "membership_discount_7rk9rF"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "enable_group_media": false,
+        "media_grouping_option": "Color",
+        "enable_support_center": true,
+        "support_heading_1": "",
+        "support_description_1": "",
+        "support_heading_2": "",
+        "support_description_2": "",
+        "support_heading_3": "",
+        "support_description_3": "",
+        "support_heading_4": "",
+        "support_description_4": ""
+      }
+    },
+    "homepage_best_seller_section_q3GeUJ": {
+      "type": "homepage-best-seller-section",
+      "settings": {
+        "heading": "Best Seller",
+        "heading_mobile": "You May Also Like",
+        "description": "<p>Whether it’s fitness or commuting, QCY can meet your needs.</p>",
+        "btn_title": "",
+        "collection": "best-seller"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "homepage_best_seller_section_q3GeUJ",
+    "related-products"
+  ]
+}

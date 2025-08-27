@@ -1,0 +1,58 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_FWbKtE": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/over-ear-headphones.jpg",
+        "image_mobile": "shopify://shop_images/over-ear-headphones_287a9816-d89b-4a35-85d1-e8e5ee64bf01.jpg",
+        "heading": "Over Ear Headphones",
+        "text": "Dive into immersive audio with QCY over-ear headphones—built for comfort, long listening, and focus. With up to 60 hours of battery life, powerful noise cancelling, and clear call performance, they’re your perfect companion wherever life takes you."
+      }
+    },
+    "main_collection_D4J9rG": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "rich_text_Wgce8J": {
+      "type": "rich-text",
+      "name": "Rich Text",
+      "settings": {
+        "heading": "What Makes QCY Over-Ear Headphones Worth It?",
+        "text": "<p><strong>Hi-Res Sound That Surpasses Expectations</strong><br/>Equipped with advanced dynamic drivers and LDAC support, QCY over-ear headphones deliver audio with rich detail and vibrant clarity. Whether you're into music, podcasts, or movies, you'll enjoy well-balanced bass and crisp highs—bringing your content to life, wherever you are.</p><p><strong>Smart Noise Cancelling for Real Life</strong><br/>QCY’s adaptive ANC technology features four customizable modes to handle everything from busy streets to open offices. It actively reduces background noise in real time, helping you stay focused on what matters—your playlist or your conversation.</p><p><strong>Built for Comfort, Made to Move</strong><br/>Designed with soft memory-foam earcups and a lightweight, adjustable headband, QCY headphones offer a snug fit for all-day wear. Whether you're working, commuting, or relaxing, enjoy long hours of listening without pressure or fatigue.</p><p><strong>Battery That Keeps Up With You</strong><br/>With up to 60 hours of battery life (depending on ANC usage), QCY over-ear headphones are made to last through your daily routine and beyond. Say goodbye to battery anxiety—these headphones are ready whenever you are.</p>"
+      }
+    },
+    "rich_text_GMbdTX": {
+      "type": "rich-text",
+      "name": "Rich Text",
+      "settings": {
+        "heading": "More Features on QCY Over-Ear Headphones",
+        "text": "<p><strong>Clear Calls, Anywhere</strong><br/>Thanks to AI-enhanced microphones and noise suppression, your voice stays clear even in noisy environments. From video calls to voice chats, QCY helps you communicate without interruption.</p><p><strong>Personalized Sound Experience</strong><br/>Using the QCY App, you can adjust EQ settings or fine-tune audio to match your unique preferences. Your sound, your style—tailored the way you like it.</p><p><strong>Compact and Travel-Friendly</strong><br/>Need to pack light? No problem. The foldable design makes QCY headphones easy to store and carry, making them a perfect companion for life on the go.</p>"
+      }
+    },
+    "collection_navigation_4AAGh6": {
+      "type": "collection-navigation",
+      "name": "Collection Navigation",
+      "settings": {
+        "text_color": "#333",
+        "padding": 10
+      }
+    }
+  },
+  "order": [
+    "image_with_text_FWbKtE",
+    "collection_navigation_4AAGh6",
+    "main_collection_D4J9rG",
+    "rich_text_Wgce8J",
+    "rich_text_GMbdTX"
+  ]
+}

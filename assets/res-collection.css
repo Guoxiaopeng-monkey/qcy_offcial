@@ -1,0 +1,2322 @@
+@media only screen and (min-width: 0px) {
+    #main-comparison .title {
+        font-size: 38px !important;
+    }
+    #main-comparison .spec-title {
+        font-size: 16px !important;
+    }
+    #main-comparison .spec-value {
+        font-size: 16px !important;
+    }
+    #main-comparison .model {
+        min-height: 310px;
+        border-radius: 15px;
+    }
+    #main-comparison .model .product {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .product .remove {
+        top: 10px;
+        right: 10px;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #main-comparison .model .product .image {
+        height: 135px;
+        margin-top: 5px;
+    }
+    #main-comparison .product-title {
+        font-size: 20px !important;
+    }
+    #main-comparison .btn {
+        padding: 6px 10px !important;
+        min-width: 100% !important;
+        font-size: 16px !important;
+    }
+    #main-comparison .model .empty {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .empty i {
+        font-size: 18px;
+    }
+    #main-comparison .model .add-model {
+        font-size: 20px !important;
+    }
+    #main-comparison .compare {
+        padding: 0 15px 30px;
+    }
+
+    #compare-nav .container {
+        --padding: 10px;
+        --bradius: 5px;
+
+        padding: 10px;
+    }
+    #compare-nav .compare-empty {
+        border: 2px dashed #bcbcbc;
+    }
+    #compare-nav  .compare-empty > p {
+        font-size: 14px !important;
+    }
+    #compare-nav .compare-empty i {
+        font-size: 14px !important;
+    }
+    #compare-nav .compare-product {
+        gap: 10px;
+    }
+    #compare-nav .compare-product .image {
+        display: none;
+    }
+    #compare-nav .compare-title {
+        font-size: 14px !important;
+    }
+    #compare-nav .comppare-price {
+        font-size: 14px;
+    }
+    #compare-nav .btn {
+        padding: 10px 20px !important;
+        min-width: 100% !important;
+        font-size: 14px !important;
+    }
+    
+    #main-collection .filters {
+        font-size: 18px !important;
+        padding-bottom: 20px;
+    }
+    
+    #main-collection .item-found {
+        margin-right: 40px;
+    }
+
+    #main-collection .toggle-filter {
+        font-size: 16px !important;
+        padding: 8px 18px;
+    }
+    #main-collection .mobile-filter .filters {
+        padding-bottom: 20px;
+    }
+    #main-collection .mobile-filter .accordion-button {
+        padding: 20px 0;
+    }
+    #main-collection .mobile-filter .accordion-button::after {
+        font-size: 14px;
+    }
+    #main-collection .mobile-filter .filter-label {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .accordion-body {
+        padding-bottom: 20px;
+    }
+    #main-collection .mobile-filter input[type="checkbox"] {
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    #main-collection .mobile-filter label {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .price-note {
+        font-size: 16px !important;
+        margin-bottom: 10px;
+    }
+    #main-collection .mobile-filter .filter-group-display__price-range {
+        font-size: 14px !important;
+    }
+    #main-collection .mobile-filter input[type="number"] {
+        font-size: 16px !important;
+        padding: 4px 7px;
+        width: 110px;
+    }
+    #main-collection .mobile-filter .radio-sort {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .radio-sort input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
+    }
+    #main-collection .mobile-filter .btn {
+        padding: 8px 15px !important;
+        min-width: 120px !important;
+        font-size: 16px !important;
+    }
+
+    #main-collection .products-row {
+        --bs-gutter-x: 10px;
+        --bs-gutter-y: 20px;
+    }
+    #main-collection .product-image {
+        padding: 10px;
+    }
+    #main-collection .product-details {
+        margin-top: 15px;
+    }
+    #main-collection .product-title {
+        font-size: 16px !important;
+    }
+    #main-collection .product-description {
+        font-size: 14px !important;
+    }
+    #main-collection .price .regular {
+        font-size: 14px !important;
+    }
+    #main-collection .price .sale {
+        font-size: 14px !important;
+    }
+    
+    #main-collection .compare {
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    #main-collection .nothing-found {
+        font-size: 22px !important;
+    }
+    
+    #main-collection .paginate {
+        margin-top: 50px;
+        gap: 10px;
+    }
+    #main-collection .paginate .page {
+        font-size: 12px !important;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    #main-comparison .title {
+        font-size: 38px !important;
+    }
+    #main-comparison .spec-title {
+        font-size: 16px !important;
+    }
+    #main-comparison .spec-value {
+        font-size: 16px !important;
+    }
+    #main-comparison .model {
+        min-height: 310px;
+        border-radius: 15px;
+    }
+    #main-comparison .model .product {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .product .remove {
+        top: 10px;
+        right: 10px;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #main-comparison .model .product .image {
+        height: 135px;
+        margin-top: 5px;
+    }
+    #main-comparison .product-title {
+        font-size: 20px !important;
+    }
+    #main-comparison .btn {
+        padding: 6px 10px !important;
+        min-width: 100% !important;
+        font-size: 16px !important;
+    }
+    #main-comparison .model .empty {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .empty i {
+        font-size: 18px;
+    }
+    #main-comparison .model .add-model {
+        font-size: 20px !important;
+    }
+    #main-comparison .compare {
+        padding: 0 15px 30px;
+    }
+
+    #compare-nav .container {
+        --padding: 10px;
+        --bradius: 5px;
+
+        padding: 10px;
+    }
+    #compare-nav .compare-empty {
+        border: 2px dashed #bcbcbc;
+    }
+    #compare-nav  .compare-empty > p {
+        font-size: 14px !important;
+    }
+    #compare-nav .compare-empty i {
+        font-size: 14px !important;
+    }
+    #compare-nav .compare-product {
+        gap: 10px;
+    }
+    #compare-nav .compare-product .image {
+        display: none;
+    }
+    #compare-nav .compare-title {
+        font-size: 14px !important;
+    }
+    #compare-nav .comppare-price {
+        font-size: 14px;
+    }
+    #compare-nav .btn {
+        padding: 10px 20px !important;
+        min-width: 100% !important;
+        font-size: 14px !important;
+    }
+    #main-collection .filters {
+        font-size: 18px !important;
+        padding-bottom: 20px;
+    }
+    
+    #main-collection .item-found {
+        margin-right: 40px;
+    }
+
+    #main-collection .toggle-filter {
+        font-size: 16px !important;
+        padding: 8px 18px;
+    }
+    #main-collection .mobile-filter .filters {
+        padding-bottom: 20px;
+    }
+    #main-collection .mobile-filter .accordion-button {
+        padding: 20px 0;
+    }
+    #main-collection .mobile-filter .accordion-button::after {
+        font-size: 14px;
+    }
+    #main-collection .mobile-filter .filter-label {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .accordion-body {
+        padding-bottom: 20px;
+    }
+    #main-collection .mobile-filter input[type="checkbox"] {
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    #main-collection .mobile-filter label {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .price-note {
+        font-size: 16px !important;
+        margin-bottom: 10px;
+    }
+    #main-collection .mobile-filter .filter-group-display__price-range {
+        font-size: 14px !important;
+    }
+    #main-collection .mobile-filter input[type="number"] {
+        font-size: 16px !important;
+        padding: 4px 7px;
+        width: 110px;
+    }
+    #main-collection .mobile-filter .radio-sort {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .radio-sort input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
+    }
+    #main-collection .mobile-filter .btn {
+        padding: 8px 15px !important;
+        min-width: 120px !important;
+        font-size: 16px !important;
+    }
+
+    #main-collection .products-row {
+        --bs-gutter-x: 10px;
+        --bs-gutter-y: 20px;
+    }
+    #main-collection .product-image {
+        padding: 10px;
+    }
+    #main-collection .product-details {
+        margin-top: 15px;
+    }
+    #main-collection .product-title {
+        font-size: 16px !important;
+    }
+    #main-collection .product-description {
+        font-size: 14px !important;
+    }
+    #main-collection .price .regular {
+        font-size: 14px !important;
+    }
+    #main-collection .price .sale {
+        font-size: 14px !important;
+    }
+    
+    #main-collection .compare {
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    #main-collection .nothing-found {
+        font-size: 22px !important;
+    }
+    
+    #main-collection .paginate {
+        margin-top: 50px;
+        gap: 10px;
+    }
+    #main-collection .paginate .page {
+        font-size: 12px !important;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 390px) {
+    #main-comparison .title {
+        font-size: 38px !important;
+    }
+    #main-comparison .spec-title {
+        font-size: 16px !important;
+    }
+    #main-comparison .spec-value {
+        font-size: 16px !important;
+    }
+    #main-comparison .model {
+        min-height: 310px;
+        border-radius: 15px;
+    }
+    #main-comparison .model .product {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .product .remove {
+        top: 10px;
+        right: 10px;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #main-comparison .model .product .image {
+        height: 135px;
+        margin-top: 5px;
+    }
+    #main-comparison .product-title {
+        font-size: 20px !important;
+    }
+    #main-comparison .btn {
+        padding: 6px 10px !important;
+        min-width: 100% !important;
+        font-size: 16px !important;
+    }
+    #main-comparison .model .empty {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .empty i {
+        font-size: 18px;
+    }
+    #main-comparison .model .add-model {
+        font-size: 20px !important;
+    }
+    #main-comparison .compare {
+        padding: 0 15px 30px;
+    }
+
+    #compare-nav .container {
+        --padding: 10px;
+        --bradius: 5px;
+
+        padding: 10px;
+    }
+    #compare-nav .compare-empty {
+        border: 2px dashed #bcbcbc;
+    }
+    #compare-nav  .compare-empty > p {
+        font-size: 14px !important;
+    }
+    #compare-nav .compare-empty i {
+        font-size: 14px !important;
+    }
+    #compare-nav .compare-product {
+        gap: 10px;
+    }
+    #compare-nav .compare-product .image {
+        display: none;
+    }
+    #compare-nav .compare-title {
+        font-size: 14px !important;
+    }
+    #compare-nav .comppare-price {
+        font-size: 14px;
+    }
+    #compare-nav .btn {
+        padding: 10px 20px !important;
+        min-width: 100% !important;
+        font-size: 14px !important;
+    }
+    #main-collection .filters {
+        font-size: 18px !important;
+        padding-bottom: 20px;
+    }
+    
+    #main-collection .item-found {
+        margin-right: 40px;
+    }
+
+    #main-collection .toggle-filter {
+        font-size: 16px !important;
+        padding: 8px 18px;
+    }
+    #main-collection .mobile-filter .filters {
+        padding-bottom: 20px;
+    }
+    #main-collection .mobile-filter .accordion-button {
+        padding: 20px 0;
+    }
+    #main-collection .mobile-filter .accordion-button::after {
+        font-size: 14px;
+    }
+    #main-collection .mobile-filter .filter-label {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .accordion-body {
+        padding-bottom: 20px;
+    }
+    #main-collection .mobile-filter input[type="checkbox"] {
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    #main-collection .mobile-filter label {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .price-note {
+        font-size: 16px !important;
+        margin-bottom: 10px;
+    }
+    #main-collection .mobile-filter .filter-group-display__price-range {
+        font-size: 14px !important;
+    }
+    #main-collection .mobile-filter input[type="number"] {
+        font-size: 16px !important;
+        padding: 4px 7px;
+        width: 110px;
+    }
+    #main-collection .mobile-filter .radio-sort {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .radio-sort input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
+    }
+    #main-collection .mobile-filter .btn {
+        padding: 8px 15px !important;
+        min-width: 120px !important;
+        font-size: 16px !important;
+    }
+
+    #main-collection .products-row {
+        --bs-gutter-x: 10px;
+        --bs-gutter-y: 20px;
+    }
+    #main-collection .product-image {
+        padding: 10px;
+    }
+    #main-collection .product-details {
+        margin-top: 15px;
+    }
+    #main-collection .product-title {
+        font-size: 16px !important;
+    }
+    #main-collection .product-description {
+        font-size: 14px !important;
+    }
+    #main-collection .price .regular {
+        font-size: 14px !important;
+    }
+    #main-collection .price .sale {
+        font-size: 14px !important;
+    }
+    
+    #main-collection .compare {
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    #main-collection .nothing-found {
+        font-size: 22px !important;
+    }
+    
+    #main-collection .paginate {
+        margin-top: 50px;
+        gap: 10px;
+    }
+    #main-collection .paginate .page {
+        font-size: 12px !important;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    #main-comparison .title {
+        font-size: 42px !important;
+    }
+    #main-comparison .spec-title {
+        font-size: 18px !important;
+    }
+    #main-comparison .spec-value {
+        font-size: 16px !important;
+    }
+    #main-comparison .model {
+        min-height: 335px;
+        border-radius: 15px;
+    }
+    #main-comparison .model .product {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .product .remove {
+        top: 10px;
+        right: 10px;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #main-comparison .model .product .image {
+        height: 155px;
+        margin-top: 5px;
+    }
+    #main-comparison .product-title {
+        font-size: 20px !important;
+    }
+    #main-comparison .btn {
+        padding: 6px 10px !important;
+        min-width: 100% !important;
+        font-size: 16px !important;
+    }
+    #main-comparison .model .empty {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .empty i {
+        font-size: 18px;
+    }
+    #main-comparison .model .add-model {
+        font-size: 20px !important;
+    }
+    #main-comparison .compare {
+        padding: 0 15px 30px;
+    }
+
+    #compare-nav .container {
+        --padding: 10px;
+        --bradius: 5px;
+
+        padding: 10px;
+    }
+    #compare-nav .compare-empty {
+        border: 2px dashed #bcbcbc;
+    }
+    #compare-nav  .compare-empty > p {
+        font-size: 14px !important;
+    }
+    #compare-nav .compare-empty i {
+        font-size: 14px !important;
+    }
+    #compare-nav .compare-product {
+        gap: 10px;
+    }
+    #compare-nav .compare-product .image {
+        display: none;
+    }
+    #compare-nav .compare-title {
+        font-size: 14px !important;
+    }
+    #compare-nav .comppare-price {
+        font-size: 14px;
+    }
+    #compare-nav .btn {
+        padding: 10px 20px !important;
+        min-width: 100% !important;
+        font-size: 14px !important;
+    }
+    
+    #main-collection .filters {
+        font-size: 18px !important;
+        padding-bottom: 20px;
+    }
+    
+    #main-collection .item-found {
+        margin-right: 40px;
+    }
+
+    #main-collection .toggle-filter {
+        font-size: 16px !important;
+        padding: 8px 18px;
+    }
+    #main-collection .mobile-filter .filters {
+        padding-bottom: 20px;
+    }
+    #main-collection .mobile-filter .accordion-button {
+        padding: 20px 0;
+    }
+    #main-collection .mobile-filter .accordion-button::after {
+        font-size: 14px;
+    }
+    #main-collection .mobile-filter .filter-label {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .accordion-body {
+        padding-bottom: 20px;
+    }
+    #main-collection .mobile-filter input[type="checkbox"] {
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    #main-collection .mobile-filter label {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .price-note {
+        font-size: 16px !important;
+        margin-bottom: 10px;
+    }
+    #main-collection .mobile-filter .filter-group-display__price-range {
+        font-size: 14px !important;
+    }
+    #main-collection .mobile-filter input[type="number"] {
+        font-size: 16px !important;
+        padding: 4px 7px;
+        width: 110px;
+    }
+    #main-collection .mobile-filter .radio-sort {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .radio-sort input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
+    }
+    #main-collection .mobile-filter .btn {
+        padding: 8px 15px !important;
+        min-width: 120px !important;
+        font-size: 16px !important;
+    }
+
+    #main-collection .products-row {
+        --bs-gutter-x: 10px;
+        --bs-gutter-y: 20px;
+    }
+    #main-collection .product-image {
+        padding: 10px;
+    }
+    #main-collection .product-details {
+        margin-top: 15px;
+    }
+    #main-collection .product-title {
+        font-size: 16px !important;
+    }
+    #main-collection .product-description {
+        font-size: 14px !important;
+    }
+    #main-collection .price .regular {
+        font-size: 14px !important;
+    }
+    #main-collection .price .sale {
+        font-size: 14px !important;
+    }
+    
+    #main-collection .compare {
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    #main-collection .nothing-found {
+        font-size: 22px !important;
+    }
+    
+    #main-collection .paginate {
+        margin-top: 50px;
+        gap: 10px;
+    }
+    #main-collection .paginate .page {
+        font-size: 12px !important;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 428px) {
+    #main-comparison .title {
+        font-size: 42px !important;
+    }
+    #main-comparison .spec-title {
+        font-size: 18px !important;
+    }
+    #main-comparison .spec-value {
+        font-size: 16px !important;
+    }
+    #main-comparison .model {
+        min-height: 335px;
+        border-radius: 15px;
+    }
+    #main-comparison .model .product {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .product .remove {
+        top: 10px;
+        right: 10px;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #main-comparison .model .product .image {
+        height: 155px;
+        margin-top: 5px;
+    }
+    #main-comparison .product-title {
+        font-size: 20px !important;
+    }
+    #main-comparison .btn {
+        padding: 6px 10px !important;
+        min-width: 100% !important;
+        font-size: 16px !important;
+    }
+    #main-comparison .model .empty {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .empty i {
+        font-size: 18px;
+    }
+    #main-comparison .model .add-model {
+        font-size: 20px !important;
+    }
+    #main-comparison .compare {
+        padding: 0 15px 30px;
+    }
+
+    #compare-nav .container {
+        --padding: 10px;
+        --bradius: 5px;
+
+        padding: 10px;
+    }
+    #compare-nav .compare-empty {
+        border: 2px dashed #bcbcbc;
+    }
+    #compare-nav  .compare-empty > p {
+        font-size: 14px !important;
+    }
+    #compare-nav .compare-empty i {
+        font-size: 14px !important;
+    }
+    #compare-nav .compare-product {
+        gap: 10px;
+    }
+    #compare-nav .compare-product .image {
+        display: none;
+    }
+    #compare-nav .compare-title {
+        font-size: 14px !important;
+    }
+    #compare-nav .comppare-price {
+        font-size: 14px;
+    }
+    #compare-nav .btn {
+        padding: 10px 20px !important;
+        min-width: 100% !important;
+        font-size: 14px !important;
+    }
+    #main-collection .filters {
+        font-size: 18px !important;
+        padding-bottom: 20px;
+    }
+    
+    #main-collection .item-found {
+        margin-right: 40px;
+    }
+
+    #main-collection .toggle-filter {
+        font-size: 16px !important;
+        padding: 8px 18px;
+    }
+    #main-collection .mobile-filter .filters {
+        padding-bottom: 20px;
+    }
+    #main-collection .mobile-filter .accordion-button {
+        padding: 20px 0;
+    }
+    #main-collection .mobile-filter .accordion-button::after {
+        font-size: 14px;
+    }
+    #main-collection .mobile-filter .filter-label {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .accordion-body {
+        padding-bottom: 20px;
+    }
+    #main-collection .mobile-filter input[type="checkbox"] {
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    #main-collection .mobile-filter label {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .price-note {
+        font-size: 16px !important;
+        margin-bottom: 10px;
+    }
+    #main-collection .mobile-filter .filter-group-display__price-range {
+        font-size: 14px !important;
+    }
+    #main-collection .mobile-filter input[type="number"] {
+        font-size: 16px !important;
+        padding: 4px 7px;
+        width: 110px;
+    }
+    #main-collection .mobile-filter .radio-sort {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .radio-sort input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
+    }
+    #main-collection .mobile-filter .btn {
+        padding: 8px 15px !important;
+        min-width: 120px !important;
+        font-size: 16px !important;
+    }
+
+    #main-collection .products-row {
+        --bs-gutter-x: 10px;
+        --bs-gutter-y: 20px;
+    }
+    #main-collection .product-image {
+        padding: 10px;
+    }
+    #main-collection .product-details {
+        margin-top: 15px;
+    }
+    #main-collection .product-title {
+        font-size: 16px !important;
+    }
+    #main-collection .product-description {
+        font-size: 14px !important;
+    }
+    #main-collection .price .regular {
+        font-size: 14px !important;
+    }
+    #main-collection .price .sale {
+        font-size: 14px !important;
+    }
+    
+    #main-collection .compare {
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    #main-collection .nothing-found {
+        font-size: 22px !important;
+    }
+    
+    #main-collection .paginate {
+        margin-top: 50px;
+        gap: 10px;
+    }
+    #main-collection .paginate .page {
+        font-size: 12px !important;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    #main-comparison .title {
+        font-size: 48px !important;
+    }
+    #main-comparison .spec-title {
+        font-size: 18px !important;
+    }
+    #main-comparison .spec-value {
+        font-size: 16px !important;
+    }
+    #main-comparison .model {
+        min-height: 340px;
+        border-radius: 15px;
+    }
+    #main-comparison .model .product {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .product .remove {
+        top: 10px;
+        right: 10px;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    #main-comparison .model .product .image {
+        height: 180px;
+        margin-top: 5px;
+    }
+    #main-comparison .product-title {
+        font-size: 20px !important;
+    }
+    #main-comparison .btn {
+        padding: 6px 10px !important;
+        min-width: 100% !important;
+        font-size: 16px !important;
+    }
+    #main-comparison .model .empty {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .empty i {
+        font-size: 18px;
+    }
+    #main-comparison .model .add-model {
+        font-size: 20px !important;
+    }
+    #main-comparison .compare {
+        padding: 0 15px 30px;
+    }
+
+    #compare-nav .container {
+        --padding: 10px;
+        --bradius: 5px;
+
+        padding: 10px;
+    }
+    #compare-nav .compare-empty {
+        border: 2px dashed #bcbcbc;
+    }
+    #compare-nav  .compare-empty > p {
+        font-size: 14px !important;
+    }
+    #compare-nav .compare-empty i {
+        font-size: 14px !important;
+    }
+    #compare-nav .compare-product {
+        gap: 10px;
+    }
+    #compare-nav .compare-product .image {
+        display: none;
+    }
+    #compare-nav .compare-title {
+        font-size: 14px !important;
+    }
+    #compare-nav .comppare-price {
+        font-size: 14px;
+    }
+    #compare-nav .btn {
+        padding: 10px 20px !important;
+        min-width: 100% !important;
+        font-size: 14px !important;
+    }
+    
+    #main-collection .filters {
+        font-size: 18px !important;
+        padding-bottom: 20px;
+    }
+    
+    #main-collection .item-found {
+        margin-right: 40px;
+    }
+
+    #main-collection .toggle-filter {
+        font-size: 16px !important;
+        padding: 8px 18px;
+    }
+    #main-collection .mobile-filter .filters {
+        padding-bottom: 20px;
+    }
+    #main-collection .mobile-filter .accordion-button {
+        padding: 20px 0;
+    }
+    #main-collection .mobile-filter .accordion-button::after {
+        font-size: 14px;
+    }
+    #main-collection .mobile-filter .filter-label {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .accordion-body {
+        padding-bottom: 20px;
+    }
+    #main-collection .mobile-filter input[type="checkbox"] {
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    #main-collection .mobile-filter label {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .price-note {
+        font-size: 16px !important;
+        margin-bottom: 10px;
+    }
+    #main-collection .mobile-filter .filter-group-display__price-range {
+        font-size: 14px !important;
+    }
+    #main-collection .mobile-filter input[type="number"] {
+        font-size: 16px !important;
+        padding: 4px 7px;
+        width: 110px;
+    }
+    #main-collection .mobile-filter .radio-sort {
+        font-size: 16px !important;
+    }
+    #main-collection .mobile-filter .radio-sort input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
+    }
+    #main-collection .mobile-filter .btn {
+        padding: 8px 15px !important;
+        min-width: 120px !important;
+        font-size: 16px !important;
+    }
+
+    #main-collection .products-row {
+        --bs-gutter-x: 15px;
+        --bs-gutter-y: 15px;
+    }
+    #main-collection .product-image {
+        padding: 10px;
+    }
+    #main-collection .product-details {
+        margin-top: 15px;
+    }
+    #main-collection .product-title {
+        font-size: 16px !important;
+    }
+    #main-collection .product-description {
+        font-size: 14px !important;
+    }
+    #main-collection .price .regular {
+        font-size: 14px !important;
+    }
+    #main-collection .price .sale {
+        font-size: 14px !important;
+    }
+    
+    #main-collection .compare {
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    #main-collection .nothing-found {
+        font-size: 24px !important;
+    }
+    
+    #main-collection .paginate {
+        margin-top: 50px;
+        gap: 10px;
+    }
+    #main-collection .paginate .page {
+        font-size: 12px !important;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* -- */
+
+@media only screen and (min-width: 1280px) {
+    #main-comparison .title {
+        font-size: 56px !important;
+    }
+    #main-comparison .spec-title {
+        font-size: 20px !important;
+    }
+    #main-comparison .spec-value {
+        font-size: 18px !important;
+    }
+    #main-comparison .model {
+        min-height: 415px;
+        border-radius: 20px;
+    }
+    #main-comparison .model .product {
+        gap: 20px;
+        padding: 20px 30px;
+    }
+    #main-comparison .model .product .remove {
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    #main-comparison .model .product .image {
+        height: 220px;
+        margin-top: 20px;
+    }
+    #main-comparison .product-title {
+        font-size: 20px !important;
+    }
+    #main-comparison .btn {
+        padding: 4px 10px!important;
+        min-width: 160px !important;
+        font-size: 18px !important;
+    }
+    #main-comparison .model .empty {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .empty i {
+        font-size: 20px;
+    }
+    #main-comparison .model .add-model {
+        font-size: 22px !important;
+    }
+    #main-comparison .compare {
+        padding: 0 15px 30px;
+    }
+
+    #compare-nav .container {
+        --padding: 10px;
+        --bradius: 10px;
+
+        padding: 10px;
+    }
+    #compare-nav .compare-empty {
+        border: 2px dashed #bcbcbc;
+    }
+    #compare-nav  .compare-empty > p {
+        font-size: 16px !important;
+    }
+    #compare-nav .compare-empty i {
+        font-size: 16px !important;
+    }
+    #compare-nav .compare-product {
+        gap: 10px;
+    }
+    #compare-nav .compare-product .image {
+        display: block;
+        width: 60px;
+        height: 60px;
+    }
+    #compare-nav .compare-title {
+        font-size: 14px !important;
+    }
+    #compare-nav .comppare-price {
+        font-size: 14px;
+    }
+    #compare-nav .btn {
+        padding: 10px 20px !important;
+        min-width: 120px !important;
+        font-size: 14px !important;
+    }
+    
+    #main-collection .filters {
+        font-size: 18px !important;
+        padding-bottom: 20px;
+    }
+    
+    #main-collection .filter-container {
+        padding: 20px 0;
+    }
+    #main-collection .filter-container input[type="checkbox"] {
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    #main-collection .filter-container label {
+        font-size: 14px !important;
+    }
+    #main-collection .filter-container .price-note {
+        font-size: 14px !important;
+        margin-bottom: 10px;
+    }
+    #main-collection .filter-container .filter-group-display__price-range {
+        font-size: 14px !important;
+
+    }
+    #main-collection .filter-container input[type=number] {
+        padding: 2px 8px;
+        font-size: 14px;
+        width: 90px;
+    }
+    
+    #main-collection .item-found {
+        margin-right: 40px;
+    }
+    
+    #main-collection .sort-by {
+        padding: 6px 15px;
+        font-size: 14px !important;
+    }
+
+    #main-collection .products-row {
+        --bs-gutter-x: 15px;
+        --bs-gutter-y: 15px;
+    }
+    #main-collection .product-image {
+        padding: 10px;
+    }
+    #main-collection .product-details {
+        margin-top: 15px;
+    }
+    #main-collection .product-title {
+        font-size: 16px !important;
+    }
+    #main-collection .product-description {
+        font-size: 14px !important;
+    }
+    #main-collection .price .regular {
+        font-size: 14px !important;
+    }
+    #main-collection .price .sale {
+        font-size: 14px !important;
+    }
+    
+    #main-collection .compare {
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    #main-collection .nothing-found {
+        font-size: 26px !important;
+    }
+    
+    #main-collection .paginate {
+        margin-top: 80px;
+        gap: 10px;
+    }
+    #main-collection .paginate .page {
+        font-size: 14px !important;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    #main-comparison .title {
+        font-size: 56px !important;
+    }
+    #main-comparison .spec-title {
+        font-size: 20px !important;
+    }
+    #main-comparison .spec-value {
+        font-size: 18px !important;
+    }
+    #main-comparison .model {
+        min-height: 415px;
+        border-radius: 20px;
+    }
+    #main-comparison .model .product {
+        gap: 20px;
+        padding: 20px 30px;
+    }
+    #main-comparison .model .product .remove {
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    #main-comparison .model .product .image {
+        height: 220px;
+        margin-top: 20px;
+    }
+    #main-comparison .product-title {
+        font-size: 20px !important;
+    }
+    #main-comparison .btn {
+        padding: 4px 10px!important;
+        min-width: 160px !important;
+        font-size: 18px !important;
+    }
+    #main-comparison .model .empty {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .empty i {
+        font-size: 20px;
+    }
+    #main-comparison .model .add-model {
+        font-size: 22px !important;
+    }
+    #main-comparison .compare {
+        padding: 0 15px 30px;
+    }
+
+    #compare-nav .container {
+        --padding: 10px;
+        --bradius: 10px;
+
+        padding: 10px;
+    }
+    #compare-nav .compare-empty {
+        border: 2px dashed #bcbcbc;
+    }
+    #compare-nav  .compare-empty > p {
+        font-size: 16px !important;
+    }
+    #compare-nav .compare-empty i {
+        font-size: 16px !important;
+    }
+    #compare-nav .compare-product {
+        gap: 10px;
+    }
+    #compare-nav .compare-product .image {
+        display: block;
+        width: 60px;
+        height: 60px;
+    }
+    #compare-nav .compare-title {
+        font-size: 14px !important;
+    }
+    #compare-nav .comppare-price {
+        font-size: 14px;
+    }
+    #compare-nav .btn {
+        padding: 10px 20px !important;
+        min-width: 120px !important;
+        font-size: 14px !important;
+    }
+    
+    #main-collection .filters {
+        font-size: 18px !important;
+        padding-bottom: 20px;
+    }
+    
+    #main-collection .filter-container {
+        padding: 20px 0;
+    }
+    #main-collection .filter-container input[type="checkbox"] {
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    #main-collection .filter-container label {
+        font-size: 14px !important;
+    }
+    #main-collection .filter-container .price-note {
+        font-size: 14px !important;
+        margin-bottom: 10px;
+    }
+    #main-collection .filter-container .filter-group-display__price-range {
+        font-size: 14px !important;
+
+    }
+    #main-collection .filter-container input[type=number] {
+        padding: 2px 8px;
+        font-size: 14px;
+        width: 90px;
+    }
+    
+    #main-collection .item-found {
+        margin-right: 40px;
+    }
+    
+    #main-collection .sort-by {
+        padding: 6px 15px;
+        font-size: 14px !important;
+    }
+
+    #main-collection .products-row {
+        --bs-gutter-x: 15px;
+        --bs-gutter-y: 15px;
+    }
+    #main-collection .product-image {
+        padding: 10px;
+    }
+    #main-collection .product-details {
+        margin-top: 15px;
+    }
+    #main-collection .product-title {
+        font-size: 16px !important;
+    }
+    #main-collection .product-description {
+        font-size: 14px !important;
+    }
+    #main-collection .price .regular {
+        font-size: 14px !important;
+    }
+    #main-collection .price .sale {
+        font-size: 14px !important;
+    }
+    
+    #main-collection .compare {
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    #main-collection .nothing-found {
+        font-size: 26px !important;
+    }
+    
+    #main-collection .paginate {
+        margin-top: 80px;
+        gap: 10px;
+    }
+    #main-collection .paginate .page {
+        font-size: 14px !important;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    #main-comparison .title {
+        font-size: 62px !important;
+    }
+    #main-comparison .spec-title {
+        font-size: 20px !important;
+    }
+    #main-comparison .spec-value {
+        font-size: 18px !important;
+    }
+    #main-comparison .model {
+        min-height: 430px;
+        border-radius: 20px;
+    }
+    #main-comparison .model .product {
+        gap: 20px;
+        padding: 20px 30px;
+    }
+    #main-comparison .model .product .remove {
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    #main-comparison .model .product .image {
+        height: 225px;
+        margin-top: 20px;
+    }
+    #main-comparison .product-title {
+        font-size: 22px !important;
+    }
+    #main-comparison .btn {
+        padding: 4px 10px!important;
+        min-width: 160px !important;
+        font-size: 18px !important;
+    }
+    #main-comparison .model .empty {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .empty i {
+        font-size: 20px;
+    }
+    #main-comparison .model .add-model {
+        font-size: 22px !important;
+    }
+    #main-comparison .compare {
+        padding: 0 15px 30px;
+    }
+
+    #compare-nav .container {
+        --padding: 10px;
+        --bradius: 10px;
+
+        padding: 10px;
+    }
+    #compare-nav .compare-empty {
+        border: 2px dashed #bcbcbc;
+    }
+    #compare-nav  .compare-empty > p {
+        font-size: 16px !important;
+    }
+    #compare-nav .compare-empty i {
+        font-size: 16px !important;
+    }
+    #compare-nav .compare-product {
+        gap: 10px;
+    }
+    #compare-nav .compare-product .image {
+        display: block;
+        width: 65px;
+        height: 65px;
+    }
+    #compare-nav .compare-title {
+        font-size: 14px !important;
+    }
+    #compare-nav .comppare-price {
+        font-size: 14px;
+    }
+    #compare-nav .btn {
+        padding: 10px 20px !important;
+        min-width: 120px !important;
+        font-size: 14px !important;
+    }
+    
+    #main-collection .filters {
+        font-size: 18px !important;
+        padding-bottom: 20px;
+    }
+    
+    #main-collection .filter-container {
+        padding: 20px 0;
+    }
+    #main-collection .filter-container input[type="checkbox"] {
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    #main-collection .filter-container label {
+        font-size: 14px !important;
+    }
+    #main-collection .filter-container .price-note {
+        font-size: 14px !important;
+        margin-bottom: 10px;
+    }
+    #main-collection .filter-container .filter-group-display__price-range {
+        font-size: 14px !important;
+
+    }
+    #main-collection .filter-container input[type=number] {
+        padding: 2px 8px;
+        font-size: 14px;
+        width: 90px;
+    }
+    
+    #main-collection .item-found {
+        margin-right: 40px;
+    }
+    
+    #main-collection .sort-by {
+        padding: 6px 15px;
+        font-size: 14px !important;
+    }
+
+    #main-collection .products-row {
+        --bs-gutter-x: 15px;
+        --bs-gutter-y: 15px;
+    }
+    #main-collection .product-image {
+        padding: 10px;
+    }
+    #main-collection .product-details {
+        margin-top: 15px;
+    }
+    #main-collection .product-title {
+        font-size: 16px !important;
+    }
+    #main-collection .product-description {
+        font-size: 14px !important;
+    }
+    #main-collection .price .regular {
+        font-size: 14px !important;
+    }
+    #main-collection .price .sale {
+        font-size: 14px !important;
+    }
+    
+    #main-collection .compare {
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+    }
+
+    #main-collection .nothing-found {
+        font-size: 26px !important;
+    }
+    
+    #main-collection .paginate {
+        margin-top: 80px;
+        gap: 10px;
+    }
+    #main-collection .paginate .page {
+        font-size: 14px !important;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+    #main-comparison .title {
+        font-size: 64px !important;
+    }
+    #main-comparison .spec-title {
+        font-size: 20px !important;
+    }
+    #main-comparison .spec-value {
+        font-size: 18px !important;
+    }
+    #main-comparison .model {
+        min-height: 450px;
+        border-radius: 20px;
+    }
+    #main-comparison .model .product {
+        gap: 20px;
+        padding: 20px 30px;
+    }
+    #main-comparison .model .product .remove {
+        top: 20px;
+        right: 20px;
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    #main-comparison .model .product .image {
+        height: 240px;
+        margin-top: 20px;
+    }
+    #main-comparison .product-title {
+        font-size: 24px !important;
+    }
+    #main-comparison .btn {
+        padding: 4px 10px!important;
+        min-width: 180px!important;
+        font-size: 20px!important;
+    }
+    #main-comparison .model .empty {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .empty i {
+        font-size: 22px;
+    }
+    #main-comparison .model .add-model {
+        font-size: 24px !important;
+    }
+    #main-comparison .compare {
+        padding: 0 15px 30px;
+    }
+
+    #compare-nav .container {
+        --padding: 10px;
+        --bradius: 10px;
+
+        padding: 10px;
+    }
+    #compare-nav .compare-empty {
+        border: 2px dashed #bcbcbc;
+    }
+    #compare-nav  .compare-empty > p {
+        font-size: 16px !important;
+    }
+    #compare-nav .compare-empty i {
+        font-size: 18px !important;
+    }
+    #compare-nav .compare-product {
+        gap: 10px;
+    }
+    #compare-nav .compare-product .image {
+        display: block;
+        width: 70px;
+        height: 70px;
+    }
+    #compare-nav .compare-title {
+        font-size: 16px !important;
+    }
+    #compare-nav .comppare-price {
+        font-size: 16px;
+    }
+    #compare-nav .btn {
+        padding: 10px 25px !important;
+        min-width: 130px !important;
+        font-size: 16px !important;
+    }
+    
+    #main-collection .filters {
+        font-size: 20px !important;
+        padding-bottom: 20px;
+    }
+    
+    #main-collection .filter-container {
+        padding: 20px 0;
+    }
+    #main-collection .filter-container input[type="checkbox"] {
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    #main-collection .filter-container label {
+        font-size: 16px !important;
+    }
+    #main-collection .filter-container .price-note {
+        font-size: 16px !important;
+        margin-bottom: 10px;
+    }
+    #main-collection .filter-container .filter-group-display__price-range {
+        font-size: 16px !important;
+
+    }
+    #main-collection .filter-container input[type=number] {
+        padding: 2px 8px;
+        font-size: 16px;
+        width: 100px;
+    }
+    
+    #main-collection .item-found {
+        margin-right: 50px;
+    }
+    
+    #main-collection .sort-by {
+        padding: 6px 20px;
+        font-size: 16px !important;
+    }
+
+    #main-collection .products-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 30px;
+    }
+    #main-collection .product-image {
+        padding: 10px;
+    }
+    #main-collection .product-details {
+        margin-top: 15px;
+    }
+    #main-collection .product-title {
+        font-size: 18px !important;
+    }
+    #main-collection .product-description {
+        font-size: 16px !important;
+    }
+    #main-collection .price .regular {
+        font-size: 16px !important;
+    }
+    #main-collection .price .sale {
+        font-size: 16px !important;
+    }
+    
+    #main-collection .compare {
+        top: 10px;
+        left: 10px;
+        font-size: 16px;
+    }
+
+    #main-collection .nothing-found {
+        font-size: 28px !important;
+    }
+    
+    #main-collection .paginate {
+        margin-top: 100px;
+        gap: 10px;
+    }
+    #main-collection .paginate .page {
+        font-size: 16px !important;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    #main-comparison .title {
+        font-size: 68px !important;
+    }
+    #main-comparison .spec-title {
+        font-size: 20px !important;
+    }
+    #main-comparison .spec-value {
+        font-size: 18px !important;
+    }
+    #main-comparison .model {
+        min-height: 460px;
+        border-radius: 20px;
+    }
+    #main-comparison .model .product {
+        gap: 20px;
+        padding: 20px 30px;
+    }
+    #main-comparison .model .product .remove {
+        top: 20px;
+        right: 20px;
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    #main-comparison .model .product .image {
+        height: 250px;
+        margin-top: 20px;
+    }
+    #main-comparison .product-title {
+        font-size: 24px !important;
+    }
+    #main-comparison .btn {
+        padding: 4px 10px!important;
+        min-width: 180px!important;
+        font-size: 20px!important;
+    }
+    #main-comparison .model .empty {
+        gap: 10px;
+        padding: 20px;
+    }
+    #main-comparison .model .empty i {
+        font-size: 24px;
+    }
+    #main-comparison .model .add-model {
+        font-size: 26px !important;
+    }
+    #main-comparison .compare {
+        padding: 0 15px 30px;
+    }
+
+
+    #compare-nav .container {
+        --padding: 10px;
+        --bradius: 10px;
+
+        padding: 10px;
+    }
+    #compare-nav .compare-empty {
+        border: 2px dashed #bcbcbc;
+    }
+    #compare-nav  .compare-empty > p {
+        font-size: 16px !important;
+    }
+    #compare-nav .compare-empty i {
+        font-size: 18px !important;
+    }
+    #compare-nav .compare-product {
+        gap: 10px;
+    }
+    #compare-nav .compare-product .image {
+        display: block;
+        width: 70px;
+        height: 70px;
+    }
+    #compare-nav .compare-title {
+        font-size: 16px !important;
+    }
+    #compare-nav .comppare-price {
+        font-size: 16px;
+    }
+    #compare-nav .btn {
+        padding: 10px 25px !important;
+        min-width: 130px !important;
+        font-size: 16px !important;
+    }
+    
+    #main-collection .filters {
+        font-size: 20px !important;
+        padding-bottom: 20px;
+    }
+    
+    #main-collection .filter-container {
+        padding: 20px 0;
+    }
+    #main-collection .filter-container input[type="checkbox"] {
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    #main-collection .filter-container label {
+        font-size: 16px !important;
+    }
+    #main-collection .filter-container .price-note {
+        font-size: 16px !important;
+        margin-bottom: 10px;
+    }
+    #main-collection .filter-container .filter-group-display__price-range {
+        font-size: 16px !important;
+
+    }
+    #main-collection .filter-container input[type=number] {
+        padding: 2px 8px;
+        font-size: 16px;
+        width: 100px;
+    }
+    
+    #main-collection .item-found {
+        margin-right: 50px;
+    }
+    
+    #main-collection .sort-by {
+        padding: 6px 20px;
+        font-size: 16px !important;
+    }
+
+    #main-collection .products-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 30px;
+    }
+    #main-collection .product-image {
+        padding: 10px;
+    }
+    #main-collection .product-details {
+        margin-top: 15px;
+    }
+    #main-collection .product-title {
+        font-size: 18px !important;
+    }
+    #main-collection .product-description {
+        font-size: 16px !important;
+    }
+    #main-collection .price .regular {
+        font-size: 16px !important;
+    }
+    #main-collection .price .sale {
+        font-size: 16px !important;
+    }
+    
+    #main-collection .compare {
+        top: 10px;
+        left: 10px;
+        font-size: 16px;
+    }
+
+    #main-collection .nothing-found {
+        font-size: 28px !important;
+    }
+    
+    #main-collection .paginate {
+        margin-top: 100px;
+        gap: 10px;
+    }
+    #main-collection .paginate .page {
+        font-size: 16px !important;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    #main-comparison .title {
+        font-size: 74px !important;
+    }
+    #main-comparison .spec-title {
+        font-size: 22px !important;
+    }
+    #main-comparison .spec-value {
+        font-size: 20px !important;
+    }
+    #main-comparison .model {
+        min-height: 470px;
+        border-radius: 20px;
+    }
+    #main-comparison .model .product {
+        gap: 20px;
+        padding: 20px 30px;
+    }
+    #main-comparison .model .product .remove {
+        top: 20px;
+        right: 20px;
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    #main-comparison .model .product .image {
+        height: 270px;
+        margin-top: 20px;
+    }
+    #main-comparison .product-title {
+        font-size: 26px !important;
+    }
+    #main-comparison .btn {
+        padding: 2px 10px!important;
+        min-width: 190px!important;
+        font-size: 22px!important;
+    }
+    #main-comparison .model .empty {
+        gap: 20px;
+        padding: 20px;
+    }
+    #main-comparison .model .empty i {
+        font-size: 30px;
+    }
+    #main-comparison .model .add-model {
+        font-size: 30px !important;
+    }
+    #main-comparison .compare {
+        padding: 0 15px 30px;
+    }
+
+    #compare-nav .container {
+        --padding: 10px 15px;
+        --bradius: 15px;
+
+        padding: 20px;
+    }
+    #compare-nav .compare-empty {
+        border: 2px dashed #bcbcbc;
+    }
+    #compare-nav  .compare-empty > p {
+        font-size: 18px !important;
+    }
+    #compare-nav .compare-empty i {
+        font-size: 20px !important;
+    }
+    #compare-nav .compare-product {
+        gap: 15px;
+    }
+    #compare-nav .compare-product .image {
+        display: block;
+        width: 80px;
+        height: 80px;
+    }
+    #compare-nav .compare-title {
+        font-size: 16px !important;
+    }
+    #compare-nav .comppare-price {
+        font-size: 16px;
+    }
+    #compare-nav .btn {
+        padding: 10px 30px !important;
+        min-width: 130px !important;
+        font-size: 16px !important;
+    }
+    
+    #main-collection .filters {
+        font-size: 22px !important;
+        padding-bottom: 20px;
+    }
+    
+    #main-collection .filter-container {
+        padding: 20px 0;
+    }
+    #main-collection .filter-container input[type="checkbox"] {
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    #main-collection .filter-container label {
+        font-size: 16px !important;
+    }
+    #main-collection .filter-container .price-note {
+        font-size: 16px !important;
+        margin-bottom: 10px;
+    }
+    #main-collection .filter-container .filter-group-display__price-range {
+        font-size: 18px !important;
+
+    }
+    #main-collection .filter-container input[type=number] {
+        padding: 2px 8px;
+        font-size: 16px;
+        width: 100px;
+    }
+    
+    #main-collection .item-found {
+        margin-right: 50px;
+    }
+    
+    #main-collection .sort-by {
+        padding: 6px 20px;
+        font-size: 18px !important;
+    }
+
+    #main-collection .products-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 30px;
+    }
+    #main-collection .product-image {
+        padding: 10px;
+    }
+    #main-collection .product-details {
+        margin-top: 15px;
+    }
+    #main-collection .product-title {
+        font-size: 18px !important;
+    }
+    #main-collection .product-description {
+        font-size: 16px !important;
+    }
+    #main-collection .price .regular {
+        font-size: 16px !important;
+    }
+    #main-collection .price .sale {
+        font-size: 16px !important;
+    }
+    
+    #main-collection .compare {
+        top: 10px;
+        left: 10px;
+        font-size: 16px;
+    }
+
+    #main-collection .nothing-found {
+        font-size: 28px !important;
+    }
+    
+    #main-collection .paginate {
+        margin-top: 100px;
+        gap: 10px;
+    }
+    #main-collection .paginate .page {
+        font-size: 16px !important;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media only screen and (min-width: 2560px) {
+    #main-comparison .title {
+        font-size: 74px !important;
+    }
+    #main-comparison .spec-title {
+        font-size: 22px !important;
+    }
+    #main-comparison .spec-value {
+        font-size: 20px !important;
+    }
+    #main-comparison .model {
+        min-height: 470px;
+        border-radius: 20px;
+    }
+    #main-comparison .model .product {
+        gap: 20px;
+        padding: 20px 30px;
+    }
+    #main-comparison .model .product .remove {
+        top: 20px;
+        right: 20px;
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    #main-comparison .model .product .image {
+        height: 270px;
+        margin-top: 20px;
+    }
+    #main-comparison .product-title {
+        font-size: 26px !important;
+    }
+    #main-comparison .btn {
+        padding: 2px 10px!important;
+        min-width: 190px!important;
+        font-size: 22px!important;
+    }
+    #main-comparison .model .empty {
+        gap: 20px;
+        padding: 20px;
+    }
+    #main-comparison .model .empty i {
+        font-size: 30px;
+    }
+    #main-comparison .model .add-model {
+        font-size: 30px !important;
+    }
+    #main-comparison .compare {
+        padding: 0 15px 30px;
+    }
+
+    #compare-nav .container {
+        --padding: 10px 15px;
+        --bradius: 15px;
+
+        padding: 20px;
+    }
+    #compare-nav .compare-empty {
+        border: 2px dashed #bcbcbc;
+    }
+    #compare-nav  .compare-empty > p {
+        font-size: 18px !important;
+    }
+    #compare-nav .compare-empty i {
+        font-size: 20px !important;
+    }
+    #compare-nav .compare-product {
+        gap: 15px;
+    }
+    #compare-nav .compare-product .image {
+        display: block;
+        width: 80px;
+        height: 80px;
+    }
+    #compare-nav .compare-title {
+        font-size: 16px !important;
+    }
+    #compare-nav .comppare-price {
+        font-size: 16px;
+    }
+    #compare-nav .btn {
+        padding: 10px 30px !important;
+        min-width: 130px !important;
+        font-size: 16px !important;
+    }
+    
+    #main-collection .filters {
+        font-size: 22px !important;
+        padding-bottom: 20px;
+    }
+    
+    #main-collection .filter-container {
+        padding: 20px 0;
+    }
+    #main-collection .filter-container input[type="checkbox"] {
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    #main-collection .filter-container label {
+        font-size: 16px !important;
+    }
+    #main-collection .filter-container .price-note {
+        font-size: 16px !important;
+        margin-bottom: 10px;
+    }
+    #main-collection .filter-container .filter-group-display__price-range {
+        font-size: 18px !important;
+
+    }
+    #main-collection .filter-container input[type=number] {
+        padding: 2px 8px;
+        font-size: 16px;
+        width: 100px;
+    }
+    
+    #main-collection .item-found {
+        margin-right: 50px;
+    }
+    
+    #main-collection .sort-by {
+        padding: 6px 20px;
+        font-size: 18px !important;
+    }
+
+    #main-collection .products-row {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 30px;
+    }
+    #main-collection .product-image {
+        padding: 10px;
+    }
+    #main-collection .product-details {
+        margin-top: 15px;
+    }
+    #main-collection .product-title {
+        font-size: 18px !important;
+    }
+    #main-collection .product-description {
+        font-size: 16px !important;
+    }
+    #main-collection .price .regular {
+        font-size: 16px !important;
+    }
+    #main-collection .price .sale {
+        font-size: 16px !important;
+    }
+    
+    #main-collection .compare {
+        top: 10px;
+        left: 10px;
+        font-size: 16px;
+    }
+
+    #main-collection .nothing-found {
+        font-size: 28px !important;
+    }
+    
+    #main-collection .paginate {
+        margin-top: 100px;
+        gap: 10px;
+    }
+    #main-collection .paginate .page {
+        font-size: 16px !important;
+        width: 44px;
+        height: 44px;
+    }
+}

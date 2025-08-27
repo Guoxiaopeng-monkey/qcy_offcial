@@ -1,0 +1,75 @@
+<div style="background-color: #F9F9F9; width: 100%;">
+  <div class="page-width">
+    <div class="collection-nav" style="padding: 10px; display: flex; align-items: center; gap: 5px; color: {{ section.settings.text_color }}; padding: {{ section.settings.padding }}px; width: 100%;">
+      <a href="/{{ request.locale.iso_code }}/collections" style="text-decoration: none; color: {{ section.settings.text_color }}; {% if collection.handle == 'all' %}font-weight: bold;{% endif %}">All</a>
+      <span style="color: #666;">/</span>
+      {% assign collection_title_downcase = collection.title | downcase %}
+      {% if collection_title_downcase != 'wireless headphones' and collection_title_downcase != 'true wireless earbuds' %}
+        {% if collection_title_downcase contains 'headphones' %}
+          <a href="/{{ request.locale.iso_code }}/collections/headphones" style="text-decoration: none; color: {{ section.settings.text_color }};">Wireless Headphones</a>
+          <span style="color: #666;">/</span>
+        {% elsif collection_title_downcase contains 'earbuds' %}
+          <a href="/{{ request.locale.iso_code }}/collections/true-wireless-earbuds" style="text-decoration: none; color: {{ section.settings.text_color }};">True Wireless Earbuds</a>
+          <span style="color: #666;">/</span>
+        {% endif %}
+      {% endif %}
+      <span style="color: {{ section.settings.text_color }}; font-weight: bold;">{{ collection.title }}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .collection-nav a:hover {
+    color: #007bff;
+  }
+  .collection-nav {
+    margin: 0;
+    padding: {{ section.settings.padding }}px;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .collection-nav > * {
+    display: inline-block; 
+  }
+  
+  @media (max-width: 767px) {
+    .collection-nav {
+      font-size: 14px !important; 
+      padding: {{ section.settings.padding }}px 10px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .collection-nav::-webkit-scrollbar {
+      display: none;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Collection Navigation",
+  "templates": ["collection"],
+  "presets": [{
+    "name": "Collection Navigation"
+  }],
+  "settings": [
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "文本颜色",
+      "default": "#333"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "内边距",
+      "min": 5,
+      "max": 20,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    }
+  ]
+}
+{% endschema %}

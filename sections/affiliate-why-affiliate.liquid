@@ -1,0 +1,169 @@
+<div class="why-affiliate">
+  <h2 class="why-affiliate__title">{{ section.settings.title }}</h2>
+  <div class="why-affiliate__grid">
+    {% for block in section.blocks %}
+      <div class="why-affiliate__item">
+        <div class="why-affiliate__icon">
+          {% if block.settings.icon != blank %}
+            {{ block.settings.icon | img_url: '100x' | img_tag: block.settings.title, 'why-affiliate__icon-img' }}
+          {% endif %}
+        </div>
+        <h3 class="why-affiliate__subtitle">
+          {{ block.settings.text_before }}
+          <span class="highlight">{{ block.settings.text_highlight }}</span>
+          {{ block.settings.text_after }}
+        </h3>
+        <p class="why-affiliate__description">
+          {{ block.settings.description }}
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Why Affiliate",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Why QCY Affiliate Program?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text_before",
+          "label": "Text Before Highlight",
+          "default": "Up to "
+        },
+        {
+          "type": "text",
+          "id": "text_highlight",
+          "label": "Highlighted Text",
+          "default": "15%"
+        },
+        {
+          "type": "text",
+          "id": "text_after",
+          "label": "Text After Highlight",
+          "default": " Earning"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Up to 15% commission for every purchase you make and extra bonus for monthly performance."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why Affiliate",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "text_before": "Up to ",
+            "text_highlight": "15%",
+            "text_after": " Earning",
+            "description": "Up to 15% commission for every purchase you make and extra bonus for monthly performance."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "text_before": "",
+            "text_highlight": "30",
+            "text_after": " Day Validity",
+            "description": "Earn commission when your friends/followers purchase through your link within 30 days."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "text_before": "",
+            "text_highlight": "Dedicated",
+            "text_after": " Support",
+            "description": "Your affiliate manager will guide you and provide personalized assistance."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.why-affiliate {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.why-affiliate__title {
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.why-affiliate__grid {
+  display: grid;
+  gap: 30px;
+}
+.why-affiliate__item {
+  background: #f8f8f8;
+  padding: 30px;
+  border-radius: 10px;
+}
+.why-affiliate__icon {
+  margin-bottom: 20px;
+}
+.why-affiliate__icon-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+.why-affiliate__subtitle {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.why-affiliate__subtitle .highlight {
+  color: #FF6B35;
+}
+.why-affiliate__description {
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .why-affiliate__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .why-affiliate__title {
+    font-size: 28px;
+    font-weight:700;
+  }
+  .why-affiliate__subtitle {
+    font-size: 20px;
+  }
+  .why-affiliate__description {
+    font-size: 16px;
+  }
+}
+</style>

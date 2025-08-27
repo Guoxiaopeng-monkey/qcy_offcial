@@ -1,0 +1,56 @@
+<div class="search-recommendation-container">
+    <a href="{{ settings.product_1.url }}" class="search-recommendation-item">
+        <img loading="lazy" src="{{ settings.product_1.selected_or_first_available_variant.image | img_url: 'master' }}" class="search-recommend-img" alt="{{ settings.product_1.alt | escape }}">
+        <div class="product-details">
+            {% if settings.product_1.metafields.custom.status != blank %}
+              <p class="mx-0 f-f-bold main-color p-small">{{ settings.product_1.metafields.custom.status }}</p>
+            {% endif %}
+            <p class="mx-0 f-f-regular black-f p-small">{{ settings.product_1_title }}</p>
+        </div>
+    </a>
+    <a href="{{ settings.product_2.url }}" class="search-recommendation-item">
+        <img loading="lazy" src="{{ settings.product_2.selected_or_first_available_variant.image | img_url: 'master' }}" class="search-recommend-img" alt="{{ settings.product_2.alt | escape }}">
+        <div class="product-details">
+            {% if settings.product_2.metafields.custom.status != blank %}
+              <p class="mx-0 f-f-bold main-color p-small">{{ settings.product_2.metafields.custom.status }}</p>
+            {% endif %}
+            <p class="mx-0 f-f-regular black-f p-small">{{ settings.product_2_title }}</p>
+        </div>
+    </a>
+    <a href="{{ settings.product_3.url }}" class="search-recommendation-item">
+        <img loading="lazy" src="{{ settings.product_3.selected_or_first_available_variant.image | img_url: 'master' }}" class="search-recommend-img" alt="{{ settings.product_3.alt | escape }}">
+        <div class="product-details">
+            {% if settings.product_3.metafields.custom.status != blank %}
+              <p class="mx-0 f-f-bold main-color p-small">{{ settings.product_3.metafields.custom.status }}</p>
+            {% endif %}
+            <p class="mx-0 f-f-regular black-f p-small">{{ settings.product_3_title }}</p>
+        </div>
+    </a>
+    <a href="{{ settings.product_4.url }}" class="search-recommendation-item">
+        <img loading="lazy" src="{{ settings.product_4.selected_or_first_available_variant.image | img_url: 'master' }}" class="search-recommend-img" alt="{{ settings.product_4.alt | escape }}">
+        <div class="product-details">
+            {% if settings.product_4.metafields.custom.status != blank %}
+              <p class="mx-0 f-f-bold main-color p-small">{{ settings.product_4.metafields.custom.status }}</p>
+            {% endif %}
+            <p class="mx-0 f-f-regular black-f p-small">{{ settings.product_4_title }}</p>
+        </div>
+    </a>
+    <a href="{{ settings.product_5.url }}" class="search-recommendation-item">
+        <img loading="lazy" src="{{ settings.product_5.selected_or_first_available_variant.image | img_url: 'master' }}" class="search-recommend-img" alt="{{ settings.product_6.alt | escape }}">
+        <div class="product-details">
+            {% if settings.product_5.metafields.custom.status != blank %}
+              <p class="mx-0 f-f-bold main-color p-small">{{ settings.product_5.metafields.custom.status }}</p>
+            {% endif %}
+            <p class="mx-0 f-f-regular black-f p-small">{{ settings.product_5_title }}</p>
+        </div>
+    </a>
+    <a href="{{ settings.product_6.url }}" class="search-recommendation-item">
+        <img loading="lazy" src="{{ settings.product_6.selected_or_first_available_variant.image | img_url: 'master' }}" class="search-recommend-img" alt="{{ settings.product_6.alt | escape }}">
+        <div class="product-details">
+            {% if settings.product_6.metafields.custom.status != blank %}
+              <p class="mx-0 f-f-bold main-color p-small">{{ settings.product_6.metafields.custom.status }}</p>
+            {% endif %}
+            <p class="mx-0 f-f-regular black-f p-small">{{ settings.product_6_title }}</p>
+        </div>
+    </a>
+</div>

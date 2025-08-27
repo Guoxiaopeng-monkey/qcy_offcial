@@ -1,0 +1,21 @@
+{% stylesheet %}
+  .contact-us-map-section{
+    padding:20px 0px 50px;
+  }
+  .contact-us-map-section iframe{
+    width:100%;
+    height:500px;
+  }
+{% endstylesheet %}
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4688195193303!2d114.19635367613228!3d22.33592014160178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340406d08ff8ed39%3A0xd282653576a59978!2sSan%20Po%20Kong%2C%20Hong%20Kong!5e0!3m2!1sen!2sph!4v1729181182821!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+{% schema %}
+    {
+        "class": "contact-us-map-section",
+        "name": "Contact Us Map Section",
+        "templates": ["page"],
+        "limit": 1, 
+        "presets" :[{
+            "name" : "Contact Us Map Section"
+        }]
+    }
+{% endschema %} 

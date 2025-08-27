@@ -1,0 +1,170 @@
+<div class="how-it-works">
+  <h2 class="how-it-works-section-title">{{ section.settings.title }}</h2>
+  <div class="how-it-works-steps-container">
+    {% for block in section.blocks %}
+      <div class="how-it-works-step-wrapper">
+        <div class="how-it-works-step-item">
+          <div class="how-it-works-icon-wrapper">
+            {% if block.settings.icon != blank %}
+              {{ block.settings.icon | img_url: '100x' | img_tag: block.settings.title, 'how-it-works-step-icon' }}
+            {% endif %}
+          </div>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.description }}</p>
+          {% if block.settings.link_text != blank %}
+            <a href="{{ block.settings.link_url }}" class="how-it-works-step-link">
+              {{ block.settings.link_text }}
+            </a>
+          {% endif %}
+        </div>
+        {% unless forloop.last %}
+          <div class="how-it-works-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        {% endunless %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.how-it-works {
+  padding: 60px 20px;
+  text-align: center;
+}
+.how-it-works-section-title {
+  margin-bottom: 40px;
+  font-size: 28px;
+  font-weight:700;
+}
+.how-it-works-steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.how-it-works-step-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.how-it-works-step-item {
+  flex: 1;
+  max-width: 300px;
+}
+.how-it-works-icon-wrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0px;
+}
+.how-it-works-step-icon {
+  width: 80px;
+  height: auto;
+}
+.how-it-works-arrow {
+  margin: 0 10px;
+  color: #FF7E29;
+}
+.how-it-works-step-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #FF7E29;
+  text-decoration: none;
+}
+.how-it-works-step-link:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .how-it-works-section-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight:600;
+}
+  .how-it-works-steps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .how-it-works-step-wrapper {
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+  .how-it-works-arrow {
+    transform: rotate(90deg);
+    margin: 0px 0;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Working With Us Is Simple"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Step Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Step description goes here"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Join Now"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works",
+      "blocks": [
+        {
+          "type": "step"
+        },
+        {
+          "type": "step"
+        },
+        {
+          "type": "step"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

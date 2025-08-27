@@ -1,0 +1,53 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection_navigation_AnCJQE": {
+      "type": "collection-navigation",
+      "name": "Collection Navigation",
+      "settings": {
+        "text_color": "#333333",
+        "padding": 10
+      }
+    },
+    "image_with_text_8iRp9h": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/7-1_f5e23257-51bd-4f1c-bdba-a76159ae636b.jpg",
+        "image_mobile": "shopify://shop_images/7-2.jpg",
+        "heading": "Waterproof Earbuds",
+        "text": "Dive into your music with QCY Waterproof Earbuds! Perfect for workouts, outdoor adventures, or daily commutes, QCY offers superior audio and rugged durability.&nbsp;",
+        "desktop_heading_color": "#000000",
+        "desktop_text_color": "#000000"
+      }
+    },
+    "custom_liquid_mU97bi": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<h2 style=\"text-align: center;\"><strong>IP rating list</strong></h2>\n<table style=\"margin-left: auto; margin-right: auto; height: 232px;\" border=\"1\" width=\"258\"><colgroup><col width=\"128\" /><col width=\"105\" /></colgroup>\n<tbody>\n<tr>\n<td style=\"width: 133.328px; text-align: center;\"><strong>Model</strong></td>\n<td style=\"width: 108.672px; text-align: center;\"><strong>IP rating</strong></td>\n</tr>\n<tr style=\"text-align: center;\">\n<td style=\"width: 133.328px; text-align: center;\">Crossky C30</td>\n<td style=\"width: 108.672px;\">IPX4</td>\n</tr>\n<tr style=\"text-align: center;\">\n<td style=\"width: 133.328px;\">MeloBuds N50</td>\n<td style=\"width: 108.672px;\">IPX4</td>\n</tr>\n<tr style=\"text-align: center;\">\n<td style=\"width: 133.328px;\">Crossky C30S</td>\n<td style=\"width: 108.672px;\">IPX5</td>\n</tr>\n<tr style=\"text-align: center;\">\n<td style=\"width: 133.328px;\">AilyBuds Pro+</td>\n<td style=\"width: 108.672px;\">IPX5</td>\n</tr>\n<tr style=\"text-align: center;\">\n<td style=\"width: 133.328px;\">MeloBuds ANC</td>\n<td style=\"width: 108.672px;\">IPX5</td>\n</tr>\n<tr style=\"text-align: center;\">\n<td style=\"width: 133.328px;\">MeloBuds Pro</td>\n<td style=\"width: 108.672px;\">IPX5</td>\n</tr>\n<tr style=\"text-align: center;\">\n<td style=\"width: 133.328px;\">Crossky R70</td>\n<td style=\"width: 108.672px;\">IPX5</td>\n</tr>\n<tr style=\"text-align: center;\">\n<td style=\"width: 133.328px;\">T17</td>\n<td style=\"width: 108.672px;\">IPX4</td>\n</tr>\n</tbody>\n</table>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 24
+      }
+    },
+    "main_collection_D4J9rG": {
+      "type": "main-collection",
+      "settings": {}
+    }
+  },
+  "order": [
+    "collection_navigation_AnCJQE",
+    "image_with_text_8iRp9h",
+    "custom_liquid_mU97bi",
+    "main_collection_D4J9rG"
+  ]
+}

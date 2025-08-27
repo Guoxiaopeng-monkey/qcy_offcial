@@ -1,0 +1,30 @@
+<div class="countdown-discount-container" 
+  {% if block.settings.date_time != blank %}
+  data-date-time="{{ block.settings.date_time }}"
+  {% endif %}
+  >
+    <div class="row">
+        <div class="col-4 dot-circle">
+            <div class="discount-label">
+                <span class="text-md f-f-bold text-center l-h-normal l-space-normal m-0 white-f">{{ block.settings.discount }}</span>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="discount-info pe-lg-3 pe-md-3 pe-sm-2 ps-lg-5 ps-md-4 ps-sm-3">
+                <div class="info-text l-h-normal">
+                    <span class="f-f-bold l-space-normal f-black h4 mb-2">{{ block.settings.title }}</span>
+                    {% if block.settings.date_time != blank %}
+                      <div class="f-f-regular l-space-normal f-black h6 my-0">Ends In 
+                          <span class="days-span">00</span> Days 
+                          <span class="hours-span">00</span>:<span class="minutes-span">00</span>:<span class="seconds-span">00</span>
+                      </div>
+                    {% endif %}
+                </div>
+                <div class="btn-copy-code l-h-normal" data-discount-code="{{ block.settings.discount_code }}">
+                    Copy
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/8530597_copy_icon_2x_aec8e2c9-5212-4784-bbc6-6332bdb80bf2.png?v=1749039842" width="100%" height="100%" class="copy-icon">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

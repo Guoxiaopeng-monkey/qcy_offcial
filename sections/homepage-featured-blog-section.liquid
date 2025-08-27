@@ -1,0 +1,316 @@
+{% stylesheet %}
+    .featured-blog-section{
+        padding:50px 0px 50px;
+        background-color:#F9F9F9;
+        overflow:hidden;
+        position:relative;
+    }
+    .footer-icons-support-section,
+    .newsletter-section{
+        background-color:#F9F9F9;
+    }
+    .featured-blog-list-slider{
+        padding-top:50px;
+    }
+    .featured-blog-section .feat-blog-item{
+        position:relative;
+        border-radius:32px;
+        overflow:hidden;
+    }
+    .featured-blog-section .feat-blog-item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: flex;
+    }
+    .featured-blog-section .blog-details{
+        position:absolute;
+        bottom:2rem;
+        left:0;
+        width: fit-content;
+        padding: 0px 2.5rem;
+        z-index:2;
+    }
+    .featured-blog-section .feat-blog-item:before{
+        background: linear-gradient(0deg, #00000073 0%, transparent 100%);
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        transition: all 0.5s ease;
+        opacity: 1;
+    }
+    .featured-blog-section .blog-date-time{
+        font-size:14px;
+    }
+    .featured-blog-slider-arrows{
+        position:absolute;
+        top:55%;
+        left:0;
+        right:0;
+        margin:auto;
+        width:100%;
+        max-width:var(--page-width);
+        padding:0px 20px;
+        display:flex;
+        flex-direction:row-reverse;
+        justify-content: space-between;
+    }
+    .featured-blog-slider-arrows .featured-blog-button-prev, 
+    .featured-blog-slider-arrows .featured-blog-button-next{
+        background: #DBDBDB;
+        border-radius: 50px;
+        display: flex;
+        cursor: pointer;
+        z-index: 2;
+        width:fit-content;
+        transition: all 0.3s ease;
+    }
+    .featured-blog-slider-arrows .featured-blog-button-prev:hover, 
+    .featured-blog-slider-arrows .featured-blog-button-next:hover{
+        background: #FF8832;
+    }
+    .featured-blog-section .featured-blog-swiper-pagination{
+      display:none;
+    }
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px){
+        .featured-blog-section .content-heaher{
+            flex-direction:column;
+            align-items: center;
+        }
+        .featured-blog-section .featured-blog-swiper-pagination{
+          display:flex;
+        }
+        .featured-blog-section .content-heaher .heading,
+        .featured-blog-section .content-heaher .description{
+            text-align:center;
+        }
+        .featured-blog-section .content-heaher .see-all-collection{
+            justify-content: center;
+            margin-top:20px;
+        }
+        .featured-blog-list-slider{
+            padding-top:30px;
+        }
+        .featured-blog-section .feat-blog-item{
+            border-radius:20px;
+        }
+        .featured-blog-slider-arrows{
+            padding:0px 10px;
+        }
+        .featured-blog-slider-arrows .featured-blog-button-prev, 
+        .featured-blog-slider-arrows .featured-blog-button-next{
+              background: #dbdbdb6e;
+        }
+        .featured-blog-slider-arrows .featured-blog-button-prev svg, 
+        .featured-blog-slider-arrows .featured-blog-button-next svg{
+            width:45px;
+            height:45px;
+        }
+        .featured-blog-section .feat-blog-item{
+            height:250px;
+        }
+        .featured-blog-section .feat-blog-item .blog-post-title{
+            font-size:20px;
+        }   
+        .blog-description {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 250px;
+        }
+        .featured-blog-section .blog-details{
+            bottom:1rem;
+            padding:0px 2rem;
+        }
+    }
+    
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) {
+        .featured-blog-section .featured-blog-swiper-pagination{
+          display:flex;
+        }
+        .featured-blog-section .content-heaher{
+            flex-direction:column;
+            align-items: center;
+        }
+        .featured-blog-section .content-heaher .heading,
+        .featured-blog-section .content-heaher .description{
+            text-align:center;
+        }
+        .featured-blog-section .content-heaher .see-all-collection{
+            justify-content: center;
+            margin-top:20px;
+        }
+        .featured-blog-list-slider{
+            padding-top:30px;
+        }
+        .featured-blog-section .feat-blog-item{
+            border-radius:20px;
+        }
+        .featured-blog-slider-arrows{
+            padding:0px 10px;
+        }
+        .featured-blog-slider-arrows .featured-blog-button-prev, 
+        .featured-blog-slider-arrows .featured-blog-button-next{
+              background: #dbdbdb6e;
+        }
+        .featured-blog-slider-arrows .featured-blog-button-prev svg, 
+        .featured-blog-slider-arrows .featured-blog-button-next svg{
+            width:45px;
+            height:45px;
+        }
+        .featured-blog-section .feat-blog-item{
+            height:300px;
+        }
+        .featured-blog-section .blog-details{
+            bottom:1rem;
+            padding:0px 2rem;
+        }
+    }
+
+    /* TABLETS  */ 
+    @media only screen and (min-width: 768px) {
+        .featured-blog-section .feat-blog-item{
+            height:300px;
+        }
+    }
+    @media only screen and (min-width: 800px) {
+        .featured-blog-section .feat-blog-item{
+            height:300px;
+        }
+    }
+    @media (min-width: 1024px) and (orientation: portrait) {
+        .featured-blog-section .feat-blog-item{
+            height:300px;
+        }
+    }
+
+    /* COMPUTERS */
+    @media (min-width: 1024px) and (orientation: landscape) {
+        .featured-blog-section .feat-blog-item{
+            height:300px;
+        }
+    }
+    @media only screen and (min-width: 1280px) {
+        .featured-blog-section .feat-blog-item{
+            height:300px;
+        }
+    }
+    @media only screen and (min-width: 1366px) {
+        .featured-blog-section .feat-blog-item{
+            height:350px;
+        }
+    }
+    @media only screen and (min-width: 1440px) {
+        .featured-blog-section .feat-blog-item{
+            height:350px;
+        }
+    }
+    @media only screen and (min-width: 1536px) {
+        .featured-blog-section .feat-blog-item{
+            height:400px;
+        }
+    }
+    @media only screen and (min-width: 1600px) {
+        .featured-blog-section .feat-blog-item{
+            height:400px;
+        }
+    }
+    @media only screen and (min-width: 1920px) {
+        .featured-blog-section .feat-blog-item{
+            height:450px;
+        }
+    }
+
+
+{% endstylesheet %}
+<div class="page-width">
+    
+    <div class="content-heaher d-flex">
+        <div class="col_50">
+            <h2 class="heading text-md f-f-bold mx-0">{{ section.settings.heading }}</h2>
+            <h4 class="description f-f-regular gray-f mx-0">{{ section.settings.description | replace: '<p>', '' | replace: '</p>', '' }}</h4>
+        </div>
+        <div class="col_50">
+            <div class="see-all-collection">
+                <a href="/pages/blogs" class="">
+                    <p class="mx-0 f-f-regular gray-f text-underline ">See All</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="featured-blog-list-slider">
+        <div class="swiper-wrapper">
+            {% assign blog_handles = 'news, blog, product-support' | split: ', ' %}
+            {% for blog_handle in blog_handles %}
+                {% for post in blogs[blog_handle].articles limit: 8 %}  
+                    <a href="{{ post.url }}" class="feat-blog-item swiper-slide">
+                        <img loading="lazy" src="{{ post.image.src | image_url }}" alt="{{ post.image.alt | escape }}">
+                        <div class="blog-details">
+                            <p class="f-f-bpp mx-0 white-f blog-date-time">{{ post.published_at | date: "%B %d, %Y" }}</p>
+                            <div>
+                              <h3 class="blog-post-title mx-0 f-f-bold white-f">{{ post.title }}</h3>
+                            </div>
+                            <p class="blog-description f-f-regular mx-0 white-f">{{ post.content |  strip_html | truncate: 100 }}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="featured-blog-slider-arrows">
+        <div class="featured-blog-button-next">
+             <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52">
+                <g id="right_normal" transform="translate(-1835 -559)">
+                    <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" transform="translate(1835 559)" fill="transparent"></rect>
+                    <path id="路径_4" data-name="路径 4" d="M253.944,103.831a.906.906,0,0,1-.7-.3.97.97,0,0,1,.1-1.4l6.385-5.786a.748.748,0,0,0,0-1.2l-6.485-5.487a.99.99,0,0,1,1.3-1.5l6.385,5.487a2.808,2.808,0,0,1,1,2.1,2.871,2.871,0,0,1-.9,2.1l-6.385,5.786a1.85,1.85,0,0,1-.7.2Z" transform="translate(1604.091 489.128)" fill="#fff"></path>
+                </g>
+            </svg>
+        </div>
+        <div class="featured-blog-button-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" id="left_normal" width="53" height="52" viewBox="0 0 53 52">
+                <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" fill="transparent"></rect>
+                <path id="路径_4" data-name="路径 4" d="M260.873,103.831a.906.906,0,0,0,.7-.3.97.97,0,0,0-.1-1.4l-6.385-5.786a.748.748,0,0,1,0-1.2l6.485-5.487a.99.99,0,0,0-1.3-1.5l-6.385,5.487a2.808,2.808,0,0,0-1,2.1,2.871,2.871,0,0,0,.9,2.1l6.385,5.786a1.85,1.85,0,0,0,.7.2Z" transform="translate(-230.909 -69.872)" fill="#fff"></path>
+            </svg>
+        </div>
+    </div>
+    <div class="featured-blog-swiper-pagination swiper-pagination-long"></div>
+</div>
+{% schema %}
+    {
+        "class": "featured-blog-section",
+        "name": "Featured Blog",
+        "templates": ["index"],
+        "limit": 1, 
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "QCY Blogs"
+            },
+            {
+                "type": "richtext",
+                "id": "description",
+                "label": "Description",
+                "default": "<p>Whether it’s fitness or commuting, QCY can meet your needs.</p>"
+            },
+            {
+                "type": "url",
+                "id": "link",
+                "label": "Link",
+            }
+        ],
+        "presets" :[{
+            "name" : "Featured Blog"
+        }]
+    }
+  {% endschema %} 

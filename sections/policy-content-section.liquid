@@ -1,0 +1,119 @@
+{% stylesheet %}
+  .policy-content-section{
+    padding:80px 0px;
+  }
+  .policy-content-section .page-title{
+    padding-bottom:20px;
+  }
+  .policy-content-section .description{
+    color:#262626;
+  }
+  .policy-content-section .page-content{
+    padding-top:50px;
+  }
+  .policy-content-section .page-content h2,
+  .policy-content-section .page-content h3{
+    font-family: 'Mulish-SemiBold';
+  }
+
+  /* TABLE */
+  .policy-content-section table{
+    margin:50px 0px;
+    width:100% !important;
+  }
+  .policy-content-section table th,
+  .policy-content-section table td{
+    padding:2rem !important;
+  }
+  .policy-content-section table th{
+    background-color:#F3F3F3;
+  }
+  .policy-content-section table tr:nth-child(2),
+  .policy-content-section table tr:nth-child(4){
+    background-color:#F3F3F3;
+  }
+  .ecom__element.ecom-element-table{
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    padding-left:1px;
+    padding-right:1px;
+  }
+  body,
+  b{
+    color:#262626 !important;
+  }
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .policy-content-section table th, .policy-content-section table td{
+      padding:8px !important;
+      overflow-wrap: anywhere;
+    }
+    .ecom-element-table table th:nth-child(1){
+      width:50% !important;
+      text-align:left !important;
+    }
+    .ecom-element-table table td:nth-child(1){
+      text-align:left !important;
+    }
+    .ecom-element-table table th:nth-child(2){
+      width:25% !important;
+    }
+    .ecom-element-table table th:nth-child(3){
+      width:25% !important;
+    }
+    .ecom__element.ecom-element-table{
+      overflow: auto;
+    }
+  }
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+    .policy-content-section table th, .policy-content-section table td{
+      padding:8px !important;
+      overflow-wrap: anywhere;
+    }
+    .ecom-element-table table th:nth-child(1){
+      width:50% !important;
+      text-align:left !important;
+    }
+    .ecom-element-table table td:nth-child(1){
+      text-align:left !important;
+    }
+    .ecom-element-table table th:nth-child(2){
+      width:25% !important;
+    }
+    .ecom-element-table table th:nth-child(3){
+      width:25% !important;
+    }
+    .ecom__element.ecom-element-table{
+      overflow: auto;
+    }
+  }
+
+{% endstylesheet %}
+<div class="page-mid-width">
+    <h1 class="page-title text-lg f-f-bold mx-0 center">{{ page.title }}</h1>
+    <h4 class="description f-f-extralight mx-0 center">{{ section.settings.description | replace: '<p>','' | replace: '</p>','' }}</h4>
+    <div class="page-content">
+      {{ page.content }}
+    </div>
+</div>
+{% schema %}
+    {
+        "class": "policy-content-section",
+        "name": "Policy Content Section",
+        "templates": ["page"],
+        "limit": 1, 
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "description",
+                "label": "Description"
+            }
+        ],
+        "presets" :[{
+            "name" : "Policy Content Section"
+        }]
+    }
+  {% endschema %} 

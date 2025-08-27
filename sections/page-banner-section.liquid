@@ -1,0 +1,174 @@
+<style>
+    .page-banner-section{
+        height:60vh;
+        {% if page.metafields.custom.featured_image_desktop != blank %}
+            background-image:url({{ page.metafields.custom.featured_image_desktop | img_url: 'master' }});
+        {% else %}
+            
+            {% if section.settings.image != blank %}
+                background-image:url({{ section.settings.image | img_url: 'master' }});
+            {% else %}
+                background-image:url(https://cdn.shopify.com/s/files/1/0639/3492/2809/files/134_2x_ea9497ac-8bb7-4f60-9759-d792c62e139c.png?v=1728361463);
+            {% endif %}
+        {% endif %}
+        background-size:cover;
+        background-position:center;
+    }
+    .page-banner-section .inner-container-section{
+        height:100%;
+        width:100%;
+        display: flex;
+        gap:1rem;
+        flex-direction:column;
+        justify-content: center;
+    }
+
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+        .page-banner-section{
+            height: calc(75vh - 44px);
+            
+            {% if section.settings.image_mobile != blank %}
+                background-image:url({{ section.settings.image_mobile | img_url: 'master' }});
+            {% elsif section.settings.image != blank %}
+                background-image:url({{ section.settings.image | img_url: 'master' }});
+            {% else %}
+            
+                {% if page.metafields.custom.featured_image_mobile != blank %}
+                    background-image:url({{ page.metafields.custom.featured_image_mobile | img_url: 'master' }});
+                {% elsif page.metafields.custom.featured_image_desktop != blank %}
+                    background-image:url({{ page.metafields.custom.featured_image_desktop | img_url: 'master' }});
+                {% else %}
+                    background-image:url(https://cdn.shopify.com/s/files/1/0639/3492/2809/files/134_2x_1.png?v=1728361530);
+                {% endif %}
+            {% endif %}
+        }
+        .hide-announcement .page-banner-section{
+            height: 65vh;
+        }
+        .page-banner-section .inner-container-section h1,
+        .page-banner-section .inner-container-section .h4{
+          text-align:center
+        }
+    }
+  
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px){
+        .page-banner-section{
+            height: calc(75vh - 44px);
+            
+            {% if section.settings.image_mobile != blank %}
+                background-image:url({{ section.settings.image_mobile | img_url: 'master' }});
+            {% elsif section.settings.image != blank %}
+                background-image:url({{ section.settings.image | img_url: 'master' }});
+            {% else %}
+            
+                {% if page.metafields.custom.featured_image_mobile != blank %}
+                    background-image:url({{ page.metafields.custom.featured_image_mobile | img_url: 'master' }});
+                {% elsif page.metafields.custom.featured_image_desktop != blank %}
+                    background-image:url({{ page.metafields.custom.featured_image_desktop | img_url: 'master' }});
+                {% else %}
+                    background-image:url(https://cdn.shopify.com/s/files/1/0639/3492/2809/files/134_2x_1.png?v=1728361530);
+                {% endif %}
+            {% endif %}
+        }
+        .hide-announcement .page-banner-section{
+            height:65vh;
+        }
+        .page-banner-section .inner-container-section h1,
+        .page-banner-section .inner-container-section .h4{
+          text-align:center
+        }
+    }
+
+
+</style>
+<div class="inner-container-section page-width">
+    <h1 class="f-f-bold white-f text-lg mx-0" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="150" data-aos-duration="500">
+    
+        {% if page.title %}
+            {{ page.title }}
+        {% elsif collection.title != blank %}
+            {{ collection.title }}
+        {% elsif section.settings.custom_title != blank %}
+            {{ section.settings.custom_title }}
+        {% else %}
+
+        {% endif %}
+    </h1>
+    <div class="h4 white-f mx-0 f-f-extralight col_35" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="200" data-aos-duration="500">
+      {% if section.settings.custom_description != blank %}
+        {{ section.settings.custom_description | replace: '<p>','' | replace: '</p>','' }}
+      {% else %}
+        {% if page.description %}
+            {{ page.metafields.custom.short_description }}
+        {% else %}
+            {{ collection.description }}
+        {% endif %}
+      {% endif %}
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+
+        $('[data-aos]').addClass('aos-init');
+
+        aosAnimate();
+
+    });
+
+    $(window).scroll(function() {
+        aosAnimate();
+    });
+
+    function aosAnimate() {
+        $('.aos-init').each(function() {
+            let boxTop = $(this).offset().top;
+            let boxBottom = boxTop + $(this).outerHeight();
+            let viewportTop = $(window).scrollTop();
+            let viewportBottom = viewportTop + $(window).height();
+
+            if (boxTop < viewportBottom && boxBottom > viewportTop) {
+            $(this).addClass('aos-animate');
+            }
+        });
+    }
+
+
+</script>
+{% schema %}
+    {
+        "class": "page-banner-section",
+        "name": "Page Banner Section",
+        "templates": ["page"],
+        "settings": [
+            
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Background Image - Desktop"
+                },
+            
+                {
+                    "type": "image_picker",
+                    "id": "image_mobile",
+                    "label": "Background Image - Mobile"
+                },
+                {
+                    "type": "text",
+                    "id": "custom_title",
+                    "label": "Custom Title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "custom_description",
+                    "label": "Custom Description"
+                }
+        ],
+        "presets" :[{
+          "name" : "Page Banner Section"
+        }]
+    }
+{% endschema %} 

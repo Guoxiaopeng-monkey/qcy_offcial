@@ -1,0 +1,543 @@
+<style>
+  .about-us-timeline-section{
+    padding:100px 70px;
+  }
+  .about-us-timeline-section .timeline-section-container{
+    margin-top:50px;
+    display:flex;
+    background-color:#f9f9f9;
+    border-radius:20px;
+  }
+  .about-us-timeline-section .timeline-content-slider-container{
+    display: flex;
+    align-items: center;
+    position:relative;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+  .about-us-timeline-section .timeline-content-slider-container .timeline-content-slider{
+    overflow:hidden;
+    height:400px;
+    position:relative;
+    z-index:1;
+  }
+  .about-us-timeline-section .timeline-year-slider{
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    z-index:0;
+  }
+  .about-us-timeline-section .timeline-year-slider .year-text{
+    text-align: center;
+    color:#f3f3f3;
+  }
+  .about-us-timeline-section .timeline-content-item{
+     display: flex;
+    flex-direction: column;
+    justify-content: center
+  }
+  .about-us-timeline-section .timeline-content-item .year-text{
+    padding-bottom:10px;
+  }
+  .about-us-timeline-section .timeline-content-item h3{
+    line-height: inherit;
+  }
+  .about-us-timeline-section .timeline-image-item{
+    display:flex;
+    visibility:hidden;
+  }
+  .about-us-timeline-section .timeline-image-item.swiper-slide-active{
+    visibility:visible;
+  }
+  .about-us-timeline-section .timeline-image-item img{
+    width:100%;
+    object-fit:cover;
+  }
+  .about-us-timeline-section .timeline-image-slider{
+    overflow:hidden;
+    border-radius:20px;
+  }
+  .about-us-timeline-section .year-pagination-slider-container .year-pagination-slider{
+    padding:0px;
+     display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat({{ section.blocks.size }}, 1fr);
+    margin-top:50px;
+  }
+  .about-us-timeline-section .year-pagination-slider-container .year-pagination-slider span{
+    font-family: 'Mulish-Bold';
+    font-size:26px;
+    width: 100%;
+    height: fit-content;
+    background: transparent;
+    text-align:center;
+    border-radius: 0px;
+    position:relative;
+    padding-top:1rem;
+    transition: all 0.3s ease;
+  }
+  .about-us-timeline-section .year-pagination-slider-container .year-pagination-slider span.swiper-pagination-bullet-active{
+    padding-top:0px;
+  }
+  .about-us-timeline-section .year-pagination-slider-container .year-pagination-slider span:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    height:4px;
+    width:100%;
+    background-color:#DFDFDF;
+  }
+  .about-us-timeline-section .year-pagination-slider-container .year-pagination-slider span:first-child:before{
+    border-top-left-radius:50px;
+    border-bottom-left-radius:50px;
+  }
+  .about-us-timeline-section .year-pagination-slider-container .year-pagination-slider span:last-child:before{
+    border-top-right-radius:50px;
+    border-bottom-right-radius:50px;
+  }
+  .about-us-timeline-section .year-pagination-slider-container .year-pagination-slider span.swiper-pagination-bullet-active:before{
+    background-color:#FF8832;
+  }
+  .about-us-timeline-section .year-pagination-slider-container .year-pagination-slider span.swiper-pagination-bullet-active:before{
+    border-radius:50px;
+  }
+
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+      .about-us-timeline-section{
+        padding:20px 0px 50px;
+      }
+      .about-us-timeline-section .timeline-year-slider{
+        display:none;
+      }
+      .about-us-timeline-section .section-heading{
+        text-align:left;
+      }
+      .about-us-timeline-section .timeline-section-container{
+        flex-direction:column;
+      }
+      .about-us-timeline-section .timeline-content-slider-container .timeline-content-slider{
+        height:330px;
+      }
+      .about-us-timeline-section .timeline-section-container{
+        background-color:#fff;
+      }
+      .year-pagination-slider-container{
+        overflow-x:scroll;
+      }
+      .year-pagination-slider-container::-webkit-scrollbar {
+        height: 0px;
+      }
+
+      .year-pagination-slider-container .year-pagination-slider{
+        width:600px;
+      }
+      .about-us-timeline-section .year-pagination-slider-container .year-pagination-slider span{
+        font-size:16px;
+      }
+      .about-us-timeline-section .year-pagination-slider-container .year-pagination-slider span.swiper-pagination-bullet-active{
+        padding-top:0.5rem;
+      }
+      .about-us-timeline-section{
+        padding:80px 0px;
+      }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+      .about-us-timeline-section{
+        padding:50px 0px;
+      }
+      .about-us-timeline-section .timeline-year-slider{
+        display:none;
+      }
+      .about-us-timeline-section .section-heading{
+        text-align:left;
+      }
+      .about-us-timeline-section .timeline-section-container{
+        flex-direction:column;
+      }
+      .about-us-timeline-section .timeline-section-container{
+        background-color:#fff;
+      }
+      .year-pagination-slider-container{
+        overflow-x:scroll;
+      }
+      .year-pagination-slider-container .year-pagination-slider{
+        width:600px;
+      }
+      .about-us-timeline-section .year-pagination-slider-container .year-pagination-slider span{
+        font-size:16px;
+      }
+      .about-us-timeline-section .year-pagination-slider-container .year-pagination-slider span.swiper-pagination-bullet-active{
+        padding-top:0.5rem;
+      }
+      .about-us-timeline-section .timeline-content-slider-container .timeline-content-slider{
+        height:350px;
+      }
+      .about-us-timeline-section{
+        padding:80px 30px;
+      }
+  }
+  /* TABLETS  */ 
+  @media only screen and (min-width: 768px) {
+    .about-us-timeline-section{
+      padding:100px 30px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container{
+      padding:20px 40px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container .timeline-content-slider{
+      height:130px;
+    }
+    .about-us-timeline-section .timeline-year-slider{
+      height: 200px;
+    }
+    .about-us-timeline-section .timeline-year-slider .year-text{
+      font-size: 190px;
+      line-height: 130px;
+    }
+    .about-us-timeline-section .timeline-image-item img{
+        height:450px;
+    }
+  }
+   @media only screen and (min-width: 800px) {
+    .about-us-timeline-section{
+      padding:100px 30px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container{
+      padding:20px 40px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container .timeline-content-slider{
+      height:130px;
+    }
+    .about-us-timeline-section .timeline-year-slider{
+      height: 200px;
+    }
+    .about-us-timeline-section .timeline-year-slider .year-text{
+      font-size: 190px;
+      line-height: 130px;
+    }
+    .about-us-timeline-section .timeline-image-item img{
+        height:450px;
+    }
+  }
+  @media (min-width: 1024px) and (orientation: portrait) {
+    .about-us-timeline-section{
+      padding:100px 30px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container{
+      padding:20px 40px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container .timeline-content-slider{
+      height:250px;
+    }
+    .about-us-timeline-section .timeline-year-slider{
+      height: 130px;
+    }
+    .about-us-timeline-section .timeline-year-slider .year-text{
+      font-size: 190px;
+      line-height: 130px;
+    }
+    .about-us-timeline-section .timeline-image-item img{
+        height:450px;
+    }
+  }
+  
+   /* COMPUTERS */
+  @media (min-width: 1024px) and (orientation: landscape) {
+    .about-us-timeline-section{
+      padding:100px 30px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container{
+      padding:20px 40px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container .timeline-content-slider{
+      height: 230px;
+    }
+    .about-us-timeline-section .timeline-year-slider{
+      height: 150px;
+    }
+    .about-us-timeline-section .timeline-year-slider .year-text{
+      font-size: 190px;
+      line-height: 130px;
+    }
+    .about-us-timeline-section .timeline-image-item img{
+        height:450px;
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    .about-us-timeline-section{
+      padding:100px 30px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container{
+      padding:20px 40px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container .timeline-content-slider{
+      height:240px;
+    }
+    .about-us-timeline-section .timeline-year-slider{
+      height: 150px;
+    }
+    .about-us-timeline-section .timeline-year-slider .year-text{
+      font-size: 210px;
+      line-height: 150px;
+    }
+    .about-us-timeline-section .timeline-image-item img{
+        height:350px;
+    }
+  }
+  @media only screen and (min-width: 1366px) {
+    .about-us-timeline-section{
+      padding:100px 40px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container{
+      padding:20px 40px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container .timeline-content-slider{
+      height:250px;
+    }
+    .about-us-timeline-section .timeline-year-slider{
+      height: 150px;
+    }
+    .about-us-timeline-section .timeline-year-slider .year-text{
+      font-size: 210px;
+      line-height: 150px;
+    }
+    .about-us-timeline-section .timeline-image-item img{
+        height:350px;
+    }
+  }
+  @media only screen and (min-width: 1440px) {
+    .about-us-timeline-section{
+      padding:100px 40px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container{
+      padding:30px 50px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container .timeline-content-slider{
+      height:250px;
+    }
+    .about-us-timeline-section .timeline-year-slider{
+      height: 160px;
+    }
+    .about-us-timeline-section .timeline-year-slider .year-text{
+      font-size: 210px;
+      line-height: 150px;
+    }
+    .about-us-timeline-section .timeline-image-item img{
+        height:350px;
+    }
+  }
+  @media only screen and (min-width: 1536px) {
+    .about-us-timeline-section{
+      padding:100px 50px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container{
+      padding:40px 60px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container .timeline-content-slider{
+      height:260px;
+    }
+    .about-us-timeline-section .timeline-year-slider{
+      height: 160px;
+    }
+    .about-us-timeline-section .timeline-year-slider .year-text{
+      font-size: 210px;
+      line-height: 150px;
+    }
+    .about-us-timeline-section .timeline-image-item img{
+        height:350px;
+    }
+  }
+  @media only screen and (min-width: 1600px) {
+    .about-us-timeline-section{
+      padding:100px 60px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container{
+      padding:40px 70px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container .timeline-content-slider{
+      height:400px;
+    }
+    .about-us-timeline-section .timeline-year-slider{
+      height: 210px;
+    }
+    .about-us-timeline-section .timeline-year-slider .year-text{
+      font-size: 270px;
+      line-height: 200px;
+    }
+    .about-us-timeline-section .timeline-image-item img{
+        height:100%;
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+    .about-us-timeline-section{
+      padding:100px 70px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container{
+      padding:50px 80px;
+    }
+    .about-us-timeline-section .timeline-content-slider-container .timeline-content-slider{
+      height:400px;
+    }
+    .about-us-timeline-section .timeline-year-slider{
+      height: 210px;
+    }
+    .about-us-timeline-section .timeline-year-slider .year-text{
+      font-size: 280px;
+      line-height: 210px;
+    }
+    .about-us-timeline-section .timeline-image-item img{
+        height:100%;
+    }
+  }
+
+  
+</style>
+<div class="{{ section.settings.section_link }} about-us-timeline-section section-scroll">
+  <div class="page-width">
+    <h2 class="mx-0 f-f-bold section-heading text-cap center">{{ section.settings.title }}</h2>
+    <div class="timeline-section-container">
+        <div class="timeline-image-slider col_50">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="timeline-image-item swiper-slide">
+                  <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}">
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="timeline-content-slider-container col_50">
+          <div class="timeline-content-slider">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                <div class="timeline-content-item swiper-slide">
+                  <h4 class="year-text text-sm mx-0 f-f-semi-bold h-mobile">{{ block.settings.year }}</h4>
+                  <h3 class="mx-0 f-f-medium">{{ block.settings.description | replace: '<p>', '' | replace: '</p>','' }}</h3>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          
+          <div class="timeline-year-slider">
+            <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                  <div class="timeline-year-item swiper-slide">
+                    <h2 class="year-text mx-0 f-f-extra-bold">{{ block.settings.year }}</h2>
+                  </div>
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="year-pagination-slider-container"> 
+      <div class="year-pagination-slider"> </div>
+    </div>
+  </div>
+</div>
+<script>
+    var slideTitles = [
+        {% for block in section.blocks %}
+            "{{ block.settings.year }}"{% if forloop.last == false %},{% endif %}
+        {% endfor %}
+    ];
+
+  var about_timeline_image_slider = new Swiper('.timeline-image-slider', {
+      slidesPerView: 1,
+      loop: false,
+      speed: 800,
+      allowTouchMove: true,
+      effect: 'creative', // Use the creative effect
+      creativeEffect: {
+          prev: {
+              // Previous slide fades out
+              opacity: 0.8,
+          },
+          next: {
+              // Next slide slides in from the right
+              translate: ['100%', 0, 0], // Simple slide-in effect
+          },
+      },
+      pagination: {
+          el: '.year-pagination-slider',
+          clickable: true,
+          renderBullet: function (index, className) {
+              return `<span class="tab-pagination t-cap ${className}" data-index="${index}" title="${slideTitles[index]}">${slideTitles[index]}</span>`;
+          },
+      },
+  });
+
+  var about_timeline_content_slider = new Swiper('.timeline-content-slider', {
+      direction: "vertical",
+      slidesPerView: 1,
+      loop: false,
+      allowTouchMove: false,
+      speed: 800,
+  });
+  
+  var about_timeline_year_slider = new Swiper('.timeline-year-slider', {
+      direction: "vertical",
+      slidesPerView: 1,
+      spaceBetween: 20,
+      allowTouchMove: false,
+      loop: false,
+      speed: 800,
+  });
+  
+  about_timeline_image_slider.controller.control = about_timeline_content_slider;
+  about_timeline_content_slider.controller.control = about_timeline_year_slider;
+
+</script>
+{% schema %}
+    {
+        "name": "About Us Timeline",
+        "templates": ["page"],
+        "limit": 1, 
+        "settings": [
+            {
+                "type": "text",
+                "id": "section_link",
+                "label": "Section Link",
+                "default":"milestone-scroll-section"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "How we got here"
+            }
+        ],
+        "blocks": [
+          {
+              "type": "timeline",
+              "name": "Timeline",
+              "settings": [
+                  {
+                      "type": "text",
+                      "id": "year",
+                      "label": "Year"
+                  },
+                  {
+                      "type": "image_picker",
+                      "id": "image",
+                      "label": "Image"
+                  },
+                  {
+                      "type": "richtext",
+                      "id": "description",
+                      "label": "Description"
+                  }
+              ]
+          }
+        ],
+        "presets" :[{
+            "name" : "About Us Timeline"
+        }]
+    }
+{% endschema %} 

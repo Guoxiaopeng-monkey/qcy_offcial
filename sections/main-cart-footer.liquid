@@ -1,0 +1,155 @@
+{{ 'component-cart.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-totals.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.aio.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<div class="cart__footer" style="display:none;">
+    <div class="order-summary-panel js-contents" style="display:none;">
+    </div>
+    <div class="component-side-cart-details">
+      <div class="order-total-details">
+          <div class="order-summary-panel">
+              <h3 class="f-f-bold h4 mx-0">Order Summary</h3>
+          </div>
+          <div class="sub-content">
+              <p class="mx-0 f-f-medium">Products (<span id="order_product_count">{{ cart.item_count }}</span>)</p>
+              <p id="total_product_price" class="cart__total_price mx-0 f-f-medium">{{ cart.total_price | money }}</p>
+          </div>
+          <div class="sub-content">
+              <p class="mx-0 f-f-medium">Shipping</p>
+              <p class="mx-0 f-f-medium">Calculated at checkout</p>
+          </div>
+          <div class="sub-content">
+              {% assign total_cart_item_price = 0 %}
+              {% assign total_cart_compare_price = 0 %}
+  
+              {% for item in cart.items%}
+              {% assign total_cart_item_price = total_cart_item_price | plus: item.price %}
+              {% assign compare_price = item.variant.compare_at_price | times: item.quantity %}
+              {% assign total_cart_compare_price = total_cart_compare_price | plus: compare_price %}
+              {% endfor %}
+          </div>
+      </div>
+      <div class="sub-total-container" {{ block.shopify_attributes }}>
+          <div>
+              {%- if cart.cart_level_discount_applications.size > 0 -%}
+              <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                  {%- for discount in cart.cart_level_discount_applications -%}
+                  <li class="discounts__discount discounts__discount--position">
+                      {%- render 'icon-discount' -%}
+                      {{ discount.title }}
+                      (-{{ discount.total_allocated_amount | money }})
+                  </li>
+                  {%- endfor -%}
+              </ul>
+              {%- endif -%}
+          </div>
+  
+          {% render 'discount-code-section' %}
+          <div class="totals">
+              <p class="totals__total p f-f-medium main-color">Discount Applied</p>
+              <p class="cart__total_discount totals__total-value p f-f-medium main-color"></p>
+          </div>
+          <div class="totals">
+              <p class="totals__total h5 f-f-bold">Subtotal (before taxes)</p>
+              <p class="cart__total_price totals__total-value h5 f-f-bold">{{ cart.total_price | money }}</p>
+          </div>
+          <cart-note class="cart__note field">
+              <textarea class="text-area field__input" name="note" form="cart" id="Cart-note" placeholder="Order Note">{{ cart.note }}</textarea>
+          </cart-note>
+  
+          {% comment %} <small class="tax-note caption-large rte">
+              {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+              {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+              {%- elsif cart.taxes_included -%}
+              {{ 'sections.cart.taxes_included_but_shipping_at_checkout' | t }}
+              {%- elsif shop.shipping_policy.body != blank -%}
+              {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+              {%- else -%}
+              {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
+              {%- endif -%}
+          </small> {% endcomment %}
+      </div>
+      <div class="cart__blocks">
+          <div class="cart__ctas" {{ block.shopify_attributes }}>
+              <noscript>
+                  <button type="submit" class="f-f-mb h5 cart__update-button button button--secondary" form="cart">
+                      {{ 'sections.cart.update' | t }}
+                  </button>
+              </noscript>
+  
+              <button type="submit" id="checkout" class="f-f-mb h4 cart__checkout-button button" name="checkout" {% if cart == empty %} disabled {% endif %} form="cart">
+                  {{ 'sections.cart.checkout' | t }}
+              </button>
+          </div>
+  
+          <div id="cart-errors p-extra-small"></div>
+      </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "t:sections.main-cart-footer.name",
+  "class": "cart__footer-wrapper",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subtotal",
+      "name": "t:sections.main-cart-footer.blocks.subtotal.name",
+      "limit": 1
+    },
+    {
+      "type": "buttons",
+      "name": "t:sections.main-cart-footer.blocks.buttons.name",
+      "limit": 1
+    },
+    {
+      "type": "@app"
+    }
+  ]
+}
+{% endschema %}

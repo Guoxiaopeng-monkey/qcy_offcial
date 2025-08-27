@@ -1,0 +1,204 @@
+{% stylesheet %}
+    .featured-review-section{
+        padding:100px 0px 80px;
+        background-color:#F9F9F9;
+        overflow:hidden;
+    }
+    .review-content-slider{
+        overflow:hidden;
+        margin:auto;
+        height:400px;
+        width: 100%;
+    }
+    .featured-review-section .review-icons{
+        display:block;
+        text-align:center;
+        overflow:hidden;
+        padding-top:40px;
+    }
+    .featured-review-section .review-icons .review-icon-item{
+        width: 100%; 
+        display: inline;
+        justify-content: center;
+        align-items: center;
+        opacity:0.6;
+        transition: all 0.5s ease;
+        cursor:pointer;
+        height:auto;
+        display:flex;
+    }
+    .featured-review-section .review-icons .review-icon-item .icon-inner-container{
+      display:flex;
+      padding:0px 15px;
+    }
+    .featured-review-section .review-icons .review-icon-item.swiper-slide-active{
+        opacity:1;
+    }
+    .featured-review-section .review-icons .review-icon-item .review-icon-img{
+        max-height: 75px;
+        width: 100%;
+        object-fit: contain;
+    }   
+    .review-content-description{
+      display: flex;
+      margin: auto;
+      justify-content: center;
+      max-width: 700px;
+      align-items: center;
+      height: 100%;
+      position:relative;
+    }
+    .review-content-description .static-quote{
+        position:absolute;
+    }
+  
+    .review-content-description .static-quote img{
+      width:90px;
+      height:90px;
+      object-fit:contain;
+    }
+    .review-content-description .static-quote.quote-before{
+        top:0;
+        left:-50px;
+    }
+    .review-content-description .static-quote.quote-after{
+        bottom:0;
+        right:-50px;
+    }
+
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+        .featured-review-section{
+            padding:80px 0px 30px;
+        }
+        .featured-review-section .review-content-slider h2{
+            font-size:21px;
+        }
+        .review-content-description .static-quote img{
+          width:60px;
+          height:60px;
+          object-fit:contain;
+        }
+        .review-content-description .static-quote.quote-before{
+            left:0px;
+        }
+        .review-content-description .static-quote.quote-after{
+            right:0px;
+        }
+        .featured-review-section .review-icons{
+          padding-top:20px;
+        }
+        .review-content-slider{
+          height:250px;
+        }
+    }
+
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px){
+        .featured-review-section{
+            padding:80px 0px 30px;
+        }
+        .review-content-description .static-quote img{
+          width:60px;
+          height:60px;
+          object-fit:contain;
+        }
+        .review-content-description .static-quote.quote-before{
+            left:0px;
+        }
+        .review-content-description .static-quote.quote-after{
+            right:0px;
+        }
+        .featured-review-section .review-icons{
+          padding-top:20px;
+        }
+
+    }
+{% endstylesheet %}
+<div class="page-width">
+    <div class="review-content-slider">
+        <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+            <div class="swiper-slide">
+                <div class="review-content-description">
+                  
+                  <div class="static-quote quote-before">
+                      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/before-quote.png?v=1728664204" alt="double-quotes" width="100%" height="100%">
+                  </div>
+                  <h2 class="mx-0 f-f-medium center">{{ block.settings.description | strip_html }}</h2>
+                  <div class="static-quote quote-after">
+                      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/after-quote.png?v=1728664155" alt="double-quotes"  width="100%" height="100%">
+                  </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% for block in section.blocks %}
+            <div class="swiper-slide">
+                <div class="review-content-description">
+                  
+                  <div class="static-quote quote-before">
+                      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/before-quote.png?v=1728664204" alt="double-quotes" width="100%" height="100%">
+                  </div>
+                  <h2 class="mx-0 f-f-medium center">{{ block.settings.description | strip_html }}</h2>
+                  <div class="static-quote quote-after">
+                      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/after-quote.png?v=1728664155" alt="double-quotes"  width="100%" height="100%">
+                  </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        </div>
+    </div>
+    <div class="col_80 my-auto">
+      <div class="review-icons">
+          <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                  <div class="review-icon-item swiper-slide {% if forloop.index0 == 0 %}swiper-slide-active{% endif %}" data-index="{{ forloop.index0 }}">
+                      <div class="icon-inner-container">
+                        <img loading="lazy" src="{{ block.settings.review_image | img_url:'master' }}" class="review-icon-img"  width="100%" height="100%" alt="{{ block.settings.review_image.alt | default: block.settings.review_image.src | split: '/' | last | split: '?' | first | split: '.' | first | escape }}">
+                      </div>
+                  </div> 
+              {% endfor %}
+              {% for block in section.blocks %}
+                  <div class="review-icon-item swiper-slide {% if forloop.index0 == 0 %}swiper-slide-active{% endif %}" data-index="{{ forloop.index0 }}">
+                      <div class="icon-inner-container">
+                        <img loading="lazy" src="{{ block.settings.review_image | img_url:'master' }}" class="review-icon-img"  width="100%" height="100%" alt="{{ block.settings.review_image.alt | default: block.settings.review_image.src | split: '/' | last | split: '?' | first | split: '.' | first | escape }}">
+                      </div>
+                  </div> 
+              {% endfor %}
+          </div>
+      </div>
+    </div>
+</div>
+{% schema %}
+    {
+      
+        "class": "featured-review-section",
+        "name": "Review Section",
+        "templates": ["index"],
+        "limit": 1,
+        "blocks": [
+          {
+              "type": "review",
+              "name": "Review",
+              "settings": [
+                  {
+                      "type": "image_picker",
+                      "id": "review_image",
+                      "label": "Review Logo"
+                  },
+                  {
+                      "type": "richtext",
+                      "id": "description",
+                      "label": "Description"
+                  }
+              ]
+          }
+        ],
+        "presets" :[{
+            "name" : "Review Section"
+        }]
+    }
+  {% endschema %} 

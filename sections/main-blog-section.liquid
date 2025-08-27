@@ -1,0 +1,517 @@
+{% stylesheet %}
+  .main-blog-section{
+    padding:50px 0px;
+  }
+  .main-blog-section .main-blog-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap:25px;
+    row-gap:40px;
+  }
+  .main-blog-section .main-blog-container .article-featured-image{
+    height:280px;
+    overflow:hidden;
+  }
+  .main-blog-section .main-blog-container .article-featured-image img{
+    object-fit:cover;
+    height:100%;
+    width:100%;
+  }
+  .main-blog-section .main-blog-container .article-item{
+    box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 280px;
+  }
+  .main-blog-section .main-blog-container .article-item .article-featured-image img,
+  .main-blog-section .main-blog-container .article-item .article-details .article-title{
+    transition: all 0.5s ease;
+  }
+  .main-blog-section .main-blog-container .article-item:hover .article-featured-image img{
+    scale:1.1;
+  }
+  .main-blog-section .main-blog-container .article-item:hover .article-details .article-title{
+    color:#FF8832;
+  }
+  .main-blog-section .main-blog-container .article-item .article-details{
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: -webkit-fill-available;
+  }
+  .main-blog-section .pagination {
+     padding: 0px;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    width: fit-content;
+    margin:0px;
+  }
+  .main-blog-section .pagination-index .page-item {
+    padding: 0;
+    border-radius: 50px;
+    width: 46px;
+    height: 46px;
+    line-height: normal;
+    background: #F0F0F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+  }
+  .main-blog-section .pagination-index{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+  }
+  .main-blog-section .pagination .page-item {
+    color: #1f1f1f;
+  }
+  .main-blog-section .pagination .page-item.active {
+    background:#FF8832;
+  }
+  .main-blog-section .pagination .page-item.active {
+    color:#fff;
+  }
+  .main-blog-section .article-except{
+    padding-top: 10px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .blog-nav{
+    display:flex;
+  }
+  .blog-nav a{
+    padding:1rem 2rem;
+    width: fit-content;
+    text-wrap-mode: nowrap;
+  }
+  .blog-nav a.active{
+    border-bottom: 2px solid #FF8832;
+  }
+  .nav-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom:40px;
+  }
+  .search-nav-container .search-input{
+    position:relative;
+    display:flex;
+    align-items: center;
+  }
+  .search-nav-container .search-input input{
+    width: 100%;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+    padding: 12px 20px;
+    padding-right:65px;
+    border-radius: 50px;
+    border: 1px solid #D9D9D9;
+  }
+  .search-nav-container .search-input label{
+    position:relative;
+    z-index:0;
+    color:#CCCCCC;
+    padding-left:20px;
+  }
+  .search-nav-container .search-input input:focus~label,
+  .search-nav-container .search-input input:not(:placeholder-shown)~label{
+      opacity:0;
+  }
+  .search-nav-container .search-input input::placeholder{
+      color:transparent;
+  }
+  .search-nav-container .search-input label{
+    position:absolute;
+  }
+  .search-nav-container .search-label{
+    font-size:12px;
+  }
+  .search-nav-container .btn-search{
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    background: #D9D9D9;
+    border: none;
+    height: 100%;
+    padding: 0px 2rem;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+  .search-nav-container .btn-search:hover{
+    background: #FF8832;
+  }
+  .search-nav-container .btn-search:hover svg path{
+    fill:#fff;
+  }
+  .article-tag-container{
+    display:flex;
+    background:#F8F8F8;
+    padding:8px 15px;
+    width:fit-content;
+    border-radius:50px;
+    transition: all 0.3s ease;
+  }
+  .article-tag-container:hover {
+    background:#FF8832;
+  }
+  .article-tag-container:hover a{
+    color:#fff;
+  }
+  .article-tag-container a{
+    line-height:normal;
+    font-size:12px;
+  }
+  
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .main-blog-section{
+      padding:20px 0px;
+    }
+    .main-blog-section .main-blog-container {
+      grid-template-columns:repeat(1,1fr);
+    }
+    .search-nav-container .search-input{
+      background:#fff;
+      border-radius:50px;
+      top:20px;
+    }
+    .search-nav-container .search-input{
+        width: 85%;
+        margin: auto;
+    }
+    .blog-nav a{
+      font-size:16px;
+    }
+    .nav-container{
+      display:block;
+      width:100%
+      padding-bottom:30px;
+      overflow-x:scroll;
+    }
+    .nav-container::-webkit-scrollbar{
+      height:0px;
+    }
+    .main-blog-section .main-blog-container .article-item .article-details{
+      height:fit-content;
+    }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+    .main-blog-section{
+      padding:20px 0px;
+    }
+    .main-blog-section .main-blog-container {
+      grid-template-columns:repeat(1,1fr);
+    }
+    .search-nav-container .search-input{
+      background:#fff;
+      border-radius:50px;
+      top:20px;
+    }
+    .search-nav-container .search-input{
+        width: 86%;
+        margin: auto;
+    }
+    .blog-nav a{
+      font-size:16px;
+    }
+    .nav-container{
+      display:block;
+      width:100%
+      padding-bottom:30px;
+      overflow-x:scroll;
+    }
+    .nav-container::-webkit-scrollbar{
+      height:0px;
+    }
+    .main-blog-section .main-blog-container .article-item .article-details{
+      height:fit-content;
+    }
+  }
+
+{% endstylesheet %}
+<div class="page-width">
+  <div class="nav-container">
+    <div class="blog-nav">
+      {% for link in linklists.blogs.links %}
+          <a href="{{ link.url }}" class="h5 f-f-medium {% if link.active %}active{% endif %}">{{ link.title }}</a>
+      {% endfor %}
+    </div>
+    <div class="search-nav-container col_20 h-desktop">
+      <div class="search-input ">
+          <input name="search" placeholder="Enter your keywords" class="f-f-regular" id="search-input">
+          <label class="search-label">Enter your keywords</label>
+          <button class="btn-search">
+              <span class="svg-wrapper">
+                {{- 'search-icon.svg' | inline_asset_content -}}
+              </span>
+          </button>
+      </div>
+    </div>
+  </div>
+  <div class="main-blog-container" id="main-blog">
+    {% if template == 'blog' %}
+        {% assign sorted_articles = blog.articles | sort: 'published_at' | reverse %}
+        {% for post in sorted_articles %}
+          <a href="{{ post.url }}" class="article-item content" data-published-at="{{ post.published_at }}" data-search-term="{{ post.title | downcase }}">
+            <div class="article-featured-image">
+              <img loading="lazy" src="{{ post.image.src | image_url }}" width="100%" height="100%">
+            </div>
+              <div class="article-details">
+                <div class="">
+                  <div class="article-title f-f-bold mx-0 h5">{{ post.title }}</div>
+                  <p class="blog-description p-small f-f-regular mx-0 text-main-color">{{ post.content |  strip_html | truncate: 100 }}</p>
+                </div>
+                <div class="article-except">
+                  <p class="p-small mx-0 text-main-color">{{ post.published_at | date: "%^b %d, %Y" }}</p>
+                  <div class="article-tag-container">
+                     <div class="p-small article-tag mx-0 f-f-medium black-f">{{ blog.title }}</div>
+                  </div>
+                </div>
+              </div>
+          </a>
+        {% endfor %}
+    {% else %}
+        <!-- ALL BLOGS -->
+      {% for link in linklists.blogs.links %}
+          {% assign blog = link.object %}
+          {% for post in blog.articles %}
+              <a href="{{ post.url }}" class="article-item content" data-published-at="{{ post.published_at }}" data-search-term="{{ post.title | downcase }}">
+                <div class="article-featured-image">
+                  <img src="{{ post.image.src | image_url }}" width="100%" height="100%">
+                </div>
+                <div class="article-details">
+                  <div class="">
+                    <div class="article-title f-f-bold mx-0 h5">{{ post.title }}</div>
+                    <p class="blog-description p-small f-f-regular mx-0 text-main-color">{{ post.content |  strip_html | truncate: 100 }}</p>
+                  </div>
+                  <div class="article-except">
+                    <p class="p-small mx-0 text-main-color">{{ post.published_at | date: "%^b %d, %Y" }}</p>
+                    <div class="article-tag-container">
+                       <div class="p-small article-tag mx-0 f-f-medium black-f">{{ link.title }}</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+          {% endfor %}
+      {% endfor %}
+    {% endif %}
+  </div>
+  {% if blog.articles.size != 0 %}
+    <div class="pagination-index">
+      <li class="page-item" id="previous-page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 0.9 0.9" fill="none" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" transform="matrix(-1,0,0,1,0,0)">
+          <path d="M.364.686a.04.04 0 0 0 .053 0L.601.503a.075.075 0 0 0 0-.106L.418.214a.038.038 0 0 0-.053.053l.157.157a.04.04 0 0 1 0 .053L.364.633a.04.04 0 0 0 0 .053" fill="#0F0F0F"></path>
+        </svg>
+      </li>
+      <ul class="pagination justify-content-center pagination-sm">
+      </ul>
+      <li class="page-item" id="next-page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 0.9 0.9" fill="none">
+          <path d="M.364.686a.04.04 0 0 0 .053 0L.601.503a.075.075 0 0 0 0-.106L.418.214a.038.038 0 0 0-.053.053l.157.157a.04.04 0 0 1 0 .053L.364.633a.04.04 0 0 0 0 .053" fill="#0F0F0F"/>
+        </svg>
+      </li>
+    </div>
+  {% endif %}
+</div>
+<script>
+      const articlesContainer = document.getElementById("main-blog");
+      const articles = Array.from(articlesContainer.querySelectorAll(".article-item"));
+  
+      articles.sort((a, b) => {
+        return new Date(b.getAttribute("data-published-at")) - new Date(a.getAttribute("data-published-at"));
+      });
+  
+      articles.forEach(article => articlesContainer.appendChild(article));
+    const wrapper = document.querySelector("#main-blog");
+    const searchInput = document.querySelector("#search-input");
+    const searchInputMobile = document.querySelector("#search-input-mobile");
+    const previousPageButton = document.querySelector("#previous-page");
+    const nextPageButton = document.querySelector("#next-page");
+    const items = Array.from(document.querySelectorAll(".article-item"));
+    let filteredItems = items;
+    let currPage = 1;
+    const pageSize = 9;
+    const paginationSize = 5; // Limit of pagination buttons
+
+    function paginate(totalItems, currentPage = 1) {
+        const totalPages = Math.ceil(totalItems / pageSize);
+        if (currentPage < 1) currentPage = 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+
+        const startIndex = (currentPage - 1) * pageSize;
+        const endIndex = Math.min(startIndex + pageSize, totalItems);
+
+        return {
+            totalPages,
+            startIndex,
+            endIndex
+        };
+    }
+
+    function getPageList(totalPages, currentPage, paginationSize) {
+        const pages = [];
+        const half = Math.floor(paginationSize / 2);
+    
+        let start = Math.max(1, currentPage - half);
+        let end = Math.min(totalPages, currentPage + half);
+    
+        // Adjust the start and end boundaries to always show the paginationSize
+        if (end - start + 1 < paginationSize) {
+            if (start === 1) {
+                end = Math.min(start + paginationSize - 1, totalPages);
+            } else if (end === totalPages) {
+                start = Math.max(1, end - paginationSize + 1);
+            }
+        }
+    
+        // Ensure at least one page number before the current page
+        if (start > 2) {
+            pages.push(1); // Always show the first page
+            pages.push('...'); // Add ellipsis if there are more pages before the current range
+        }
+    
+        // Add the main page numbers in the range
+        for (let i = start; i <= end; i++) {
+            pages.push(i);
+        }
+    
+        // Ensure at least one page number after the current page
+        if (end < totalPages - 1) {
+            pages.push('...'); // Add ellipsis if there are more pages after the current range
+            pages.push(totalPages); // Always show the last page
+        }
+    
+        return pages;
+    }
+
+
+    function setHTML(items) {
+        wrapper.innerHTML = ""; // Clear the wrapper for new content
+        const { totalPages, startIndex, endIndex } = paginate(items.length, currPage);
+
+        // Append the items for the current page
+        items.slice(startIndex, endIndex).forEach(item => {
+            wrapper.append(item);
+        });
+
+        // Show/hide pagination buttons based on the current page
+        previousPageButton.style.display = currPage === 0 || totalPages === 0  || totalPages === 1 ? 'none' : 'flex';
+        nextPageButton.style.display = currPage === 0 || totalPages === 0 || totalPages === 1 ? 'none' : 'flex';
+      
+        // Update pagination display
+        updatePagination_blog(totalPages);
+    }
+
+    function updatePagination_blog(totalPages) {
+        const paginationWrapper = document.querySelector(".pagination"); // Ensure there's a container for pagination
+        paginationWrapper.innerHTML = ""; // Clear previous pagination
+
+        if (totalPages > 1) {
+            const pageList = getPageList(totalPages, currPage, paginationSize);
+            pageList.forEach(page => {
+                const pageButton = document.createElement("li");
+                pageButton.textContent = page;
+                pageButton.className = "page-item";
+                pageButton.dataset.page = page;
+                pageButton.className = "page-item" + (page === currPage ? " active" : ""); // Add active class for the current page
+
+                // Add event listener for page button
+                pageButton.addEventListener('click', () => {
+                    if (page !== '...') { // Only change page if not an ellipsis
+                        currPage = parseInt(page);
+                        setHTML(filteredItems); // Update displayed items for the selected page
+                      
+                        var targetOffset = $('.main-blog-section').offset().top  - 70;
+                        $("html, body").animate({
+                            scrollTop: targetOffset
+                        }, 400);
+                    }
+                });
+
+                paginationWrapper.appendChild(pageButton);
+            });
+        }
+    }
+
+    // Event listener for the previous page button
+    previousPageButton.addEventListener('click', () => {
+        if (currPage > 1) {
+            currPage -= 1;
+            setHTML(filteredItems); // Update displayed items for the new page
+          
+            var targetOffset = $('.main-blog-section').offset().top  - 70;
+            $("html, body").animate({
+                scrollTop: targetOffset
+            }, 400);
+        }
+    });
+
+    // Event listener for the next page button
+    nextPageButton.addEventListener('click', () => {
+        const totalPages = Math.ceil(filteredItems.length / pageSize);
+        if (currPage < totalPages) {
+            currPage += 1;
+            setHTML(filteredItems); // Update displayed items for the new page
+          
+            var targetOffset = $('.main-blog-section').offset().top  - 70;
+            $("html, body").animate({
+                scrollTop: targetOffset
+            }, 400);
+        }
+    });
+  
+    setHTML(filteredItems); // Initial load to display items
+  
+    searchInput.addEventListener('input', () => {
+        const keyword = searchInput.value.toLowerCase();
+    
+        if (keyword) {
+            filteredItems = items.filter(item => {
+                return item.dataset.searchTerm.toLowerCase().includes(keyword); // Ensure keyword search is case insensitive
+            });
+        } else {
+            filteredItems = items; // Reset to all items if search is cleared
+        }
+    
+        currPage = 1; // Reset to first page after search
+        setHTML(filteredItems); // Update the displayed items
+    });
+  
+    searchInputMobile.addEventListener('input', () => {
+        const keyword = searchInputMobile.value.toLowerCase();
+    
+        if (keyword) {
+            filteredItems = items.filter(item => {
+                return item.dataset.searchTerm.toLowerCase().includes(keyword); // Ensure keyword search is case insensitive
+            });
+        } else {
+            filteredItems = items; // Reset to all items if search is cleared
+        }
+    
+        currPage = 1; // Reset to first page after search
+        setHTML(filteredItems); // Update the displayed items
+    });
+
+</script>
+{% schema %}
+    {
+        "class": "main-blog-section",
+        "name": "Main Blog Section",
+        "templates": ["blog","page"],
+        "presets" :[{
+          "name" : "Main Blog Section"
+        }]
+    }
+{% endschema %} 

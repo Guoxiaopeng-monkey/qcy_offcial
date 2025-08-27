@@ -1,0 +1,119 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "contact_us_banner_section_cK6DGR": {
+      "type": "contact-us-banner-section",
+      "settings": {}
+    },
+    "contact_us_information_section_DRhC3x": {
+      "type": "contact-us-information-section",
+      "blocks": {
+        "information_WKhTLQ": {
+          "type": "information",
+          "settings": {
+            "heading": "Customer Support",
+            "description": "<p>service@qcyearphone.com</p>"
+          }
+        },
+        "information_CiwRGE": {
+          "type": "information",
+          "settings": {
+            "heading": "Marketing & Partnerships",
+            "description": "<p><a href=\"mailto:Rice@qcyearphone.com\" title=\"mailto:Rice@qcyearphone.com\">Rice@qcyearphone.com</a></p>"
+          }
+        },
+        "information_rmJQaV": {
+          "type": "information",
+          "settings": {
+            "heading": "Press",
+            "description": "<p><a href=\"mailto:PR@qcyearphone.com\" title=\"mailto:PR@qcyearphone.com\">PR@qcyearphone.com</a></p>"
+          }
+        },
+        "information_kWFAnU": {
+          "type": "information",
+          "settings": {
+            "heading": "Supply Chain Collaboration",
+            "description": "<p><a href=\"mailto:tanyanjiao@qcy.com\" title=\"mailto:tanyanjiao@qcy.com\">tanyanjiao@qcy.com</a></p>"
+          }
+        },
+        "information_gPLL7m": {
+          "type": "information",
+          "settings": {
+            "heading": "Distribution & Reseller",
+            "description": "<p><a href=\"mailto:fanghu@qcy.com\" title=\"mailto:fanghu@qcy.com\">fanghu@qcy.com</a></p>"
+          }
+        },
+        "feedback_C8fkdG": {
+          "type": "feedback",
+          "settings": {}
+        },
+        "information_3DQWmK": {
+          "type": "information",
+          "settings": {
+            "heading": "Address:",
+            "description": "<p>Hong Kong Hele Electronics Limited 19H, Wan Tai Plaza, 3 Tai Yau Street, San Po Kong, Wong Tai SinDistrict, Kowloon, Hong Kong</p>"
+          }
+        },
+        "information_CY7Eza": {
+          "type": "information",
+          "settings": {
+            "heading": "Phone number",
+            "description": "<p>+1(917)807-6754</p>"
+          }
+        },
+        "information_bWQP4K": {
+          "type": "information",
+          "settings": {
+            "heading": "Office Hour",
+            "description": "<p>9:00-18:00, Monday to Friday</p>"
+          }
+        }
+      },
+      "block_order": [
+        "information_WKhTLQ",
+        "information_CiwRGE",
+        "information_rmJQaV",
+        "information_kWFAnU",
+        "information_gPLL7m",
+        "feedback_C8fkdG",
+        "information_3DQWmK",
+        "information_CY7Eza",
+        "information_bWQP4K"
+      ],
+      "settings": {
+        "title": "Contact Us"
+      }
+    },
+    "contact_us_map_section_rhRfLc": {
+      "type": "contact-us-map-section",
+      "settings": {}
+    },
+    "pf-9f203d4f": {
+      "type": "pf-9f203d4f",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "contact_us_banner_section_cK6DGR",
+    "contact_us_information_section_DRhC3x",
+    "contact_us_map_section_rhRfLc",
+    "pf-9f203d4f"
+  ]
+}

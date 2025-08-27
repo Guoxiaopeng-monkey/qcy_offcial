@@ -1,0 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main_article_section_hbbmK6": {
+      "type": "main-article-section",
+      "settings": {
+        "url": "shopify://pages/promotion",
+        "hide_offers": true
+      }
+    },
+    "article_recommend_blog_section_r6UyKY": {
+      "type": "article-recommend-blog-section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main_article_section_hbbmK6",
+    "article_recommend_blog_section_r6UyKY"
+  ]
+}

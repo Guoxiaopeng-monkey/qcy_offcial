@@ -1,0 +1,388 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "about_us_banner_content_section_7MzhLj": {
+      "type": "about-us-banner-content-section",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/134_2x_2af16098-751e-4e38-9426-eb43b0303f87.png",
+        "image_mobile": "shopify://shop_images/134_2x_1_0bd2b2e6-ab87-4d50-a647-27793f8a3f26.png",
+        "heading": "What is Lorem Ipsum",
+        "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>",
+        "text_alignment": "center",
+        "hide_heading": false,
+        "hide_description": false,
+        "content_position_y": "content-desktop-y-center",
+        "content_position_x": "content-desktop-x-left",
+        "content_position_y_mobile": "content-mobile-y-center"
+      }
+    },
+    "page_featured_video_yraJXV": {
+      "type": "page-featured-video",
+      "settings": {
+        "video": "shopify://files/videos/QT33-20S版_775df814-a3f9-424d-92ba-81aca4b335a6.mp4",
+        "sub_heading": "Be Creative Go Beyond"
+      }
+    },
+    "about_us_page_header_VnA46D": {
+      "type": "about-us-page-header",
+      "blocks": {
+        "menu_a9Gz3P": {
+          "type": "Menu",
+          "settings": {
+            "title": "Values",
+            "section_link": "values-scroll-section"
+          }
+        },
+        "menu_9mhPkD": {
+          "type": "Menu",
+          "settings": {
+            "title": "Milestone",
+            "section_link": "milestone-scroll-section"
+          }
+        },
+        "menu_NbQD3Y": {
+          "type": "Menu",
+          "settings": {
+            "title": "Award",
+            "section_link": "award-scroll-section"
+          }
+        },
+        "menu_QQRXL3": {
+          "type": "Menu",
+          "disabled": true,
+          "settings": {
+            "title": "Sustainability",
+            "section_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "menu_a9Gz3P",
+        "menu_9mhPkD",
+        "menu_NbQD3Y",
+        "menu_QQRXL3"
+      ],
+      "settings": {}
+    },
+    "about_us_label_count_section_fUrMVy": {
+      "type": "about-us-label-count-section",
+      "blocks": {
+        "icon_q8zE4U": {
+          "type": "icon",
+          "settings": {
+            "heading": "Top",
+            "special_char": "4",
+            "heading_1": "",
+            "description": "<p>TWS Global Market Share</p>"
+          }
+        },
+        "icon_rC4E78": {
+          "type": "icon",
+          "settings": {
+            "heading": "",
+            "special_char": "30",
+            "heading_1": "+",
+            "description": "<p>countries and regions covered</p>"
+          }
+        },
+        "icon_ijFcRL": {
+          "type": "icon",
+          "settings": {
+            "heading": "",
+            "special_char": "30",
+            "heading_1": "M+",
+            "description": "<p>Units Annual Shipment</p>"
+          }
+        }
+      },
+      "block_order": [
+        "icon_q8zE4U",
+        "icon_rC4E78",
+        "icon_ijFcRL"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "about_us_featured_specs_section_Gnme7i": {
+      "type": "about-us-featured-specs-section",
+      "blocks": {
+        "item_c3GTmB": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/111_6f759d48-5627-4123-bc48-0c083fb87359.webp",
+            "heading": "Quality",
+            "description": "<p>Reflects a commitment to achieving the highest quality in all endeavors.</p>"
+          }
+        },
+        "item_nc9xtx": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/3_cbce74e9-fd89-4fe5-844a-2ac4523e9ca4.webp",
+            "heading": "Creativity",
+            "description": "<p>Showcases advancements in smart wearables that enhance everyday life.</p>"
+          }
+        },
+        "item_YN3iXL": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/4_43c65e30-9f96-44e6-b4db-b45fb0f1db36.png",
+            "heading": "Youth",
+            "description": "<p>Highlights the aim to meet the needs of the younger generation and embrace future trends.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_c3GTmB",
+        "item_nc9xtx",
+        "item_YN3iXL"
+      ],
+      "settings": {
+        "section_link": "values-scroll-section",
+        "heading": "Be Creative Go Beyond",
+        "description": "<p>Launched by tech-savvy audio enthusiasts and engineers, QCY has grown into one of the largest Bluetooth headphone manufacturers. By investing in product development, eco-friendly materials, and efficient supply chains, we deliver advanced, budget-friendly audio solutions that let everyone enjoy the excitement of great sound.</p>",
+        "hide_heading": true,
+        "hide_description": false,
+        "hide_heading_mobile": false,
+        "hide_description_mobile": false
+      }
+    },
+    "about_us_timeline_section_tPMLwL": {
+      "type": "about-us-timeline-section",
+      "blocks": {
+        "timeline_7GDdAR": {
+          "type": "timeline",
+          "settings": {
+            "year": "2023",
+            "image": "shopify://shop_images/9-1.jpg",
+            "description": "<p>QCY launched its first over-ear headphones, the QCY H3, which sold over 500,000 units in just six months, earning praise from top review sites like Digital Trends, Tom's Guide, and ZDNet.</p>"
+          }
+        },
+        "timeline_8PMHqP": {
+          "type": "timeline",
+          "settings": {
+            "year": "2021",
+            "image": "shopify://shop_images/39978_2x_3.png",
+            "description": "<p>QCY secured a top 3 position for global TWS shipments and market share for two consecutive quarters. </p>"
+          }
+        },
+        "timeline_H7pyGM": {
+          "type": "timeline",
+          "settings": {
+            "year": "2020",
+            "image": "shopify://shop_images/39978_2x_4.png",
+            "description": "<p>QCY ranked in the top 4 for worldwide TWS shipments and market share for three consecutive quarters. </p>"
+          }
+        },
+        "timeline_xGy4BD": {
+          "type": "timeline",
+          "settings": {
+            "year": "2018",
+            "image": "shopify://shop_images/10-1.jpg",
+            "description": "<p>The QCY T1 became one of the top 6 best-selling TWS earbuds worldwide, making a significant impact in markets across Europe and Asia.</p>"
+          }
+        },
+        "timeline_VzHrNV": {
+          "type": "timeline",
+          "settings": {
+            "year": "2015",
+            "image": "shopify://shop_images/QY8.jpg",
+            "description": "<p>QCY's annual sales exceeded 55 million dollars this year, becoming a dominant player in the TWS headphone market.</p>"
+          }
+        },
+        "timeline_FJbQGW": {
+          "type": "timeline",
+          "settings": {
+            "year": "2010",
+            "image": "shopify://shop_images/11_a4ba6ebb-546b-4e34-b125-ae297e7a0af7.jpg",
+            "description": "<p>QCY launched its first Bluetooth headphones, QY7, marking the brand's entry into the Brazil and Korea market. </p>"
+          }
+        },
+        "timeline_FtFQXR": {
+          "type": "timeline",
+          "settings": {
+            "year": "2009",
+            "image": "shopify://shop_images/40003_2x_ad1e9044-b0e7-4218-8cee-254e231c30ea.png",
+            "description": "<p>QCY is founded with a mission to make quality audio solutions accessible to everyone. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "timeline_7GDdAR",
+        "timeline_8PMHqP",
+        "timeline_H7pyGM",
+        "timeline_xGy4BD",
+        "timeline_VzHrNV",
+        "timeline_FJbQGW",
+        "timeline_FtFQXR"
+      ],
+      "settings": {
+        "section_link": "milestone-scroll-section",
+        "title": "How we got here"
+      }
+    },
+    "about_us_award_section_KbR7eY": {
+      "type": "about-us-award-section",
+      "blocks": {
+        "award_yctQfx": {
+          "type": "award",
+          "settings": {
+            "description": "",
+            "image": "shopify://shop_images/PD2025_RD_t.png",
+            "sub_heading": "<p>Red Dot Design Award</p>"
+          }
+        },
+        "award_fEd7fi": {
+          "type": "award",
+          "settings": {
+            "description": "",
+            "image": "shopify://shop_images/20241205-104625.png",
+            "sub_heading": "<p>Visual Grand Prix Gold Award</p>"
+          }
+        },
+        "award_xQegi6": {
+          "type": "award",
+          "settings": {
+            "description": "",
+            "image": "shopify://shop_images/02536d58-913d-40ae-ad86-8af0e1ee8fde.png",
+            "sub_heading": "<p>IDA Design Award</p>"
+          }
+        },
+        "award_FecAC4": {
+          "type": "award",
+          "settings": {
+            "description": "",
+            "image": "shopify://shop_images/ces2022innovationawardhonoreelogo.png",
+            "sub_heading": "<p>CES Innovation Award</p>"
+          }
+        },
+        "award_FHqMMi": {
+          "type": "award",
+          "settings": {
+            "description": "",
+            "image": "shopify://shop_images/images_1.png",
+            "sub_heading": "<p>IAI Design Award</p>"
+          }
+        },
+        "award_V8BeYy": {
+          "type": "award",
+          "settings": {
+            "description": "",
+            "image": "shopify://shop_images/12_e2e9370d-27d7-4f0c-8d8f-0120d118626e.jpg",
+            "sub_heading": "<p>Recommended by tom's guide</p>"
+          }
+        },
+        "award_jdcmqU": {
+          "type": "award",
+          "settings": {
+            "description": "",
+            "image": "shopify://shop_images/20241205-104654.png",
+            "sub_heading": "<p>Muse Design Award</p>"
+          }
+        },
+        "award_9BQbNM": {
+          "type": "award",
+          "settings": {
+            "description": "",
+            "sub_heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "award_yctQfx",
+        "award_fEd7fi",
+        "award_xQegi6",
+        "award_FecAC4",
+        "award_FHqMMi",
+        "award_V8BeYy",
+        "award_jdcmqU",
+        "award_9BQbNM"
+      ],
+      "settings": {
+        "section_link": "award-scroll-section",
+        "heading": "International Awards"
+      }
+    },
+    "about_us_sustainability_section_69ezxt": {
+      "type": "about-us-sustainability-section",
+      "blocks": {
+        "sustainability_3QaMVC": {
+          "type": "sustainability",
+          "settings": {
+            "image": "shopify://shop_images/ab1.png",
+            "heading": "Eco-Friendly Materials",
+            "description": "<p>We use recyclable and eco-friendly materials in our headphones, ensuring exceptional sound quality while protecting the environment.</p>"
+          }
+        },
+        "sustainability_crBndQ": {
+          "type": "sustainability",
+          "settings": {
+            "image": "shopify://shop_images/ab2.png",
+            "heading": "Energy-Efficient Production",
+            "description": "<p>Our manufacturing processes minimize energy consumption and carbon footprint, proving that technology can support sustainability.</p>"
+          }
+        },
+        "sustainability_JDnRWx": {
+          "type": "sustainability",
+          "settings": {
+            "image": "shopify://shop_images/ab3.png",
+            "heading": "Circular Economy",
+            "description": "<p>Join our recycling program to give old headphones a new life and help us contribute to a healthier planet.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "sustainability_3QaMVC",
+        "sustainability_crBndQ",
+        "sustainability_JDnRWx"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "about_us_footer_links_section_VCgVDt": {
+      "type": "about-us-footer-links-section",
+      "blocks": {
+        "link_grcPjH": {
+          "type": "Link",
+          "settings": {
+            "image": "shopify://shop_images/contact_us.png",
+            "heading": "Contact Us",
+            "link": "shopify://pages/contact-us"
+          }
+        },
+        "link_rH36EJ": {
+          "type": "Link",
+          "settings": {
+            "image": "shopify://shop_images/14.jpg",
+            "heading": "Blog",
+            "link": "shopify://pages/blogs"
+          }
+        }
+      },
+      "block_order": [
+        "link_grcPjH",
+        "link_rH36EJ"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "about_us_banner_content_section_7MzhLj",
+    "page_featured_video_yraJXV",
+    "about_us_page_header_VnA46D",
+    "about_us_label_count_section_fUrMVy",
+    "about_us_featured_specs_section_Gnme7i",
+    "about_us_timeline_section_tPMLwL",
+    "about_us_award_section_KbR7eY",
+    "about_us_sustainability_section_69ezxt",
+    "about_us_footer_links_section_VCgVDt"
+  ]
+}

@@ -1,0 +1,84 @@
+{% stylesheet %}
+    .box-section{
+        background-color:#F9F9F9;
+        padding:30px 0px;
+    }
+    .in-the-box-image{
+        display:flex;
+        width:100%;
+        object-fit:contain;
+    }
+    .in-the-box-container{
+        display:flex;
+        align-items:center;
+    }
+    .box-description{
+        display:flex;
+        gap:1rem;    
+        justify-content: center;
+    }
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px)  {
+        .in-the-box-container{
+            flex-direction:column-reverse;
+            gap:30px;
+        }
+        .box-description{
+            justify-content:flex-start;
+        }
+    }
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) {
+        .in-the-box-container{
+            flex-direction:column-reverse;
+            gap:30px;
+        }
+        .box-description{
+            justify-content:flex-start;
+        }
+    }
+{% endstylesheet %}
+<div class="page-width">
+    <div class="in-the-box-container">
+        <div class="col_50 box-description">
+            <div class="content-box">
+                <h2 class="heading text-lg f-f-bold mx-0">{{ section.settings.heading }}</h2>
+                <p class="mx-0"> {{ section.settings.description | replace: '<p>', '' | replace: '</p>', ''  }}</p>
+            </div>
+        </div>
+        <div class="col_50">
+            <img loading="lazy" src="{{ section.settings.box_image |  img_url: 'master' }}" class="in-the-box-image">
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "class": "box-section",
+        "name": "Box",
+        "templates": ["product"],
+        "limit": 1, 
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "In the Box"
+            },
+            {
+                "type": "richtext",
+                "id": "description",
+                "label": "Description"
+            },
+            {
+                "type": "image_picker",
+                "id": "box_image",
+                "label": "Image"
+            }
+        ],
+        "presets" :[{
+            "name" : "Box"
+        }]
+    }
+  {% endschema %} 

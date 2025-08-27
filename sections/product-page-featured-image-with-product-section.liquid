@@ -1,0 +1,252 @@
+<style>
+    .featured-image-width-product-section{
+        padding:50px 0px 0px;
+    }
+    .featured-image-width-product-section .featured-image-width-product-container{
+        display:flex;
+
+    }
+    .featured-image-width-product-section .featured-image-bg{
+        width:100%;
+        height:100%;
+    }
+    .featured-image-width-product-section .featured-details-content{
+        display: flex;
+        align-items: center;
+    }
+    .featured-image-width-product-section .featured-product{
+        width:600px;
+        height:100%;
+        object-fit:contain;
+        position:absolute;
+    }
+    .featured-image-width-product-section .featured-image-list{
+        position:relative;
+        display:flex;
+    }
+    .image-width-product-image-item{
+      width:100%;
+      height:100%;
+    }
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+        .featured-image-width-product-section{
+            padding:50px 0px;
+            overflow:hidden;
+        }
+        .featured-image-width-product-section .featured-image-width-product-container{
+            flex-direction:column-reverse;
+            gap:30px;
+        }
+        .featured-image-width-product-section .featured-image-list{
+            justify-content: flex-end;
+        }
+        .featured-image-width-product-section .featured-image-bg{
+            width:65%;
+        }
+        .featured-image-width-product-section .featured-product{
+            width: fit-content;
+            height: 280px;
+            left:0;
+            top:40px;
+        }
+    }
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px){
+        .featured-image-width-product-section{
+            padding:50px 0px;
+            overflow:hidden;
+        }
+        .featured-image-width-product-section .featured-image-width-product-container{
+            flex-direction:column-reverse;
+            gap:30px;
+        }
+        .featured-image-width-product-section .featured-image-list{
+            justify-content: flex-end;
+        }
+        .featured-image-width-product-section .featured-image-bg{
+            width:65%;
+        }
+        .featured-image-width-product-section .featured-product{
+            width: fit-content;
+            height: 280px;
+            left:0;
+            top:40px;
+        }
+    }
+
+    /* TABLETS  */ 
+    @media only screen and (min-width: 768px) {
+        .featured-image-width-product-section .featured-product{
+            width:400px;
+            left:-50%;
+        }
+    }
+    @media only screen and (min-width: 800px) {
+        .featured-image-width-product-section .featured-product{
+            width:400px;
+            left:-50%;
+        }
+    }
+    @media (min-width: 1024px) and (orientation: portrait) {
+        .featured-image-width-product-section .featured-product{
+            width:400px;
+            left:-50%;
+        }
+    }
+
+    /* COMPUTERS */
+    @media (min-width: 1024px) and (orientation: landscape) {
+        .featured-image-width-product-section .featured-product{
+            width:400px;
+            left:-50%;
+        }
+    }
+    @media only screen and (min-width: 1280px) {
+        .featured-image-width-product-section .featured-details-content{
+            padding-left:20px;
+        }
+        .featured-image-width-product-section .featured-product{
+            width:400px;
+            left:-50%;
+        }
+    }
+    @media only screen and (min-width: 1366px) {
+        .featured-image-width-product-section .featured-details-content{
+            padding-left:30px;
+        }
+        .featured-image-width-product-section .featured-product{
+            width:400px;
+            left:-50%;
+        }
+    }
+    @media only screen and (min-width: 1440px) {
+        .featured-image-width-product-section .featured-details-content{
+            padding-left:50px;
+        }
+        .featured-image-width-product-section .featured-product{
+            width:450px;
+            left:-60%;
+        }
+    }
+    @media only screen and (min-width: 1536px) {
+        .featured-image-width-product-section .featured-details-content{
+            padding-left:8%;
+        }
+        .featured-image-width-product-section .featured-product{
+            width:500px;
+            left:-60%;
+        }
+        .featured-image-width-product-section .featured-product{
+            width:550px;
+            left:-60%;
+        }
+    }
+    @media only screen and (min-width: 1600px) {
+        .featured-image-width-product-section .featured-details-content{
+            padding-left:8%;
+        }
+        .featured-image-width-product-section .featured-product{
+            width:550px;
+            left:-60%;
+        }
+    }
+    @media only screen and (min-width: 1920px) {
+        .featured-image-width-product-section .featured-details-content{
+            padding-left:10%;
+        }
+        .featured-image-width-product-section .featured-product{
+            width:600px;
+            left:-70%;
+        }
+    }
+
+</style>
+<div class="page-width">
+  {% if section.settings.display_content %}
+    <div class="featured-image-width-product-container">
+        <div class="col_65 featured-details-content">    
+            <div class="col_55">
+                <h4 class="heading text-md mx-0 f-f-bold">{{ section.settings.heading }}</h4>
+                <h5 class="description mx-0">{{ section.settings.description | replace: '<p>', '' | replace: '</p>', '' }}</h5>
+            </div>
+        </div>
+        <div class="col_35 featured-image-list">
+            <img loading="lazy" src="{{ section.settings.featured_image |  img_url: 'master' }}" alt="" class="featured-image-bg">
+            <img loading="lazy" src="{{ section.settings.product_image |  img_url: 'master' }}" alt="" class="featured-product">
+        </div>
+    </div>
+  {% else %}
+    {% for block in section.blocks %}
+      <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}" class="image-width-product-image-item
+      {% if block.settings.image_mobile != blank %}
+        h-desktop
+      {% endif %}
+        ">
+      {% if block.settings.image_mobile != blank %}
+        <img loading="lazy" src="{{ block.settings.image_mobile | img_url: 'master' }}" class="image-width-product-image-item h-mobile">
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
+{% schema %}
+    {
+        "class": "featured-image-width-product-section",
+        "name": "Image with Product",
+        "templates": ["product"],
+        "limit": 1, 
+        "settings": [
+            {
+                "type": "checkbox",
+                "id": "display_content",
+                "label": "Display Content",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "Noise-Free Clear Call"
+            },
+            {
+                "type": "richtext",
+                "id": "description",
+                "label": "Description",
+                "default": "<p>Thanks to ENC and microphone DSP noise canceling technologiesOCY H3 Lite can enhance vocals while axe ambient noises so you canenjoy crystal-clear call.</p>"
+            },
+            {
+                "type": "image_picker",
+                "id": "product_image",
+                "label": "Product Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "featured_image",
+                "label": "Featured Image"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "image",
+                "name": "Image",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_mobile",
+                        "label": "Image Mobile"
+                    }
+                ]
+            }
+        ],
+        "presets" :[{
+            "name" : "Image with Product"
+        }]
+    }
+  {% endschema %} 

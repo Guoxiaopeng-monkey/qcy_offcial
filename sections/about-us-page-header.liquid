@@ -1,0 +1,141 @@
+{% stylesheet %}
+    .about-us-header-container{
+        box-shadow: 0px -3px 6px 1px rgba(0, 0, 0, 0.1);
+        background-color:#fff;
+    }
+    .page-header-section .product-header-menu{
+        display:flex;    
+        justify-content: space-evenly;
+    }
+    .page-header-section .product-header-menu .list-menu-link{
+        padding:1.5rem 0px;
+        transition: all 0.3s ease;
+        border-bottom: 3px solid #fff;
+        cursor:pointer;
+    }
+    .page-header-section .product-header-menu .list-menu-link.active{
+        border-bottom: 3px solid #FF8832;
+    }
+    .shopify-section-header-sticky{
+        opacity:1;
+        visibility:visible;
+        transition: visibility 0.1s ease, opacity 0.5s ease;
+    }
+    .header-hide {
+        opacity:0;
+        visibility:hidden;
+    }
+    .product-header-sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 4; /* Make sure it's above other content */
+    }
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+        .page-header-section .product-header-menu .list-menu-link{
+            font-size:15px;
+        }
+    }
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px){
+        .page-header-section .product-header-menu .list-menu-link{
+            font-size:16px;
+        }
+    }
+{% endstylesheet %}
+<div class="about-us-header-container">
+    <div class="page-width">
+        <div class="product-header-menu">
+            {% for block in section.blocks %}
+              <h4 data-scroll="{{ block.settings.section_link }}" class="list-menu-link mx-0 f-f-bold {% if forloop.index == 1 %} active{% endif %}">{{ block.settings.title }}</h4>
+            {% endfor %}
+            {% comment %}
+              <h4 data-scroll="values-scroll-section" class="list-menu-link mx-0 f-f-bold active">Values</h4>
+              <h4 data-scroll="milestone-scroll-section" class="list-menu-link mx-0 f-f-bold">Milestone</h4>
+              <h4 data-scroll="award-scroll-section" class="list-menu-link mx-0 f-f-bold">Award</h4>
+              <h4 data-scroll="sustainability-scroll-section" class="list-menu-link mx-0 f-f-bold">Sustainability</h4>
+            {% endcomment %}
+        </div>
+    </div>
+</div>
+{% javascript %}
+    $('.page-header-section').each(function(){
+        var $container = $(this); 
+        $container.find('.product-header-menu .list-menu-link').click(function(){
+            $('.product-header-menu .list-menu-link').removeClass('active');
+            $(this).addClass('active');
+            
+            var targetOffset = $('.'+$(this).attr('data-scroll')).offset().top  - 50;
+            $("html, body").animate({
+                scrollTop: targetOffset
+            }, 5);
+        });
+        
+    });
+
+    $(window).on('scroll', function() {
+        // Get the top offset of the .page-header-section
+        var productHeaderTop = $('.page-header-section').offset().top;
+        var scrollPosition = $(window).scrollTop();
+
+        // Check the scroll position
+        if ($(window).scrollTop() >= productHeaderTop) {
+            // Make the .page-header-section sticky
+            $('.about-us-header-container').addClass('product-header-sticky');
+            // Hide the header
+            $('.shopify-section-header-sticky').addClass('header-hide');
+        } else {
+            // Remove the sticky class when scrolling above the section
+            $('.about-us-header-container').removeClass('product-header-sticky');
+            // Show the header again
+            $('.shopify-section-header-sticky').removeClass('header-hide');
+        }
+        
+        $(".section-scroll").each(function() {
+            var sectionTop = $(this).offset().top - 100;
+            var sectionBottom = sectionTop + $(this).outerHeight();
+            console.log('here')
+            var targetButton = $('.product-header-menu .list-menu-link[data-scroll="' + $(this).attr('class').split(' ')[1] + '"]');
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                targetButton.addClass("active");
+            } else {
+                targetButton.removeClass("active");
+            }
+
+        });
+    });
+
+{% endjavascript %}
+{% schema %}
+    {
+        "class": "page-header-section",
+        "name": "About Us Header",
+        "templates": ["page"],
+        "limit": 1, 
+        "max_blocks": 4,
+        "blocks": [
+            {
+                "type": "Menu",
+                "name": "Menu",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "section_link",
+                        "label": "Section Link"
+                    }
+                ]
+            }
+        ],
+        "presets" :[{
+            "name" : "About Us Header"
+        }]
+    }
+  {% endschema %} 

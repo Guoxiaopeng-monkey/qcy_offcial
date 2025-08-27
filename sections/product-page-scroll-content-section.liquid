@@ -1,0 +1,337 @@
+{% style %}
+  #scroll-content-{{ section.id }} .scroll-content-section {
+    background-color: {{ section.settings.bg_color }};
+  }
+  #scroll-content-{{ section.id }} .slide-scroll-inner {
+    display: flex;
+    align-items: center;
+    gap: 7%;
+    width: 100%;
+  }
+  #scroll-content-{{ section.id }} .scroll-content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom center;
+  }
+  #scroll-content-{{ section.id }} .scroll-content-image {
+    {% if section.blocks.size != 1 %}
+    height: 100%;
+    {% endif %}
+    display: flex;
+  }
+  #scroll-content-{{ section.id }} .bg-color-scroll {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+  #scroll-content-{{ section.id }} .bg-color-scroll .slide-scroll-content .heading {
+    padding-bottom: 1.5rem;
+  }
+  #scroll-content-{{ section.id }} .inner-container-section {
+    height: 91vh;
+  }
+  #scroll-content-{{ section.id }} .slide-scroll-content.swiper-slide {
+    display: flex;
+    position: unset !important;
+    z-index: unset !important;
+    {% if section.blocks.size == 1 %}
+    height: fit-content !important;
+    {% endif %}
+  }
+  #scroll-content-{{ section.id }} .background-section .swiper-creative .swiper-slide {
+    transition-property: unset;
+  }
+  #scroll-content-{{ section.id }} .scroll-detail-icons {
+    display: flex;
+    padding-top: 50px;
+  }
+  #scroll-content-{{ section.id }} .scroll-detail-icons .scoll-icons-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  #scroll-content-{{ section.id }} .scroll-detail-icons img {
+    width: 100%;
+  }
+  #scroll-content-{{ section.id }} .scroll-content-mobile {
+    display: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+    #scroll-content-{{ section.id }} .scroll-content-mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      padding: 50px 20px;
+    }
+    #scroll-content-{{ section.id }} .background-section {
+      height: fit-content;
+    }
+    #scroll-content-{{ section.id }} .slide-scroll-inner {
+      flex-direction: column;
+      gap: 30px;
+    }
+    #scroll-content-{{ section.id }} .scroll-detail-icons {
+      gap: 50px;
+      padding-top: 30px;
+    }
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    #scroll-content-{{ section.id }} .scroll-content-mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      padding: 0px 20px;
+    }
+    #scroll-content-{{ section.id }} .background-section {
+      height: fit-content;
+    }
+    #scroll-content-{{ section.id }} .slide-scroll-inner {
+      flex-direction: column;
+      gap: 30px;
+    }
+    #scroll-content-{{ section.id }} .scroll-detail-icons {
+      gap: 50px;
+      padding-top: 30px;
+    }
+  }
+{% endstyle %}
+<div id="scroll-content-{{ section.id }}">
+  <div class="background-section scroll-content-section">
+    <div class="inner-container-section h-desktop">
+      <div class="bg-color-scroll">
+        <div class="swiper-wrapper">
+        {% if section.blocks.size == 0 %}
+          <div class="slide-scroll-content swiper-slide">
+            <div class="slide-scroll-inner">
+                <div class="col_55 scroll-content-image">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/39909_2x_3caa8c91-1df6-42ed-9b3a-7f6f20e6bb74.png?v=1728317629">
+                </div>
+                <div class="col_45 scroll-content-text  animation-text">
+                    <div class="col_85">
+                        <h2 class="heading mx-0 text-md white-f f-f-bold">Tailored Noise Cancelling and Audio for Everyone</h2>
+                        <h4 class="description mx-0 white-f">With dual-mode ear canal adaptation to smartly identifying ear canal and wear, our headphones provide personalized noise cancellation and audio adjustments, ensuring premium audio experiences for everyone.</h4>
+                        <div class="scroll-detail-icons col_70">
+                          <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/42325_2x_1.png?v=1728991263" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="slide-scroll-content swiper-slide">
+            <div class="slide-scroll-inner">
+              <div class="col_55 scroll-content-image">
+                  <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/39908_2x_17ce37b7-9d49-4e35-a389-94f7d5dabdce.png?v=1728317474">
+              </div>
+              <div class="col_45 scroll-content-text animation-text">
+                  <div class="col_70">
+                      <h2 class="heading mx-0 text-md white-f f-f-bold">Unveiling a New Era of Seamless Communication</h2>
+                      <h4 class="description mx-0 white-f">Introducing groundbreaking headphones. No need to remove them. Enjoy music and stay in touch with Transparency Mode. Immerse yourself in sound and conversations. Elevate your audio experience now.</h4>
+                  </div>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          {% for block in section.blocks %}
+            <div class="slide-scroll-content swiper-slide">
+              <div class="slide-scroll-inner">
+                <div class="col_55 scroll-content-image">
+                    <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}">
+                </div>
+                <div class="col_45 scroll-content-text animation-text">
+                    <div class="col_70">
+                        <h2 class="heading mx-0 text-md f-f-bold" style="color:{{ block.settings.text_color }}">{{ block.settings.heading }}</h2>
+                        <h4 class="description mx-0" style="color:{{ block.settings.text_color }}">{{ block.settings.description | replace: '<p>','' | replace: '</p>','' }}</h4>
+                        {% if block.settings.sub_image != blank %}
+                          <div class="scroll-detail-icons {% if block.settings.sub_image_fullwidth %}{% else %}col_70{% endif %}">
+                            <img loading="lazy" src="{{ block.settings.sub_image | img_url: 'master' }}" alt="">
+                          </div>
+                        {% endif %}
+                    </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    </div>
+  
+    <div class="scroll-content-mobile">
+        {% if section.blocks.size == 0 %}
+          <div class="slide-scroll-inner">
+            <div class="col_55 scroll-content-image">
+                <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/39908_2x_17ce37b7-9d49-4e35-a389-94f7d5dabdce.png?v=1728317474">
+            </div>
+            <div class="col_45 scroll-content-text animation-text">
+                <div class="col_70">
+                    <h2 class="heading mx-0 text-md white-f f-f-bold">Unveiling a New Era of Seamless Communication</h2>
+                    <h4 class="description mx-0 white-f">Introducing groundbreaking headphones. No need to remove them. Enjoy music and stay in touch with Transparency Mode. Immerse yourself in sound and conversations. Elevate your audio experience now.</h4>
+                </div>
+            </div>
+          </div>
+          <div class="slide-scroll-inner">
+              <div class="col_55 scroll-content-image">
+                  <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/39909_2x_3caa8c91-1df6-42ed-9b3a-7f6f20e6bb74.png?v=1728317629">
+              </div>
+              <div class="col_45 scroll-content-text  animation-text">
+                  <div class="col_85">
+                      <h2 class="heading mx-0 text-md f-f-bold" style="color:{{ block.settings.text_color }}">Tailored Noise Cancelling and Audio for Everyone</h2>
+                      <h4 class="description mx-0" style="color:{{ block.settings.text_color }}">With dual-mode ear canal adaptation to smartly identifying ear canal and wear, our headphones provide personalized noise cancellation and audio adjustments, ensuring premium audio experiences for everyone.</h4>
+                      <div class="scroll-detail-icons col_75">
+                        <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/42325_2x_1.png?v=1728991263" alt="">
+                      </div>
+                  </div>
+              </div>
+          </div>
+        {% else %}
+            {% for block in section.blocks %}
+              <div class="slide-scroll-inner">
+                  <div class="col_55 scroll-content-image">
+                      <img src="{{ block.settings.image | img_url: 'master' }}">
+                  </div>
+                  <div class="col_45 scroll-content-text  animation-text">
+                      <div class="col_85">
+                          <h2 class="heading mx-0 text-md f-f-bold" style="color:{{ block.settings.text_color }}">{{ block.settings.heading }}</h2>
+                          <h4 class="description mx-0" style="color:{{ block.settings.text_color }}">{{ block.settings.description | replace: '<p>','' | replace: '</p>','' }}</h4>
+                          {% if block.settings.sub_image != blank %}
+                            <div class="scroll-detail-icons col_75">
+                              <img src="{{ block.settings.sub_image | img_url: 'master' }}" alt="">
+                            </div>
+                          {% endif %}
+                      </div>
+                  </div>
+              </div>
+            {% endfor %}
+        {% endif %}
+      </div>
+  </div>
+</div>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  
+  // Save section ID to a variable (optional for clarity)
+  const sectionId = "{{ section.id }}";
+  
+  // Initialize Swiper and store in a fixed-named variable
+  const scrollSlider = new Swiper(`#scroll-content-${sectionId} .bg-color-scroll`, {
+    direction: "vertical",
+    speed: 1000,
+    allowTouchMove: false,
+    effect: "creative",
+    creativeEffect: {
+      prev: {
+        translate: [0, "0%", 0],
+      },
+      next: {
+        translate: [0, "100%", 0],
+      },
+    },
+    on: {
+      slideChangeTransitionStart: function () {
+        const slides = document.querySelectorAll(`#scroll-content-${sectionId} .swiper-slide`);
+        slides.forEach((slide, index) => {
+          const contentText = slide.querySelector('.scroll-content-text');
+          if (contentText) {
+            if (index === scrollSlider.previousIndex) {
+              contentText.style.transition = 'opacity 0.5s 0.3s, transform 0.8s 0.3s';
+              contentText.style.opacity = '0';
+              contentText.style.transform = 'translateY(50px)';
+            }
+            if (index === scrollSlider.activeIndex) {
+              contentText.style.transition = 'opacity 0.8s 0.3s, transform 0.8s 0.3s';
+              contentText.style.opacity = '1';
+              contentText.style.transform = 'translateY(0px)';
+            }
+          }
+        });
+      }
+    }
+  });
+  
+  // ScrollTrigger for pinning and syncing slides
+  ScrollTrigger.create({
+    trigger: `#scroll-content-${sectionId} .scroll-content-section .inner-container-section`,
+    start: "top-=50 top",
+    end: () => `+=${scrollSlider.slides.length * window.innerHeight}`,
+    pin: true,
+    pinSpacing: true,
+    scrub: true,
+    onUpdate: (self) => {
+      const progress = self.progress;
+      const currentSlide = Math.floor(progress * scrollSlider.slides.length);
+      if (scrollSlider.activeIndex !== currentSlide) {
+        scrollSlider.slideTo(currentSlide);
+      }
+    },
+    onLeave: () => {
+      console.log("Scrolled past inner-container-section");
+    },
+    onLeaveBack: () => {
+      console.log("Scrolled back to inner-container-section");
+    },
+    markers: false,
+  });
+
+</script>
+{% schema %}
+    {
+        "class": "scroll-content-section",
+        "name": "Scroll Content",
+        "templates": ["product"],
+        "settings": [
+            {
+                "type": "color",
+                "id": "bg_color",
+                "label": "Background Color",
+                "default":"#06091c"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "content",
+                "name": "Content",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Heading"
+                    },
+                    {
+                        "type": "color",
+                        "id": "text_color",
+                        "label": "Text Color",
+                        "default":"#fff"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "description",
+                        "label": "Description"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "sub_image",
+                        "label": "Sub Image"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "sub_image_fullwidth",
+                        "label": "Sub Image Full Width",
+                        "default": false
+                    }
+                ]
+            }
+        ],
+        "presets" :[{
+            "name" : "Scroll Content"
+        }]
+    }
+  {% endschema %} 

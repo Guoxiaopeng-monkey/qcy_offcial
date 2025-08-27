@@ -1,0 +1,95 @@
+<style>
+  .countdown-list-container{
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+  }
+  .count-down-list-card{
+    display:flex;
+    gap:30px;
+  }
+  .count-down-list-card .time-offer-item{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    align-items: center;
+  } 
+  .count-down-list-card .time-offer-item span{
+    padding:2rem 1.5rem;
+    background-color:#F8F8F8;
+  }
+  .countdown-list-container.hide-countdown{
+    visibility:hidden;
+  }
+  .countdown-list-container.hide-countdown h4.heading{
+    display:none;
+  }
+  
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+      .countdown-list-container .count-down-list-card{
+          gap:15px;
+      }
+      .count-down-list-card .time-offer-item span{
+        padding:1rem 1rem;
+        position:relative;
+      }
+      .count-down-list-card .time-offer-item p{
+        font-size:10px;
+      }
+      .product-buttons{
+        padding-top:5px;
+      }
+      .countdown-list-container .product-buttons .buy-now-btn, 
+      .countdown-list-container .product-buttons .add-to-cart-btn{
+        font-size:10px;
+      }
+      
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+      .countdown-list-container .count-down-list-card{
+          gap:15px;
+      }
+      .count-down-list-card .time-offer-item span{
+        padding:1rem 1rem;
+        position:relative;
+      }
+      .count-down-list-card .time-offer-item p{
+        font-size:10px;
+      }
+      .product-buttons{
+        padding-top:5px;
+      }
+      .countdown-list-container .product-buttons .buy-now-btn, 
+      .countdown-list-container .product-buttons .add-to-cart-btn{
+        font-size:10px;
+      }
+      
+  }
+
+</style>
+<div class="countdown-list-container" data-time-offer="{{ data_date }}">
+  <h4 class="heading f-f-semibold text-cap mx-0">limited-time offer：</h4>
+  <div class="count-down-list-card" >
+      <div class="day-box time-offer-item">
+          <span class="card-day-sec h2 f-f-medium main-color mx-0 center">30</span>
+          <p class="h5 mx-0 f-f-regular center">Days</p>
+      </div>
+      <div class="hour-box time-offer-item">
+          <span class="card-hour-sec h2 f-f-medium main-color mx-0 center">24</span>
+          <p class="h5 mx-0 f-f-regular center">Hours</p>
+      </div>
+      <div class="minutes-box time-offer-item">
+          <span class="card-minute-sec h2 f-f-medium main-color mx-0 center">60</span>
+          <p class="h5 mx-0 f-f-regular center">Minutes</p>
+      </div>
+      <div class="second-box time-offer-item">
+          <span class="card-second-sec h2 f-f-medium main-color mx-0 center">60</span>
+          <p class="h5 mx-0 f-f-regular center">Seconds</p>
+      </div>
+  </div>
+</div>

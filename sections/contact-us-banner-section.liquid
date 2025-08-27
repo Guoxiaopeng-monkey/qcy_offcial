@@ -1,0 +1,20 @@
+{% stylesheet %}
+    .contact-us-banner-img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+{% endstylesheet %}
+<img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/15.jpg?v=1731562995" class="contact-us-banner-img h-desktop">
+<img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/20241114-174453.jpg?v=1731645985" class="contact-us-banner-img h-mobile">
+{% schema %}
+    {
+        "class": "contact-us-banner-section",
+        "name": "Contact Us Banner Section",
+        "templates": ["page"],
+        "limit": 1, 
+        "presets" :[{
+            "name" : "Contact Us Banner Section"
+        }]
+    }
+  {% endschema %} 

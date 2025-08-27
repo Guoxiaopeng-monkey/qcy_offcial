@@ -1,0 +1,635 @@
+{% assign collection_count = collection.products_count %}
+{{ 'res-collection.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'style.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'bootstrap.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'custom-bootstrap.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'variant-button.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'custom-product-card.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-accordion.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-swatch.aio.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-page-form.aio.min.js' | asset_url }}" defer="defer"></script>
+<style>
+.price-slider-wrapper {
+    width: 100%;
+    max-width: 300px;
+    margin: 1em 0;
+    position: relative;
+}
+
+.slider-track-container {
+    position: relative;
+    height: 40px;
+}
+
+.slider-track-container input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    position: absolute;
+    top: 14px;
+    pointer-events: none;
+    background: none;
+}
+
+.slider-track-container input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #ff8832;
+    border: 2px solid white;
+    cursor: pointer;
+    pointer-events: all;
+    position: relative;
+    z-index: 2;
+}
+
+.slider-track {
+    position: absolute;
+    height: 6px;
+    background-color: lightgray;
+    top: 23px;
+    z-index: 1;
+    border-radius: 3px;
+    display: block !important;
+}
+</style>
+<section id="main-collection" class="main-style">
+
+    <div class="page-width mobile-toggle d-lg-none d-md-flex d-sm-flex">
+        <p class="item-found">
+            {{ collection.title }}/<span>{{ collection_count }}</span> Item(s) Found
+        </p>
+
+        <div class="d-lg-none d-md-block d-sm-block">
+            <a href="javascript:void(0)" class="toggle-filter f-f-regular">
+                <i class="fa-solid fa-sliders"></i> Filter and Sort
+            </a>
+        </div>
+    </div>
+
+    <div class="page-width section-content">
+        <div class="row gx-lg-5 gx-md-0 gx-sm-0">
+            <div class="col-3 d-lg-block d-md-none d-sm-none">
+                <h3 class="filters">
+                    Filters
+                </h3>
+                <form class="filter-form desktop">
+                    <div class="d-none">
+                      {% for filter in collection.filters %}
+                        <p>Label: {{ filter.label }} | Type: {{ filter.type }}</p>
+                      {% endfor %}
+                    </div>
+                    {% for filter in collection.filters %}
+
+                        <div class="filter-container">
+                            <h5 class="filter-label mb-3 f-f-bold">
+                                {{ filter.label }}
+                            </h5>
+                            {% case filter.type %}
+                        
+                                {% when 'boolean' or 'list' %}
+                                    
+                                    {% for filter_value in filter.values %}
+                                        <div class="filter-group-display__list-item">
+                                            <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+                                                <input type="checkbox" name="{{ filter_value.param_name }}"
+                                                    value="{{ filter_value.value }}"
+                                                    id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                                                    {% if filter_value.active %}checked{% endif %}
+                                                    >
+                                              <span class="custom-checkbox"></span>
+                                              
+                                              {% assign my_string = filter_value.label %}
+                                              {% assign temp_string = my_string | replace: "<", "[[lt]]" | replace: ">", "[[gt]]" %}
+                                              {% assign final_string = temp_string | replace: "[[lt]]", '<span style="font-family: monospace">&lt;</span>' | replace: "[[gt]]", '<span style="font-family: monospace">&gt;</span>' %}
+                                              {{ final_string }}    
+                                              
+                                            </label>
+                                        </div>
+                                    {% endfor %}
+
+                                {% when 'price_range' %}
+                                  <div class="price-slider-wrapper">
+                                      <div class="price-values">
+                                          <span class="range-min-value">$0</span> –
+                                          <span class="range-max-value">{{ filter.range_max | divided_by: 100.0 | ceil | money }}</span>
+                                      </div>
+                                  
+                                      <div class="slider-track-container">
+                                          <input type="range" id="price-min" name="{{ filter.min_value.param_name }}" min="0" max="{{ filter.range_max | divided_by: 100.0 | ceil }}" value="{{ filter.min_value.value | default: 0 }}" step="1">
+                                  
+                                          <input type="range" id="price-max" name="{{ filter.max_value.param_name }}" min="0" max="{{ filter.range_max | divided_by: 100.0 | ceil }}" value="{{ filter.max_value.value | default: filter.range_max }}" step="1">
+                                          <div class="slider-track"></div>
+                                      </div>
+                                  </div>
+                                
+                            {% endcase %}
+                        </div>
+
+                    {% endfor %}
+
+                    <div class="clear-filter desktop">
+                        <a href="/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <g transform="translate(0 -0.289)">
+                          <g transform="translate(3.795 2.277)">
+                            <path fill="#262626" d="M16.867,24.663H10.8a3.8,3.8,0,0,1-3.8-3.8V11.759a.759.759,0,0,1,1.518,0v9.108A2.277,2.277,0,0,0,10.8,23.145h6.072a2.277,2.277,0,0,0,2.277-2.277V11.759a.759.759,0,0,1,1.518,0v9.108A3.8,3.8,0,0,1,16.867,24.663Z" transform="translate(-5.482 -4.928)"/>
+                            <path fill="#262626" d="M20.94,8.518H5.759A.759.759,0,0,1,5.759,7H20.94a.759.759,0,0,1,0,1.518Z" transform="translate(-5 -3.964)"/>
+                            <path fill="#262626" d="M17.831,7.554H11.759A.759.759,0,0,1,11,6.8V5.277A2.277,2.277,0,0,1,13.277,3h3.036A2.277,2.277,0,0,1,18.59,5.277V6.8A.759.759,0,0,1,17.831,7.554ZM12.518,6.036h4.554V5.277a.759.759,0,0,0-.759-.759H13.277a.759.759,0,0,0-.759.759Z" transform="translate(-6.446 -3)"/>
+                            <path fill="#262626" d="M13.759,20.831A.759.759,0,0,1,13,20.072V14.759a.759.759,0,0,1,1.518,0v5.313A.759.759,0,0,1,13.759,20.831Z" transform="translate(-6.928 -5.651)"/>
+                            <path fill="#262626" d="M17.759,20.831A.759.759,0,0,1,17,20.072V14.759a.759.759,0,0,1,1.518,0v5.313A.759.759,0,0,1,17.759,20.831Z" transform="translate(-7.892 -5.651)"/>
+                          </g>
+                          <rect fill="none" width="24" height="24" transform="translate(0 0.289)"/>
+                        </g>
+                      </svg>
+                       Clear Filter</a>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="col-lg-9 col-md-12 col-sm-12">
+
+                <div class="row mb-4 d-lg-flex d-md-none d-sm-none">
+                    <div class="col d-flex align-items-center justify-content-between mb-4">
+
+                        <p class="item-found">
+                            {{ collection.title }}/<span>{{ collection_count }}</span> Item(S) Found
+                        </p>
+                        
+                        <div class="sort-by desktop">
+                            Sort By:
+                            {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+                            <select>
+                                {% for option in collection.sort_options %}
+                                    <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
+                                        {{ option.name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- DESKTOP -->
+                <div class="product-list">
+
+                    {% if collection_count > 0 %}
+
+                        {% paginate collection.products by 9 %}
+                            <div class="row products-row ps-md-0 ps-sm-0">
+                                {% for product in collection.products %}
+
+                                    <div class="col-lg-4 col-md-6 col-sm-6 products">
+                                        
+                                        {% render 'custom-card-product', product: product, forloop: forloop %}
+                                        {% comment %}                                         
+                                            <div class="product">
+
+                                                <div class="product-image">
+
+                                                    {% if shop.metaobjects['product_comparison'].values_count > 0 %}
+                                                        {% for entries in shop.metaobjects['product_comparison'].values %}
+                                                            {% if entries.product.value.id == product.id %}
+
+                                                                <a class="compare disable" href="javascript:void(0)" title="Compare"
+                                                                    data-id="{{ product.id }}"
+                                                                    data-image="{{ product.featured_image | img_url: 'master' }}"
+                                                                    data-title="{{ product.title }}"
+                                                                    data-price="{{ product.selected_or_first_available_variant.price }}"
+                                                                >
+                                                                    <i class="fa-regular fa-square"></i>
+                                                                    Compare
+                                                                </a>
+
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                    {% if product.selected_or_first_available_variant.available  %}
+                                                    {% else %}
+                                                    <p class="sold-out-badge white-f">
+                                                        Sold Out
+                                                    </p>
+                                                    {% endif %}
+                                                    <a href="{{ product.url | within: collection }}" class="product-image-con">
+                                                    <img loading="lazy" class="" src="{{ product.featured_image | img_url: 'master' }}">
+                                                    {% if product.media[1] != blank %}
+                                                    <img loading="lazy" class=" hover-image" src="{{ product.media[1] | img_url: 'master' }}">
+                                                    {% endif %}
+                                                    </a>
+                                                </div>
+
+                                                <div class="product-details">
+                                                    <a href="{{ product.url | within: collection }}">
+                                                        <h4 class="product-title">
+                                                            {{ product.title }}
+                                                        </h4>
+                                                        <p class="product-description">
+                                                            {{ product.metafields.custom.special }}
+                                                        </p>
+                                                    </a>
+                                                    <div class="price">
+                                                        <p class="regular transcy-money
+                                                        {% if product.selected_or_first_available_variant.compare_at_price == blank %}
+                                                            white-f
+                                                        {% else %}
+                                                            main-color
+                                                        {% endif %}
+                                                        ">
+                                                            {{ product.selected_or_first_available_variant.price | money }}
+                                                        </p>
+                                                        {% if product.selected_or_first_available_variant.compare_at_price != blank %}
+                                                            <p class="sale transcy-money
+                                                            white-f
+                                                            ">
+                                                                {{ product.selected_or_first_available_variant.compare_at_price | money }}
+                                                            </p>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+
+                                            </div> 
+                                        {% endcomment %}
+                                    </div>
+                    
+                                {% endfor %}
+                            </div>
+
+                            {% if collection_count > 9 %}
+                                <div class="row">
+                                    <div class="paginate">
+
+                                        {% if paginate.previous %}
+                                            <a class="page" href="{{ paginate.previous.url }}">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </a>
+                                        {% else %}
+                                            <a class="page disable" href="javascript:void(0)">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </a>
+                                        {% endif %}
+
+                                        {% for part in paginate.parts %}
+                                            {% if part.is_link %}
+                                                <a class="page" href="{{ part.url }}">{{ part.title }}</a>
+                                            {% else %}
+                                                {% if part.title == paginate.current_page %}
+                                                    <a class="page active" href="javascript:void(0)">{{ part.title }}</a>
+                                                {% else %}
+                                                    <a class="page disable" href="javascript:void(0)">{{ part.title }}</a>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
+
+                                        {% if paginate.next %}
+                                            <a class="page" href="{{ paginate.next.url }}">
+                                                <i class="fa-solid fa-chevron-right"></i>
+                                            </a>
+                                        {% else %}
+                                            <a class="page disable" href="javascript:void(0)">
+                                                <i class="fa-solid fa-chevron-right"></i>
+                                            </a>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                        {% endpaginate %}
+                    {% else %}
+                        <h3 class="nothing-found">No product found.</h3>
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-filter-container">
+        <div class="mobile-filter">
+
+            <h5 class="filters">
+                Filters <i class="fa-solid fa-xmark toggle-filter-close"></i>
+            </h5>
+
+            <form class="filter-form mobile">
+
+                {% assign filterCounter = 0 %}
+
+                {% for filter in collection.filters %}
+
+                    {% assign filterCounter = filterCounter | plus: 1 %}
+
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading-{{ filterCounter }}">
+                                <button class="filter-label accordion-button {% if filterCounter > 1 %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ filterCounter }}" aria-expanded="{% if filterCounter > 1 %}true{% else %}false{% endif %}" aria-controls="collapse-{{ filterCounter }}">
+                                    <span>{{ filter.label }}</span>
+                                </button>
+                            </h2>
+                            <div id="collapse-{{ filterCounter }}" class="accordion-collapse collapse {% if filterCounter == 1 %}show{% endif %}" aria-labelledby="heading-{{ filterCounter }}">
+                                <div class="accordion-body">
+
+                                    {% case filter.type %}
+                            
+                                        {% when 'boolean' or 'list' %}
+                                            
+                                        {% for filter_value in filter.values %}
+                                            <div class="filter-group-display__list-item">
+                                                <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}-mobile">
+                                                    <input type="checkbox" name="{{ filter_value.param_name }}"
+                                                        value="{{ filter_value.value }}"
+                                                        id="Filter-{{ filter.param_name }}-{{ forloop.index }}-mobile"
+                                                        {% if filter_value.active %}checked{% endif %}
+                                                        >
+                                                      <span class="custom-checkbox"></span>
+
+                                                  {% assign my_string = filter_value.label %}
+                                                  {% assign temp_string = my_string | replace: "<", "[[lt]]" | replace: ">", "[[gt]]" %}
+                                                  {% assign final_string = temp_string | replace: "[[lt]]", '<span style="font-family: monospace">&lt;</span>' | replace: "[[gt]]", '<span style="font-family: monospace">&gt;</span>' %}
+                                                  {{ final_string }}    
+                                                
+                                                </label>
+                                            </div>
+                                        {% endfor %}
+
+                                        {% when 'price_range' %}
+
+                                        <div class="price-slider-wrapper">
+                                            <div class="price-values">
+                                                <span class="range-min-value">$0</span> –
+                                                <span class="range-max-value">{{ filter.range_max | divided_by: 100.0 | ceil | money }}</span>
+                                            </div>
+                                        
+                                            <div class="slider-track-container">
+                                                <input type="range" id="price-min" name="{{ filter.min_value.param_name }}" min="0" max="{{ filter.range_max | divided_by: 100.0 | ceil }}" value="{{ filter.min_value.value | default: 0 }}" step="1">
+                                        
+                                                <input type="range" id="price-max" name="{{ filter.max_value.param_name }}" min="0" max="{{ filter.range_max | divided_by: 100.0 | ceil }}" value="{{ filter.max_value.value | default: filter.range_max }}" step="1">
+                                                <div class="slider-track"></div>
+                                            </div>
+                                        </div>
+        
+                                    {% endcase %}
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </form>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-sortBy">
+                        <button class="filter-label accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-sortBy" aria-expanded="true" aria-controls="collapse-sortBy">
+                            <span>
+                                Sort By: {% for option in collection.sort_options %} 
+                                            {% if option.value == sort_by %} {{ option.name  }} {% endif %}
+                                        {% endfor %}
+                            </span>
+                        </button>
+                    </h2>
+                    <div id="collapse-sortBy" class="accordion-collapse collapse" aria-labelledby="heading-sortBy">
+                        <div class="accordion-body">
+
+                            {% for option in collection.sort_options %}
+                                <div class="custom-label-radio radio-sort">
+                                  <label for="{{ option.value | handleize }}">
+                                    <input id="{{ option.value | handleize }}" type="radio" value="{{ option.value }}" name="radio-sort" {% if option.value == sort_by %}checked{% endif %}> 
+                                    <span class="custom-radiobox"></span>
+                                    <span>{{ option.name }}</span>
+                                  </label>
+                                </div>
+                            {% endfor %}
+
+                            <div class="sort-by mobile">
+                                <select>
+                                    {% for option in collection.sort_options %}
+                                        <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
+                                            {{ option.name }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clear-filter mobile">
+                <a href="/"><i class="fa-solid fa-trash-can"></i> Clear Filter</a>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="javascript:void(0)" class="btn s-main f-f-mm p white-f toggle-filter-close">
+                    <span>View Results</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+{{ 'custom-product-card-variant.aio.min.js' | asset_url | script_tag }}
+
+<script >
+  const $minSlider = $('#price-min');
+const $maxSlider = $('#price-max');
+const $minDisplay = $('.range-min-value');
+const $maxDisplay = $('.range-max-value');
+const $track = $('.slider-track');
+
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+function updateSlider() {
+  const minVal = parseInt($minSlider.val());
+  const maxVal = parseInt($maxSlider.val());
+
+  if (minVal > maxVal) {
+    $minSlider.val(maxVal);
+  }
+
+  $minDisplay.text(`$${$minSlider.val()}`);
+  $maxDisplay.text(`$${$maxSlider.val()}`);
+
+  const range = parseInt($minSlider.attr('max'));
+  const minPercent = ($minSlider.val() / range) * 100;
+  const maxPercent = ($maxSlider.val() / range) * 100;
+
+  $track.css({
+    left: minPercent + '%',
+    width: (maxPercent - minPercent) + '%'
+  });
+}
+
+function initSliderFromURL() {
+  const minURL = getQueryParam('filter.v.price.gte');
+  const maxURL = getQueryParam('filter.v.price.lte');
+
+  if (minURL !== null) {
+    $minSlider.val(minURL);
+  }
+
+  if (maxURL !== null) {
+    $maxSlider.val(maxURL);
+  }
+
+  updateSlider();
+}
+
+$minSlider.on('input', updateSlider);
+$maxSlider.on('input', updateSlider);
+
+// Initialize from URL then update
+initSliderFromURL();
+
+
+    function showCompare() {
+        if (sessionStorage.getItem('compare')) {
+            sessionStorage.getItem('compare');
+            let storedCompareStr = sessionStorage.getItem('compare');
+            let storedCompareArr = JSON.parse(storedCompareStr);
+
+            let compareProduct_1 = document.querySelector('#compare-nav .compare-container.one .compare-product');
+            let compareProduct_2 = document.querySelector('#compare-nav .compare-container.two .compare-product');
+            let compareProduct_3 = document.querySelector('#compare-nav .compare-container.three .compare-product');
+
+            let compareEmpty_1 = document.querySelector('#compare-nav .compare-container.one .compare-empty');
+            let compareEmpty_2 = document.querySelector('#compare-nav .compare-container.two .compare-empty');
+            let compareEmpty_3 = document.querySelector('#compare-nav .compare-container.three .compare-empty');
+
+            let storedCounter = 0;
+            storedCompareArr.forEach(function(value) {
+                storedCounter++;
+
+                let id;
+                let image;
+                let title;
+                let price;
+
+                if (storedCounter == 1) {
+                    id = document.querySelector('#compare-nav .compare-container.one .compare-product .remove');
+                    image = document.querySelector('#compare-nav .compare-container.one .compare-product img');
+                    title = document.querySelector('#compare-nav .compare-container.one .compare-product p');
+                    price = document.querySelector('#compare-nav .compare-container.one .compare-product span small');
+                }
+                else if (storedCounter == 2) {
+                    id = document.querySelector('#compare-nav .compare-container.two .compare-product .remove');
+                    image = document.querySelector('#compare-nav .compare-container.two .compare-product img');
+                    title = document.querySelector('#compare-nav .compare-container.two .compare-product p');
+                    price = document.querySelector('#compare-nav .compare-container.two .compare-product span small');
+                }
+                else if (storedCounter == 3) {
+                    id = document.querySelector('#compare-nav .compare-container.three .compare-product .remove');
+                    image = document.querySelector('#compare-nav .compare-container.three .compare-product img');
+                    title = document.querySelector('#compare-nav .compare-container.three .compare-product p');
+                    price = document.querySelector('#compare-nav .compare-container.three .compare-product span small');
+                }
+
+                id.classList.add(value.id);
+                image.src = value.image;
+                title.innerHTML = value.title;
+                price.innerHTML = value.price;
+
+            });
+
+            if (storedCompareArr.length == 1) {
+                compareProduct_1.style.display = 'flex';
+                compareProduct_2.style.display = 'none';
+                compareProduct_3.style.display = 'none';
+
+                compareEmpty_1.style.display = 'none';
+                compareEmpty_2.style.display = 'flex';
+                compareEmpty_3.style.display = 'flex';
+            }
+            else if (storedCompareArr.length == 2) {
+                compareProduct_1.style.display = 'flex';
+                compareProduct_2.style.display = 'flex';
+                compareProduct_3.style.display = 'none';
+
+                compareEmpty_1.style.display = 'none';
+                compareEmpty_2.style.display = 'none';
+                compareEmpty_3.style.display = 'flex';
+            }
+            else if (storedCompareArr.length == 3) {
+                compareProduct_1.style.display = 'flex';
+                compareProduct_2.style.display = 'flex';
+                compareProduct_3.style.display = 'flex';
+
+                compareEmpty_1.style.display = 'none';
+                compareEmpty_2.style.display = 'none';
+                compareEmpty_3.style.display = 'none';
+            }
+            else {
+                compareProduct_1.style.display = 'none';
+                compareProduct_2.style.display = 'none';
+                compareProduct_3.style.display = 'none';
+
+                compareEmpty_1.style.display = 'flex';
+                compareEmpty_2.style.display = 'flex';
+                compareEmpty_3.style.display = 'flex';
+            }
+        }
+    }
+
+// Wait until the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all accordion buttons
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+
+    // Add click event listeners to toggle collapse functionality
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Get the target collapse element
+            const collapseTarget = document.querySelector(this.getAttribute('data-bs-target'));
+            
+            // If the element is already open, close it, otherwise open it
+            if (collapseTarget.classList.contains('show')) {
+                collapseTarget.classList.remove('show');
+                // Add the 'collapsed' class to the button when the accordion is collapsed
+                this.classList.add('collapsed');
+            } else {
+                // Close any other open accordion items (optional)
+                const openItems = document.querySelectorAll('.accordion-collapse.show');
+                const openButtons = document.querySelectorAll('.accordion-button:not(.collapsed)');
+
+                openItems.forEach(item => {
+                    item.classList.remove('show');
+                });
+                
+                openButtons.forEach(btn => {
+                    btn.classList.add('collapsed');
+                });
+
+                // Show the clicked element and remove the 'collapsed' class from the button
+                collapseTarget.classList.add('show');
+                this.classList.remove('collapsed');
+            }
+        });
+    });
+});
+
+</script>
+
+<script>
+    var curUrl = '{{ shop.url }}{{ collection.url }}';
+</script>
+
+{{ 'collection.aio.min.js' | asset_url | script_tag }}
+{% schema %}
+    {
+        "name": "Main Collection",
+        "templates": ["collection"],
+        "limit": 1, 
+        "presets" :[{
+            "name" : "Main Collection"
+        }]
+    }
+  {% endschema %} 

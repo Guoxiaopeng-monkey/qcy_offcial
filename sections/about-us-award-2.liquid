@@ -1,0 +1,416 @@
+{% stylesheet %}
+.lq-about-us-award-section {
+    padding: 50px 0px 80px;
+    background-color: #F9F9F9;
+}
+ .lq-about-us-award-section .lq-section-description {
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+   
+}
+.lq-about-us-award-section .lq-award-slider-section {
+    padding-top: 0px;
+    overflow: hidden;
+}
+.lq-about-us-award-section .lq-award-slider-section .swiper-slide {
+    height: auto;
+    display: flex;
+}
+.lq-about-us-award-section .lq-award-item {
+    border-radius: 20px;
+    background-color: ;
+    padding: 0px 20px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+.lq-about-us-award-section .lq-award-item .lq-award-content {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    justify-content: space-between;
+}
+.lq-about-us-award-section .lq-award-item .lq-award-content img {
+    width: 80%;
+    height: 300px;
+    object-fit: contain;
+}
+.lq-about-us-award-section .lq-award-item .lq-award-content .lq-sub-heading {
+    color: #101010;
+}
+.lq-learn-more-btn-container {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+.lq-learn-more-btn-container .lq-learn-more-btn {
+    padding: 5px 20px;
+    background-color: #000;
+    display: flex;
+    border-radius: 50px;
+    color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.lq-learn-more-btn-container .lq-learn-more-btn:hover {
+    background-color: #FF8832;
+}
+.lq-award-modal-section {
+    position: fixed;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    top: 0;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s ease 0.2, opacity 0.3s ease 0.4s;
+}
+.lq-award-modal-section.open {
+    visibility: visible;
+    opacity: 1;
+}
+.lq-award-modal-section .lq-overlay {
+    background-color: #00000045;
+    height: 100%;
+    width: 100%;
+}
+.lq-award-modal-container {
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 50px 100px;
+}
+.lq-award-modal-container .lq-award-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff0e4;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.lq-award-modal-container .lq-award-close svg {
+    width: 13px;
+}
+.lq-award-modal-container .lq-award-close svg path {
+    stroke: #000;
+    stroke-width: 2px;
+}
+body.no-scroll {
+    overflow: hidden;
+}
+.lq-award-images-gallery {
+    padding-top: 30px;
+    overflow: hidden;
+}
+.lq-award-images-gallery-desktop {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    padding-top: 30px;
+}
+.lq-award-images-gallery-desktop .lq-award-image-item {
+    padding: 20px 30px;
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lq-award-images-gallery-desktop .lq-award-image-item img {
+    width: 100%;
+}
+.lq-award-images-gallery .lq-award-image-item {
+    padding: 20px 0px;
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+.lq-award-images-gallery .lq-award-image-item img {
+    width: 80%;
+}
+
+@media only screen and (max-width: 768px) {
+    .lq-award-images-gallery-desktop {
+        display: none;
+    }
+    .lq-award-modal-container {
+        padding: 40px 20px 30px;
+        width: 90%;
+    }
+    .lq-about-us-award-section .lq-section-heading {
+        text-align: center;
+    }
+    .lq-award-modal-container .lq-award-close {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+    }
+    .lq-award-modal-container .lq-award-close svg {
+        width: 12px;
+    }
+    .lq-learn-more-btn-container {
+        padding-top: 20px;
+    }
+    .lq-learn-more-btn-container .lq-learn-more-btn {
+        padding: 8px 20px;
+    }
+    .lq-award-images-gallery .lq-award-image-item {
+        padding: 0px;
+    }
+    .lq-award-images-gallery .lq-award-image-item img {
+        width: 80%;
+    }
+    .lq-about-us-award-section .lq-award-slider-section {
+        padding-top: 30px;
+    }
+  .lq-about-us-award-section .lq-section-description {
+        font-size: 15px;
+        text-align:left;
+    }
+  .lq-about-us-award-section .lq-award-item .lq-award-content img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+}
+}
+
+@media only screen 
+    and (min-device-width: 768px) 
+    and (max-device-width: 1024px) {
+    .lq-award-images-gallery-desktop {
+        display: none;
+    }
+    .lq-award-modal-container {
+        padding: 40px 20px 30px;
+        width: 90%;
+    }
+    .lq-about-us-award-section .lq-section-heading {
+        text-align: left;
+    }
+    .lq-award-modal-container .lq-award-close {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+    }
+    .lq-award-modal-container .lq-award-close svg {
+        width: 12px;
+    }
+    .lq-learn-more-btn-container {
+        padding-top: 20px;
+    }
+    .lq-learn-more-btn-container .lq-learn-more-btn {
+        padding: 8px 20px;
+    }
+    .lq-award-images-gallery .lq-award-image-item {
+        padding: 0px;
+    }
+    .lq-award-images-gallery .lq-award-image-item img {
+        width: 80%;
+    }
+    .lq-about-us-award-section .lq-award-slider-section {
+        padding-top: 30px;
+    }
+}
+{% endstylesheet %}
+
+<div class="page-width">
+    <h2 class="heading text-md f-f-bold lq-section-heading text-cap center">{{ section.settings.heading }}</h2>
+   {% if section.settings.description != blank %}
+        <p class="lq-section-description p f-f-regular center">{{ section.settings.description }}</p>
+    {% endif %}
+    <div class="lq-award-slider-section">
+        <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+                <div class="swiper-slide">
+                    <div class="lq-award-item">
+                        {% if block.settings.description != blank %}
+                            <h3 class="center f-f-extra-bold mx-0 text-cap">{{ block.settings.description | replace: '<p>','' | replace: '</p>','' }}</h3>
+                        {% endif %}
+                        <div class="lq-award-content">
+                            <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}">
+                            <p class="lq-sub-heading p-small f-f-regular center ">{{ block.settings.sub_heading | replace: '<p>','' | replace: '</p>','' }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="lq-award-section-swiper-pagination swiper-pagination-long"></div>
+    <div class="lq-learn-more-btn-container">
+        <span class="lq-learn-more-btn p f-f-medium mx-0 center">Learn More</span>
+    </div>
+</div>
+
+<div class="lq-award-modal-section">
+    <div class="lq-overlay"></div>
+    <div class="lq-award-modal-container">
+        <span class="lq-award-close">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-close" viewBox="0 0 18 17">
+                <path fill="currentColor" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path>
+            </svg>
+        </span>
+        <h2 class="mx-0 f-f-bold lq-section-heading text-cap center">Recognized By Over 200 Authorized MEDIA And Organizations Worldwide</h2>
+        <div class="lq-award-images-gallery-desktop">
+            {% for block in section.blocks %}
+                <div class="lq-award-image-item">
+                    <img src="{{ block.settings.image | img_url: 'master' }}">
+                </div>
+            {% endfor %}
+        </div>
+        <div class="lq-award-images-gallery h-mobile">
+            <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                    <div class="lq-award-image-item swiper-slide">
+                        <img src="{{ block.settings.image | img_url: 'master' }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="lq-award-model-ection-swiper-pagination swiper-pagination-long"></div>
+    </div>
+</div>
+
+{% javascript %}
+var about_us_award_slider = new Swiper('.lq-award-slider-section', {
+    slidesPerView: 2,
+    spaceBetween: 25,
+    speed: 800,
+    pagination: {
+        el: '.lq-award-section-swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+        },
+        768: {
+            slidesPerView: 2,          
+        },
+        1024: {
+            slidesPerView: 2,          
+        },
+        1524: {
+            slidesPerView: 2,        
+        },
+        1680: {
+            slidesPerView: 2,         
+        }
+    }
+});
+
+var about_us_award_modal_image_slider = new Swiper('.lq-award-images-gallery', {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    speed: 800,
+    pagination: {
+        el: '.lq-award-model-ection-swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+        1524: {
+            slidesPerView: 4,
+        },
+        1680: {
+            slidesPerView: 4,
+        }
+    }
+});
+
+$('.lq-learn-more-btn').click(() => {
+    $('.lq-award-modal-section').addClass('open');
+    $('body').addClass('no-scroll');
+});
+
+$('.lq-award-modal-section .lq-overlay, .lq-award-modal-section .lq-award-close').click(() => {
+    $('.lq-award-modal-section').removeClass('open');
+    $('body').removeClass('no-scroll');
+});
+{% endjavascript %}
+
+{% schema %}
+{
+    "class": "lq-award-scroll-section lq-about-us-award-section section-scroll",
+    "name": "About Us Awards2",
+    "templates": ["page"],
+    "limit": 1,  
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Hear from the Pros"
+        },
+      {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description",
+            "default": "Add a description here"
+        }
+    ],
+  
+    "blocks": [
+        {
+            "type": "award",
+            "name": "Award",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Description"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "richtext",
+                    "id": "sub_heading",
+                    "label": "Sub Heading"
+                }
+            ]
+        }
+    ],
+    "presets": [{
+        "name": "About Us Awards2"
+    }]
+}
+{% endschema %}

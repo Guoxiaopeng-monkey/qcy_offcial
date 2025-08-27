@@ -1,0 +1,746 @@
+<style>
+    .custom-content-slider{
+        background-color:{{ section.settings.background_color }};
+        position:relative;
+        
+    }
+</style>
+{% stylesheet %}
+  .custom-slider-heading h2.heading {
+    font-weight: 800 !important;
+    font-synthesis: weight; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+    .custom-content-slider{
+        padding:50px 0px;
+    }
+    .custom-content-slider .inner-section{
+        padding:0px 70px;
+    }
+    .custom-content-slider .mid-image-container{
+        display:flex;
+        gap:70px;
+    }
+    .custom-content-slider .mid-image-item{
+        display:flex;
+        width:100%;
+        align-items: center;
+    }
+    .custom-content-slider .mid-image-item img{
+        width:100%;
+      height: auto !important;
+      object-fit:contain;
+      max-height: 750px; 
+    }
+    .custom-content-slider .mid-image-item.image-image-content h2{
+      padding-bottom:20px;
+    }
+    .custom-content-slider .mid-image-item.image-image-content .content-image{
+      object-fit:contain;
+      width:80%;
+      height:fit-content;
+      margin-top:15px;
+    }
+    .custom-content-slider .custom_mid-image-slider{
+        overflow:hidden;
+        margin-top:50px;
+    }
+    .custom-content-slider .text-conatiner{
+        overflow:hidden;
+    }
+    .custom-content-slider .text-content-details{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .custom-content-slider .top-header-item .text-animate{
+        transform: translateY(80px);
+        opacity:0;
+        transition: transform 0.5s ease, opacity 0.3s ease;
+    }
+    .custom-content-slider .top-header-item.swiper-slide-active .text-animate{
+        transform: translateY(0px);
+        opacity:1;
+    }
+    .custom-content-slider .bottom-pagination-slider{
+        width:fit-content !important;
+        margin:auto;
+        border-radius:50px;
+        text-align:center;
+    }
+    .custom-content-slider .tab-pagination{
+        font-family: 'Mulish-SemiBold';
+        font-size:17px;
+        color:#fff;
+        opacity:1;
+        position: unset;
+        width: fit-content;
+        height: fit-content;
+        background: #fff;
+        padding:10px 2.5rem;
+        border-radius:50px;
+        color:#7E7E7E;
+        border:1px solid #DBDBDB;
+        margin:0px 10px !important;
+    }
+    .custom-content-slider .tab-pagination.swiper-pagination-bullet-active{
+        background:#FF8832;
+        color:#fff;
+    }
+    .custom-content-slider .image-slider-slider-arrows{
+        position:absolute;
+        top:50%;
+        left:0;
+        right:0;
+        margin:auto;
+        width:100%;
+        max-width:var(--page-width);
+        padding:0px 20px;
+        display:flex;
+        flex-direction:row-reverse;
+        justify-content: space-between;
+    }
+    .custom-content-slider .image-slider-slider-arrows .image-slider-button-prev_custom, 
+    .custom-content-slider .image-slider-slider-arrows .image-slider-button-next_custom{
+        background: #E2E2E2;
+        border-radius: 50px;
+        display: flex;
+        cursor: pointer;
+        z-index: 2;
+        width:fit-content;
+        transition: all 0.3s ease;
+    }
+    .custom-content-slider .image-slider-slider-arrows .image-slider-button-prev-mobile_custom, 
+    .custom-content-slider .image-slider-slider-arrows .image-slider-button-next-mobile_custom{
+        background: #DBDBDB;
+        border-radius: 50px;
+        display: flex;
+        cursor: pointer;
+        z-index: 2;
+        width:fit-content;
+        transition: all 0.3s ease;
+    }
+    .custom-content-slider .image-slider-slider-arrows .image-slider-button-prev_custom:hover, 
+    .custom-content-slider .image-slider-slider-arrows .image-slider-button-next_custom:hover{
+        background: #FF8832;
+    }
+    .custom-content-slider .image-slider-slider-arrows .image-slider-button-prev:hover svg path, 
+    .custom-content-slider .image-slider-slider-arrows .image-slider-button-next:hover svg path{
+        fill:#fff;
+    }
+    .custom-content-slider .image-slider-slider-arrows .image-slider-button-prev_custom svg path,
+    .custom-content-slider .image-slider-slider-arrows .image-slider-button-next_custom svg path{
+        fill:#000;
+    }
+    .custom-content-slider .image-slider-slider-arrows .image-slider-button-prev_custom svg, .image-slider-slider-arrows .image-slider-button-next_custom svg{
+        width:45px;
+        height:45px;
+    }
+    .custom-content-slider .image-slider-slider-arrows .image-slider-button-prev-mobile_custom svg, .image-slider-slider-arrows .image-slider-button-next-mobile_custom svg{
+        width:40px;
+        height:40px;
+    }
+    .custom-content-slider .additinal-img{
+      height:fit-content !important;
+      margin-top:20px;
+      width:80%;
+    }
+      .custom-slider-heading {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .custom-slider-heading .black-text {
+        color: #121212;
+      font-weight:800;
+    }
+    .custom-slider-heading .green-text {
+        color: #42B134;
+      font-weight:800;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .custom-slider-heading {
+            margin-bottom: 30px;
+        }
+    }
+   .custom-slider-heading .black-text {
+        color: #121212;
+      font-weight:800;
+    }
+  .custom-slider-heading .green-text {
+        color: #42B134;
+      font-weight:800;
+    }
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+      .custom-slider-heading h2,
+        .custom-slider-heading .black-text,
+        .custom-slider-heading .green-text {
+            font-weight: 800;
+      .custom-slider-heading h2.heading {
+        font-synthesis: weight;
+        font-weight: 900 !important;
+    }
+        .custom-content-slider .bottom-pagination-slider-container{
+           display:none;
+        }
+        .custom-content-slider .bottom-pagination-slider-container::-webkit-scrollbar {
+          height:0px;
+        }
+        .custom-content-slider .bottom-pagination-slider-mobile{
+            width: 1000px !important;
+            margin:unset;
+            text-align: unset;
+            padding-left:20px;
+        }
+        .custom-content-slider .tab-pagination{
+            font-size:16px;
+            margin:0px !important;    
+            padding:5px 20px;
+            margin-right:10px !important;
+        }
+        .custom-content-slider{
+            padding:0px 0px 50px;
+        }
+        .custom-content-slider .mid-image-item{
+            display:flex;
+            flex-direction:column;
+            border-radius:10px;
+            gap:30px;
+        }
+        .custom-content-slider .mid-image-item.right-content{
+          flex-direction:column-reverse;
+        }
+        .custom-content-slider .page-width{
+          padding:0px;
+        }
+        .custom-content-slider .inner-section{
+            padding:0px;
+        }
+        .custom-content-slider .image-slider-slider-arrows{
+            padding:0px 10px;
+            top:50%;
+        }
+        .custom-content-slider .mid-image-slider-mobile_custom{
+            margin-top:0px;
+            padding:0px 20px;
+            overflow:hidden;
+            position:relative;
+        }
+        .custom-content-slider .mid-image-item{
+            width:100% !important;
+        }
+        .custom-content-slider .text-content-details{
+            justify-content:flex-start;
+        }
+        .custom-content-slider .mid-image-item img{
+          height:100%;
+        }
+        .custom-content-slider .mid-image-item.image-image-content{
+          flex-direction:column-reverse;
+        }
+    }
+
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) {
+        .custom-content-slider .bottom-pagination-slider-container{
+           display:none;
+        }
+        .custom-content-slider .tab-pagination{
+            font-size:12px;
+            margin:0px !important;    
+            padding:5px 10px;
+        }
+        .custom-content-slider{
+            padding:0px 0px 50px;
+        }
+        .custom-content-slider .mid-image-item{
+            display:flex;
+            flex-direction:column;
+            border-radius:10px;
+            gap:30px;
+        }
+        .custom-content-slider .mid-image-item.right-content{
+          flex-direction:column-reverse;
+        }
+        .custom-content-slider .inner-section{
+            padding:0px;
+        }
+        .image-slider-slider-arrows{
+            padding:0px 10px;
+        }
+        .custom-content-slider .custom_mid-image-slider{
+            margin-top:0px;
+        }
+        .custom-content-slider .image-slider-slider-arrows .image-slider-button-prev svg, 
+        .custom-content-slider .image-slider-slider-arrows .image-slider-button-next svg{
+            width:40px;
+            height:40px;
+        }
+        .custom-content-slider .text-content-details{
+            justify-content:flex-start;
+        }
+        .custom-content-slider .mid-image-item img{
+          height:100%;
+        }
+        .custom-content-slider .mid-image-item.image-image-content{
+          flex-direction:column-reverse;
+        }
+    }
+
+  @media (min-width: 1024px) and (orientation: portrait) {
+    .custom-content-slider .mid-image-item{
+      gap:50px;
+    }
+    .custom-content-slider .mid-image-item img{
+      height:100%;
+    }
+  }
+  
+   /* COMPUTERS */
+  @media (min-width: 1024px) and (orientation: landscape) {
+    .custom-content-slider .mid-image-item{
+      gap:50px;
+    }
+    .custom-content-slider .mid-image-item img{
+     height: auto !important; 
+        max-height: 750px;
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    .custom-content-slider .mid-image-item{
+      gap:50px;
+    }
+    .custom-content-slider .mid-image-item img{
+       height: auto !important;
+        max-height: 750px;
+    }
+  }
+  @media only screen and (min-width: 1366px) {
+    .custom-content-slider .mid-image-item{
+      gap:50px;
+    }
+    .custom-content-slider .mid-image-item img{
+      height: auto !important;
+        max-height: 750px;
+    }
+  }
+  @media only screen and (min-width: 1440px) {
+    .custom-content-slider .mid-image-item{
+      gap:5%;
+    }
+    .custom-content-slider .mid-image-item img{
+      height:750px;
+    }
+  }
+  @media only screen and (min-width: 1536px) {
+    .custom-content-slider .mid-image-item{
+      gap:7%;
+    }
+    .custom-content-slider .mid-image-item img{
+       height: auto !important;
+        max-height: 750px;
+    }
+  }
+  @media only screen and (min-width: 1600px) {
+    .custom-content-slider .mid-image-item{
+      gap:8%;
+    }
+    .custom-content-slider .mid-image-item img{
+     height: auto !important;
+        max-height: 750px;
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+   
+    .custom-content-slider .mid-image-item{
+      gap:10%;
+    }
+    .custom-content-slider .mid-image-item img{
+    height: auto !important;
+        max-height: 750px;
+    }
+    }
+  }
+  @supports (-webkit-touch-callout: none) {
+    .custom-slider-heading h2.heading {
+        font-synthesis: weight style; 
+        font-weight: 900 !important;
+    }
+}
+
+{% endstylesheet %}
+<div class="page-width">
+    <div class="custom-slider-heading">
+        <h2 class="heading text-md f-f-bold l-h-normal">
+            <span class="black-text f-f-bold">{{ section.settings.heading_black }}</span>
+            <span class="green-text f-f-bold">{{ section.settings.heading_green }}</span>
+        </h2>
+    </div>
+</div>
+<div class="page-width">
+    <div class="inner-section h-desktop">
+        <div class="custom_mid-image-slider">
+            <div class="swiper-wrapper">  
+                {% for block in section.blocks %}
+                  {% if block.type == 'text_image' %}
+                      {% if block.settings.right_content %}
+                        <div class="mid-image-item swiper-slide right-content">
+                            <div class="col_60">
+                                <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}" width="100%" height="100%">
+                            </div>
+                            
+                        </div>
+                        {% else %}
+                        <div class="mid-image-item swiper-slide">
+                            <div class="col_40 text-content-details">
+                                <div class="text-details">
+                                    <h3 class="heading f-f-bold mx-0 f-f-bold main-color">
+                                      {% if block.settings.sub_heading != blank %}
+                                        {{ block.settings.sub_heading }}
+                                      {% else %}
+                                      {% endif %}
+                                    </h3>
+                                    <h3 class="heading text-md f-f-bold mx-0 f-f-bold">
+                                      {% if block.settings.heading != blank %}
+                                        {{ block.settings.heading }}
+                                      {% else %}
+                                      {% endif %}
+                                    </h3>
+                                    <p class="h5 f-f-pp f-w-400 gray-f">
+                                      
+                                      {% if block.settings.description != blank %}
+                                        {{ block.settings.description | replace: '<p>','' | replace: '</p>','' }}
+                                      {% else %}
+                                      {% endif %}
+                                    </p>
+                                    {% if block.settings.image_add != blank %}
+                                      <img loading="lazy" src="{{ block.settings.image_add | img_url: 'master' }}" class="additinal-img">
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col_60">
+                                <img src="{{ block.settings.image | img_url: 'master' }}" width="100%" height="100%">
+                            </div>
+                        </div>
+                      {% endif %}
+                    {% elsif block.type == 'image_image' %}
+                    <div class="mid-image-item swiper-slide image-image-content">
+                      <div class="col_50">
+                        {% if block.settings.heading != blank %}
+                            <h2 class="heading text-md f-f-bold mx-0 f-f-bold">
+                                {{ block.settings.heading }}
+                            </h2>
+                        {% endif %}
+                        {% if block.settings.description != blank %}
+                            <p class="h5 f-f-pp f-w-400 gray-f mx-0">
+                              {{ block.settings.description | replace: '<p>','' | replace: '</p>','' }}
+                            </p>
+                        {% endif %}
+                        {% if block.settings.left_image != blank %}
+                        <img loading="lazy" class="content-image" src="{{ block.settings.left_image | img_url: 'master' }}" width="100%" height="100%">
+                        {% endif %}
+                      </div>
+                      <div class="col_50">
+                        <img loading="lazy" src="{{ block.settings.right_image | img_url: 'master' }}" width="100%" height="100%">
+                      </div>
+                    </div>
+                    {% else %}
+                    <div class="mid-image-item swiper-slide">
+                        <img src="{{ block.settings.image | img_url: 'master' }}" width="100%" height="100%">
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+      {% if section.blocks.size > 1 %}
+        <div class="image-slider-slider-arrows">
+            <div class="image-slider-button-next_custom">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52">
+                    <g id="right_normal" transform="translate(-1835 -559)">
+                        <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" transform="translate(1835 559)" fill="transparent"></rect>
+                        <path id="路径_4" data-name="路径 4" d="M253.944,103.831a.906.906,0,0,1-.7-.3.97.97,0,0,1,.1-1.4l6.385-5.786a.748.748,0,0,0,0-1.2l-6.485-5.487a.99.99,0,0,1,1.3-1.5l6.385,5.487a2.808,2.808,0,0,1,1,2.1,2.871,2.871,0,0,1-.9,2.1l-6.385,5.786a1.85,1.85,0,0,1-.7.2Z" transform="translate(1604.091 489.128)" fill="#fff"></path>
+                    </g>
+                </svg>
+            </div>
+            <div class="image-slider-button-prev_custom">
+                <svg xmlns="http://www.w3.org/2000/svg" id="left_normal" width="53" height="52" viewBox="0 0 53 52">
+                    <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" fill="transparent"></rect>
+                    <path id="路径_4" data-name="路径 4" d="M260.873,103.831a.906.906,0,0,0,.7-.3.97.97,0,0,0-.1-1.4l-6.385-5.786a.748.748,0,0,1,0-1.2l6.485-5.487a.99.99,0,0,0-1.3-1.5l-6.385,5.487a2.808,2.808,0,0,0-1,2.1,2.871,2.871,0,0,0,.9,2.1l6.385,5.786a1.85,1.85,0,0,0,.7.2Z" transform="translate(-230.909 -69.872)" fill="#fff"></path>
+                </svg>
+            </div>
+        </div>
+      {% endif %}
+    </div>
+  
+    <div class="inner-section h-mobile">
+        <div class="bottom-pagination-slider-container"> 
+          <div class="bottom-pagination-slider-mobile"> </div>
+        </div>
+        <div class="mid-image-slider-mobile_custom">
+            <div class="swiper-wrapper">  
+                {% for block in section.blocks %}
+                  {% if block.type == 'text_image' %}
+                    <div class="mid-image-item swiper-slide {% if block.settings.right_content %}right-content{% endif %}">
+                        <div class="col_40 text-content-details">
+                            <div class="text-details">
+                                <h3 class="heading f-f-bold mx-0 f-f-bold main-color">
+                                  {% if block.settings.sub_heading != blank %}
+                                    {{ block.settings.sub_heading }}
+                                  {% else %}
+                                    
+                                  {% endif %}
+                                </h3>
+                                <h3 class="heading text-md f-f-bold mx-0 f-f-bold">
+                                  {% if block.settings.heading != blank %}
+                                    {{ block.settings.heading }}
+                                  {% else %}
+                                  {% endif %}
+                                </h3>
+                                <p class="h5 f-f-pp f-w-400 gray-f">
+                                  {% if block.settings.description != blank %}
+                                    {{ block.settings.description | replace: '<p>','' | replace: '</p>','' }}
+                                  {% else %}
+                                  {% endif %}
+                                </p>
+                                {% if block.settings.image_add != blank %}
+                                  <img src="{{ block.settings.image_add | img_url: 'master' }}" class="additinal-img">
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col_60">
+                          {% if block.settings.image_mobile != blank %}
+                            <img loading="lazy" src="{{ block.settings.image_mobile | img_url: 'master' }}" width="100%" height="100%">
+                          {% else %}
+                            <img src="{{ block.settings.image | img_url: 'master' }}" width="100%" height="100%">
+                          {% endif %}
+                        </div>
+                    </div>
+                  {% elsif block.type == 'image_image' %}
+                    <div class="mid-image-item swiper-slide image-image-content">
+                        <div class="col_50">
+                          {% if block.settings.heading != blank %}
+                              <h2 class="heading text-md f-f-bold mx-0 f-f-bold">
+                                  {{ block.settings.heading }}
+                              </h2>
+                          {% endif %}
+                          {% if block.settings.description != blank %}
+                              <p class="h5 f-f-pp f-w-400 gray-f mx-0">
+                                {{ block.settings.description | replace: '<p>','' | replace: '</p>','' }}
+                              </p>
+                          {% endif %}
+                          {% if block.settings.left_image != blank %}
+                          <img src="{{ block.settings.left_image | img_url: 'master' }}" width="100%" height="100%">
+                          {% endif %}
+                        </div>
+                        <div class="col_50">
+                          <img src="{{ block.settings.right_image | img_url: 'master' }}" width="100%" height="100%">
+                        </div>
+                    </div>
+                  {% else %}
+                    <div class="mid-image-item swiper-slide">
+                        {% if block.settings.image_mobile != blank %}
+                          <img src="{{ block.settings.image_mobile | img_url: 'master' }}" width="100%" height="100%">
+                        {% else %}
+                          <img src="{{ block.settings.image | img_url: 'master' }}" width="100%" height="100%">
+                        {% endif %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="image-slider-slider-arrows">
+            <div class="image-slider-button-next-mobile_custom">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52">
+                    <g id="right_normal" transform="translate(-1835 -559)">
+                        <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" transform="translate(1835 559)" fill="transparent"></rect>
+                        <path id="路径_4" data-name="路径 4" d="M253.944,103.831a.906.906,0,0,1-.7-.3.97.97,0,0,1,.1-1.4l6.385-5.786a.748.748,0,0,0,0-1.2l-6.485-5.487a.99.99,0,0,1,1.3-1.5l6.385,5.487a2.808,2.808,0,0,1,1,2.1,2.871,2.871,0,0,1-.9,2.1l-6.385,5.786a1.85,1.85,0,0,1-.7.2Z" transform="translate(1604.091 489.128)" fill="#fff"></path>
+                    </g>
+                </svg>
+            </div>
+            <div class="image-slider-button-prev-mobile_custom">
+                <svg xmlns="http://www.w3.org/2000/svg" id="left_normal" width="53" height="52" viewBox="0 0 53 52">
+                    <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" fill="transparent"></rect>
+                    <path id="路径_4" data-name="路径 4" d="M260.873,103.831a.906.906,0,0,0,.7-.3.97.97,0,0,0-.1-1.4l-6.385-5.786a.748.748,0,0,1,0-1.2l6.485-5.487a.99.99,0,0,0-1.3-1.5l-6.385,5.487a2.808,2.808,0,0,0-1,2.1,2.871,2.871,0,0,0,.9,2.1l6.385,5.786a1.85,1.85,0,0,0,.7.2Z" transform="translate(-230.909 -69.872)" fill="#fff"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var custom_mid_image_slider = new Swiper('.custom_mid-image-slider', {
+        slidesPerView: "auto",
+        spaceBetween: 50,
+        loop: true,
+        speed: 800,
+        allowTouchMove: true,
+        autoHeight: true,
+        navigation: {
+            nextEl: '.image-slider-button-next_custom',
+            prevEl: '.image-slider-button-prev_custom',
+        },
+    });
+
+  
+    var custom_mobile_image_slider = new Swiper('.mid-image-slider-mobile_custom', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        speed: 800,
+        allowTouchMove: true,
+        autoHeight: true,
+        navigation: {
+            nextEl: '.image-slider-button-next-mobile_custom',
+            prevEl: '.image-slider-button-prev-mobile_custom',
+        },
+        pagination: {
+            el: '.bottom-pagination-slider-mobile',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return `<span class="tab-pagination t-cap ${className}" data-index="${index}" title="${slideTitles[index]}">${slideTitles[index]}</span>`;
+            },
+        },
+    });
+
+</script>
+{% schema %}
+  {
+    
+    "class": "custom-content-slider",
+    "name": "Custom Slider2 ",
+    "limit": 1, 
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "animation_fade",
+            "label": "Animation Fade Up",
+            "default": false
+        },
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "header",
+            "content": "Heading"
+        },
+        {
+            "type": "text",
+            "id": "heading_black",
+            "label": "Heading (Black)",
+            "default": "Black Text"
+        },
+        {
+            "type": "text",
+            "id": "heading_green",
+            "label": "Heading (Green)",
+            "default": "Green Text"
+        }
+    ],
+    "max_blocks":5,
+    "blocks": [
+        {
+            "type": "text_image",
+            "name": "Text + Image",
+            "settings": [
+                {
+                    "type": "checkbox",
+                    "id": "right_content",
+                    "label": "Right Content",
+                    "default": false
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_mobile",
+                    "label": "Image Mobile"
+                },
+                {
+                    "type": "text",
+                    "id": "sub_heading",
+                    "label": "Sub Heading"
+                },
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Description"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_add",
+                    "label": "Image"
+                }
+            ]
+        },
+        {
+            "type": "fullwidth",
+            "name": "Fullwith",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_mobile",
+                    "label": "Image Mobile"
+                }
+            ]
+        },
+        {
+            "type": "image_image",
+            "name": "Image + Image",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Description"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "left_image",
+                    "label": "Left Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "left_image_mobile",
+                    "label": "Left Image Mobile"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "right_image",
+                    "label": "Right Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "right_image_mobile",
+                    "label": "Right Image Mobile"
+                }
+            ]
+        }
+    ],
+    "presets" :[{
+      "name" : "Custom Slider2"
+    }]
+  }
+{% endschema %} 

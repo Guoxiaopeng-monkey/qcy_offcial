@@ -1,0 +1,144 @@
+<style>
+    .product-header-container{
+        box-shadow: 0px -3px 6px 1px rgba(0, 0, 0, 0.1);
+        background-color:{{ section.settings.background }};
+    }
+    .promotion-header-section .product-header-menu{
+        display:flex;    
+        justify-content: space-evenly;
+    }
+    .promotion-header-section .product-header-menu .list-menu-link{
+        padding:1.5rem 0px;
+        transition: all 0.3s ease;
+        border-bottom: 3px solid #fff;
+        cursor:pointer;
+    }
+    .promotion-header-section .product-header-menu .list-menu-link.active{
+        border-bottom: 3px solid #FF8832;
+    }
+    .shopify-section-header-sticky{
+        opacity:1;
+        visibility:visible;
+        transition: visibility 0.1s ease, opacity 0.5s ease;
+    }
+    .header-hide {
+        opacity:0;
+        visibility:hidden;
+    }
+    .product-header-sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 4; /* Make sure it's above other content */
+    }
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+        .promotion-header-section .product-header-menu .list-menu-link{
+            font-size:15px;
+        }
+    }
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px){
+        .promotion-header-section .product-header-menu .list-menu-link{
+            font-size:16px;
+        }
+    }
+</style>
+<div class="product-header-container">
+    <div class="page-width">
+        <div class="product-header-menu">
+          {% for block in section.blocks %}
+            <h4 data-scroll="{{ block.settings.header_menu | handleize }}-section" class="list-menu-link mx-0 f-f-bold {% if forloop.index == 1 %}active{% endif %}" style="color:{{ section.settings.text_color }}">{{ block.settings.header_menu }}</h4>
+          {% endfor %}
+        </div>
+    </div>
+</div>
+{% javascript %}
+    $('.promotion-header-section').each(function(){
+        var $container = $(this); 
+        $container.find('.product-header-menu .list-menu-link').click(function(){
+            $('.product-header-menu .list-menu-link').removeClass('active');
+            $(this).addClass('active');
+            
+            var targetOffset = $('.'+$(this).attr('data-scroll')).offset().top  - 50;
+            $("html, body").animate({
+                scrollTop: targetOffset
+            }, 5);
+        });
+        
+    });
+
+    $(window).on('scroll', function() {
+        // Get the top offset of the .promotion-header-section
+        var productHeaderTop = $('.promotion-header-section').offset().top;
+        var scrollPosition = $(window).scrollTop();
+
+        // Check the scroll position
+        if ($(window).scrollTop() >= productHeaderTop) {
+            // Make the .promotion-header-section sticky
+            $('.product-header-container').addClass('product-header-sticky');
+            // Hide the header
+            $('.shopify-section-header-sticky').addClass('header-hide');
+        } else {
+            // Remove the sticky class when scrolling above the section
+            $('.product-header-container').removeClass('product-header-sticky');
+            // Show the header again
+            $('.shopify-section-header-sticky').removeClass('header-hide');
+        }
+        
+        $(".section-scroll").each(function() {
+            var sectionTop = $(this).offset().top - 100;
+            var sectionBottom = sectionTop + $(this).outerHeight();
+            console.log($(this).attr('class').split(' ')[0]);
+            var targetButton = $('.product-header-menu .list-menu-link[data-scroll="' + $(this).attr('class').split(' ')[0] + '"]');
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                targetButton.addClass("active");
+            } else {
+                targetButton.removeClass("active");
+            }
+
+        });
+    });
+
+{% endjavascript %}
+{% schema %}
+    {
+        "class": "promotion-header-section",
+        "name": "Promotion Header",
+        "templates": ["page"],
+        "limit": 1, 
+        "max_blocks": 4,
+        "settings": [
+            {
+                "type": "color",
+                "id": "background",
+                "label": "Background",
+                "default":"#fff"
+            },
+            {
+                "type": "color",
+                "id": "text_color",
+                "label": "Text Color",
+                "default":"#000"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "header_menu",
+                "name": "Header Menu",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "header_menu",
+                        "label": "Header Menu"
+                    }
+                ]
+            }
+        ],
+        "presets" :[{
+            "name" : "Promotion Header"
+        }]
+    }
+  {% endschema %} 

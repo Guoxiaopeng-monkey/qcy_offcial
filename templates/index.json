@@ -1,0 +1,709 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "homepage_banner_section_PpXMRt": {
+      "type": "homepage-banner-section",
+      "blocks": {
+        "banner_image_Qhf7hC": {
+          "type": "Banner_Image",
+          "settings": {
+            "content_display": false,
+            "content_position_y": "content-desktop-y-center",
+            "content_position_x": "content-desktop-x-left",
+            "content_position_y_mobile": "content-mobile-y-top",
+            "sub_heading": "<p>Summer Sound Savings🌴</p>",
+            "sub_heading_font_size": 30,
+            "sub_heading_weight": "f-f-bold",
+            "sub_heading_color": "#121212",
+            "heading": "UP TO 50% OFF !",
+            "heading_font_size": 55,
+            "heading_weight": "f-f-extra-bold",
+            "heading_color": "#334fb4",
+            "description": "<h3><br/><br/></h3>",
+            "description_font_size": 20,
+            "description_weight": "f-f-regular",
+            "description_color": "#ffffff",
+            "image": "shopify://shop_images/banner-PC_0be016fe-bce3-42a6-b8b1-edbf8b8f7509.jpg",
+            "bg_image": "shopify://shop_images/banner-M.jpg",
+            "btn_heading": "SHOP NOW",
+            "btn_bg_color": "#121212",
+            "url": "shopify://pages/super-summer-sale",
+            "overlay": false,
+            "overlay_opacity": 25
+          }
+        },
+        "banner_countdown_grkkX9": {
+          "type": "Banner_countdown",
+          "settings": {
+            "image": "shopify://shop_images/HT18-pc_85755d9b-dbd3-4665-888a-f1c8551de891.jpg",
+            "bg_image": "shopify://shop_images/HT18-sp_217e9e5e-e21e-4faf-81ff-825acecb913b.jpg",
+            "sub_heading": "QCY MeloBuds N70",
+            "sub_heading_font_size": 30,
+            "sub_heading_weight": "f-f-bold",
+            "sub_heading_color": "#ff8832",
+            "heading": "Hear Every Note, Feel Every Beat",
+            "heading_font_size": 40,
+            "heading_weight": "f-f-extra-bold",
+            "heading_color": "#121212",
+            "description": "Flagship Wireless ANC Earbuds",
+            "description_font_size": 20,
+            "description_weight": "f-f-regular",
+            "description_color": "#121212",
+            "btn_heading": "EXPLORE",
+            "btn_bg_color": "#ff8832",
+            "url": "shopify://products/qcy-melobuds-n70",
+            "countdown_display": false,
+            "date_time": "Aug 26, 2025 00:00:00 CST",
+            "primary_color": "#121212",
+            "secondary_color": "#121212",
+            "content_position_y": "content-desktop-y-center",
+            "content_position_x": "content-desktop-x-left",
+            "content_position_y_mobile": "content-mobile-y-top"
+          }
+        },
+        "banner_image_mLaxyt": {
+          "type": "Banner_Image",
+          "disabled": true,
+          "settings": {
+            "content_display": false,
+            "content_position_y": "content-desktop-y-center",
+            "content_position_x": "content-desktop-x-left",
+            "content_position_y_mobile": "content-mobile-y-top",
+            "sub_heading": "<p>QCY H3 Pro</p>",
+            "sub_heading_font_size": 30,
+            "sub_heading_weight": "f-f-bold",
+            "sub_heading_color": "#ff8832",
+            "heading": "Music On, Unwanted Noise Off",
+            "heading_font_size": 45,
+            "heading_weight": "f-f-extra-bold",
+            "heading_color": "#121212",
+            "description": "<p>Over-Ear Headphones with Adaptive ANC</p>",
+            "description_font_size": 20,
+            "description_weight": "f-f-regular",
+            "description_color": "#121212",
+            "image": "shopify://shop_images/H3_pro-pc.jpg",
+            "bg_image": "shopify://shop_images/H3_pro-sp_6f0bf2a1-1756-440a-9213-90aedb03924d.jpg",
+            "btn_heading": "EXPLORE",
+            "btn_bg_color": "#121212",
+            "url": "shopify://products/qcy-h3-pro",
+            "overlay": false,
+            "overlay_opacity": 25
+          }
+        },
+        "banner_image_CVVNze": {
+          "type": "Banner_Image",
+          "settings": {
+            "content_display": false,
+            "content_position_y": "content-desktop-y-center",
+            "content_position_x": "content-desktop-x-left",
+            "content_position_y_mobile": "content-mobile-y-top",
+            "sub_heading": "<h1>QCY Crossky C50</h1>",
+            "sub_heading_font_size": 30,
+            "sub_heading_weight": "f-f-bold",
+            "sub_heading_color": "#ff8832",
+            "heading": "Fashion-Forward Design, Engineered to Stay",
+            "heading_font_size": 40,
+            "heading_weight": "f-f-extra-bold",
+            "heading_color": "#121212",
+            "description": "<p>Open-Ear Clip-On Wireless Earbuds</p>",
+            "description_font_size": 20,
+            "description_weight": "f-f-bold",
+            "description_color": "#121212",
+            "image": "shopify://shop_images/banner_2ccb5a5e-24ec-4bc4-b5ec-6dc813b9d8a5.jpg",
+            "bg_image": "shopify://shop_images/banner-sp_566d556a-c838-467e-9f63-740d3e7fb62b.jpg",
+            "btn_heading": "EXPLORE",
+            "btn_bg_color": "#ff8832",
+            "url": "https://www.qcy.com/products/qcy-crossky-c50",
+            "overlay": false,
+            "overlay_opacity": 25
+          }
+        },
+        "banner_image_7FtPTD": {
+          "type": "Banner_Image",
+          "disabled": true,
+          "settings": {
+            "content_display": false,
+            "content_position_y": "content-desktop-y-center",
+            "content_position_x": "content-desktop-x-left",
+            "content_position_y_mobile": "content-mobile-y-top",
+            "sub_heading": "<p>QCY Crossky C30S</p>",
+            "sub_heading_font_size": 30,
+            "sub_heading_weight": "f-f-bold",
+            "sub_heading_color": "#dc0f0f",
+            "heading": "Allow Ears to Breathe",
+            "heading_font_size": 45,
+            "heading_weight": "f-f-extra-bold",
+            "heading_color": "#000000",
+            "description": "<p>Uncompressed Audio, Uninterrupted Journeys​</p>",
+            "description_font_size": 20,
+            "description_weight": "f-f-regular",
+            "description_color": "#121212",
+            "image": "shopify://shop_images/c30s-pc_393eafae-c4dd-43f3-9622-887fca19d506.jpg",
+            "bg_image": "shopify://shop_images/c30s-sp_e0cae05d-3cf1-41b0-bc26-e981a8d493c2.jpg",
+            "btn_heading": "EXPLORE",
+            "btn_bg_color": "#121212",
+            "url": "shopify://products/qcy-crossky-c30s",
+            "overlay": false,
+            "overlay_opacity": 20
+          }
+        },
+        "banner_image_adERje": {
+          "type": "Banner_Image",
+          "disabled": true,
+          "settings": {
+            "content_display": true,
+            "content_position_y": "content-desktop-y-center",
+            "content_position_x": "content-desktop-x-left",
+            "content_position_y_mobile": "content-mobile-y-center",
+            "sub_heading": "",
+            "sub_heading_font_size": 22,
+            "sub_heading_weight": "f-f-regular",
+            "sub_heading_color": "#ff8832",
+            "heading": "",
+            "heading_font_size": 50,
+            "heading_weight": "f-f-extra-bold",
+            "heading_color": "#ffffff",
+            "description": "",
+            "description_font_size": 20,
+            "description_weight": "f-f-regular",
+            "description_color": "#ffffff",
+            "image": "shopify://shop_images/3200x1280_baf71c70-f9d9-4b0f-8e5d-3be077f36f1b.jpg",
+            "bg_image": "shopify://shop_images/860x1200.jpg",
+            "btn_heading": "buy now",
+            "btn_bg_color": "#ff8832",
+            "url": "",
+            "overlay": false,
+            "overlay_opacity": 20
+          }
+        },
+        "banner_image_HPpNrE": {
+          "type": "Banner_Image",
+          "disabled": true,
+          "settings": {
+            "content_display": false,
+            "content_position_y": "content-desktop-y-center",
+            "content_position_x": "content-desktop-x-left",
+            "content_position_y_mobile": "content-mobile-y-top",
+            "sub_heading": "<p>QCY MeloBuds N70</p>",
+            "sub_heading_font_size": 30,
+            "sub_heading_weight": "f-f-bold",
+            "sub_heading_color": "#dc0f0f",
+            "heading": "Coming Soon",
+            "heading_font_size": 45,
+            "heading_weight": "f-f-extra-bold",
+            "heading_color": "#000000",
+            "description": "<p><strong>Release Date: Aug 26​</strong></p>",
+            "description_font_size": 20,
+            "description_weight": "f-f-regular",
+            "description_color": "#121212",
+            "image": "shopify://shop_images/HT18-pc_cd0525b5-7077-4a34-be31-836f820064e4.jpg",
+            "bg_image": "shopify://shop_images/HT18-sp_facd4182-e069-42fb-86fe-68f14419bd8a.jpg",
+            "btn_heading": "",
+            "btn_bg_color": "#121212",
+            "url": "",
+            "overlay": false,
+            "overlay_opacity": 20
+          }
+        },
+        "banner_video_Twi3cE": {
+          "type": "Banner_Video",
+          "disabled": true,
+          "settings": {
+            "content_display": false,
+            "content_position_y": "content-desktop-y-center",
+            "content_position_x": "content-desktop-x-left",
+            "content_position_y_mobile": "content-mobile-y-center",
+            "sub_heading": "<p>QCY Crossky C30</p>",
+            "sub_heading_font_size": 22,
+            "sub_heading_weight": "f-f-regular",
+            "sub_heading_color": "#ff8832",
+            "heading": "Allow Ears to Breathe",
+            "heading_font_size": 50,
+            "heading_weight": "f-f-extra-bold",
+            "heading_color": "#ffffff",
+            "description": "<p>Open-Ear Clip-On Wireless Headphones</p>",
+            "description_font_size": 20,
+            "description_weight": "f-f-regular",
+            "description_color": "#ffffff",
+            "bg_video": "shopify://files/videos/QT33-20S版_80ab8df0-bced-4aa4-8976-082e8fb85158.mp4",
+            "btn_heading": "Explore",
+            "btn_bg_color": "#ff8832",
+            "url": "",
+            "overlay": false,
+            "overlay_opacity": 20
+          }
+        }
+      },
+      "block_order": [
+        "banner_image_Qhf7hC",
+        "banner_countdown_grkkX9",
+        "banner_image_mLaxyt",
+        "banner_image_CVVNze",
+        "banner_image_7FtPTD",
+        "banner_image_adERje",
+        "banner_image_HPpNrE",
+        "banner_video_Twi3cE"
+      ],
+      "custom_css": [],
+      "settings": {
+        "enabled_autoplay": true,
+        "autoplay_delay": "5000"
+      }
+    },
+    "homepage_featured_product_section_z7nUe9": {
+      "type": "homepage-featured-product-section",
+      "blocks": {
+        "product_DYht3w": {
+          "type": "product",
+          "settings": {
+            "product": "qcy-melobuds-pro",
+            "custom_featured_image": "shopify://shop_images/HT08_-1_cbc8ff56-48d7-43f4-a719-0242661a3ace.webp",
+            "sub_heading": "QCY MeloBuds Pro",
+            "heading": "Immerse in Sound Tailored to You",
+            "button_buy_now": "Buy Now"
+          }
+        },
+        "product_PjLHk6": {
+          "type": "product",
+          "settings": {
+            "product": "qcy-h3-pro",
+            "custom_featured_image": "shopify://shop_images/H3-PRO_-1_d47772ad-b743-4f34-ae66-2b8a0f6fc533.png",
+            "sub_heading": "QCY H3 PRO",
+            "heading": "Music On, Unwanted Noise Off",
+            "button_buy_now": "Buy Now"
+          }
+        },
+        "product_LjifJW": {
+          "type": "product",
+          "settings": {
+            "product": "qcy-crossky-c50",
+            "custom_featured_image": "shopify://shop_images/ct06_3_8f68d6b7-0863-4ac3-995a-0beae131064b.png",
+            "sub_heading": "QCY Crossky C50",
+            "heading": "All-Day Comfort, Studio Sound",
+            "button_buy_now": "Buy Now"
+          }
+        }
+      },
+      "block_order": [
+        "product_DYht3w",
+        "product_PjLHk6",
+        "product_LjifJW"
+      ],
+      "custom_css": [],
+      "settings": {
+        "section_heading": "Feature Products",
+        "product": "qcy-melobuds-n70",
+        "bg_image": "shopify://shop_images/HT18-pc_85755d9b-dbd3-4665-888a-f1c8551de891.jpg",
+        "bg_image_mobile": "shopify://shop_images/1_40f17468-4a18-46dd-9cbe-3672c986da31.png",
+        "sub_heading": "QCY MeloBuds N70",
+        "heading": "Premium Sound, Smart Price",
+        "button_learn_more": "Learn More",
+        "button_buy_now": "Buy Now"
+      }
+    },
+    "homepage_slider_products_section_W4EQcL": {
+      "type": "homepage-slider-products-section",
+      "blocks": {
+        "product_GxLpUH": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "custom_featured_image": "shopify://shop_images/white01_2x_c2107bd2-63e2-401b-accf-1b3ad8156b57.png",
+            "bg_image": "shopify://shop_images/42365_2x_a9c4fe1b-1bfa-44ec-86b9-aae4ece9558b.png",
+            "Heading": "H3"
+          }
+        },
+        "product_NbtYpb": {
+          "type": "product",
+          "settings": {
+            "product": "qcy-t13-wireless-earphones",
+            "custom_featured_image": "shopify://shop_images/1717412159141900_2x_1.png",
+            "bg_image": "shopify://shop_images/42217_2x_2c36bffc-5e9c-4842-9a22-27533d4ae4b2.png",
+            "Heading": "Melobuds Pro"
+          }
+        },
+        "product_nYHA9A": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "custom_featured_image": "shopify://shop_images/29_2x_1.png",
+            "bg_image": "shopify://shop_images/42366_2x_1965a880-47d4-4a39-aee7-04e0a6cff63c.png",
+            "Heading": "Crossky GTR2"
+          }
+        },
+        "product_GhpTed": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "custom_featured_image": "shopify://shop_images/1707204427874880_2x_e927bb7a-429c-4bb6-bbfc-977aeffa1af0.png",
+            "bg_image": "shopify://shop_images/42216_2x_660a315a-c5b8-45b2-bd9c-5ae03e74cba1.png",
+            "Heading": "Watches GTS"
+          }
+        }
+      },
+      "block_order": [
+        "product_GxLpUH",
+        "product_NbtYpb",
+        "product_nYHA9A",
+        "product_GhpTed"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "homepage_featured_collection_section_fndfyN": {
+      "type": "homepage-featured-collection-section",
+      "blocks": {
+        "collection_c3UTQV": {
+          "type": "collection",
+          "settings": {
+            "collection": "headphones",
+            "bg_image": "shopify://shop_images/Headphones_collection_22f6c893-c7da-4853-b693-1741503f8a98.jpg",
+            "Heading": "Headphones"
+          }
+        },
+        "collection_TJxeJ3": {
+          "type": "collection",
+          "settings": {
+            "collection": "true-wireless-earbuds",
+            "bg_image": "shopify://shop_images/earbuds_collection.jpg",
+            "Heading": "Earbuds"
+          }
+        },
+        "collection_k96wPD": {
+          "type": "collection",
+          "settings": {
+            "collection": "open-ear-earbuds",
+            "bg_image": "shopify://shop_images/470x683-QT33.jpg",
+            "Heading": "Open-Ear Earbuds"
+          }
+        },
+        "collection_Uy4tDL": {
+          "type": "collection",
+          "settings": {
+            "collection": "smart-watches",
+            "bg_image": "shopify://shop_images/watch_collection.png",
+            "Heading": "Smart Watch"
+          }
+        }
+      },
+      "block_order": [
+        "collection_c3UTQV",
+        "collection_TJxeJ3",
+        "collection_k96wPD",
+        "collection_Uy4tDL"
+      ],
+      "settings": {
+        "title": "Explore The Collections"
+      }
+    },
+    "homepage_best_seller_section_wpCPpg": {
+      "type": "homepage-best-seller-section",
+      "settings": {
+        "heading": "Best Sellers",
+        "heading_mobile": "You May Also Like",
+        "description": "<p>Whether it’s fitness or commuting, QCY can meet your needs.</p>",
+        "btn_title": "See All",
+        "collection": "best-seller"
+      }
+    },
+    "homepage_featured_video_section_7cGAEh": {
+      "type": "homepage-featured-video-section",
+      "settings": {
+        "heading": "Be Creative Go Beyond",
+        "video": "shopify://files/videos/QCY Officail Online Store Be Creative Go Beyond .mp4",
+        "video_mobile": "shopify://files/videos/QCY Officail Online Store Be Creative Go Beyond for mobilephone~1.mp4"
+      }
+    },
+    "17325251952b802861": {
+      "type": "apps",
+      "blocks": {
+        "firework_shoppable_video_ugc_firework_embed_BJxYze": {
+          "type": "shopify://apps/firework-shoppable-video-ugc/blocks/firework-embed/347a2e4c-f5cb-410d-8354-490d1e80558c",
+          "settings": {
+            "channel": "qcy_official",
+            "playlist": "gplYr1",
+            "layout": "carousel",
+            "embedtitle": "Join the Community",
+            "titlealignment": "center",
+            "embedtitlesize": 20,
+            "size": "large",
+            "player_placement": "bottom-right",
+            "hashtag": "",
+            "pip": true
+          }
+        }
+      },
+      "block_order": [
+        "firework_shoppable_video_ugc_firework_embed_BJxYze"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "homepage_community_section_ynR3ef": {
+      "type": "homepage-community-section",
+      "blocks": {
+        "post_crGWPN": {
+          "type": "post",
+          "disabled": true,
+          "settings": {
+            "author": "",
+            "description": ""
+          }
+        },
+        "post_78LJ34": {
+          "type": "post",
+          "settings": {
+            "bg_image": "shopify://shop_images/1_055fb121-244b-43aa-96b9-3c981eaaae75.png",
+            "bg_video": "shopify://files/videos/Added @qcy.usa headphones to my life essentials   There’s honestly no better feeling than tuning out the world and getting totally lost in music. These headphones have been my go-to for doing exactly that &.mp4",
+            "author_image": "shopify://shop_images/476869853_651020207484311_3527565248985558515_n.jpg",
+            "author": "@caseystackles",
+            "description": "<p><a href=\"https://www.instagram.com/p/DFViUbcR6wz/\" title=\"https://www.instagram.com/p/DFViUbcR6wz/\">There’s honestly no better feeling than tuning out the world and getting totally lost in music. These headphones have been my go-to for doing exactly that & I want YOU to experience it for yourself..</a></p>"
+          }
+        },
+        "post_wVUfiy": {
+          "type": "post",
+          "disabled": true,
+          "settings": {
+            "bg_image": "shopify://shop_images/2024-07-17_172715_2x_c3c158f0-307e-47ea-8e16-40280f8605f6.png",
+            "bg_video": "shopify://files/videos/Crossky GTR2.mp4",
+            "author_image": "shopify://shop_images/unnamed_1.jpg",
+            "author": "Chooch Tech",
+            "description": "<p>This headset is the best headset I have used recently, I love it so much... </p>"
+          }
+        },
+        "post_w8QQpk": {
+          "type": "post",
+          "disabled": true,
+          "settings": {
+            "bg_image": "shopify://shop_images/449472415_772066088342958_5347985175360265754_n_2x_39f5005c-e597-4eab-81fa-5aab89309c1e.png",
+            "bg_video": "shopify://files/videos/Join The Community.mp4",
+            "author_image": "shopify://shop_images/unnamed_1.jpg",
+            "author": "Chooch Tech",
+            "description": "<p>This headset is the best headset I have used recently, I love it so much... </p>"
+          }
+        },
+        "post_yjP3mQ": {
+          "type": "post",
+          "disabled": true,
+          "settings": {
+            "bg_image": "shopify://shop_images/450358712_776584811224419_6477086865449815812_n_2x_e8716d54-5f32-42a2-aa04-9a2497e92c39.png",
+            "bg_video": "shopify://files/videos/10月8日.mp4",
+            "author_image": "shopify://shop_images/unnamed_1.jpg",
+            "author": "Chooch Tech",
+            "description": "<p>This headset is the best headset I have used recently, I love it so much... </p>"
+          }
+        }
+      },
+      "block_order": [
+        "post_crGWPN",
+        "post_78LJ34",
+        "post_wVUfiy",
+        "post_w8QQpk",
+        "post_yjP3mQ"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Join the community",
+        "description": "<p>Follow us on social media and show us how you </p>"
+      }
+    },
+    "homepage_review_section_EEWKqn": {
+      "type": "homepage-review-section",
+      "blocks": {
+        "review_EFPVfw": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/20241205-104259.png",
+            "description": "<p>Best Budget Noise-Canceling Headphones Under $100 for 2025</p>"
+          }
+        },
+        "review_g4RjK9": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/PR_icon_7a7f19c4-00d3-4172-9734-97fcdac4701b.png",
+            "description": "<p>QCY T13 ANC review: Great cheap ANC earbuds</p>"
+          }
+        },
+        "review_xzykpV": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/image.png",
+            "description": "<p>La gama de audífonos de QCY ha sido ampliamente reconocida en el mercado global y en México.</p>"
+          }
+        },
+        "review_ppK3A3": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/SHOWMETECH.png",
+            "description": "<p>Its sound is very good, very pleasant and the bass is strong and impactful, ideal for those who like pop, rock or electronic music.</p>"
+          }
+        },
+        "review_pkwLFt": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/tom_s_guide.png",
+            "description": "<p>The T5S is an affordable pair of wireless earbuds that offer a surprisingly good battery life and average sound quality.</p>"
+          }
+        },
+        "review_93gMUr": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/ZDNET.png",
+            "description": "<p>You'd be hard-pressed to find a better-sounding pair of headphones at this price.</p>"
+          }
+        },
+        "review_XdJUVb": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/img_v3_02ge_78d0842d-a251-426a-b348-b7793ca5328g.png",
+            "description": "<p>Perfect for anyone who needs a budget solution that still offers decent performance.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "review_EFPVfw",
+        "review_g4RjK9",
+        "review_xzykpV",
+        "review_ppK3A3",
+        "review_pkwLFt",
+        "review_93gMUr",
+        "review_XdJUVb"
+      ],
+      "settings": {}
+    },
+    "homepage_stories_section_rNfJBq": {
+      "type": "homepage-stories-section",
+      "blocks": {
+        "youtube_chc6xF": {
+          "type": "youtube",
+          "settings": {
+            "custom_image": "shopify://shop_images/Mitchell.jpg",
+            "youtube_link": "https://www.youtube.com/watch?v=bcv4VGFbg8A",
+            "heading": "@MitchellMillennial: QCY Melobuds Pro, Insane Value",
+            "link": ""
+          }
+        },
+        "youtube_zFb6jY": {
+          "type": "youtube",
+          "settings": {
+            "custom_image": "shopify://shop_images/Techmaniac.jpg",
+            "youtube_link": "https://www.youtube.com/watch?v=Ni8wUZpcyfA",
+            "heading": "@TechManiacHD: QCY MeloBuds Pro Review",
+            "link": ""
+          }
+        },
+        "youtube_CLGcDN": {
+          "type": "youtube",
+          "settings": {
+            "custom_image": "shopify://shop_images/DroidModderX.jpg",
+            "youtube_link": "https://www.youtube.com/watch?v=HTs10LwC_YM",
+            "heading": "@DroidModderX: BEST ANC Headphones Under $50",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "youtube_chc6xF",
+        "youtube_zFb6jY",
+        "youtube_CLGcDN"
+      ],
+      "settings": {
+        "heading": "Hear what others are saying",
+        "description": "<p>Listening is believing. Watch people use QCY products and check out their comments.</p>"
+      }
+    },
+    "homepage_about_us_section_ryKhJy": {
+      "type": "homepage-about-us-section",
+      "settings": {
+        "image_1": "shopify://shop_images/5_9c9417d4-96d4-4ca9-a1bc-fbd3d76691b3.jpg",
+        "image_1_mobile": "shopify://shop_images/2_1db26fb4-f81e-4c13-b1f7-ff0b9711a29d.jpg",
+        "image_2": "shopify://shop_images/39954_2x_2.png",
+        "image_2_mobile": "shopify://shop_images/39954_2x_3.png",
+        "image_3": "shopify://shop_images/39955_2x_2.png",
+        "image_3_mobile": "shopify://shop_images/39955_2x_3.png",
+        "image_4": "shopify://shop_images/39956_2x_2.png",
+        "image_4_mobile": "shopify://shop_images/39956_2x_3.png",
+        "sub_heading": "",
+        "heading": "Be Creative,Go Beyond.",
+        "btn_title": "About Us",
+        "btn_link": "shopify://pages/about-us"
+      }
+    },
+    "homepage_icons_section_n3yjbz": {
+      "type": "homepage-icons-section",
+      "blocks": {
+        "icon_JxmQGk": {
+          "type": "icon",
+          "settings": {
+            "bg_image": "shopify://shop_images/2x.png",
+            "heading": "",
+            "special_char": "Top",
+            "heading_2": "4",
+            "sub_heading": "TWS Global Market Share"
+          }
+        },
+        "icon_NRfttN": {
+          "type": "icon",
+          "settings": {
+            "bg_image": "shopify://shop_images/positive-review_2x_325eefc6-d0bc-42d6-8c81-9233a5eac621.png",
+            "heading": "10",
+            "special_char": "M+ units",
+            "heading_2": "",
+            "sub_heading": "Annual Shipment"
+          }
+        },
+        "icon_nedibX": {
+          "type": "icon",
+          "settings": {
+            "bg_image": "shopify://shop_images/2x_4fdacf8d-bac9-4699-9868-8887cf475af5.png",
+            "heading": "1,000",
+            "special_char": " +",
+            "heading_2": "",
+            "sub_heading": "Retail Counters Worldwide"
+          }
+        }
+      },
+      "block_order": [
+        "icon_JxmQGk",
+        "icon_NRfttN",
+        "icon_nedibX"
+      ],
+      "settings": {}
+    },
+    "homepage_featured_blog_section_4G77JC": {
+      "type": "homepage-featured-blog-section",
+      "settings": {
+        "heading": "QCY Blogs",
+        "description": "<p>Whether it’s fitness or commuting, QCY can meet your needs.</p>",
+        "link": ""
+      }
+    }
+  },
+  "order": [
+    "homepage_banner_section_PpXMRt",
+    "homepage_featured_product_section_z7nUe9",
+    "homepage_slider_products_section_W4EQcL",
+    "homepage_featured_collection_section_fndfyN",
+    "homepage_best_seller_section_wpCPpg",
+    "homepage_featured_video_section_7cGAEh",
+    "17325251952b802861",
+    "homepage_community_section_ynR3ef",
+    "homepage_review_section_EEWKqn",
+    "homepage_stories_section_rNfJBq",
+    "homepage_about_us_section_ryKhJy",
+    "homepage_icons_section_n3yjbz",
+    "homepage_featured_blog_section_4G77JC"
+  ]
+}

@@ -1,0 +1,224 @@
+<script>
+
+    const citymap = [
+        {% if shop.metaobjects['retail_store'].values_count > 0 %}
+            {% paginate shop.metaobjects['retail_store'].values by 999 %}
+                {% for store in shop.metaobjects['retail_store'].values %}
+                    {
+                        title: "{{ store.store_name }}",
+                        type: "{{ store.store_type }}",
+                        address: "{{ store.address }}",
+                        country: "{{ store.country }}",
+                        contact: "{{ store.contact }}",
+                        lat_long: "{{ store.lat_long }}"
+                    }{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+            {% endpaginate %}
+        {% endif %}
+    ];
+
+</script>
+
+<section class="where-to-buy" data-anchor="where-to-buy">
+    <div class="page-width section-content">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="title">
+                    {{ section.settings.title }}
+                </h2>
+                <div class="btn-toggles">
+
+                    {% assign retail_store = shop.metaobjects['retail_store'].values | sort: 'store_name' %}
+                    {% assign online_store = shop.metaobjects['where_to_buy'].values | sort: 'store_name' %}
+
+                    {% if retail_store.size > 0 %}
+                        <span class="btn-toggle" data-toggle="retail-store">
+                            Retail Store
+                        </span>
+                    {% endif %}
+                    {% if online_store.size > 0 %}
+                        <span class="btn-toggle" data-toggle="online-store">
+                            Online Store
+                        </span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="store-navs">
+                    <div class="store-nav" data-store="retail-store">
+                        <div class="filters">
+
+                            {% paginate shop.metaobjects['retail_store'].values by 999 %}
+                                {% assign countries = shop.metaobjects['retail_store'].values | map: 'country' | uniq | sort %}
+                            {% endpaginate %}
+
+                            {% paginate shop.metaobjects['retail_store'].values by 999 %}
+                                {% assign types = shop.metaobjects['retail_store'].values | map: 'store_type' | uniq | sort %}
+                            {% endpaginate %}
+
+                            <div class="row filters-row">
+                                <div class="col-lg-4 col-md-12 col-sm-12">
+                                    <div class="filter">
+                                        <label>
+                                            Select Country: 
+                                        </label>
+                                        <select name="retail-country">
+                                            <option value="All">All</option>
+                                            {% for loc in countries %}
+                                                <option value="{{ loc }}">{{ loc }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-12 col-sm-12">
+                                    <div class="filter">
+                                        <label>
+                                            Store Type: 
+                                        </label>
+                                        <select name="retail-store">
+                                            <option value="All Stores">All Stores</option>
+                                            {% for type in types %}
+                                                <option value="{{ type }}">{{ type }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-12 col-sm-12">
+                                    <div class="filter-input">
+                                        <input type="text" name="search-address" placeholder="Search for address/store name">
+                                        <span class="search-btn">
+                                            <span class="svg-wrapper">
+                                                {{ 'icon-search.svg' | inline_asset_content }}
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row filters-row">
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <div class="locations">
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-8 col-md-12 col-sm-12 d-lg-block d-md-none d-sm-none">
+                                <div id="map"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="store-nav" data-store="online-store">
+
+                        {% paginate shop.metaobjects['where_to_buy'].values by 999 %}
+                            {% assign countries = shop.metaobjects['where_to_buy'].values | map: 'country' | uniq | sort %}
+                        {% endpaginate %}
+
+                        <div class="filters">
+                            <div class="filter">
+                                <label>
+                                    Select Country: 
+                                </label>
+                                <select name="online-country">
+                                    <option value="All">All</option>
+                                    {% for loc in countries %}
+                                        <option value="{{ loc }}">{{ loc }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row stores-row">
+                            {% if shop.metaobjects['where_to_buy'].values_count > 0 %}
+                                {% paginate shop.metaobjects['where_to_buy'].values by 999 %}
+                                    {% assign _data = shop.metaobjects['where_to_buy'].values | sort: 'store_name' %}
+
+                                    {% if _data.size > 0 %}
+                                        {% for item in _data %}
+                                            <div class="col-custom" data-page="{{ forloop.index | minus: 1 | divided_by: 10 | plus: 1 }}" data-country="{{ item.country }}">
+                                                <a class="store" href="{{ item.store_url }}" target="_blank">
+                                                    <div class="store-image">
+                                                        <img loading="lazy" src="{{ item.store_logo | img_url: 'master' }}">
+                                                    </div>
+                                                    <p class="store-name">
+                                                        {{ item.store_name }}
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                    
+                                    {% if _data.size > 10 %}
+
+                                        {% assign items_per_page = 10 %}
+                                        {% assign total_items = _data.size %}
+                                        {% assign total_pages = total_items | divided_by: items_per_page %}
+                                        {% assign remainder = total_items | modulo: items_per_page %}
+
+                                        {% assign page_total = total_pages %}
+                                        {% if remainder != 0 %}
+                                            {% assign page_total = page_total | plus: 1 %}
+                                        {% endif %}
+
+                                        <div class="paginate custom" data-total="{{ page_total }}">
+                                            <a class="page disable" href="javascript:void(0)">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </a>
+
+                                            {% if remainder != 0 %}
+                                                {% assign total_pages = total_pages | plus: 1 %}
+                                            {% endif %}
+
+                                            {% for i in (1..total_pages) %}
+                                                <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                                            {% endfor %}
+
+                                            <a class="page" href="javascript:void(0)" data-i="2">
+                                                <i class="fa-solid fa-chevron-right"></i>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                {% endpaginate %}
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="map-wrapper">
+        <div class="map-header">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span class="map-title">
+                Map Title
+            </span>
+        </div>
+        <div id="map-mobile"></div>
+        <div class="map-footer">
+            <div class="location">
+                <p class="location-name">Map Title</p>
+                <p class="location-details">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/location.png?v=1730186016">
+                    <span>Adress:</span> <span class="data address">Map Address</span>
+                </p>
+                <p class="location-details">
+                    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/call.png?v=1730186017">
+                    <span>Contact:</span> <span class="data contact">Map Contact</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Where To Buy",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        }
+    ]
+}
+{% endschema %}

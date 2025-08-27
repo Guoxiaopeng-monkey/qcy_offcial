@@ -1,0 +1,984 @@
+.section-content {
+    --padding-tb: 50px;
+
+    padding-top: var(--padding-tb);
+    padding-bottom: var(--padding-tb);
+}
+
+/* Support Search ----------------------------------------- */
+
+.support-search {
+    height: 50vh;
+}
+.support-search .title {
+    font-family: 'Mulish-Bold';
+    font-size: 58px;
+    color: #000;
+    margin: 0;
+    margin-bottom: 40px;
+}
+.support-search .search-group {
+    background: #fff;
+    width: fit-content;
+    margin: auto;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.support-search .no-found {
+    margin: 0;
+    margin-top: 10px;
+    font-family: 'Mulish-Regular';
+    font-size: 14px;
+    color: #ff0000;
+    display: none;
+}
+.support-search .search-group input {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    font-size: 18px;
+    padding: 0 10px 0 30px;
+    width: 380px;
+}
+.support-search .search-group .search-x {
+    padding: 0 15px;
+    font-size: 18px;
+    color: #b9b9b9;
+    cursor: pointer;
+    visibility: hidden;
+}
+.support-search .search-group .search-btn {
+    cursor: pointer;
+    background: #000;
+    padding: 18px 40px 18px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.support-search .search-group .search-btn .svg-wrapper {
+    width: 25px;
+    height: 25px;
+}
+.support-search .search-group .search-btn svg g path {
+    fill: #fff;
+}
+.support-search .search-items {
+    margin-top: 30px;
+    font-size: 16px;
+}
+.support-search .search-items a {
+    border: 1px solid #cfcfcf;
+    padding: 2px 16px !important;
+    background: transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #262626;
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: all .3s ease;
+}
+.support-search .search-items a:hover {
+    border: 1px solid #FF8832;
+    background: #FF8832;
+    color: #fff;
+}
+.support-search .search-items a:not(:last-child) {
+    margin-right: 5px;
+}
+
+/* Support Nav --------------------------------------------------------- */
+
+.main-support-nav {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.support-nav {
+    overflow: auto;
+    background: #000;
+}
+.support-nav {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.support-nav::-webkit-scrollbar { 
+    display: none;
+}
+.support-nav .nav-items {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    gap: 50px;
+}
+.support-nav .nav-items span {
+    padding: 20px 0;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .5s ease;
+}
+.support-nav .nav-items span.active {
+    border-color: #FF8832;
+}
+
+/* Product Support ------------------------------------------------------------ */
+
+.product-support .title {
+    font-family: 'Mulish-Bold';
+    font-size: 42px;
+    margin: 0;
+}
+.product-support .products-row {
+    --bs-gutter-x: 25px;
+    --bs-gutter-y: 25px;
+}
+.product-support .col-custom {
+    flex: 0 0 auto;
+    width: 20%;
+    text-align: center;
+    display: none;
+}
+.product-support .col-custom[data-page="1"] {
+    display: block;
+}
+.product-support .product-image {
+    display: block;
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+.product-support .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.product-support .product-title {
+    font-family: 'Mulish-SemiBold';
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+    margin-top: 15px;
+}
+.product-support .toggles span {
+    display: inline;
+}
+
+.toggles {
+    margin: 30px 0;
+}
+.toggles span {
+    font-family: 'Mulish-SemiBold';
+    font-size: 18px;
+    padding: 10px 15px;
+    color: #262626;
+    border-bottom: 3px solid #dedede;
+    cursor: pointer;
+    display: inline-block;
+    transition: all .5s ease;
+}
+.toggles span.active {
+    border-color: #FF8832;
+}
+.nav-toggle {
+    display: none;
+}
+.nav-toggle.active {
+    display: block;
+}
+
+.paginate.custom {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.paginate.custom .page {
+    font-size: 16px;
+    color: #1f1f1f;
+    text-decoration: none;
+    background: #f8f8f8;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all .5s ease;
+}
+.paginate.custom .page i {
+    font-size: .8em;
+}
+.paginate.custom .page.disable {
+    cursor: default;
+    pointer-events: none;
+}
+.paginate.custom .page.active,
+.paginate.custom .page:hover {
+    background: #FF8832;
+    color: #fff;
+}
+
+/* Support Services --------------------------------------------------------------- */
+
+.support-services .title {
+    font-family: 'Mulish-Bold';
+    font-size: 42px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+.support-services .services-row {
+    --bs-gutter-x: 40px;
+    --bs-gutter-y: 40px;
+}
+.support-services .service {
+    text-align: center;
+    display: block;
+}
+.support-services .service .service-image {
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 100px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.support-services .service .service-image img {
+    width: auto;
+    height: 74px;
+}
+.support-services .service span {
+    position: relative;
+    font-family: 'Mulish-SemiBold';
+    font-size: 18px;
+    color: #000;
+    padding-bottom: 10px;
+}
+.support-services .service span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #FF8832;
+    transition: all .5s ease;
+}
+.support-services .service:hover span::after {
+    width: 100%;
+}
+.support-services .service i {
+    flex: 1;
+    text-align: end;
+    color: #262626;
+    font-size: 18px;
+}
+
+/* Where To Buy ----------------------------------------------------------- */
+
+.where-to-buy {
+    background: #f8f8f8;
+}
+.where-to-buy .title {
+    font-family: 'Mulish-Bold';
+    font-size: 42px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+.where-to-buy .btn-toggles {
+    background: #f1f1f1;
+    width: fit-content;
+    margin: 0 auto 20px;
+    border-radius: 30px;
+}
+.where-to-buy .btn-toggles span {
+    font-size: 16px;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: inherit;
+    cursor: pointer;
+    background: none;
+    color: #262626;
+    transition: all .5s ease;
+}
+.where-to-buy .btn-toggles span.active {
+    background: #FF8832;
+    color: #fff;
+}
+.where-to-buy .store-navs {
+    margin-top: 20px;
+    border-top: 1px solid #c5c5c5;
+}
+.where-to-buy .store-navs .store-nav {
+    display: none;
+}
+.where-to-buy .store-navs .store-nav.active {
+    display: block;
+}
+.where-to-buy .filters {
+    margin: 20px 0;
+}
+.where-to-buy .filters .filter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.where-to-buy .filter label {
+    font-family: 'Mulish-Medium';
+    font-size: 18px;
+    color: #262626;
+    white-space: nowrap;
+}
+.where-to-buy .filter select {
+    padding: 14px 36px 14px 15px;
+    border: 1px solid #c5c5c5;
+    border-radius: 10px;
+    font-size: 16px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url('https://cdn.shopify.com/s/files/1/0639/3492/2809/files/arrow-down.png?v=1730100135');
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 6px) center;
+    width: 350px;
+}
+.where-to-buy [data-store="retail-store"] .filter select {
+    width: 100%;
+}
+.where-to-buy [data-store="retail-store"] .filters-row {
+    --bs-gutter-x: 50px;
+    --bs-gutter-y: 0;
+}
+.where-to-buy .filter-input {
+    background: #fff;
+    border: 1px solid #C5C5C5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.where-to-buy .filter-input input {
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    color: #262626;
+    flex: 1;
+}
+.where-to-buy .filter-input .search-btn {
+    cursor: pointer;
+    background: #000;
+    padding: 12px 30px 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.where-to-buy .filter-input .search-btn .svg-wrapper {
+    width: 20px;
+    height: 20px;
+}
+.where-to-buy .filter-input .search-btn svg g path {
+    fill: #fff;
+}
+.where-to-buy .locations {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    height: 600px;
+    overflow: auto;
+    scrollbar-width: thin;
+}
+.where-to-buy .location {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #C5C5C5;
+    cursor: pointer;
+    display: block;
+}
+.where-to-buy .location[data-page="1"] {
+    display: block;
+}
+.where-to-buy .location:not(:last-child) {
+    margin-bottom: 20px;
+}
+.where-to-buy .location .location-name {
+    font-family: 'Mulish-SemiBold';
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 10px;
+    color: #262626;
+}
+.where-to-buy .location .location-details {
+    font-family: 'Mulish-Regular';
+    font-size: 16px;
+    margin: 0;
+    color: #707070;
+}
+.where-to-buy .location .location-details:not(:last-child) {
+    margin-bottom: 10px;
+}
+.where-to-buy .location .location-details img {
+    margin-right: 10px;
+    width: auto;
+    height: 18px;
+}
+.where-to-buy .location .location-details span {
+    font-family: 'Mulish-SemiBold';
+    color: #262626;
+}
+.where-to-buy .no-found {
+    font-size: 18px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.where-to-buy #map {
+    height: 600px;
+}
+.where-to-buy .stores-row {
+    --bs-gutter-x: 20px;
+    --bs-gutter-y: 30px;
+}
+.where-to-buy .col-custom {
+    flex: 0 0 auto;
+    width: 20%;
+    text-align: center;
+    display: none;
+}
+.where-to-buy .col-custom[data-page="1"] {
+    display: block;
+}
+.where-to-buy .store {
+    display: block;
+}
+.where-to-buy .store-image {
+    aspect-ratio: 1 / .8;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+.where-to-buy .store-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.where-to-buy .store-name {
+    font-family: 'Mulish-SemiBold';
+    font-size: 18px;
+    color: #262626;
+    margin: 0;
+    margin-top: 20px;
+}
+.where-to-buy .paginate.custom .page {
+    background: #f0f0f0;
+}
+.where-to-buy .paginate.custom .page.active,
+.where-to-buy .paginate.custom .page:hover {
+    background: #FF8832;
+    color: #fff;
+}
+
+.where-to-buy .map-wrapper {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    z-index: 999999;
+}
+.where-to-buy .map-wrapper #map-mobile {
+    flex: 1;
+}
+.where-to-buy .map-header {
+    background: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+.where-to-buy .map-header span {
+    font-family: 'Mulish-SemiBold';
+}
+.where-to-buy .map-header i {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: .9em;
+}
+.where-to-buy .map-footer {
+    background: #fff;
+    padding: 10px 20px;
+}
+.where-to-buy .map-footer .location {
+    display: block;
+    border: none;
+    padding: 0;
+}
+.where-to-buy .map-footer .location .data {
+    font-family: 'Mulish-Regular' !important;
+    font-size: #707070 !important;
+}
+
+/* FAQ -------------------------------------------------------------------- */
+
+.faq .title {
+    font-family: 'Mulish-Bold';
+    font-size: 54px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+.faq .toggles span {
+    border-bottom: 3px solid transparent;
+}
+.faq .toggles span.active {
+    border-color: #FF8832;
+}
+.faq .accordion-item {
+    background: none !important;
+    border: none !important;
+    border-bottom: 1px solid #dbdbdb !important;
+    border-radius: 0 !important;
+    margin-bottom: 25px !important;
+    display: none;
+}
+.faq .accordion-item[data-page="1"] {
+    display: block;
+}
+.faq .accordion-button {
+    font-family: 'Mulish-Medium';
+    font-size: 18px;
+    padding: 0 10px 20px 0;
+    color: #1a1a1a!important;
+    background: none!important;
+    box-shadow: none!important;
+    outline: none!important;
+}
+.faq .accordion-button::after {
+    content: '\f078';
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    font-size: .8em;
+    width: auto;
+    height: auto;
+    background-image: none !important;
+    color: #1a1a1a;
+}
+.faq .accordion-body {
+    font-family: 'Mulish-Regular';
+    font-size: 16px;
+    color: #1a1a1a;
+    padding: 0 0 20px;
+}
+
+/* More Help ------------------------------------------------------------- */
+
+.more-help .title {
+    font-family: 'Mulish-Bold';
+    font-size: 54px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+.more-help .helps-row {
+    --bs-gutter-x: 30px;
+    --bs-gutter-y: 30px;
+}
+.more-help .help {
+    background: #f8f8f8;
+    text-align: center;
+    padding: 50px;
+    border-radius: 15px;
+    height: 100%;
+}
+.more-help .help img {
+    width: auto;
+    height: 44px;
+}
+.more-help .help .help-title {
+    font-family: 'Mulish-SemiBold';
+    font-size: 22px;
+    color: #262626;
+    margin: 20px 0 10px;
+}
+.more-help .help .help-text {
+    font-family: 'Mulish-Regular';
+    font-size: 18px;
+    color: #262626;
+    word-break: break-all;
+}
+.more-help .help a {
+    font-family: 'Mulish-Regular';
+    font-size: 18px;
+    color: #4795E9;
+    word-break: break-all;
+}
+.more-help .help a:hover {
+    text-decoration: underline;
+}
+
+/* Form Modal ------------------------------------------------------- */
+
+.form-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    display: none;
+}
+.form-modal .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(var(--color-foreground),.2);
+    display: block;
+}
+.form-modal .container {
+    background: #fff;
+    width: 50%;
+    max-height: 80%;
+    overflow: auto;
+    scrollbar-width: thin;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 30px 40px;
+    border-radius: 5px;
+}
+.form-modal[data-modal="warranty-claim"] .container {
+    width: 50%;
+}
+.form-modal[data-modal="feedback"] .container {
+    width: 34%;
+}
+.form-modal .form-close {
+    position: sticky;
+    top: 10px;
+    font-size: 20px;
+    color: #bababa;
+    width: 100%;
+    text-align: right;
+}
+.form-modal .form-close::before {
+    position: relative;
+    left: 30px;
+    cursor: pointer;
+}
+.form-modal .form-header {
+    position: relative;
+    top: -20px;
+    text-align: center;
+}
+.form-modal .form-header > :first-child {
+    margin: 0;
+    font-family: 'Mulish-Regular';
+    font-size: 22px;
+    color: #FF8832;
+    margin-bottom: 20px;
+}
+.form-modal .form-header > :last-child {
+    font-family: 'Mulish-Light';
+    font-size: 16px;
+    margin: 0;
+    color: #262626;
+}
+.form-modal .form-body {
+    margin: 20px 0;
+}
+.form-modal .form-body .row {
+    --bs-gutter-x: 20px;
+    --bs-gutter-y: 20px;
+}
+.form-modal .form-body .form-title {
+    font-family: 'Mulish-Medium';
+    font-size: 18px;
+    margin: 0;
+    margin: 0 0 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d7d7d7;
+}
+.form-modal .form-body label {
+    font-family: 'Mulish-Medium';
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #262626;
+}
+.form-modal .form-body label span {
+    color: #ff0000;
+}
+.form-modal .form-body select, 
+.form-modal .form-body input, 
+.form-modal .form-body textarea {
+    border: 1px solid #d7d7d7;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    border-radius: 5px;
+    padding: 12px 15px;
+    font-family: 'Mulish-Regular';
+    font-size: 14px;
+}
+.form-modal .form-body input[type="date"] {
+    text-transform: uppercase;
+}
+.form-modal .form-body select {
+    padding-right: 36px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url('https://cdn.shopify.com/s/files/1/0639/3492/2809/files/arrow-down.png?v=1730100135');
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 6px) center;
+}
+.form-modal .form-body button[type="submit"] {
+    background: #FF8832;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #fff;
+    font-family: 'Mulish-Medium';
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.form-modal .input {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y)* -1);
+    margin-right: calc(var(--bs-gutter-x)* -.5);
+    margin-left: calc(var(--bs-gutter-x)* -.5);
+}
+.form-modal .input > * {
+    flex: 0 0 1;
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    margin-top: var(--bs-gutter-y);
+}
+
+/* Support Detail -------------------------------------------------------------- */
+
+.support-detail .section-content {
+    padding-bottom: 0;
+}
+.support-detail .details-row {
+    --bs-gutter-x: 60px;
+    --bs-gutter-y: 20px;
+}
+.support-detail .breadcrumbs {
+    font-family: 'Mulish-Medium';
+    font-size: 18px;
+    color: #707070;
+    margin-bottom: 20px;
+}
+.support-detail .breadcrumbs a {
+    font-family: 'Mulish-Medium';
+    color: #707070;
+}
+.support-detail .accordion-item {
+    background: none !important;
+    border: none !important;
+    margin-bottom: 0 !important;
+    position: relative;
+    z-index: 1;
+}
+.support-detail .accordion-button {
+    font-family: 'Mulish-Medium';
+    font-size: 18px;
+    padding: 10px 0;
+    color: #262626 !important;
+    background: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+.support-detail .accordion-button::after {
+    display: none;
+}
+.support-detail .accordion-body {
+    padding: 0 10px;
+}
+.support-detail .items {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.support-detail .items .selected {
+    font-family: 'Mulish-SemiBold';
+    font-size: 16px;
+    display: block;
+    color: #262626;
+}
+.support-detail .selected.active {
+    color: #FF8832;
+}
+.support-detail .sidebar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.support-detail .sideline .line {
+    height: 30px;
+    width: 3px;
+    background: #dedede;
+    display: block !important;
+}
+.support-detail .sideline .line.active {
+    background: #FF8832;
+}
+.support-detail .product-title {
+    font-family: 'Mulish-Bold';
+    font-size: 24px;
+    margin: 0;
+}
+.support-detail .product-image {
+    display: block;
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 10px;
+    width: 250px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.support-detail .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.support-detail .toggles {
+    display: flex;
+    justify-content: center;
+    background: #f8f8f8;
+    margin: 0;
+    margin-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.support-detail .toggles span {
+    display: none;
+    padding-left: 0;
+    padding-right: 0;
+    border-color: transparent;
+}
+.support-detail .toggles span.active {
+    border-color: #FF8832;
+}
+.support-detail .toggles span:not(:last-child) {
+    margin-right: 60px;
+}
+
+/* Support Video --------------------------------------------------------------- */
+
+.support-video .title {
+    font-family: 'Mulish-Bold';
+    font-size: 42px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+.support-video .videos-row {
+    --bs-gutter-x: 40px;
+    --bs-gutter-y: 40px;
+}
+.support-video .video {
+    position: relative;
+    cursor: pointer;
+}
+.support-video .video .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    pointer-events: none;
+}
+.support-video .video video {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    pointer-events: none;
+}
+.support-video .video-title {
+    font-family: 'Mulish-Medium';
+    font-size: 18px;
+    margin: 0;
+    margin-top: 10px;
+}
+.support-video .video-watch {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    display: none;
+}
+.support-video .video-watch .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(var(--color-foreground),.2);
+    display: block;
+}
+.support-video .video-watch .wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44%;
+}
+.support-video .video-watch .video-container video {
+    width: 100%;
+}
+.support-video .video-watch .video-close {
+    text-align: right;
+    width: 100%;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Manuals -------------------------------------------------- */
+
+.manuals .title {
+    font-family: 'Mulish-Bold';
+    font-size: 42px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+.manuals a {
+    display: flex;
+    align-items: center;
+    font-family: 'Mulish-Medium';
+    font-size: 18px;
+    color: #262626;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #DBDBDB;
+}
+.manuals a:not(:last-child) {
+    margin-bottom: 15px;
+}
+.manuals a img {
+    width: 18px;
+    margin-left: 20px;
+}

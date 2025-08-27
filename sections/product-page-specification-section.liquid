@@ -1,0 +1,335 @@
+{% stylesheet %}
+    .specification-section{
+        padding: 80px 0px;
+    }
+    .specification-section .spefication-list-container{
+        padding:30px 0px;
+    }
+    .document-list-container{
+
+    }
+    .specification-section .spec-heading{
+        padding-bottom:30px;
+    }
+    .specification-section .document-list-container .document-item{
+        display:grid;
+        grid-template-columns: 19% 1fr;
+    }
+    .specification-section .download-icon{
+        width:24px;
+        height:24px;
+        object-fit:contain;
+    }
+    .specification-section .specification-item{
+        display:flex;
+        border-top:1px solid #DADADA;
+        padding:30px 0px;
+    }
+    .specification-section .specification-content{
+        display:grid;
+        grid-template-columns: 37% auto;
+    }
+    .specification-section .document-list{
+        padding-top:30px;
+        border-top:1px solid #DADADA;
+    }
+    .specification-section .document-description{
+        display: flex;
+        justify-content: space-between;
+    }
+    .image-specs-section{
+      padding-top:50px;
+    }
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+        .specification-section{
+            padding:50px 0px;
+        }
+        .specification-section .spefication-list-container{
+            padding:20px 0px;
+        }
+        .specification-section .specification-item{
+            flex-direction:column;
+            gap:30px;
+            padding: 20px 0px;
+        }
+        .specification-section .specification-content{
+            grid-template-columns:100%;
+        }
+        .specification-section .document-list-container .document-item{
+            grid-template-columns:100%;
+        }
+        .specification-section .spec-heading{
+            padding-bottom:20px;
+        }
+
+    }
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) {
+        .specification-section{
+            padding:50px 0px;
+        }
+        .specification-section .spefication-list-container{
+            padding:20px 0px;
+        }
+        .specification-section .specification-item{
+            flex-direction:column;
+            gap:30px;
+            padding: 20px 0px;
+        }
+        .specification-section .specification-content{
+            grid-template-columns:100%;
+        }
+        .specification-section .document-list-container .document-item{
+            grid-template-columns:100%;
+        }
+        .specification-section .spec-heading{
+            padding-bottom:20px;
+        }
+    }
+    
+{% endstylesheet %}
+{% assign basic_display = 0 %}
+{% assign bluetooth_display = 0 %}
+{% assign battery_display = 0 %}
+{% assign noise_canceling_display = 0 %}
+{% assign audio_display = 0 %}
+
+{% for block in section.blocks %}
+    {% if block.type == 'specification' %}
+        {% if block.settings.select_specs == 'basic' %}
+          {% assign basic_display = 1 %}
+        {% elsif block.settings.select_specs == 'bluetooth' %}
+          {% assign bluetooth_display = 1 %}
+        {% elsif block.settings.select_specs == 'battery' %}
+          {% assign battery_display = 1 %}
+        {% elsif block.settings.select_specs == 'noise_canceling' %}
+          {% assign noise_canceling_display = 1 %}
+        {% elsif block.settings.select_specs == 'audio' %}
+          {% assign audio_display = 1 %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+<div class="{{ section.settings.product_header | handleize }}-scroll-section specification-section section-scroll">
+<div class="page-width">
+    <h2 class="heading text-md f-f-bold mx-0">{{ section.settings.heading }}</h2>
+    {% if section.settings.image != blank %}
+      <div class="image-specs-section">
+        <img loading="lazy" src="{{ section.settings.image | img_url: 'master' }}" width="100%" height="100%" 
+         {% if section.settings.image_mobile != blank %}
+          class="h-desktop"
+        {% endif %}
+        > 
+       {% if section.settings.image_mobile != blank %}
+        <img loading="lazy" src="{{ section.settings.image_mobile | img_url: 'master' }}" width="100%" height="100%" class="h-mobile">
+        {% endif %}
+      </div>
+    {% endif %}
+      <div class="spefication-list-container">
+        {% if basic_display == 1 %}
+        <div class="specification-item">
+            <div class="col_50 specification-content">
+                <h3 class="mx-0 f-f-bold">Basic</h3>
+                <div class="spec-details">
+                                   <p class="mx-0 gray-f">{{ section.settings.heading_specs }}: {{ product.title }}</p> 
+                    {% for block in section.blocks %}
+                        {% if block.type == 'specification' %}
+                            {% if block.settings.select_specs == 'basic' %}
+                                   <p class="mx-0 gray-f">{{ block.settings.description | replace: '<p>', '' | replace: '</p>', '' }}</p> 
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col_50 specification-content">
+                <h3 class="mx-0 f-f-bold">Bluetooth</h3>
+                <div class="spec-details">
+                    {% for block in section.blocks %}
+                        {% if block.type == 'specification' %}
+                            {% if block.settings.select_specs == 'bluetooth' %}
+                                   <p class="mx-0 gray-f">{{ block.settings.description | replace: '<p>', '' | replace: '</p>', '' }}</p> 
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>  
+        </div>
+        {% endif %}
+      
+        {% assign audio_count = 0 %}
+        {% assign noise_canceling_count = 0 %}
+      
+        {% for block in section.blocks %}
+            {% if block.type == 'specification' %}
+                {% if block.settings.select_specs == 'audio' %}
+                    {% assign audio_count = audio_count | plus: 1 %}
+                  {% elsif block.settings.select_specs == 'noise_canceling' %}
+                    {% assign noise_canceling_count = noise_canceling_count | plus: 1 %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        {% if audio_count != 0 and noise_canceling_count != 0 %}
+        <div class="specification-item">
+            <div class="col_50 specification-content">
+                <h3 class="mx-0 f-f-bold">Audio</h3>
+                <div class="spec-details">
+                    {% for block in section.blocks %}
+                        {% if block.type == 'specification' %}
+                            {% if block.settings.select_specs == 'audio' %}
+                                   <p class="mx-0 gray-f">{{ block.settings.description | replace: '<p>', '' | replace: '</p>', '' }}</p> 
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col_50 specification-content">
+                <h3 class="mx-0 f-f-bold">Noise Canceling</h3>
+                <div class="spec-details">
+                    {% for block in section.blocks %}
+                        {% if block.type == 'specification' %}
+                            {% if block.settings.select_specs == 'noise_canceling' %}
+                                   <p class="mx-0 gray-f">{{ block.settings.description | replace: '<p>', '' | replace: '</p>', '' }}</p> 
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>  
+        </div>
+      {% endif %}
+      
+        {% if basic_display == 1 %}
+        <div class="specification-item">
+            <div class="col_50 specification-content">
+                <h3 class="mx-0 f-f-bold">Battery</h3>
+                <div class="spec-details">
+                    {% for block in section.blocks %}
+                        {% if block.type == 'specification' %}
+                            {% if block.settings.select_specs == 'battery' %}
+                                   <p class="mx-0 gray-f">{{ block.settings.description | replace: '<p>', '' | replace: '</p>', '' }}</p> 
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+      {% if product.metafields.custom.product_manual != blank %}
+        <div class="document-list">
+            <h3 class="spec-heading mx-0 f-f-bold">Document</h3>
+            <div class="document-list-container">
+                <div class="document-item">
+                    <p class="mx-0 gray-f">User guide</p>
+                    <div class="document-description">
+                        <p class="mx-0 gray-f">
+                        {% if product.metafields.custom.custom_title != blank %}
+                          {{ product.metafields.custom.custom_title }} User manual
+                        {% else %}
+                          {% if section.settings.custom_manual_title != blank %}
+                            {{ section.settings.custom_manual_title }}
+                          {% else %}
+                          {{ product.title }} User manual
+                          {% endif %}
+                        {% endif %}
+                        </p>
+                        <a href="{{ product.metafields.custom.product_manual }}" target="_blank">
+                            <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/cloud-download.png?v=1728282749" class="download-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      {% endif %}
+    </div>
+</div>
+</div>
+{% schema %}
+    {
+      
+        "name": "Specification",
+        "templates": ["product"],
+        "limit": 1, 
+        "settings": [
+            {
+                "type": "text",
+                "id": "product_header",
+                "label": "Product Header",
+                "default": "Specification"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "Spec"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image - Desktop",
+                "info": "If this has an image, the block specs will be hidden."
+            },
+            {
+                "type": "image_picker",
+                "id": "image_mobile",
+                "label": "Image - Mobile"
+            },
+            {
+              "type": "text",
+              "id": "heading_specs",
+              "label": "Specs Label",
+              "default": "Product Name"
+            },
+            {
+              "type": "text",
+              "id": "custom_manual_title",
+              "label": "Custom Manual Title"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "specification",
+                "name": "Specification",
+                "settings": [
+                    {
+                        "type": "select",
+                        "id": "select_specs",
+                        "options": [
+                            {
+                                "value": "basic",
+                                "label": "Basic"
+                            },
+                            {
+                                "value": "bluetooth",
+                                "label": "Bluetooth"
+                            },
+                            {
+                                "value": "audio",
+                                "label": "Audio"
+                            },
+                            {
+                                "value": "noise_canceling",
+                                "label": "Noise Canceling"
+                            },
+                            {
+                                "value": "battery",
+                                "label": "Battery"
+                            }
+                        ],
+                        "default": "basic",
+                        "label": "Specification"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "description",
+                        "label": "Description"
+                    }
+                ]
+            }
+        ],
+        "presets" :[{
+            "name" : "Specification"
+        }]
+    }
+  {% endschema %} 

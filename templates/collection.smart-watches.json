@@ -1,0 +1,53 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_prRBri": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/40025_2x_07cc5d8a-3216-4a68-a5e3-bc4270492431.png",
+        "image_mobile": "shopify://shop_images/40025_2x_07cc5d8a-3216-4a68-a5e3-bc4270492431.png",
+        "heading": "Smart watches",
+        "text": "<p>Experience cutting-edge technology and sleek style with QCY's smart watches! Whether you're tracking your fitness, staying connected, or managing your day, QCY delivers premium performance and seamless functionality to elevate your everyday experience!</p>",
+        "desktop_heading_color": "#000000",
+        "desktop_text_color": "#000000"
+      }
+    },
+    "collection_navigation_AnCJQE": {
+      "type": "collection-navigation",
+      "name": "Collection Navigation",
+      "settings": {
+        "text_color": "#333333",
+        "padding": 10
+      }
+    },
+    "main_collection_D4J9rG": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "custom_liquid_DLpnRx": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image_with_text_prRBri",
+    "collection_navigation_AnCJQE",
+    "main_collection_D4J9rG",
+    "custom_liquid_DLpnRx"
+  ]
+}

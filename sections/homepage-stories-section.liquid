@@ -1,0 +1,365 @@
+{% stylesheet %}
+    .user-stories-section{
+        padding:80px 0px;
+        background-color:#F9F9F9;
+        overflow:hidden;
+        position:relative;
+    }
+    .user-stories-container{
+        padding-top:50px;
+    }
+    .user-stories-section .user-stories-item{
+        flex-grow: 1;
+        transition: all 300ms ease-in-out !important;
+        position: relative;
+        overflow:hidden;
+        border-radius:20px;
+
+        &:hover {
+            flex-grow: 2.5;
+        }
+    }
+    .user-stories-item video,
+    .user-stories-item img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        position:absolute;
+    }
+    .user-stories-content{
+        position:absolute;
+        bottom:3rem;
+        padding:0px 3rem;
+    }
+    .user-stories-item .link-tag{
+        position:absolute;
+        bottom:3rem;
+        right:3rem;
+        opacity:0;
+        transition: all 0.3s ease;
+    }
+    .user-stories-item:hover .link-tag{
+        opacity:1;
+    }
+    .user-stories-section .user-stories-swiper-pagination{
+        display:none;
+    }
+    .stories-slider-arrows{
+        padding:0px 10px;
+    }
+    .stories-slider-arrows{
+        position:absolute;
+        top:55%;
+        left:0;
+        right:0;
+        margin:auto;
+        width:100%;
+        max-width:var(--page-width);
+        padding:0px 20px;
+        display:flex;
+        flex-direction:row-reverse;
+        justify-content: space-between;
+    }
+    .stories-slider-arrows .stories-button-prev, 
+    .stories-slider-arrows .stories-button-next{
+        background: #DBDBDB;
+        border-radius: 50px;
+        display: flex;
+        cursor: pointer;
+        z-index: 2;
+        width:fit-content;
+        transition: all 0.3s ease;
+    }
+    .stories-slider-arrows .stories-button-prev svg, 
+    .stories-slider-arrows .stories-button-next svg{
+        width:45px;
+        height:45px;
+    }
+    .stories-slider-arrows{
+      display:none;
+    }
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+        .user-stories-section{
+            padding-bottom:40px;
+        }
+        .user-stories-section .user-stories-item{
+            height: 400px;
+            width:90%;
+        }
+        .user-stories-container{
+            padding-top:30px;
+        }
+        .user-stories-section .user-stories-swiper-pagination{
+            display:flex;
+        }
+        .user-stories-item .link-tag{
+            opacity:1;
+            display:none;
+        }
+        .stories-slider-arrows{
+            padding:0px 10px;
+        }
+        .stories-slider-arrows .stories-button-prev, 
+        .stories-slider-arrows .stories-button-next{
+              background: #dbdbdb6e;
+        }
+        .stories-slider-arrows .stories-button-prev svg, 
+        .stories-slider-arrows .stories-button-next svg{
+            width:45px;
+            height:45px;
+        }
+        .stories-slider-arrows{
+          display:flex;
+        }
+    }
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) {
+        .user-stories-section{
+            padding-bottom:40px;
+        }
+        .user-stories-container{
+            padding-top:50px;
+        }
+        .user-stories-section .user-stories-item{
+            height: 400px;
+            width:90%;
+        }
+        .user-stories-section .user-stories-swiper-pagination{
+            display:flex;
+        }
+        .user-stories-item .link-tag{
+            opacity:1;
+        }
+        .stories-slider-arrows{
+            padding:0px 10px;
+        }
+        .stories-slider-arrows .stories-button-prev, 
+        .stories-slider-arrows .stories-button-next{
+              background: #dbdbdb6e;
+        }
+        .stories-slider-arrows .stories-button-prev svg, 
+        .stories-slider-arrows .stories-button-next svg{
+            width:45px;
+            height:45px;
+        }
+        .stories-slider-arrows{
+          display:flex;
+        }
+    }
+
+    /* TABLETS  */ 
+    @media only screen and (min-width: 768px) {
+        .user-stories-section .user-stories-item{
+            height: 400px;
+            width:fit-content;
+        }
+    }
+    @media only screen and (min-width: 800px) {
+        .user-stories-section .user-stories-item{
+            height: 400px;
+            width:fit-content;
+        }
+    }
+    @media (min-width: 1024px) and (orientation: portrait) {
+        .user-stories-section .user-stories-item{
+            height: 450px;
+            width:fit-content;
+        }
+    }
+
+    /* COMPUTERS */
+    @media (min-width: 1024px) and (orientation: landscape) {
+        .user-stories-section .user-stories-item{
+            height: 450px;
+            width:fit-content;
+        }
+    }
+    @media only screen and (min-width: 1280px) {
+        .user-stories-section .user-stories-item{
+            height: 450px;
+            width:fit-content;
+        }
+    }
+    @media only screen and (min-width: 1366px) {
+        .user-stories-section .user-stories-item{
+            height: 500px;
+            width:fit-content;
+        }
+    }
+    @media only screen and (min-width: 1440px) {
+        .user-stories-section .user-stories-item{
+            height: 550px;
+            width:fit-content;
+        }
+    }
+    @media only screen and (min-width: 1536px) {
+        .user-stories-section .user-stories-item{
+            height: 500px;
+            width:fit-content;
+        }
+    }
+    @media only screen and (min-width: 1600px) {
+        .user-stories-section .user-stories-item{
+            height: 550px;
+            width:fit-content;
+        }
+    }
+    @media only screen and (min-width: 1920px) {
+        .user-stories-section .user-stories-item{
+            height: 650px;
+            width:fit-content;
+        }
+    }
+
+
+{% endstylesheet %}
+<div class="page-width">
+    <div class="content-heaher">
+        <h2 class="heading text-md f-f-bold mx-0 center">{{ section.settings.heading }}</h2>
+        <h4 class="description f-f-regular gray-f mx-0 center">{{ section.settings.description | replace: '<p>', '' | replace: '</p>', '' }}</h4>
+    </div>
+    <div class="user-stories-container">
+        <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              {% if block.type == 'youtube' %}
+              
+                {% assign youtube_link = block.settings.youtube_link %}
+                {% assign youtube_id = youtube_link | split: 'watch?v=' | last %}
+                <div class="user-stories-item youtube swiper-slide scroll-trigger animate--slide-in" data-yt="{{ youtube_id }}" style="--animation-order: {{ forloop.index }};">
+                    <img loading="lazy" src="{{- block.settings.custom_image | img_url: 'master' -}}" width="100%" height="100%" {% if block.settings.custom_image == blank %}class="has-custom-image"{% endif %} alt="{{ block.settings.custom_image.alt }}">
+                    <div class="user-stories-content">
+                        <a href="{{ block.settings.link }}" class="white-f">
+                            <h3 class="mx-0 f-f-bold">
+                                {{ block.settings.heading }}
+                            </h3>
+                        </a>
+                    </div>
+                    <a href="{{ block.settings.link }}" class="link-tag">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="15px" width="15px" version="1.1" id="Layer_1" viewBox="0 0 330 330" xml:space="preserve">
+                            <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001  c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213  C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606  C255,161.018,253.42,157.202,250.606,154.389z" fill="#fff"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+              {% else %}
+              
+                <div class="user-stories-item youtube swiper-slide scroll-trigger animate--slide-in" style="--animation-order: {{ forloop.index }};">
+                    <video loop muted playsinline>
+                        <source src="{{ block.settings.bg_video.sources[1].url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="user-stories-content">
+                        <a href="{{ block.settings.link }}" class="white-f">
+                            <h3 class="mx-0 f-f-bold">
+                                {{ block.settings.heading }}
+                            </h3>
+                        </a>
+                    </div>
+                    <a href="{{ block.settings.link }}" class="link-tag">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="15px" width="15px" version="1.1" id="Layer_1" viewBox="0 0 330 330" xml:space="preserve">
+                            <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001  c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213  C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606  C255,161.018,253.42,157.202,250.606,154.389z" fill="#fff"></path>
+                        </svg>
+                    </a>
+                </div>
+              {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="stories-slider-arrows">
+        <div class="stories-button-next">
+             <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52">
+                <g id="right_normal" transform="translate(-1835 -559)">
+                    <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" transform="translate(1835 559)" fill="transparent"></rect>
+                    <path id="路径_4" data-name="路径 4" d="M253.944,103.831a.906.906,0,0,1-.7-.3.97.97,0,0,1,.1-1.4l6.385-5.786a.748.748,0,0,0,0-1.2l-6.485-5.487a.99.99,0,0,1,1.3-1.5l6.385,5.487a2.808,2.808,0,0,1,1,2.1,2.871,2.871,0,0,1-.9,2.1l-6.385,5.786a1.85,1.85,0,0,1-.7.2Z" transform="translate(1604.091 489.128)" fill="#fff"></path>
+                </g>
+            </svg>
+        </div>
+        <div class="stories-button-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" id="left_normal" width="53" height="52" viewBox="0 0 53 52">
+                <rect id="矩形_5" data-name="矩形 5" width="53" height="52" rx="5" fill="transparent"></rect>
+                <path id="路径_4" data-name="路径 4" d="M260.873,103.831a.906.906,0,0,0,.7-.3.97.97,0,0,0-.1-1.4l-6.385-5.786a.748.748,0,0,1,0-1.2l6.485-5.487a.99.99,0,0,0-1.3-1.5l-6.385,5.487a2.808,2.808,0,0,0-1,2.1,2.871,2.871,0,0,0,.9,2.1l6.385,5.786a1.85,1.85,0,0,0,.7.2Z" transform="translate(-230.909 -69.872)" fill="#fff"></path>
+            </svg>
+        </div>
+    </div>
+    <div class="user-stories-swiper-pagination swiper-pagination-long"></div>
+</div>
+{%  render 'modal-video-popup' %}
+{% schema %}
+    {
+      
+        "class": "user-stories-section",
+        "name": "User Stories Section",
+        "templates": ["index"],
+        "limit": 1,
+        "max_blocks": 3,
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "User Stories"
+            },
+            {
+                "type": "richtext",
+                "id": "description",
+                "label": "Description",
+                "default": "<p>Listening is believing. Watch people use QCY products and check out their comments.</p>"
+            }
+        ],
+        "blocks": [
+          {
+              "type": "video",
+              "name": "Video",
+              "settings": [
+                  {
+                      "type": "video",
+                      "id": "bg_video",
+                      "label": "Background Video"
+                  },
+                  {
+                      "type": "text",
+                      "id": "heading",
+                      "label": "Heading"
+                  },
+                  {
+                      "type": "url",
+                      "id": "link",
+                      "label": "Link"
+                  }
+              ]
+          },
+          {
+              "type": "youtube",
+              "name": "Youtube",
+              "settings": [
+                  {
+                      "type": "image_picker",
+                      "id": "custom_image",
+                      "label": "Custom Image"
+                  },
+                  {
+                      "type": "url",
+                      "id": "youtube_link",
+                      "label": "Youtube Link"
+                  },
+                  {
+                      "type": "text",
+                      "id": "heading",
+                      "label": "Heading"
+                  },
+                  {
+                      "type": "url",
+                      "id": "link",
+                      "label": "Link"
+                  }
+              ]
+          }
+        ],
+        "presets" :[{
+            "name" : "User Stories Section"
+        }]
+    }
+  {% endschema %} 

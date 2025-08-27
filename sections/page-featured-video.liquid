@@ -1,0 +1,252 @@
+<style>
+    .featured-video-section{
+        height:300vh;
+        background-color:#fff;
+    }
+    .featured-video video{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      position:absolute;
+      top:0;
+    }
+    .featured-video span.bg_svg{
+      position: absolute;
+      top: 0;
+      color: white;
+      background-image: url(https://cdn.shopify.com/s/files/1/0639/3492/2809/files/1_2x_4143acb8-52fd-4cee-9676-919c95c9b494.png?v=1728356538);
+      background-size: contain;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      transition: all 0.5s ease;
+    }
+    .content-container-video{
+      position:sticky;
+      top:0;
+      height:100vh;
+      overflow:hidden;
+    }
+    .featured-video-content .page-width{
+      height: 100%;
+      gap: 10%;
+      align-items: center;
+      transition: all 0.5s ease;
+    }
+    .featured-video-content .page-width p{
+      padding-top: 3rem;
+      border-top: 1px solid white;
+    }
+    .featured-video .heading{
+      position:absolute;
+      top:21vh;
+      left:0;
+      right:0;
+      margin:auto;
+      transition: all 0.3s ease;
+    }
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+      .content-container-video{
+        height:95vh;
+        top:5vh;
+      }
+      .featured-video .heading{
+        bottom:32vh;
+      }
+      .featured-video span.bg_svg{
+          background-image: url(https://cdn.shopify.com/s/files/1/0639/3492/2809/files/qcy-2.png?v=1728675673);
+      }
+      .featured-video-content .page-width{
+        flex-direction:column;
+        gap:1rem;
+        justify-content: center;
+      }
+      .featured-video span.bg_svg{
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+      }
+      .featured-video .heading{
+        font-size:22px;
+      }
+    }
+</style>
+<section class="featured-video-section">
+  <div class="content-container-video">
+    <video class="video-tag" poster="{{ section.settings.preview_image.src }}" autoplay muted loop playsinline>
+        <source src="{{ section.settings.video.sources[1].url }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <span class="bg_svg">
+    </span>
+    <h2 class="heading text-md f-f-bold center">{{ section.settings.sub_heading }}</h2>
+  </div>
+</section>
+
+
+
+<script>
+    var windowHeight = $(window).outerHeight();
+    var $animation_1 = $('.featured-video-section');
+    var currentFrame = 0; 
+    var totalFrames = 18;
+    
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > $animation_1.offset().top) {
+          
+            let idx = parseInt((($(window).scrollTop() - $animation_1.offset().top) / (
+                        $animation_1.outerHeight() - windowHeight)) * totalFrames);
+            currentFrame = Math.min(Math.max(idx, 0), totalFrames - 1);
+            if(idx >= 0){
+                setInitialState_section_1(currentFrame);
+            }
+        }
+    })
+    
+    setInitialState_section_1(currentFrame);
+    function setInitialState_section_1(currentFrame) {
+      if( currentFrame < 0 ){
+        $('.featured-video span.bg_svg').css('scale','1');
+        $('.featured-video span.bg_svg').css('opacity','1');
+        $('.featured-video .heading').css('opacity','1');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 0){
+        $('.featured-video span.bg_svg').css('scale','1');
+        $('.featured-video span.bg_svg').css('opacity','1');
+        $('.featured-video .heading').css('opacity','1');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 1){
+        $('.featured-video span.bg_svg').css('scale','1');
+        $('.featured-video span.bg_svg').css('opacity','1');
+        $('.featured-video .heading').css('opacity','1');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 2){
+        $('.featured-video span.bg_svg').css('scale','1');
+        $('.featured-video span.bg_svg').css('opacity','1');
+        $('.featured-video .heading').css('opacity','1');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 3){
+        $('.featured-video span.bg_svg').css('scale','2');
+        $('.featured-video span.bg_svg').css('opacity','1');
+        $('.featured-video .heading').css('opacity','1');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 4){
+        $('.featured-video span.bg_svg').css('scale','2');
+        $('.featured-video span.bg_svg').css('opacity','1');
+        $('.featured-video .heading').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 5){
+        $('.featured-video span.bg_svg').css('scale','3');
+        $('.featured-video span.bg_svg').css('opacity','1');
+        $('.featured-video .heading').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 6){
+        $('.featured-video span.bg_svg').css('scale','4');
+        $('.featured-video span.bg_svg').css('opacity','1');
+        $('.featured-video .heading').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 7){
+        $('.featured-video span.bg_svg').css('scale','15');
+        $('.featured-video span.bg_svg').css('opacity','1');
+        $('.featured-video .heading').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 8){
+        $('.featured-video span.bg_svg').css('scale','20');
+        $('.featured-video span.bg_svg').css('opacity','0.5');
+        $('.featured-video .heading').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 9){
+        $('.featured-video span.bg_svg').css('scale','30');
+        $('.featured-video span.bg_svg').css('opacity','0');
+        $('.featured-video .heading').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 10){
+        $('.featured-video span.bg_svg').css('scale','45');
+        $('.featured-video span.bg_svg').css('opacity','0');
+        $('.featured-video .heading').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 11){
+        $('.featured-video span.bg_svg').css('scale','45');
+        $('.featured-video span.bg_svg').css('opacity','0');
+        $('.featured-video .heading').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 12){
+        $('.featured-video span.bg_svg').css('scale','45');
+        $('.featured-video span.bg_svg').css('opacity','0');
+        $('.featured-video .heading').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 13){
+        $('.featured-video span.bg_svg').css('scale','45');
+        $('.featured-video span.bg_svg').css('opacity','0');
+        $('.featured-video .heading').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(150px)');
+
+      }else if( currentFrame == 14){
+        $('.featured-video span.bg_svg').css('scale','45');
+        $('.featured-video span.bg_svg').css('opacity','0');
+        $('.featured-video .heading').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(0px)');
+
+      }else if( currentFrame == 15){
+        $('.featured-video span.bg_svg').css('scale','45');
+        $('.featured-video span.bg_svg').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(0px)');
+
+      }else if( currentFrame == 16){
+        $('.featured-video span.bg_svg').css('scale','45');
+        $('.featured-video span.bg_svg').css('opacity','0');
+        $('.featured-video .heading').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(0px)');
+
+      }else if( currentFrame >= 17){
+        $('.featured-video span.bg_svg').css('scale','45');
+        $('.featured-video span.bg_svg').css('opacity','0');
+        $('.featured-video .heading').css('opacity','0');
+        $('.featured-video-content .page-width ').css('transform','translateY(0px)');
+
+      }
+    }
+</script>
+{% schema %}
+    {
+      
+        "class": "featured-video",
+        "name": "Featured Video",
+        "templates": ["page"],
+        "limit": 1, 
+        "settings": [
+            {
+                "type": "video",
+                "id": "video",
+                "label": "Video"
+            },
+            {
+                "type": "text",
+                "id": "sub_heading",
+                "label": "Sub_heading",
+                "default": "Go Creative And Go Beyond"
+            }
+        ],
+        "presets" :[{
+            "name" : "Featured Video"
+        }]
+    }
+  {% endschema %} 

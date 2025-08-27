@@ -1,0 +1,128 @@
+{% stylesheet %}
+  .article-recommended-section{
+    padding-bottom:50px;
+    background-color:#FBFBFB;
+    overflow:hidden;
+  }
+  .article-recommended-section .recommended-article-list-container{
+    padding-top:30px;
+  }
+  .article-recommended-section .recommended-article-list-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap:25px;
+    row-gap:40px;
+  }
+  .article-recommended-section .recommended-article-list-container .article-featured-image{
+    height:280px;
+    overflow:hidden;
+  }
+  .article-recommended-section .recommended-article-list-container .article-featured-image img{
+    object-fit:cover;
+  }
+  .article-recommended-section .recommended-article-list-container .article-item{
+    box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 280px;
+  }
+  .article-recommended-section .recommended-article-list-container .article-item .article-featured-image img,
+  .article-recommended-section .recommended-article-list-container .article-item .article-details .article-title{
+    transition: all 0.5s ease;
+  }
+  .article-recommended-section .recommended-article-list-container .article-item:hover .article-featured-image img{
+    scale:1.1;
+  }
+  .article-recommended-section .recommended-article-list-container .article-item:hover .article-details .article-title{
+    color:#FF8832;
+  }
+  .article-recommended-section .recommended-article-list-container .article-item .article-details{
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: -webkit-fill-available;
+  }
+  .article-recommended-section .article-except{
+    padding-top: 10px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .article-recommended-section{
+      padding-bottom:20px;
+    }
+    .article-recommended-section .recommended-article-list-container{
+      grid-template-columns: 1fr;
+      row-gap:25px;
+    }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+    .article-recommended-section{
+      padding-bottom:20px;
+    }
+    .article-recommended-section .recommended-article-list-container{
+      grid-template-columns: 1fr;
+      row-gap:30px;
+    }
+  }
+
+{% endstylesheet %}
+<div class="page-width">
+  <h3 class="f-f-semibold mx-0 black-f">Recommend Posts</h3>
+  <div class="recommended-article-list-container">
+    {% assign total_limit = 3 %}
+    {% assign article_count = 0 %}
+    
+    {% for link in linklists.blogs.links %}
+        {% assign blog = link.object %}
+        {% for post in blog.articles %}
+          {% if article.id != post.id %}
+            {% if article_count >= total_limit %}
+                {% break %}
+            {% endif %}
+            <div class="article-item content" data-published-at="{{ post.published_at }}" data-search-term="{{ post.title | downcase }}">
+                <a href="{{ post.url }}" class="article-featured-image">
+                    <img loading="lazy" src="{{ post.image.src | image_url }}" width="100%" height="100%">
+                </a>
+                <div class="article-details">
+                    <div class="">
+                        <a href="{{ post.url }}" class="article-title f-f-bold mx-0 h5">{{ post.title }}</a>
+                        <p class="blog-description p-small f-f-regular mx-0 ">{{ post.content | strip_html | truncate: 100 }}</p>
+                    </div>
+                    <div class="article-except">
+                        <p class="p-small mx-0">{{ post.published_at | date: "%^b %d, %Y" }}</p>
+                        <div class="article-tag-container">
+                            <a href="{{ link.url }}" class="p article-tag mx-0 f-f-medium black-f">{{ link.title }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            {% assign article_count = article_count | plus: 1 %}
+            {% endif %}
+        {% endfor %}
+        {% if article_count >= total_limit %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+    {
+        "class": "article-recommended-section h-desktop",
+        "name": "Article Recommended",
+        "templates": ["article"],
+        "presets" :[{
+          "name" : "Article Recommended"
+        }]
+    }
+{% endschema %} 

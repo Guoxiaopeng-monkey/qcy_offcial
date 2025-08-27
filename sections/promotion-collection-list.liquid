@@ -1,0 +1,605 @@
+<style>
+  #shopify-section-{{ section.id }}{
+    background-color:{{ section.settings.background }};
+  }
+  .collection-list-section {
+    padding:80px 0px;
+  }
+  #shopify-section-{{ section.id }} .container-header .heading strong{
+    color:{{ section.settings.secondary_color }};
+  }
+  .collection-list-section  .container-header a{
+    width:fit-content;
+    margin-top:10px;
+  }
+  .container-header{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    gap:1rem;
+  }
+  .collection-list-container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    padding-top: 50px;
+    column-gap:20px;
+    row-gap:30px;
+  }
+  .collection-list-section .product-item .lower-details{
+    padding:2rem;
+  }
+  .btn-guidelines{
+    cursor:pointer;
+  }
+
+   /* MODAL */
+  
+  .custom-modal-section{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    z-index: 100;
+    opacity: 0;
+    visibility:hidden;
+    transition: opacity 0.3s;
+  }
+  .custom-modal-section.open{
+    visibility:visible;
+    opacity:1;
+  }
+  .custom-modal-section .overlay{
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+  }
+  .custom-model-inner-section .modal-heading{
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #00000021;
+  }
+  .custom-model-inner-section{
+    height:100%;
+    display:flex;
+  }
+  .custom-modal-container{
+    background-color: #fff;
+    max-width: 750px;
+    border-radius: 20px;
+    padding: 30px 40px;
+    border: 2rem;
+    transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.6s;
+    position: relative;
+    margin: auto;
+    height:fit-content;
+    z-index:3;
+  }
+  .custom-modal-section.open .custom-modal-container{
+    opacity:1;
+    transform: translateY(0);
+  }
+  .custom-info-form::-webkit-scrollbar {
+    width: 0px;
+  }
+  .custom-info-form::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  .custom-info-form::-webkit-scrollbar-thumb {
+    background: #F89320;
+  }
+  .custom-info-form::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  
+  .custom-modal-container .custom-close{
+    position:absolute;
+    top:10px;
+    right:12px;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color:#FFF0E4;
+  }
+  .custom-modal-container .custom-close svg{
+    width:14px;
+  }
+  .custom-modal-container .custom-close svg path{
+    stroke: #000;
+    stroke-width: 2px;
+  }
+  body.no-scroll{
+    overflow:hidden;
+  }
+  .featured-products-section .modal-heading{
+    padding-bottom:1.5rem;
+    margin-bottom:1.5rem;
+    border-bottom:1px solid #aaa;
+  }
+  #shopify-section-{{ section.id }} .collection-list-container .product-item{
+    background-color: {{ section.settings.background_product_item }};
+  }
+
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+      .load-more-container{
+        padding-bottom:50px;
+      }
+    .collection-list-container{
+      grid-template-columns:repeat(2,1fr);
+        column-gap: 10px;
+        row-gap: 20px;
+    }
+    .collection-list-section{
+      padding:50px 0px;
+    }
+    .collection-list-section .container-header .sub-heading{
+        font-size:20px;
+    }
+    .collection-list-section .container-header .heading{
+      font-size:28px;
+    }
+    .collection-list-section .container-header a{
+      margin-top:0px;
+    }
+    .collection-list-container{
+      padding-top:30px;
+    }
+    .copy-discount-off-section{
+        display:none !important;
+    }
+    .price-n-button{
+        border-top: 1px solid #00000012 !important;
+        margin-top:10px !important;
+        padding-top:10px !important;
+    }
+    .collection-list-section .product-item .lower-details{
+      padding:1.5rem 1rem;
+    }
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+      .load-more-container{
+        padding-bottom:50px;
+      }
+      .collection-list-container{
+        grid-template-columns:repeat(2,1fr);
+        column-gap: 10px;
+        row-gap: 20px;
+      }
+      .collection-list-section{
+        padding:50px 0px;
+      }
+      .collection-list-section .container-header .sub-heading{
+          font-size:20px;
+      }
+      .collection-list-section .container-header .heading{
+        font-size:28px;
+      }
+      .collection-list-section .container-header a{
+        margin-top:0px;
+      }
+      .collection-list-container{
+        padding-top:30px;
+      }
+      .copy-discount-off-section{
+        display:none !important;
+      }
+      .price-n-button{
+          border-top: 1px solid #00000012 !important;
+          margin-top:10px !important;
+          padding-top:10px !important;
+      }
+      .collection-list-section .product-item .lower-details{
+        padding:1.5rem 1rem;
+      }
+  }
+  /* TABLETS  */ 
+  @media only screen and (min-width: 768px) {
+    .collection-list-container{
+      grid-template-columns:repeat(2,1fr);
+    }
+  }
+   @media only screen and (min-width: 800px) {
+    .collection-list-container{
+      grid-template-columns:repeat(2,1fr);
+    }
+  }
+  @media (min-width: 1024px) and (orientation: portrait) {
+    .collection-list-container{
+      grid-template-columns:repeat(2,1fr);
+    }
+  }
+  
+   /* COMPUTERS */
+  @media (min-width: 1024px) and (orientation: landscape) {
+    .collection-list-container{
+      grid-template-columns:repeat(2,1fr);
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    .collection-list-container{
+      grid-template-columns:repeat(2,1fr);
+    }
+  }
+  @media only screen and (min-width: 1366px) {
+    .collection-list-container{
+      grid-template-columns:repeat(3,1fr);
+    }
+  }
+  @media only screen and (min-width: 1440px) {
+    .collection-list-container{
+      grid-template-columns:repeat(3,1fr);
+    }
+  }
+  @media only screen and (min-width: 1536px) {
+    .collection-list-container{
+      grid-template-columns:repeat(3,1fr);
+    }
+  }
+  @media only screen and (min-width: 1600px) {
+    .collection-list-container{
+      grid-template-columns:repeat(4,1fr);
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+    .collection-list-container{
+      grid-template-columns:repeat(4,1fr);
+    }
+  }
+  .load-more-container{
+    display:flex;
+    justify-content: center;
+    width:100%;
+    position:relative;
+    top:50px;
+  }
+  .load-more-btn-products-list{
+    padding:1rem 3rem;
+    background-color:#000;
+    border-radius:50px;
+    transition: all 0.3s ease;
+    cursor:pointer;
+  }
+  .load-more-btn-products-list:hover{
+    background-color:#FF8832;
+  }
+  .load-more-btn-products-list span:nth-child(2){
+    display:none;
+  }
+  .load-more-btn-products-list.showing-less span:nth-child(1){
+    display:none;
+  }
+  .load-more-btn-products-list.showing-less span:nth-child(2){
+    display:block;
+  }
+  .collection-list-schema-section .collection-list-container .product-item{
+    height:fit-content;
+  }
+
+
+  .copy-discount-off-section{
+    display:flex;
+    position:relative;
+    gap:3px;
+    margin-top:0.3rem;
+    padding-top:1.3rem;
+    border-top:1px solid #00000012;
+  }
+  .copy-discount-off-section .col_65{
+    background-color:#FFF0E4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position:relative;
+    padding:7px 0px;
+  }
+  .copy-discount-off-section .col_65:before{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    left: -10px;
+    top:25%;
+    position: absolute;
+  }
+  .copy-discount-off-section .col_65:after{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    right: -10px;
+    bottom:-10px;
+    position: absolute;
+    z-index: 1;
+  }
+  .copy-discount-off-section .col_35{
+    background-color:#F8F8F8;    
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position:relative;
+  }
+  .copy-discount-off-section .col_35:after{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    right: -10px;
+    position: absolute;
+  }
+  .copy-discount-off-section .col_35:before{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    left: -10px;
+    top:-10px;
+    position: absolute;
+  }
+  .heading-text-discount{
+    font-size: 12px;
+    color: #000;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor:pointer;
+  }
+  .sub-heading-text-discount{
+    font-size:10px;
+  }
+  /* CUSTOM CSS */
+  .price-n-button{
+    padding-top:0px;
+    border:none;
+  }
+  .product-item .price{
+    gap:0.8rem;
+  }
+  .product-item .compare-price{
+    color:#AAAAAA;
+  }
+  .product-item .add-to-cart-btn{
+    width:35px;
+    height:35px;
+  }
+  .product-item .add-to-cart-btn svg{
+    width:18px;
+    height:18px;
+  }
+  
+</style>
+{{ 'variant-button.aio.min.css' | asset_url | stylesheet_tag }}
+{{ 'custom-product-card.aio.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-add.aio.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-page-form.aio.min.js' | asset_url }}" defer="defer"></script>
+<div 
+  id="PromotionCollectionList-{{ section.id }}"
+  class="{{ section.settings.product_header | handleize }}-section collection-list-section section-scroll" >
+  <div class="page-width">
+    <div class="container-header">
+        <h2 class="sub-heading text-sm f-f-semibold mx-0 center" style="color:{{ section.settings.primary_color }};">{{ section.settings.sub_heading }}</h2>
+        <h2 class="heading section-heading f-f-bold mx-0 center" style="color:{{ section.settings.primary_color }};">{{ section.settings.heading | replace: '<p>','' | replace: '</p>','' }}</h2>
+        <span class="btn-guidelines text-underline h4 center" style="color:{{ section.settings.secondary_color }};">{{ section.settings.link_heading }}</span>
+    </div>
+    <div class="collection-list-container">
+        {% for product in section.settings.collection.products %}
+              {% render 'custom-card-product', product: product, forloop: forloop,
+              background_add_to_cart: section.settings.background_add_to_cart,
+              background_icon: section.settings.background_icon,
+              background_buy_now: section.settings.background_buy_now,
+              background_text: section.settings.background_text
+              %}
+        {% endfor %}
+    </div>
+    <div class="load-more-container {% if section.settings.collection.products.size < 8 %} hidden{% endif %}">
+      <span class="load-more-btn-products-list h5 white-f">
+        <span>Load More</span>
+        <span>Show Less</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="custom-modal-section">
+  <div class="overlay">
+  </div>
+  <div class="custom-model-inner-section">
+    <div class="custom-modal-container">
+        <span class="custom-close">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-close" viewBox="0 0 18 17">
+                <path fill="currentColor" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path>
+            </svg>
+        </span>
+        <h3 class="mx-0 f-f-regular  modal-heading">{{ section.settings.modal_heading }}</h3>
+        <div class="custom-info-form">
+          <div class="p mx-0">
+            {{ section.settings.modal_description }}
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+{{ 'custom-product-card-variant.aio.min.js' | asset_url | script_tag }}
+<script>
+  $('#PromotionCollectionList-{{ section.id }} .collection-list-schema-section .btn-guidelines').click(() => {
+    $('#PromotionCollectionList-{{ section.id }} .collection-list-schema-section .custom-modal-section').addClass('open');
+    $('body').addClass('no-scroll');
+  });
+  
+  $(document).ready(function() {
+    var initialItems = 8;  // Always show 8 items initially
+    var loadItems = 4;     // Number of items to load/hide on each click
+
+    // Initially hide all items except the first 8
+    $('#PromotionCollectionList-{{ section.id }} .product-item').hide();
+    $('#PromotionCollectionList-{{ section.id }} .product-item').slice(0, initialItems).show();
+
+    // Click event for Load More/Show Less button
+    $('#PromotionCollectionList-{{ section.id }} .load-more-btn-products-list').on('click', function(e) {
+        e.preventDefault();
+
+        // Check if we're in "Show Less" mode
+        if ($(this).hasClass('showing-less')) {
+            // Hide items so only 8 remain visible
+            var visibleItems = $('#PromotionCollectionList-{{ section.id }} .product-item:visible');
+            visibleItems.slice(initialItems).slideUp();
+
+            // Switch button text back to "Load More"
+            $(this).removeClass('showing-less');
+        } else {
+            // Show 3 more items
+            var hiddenItems = $('#PromotionCollectionList-{{ section.id }} .product-item:hidden');
+            hiddenItems.slice(0, loadItems).slideDown();
+
+            // If all items are shown, change button to "Show Less"
+            if (hiddenItems.length <= loadItems) {
+                $(this).addClass('showing-less');
+            }
+        }
+    });
+});
+
+
+  
+    $('.heading-text-discount').on('click', function() {
+        var codeToCopy = $(this).attr('data-discount-code');
+        var $tempTextarea = $('<textarea>');
+        $('body').append($tempTextarea);
+        $tempTextarea.val(codeToCopy).select();
+        try {
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'Code copied successfully!' : 'Failed to copy code';
+  
+            alert(msg);
+        } catch (err) {
+        }
+  
+        $tempTextarea.remove();
+    });
+</script>
+
+{% schema %}
+    {
+        "class": "collection-list-schema-section section",
+        "name": "Promotion Collection",
+        "tag": "section",
+        "templates": ["page"],
+        "settings": [
+            {
+                "type": "text",
+                "id": "product_header",
+                "label": "Product Header"
+            },
+            {
+                "type": "color",
+                "id": "background",
+                "label": "Background",
+                "default":"#fff"
+            },
+            {
+                "type": "color",
+                "id": "primary_color",
+                "label": "Primary Color",
+                "default":"#1a1a1a"
+            },
+            {
+                "type": "color",
+                "id": "secondary_color",
+                "label": "Secondary Color",
+                "default":"#ff8832"
+            },
+            {
+                "type": "text",
+                "id": "sub_heading",
+                "label": "Sub Heading"
+            },
+            {
+                "type": "richtext",
+                "id": "heading",
+                "label": "Heading"
+            },
+            {
+                "type": "collection",
+                "id": "collection",
+                "label": "Collection"
+            },
+            {
+                "type": "text",
+                "id": "link_heading",
+                "label": "Link Heading"
+            },
+            {
+                "type": "text",
+                "id": "modal_heading",
+                "label": "Modal Heading"
+            },
+            {
+                "type": "richtext",
+                "id": "modal_description",
+                "label": "Modal Description"
+            },
+            {
+                "type": "header",
+                "content": "Product Item Style"
+            },
+            {
+                "type": "color",
+                "id": "background_product_item",
+                "label": "Background Product Item",
+                "default":"#fff"
+            },
+            {
+                "type": "color",
+                "id": "background_add_to_cart",
+                "label": "Background - Add to Cart",
+                "default":"#f1f1f1"
+            },
+            {
+                "type": "color",
+                "id": "background_icon",
+                "label": "Color - Icon",
+                "default":"#000"
+            },
+            {
+                "type": "color",
+                "id": "background_buy_now",
+                "label": "Background - Buy Now",
+                "default":"#f1f1f1"
+            },
+            {
+                "type": "color",
+                "id": "background_text",
+                "label": "Color - Text",
+                "default":"#000"
+            }
+        ],
+        "presets" :[{
+            "name" : "Promotion Collection"
+        }]
+    }
+  {% endschema %} 

@@ -1,0 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_iUF8p7": {
+      "type": "image-with-text",
+      "custom_css": [],
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/1_a5c82198-7603-4e59-94d2-84311ce9d393.jpg",
+        "image_mobile": "shopify://shop_images/1_a5c82198-7603-4e59-94d2-84311ce9d393.jpg",
+        "heading": "Noise Cancelling Headphones",
+        "text": "QCY noise cancelling headphones use advanced ANC with four adaptable modes to minimize surrounding noise in various environments. Enjoy crystal-clear audio and lasting comfort—perfect for music, calls, and everyday entertainment."
+      }
+    },
+    "main_collection_D4J9rG": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "rich_text_Azhtwi": {
+      "type": "rich-text",
+      "name": "Rich Text",
+      "settings": {
+        "heading": "Why Choose QCY Noise Cancelling Headphones?",
+        "text": "<p><strong>Surprisingly Rich Sound for the Price:</strong><br/>QCY’s noise cancelling headphones combine LDAC technology with finely tuned drivers to deliver crisp, balanced audio that punches above their price. From deep bass to clear vocals, enjoy a rich listening experience that brings out the best in your favorite tracks—without breaking the bank.<br/><strong>Smart Noise Control at Your Fingertips:</strong><br/>QCY’s advanced ANC system blocks up to 99.6% of background noise, letting you focus without distraction. Seamlessly switch between noise cancelling, transparency, and standard modes—customized easily via the QCY app for different listening environments.<br/><strong>Designed for Lasting Comfort:</strong><br/>Crafted with soft memory foam cushions wrapped in protein leather, an adjustable headband, and sturdy metal sliders, QCY H3 Pro headphones offer a secure, comfortable fit for long listening sessions—whether at work or on the move.<br/><strong>Stay Powered Through the Day:</strong><br/>With up to 60 hours of battery life (depending on ANC usage), QCY headphones are built to match your busy schedule. Perfect for travel, meetings, or workouts—they keep the sound going as long as you do.<br/><strong>Effortless Multi-Device Pairing:</strong><br/>QCY Bluetooth noise cancelling headphones support simultaneous connection with two devices, letting you switch between your phone and laptop without missing a beat. Take calls or check messages while streaming music or videos—no need to reconnect every time.</p>"
+      }
+    }
+  },
+  "order": [
+    "image_with_text_iUF8p7",
+    "main_collection_D4J9rG",
+    "rich_text_Azhtwi"
+  ]
+}

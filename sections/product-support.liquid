@@ -1,0 +1,100 @@
+{% assign support_items = shop.metaobjects['product_support'].values %}
+{% assign seen_categories = '' %}
+{% assign categories_array = '' %}
+
+{% for item in support_items %}
+  {% assign category_value = item.product_category.value | strip %}
+  {% assign category_key = category_value | downcase %}
+
+  {% unless seen_categories contains category_key %}
+    {% capture seen_categories %}{{ seen_categories }},{{ category_key }}{% endcapture %}
+    {% capture categories_array %}{{ categories_array }},{{ category_value }}{% endcapture %}
+  {% endunless %}
+{% endfor %}
+
+{% assign unique_categories = categories_array | remove_first: ',' | split: ',' | sort %}
+
+<section class="product-support" data-anchor="product-support">
+  <div class="page-width section-content">
+    <div class="row">
+      <div class="col-lg-10 col-md-12 col-sm-12 mx-auto">
+
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2 class="title">{{ section.settings.title }}</h2>
+            <div class="toggles">
+              {% for category in unique_categories %}
+                {% assign category_slug = category | strip | downcase | replace: ' ', '-' %}
+                <span data-toggle="{{ category_slug }}">
+                  {{ category }}
+                </span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+          <div class="nav-toggles">
+            {% for category in unique_categories %}
+              {% assign category_slug = category | strip | downcase | replace: ' ', '-' %}
+              <div class="nav-toggle" data-toggle="{{ category_slug }}">
+                <div class="row products-row">
+                  {% assign items_per_page = 10 %}
+                  {% assign index = 0 %}
+          
+                  {% for item in support_items %}
+                    {% if item.product_category.value == category %}
+                      {% assign page_number = index | divided_by: items_per_page | plus: 1 %}
+                      <div class="col-custom" data-page="{{ page_number }}">
+                        <a class="product-image" href="{{ item.support_link_.value.url }}">
+                          <img loading="lazy" src="{{ item.image | img_url: 'master' }}">
+                        </a>
+                        <p class="product-title">
+                          {{ item.product_name }}
+                        </p>
+                      </div>
+                      {% assign index = index | plus: 1 %}
+                    {% endif %}
+                  {% endfor %}
+          
+                  {% assign total_items = index %}
+                  {% assign total_pages = total_items | divided_by: items_per_page %}
+                  {% assign remainder = total_items | modulo: items_per_page %}
+                  {% if remainder != 0 %}
+                    {% assign total_pages = total_pages | plus: 1 %}
+                  {% endif %}
+          
+                  {% if total_items > items_per_page %}
+                    <div class="paginate custom" data-total="{{ total_pages }}">
+                      <a class="page disable" href="javascript:void(0)">
+                        <i class="fa-solid fa-chevron-left"></i>
+                      </a>
+                      {% for i in (1..total_pages) %}
+                        <a class="page {% if i == 1 %}active{% endif %}" href="javascript:void(0)" data-i="{{ i }}">{{ i }}</a>
+                      {% endfor %}
+                      <a class="page" href="javascript:void(0)" data-i="2">
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </a>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+    "name": "Product Support",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,317 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "support-search": {
+      "type": "support-search",
+      "blocks": {
+        "search_qwert1": {
+          "type": "search",
+          "settings": {
+            "search_item": "H3",
+            "search_url": "https://us.qcy.com/pages/support-center-h3"
+          }
+        },
+        "search_qwert2": {
+          "type": "search",
+          "settings": {
+            "search_item": "MeloBuds Neo",
+            "search_url": "https://us.qcy.com/pages/support-center-melobuds-neo"
+          }
+        },
+        "search_qwert3": {
+          "type": "search",
+          "settings": {
+            "search_item": "AilyBuds Pro+",
+            "search_url": "https://us.qcy.com/pages/support-center-ailybuds-pro-plus"
+          }
+        },
+        "search_qwert4": {
+          "type": "search",
+          "settings": {
+            "search_item": "Melobuds ANC",
+            "search_url": "https://us.qcy.com/pages/support-center-melobuds-anc"
+          }
+        },
+        "search_qwert5": {
+          "type": "search",
+          "settings": {
+            "search_item": "T13",
+            "search_url": "https://us.qcy.com/pages/support-center-t13"
+          }
+        }
+      },
+      "block_order": [
+        "search_qwert1",
+        "search_qwert2",
+        "search_qwert3",
+        "search_qwert4",
+        "search_qwert5"
+      ],
+      "settings": {
+        "title": "Support Center",
+        "background_desktop": "shopify://shop_images/39993.png",
+        "background_mobile": "shopify://shop_images/39993_1.png"
+      }
+    },
+    "support-detail": {
+      "type": "support-detail",
+      "settings": {
+        "support_url": "https://us.qcy.com/pages/support-center-1"
+      }
+    },
+    "support-video": {
+      "type": "support-video",
+      "blocks": {
+        "video_1234": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/How to Use T13 ANC.mp4",
+            "title": "How to Use T13 ANC"
+          }
+        }
+      },
+      "block_order": [
+        "video_1234"
+      ],
+      "settings": {
+        "title": "Support Video"
+      }
+    },
+    "faq-detailed": {
+      "type": "faq-detailed",
+      "blocks": {
+        "bluetooth_connection_9qiECF": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "What can I do if my earbuds won't connect to my device?",
+            "answer": "Step 1. Clear the pairing records between the earbuds and all of the previous devices. \nStep 2. Try to clear some Bluetooth listings on your device and restart the device. Step 3. Put the earbuds into the charging case to reset. \nStep 4. Take the earbuds out of the charging case. Activate Bluetooth on the device, and choose \"QCY T13 ANC\" on Bluetooth list to pair.\n\nIf that doesn’t work:\n- Try pairing with another device to check for compatibility issues.\n- Ensure there are no objects blocking the Bluetooth signal."
+          }
+        },
+        "bluetooth_connection_pgKEEt": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "Can T13 ANC connect to two devices at the same time?",
+            "answer": "No, this feature is not supported for this product."
+          }
+        },
+        "bluetooth_connection_dNfTjd": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "How to connect the earbuds with two devices at the same time?",
+            "answer": "To connect two devices:\nStep 1. Pair the earbuds with device A.\nStep 2. Disable Bluetooth on device A, and the earbuds will enter pairing mode.\nStep 3. Pair the earbuds with device B.\nStep 3. Re-enable Bluetooth on device A and reconnect to the earbuds.\n\nAfter this initial setup, the earbuds will automatically connect to both devices next time."
+          }
+        },
+        "bluetooth_connection_wGNNx9": {
+          "type": "bluetooth-connection",
+          "settings": {
+            "question": "What should I do if my earbuds disconnect or the sound is choppy?",
+            "answer": "Please note that this may not indicate an issue with the earbuds themselves, but could be related to the connected device or your environment. Bluetooth signals can be affected by obstacles like walls, appliances, Wi-Fi interference, and more. To ensure a stable connection, try to minimize such obstructions.\n\nTo resolve the issue, follow these troubleshooting steps:\n\n1. Fully Charge and Reset Your Earbuds\n\n2. Test with Downloaded Media: Check the performance by listening to downloaded music or videos to avoid potential streaming issues.\n\n3. Try a Different Device and Environment: Test the earbuds with another Bluetooth device in a different location to see if the issue persists."
+          }
+        },
+        "battery_charging_Eg4Chg": {
+          "type": "battery-charging",
+          "settings": {
+            "question": "Why do the earbuds stay connected to my device even after being placed in the charging case with the lid closed?",
+            "answer": "1. Ensure the earbuds are seated properly in the case.\n2. Clean the charging contacts on both the earbuds and case to ensure a proper connection.\n3. If the issue persists, contact our service center."
+          }
+        },
+        "battery_charging_AiHgLq": {
+          "type": "battery-charging",
+          "settings": {
+            "question": "What should I do if the earbuds don’t turn on when taken out of the charging case?",
+            "answer": "1. Make sure the earbuds are charged.\n2. Check if the ear tips are installed properly.\n3. If the earbuds still don’t turn on after charging, contact our service center."
+          }
+        },
+        "battery_charging_r8ejye": {
+          "type": "battery-charging",
+          "settings": {
+            "question": "My earbuds' battery runs out too quickly. What can I do?",
+            "answer": "To get more battery life from your earbuds, try these tips:\n- Lower the volume.\n- Turn off ANC \n- Disable smart features and Spatial Audio.\n- Use only one earbud for phone calls.\n- Turn off the earbuds when you're not using them."
+          }
+        },
+        "battery_charging_DwbrVA": {
+          "type": "battery-charging",
+          "settings": {
+            "question": "How do I check the battery level of the earbuds?",
+            "answer": "Pair the earbuds with the QCY app on your phone to check the battery level.\nTo download the app, just search for \"QCY\" in your app store."
+          }
+        },
+        "app_control_8L7QXK": {
+          "type": "app-control",
+          "settings": {
+            "question": "What Can I do if the touch control do not work?",
+            "answer": "Try the following method:\n1. Ensure you're touching the control area.\n2. keep your hands dry. If your hand is wet, the touch controls may not respond effectively.\n3) Reset the earbuds."
+          }
+        },
+        "app_control_Dc44Et": {
+          "type": "app-control",
+          "settings": {
+            "question": "How to connect to the QCY app?",
+            "answer": "1. Get the QCY App.\n \nThe QCY app is available on iOS and Android devices. It can be installed from the Google Play Store or the Apple App Store.\n \n2. Connect the QCY earbuds with your device via Bluetooth (i.e. a smartphone or tablet)\n \n3. Use the QCY app for enhanced product experience."
+          }
+        },
+        "app_control_fd6nme": {
+          "type": "app-control",
+          "settings": {
+            "question": "Why does the QCY app ask for location access?",
+            "answer": "The app itself doesn’t normally need location access. However, when Bluetooth Low Energy (BLE) is used to find your earbuds, Android requires location permission.\nIf you prefer not to share your location, close the app and try pairing again."
+          }
+        },
+        "app_control_tCtbgf": {
+          "type": "app-control",
+          "settings": {
+            "question": "What should I do if my earbuds are not found on the QCY App?",
+            "answer": "1. Pair the earbuds with your phone.\n2. Open the QCY app, scroll to the bottom, and click \"Add Devices.\"\n3. If \"QCY T13 ANC\" pops up, select it to connect.\n4. If not, click \"Set Up Manually\" and choose \"MeloBuds Pro\" from the list to connect."
+          }
+        },
+        "sound_anc_VLJ9Vj": {
+          "type": "sound-anc",
+          "settings": {
+            "question": "What can I do if the volume is low when connecting to my phone?",
+            "answer": "Try follow these troubleshooting steps:\n\n1. Clean the Ear Tips: The sound may be muffled if the sound hole is blocked by debris. Use a Q-tip with a small amount of rubbing alcohol to gently clean the metal mesh filter under the rubber ear tips.\n\n2. Re-pair Your Earbuds: Clear the pairing records on your phone, then re-pair the earbuds to your device."
+          }
+        },
+        "sound_anc_befjAc": {
+          "type": "sound-anc",
+          "settings": {
+            "question": "Why can't the person on the other end of the call hear me, or why is my voice unclear?",
+            "answer": "We recommend trying the following steps:\n\n- Wear both earbuds together rather than using just one. If you only use one earbud, ensure the other one is in the charging case.\n\n- Try using different sizes of ear tips to ensure a secure fit and better sound clarity. Make sure the earbuds are positioned correctly to form a tight seal.\n\n- Verify that the audio output device on your phone is set to \"QCY T13 ANC\"\n\n- If you're making the call through an app, try making a direct call using your phone's regular calling feature to check if the issue persists.\n\n- Test your earbuds with a different Bluetooth device in a different environment to see if the problem improves."
+          }
+        },
+        "sound_anc_dRaKwY": {
+          "type": "sound-anc",
+          "settings": {
+            "question": "Why is sound only coming from one side of the earbuds?",
+            "answer": "To resolve this issue, try the following steps:\n1. Re-pair the earbuds: Unpair the earbuds from your Bluetooth device and then pair them again.\n\n2. Charge the earbuds: Ensure the charging case has enough power. Place the earbuds in the case, close the lid, and wait a few seconds to restart your earbuds\n\n3. Restart your device: Try restarting your smartphone or computer.\nReset the earbuds: Follow the instructions in the manual to reset your earbuds.\n\n4. Re-initialize and pair again: If the problem continues, initialize the earbuds and re-pair them with your device.\n\n5. Check for Chat Mode: If you're using a voice chat app, music playback may pause when Chat Mode is activated. Exit Chat Mode to resume audio playback."
+          }
+        },
+        "sound_anc_VTMmEx": {
+          "type": "sound-anc",
+          "settings": {
+            "question": "Can I use the left or right earbud on its own?",
+            "answer": "Yes, just take one earbud out from the charging case to use.\n \nIf you are using two earbuds, you can put either one of the earbuds back into the charging case and continue using the other one on its own."
+          }
+        },
+        "sound_anc_46WTU6": {
+          "type": "sound-anc",
+          "settings": {
+            "question": "What can I do if the earbuds have poor sound quality?",
+            "answer": "You can try the following troubleshooting steps:\n\n- Adjust the ear tips: Try using different sizes of ear tips and ensure the earbuds are positioned correctly to create a tight seal. This can improve both sound quality and noise cancellation.\n\n- Check the audio source: Test different types of music and make sure the audio source is clear and free of distortion or noise.\n\n- Customize the EQ settings: Use the QCY app to try different EQ modes or customize the sound profile to suit your preferences."
+          }
+        },
+        "care_others_gJtTFK": {
+          "type": "care-others",
+          "settings": {
+            "question": "Can I buy one side of the earbuds if I lost one earbud?",
+            "answer": "Unfortunately, we do not sell earbuds separately."
+          }
+        },
+        "care_others_XVBQ6b": {
+          "type": "care-others",
+          "settings": {
+            "question": "How do I update the firmware?",
+            "answer": "Update the fireware on the QCY App, Before updating:\n1. Ensure your earbuds have at least 20% battery.\n2. Make sure both earbuds are connected to the QCY app.\n3. Don’t use the earbuds during the update.\n4. Keep the earbuds in the charging case with the lid open."
+          }
+        },
+        "care_others_kQJb8B": {
+          "type": "care-others",
+          "settings": {
+            "question": "What can I do if my earbuds fall out easily?",
+            "answer": "We offer various ear tip sizes to ensure a good fit. To find the best fit:\n1. Make sure you’re wearing the correct earbuds (check the L/R logo).\n2. Try different ear tip sizes.\n3. Twist the earbuds slightly to find the most secure and comfortable position."
+          }
+        },
+        "care_others_gywRWb": {
+          "type": "care-others",
+          "settings": {
+            "question": "How should I care for my earbuds?",
+            "answer": "1. Use your earbuds regularly to avoid battery over-discharge. Aim to use them at least once a month.\n2. Charge the earbuds after each use, and don't wait until they drop below 20% to charge.\n3. Open the case at least once a month to check that everything works, and charge the case monthly.\n4. Clean the charging pins on both the earbuds and case regularly.\n5. Keep the ear tips clean and wipe the metal mesh with rubbing alcohol.\n6. If they get wet, use a hairdryer on the 'cool' setting to dry them."
+          }
+        },
+        "care_others_L4WqTC": {
+          "type": "care-others",
+          "settings": {
+            "question": "How to clear my earbuds?",
+            "answer": "Regular cleaning and maintenance after daily use are essential for extending the lifespan of your earphones. Neglecting this can lead to reduced performance and longevity.\n1. Cleaning the Contact Pins:\n- Ensure the charging case is unplugged from any power source.\n- Use a cotton swab or a soft cloth moistened with rubbing alcohol or an alcohol wipe to gently clean the contact pins on both the earbuds and the charging case.\n2. Cleaning the Earbud Filters:\n- First, remove the ear tips from the earbuds.\n- Use a cotton swab dipped in rubbing alcohol to carefully clean the filters."
+          }
+        }
+      },
+      "block_order": [
+        "bluetooth_connection_9qiECF",
+        "bluetooth_connection_pgKEEt",
+        "bluetooth_connection_dNfTjd",
+        "bluetooth_connection_wGNNx9",
+        "battery_charging_Eg4Chg",
+        "battery_charging_AiHgLq",
+        "battery_charging_r8ejye",
+        "battery_charging_DwbrVA",
+        "app_control_8L7QXK",
+        "app_control_Dc44Et",
+        "app_control_fd6nme",
+        "app_control_tCtbgf",
+        "sound_anc_VLJ9Vj",
+        "sound_anc_befjAc",
+        "sound_anc_dRaKwY",
+        "sound_anc_VTMmEx",
+        "sound_anc_46WTU6",
+        "care_others_gJtTFK",
+        "care_others_XVBQ6b",
+        "care_others_kQJb8B",
+        "care_others_gywRWb",
+        "care_others_L4WqTC"
+      ],
+      "settings": {
+        "title": "FAQ"
+      }
+    },
+    "manuals-support": {
+      "type": "manuals-support",
+      "blocks": {
+        "manual_12345": {
+          "type": "manual",
+          "settings": {
+            "title": "T13 ANC manual",
+            "manual_url": "https://cdn.shopify.com/s/files/1/0639/3492/2809/files/T13_ANC_Chinese_and_English_manual.pdf?v=1731378119"
+          }
+        }
+      },
+      "block_order": [
+        "manual_12345"
+      ],
+      "settings": {
+        "title": "Manuals"
+      }
+    },
+    "more-help": {
+      "type": "more-help",
+      "settings": {
+        "title": "Still Need Help?",
+        "icon_1": "shopify://shop_images/1_6ae01342-29d9-466b-a884-f3e54bc4b04e.png",
+        "icon_2": "shopify://shop_images/2_13c56919-3d59-4a06-a552-3824ae5ea47b.png",
+        "icon_3": "shopify://shop_images/3_58022390-5f9e-4177-8125-651a16075847.png",
+        "icon_4": "shopify://shop_images/4_a0949a89-fc4a-4113-a381-ac8515de3bb4.png",
+        "icon_5": "shopify://shop_images/5.png",
+        "icon_6": "shopify://shop_images/6.png",
+        "tel_1": "+1(917)807-6754",
+        "email_1": "service@qcyearphone.com",
+        "email_2": "rice@qcyearphone.com",
+        "email_3": "pr@qcyearphone.com"
+      }
+    }
+  },
+  "order": [
+    "support-search",
+    "support-detail",
+    "support-video",
+    "faq-detailed",
+    "manuals-support",
+    "more-help"
+  ]
+}

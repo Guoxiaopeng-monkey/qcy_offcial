@@ -1,0 +1,391 @@
+{% stylesheet %}
+    .product-page-footer-container{
+        background-color:#F9F9F9;
+        padding:1rem 0px;
+    }
+    .product-footer-section .page-width{
+        display:flex;
+    }
+    .product-footer-section .product-details{
+        display:flex;
+        align-items: center;
+        gap:1.5rem;
+    }
+    .product-footer-section .price-details{
+        display:flex;
+        flex-wrap: wrap;
+        gap:0.5rem;
+        row-gap:0px;
+    }
+    .product-footer-section .product-variant{
+        padding:0px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap:1.5rem;
+    }
+    .product-footer-section .add-to-cart-btn-container{
+        width:fit-content;
+        height:100%;
+        display:flex;
+        align-items:center;
+    }
+    .product-footer-section .add-to-cart-btn-container .add-to-cart-btn,
+    .product-footer-section .add-to-cart-btn-container product-page-form,
+    .product-footer-section .add-to-cart-btn-container product-page-form form{
+        height: 100%;
+        display: block;
+    }
+    .product-footer-section .add-to-cart-btn-container .add-to-cart-btn{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .product-footer-section .add-to-cart-btn-container .add-to-cart-btn button{
+        height:100%;
+        background-color:#FFF0E4;
+        padding:7px 2rem;
+        border-radius:50px;
+    }
+    .product-footer-section .product-select-dropdown-container{
+        position:relative;
+    }
+    .product-footer-section .product-select-dropdown-container h4{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor:pointer;
+        gap:5px;
+    }
+    .product-footer-section .product-select-dropdown-container svg{
+        width:20px;
+        height:20px;
+        transform: rotate(180deg);
+    }
+    .product-footer-section .selector-dropdown-product-variant{
+        position: absolute;
+        bottom: 110%;
+        background-color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        padding:7px 10px;
+        transition: visibility 0.1s ease, opacity 0.3s ease;
+        width: 100%;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius:12px;
+        overflow:hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .product-footer-section .selector-dropdown-product-variant h5{
+        padding:3px 15px;
+        transition: all 0.2s ease;
+        cursor:pointer;
+        border-radius:5px;
+    }
+    .product-footer-section .selector-dropdown-product-variant h5:hover{
+        background-color:#FFF0E4;
+    }
+    .product-footer-section .product-select-dropdown-container.show .selector-dropdown-product-variant{
+        visibility:visible;
+        opacity:1;
+    }
+    .product-footer-section .product-select-dropdown-container.show .default-selector svg{
+        transform: rotate(0);
+    }
+
+    .product-footer-sticky {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 9999; /* Make sure it's above other content */
+    }
+    .footer-product-add-to-cart .quick-add__submit.loading .add-to-cart-btn{
+      opacity:0;
+    }
+    .footer-product-add-to-cart .quick-add__submit .sold-out-message{
+      position:absolute;
+      opacity:0;
+    }
+    .footer-product-add-to-cart .quick-add__submit[aria-disabled="true"]  .add-to-cart-btn{
+      opacity:0;
+    }
+    .footer-product-add-to-cart .quick-add__submit[aria-disabled="true"]  .sold-out-message{
+      opacity:1;
+    }
+    
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+        .product-select-dropdown-container{
+            display:none;
+        }
+        .product-footer-section .page-width{
+            display:grid;
+            grid-template-columns:70% 30%;
+        }
+        .product-footer-section .add-to-cart-btn-container .add-to-cart-btn button{
+          padding:5px 1rem;
+        }
+        .product-footer-section .price-details{
+          align-items: center;
+        }
+        .product-footer-sticky .product-details .price-details h5{
+          font-size:14px;
+        }
+        .product-footer-sticky .product-details .price-details .compare-price{
+          font-size:12px;
+        }
+        .product-footer-sticky .product-details .product-title{
+          font-size:13px;
+        }
+        .product-footer-section .add-to-cart-btn-container .add-to-cart-btn{
+          font-size:12px;
+        }
+        .product-footer-section .product-details{
+          gap:5px;
+        }
+    }
+
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px){
+        .product-select-dropdown-container{
+            display:none;
+        }
+        .product-footer-section .page-width{
+            display:grid;
+            grid-template-columns:70% 30%;
+        }
+        .product-footer-section .add-to-cart-btn-container .add-to-cart-btn button{
+          padding:0px 0.5rem;
+        }
+        .product-footer-section .product-details{
+          gap:5px;
+        }
+      .product-footer-section .product-variant{
+        padding-right:0px;
+      }
+    }
+    /* TABLETS  */ 
+    @media only screen and (min-width: 768px) {
+      .product-footer-section .product-variant{
+        padding-right:0px;
+      }
+    }
+     @media only screen and (min-width: 800px) {
+      .product-footer-section .product-variant{
+        padding-right:0px;
+      }
+    }
+    @media (min-width: 1024px) and (orientation: portrait) {
+      .product-footer-section .product-variant{
+        padding-right:80px;
+      }
+    }
+    
+     /* COMPUTERS */
+    @media (min-width: 1024px) and (orientation: landscape) {
+      .product-footer-section .product-variant{
+        padding-right:80px;
+      }
+    }
+    @media only screen and (min-width: 1280px) {
+      .product-footer-section .product-variant{
+        padding-right:80px;
+      }
+    }
+    @media only screen and (min-width: 1366px) {
+      .product-footer-section .product-variant{
+        padding-right:80px;
+      }
+    }
+    @media only screen and (min-width: 1440px) {
+      .product-footer-section .product-variant{
+        padding-right:80px;
+      }
+    }
+    @media only screen and (min-width: 1536px) {
+      .product-footer-section .product-variant{
+        padding-right:80px;
+      }
+    }
+    @media only screen and (min-width: 1600px) {
+      .product-footer-section .product-variant{
+        padding-right:80px;
+      }
+    }
+    @media only screen and (min-width: 1920px) {
+      .product-footer-section .product-variant{
+        padding-right:0px;
+      }
+    }
+
+{% endstylesheet %}
+<div class="product-page-footer-container">
+    <div class="page-width">
+        <div class="col_50 product-details">
+            <h3 class="product-title f-f-bold mx-0">{{ product.title | escape | replace: '(Development)', '' | truncate: 20 }}</h3>
+            <div class="price-details">
+                <h5 class="f-f-semibold main-color mx-0">{{ product.selected_or_first_available_variant.price | money }}</h5>
+                <h5 class="compare-price gray-f mx-0 text-strike">{{ product.selected_or_first_available_variant.compare_at_price | money }}</h5>
+            </div>
+        </div>
+        <div class="col_50 product-variant">
+                <div class="product-select-dropdown-container">
+                    <div class="selector-dropdown-product-variant">
+
+                        {% for option in product.options  limit: 4 %}
+                            {% if option == "Color" or option == "Colour" %}
+                                {% assign index = forloop.index0 %}
+                                {% assign colorlist = '' %}
+                                {% assign color = '' %}
+                                {% for variant in product.variants %}
+                                {% capture color %}
+                                    {{ variant.options[index] }}
+                                {% endcapture %}
+                                {% unless colorlist contains color %}
+                                    <h5 data-color="{{ color | handle }}" data-variant-id="{{ variant.id }}" class="variant-list-option mx-0">{{ color }}</h5>
+                                    {% capture tempList %}
+                                        {{ colorlist | append: color | append: ' '}}
+                                    {% endcapture %}
+                                {% assign colorlist = tempList %}
+                                {% endunless %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p class="default-selector f-f-semibold mx-0 black-f">Color:<span class="product-variant-data f-f-semibold mx-0 black-f">
+                      {% for option in product.options  limit: 4 %}
+                          {% if option == "Color" or option == "Colour" %}
+                                {% assign index = forloop.index0 %}
+                                {% assign colorlist = '' %}
+                                {% assign color = '' %}
+                                {% for variant in product.variants %}
+                                    {% if forloop.first %}
+                                        {% capture color %}
+                                            {{ variant.options[index] }}
+                                        {% endcapture %}
+                                        {% unless colorlist contains color %}
+                                            {{ color }}
+                                        {% endunless %}
+                                    {% endif %}
+                                {% endfor %}
+                          {% endif %}
+                      {% endfor %}
+                    </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" class="arrow-down-icon">
+                            <path fill="none" d="M0 0h24v24H0V0z"/>
+                            <path class="icon-path" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" fill="#000"/>
+                        </svg>
+                    </p>
+                </div>
+                <div class="add-to-cart-btn-container footer-product-add-to-cart">
+                    {% assign product_form_id = 'quick-add-' | append: section.id | append: product.id %}
+                    <div class="quick-add no-js-hidden add-to-cart-btn">
+                        <product-page-form data-section-id="{{ section.id }}">
+                            {%- form 'product', product, id: product.id, class: 'form add_cart_form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" class="footer-product-id" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
+                            <button id="{{ product_form_id }}-submit" type="submit" name="add" class="quick-add__submit " aria-haspopup="dialog" aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ product.id }}" aria-live="polite" data-sold-out-message="true" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
+                                <span class="hidden">
+                                    {%- if product.selected_or_first_available_variant.available -%}
+                                    {{ 'products.product.add_to_cart' | t }}
+                                    {%- else -%}
+                                    {{ 'products.product.sold_out' | t }}
+                                    {%- endif -%}
+                                </span>
+                                <span class="p f-f-semibold main-color sold-out-message hidden">
+                                    {{ 'products.product.sold_out' | t }}
+                                </span>
+                                {%- if horizontal_quick_add -%}
+                                <span class="icon-wrap hidden">
+                                    {{- 'icon-plus.svg' | inline_asset_content -}}
+                                </span>
+                                {%- endif -%}
+                                
+                                <span class="p f-f-semibold add-to-cart-btn main-color">
+                                    {{ section.settings.btn_add_to_card_label }}
+                                </span>
+                                {%- render 'loading-spinner' -%}
+                            </button>
+                            {%- endform -%}
+                        </product-page-form>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </div>
+{% javascript %}
+    $('.product-select-dropdown-container').each(function(){
+        var $container = $(this); 
+            
+        $container.find('.default-selector').click(function(event){
+            $container.addClass('show');
+        });
+
+        $container.find('.variant-list-option').click(function(event){
+            $('.footer-product-add-to-cart .quick-add__submit').removeAttr('aria-disabled');
+            $container.removeClass('show');
+            $container.find('.product-variant-data').text($(this).text());
+            $('.footer-product-id').val($(this).attr('data-variant-id'));
+        });
+
+        // Close both menus when clicking outside
+        $(document).click(function(event) {
+            if (!$container.is(event.target) && $container.has(event.target).length === 0) {
+                $container.removeClass('show');
+            }
+        });
+    });
+    $(window).on('scroll', function() {
+        // Get the top offset of the .product-footer-section
+        var productFooterTop = $('.product-footer-section').offset().top;
+        // Get the window height
+        var windowHeight = $(window).height();
+        // Get the current scroll position
+        var scrollPosition = $(window).scrollTop();
+        // Get the top offset of the .shopify-section-group-footer-group
+        var shopifyFooterTop = $('.shopify-section-group-footer-group').offset().top;
+
+        // Check if the scroll position plus window height reaches the footer container
+        if (scrollPosition + windowHeight >= productFooterTop) {
+            // Make the .product-page-footer-container sticky at the bottom
+            $('.product-page-footer-container').addClass('product-footer-sticky');
+          
+          // Check if the scroll position reaches the .shopify-section-group-footer-group
+            if (scrollPosition + windowHeight >= shopifyFooterTop) {
+                // Hide the .shopify-section-group-footer-group
+                $('.product-page-footer-container').removeClass('product-footer-sticky');
+            } else {
+                // Show the .shopify-section-group-footer-group when not in view
+                $('.product-page-footer-container').addClass('product-footer-sticky');
+            }
+        } else {
+            // Remove the sticky class when not in view
+            $('.product-page-footer-container').removeClass('product-footer-sticky');
+        }
+
+    });
+
+
+{% endjavascript %}
+{% schema %}
+    {
+        "class": "product-footer-section",
+        "name": "Product Page Footer",
+        "templates": ["product"],
+        "limit": 1, 
+        "settings": [
+          {
+            "type": "text",
+            "id": "btn_add_to_card_label",
+            "label": "Button Label",
+            "default": "Add To Cart"
+          }
+        ],
+        "presets" :[{
+            "name" : "Product Page Footer"
+        }]
+    }
+  {% endschema %} 

@@ -1,0 +1,143 @@
+<section class="more-help">
+    <div class="page-width section-content">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="title">
+                    {{ section.settings.title }}
+                </h2>
+            </div>
+        </div>
+        <div class="row helps-row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="help">
+                    <img loading="lazy" src="{{ section.settings.icon_1 | img_url: 'medium' }}">
+                    <p class="help-title">
+                        Tel
+                    </p>
+                    <span class="help-text">
+                        {{ section.settings.tel_1 }}
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="help">
+                    <img loading="lazy" src="{{ section.settings.icon_2 | img_url: 'medium' }}">
+                    <p class="help-title">
+                        Feedback
+                    </p>
+                    <a href="javascript:void(0)" class="submit-btn">
+                        Submit Here
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="help" onclick="document.querySelector('#ShopifyChat').shadowRoot.querySelector('.chat-toggle').click();">
+                    <img loading="lazy" src="{{ section.settings.icon_3 | img_url: 'medium' }}">
+                    <p class="help-title">
+                        Live Chat
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="help">
+                    <img loading="lazy" src="{{ section.settings.icon_4 | img_url: 'medium' }}">
+                    <p class="help-title">
+                        Customer Support
+                    </p>
+                    <a href="mailto:{{ section.settings.email_1 }}">
+                        {{ section.settings.email_1 }}
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="help">
+                    <img loading="lazy" src="{{ section.settings.icon_5 | img_url: 'medium' }}">
+                    <p class="help-title">
+                        Marketing & Partnerships
+                    </p>
+                    <a href="mailto:{{ section.settings.email_2 }}">
+                        {{ section.settings.email_2 }}
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="help">
+                    <img loading="lazy" src="{{ section.settings.icon_6 | img_url: 'medium' }}">
+                    <p class="help-title">
+                        Press
+                    </p>
+                    <a href="mailto:{{ section.settings.email_3 }}">
+                        {{ section.settings.email_3 }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="contact-us-information-section">
+    {% render 'modal-feedback2' %}
+</div>
+
+{% schema %}
+{
+    "name": "More Help",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "image_picker",
+            "id": "icon_1",
+            "label": "Telephone Icon"
+        },
+        {
+            "type": "image_picker",
+            "id": "icon_2",
+            "label": "Feedback Icon"
+        },
+        {
+            "type": "image_picker",
+            "id": "icon_3",
+            "label": "Live Chat Icon"
+        },
+        {
+            "type": "image_picker",
+            "id": "icon_4",
+            "label": "Customer Support Icon"
+        },
+        {
+            "type": "image_picker",
+            "id": "icon_5",
+            "label": "Marketing & Partnerships Icon"
+        },
+        {
+            "type": "image_picker",
+            "id": "icon_6",
+            "label": "Press Icon"
+        },
+        {
+            "type": "text",
+            "id": "tel_1",
+            "label": "Telphone Number"
+        },
+        {
+            "type": "text",
+            "id": "email_1",
+            "label": "Customer Support Email"
+        },
+        {
+            "type": "text",
+            "id": "email_2",
+            "label": "Marketing & Partnerships Email"
+        },
+        {
+            "type": "text",
+            "id": "email_3",
+            "label": "Press Email"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,446 @@
+/* MOBILES ----------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 0px) {
+    .support-detail .details-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 30px;
+    }
+    .support-detail .breadcrumbs {
+        margin-bottom: 0;
+    }
+    .support-detail .product-title {
+        font-size: 22px;
+    }
+    .support-detail .product-image {
+        width: 60%;
+    }
+    .support-detail .toggles {
+        justify-content: space-between;
+        margin-top: 80px;
+    }
+    .support-detail .toggles span:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .support-video .title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .support-video .videos-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 30px;
+    }
+    .support-video .video-title {
+        font-size: 16px;
+    }
+    .support-video .video-watch .wrapper {
+        width: calc(100% - 40px);
+    }
+    .support-video .video-watch .video-close {
+        font-size: 24px;
+    }
+
+    .manuals .title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .manuals a {
+        font-size: 16px;
+    }
+}
+
+/* TABLETS ----------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 768px) {
+    .support-detail .details-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 30px;
+    }
+    .support-detail .breadcrumbs {
+        margin-bottom: 0;
+    }
+    .support-detail .product-title {
+        font-size: 22px;
+    }
+    .support-detail .product-image {
+        width: 40%;
+    }
+    .support-detail .toggles {
+        justify-content: center;
+        margin-top: 80px;
+    }
+    .support-detail .toggles span:not(:last-child) {
+        margin-right: 60px;
+    }
+
+    .support-video .title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .support-video .videos-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .support-video .video-title {
+        font-size: 18px;
+    }
+    .support-video .video-watch .wrapper {
+        width: calc(100% - 40px);
+    }
+    .support-video .video-watch .video-close {
+        font-size: 24px;
+    }
+
+    .manuals .title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .manuals a {
+        font-size: 16px;
+    }
+}
+
+/* COMPUTERS --------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 1280px) {
+    .support-detail .details-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 20px;
+    }
+    .support-detail .breadcrumbs {
+        margin-bottom: 20px;
+    }
+    .support-detail .product-title {
+        font-size: 22px;
+    }
+    .support-detail .product-image {
+        width: 240px;
+    }
+    .support-detail .toggles {
+        justify-content: center;
+        margin-top: 100px;
+    }
+    .support-detail .toggles span:not(:last-child) {
+        margin-right: 60px;
+    }
+
+    .support-video .title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .support-video .videos-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .support-video .video-title {
+        font-size: 18px;
+    }
+    .support-video .video-watch .wrapper {
+        width: 60%;
+    }
+    .support-video .video-watch .video-close {
+        font-size: 24px;
+    }
+
+    .manuals .title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .manuals a {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .support-detail .details-row {
+        --bs-gutter-x: 50px;
+        --bs-gutter-y: 20px;
+    }
+    .support-detail .breadcrumbs {
+        margin-bottom: 20px;
+    }
+    .support-detail .product-title {
+        font-size: 22px;
+    }
+    .support-detail .product-image {
+        width: 240px;
+    }
+    .support-detail .toggles {
+        justify-content: center;
+        margin-top: 100px;
+    }
+    .support-detail .toggles span:not(:last-child) {
+        margin-right: 60px;
+    }
+
+    .support-video .title {
+        font-size: 34px;
+        margin-bottom: 30px;
+    }
+    .support-video .videos-row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
+    }
+    .support-video .video-title {
+        font-size: 18px;
+    }
+    .support-video .video-watch .wrapper {
+        width: 60%;
+    }
+    .support-video .video-watch .video-close {
+        font-size: 24px;
+    }
+
+    .manuals .title {
+        font-size: 34px;
+        margin-bottom: 30px;
+    }
+    .manuals a {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .support-detail .details-row {
+        --bs-gutter-x: 50px;
+        --bs-gutter-y: 20px;
+    }
+    .support-detail .breadcrumbs {
+        margin-bottom: 20px;
+    }
+    .support-detail .product-title {
+        font-size: 22px;
+    }
+    .support-detail .product-image {
+        width: 240px;
+    }
+    .support-detail .toggles {
+        justify-content: center;
+        margin-top: 100px;
+    }
+    .support-detail .toggles span:not(:last-child) {
+        margin-right: 60px;
+    }
+
+    .support-video .title {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    .support-video .videos-row {
+        --bs-gutter-x: 40px;
+        --bs-gutter-y: 40px;
+    }
+    .support-video .video-title {
+        font-size: 18px;
+    }
+    .support-video .video-watch .wrapper {
+        width: 50%;
+    }
+    .support-video .video-watch .video-close {
+        font-size: 24px;
+    }
+
+    .manuals .title {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    .manuals a {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+    .support-detail .details-row {
+        --bs-gutter-x: 60px;
+        --bs-gutter-y: 20px;
+    }
+    .support-detail .breadcrumbs {
+        margin-bottom: 20px;
+    }
+    .support-detail .product-title {
+        font-size: 22px;
+    }
+    .support-detail .product-image {
+        width: 250px;
+    }
+    .support-detail .toggles {
+        justify-content: center;
+        margin-top: 100px;
+    }
+    .support-detail .toggles span:not(:last-child) {
+        margin-right: 60px;
+    }
+
+    .support-video .title {
+        font-size: 38px;
+        margin-bottom: 30px;
+    }
+    .support-video .videos-row {
+        --bs-gutter-x: 40px;
+        --bs-gutter-y: 40px;
+    }
+    .support-video .video-title {
+        font-size: 18px;
+    }
+    .support-video .video-watch .wrapper {
+        width: 50%;
+    }
+    .support-video .video-watch .video-close {
+        font-size: 24px;
+    }
+
+    .manuals .title {
+        font-size: 38px;
+        margin-bottom: 30px;
+    }
+    .manuals a {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .support-detail .details-row {
+        --bs-gutter-x: 60px;
+        --bs-gutter-y: 20px;
+    }
+    .support-detail .breadcrumbs {
+        margin-bottom: 20px;
+    }
+    .support-detail .product-title {
+        font-size: 22px;
+    }
+    .support-detail .product-image {
+        width: 250px;
+    }
+    .support-detail .toggles {
+        justify-content: center;
+        margin-top: 100px;
+    }
+    .support-detail .toggles span:not(:last-child) {
+        margin-right: 60px;
+    }
+
+    .support-video .title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    .support-video .videos-row {
+        --bs-gutter-x: 40px;
+        --bs-gutter-y: 40px;
+    }
+    .support-video .video-title {
+        font-size: 18px;
+    }
+    .support-video .video-watch .wrapper {
+        width: 50%;
+    }
+    .support-video .video-watch .video-close {
+        font-size: 24px;
+    }
+
+    .manuals .title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    .manuals a {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .support-detail .details-row {
+        --bs-gutter-x: 60px;
+        --bs-gutter-y: 20px;
+    }
+    .support-detail .breadcrumbs {
+        margin-bottom: 20px;
+    }
+    .support-detail .product-title {
+        font-size: 24px;
+    }
+    .support-detail .product-image {
+        width: 250px;
+    }
+    .support-detail .toggles {
+        justify-content: center;
+        margin-top: 100px;
+    }
+    .support-detail .toggles span:not(:last-child) {
+        margin-right: 60px;
+    }
+
+    .support-video .title {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+    .support-video .videos-row {
+        --bs-gutter-x: 40px;
+        --bs-gutter-y: 40px;
+    }
+    .support-video .video-title {
+        font-size: 18px;
+    }
+    .support-video .video-watch .wrapper {
+        width: 44%;
+    }
+    .support-video .video-watch .video-close {
+        font-size: 26px;
+    }
+
+    .manuals .title {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+    .manuals a {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 2560px) {
+    .support-detail .details-row {
+        --bs-gutter-x: 60px;
+        --bs-gutter-y: 20px;
+    }
+    .support-detail .breadcrumbs {
+        margin-bottom: 20px;
+    }
+    .support-detail .product-title {
+        font-size: 24px;
+    }
+    .support-detail .product-image {
+        width: 250px;
+    }
+    .support-detail .toggles {
+        justify-content: center;
+        margin-top: 100px;
+    }
+    .support-detail .toggles span:not(:last-child) {
+        margin-right: 60px;
+    }
+
+    .support-video .title {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+    .support-video .videos-row {
+        --bs-gutter-x: 40px;
+        --bs-gutter-y: 40px;
+    }
+    .support-video .video-title {
+        font-size: 18px;
+    }
+    .support-video .video-watch .wrapper {
+        width: 44%;
+    }
+    .support-video .video-watch .video-close {
+        font-size: 26px;
+    }
+
+    .manuals .title {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+    .manuals a {
+        font-size: 18px;
+    }
+}

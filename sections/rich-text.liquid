@@ -1,0 +1,35 @@
+<div class="page-width">
+  {% if section.settings.heading != blank %}
+    <h2 class="heading text-md f-f-bold mx-0">{{ section.settings.heading }}</h2>
+  {% endif %}
+  
+  {% if section.settings.text != blank %}
+    {{ section.settings.text }}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Rich Text",
+  "class": "rich-text-section section-scroll",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Rich text"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Share information about your brand with your customers.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich Text"
+    }
+  ]
+}
+{% endschema %}

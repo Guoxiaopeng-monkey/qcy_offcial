@@ -1,0 +1,68 @@
+<style>
+  
+  .featured-collection-list{
+    padding-top:50px;
+  }
+  .featured-collection-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap:30px;
+    row-gap:40px;
+  }
+  
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .featured-collection-list{
+      padding:40px 20px 0px;
+      grid-template-columns:100%;
+    }
+    
+  }
+  
+  /* ipad Air */
+  @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px) {
+    
+    .featured-collection-list{
+      padding:40px 20px 0px;
+      grid-template-columns:100%;
+    }
+    
+  }
+</style>
+<div class="page-width">
+    <div class="featured-collection-list">
+      {% for block in section.blocks %}
+          {% render 'custom-promotion-card-product', product: block.settings.product, block: block %}
+      {% endfor %}
+    </div>
+</div>
+{% schema %}
+  {
+      "class": "product-list-section",
+      "name": "Product List Section",
+      "templates": ["page"],
+      "blocks": [
+          {
+              "type": "product",
+              "name": "Product",
+              "settings": [
+                  {
+                      "type": "product",
+                      "id": "product",
+                      "label": "Product"
+                  },
+                  {
+                      "type": "image_picker",
+                      "id": "featured_image",
+                      "label": "Featured Image"
+                  }
+              ]
+          }
+      ],
+      "presets" :[{
+          "name" : "Product List Section"
+      }]
+  }
+{% endschema %} 

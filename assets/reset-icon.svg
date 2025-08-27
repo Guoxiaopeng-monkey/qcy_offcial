@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33.941" height="33.941" viewBox="0 0 33.941 33.941">
+  <g transform="translate(16.971) rotate(45)">
+    <path d="M.75,1.5A.755.755,0,0,1,0,.75.755.755,0,0,1,.75,0h12a.755.755,0,0,1,.75.75.755.755,0,0,1-.75.75Z" transform="translate(5.25 11.25)" fill="#262626"/>
+    <path d="M0,12.75V.75A.755.755,0,0,1,.75,0,.755.755,0,0,1,1.5.75v12a.755.755,0,0,1-.75.75A.755.755,0,0,1,0,12.75Z" transform="translate(11.25 5.25)" fill="#262626"/>
+    <path d="M24,0V24H0V0Z" fill="none" opacity="0"/>
+  </g>
+</svg>

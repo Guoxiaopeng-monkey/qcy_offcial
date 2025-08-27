@@ -1,0 +1,495 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collections_grid_CRGDzP": {
+      "type": "collections-grid",
+      "blocks": {
+        "collection_AFLWfM": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/40106_2x_8066e5de-3a3c-4c35-bccb-7bd6e86ff167.png",
+            "title": "Wireless Headphones",
+            "description": "Discover the freedom of exceptional sound with qcy's wireless headphones. Experience rich audio, advanced noise cancellation, and ultimate comfort—designed for every lifestyle and any journey.",
+            "collection": "headphones",
+            "custom_url": ""
+          }
+        },
+        "collection_NGAXh3": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/40009_2x_538879b1-c466-43fd-abf0-659f1d05c6fb.png",
+            "title": "True Wireless Earbuds",
+            "description": "Experience powerful audio and exceptional comfort with QCY's true wireless earbuds! Whether you're enjoying your favorite music, taking calls, or working out, QCY delivers premium sound quality and wireless freedom that elevates your listening experience!",
+            "collection": "true-wireless-earbuds",
+            "custom_url": ""
+          }
+        },
+        "collection_xHKewQ": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0235_83ae3fc5-7c8b-4c0b-9e78-8fa943f5b4a8.jpg",
+            "title": "Open-Ear Earbuds",
+            "description": "Experience Pure Sound Through Open-Ear Innovation",
+            "collection": "open-ear-earbuds",
+            "custom_url": ""
+          }
+        },
+        "collection_QjiULq": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/40025_2x_07cc5d8a-3216-4a68-a5e3-bc4270492431.png",
+            "title": "Smart Watches",
+            "description": "Experience cutting-edge technology and sleek style with QCY's smart watches! Whether you're tracking your fitness, staying connected, or managing your day, QCY delivers premium performance and seamless functionality to elevate your everyday experience!",
+            "collection": "smart-watches",
+            "custom_url": ""
+          }
+        },
+        "collection_7ppTAn": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/headphone_accessories.jpg",
+            "title": "Headphone Accessories",
+            "description": "Experience enhanced audio and ultimate convenience with QCY's headphone accessories! Whether you're immersing in music, taking calls, or on the move, QCY delivers premium quality and seamless functionality to elevate your listening experience!",
+            "collection": "accessories",
+            "custom_url": ""
+          }
+        },
+        "collection_pxzjaW": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/over-ear_headphones.jpg",
+            "title": "Over Ear Headphones",
+            "description": "Dive into immersive audio with QCY over-ear headphones—built for comfort, long listening, and focus. With up to 60 hours of battery life, powerful noise cancelling, and clear call performance, they’re your perfect companion wherever life takes you.",
+            "collection": "over-ear-headphones",
+            "custom_url": ""
+          }
+        },
+        "collection_JCV3Dx": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/anc_headphones.jpg",
+            "title": "ANC Headphones",
+            "description": "Explore QCY’s ANC headphones—engineered to tune out the noise and dial in on what matters. With powerful noise cancellation, impressive sound quality, and long-lasting battery life, they’re built for your everyday hustle.",
+            "collection": "anc-headphones",
+            "custom_url": ""
+          }
+        },
+        "collection_pUjwke": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/1_bbcc2f07-e41c-46f1-99fc-6b00ad937d9b.jpg",
+            "title": "ANC Earbuds",
+            "description": "Unleash the power of pristine sound with QCY’s ANC earbuds. Dive into immersive audio, cutting-edge noise cancellation, and all-day comfort—crafted for every lifestyle and adventure.",
+            "collection": "anc-earbuds",
+            "custom_url": ""
+          }
+        },
+        "collection_URBYeV": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/sp7.jpg",
+            "title": "Bluetooth Speakers",
+            "description": "Discover the freedom of exceptional sound with QCY's Bluetooth speakers. Experience rich audio, advanced sound clarity, and portable design—crafted for every lifestyle and any journey.",
+            "collection": "speakers",
+            "custom_url": ""
+          }
+        },
+        "collection_apG7fY": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/1-2.jpg",
+            "title": "Gaming Headsets",
+            "description": "Dive into the ultimate gaming experience with QCY Gaming Headsets! Designed for gamers who demand precision, comfort, and crystal-clear audio, QCY delivers cutting-edge technology to enhance every moment of your gameplay. Whether you're battling in intense multiplayer matches or exploring immersive single-player worlds, our Gaming Headsets provide unparalleled sound quality and wireless freedom.",
+            "collection": "gaming-headsets",
+            "custom_url": ""
+          }
+        },
+        "collection_zx4d6E": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/2-2_0b56743a-3a8a-4142-8de6-a20e1c2adf56.jpg",
+            "title": "USB C Headphones",
+            "description": "Experience premium audio with QCY USB C Headphones! Perfect for music, calls, or gaming, QCY delivers crystal-clear sound and seamless USB-C connectivity. Enjoy unmatched comfort and USB C Headphones performance with QCY’s cutting-edge technology, elevating your audio experience anywhere, anytime.",
+            "collection": "usb-c-headphones",
+            "custom_url": ""
+          }
+        },
+        "collection_DpH6YY": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/3-1.jpg",
+            "title": "Wireless Charging Earbuds",
+            "description": "Dive into exceptional audio with QCY Wireless Charging Earbuds! Whether enjoying music, taking calls, or staying active, QCY’s advanced sound quality and hassle-free wireless charging elevate your experience. Enjoy unmatched comfort and freedom with Wireless Charging Earbuds designed for your on-the-go lifestyle.",
+            "collection": "wireless-charging-earbuds",
+            "custom_url": ""
+          }
+        },
+        "collection_KcFjmX": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/4-2.jpg",
+            "title": "Best Workout Headphones",
+            "description": "Elevate your workouts with QCY Best Workout Headphones! Designed for music, calls, or intense training, QCY delivers premium audio and secure comfort. With sweat-resistant design and wireless freedom, these Best Workout Headphones enhance every rep and run.",
+            "collection": "best-workout-headphones",
+            "custom_url": ""
+          }
+        },
+        "collection_R9hQUk": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/5-1.jpg",
+            "title": "Travel Headphones",
+            "description": "Embark on your adventures with QCY Travel Headphones! Perfect for music, calls, or relaxing on the go, QCY offers exceptional audio and lasting comfort. With noise cancellation and wireless convenience, these Travel Headphones elevate your travel experience to new heights.",
+            "collection": "travel-headphones",
+            "custom_url": ""
+          }
+        },
+        "collection_BDWMfN": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/6-1_2db2e273-4a5a-4d97-8b81-e3504080babd.jpg",
+            "title": "Work Headphones",
+            "description": "Stay focused with QCY Work Headphones! Ideal for calls, music, or virtual meetings, QCY delivers crystal-clear sound and all-day comfort. With noise cancellation and wireless ease, these Work Headphones enhance your workday, wherever you are.",
+            "collection": "work-headphones",
+            "custom_url": ""
+          }
+        },
+        "collection_tnpbDA": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/7-2_4b390ed1-1d5a-4980-aca7-dc7117721262.jpg",
+            "title": "Waterproof Earbuds",
+            "description": "Dive into your music with QCY Waterproof Earbuds! Perfect for workouts, outdoor adventures, or daily commutes, QCY offers superior audio and rugged durability.&nbsp;",
+            "collection": "waterproof-earbuds",
+            "custom_url": ""
+          }
+        },
+        "collection_anawcT": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/8-2.jpg",
+            "title": "Wireless Earbuds for Android",
+            "description": "Elevate your audio experience with QCY Wireless Earbuds for Android! Perfect for music, calls, or gaming, QCY delivers crystal-clear sound and effortless Android compatibility. With wireless convenience and all-day comfort, these Wireless Earbuds for Android enhance every moment.",
+            "collection": "wireless-earbuds-for-android",
+            "custom_url": ""
+          }
+        },
+        "collection_GREdPD": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/9-2.jpg",
+            "title": "Spatial Audio Earbuds",
+            "description": "Experience next-level audio with QCY Spatial Audio Earbuds! Perfect for music, calls, or gaming, QCY delivers rich, immersive sound with spatial audio technology. Enjoy wireless freedom and all-day comfort with these Spatial Audio Earbuds.",
+            "collection": "spatial-audio-earbuds",
+            "custom_url": ""
+          }
+        },
+        "collection_KCFPmw": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/10-1_c311af0f-6115-494f-afb7-b45b473ccbae.jpg",
+            "title": "Xbox Headset",
+            "description": "Level up your gaming with QCY Xbox Headset! Designed for Xbox gamers, QCY delivers immersive audio and crystal-clear communication. With wireless freedom and all-day comfort, this Xbox Headset enhances every battle, adventure, and multiplayer moment.",
+            "collection": "xbox-headset",
+            "custom_url": ""
+          }
+        },
+        "collection_JCWGU8": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/11-2.jpg",
+            "title": "Wireless Headphones for TV",
+            "description": "Enjoy your favorite shows with QCY Wireless Headphones for TV! Perfect for movies, series, or late-night binges, QCY delivers superior sound and low-latency wireless connectivity. With noise cancellation and all-day comfort, these Wireless Headphones for TV ensure an uninterrupted, immersive experience without disturbing others.",
+            "collection": "wireless-headphones-for-tv",
+            "custom_url": ""
+          }
+        },
+        "collection_Y4xXTa": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/12-2.jpg",
+            "title": "Wireless Headphones with Mic",
+            "description": "Elevate your audio experience with QCY Wireless Headphones with Mic! Ideal for calls, music, or gaming, QCY offers superior sound and a noise-canceling microphone. With wireless freedom and all-day comfort, these Wireless Headphones with Mic ensure seamless connectivity for work or play.",
+            "collection": "wireless-headphones-with-mic",
+            "custom_url": ""
+          }
+        },
+        "collection_YiHTLa": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/3-1.jpg",
+            "title": "Earhook Earbuds",
+            "description": "Experience unstoppable audio with QCY Earhook Earbuds! Designed for workouts, runs, or daily use, QCY delivers premium sound with a secure earhook design. Enjoy wireless freedom and all-day comfort with these Earhook Earbuds, perfect for an active lifestyle.",
+            "collection": "earhook-earbuds",
+            "custom_url": ""
+          }
+        },
+        "collection_YJFzna": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/13-2.jpg",
+            "title": "PlayStation Headphones",
+            "description": "Level up your PlayStation experience with QCY PlayStation Headphones! Tailored for gamers, QCY delivers rich audio and clear communication for epic battles or immersive adventures. With wireless convenience and lasting comfort, these PlayStation Headphones enhance every gaming session.",
+            "collection": "playstation-headphones",
+            "custom_url": ""
+          }
+        },
+        "collection_FcgEHH": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/14-1.jpg",
+            "title": "Computer Headphones",
+            "description": "Enhance your digital experience with QCY Computer Headphones! Perfect for video calls, gaming, or music, QCY delivers crisp audio and reliable connectivity. With noise cancellation and all-day comfort, these Computer Headphones ensure seamless performance for your PC or laptop.",
+            "collection": "hi-res-headphones",
+            "custom_url": ""
+          }
+        },
+        "collection_wpVCBT": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/15-2.jpg",
+            "title": "Hi Res Headphones",
+            "description": "Immerse yourself in pristine sound with QCY Hi Res Headphones! Perfect for music, gaming, or calls, QCY delivers high-resolution audio with exceptional detail. Enjoy wireless freedom and all-day comfort with these Hi Res Headphones, crafted for audiophiles and everyday listeners alike.",
+            "collection": "hi-res-headphones",
+            "custom_url": ""
+          }
+        },
+        "collection_ktpwYX": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/16-2.jpg",
+            "title": "Behind the Ear Headphones",
+            "description": "Experience audio freedom with QCY Behind the Ear Headphones! Ideal for workouts, calls, or daily use, QCY offers clear sound with a secure, ergonomic fit. With wireless convenience and lasting comfort, these Behind the Ear Headphones elevate your active lifestyle.",
+            "collection": "behind-the-ear-headphones",
+            "custom_url": ""
+          }
+        },
+        "collection_C4UEaQ": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/18-2.jpg",
+            "title": "Earbuds for Small Ears",
+            "description": "Experience tailored audio with QCY Earbuds for Small Ears! Designed for comfort, these earbuds deliver crisp sound for music, calls, or workouts. With a secure fit and wireless convenience, QCY Earbuds for Small Ears ensure all-day comfort and immersive audio.",
+            "collection": "earbuds-for-small-ears",
+            "custom_url": ""
+          }
+        },
+        "collection_hqA4hG": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/19-2.jpg",
+            "title": "Noise Cancelling Earbuds",
+            "description": "Dive into pristine audio with QCY Noise Cancelling Earbuds! Perfect for music, calls, or workouts, QCY’s advanced noise cancellation blocks distractions for a focused experience. With wireless freedom and all-day comfort, these Noise Cancelling Earbuds elevate your audio wherever you go.",
+            "collection": "noise-cancelling-earbuds",
+            "custom_url": ""
+          }
+        },
+        "collection_FHGQmC": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/20-2.jpg",
+            "title": "half in-ear earbuds",
+            "description": "Experience balanced sound with QCY Half In-Ear Earbuds! Perfect for music, calls, or workouts, these earbuds offer a comfortable half in-ear fit with clear audio. With wireless freedom and all-day comfort, Half In-Ear Earbuds by QCY enhance your listening while keeping you aware.",
+            "collection": "clip-on-earbuds",
+            "custom_url": ""
+          }
+        },
+        "collection_4VMtQh": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/21-2.jpg",
+            "title": "half in-ear earbuds",
+            "description": "Experience balanced sound with QCY Half In-Ear Earbuds! Perfect for music, calls, or workouts, these earbuds offer a comfortable half in-ear fit with clear audio. With wireless freedom and all-day comfort, Half In-Ear Earbuds by QCY enhance your listening while keeping you aware.",
+            "collection": "half-in-ear-earbuds",
+            "custom_url": ""
+          }
+        },
+        "collection_CFQ4kz": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/22-2.jpg",
+            "title": "New Releases",
+            "description": "Uncover QCY's New Releases collection with innovative earbuds, headphones, and accessories crafted for exceptional audio performance!",
+            "collection": "new-release",
+            "custom_url": ""
+          }
+        },
+        "collection_zXEfrX": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/17-2.jpg",
+            "title": "White headphones",
+            "description": "Elevate your audio experience with QCY White Headphones! Perfect for music, calls, or workouts, these headphones combine a clean, modern aesthetic with crystal-clear sound. Enjoy wireless freedom and all-day comfort with White Headphones by QCY, designed to complement any lifestyle.",
+            "collection": "",
+            "custom_url": "https://www.qcy.com/collections/all?filter.v.t.shopify.color-pattern=gid%3A%2F%2Fshopify%2FTaxonomyValue%2F3"
+          }
+        },
+        "collection_tm9JGe": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/23-2.jpg",
+            "title": "Purple Headphones",
+            "description": "Stand out with QCY Purple Headphones! Ideal for music, calls, or workouts, these headphones deliver rich sound with a bold, stylish design. With wireless convenience and all-day comfort, Purple Headphones by QCY elevate your audio experience with flair.",
+            "collection": "",
+            "custom_url": "https://www.qcy.com/collections/all?filter.v.t.shopify.color-pattern=gid%3A%2F%2Fshopify%2FTaxonomyValue%2F12"
+          }
+        },
+        "collection_EX8U8T": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/24-2.jpg",
+            "title": "Blue Headphones",
+            "description": "Immerse yourself in vibrant audio with QCY Blue Headphones! Perfect for music, calls, or workouts, these headphones offer crisp sound with a striking blue design. With wireless freedom and all-day comfort, Blue Headphones by QCY enhance your listening experience with style.",
+            "collection": "",
+            "custom_url": "https://www.qcy.com/collections/all?filter.v.t.shopify.color-pattern=gid%3A%2F%2Fshopify%2FTaxonomyValue%2F2"
+          }
+        },
+        "collection_4CMjwH": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/25-2.jpg",
+            "title": "Purple Earbuds",
+            "description": "Elevate your audio with QCY Purple Earbuds! Perfect for music, calls, or workouts, these earbuds deliver crisp sound in a bold, stylish purple design. Enjoy wireless convenience and all-day comfort with Purple Earbuds by QCY, crafted for a standout listening experience.",
+            "collection": "",
+            "custom_url": "https://www.qcy.com/collections/all?filter.v.t.shopify.color-pattern=gid%3A%2F%2Fshopify%2FTaxonomyValue%2F12"
+          }
+        },
+        "collection_fNjYUK": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/26-2.jpg",
+            "title": "Golden Earbuds",
+            "description": "Shine with QCY Golden Earbuds! Ideal for music, calls, or workouts, these earbuds deliver rich sound in a stunning golden design. With wireless freedom and all-day comfort, Golden Earbuds by QCY elevate your audio experience with elegance and performance.",
+            "collection": "",
+            "custom_url": "https://www.qcy.com/collections/all?filter.v.t.shopify.color-pattern=gid%3A%2F%2Fshopify%2FTaxonomyValue%2F4"
+          }
+        },
+        "collection_diPnPd": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/27-2.jpg",
+            "title": "Silver Earbuds",
+            "description": "Enhance your audio experience with QCY Silver Earbuds! Perfect for music, calls, or workouts, these earbuds deliver crisp sound in a stylish silver design. With wireless convenience and all-day comfort, Silver Earbuds by QCY offer a perfect blend of elegance and performance.",
+            "collection": "",
+            "custom_url": "https://www.qcy.com/collections/all?filter.v.t.shopify.color-pattern=gid%3A%2F%2Fshopify%2FTaxonomyValue%2F5"
+          }
+        },
+        "collection_TQcXVG": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/28-2.jpg",
+            "title": "Red Earbuds",
+            "description": "Amplify your audio with QCY Red Earbuds! Perfect for music, calls, or workouts, these earbuds deliver vibrant sound in a striking red design. With wireless freedom and all-day comfort, Red Earbuds by QCY bring energy and performance to every moment.",
+            "collection": "",
+            "custom_url": "https://www.qcy.com/collections/all?filter.v.t.shopify.color-pattern=gid%3A%2F%2Fshopify%2FTaxonomyValue%2F13"
+          }
+        },
+        "collection_LPkP3P": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/2501.png",
+            "title": "Pink Earbuds",
+            "description": "Brighten your audio experience with QCY Pink Earbuds! Perfect for music, calls, or workouts, these earbuds deliver clear sound in a chic pink design. With wireless convenience and all-day comfort, Pink Earbuds by QCY add a pop of style to every moment.",
+            "collection": "",
+            "custom_url": "https://www.qcy.com/collections/all?filter.v.t.shopify.color-pattern=gid%3A%2F%2Fshopify%2FTaxonomyValue%2F11"
+          }
+        },
+        "collection_TdYFiX": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/30-2.jpg",
+            "title": "Black Earbuds",
+            "description": "Elevate your audio with QCY Black Earbuds! Perfect for music, calls, or workouts, these earbuds deliver crisp sound in a stylish black design. With wireless freedom and all-day comfort, Black Earbuds by QCY offer a seamless blend of performance and sophistication.",
+            "collection": "",
+            "custom_url": "https://www.qcy.com/collections/all?filter.v.t.shopify.color-pattern=gid%3A%2F%2Fshopify%2FTaxonomyValue%2F1"
+          }
+        },
+        "collection_J9f8Qt": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/31-2.jpg",
+            "title": "Bean-shaped Earbuds",
+            "description": "Experience audio in style with QCY Bean-shaped Earbuds! Perfect for music, calls, or workouts, these earbuds deliver clear sound with a distinctive bean-shaped design. With wireless convenience and all-day comfort, Bean-shaped Earbuds by QCY blend innovation and performance seamlessly.",
+            "collection": "bean-shaped-earbuds",
+            "custom_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_AFLWfM",
+        "collection_NGAXh3",
+        "collection_xHKewQ",
+        "collection_QjiULq",
+        "collection_7ppTAn",
+        "collection_pxzjaW",
+        "collection_JCV3Dx",
+        "collection_pUjwke",
+        "collection_URBYeV",
+        "collection_apG7fY",
+        "collection_zx4d6E",
+        "collection_DpH6YY",
+        "collection_KcFjmX",
+        "collection_R9hQUk",
+        "collection_BDWMfN",
+        "collection_tnpbDA",
+        "collection_anawcT",
+        "collection_GREdPD",
+        "collection_KCFPmw",
+        "collection_JCWGU8",
+        "collection_Y4xXTa",
+        "collection_YiHTLa",
+        "collection_YJFzna",
+        "collection_FcgEHH",
+        "collection_wpVCBT",
+        "collection_ktpwYX",
+        "collection_C4UEaQ",
+        "collection_hqA4hG",
+        "collection_FHGQmC",
+        "collection_4VMtQh",
+        "collection_CFQ4kz",
+        "collection_zXEfrX",
+        "collection_tm9JGe",
+        "collection_EX8U8T",
+        "collection_4CMjwH",
+        "collection_fNjYUK",
+        "collection_diPnPd",
+        "collection_TQcXVG",
+        "collection_LPkP3P",
+        "collection_TdYFiX",
+        "collection_J9f8Qt"
+      ],
+      "name": "QCY Collections",
+      "settings": {
+        "title": "QCY Collections",
+        "description": "Elevate your listening experience with our handpicked headphones, earbuds, and speakers.",
+        "button_text": "Shop All"
+      }
+    },
+    "main": {
+      "type": "main-list-collections",
+      "disabled": true,
+      "custom_css": [
+        "h3.card__heading {text-align: center;}"
+      ],
+      "settings": {
+        "title": "Collections",
+        "sort": "alphabetical",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "columns_mobile": "2"
+      }
+    }
+  },
+  "order": [
+    "collections_grid_CRGDzP",
+    "main"
+  ]
+}

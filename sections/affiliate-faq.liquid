@@ -1,0 +1,267 @@
+{%- style -%}
+  .lqd-page-width {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+  @media screen and (max-width: 749px) {
+    .lqd-page-width {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="lqd-page-width">
+  <div class="lqd-affiliate-faq">
+    <h2 class="lqd-section-title">{{ section.settings.heading }}</h2>
+    
+    <div class="lqd-faq-container">
+      {%- for block in section.blocks -%}
+        <div class="lqd-faq-item" {{ block.shopify_attributes }}>
+          <div class="lqd-faq-header">
+            <strong class="lqd-question-text">{{ block.settings.question }}</strong>
+            <svg class="lqd-icon" width="12" height="8" viewBox="0 0 12 8">
+              <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="lqd-faq-content">
+            <div class="lqd-faq-answer">
+              {{ block.settings.answer }}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <div class="load-more-btn">
+      <h4 class="btn-load-more">
+        load more
+        <span class="h5">
+          <i class="fa-solid fa-angles-down"></i>
+        </span>
+      </h4>
+    </div>
+  </div>
+</div>
+
+<style>
+.lqd-affiliate-faq {
+  margin: 60px auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.lqd-section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+  font-weight:bold;
+}
+
+.lqd-faq-container {
+  width: 100%;
+  border-bottom: 1px solid #DBDBDB;
+}
+
+.lqd-faq-item {
+  display: none;
+}
+
+.lqd-faq-item.visible {
+  display: block;
+}
+
+.lqd-faq-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.7rem 0;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0;
+  gap: 0px;
+  border-top: 1px solid #DBDBDB;
+}
+
+.lqd-question-text {
+  flex: 1;
+  padding-right: 10px;
+  font-weight: 500;
+  margin: 0;
+  
+}
+
+.lqd-icon {
+  transition: transform 0.4s ease;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.lqd-faq-content {
+  display: none;
+  padding: 0 0 30px;
+}
+
+.lqd-faq-answer {
+  margin: 0;
+  padding: 0;
+}
+
+.lqd-faq-answer p {
+  margin: 0;
+  padding: 0;
+  color:gray;
+  font-size:16px;
+}
+
+.lqd-faq-item.active .lqd-icon {
+  transform: rotate(180deg);
+}
+
+.load-more-btn {
+  text-align: center;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.btn-load-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+  .lqd-affiliate-faq {
+    margin: 40px auto;
+  }
+
+  .lqd-section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .lqd-faq-header {
+    font-size: 15px;
+  }
+
+  .lqd-faq-content {
+    font-size: 14px;
+  }
+  
+  .lqd-faq-answer {
+    line-height: 1.5;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const faqContainer = document.querySelector('.lqd-faq-container');
+  const faqItems = document.querySelectorAll('.lqd-faq-item');
+  const loadMoreBtn = document.querySelector('.load-more-btn');
+  
+  
+  faqItems.forEach((item, index) => {
+    if (index < 4) {
+      item.classList.add('visible');
+    }
+  });
+
+
+  if (faqItems.length <= 4) {
+    loadMoreBtn.style.display = 'none';
+  }
+
+ 
+  loadMoreBtn.addEventListener('click', function() {
+    const hiddenItems = document.querySelectorAll('.lqd-faq-item:not(.visible)');
+    
+    hiddenItems.forEach((item, index) => {
+      if (index < 4) {
+        item.classList.add('visible');
+        $(item).slideDown();
+      }
+    });
+
+    if (document.querySelectorAll('.lqd-faq-item:not(.visible)').length === 0) {
+      loadMoreBtn.style.display = 'none';
+    }
+  });
+
+ 
+  $(faqContainer).accordion({
+    header: ".lqd-faq-header",
+    content: ".lqd-faq-content",
+    heightStyle: "content",
+    active: false,
+    collapsible: true,
+    animate: 300,
+    activate: function(event, ui) {
+      if(ui.newHeader.length) {
+        ui.newHeader.parent().addClass('active');
+      }
+      if(ui.oldHeader.length) {
+        ui.oldHeader.parent().removeClass('active');
+      }
+    }
+  });
+
+
+  faqItems.forEach((item, index) => {
+    if (index < 4) {
+      $(item).show();
+    }
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Affiliate FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently asked questions."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "FAQ Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>FAQ Answer</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Affiliate FAQ",
+      "blocks": [
+        {
+          "type": "faq",
+          "settings": {
+            "question": "FAQ Question",
+            "answer": "<p>FAQ Answer</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

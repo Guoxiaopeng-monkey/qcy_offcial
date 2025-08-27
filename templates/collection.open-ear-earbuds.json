@@ -1,0 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_6tUdXp": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify://shop_images/OPEN_EAR.png",
+        "image_mobile": "shopify://shop_images/OPEN_EAR_Mobile.jpg",
+        "heading": "Open-Ear Earbuds",
+        "text": "Experience Pure Sound\nThrough Open-Ear Innovation"
+      }
+    },
+    "main_collection_D4J9rG": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "rich_text_MaiGx9": {
+      "type": "rich-text",
+      "settings": {
+        "heading": "QCY Open-Ear Headphones: Experience Freedom in Sound, Stay Connected to Life",
+        "text": "<p>Open-ear headphones represent a breakthrough in audio technology, delivering an innovative way to experience sound. Unlike conventional headphones, open-ear designs create a unique balance - letting you immerse in your audio while maintaining awareness of your environment. This makes them perfect for outdoor activities, urban commuting, and fitness routines where safety and environmental awareness are crucial.</p><p>QCY's open-ear technology redefines personal audio with a fresh perspective. Our wireless open-ear designs combine cutting-edge innovation with practical functionality, offering an audio experience that truly stands out. The distinctive open-ear architecture allows you to enjoy premium sound quality while staying alert to your surroundings - an ideal solution for both fitness enthusiasts and daily commuters. What makes QCY exceptional is our commitment to superior audio performance. Using advanced acoustic drivers and state-of-the-art technology, our open-ear headsets produce clear, balanced sound with impressive detail. Whether you're streaming music, handling calls, or listening to your favorite podcasts, expect nothing less than pristine audio quality.</p><p>Comfort is another cornerstone of our design philosophy. Our open-ear models feature an ultralight construction and secure fit, perfect for extended wear. The Bluetooth headphones in our open-ear collection exemplify our dedication to quality, innovation, and user satisfaction, making them an excellent choice for those seeking both premium audio and practical functionality. Experience the future of sound with QCY open-ear technology - where exceptional audio meets everyday practicality!</p>"
+      }
+    },
+    "collection_navigation_DxGQ4w": {
+      "type": "collection-navigation",
+      "name": "Collection Navigation",
+      "settings": {
+        "text_color": "#333",
+        "padding": 10
+      }
+    }
+  },
+  "order": [
+    "image_with_text_6tUdXp",
+    "collection_navigation_DxGQ4w",
+    "main_collection_D4J9rG",
+    "rich_text_MaiGx9"
+  ]
+}

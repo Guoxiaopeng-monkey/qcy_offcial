@@ -1,0 +1,42 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_PF6rcY": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/11-1.jpg",
+        "image_mobile": "shopify://shop_images/11-2.jpg",
+        "heading": "Wireless Headphones for TV",
+        "text": "<p>Enjoy your favorite shows with QCY Wireless<a href=\"https://www.qcy.com/blogs/support/how-to-connect-wireless-headphones-to-a-tv-without-bluetooth\" target=\"_blank\" title=\"https://www.qcy.com/blogs/support/how-to-connect-wireless-headphones-to-a-tv-without-bluetooth\"> Headphones for TV</a>! Perfect for movies, series, or late-night binges, QCY delivers superior sound and low-latency wireless connectivity. With noise cancellation and all-day comfort, these Wireless Headphones for TV ensure an uninterrupted, immersive experience without disturbing others.</p>",
+        "desktop_heading_color": "#ffffff",
+        "desktop_text_color": "#ffffff"
+      }
+    },
+    "collection_navigation_AnCJQE": {
+      "type": "collection-navigation",
+      "name": "Collection Navigation",
+      "settings": {
+        "text_color": "#333333",
+        "padding": 10
+      }
+    },
+    "main_collection_D4J9rG": {
+      "type": "main-collection",
+      "settings": {}
+    }
+  },
+  "order": [
+    "image_with_text_PF6rcY",
+    "collection_navigation_AnCJQE",
+    "main_collection_D4J9rG"
+  ]
+}

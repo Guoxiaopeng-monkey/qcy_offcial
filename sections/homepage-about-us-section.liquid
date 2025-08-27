@@ -1,0 +1,240 @@
+{% stylesheet %}
+    .about-us-section{
+        padding:80px 0px;
+        background-color:#f9f9f9;
+    }
+    .about-us-img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+    .about-us-content{
+        display:flex;
+        align-items:center;
+    }
+    .img-container{
+        border-radius:16px;
+        overflow:hidden;
+        height:100%;
+        display:flex;
+    }
+    .fit-height{
+        height:fit-content;
+    }
+    .about-us-content-mobile{
+      display:none;
+    }
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px){
+        .about-us-content{
+            display:none;
+        }
+        .about-us-section .content-container{
+            align-items: center;
+        }
+        .about-us-section .content-container h5,
+        .about-us-section .content-container h2{
+            text-align: center;
+        }
+        .about-us-section{
+            padding:50px 0px;
+        }
+        .about-us-content-mobile{
+          display:flex;
+          flex-direction:column-reverse;
+          gap:30px;
+        }
+        .about-us-content-mobile .about-us-images-container{
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+        }
+        
+        .about-us-content-mobile .about-us-images-container .column-container{
+            display:grid;
+            grid-template-columns: 65% auto;
+            column-gap:10px;
+        }
+        .about-us-images-container .img-container{
+          height:200px;
+        }
+        .about-us-content-mobile .about-us-images-container .img-container img{
+          width:100%;
+          height:100%;
+        }
+    }
+
+    /* ipad Air */
+    @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) {
+        .about-us-content{
+            display:none;
+        }
+        .about-us-section .content-container{
+            align-items: center;
+        }
+        .about-us-section .content-container h5,
+        .about-us-section .content-container h2{
+            text-align: center;
+        }
+        .about-us-content-mobile{
+          display:flex;
+          flex-direction:column-reverse;
+          gap:30px;
+        }
+        .about-us-content-mobile .about-us-images-container .img-container img{
+          width:100%;
+          height:100%;
+        }
+        .about-us-images-container .img-container{
+          height:200px;
+        }
+
+    }
+{% endstylesheet %}
+<div class="page-width">
+    <div class="about-us-content">
+        <div class="col_70">
+            <div class="col_85 d-flex gap-column-1-5">
+                <div class="col_50">
+                    <div class="img-container">
+                        <img loading="lazy" src="{{ section.settings.image_1 |  img_url: 'master' }}" class="about-us-img" alt="{{ section.settings.image_1.alt | escape }}">
+                    </div>
+                </div>
+                <div class="col_50 d-flex flex-direction-column gap-row-1-5">
+                    <div class="img-container fit-height">
+                        <img loading="lazy" src="{{ section.settings.image_2 |  img_url: 'master' }}" class="about-us-img fit-height" alt="{{ section.settings.image_2.alt | escape }}">
+                    </div>
+                    <div class="d-flex gap-column-1-5">
+                        <div class="col_50">
+                            <div class="img-container">
+                                <img loading="lazy" src="{{ section.settings.image_3 |  img_url: 'master' }}" class="about-us-img" alt="{{ section.settings.image_3.alt | escape }}">
+                            </div>
+                        </div>
+                        <div class="col_50">
+                            <div class="img-container">
+                                <img loading="lazy" src="{{ section.settings.image_4 |  img_url: 'master' }}" class="about-us-img" alt="{{ section.settings.image_4.alt | escape }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col_30">
+            <div class="content-container col_90 d-flex flex-direction-column gap-row-1">
+                <h5 class="mx-0 f-f-regular gray-f">{{ section.settings.sub_heading }}</h5>
+                <h2 class="text-md mx-0 f-f-bold black-f">{{ section.settings.heading }}</h2>
+                <a href="{{ section.settings.btn_link }}" class="btn learn-more m-t-1">
+                    <p class="mx-0">{{ section.settings.btn_title }}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="about-us-content-mobile">
+        <div class="about-us-images-container">
+          <div class="column-container">
+              <div class="img-container">
+                  <img loading="lazy" src="{{ section.settings.image_1_mobile |  img_url: 'master' }}" class="about-us-img" alt="{{ section.settings.image_1_mobile.alt | escape }}">
+              </div>
+              <div class="img-container">
+                  <img loading="lazy" src="{{ section.settings.image_2_mobile |  img_url: 'master' }}" class="about-us-img fit-height" alt="{{ section.settings.image_2_mobile.alt | escape }}">
+              </div>
+          </div>
+          <div class="column-container">
+              <div class="img-container">
+                  <img loading="lazy" src="{{ section.settings.image_3_mobile |  img_url: 'master' }}" class="about-us-img" alt="{{ section.settings.image_3_mobile.alt | escape }}">
+              </div>
+              <div class="img-container">
+                  <img loading="lazy" src="{{ section.settings.image_4_mobile |  img_url: 'master' }}" class="about-us-img" alt="{{ section.settings.image_4_mobile.alt | escape }}">
+              </div>
+          </div>
+        </div>
+        <div class="col_30">
+            <div class="content-container col_90 d-flex flex-direction-column gap-row-1">
+                <h5 class="mx-0 f-f-regular gray-f">{{ section.settings.sub_heading }}</h5>
+                <h2 class="text-md mx-0 f-f-bold black-f">{{ section.settings.heading }}</h2>
+                <a href="{{ section.settings.btn_link }}" class="btn learn-more m-t-1">
+                    <p class="mx-0">{{ section.settings.btn_title }}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+      
+        "class": "about-us-section",
+        "name": "About Us",
+        "templates": ["index"],
+        "limit": 1, 
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image_1",
+                "label": "Image 1"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_1_mobile",
+                "label": "Image 1 - Mobile"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_2",
+                "label": "Image 2"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_2_mobile",
+                "label": "Image 2 - Mobile"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_3",
+                "label": "Image 3"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_3_mobile",
+                "label": "Image 3 - Mobile"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_4",
+                "label": "Image 4"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_4_mobile",
+                "label": "Image 4 - Mobile"
+            },
+            {
+                "type": "text",
+                "id": "sub_heading",
+                "label": "Sub Heading",
+                "default": "About Us"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "We Are Here For The Love of listening"
+            },
+            {
+                "type": "text",
+                "id": "btn_title",
+                "label": "Button Title",
+                "default": "Learn More"
+            },
+            {
+                "type": "url",
+                "id": "btn_link",
+                "label": "Button Link"
+            }
+        ],
+        "presets" :[{
+            "name" : "About Us"
+        }]
+    }
+  {% endschema %} 

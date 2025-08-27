@@ -1,0 +1,14 @@
+<div class="product breadcrumbs-list">
+    <p class="mx-0 text-breadcrumb">
+      <a href="{{ shop.url }}/{{ localization.language.iso_code }}" class="text-breadcrumb" >Home</a>
+      >
+      <a href="{{ shop.url }}
+        {%- if localization.language.iso_code == 'en' -%}
+        {%- else -%}
+          /{{- localization.language.iso_code -}}
+        {%- endif -%}
+        /collections/all" class="text-breadcrumb">All</a> 
+      >
+      <span class="black-f">{{ product.title }}</span>
+    </p>
+</div>

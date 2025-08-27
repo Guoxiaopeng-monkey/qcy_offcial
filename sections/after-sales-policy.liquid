@@ -1,0 +1,104 @@
+<section class="support-services" data-anchor="after-sales-policy">
+    <div class="page-width section-content">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12 mx-auto">
+                
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="title">
+                            {{ section.settings.title }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="row services-row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <a class="service" href="{{ section.settings.url_1 }}">
+                            <div class="service-image">
+                                <img loading="lazy" src="{{ section.settings.image_1 | img_url: 'master' }}">
+                                <span class="d-lg-none d-md-block d-sm-block">
+                                    Warranty Policy
+                                </span>
+                                <i class="fa-solid fa-chevron-right d-lg-none d-md-block d-sm-block"></i>
+                            </div>
+                            <span class="d-lg-block d-md-none d-sm-none">
+                                Warranty Policy
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <a class="service" href="{{ section.settings.url_2 }}">
+                            <div class="service-image">
+                                <img loading="lazy" src="{{ section.settings.image_2 | img_url: 'master' }}">
+                                <span class="d-lg-none d-md-block d-sm-block">
+                                    Return Policy
+                                </span>
+                                <i class="fa-solid fa-chevron-right d-lg-none d-md-block d-sm-block"></i>
+                            </div>
+                            <span class="d-lg-block d-md-none d-sm-none">
+                                Return Policy
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <a class="service" href="{{ section.settings.url_3 }}">
+                            <div class="service-image">
+                                <img loading="lazy" src="{{ section.settings.image_3 | img_url: 'master' }}">
+                                <span class="d-lg-none d-md-block d-sm-block">
+                                    Shipping Policy
+                                </span>
+                                <i class="fa-solid fa-chevron-right d-lg-none d-md-block d-sm-block"></i>
+                            </div>
+                            <span class="d-lg-block d-md-none d-sm-none">
+                                Shipping Policy
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "After-Sales Policy",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "Warranty Policy - Icon"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_2",
+            "label": "Return Policy - Icon"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_3",
+            "label": "Shipping Policy - Icon"
+        },
+        {
+            "type": "url",
+            "id": "url_1",
+            "label": "Warranty Policy - URL"
+        },
+        {
+            "type": "url",
+            "id": "url_2",
+            "label": "Return Policy - URL"
+        },
+        {
+            "type": "url",
+            "id": "url_3",
+            "label": "Shipping Policy - URL"
+        }
+    ]
+}
+{% endschema %}

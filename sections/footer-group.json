@@ -1,0 +1,146 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer_icons_support_DC6QiH": {
+      "type": "footer-icons-support",
+      "blocks": {
+        "icons_QLHrpF": {
+          "type": "Icons",
+          "settings": {
+            "image": "shopify://shop_images/truck-fast_2x_725623b3-d358-4e67-999e-afec9ec1fb71.png",
+            "title": "Fast, Free Shipping"
+          }
+        },
+        "icons_JpgXaG": {
+          "type": "Icons",
+          "settings": {
+            "image": "shopify://shop_images/38746_2x_a848f1ec-df81-4a0b-b576-d3b9450eb291.png",
+            "title": "365 Days Warranty"
+          }
+        },
+        "icons_G43eEW": {
+          "type": "Icons",
+          "settings": {
+            "image": "shopify://shop_images/back-square_2x_0462f647-287b-4be0-b0e9-3e1870c57bca.png",
+            "title": "30-Day Money-Back Guarantee"
+          }
+        },
+        "icons_Tj7KBP": {
+          "type": "Icons",
+          "settings": {
+            "image": "shopify://shop_images/chat-question_1_2x_e7862d63-dc82-4b63-8c1b-6b168176c302.png",
+            "title": "Lifetime Customer Support"
+          }
+        }
+      },
+      "block_order": [
+        "icons_QLHrpF",
+        "icons_JpgXaG",
+        "icons_G43eEW",
+        "icons_Tj7KBP"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "newsletter_eTNUpr": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_Qhr8Rg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe Here"
+          }
+        },
+        "paragraph_VdMBBR": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to get QCY's latest News and exclusive deals!</p>"
+          }
+        },
+        "email_form_pMPtgd": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_Qhr8Rg",
+        "paragraph_VdMBBR",
+        "email_form_pMPtgd"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 32
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_jHTtM3": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Products",
+            "menu": "footer-products"
+          }
+        },
+        "link_list_eDF7Pw": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Support",
+            "menu": "footer-brand"
+          }
+        },
+        "link_list_tLEgzA": {
+          "type": "link_list",
+          "settings": {
+            "heading": "About Us",
+            "menu": "footer-how-to-buy"
+          }
+        },
+        "link_list_BqyRWt": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Policy",
+            "menu": "footer-support"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_jHTtM3",
+        "link_list_eDF7Pw",
+        "link_list_tLEgzA",
+        "link_list_BqyRWt"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": false,
+        "newsletter_heading": "Follow Us",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer_icons_support_DC6QiH",
+    "newsletter_eTNUpr",
+    "footer"
+  ]
+}

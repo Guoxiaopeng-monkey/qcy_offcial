@@ -1,0 +1,12 @@
+
+{% if product.metafields.custom.copy_discount_code != blank %}
+  <div class="copy-discount-off-section">
+    <div class="col_65">
+      <p class="f-f-extra-bold main-color mx-0 l-h-normal">{{ product.metafields.custom.copy_discount_code_label }}</p>
+      <p class="sub-heading-text-discount mx-0 f-f-regular main-color l-h-normal">Code:{{ product.metafields.custom.copy_discount_code }}</p>
+    </div>
+    <div class="col_35">
+      <p class="mx-0 f-f-regular heading-text-discount" data-discount-code="{{ product.metafields.custom.copy_discount_code }}"><i class="far fa-copy"></i>Copy Code</p>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,119 @@
+<div class="form-modal" data-modal="warranty-claim">
+    <div class="overlay"></div>
+    <div class="container">
+        <i class="fa-solid fa-xmark form-close"></i>
+        <div class="form-header">
+            <h5>Warranty Claim</h5>
+            <p>
+                This service is only for products purchased directly from qcy.com.
+                <br>
+                See our <a href="https://us.qcy.com/pages/warranty-policy">warranty policy</a> for details.
+            </p>
+        </div>
+        {% form 'contact', id: 'warranty_form' %}
+
+            <input type="hidden" name="contact[form]" value="QCY - Warranty Claim">
+
+            <div class="form-body">
+                <p class="form-title">
+                    Purchase Information
+                </p>
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <label>Product Model <span>*</span></label>
+                        <select name="contact[product_model]" required>
+                            <option value="" selected disabled>Select Model</option>
+                            {% for product in collections.all.products %}
+                                <option value="{{ product.title  }}">{{ product.title  }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <label>Order ID <span>*</span></label>
+                        <input type="text" name="contact[order_id]" required>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <label>Purchase Date <span>*</span></label>
+                        <input type="date" name="contact[purchase_date]" required>
+                    </div>
+                    <div class="col-12">
+                        <label>Issue Details <span>*</span></label>
+                        <textarea name="contact[body]" rows="5" required></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <p class="form-title">
+                    Contact Information
+                </p>
+                <div class="row">
+                    <div class="col-12">
+                        <label>Name <span>*</span></label>
+                        <div class="input">
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <input type="text" name="contact[name]" placeholder="First Name" required>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <input type="text" name="contact[last_name]" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <label>Email Address <span>*</span></label>
+                        <input type="email" name="contact[email]" required>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <label>Phone Number  <span>*</span></label>
+                        <input type="text" name="contact[phone_number]" required>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <label>Address Line 1  <span>*</span></label>
+                        <input type="text" name="contact[address_line_1]" required>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <label>Address Line 2  <span>*</span></label>
+                        <input type="text" name="contact[address_line_2]" required>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <label>Country  <span>*</span></label>
+                        <select name="contact[country]" required>
+                            <option value="" selected disabled>Select Country</option>
+                            {{ country_option_tags }}
+                        </select>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <label>State/Territory  <span>*</span></label>
+                        <input type="text" name="contact[state]" required>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <label>City  <span>*</span></label>
+                        <input type="text" name="contact[city]" required>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <label>Zip Code  <span>*</span></label>
+                        <input type="text" name="contact[zip_code]" required>
+                    </div>
+                    {% if form.posted_successfully? %}
+                          <div class="col-12">
+                              <small class="form-message" style="margin: 0;">
+                                  Your message has been submitted. We will reach you as soon as possible, thank you!
+                              </small>
+                          </div>
+                      {% elsif form.errors %}
+                          <div class="col-12">
+                              <small class="form-message" style="margin: 0;">
+                                  There's a problem submitting your message. Try again.
+                              </small>
+                          </div>
+                      {% endif %}
+                    <div class="col-8 mx-auto">
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        {% endform %}
+    </div>
+</div>
