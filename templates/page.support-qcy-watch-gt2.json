@@ -63,9 +63,7 @@
     },
     "support-detail": {
       "type": "support-detail",
-      "settings": {
-        "support_url": "shopify://pages/support-center"
-      }
+      "settings": {}
     },
     "support-video": {
       "type": "support-video",

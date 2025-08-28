@@ -546,8 +546,7 @@
     "product_page_review_section_QC38Ja": {
       "type": "product-page-review-section",
       "settings": {
-        "header_nav": "Reviews",
-        "review_title": "What Our Client Say's"
+        "header_nav": "Reviews"
       }
     },
     "product_page_faqs_section_bWj7KF": {

@@ -63,9 +63,7 @@
     },
     "support-detail": {
       "type": "support-detail",
-      "settings": {
-        "support_url": "https://us.qcy.com/pages/support-center-1"
-      }
+      "settings": {}
     },
     "support-video": {
       "type": "support-video",
