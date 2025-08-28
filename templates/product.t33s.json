@@ -734,7 +734,7 @@
           "type": "specification",
           "settings": {
             "select_specs": "basic",
-            "description": "<p>Type: Open Ear<br/>Driver: 10.8mm dual-magnet driver<br/>Audio codec: LDAC/AAC/SBC<br/>Call noise cancellation: Dual-mic ENC call<br/>Weight: 5g(single earbud)<br/>Dimension: 66.0*49.0*25.6mm (charging case)29.0*26.0*15.7mm (earbud)</p>"
+            "description": "<p>Type: Open Ear<br/>Driver: 10.8mm dual-magnet driver<br/>Audio codec: LDAC/SBC<br/>Call noise cancellation: Dual-mic ENC call<br/>Weight: 5g(single earbud)<br/>Dimension: 66.0*49.0*25.6mm (charging case)29.0*26.0*15.7mm (earbud)</p>"
           }
         },
         "specification_mLhHBG": {

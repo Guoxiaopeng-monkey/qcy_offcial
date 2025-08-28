@@ -280,17 +280,12 @@
         "disabled": false,
         "settings": {}
       },
-      "18128612654622612671": {
-        "type": "shopify://apps/selecty/blocks/app-embed/a005a4a7-4aa2-4155-9c2b-0ab41acbf99c",
-        "disabled": true,
-        "settings": {}
-      },
       "8765772171712610185": {
         "type": "shopify://apps/t-lab-ai-translate/blocks/language_switcher/b5b83690-efd4-434d-8c6a-a5cef4019faf",
         "disabled": false,
         "settings": {
           "enable_language_switcher": true,
-          "enable_country_region_switcher": true,
+          "enable_country_region_switcher": false,
           "use_currency_for_region": true,
           "switcher_position": "header",
           "show_flags": true,

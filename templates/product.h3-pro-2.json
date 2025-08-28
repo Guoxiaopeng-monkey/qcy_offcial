@@ -517,7 +517,7 @@
           "type": "specification",
           "settings": {
             "select_specs": "basic",
-            "description": "<p>Type: Over-ear<br/>Audio codec: LDAC/AAC/SBC<br/>Compatible system: iOS/Android<br/>Charging port: USB Type-C<br/>Weight: 231g</p>"
+            "description": "<p>Type: Over-ear<br/>Audio codec: LDAC/SBC<br/>Compatible system: iOS/Android<br/>Charging port: USB Type-C<br/>Weight: 231g</p>"
           }
         },
         "specification_mLhHBG": {

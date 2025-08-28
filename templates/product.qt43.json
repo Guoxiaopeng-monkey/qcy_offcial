@@ -625,19 +625,20 @@
         "specification_mLhHBG",
         "specification_j6FQmb"
       ],
+      "disabled": true,
       "settings": {
         "product_header": "Specification",
         "heading": "Spec",
         "image": "shopify://shop_images/QT43-_-_-1920_12.jpg",
         "image_mobile": "shopify://shop_images/QT43_-12_1500x1500_21e3fc5c-37dc-4446-8e75-a8c34ef29e4d.jpg",
-        "heading_specs": "Product Name"
+        "heading_specs": "Product Name",
+        "custom_manual_title": ""
       }
     },
     "product_page_review_section_QC38Ja": {
       "type": "product-page-review-section",
       "settings": {
-        "header_nav": "Reviews",
-        "review_title": "What Our Client Say's"
+        "header_nav": "Reviews"
       }
     },
     "product_page_faqs_section_bWj7KF": {

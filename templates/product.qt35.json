@@ -617,6 +617,7 @@
       "blocks": {
         "specification_hRYEdJ": {
           "type": "specification",
+          "disabled": true,
           "settings": {
             "select_specs": "basic",
             "description": "<p>Available system: iOS/ Android</p>"
@@ -624,6 +625,7 @@
         },
         "specification_mLhHBG": {
           "type": "specification",
+          "disabled": true,
           "settings": {
             "select_specs": "bluetooth",
             "description": "<p>Pairing name: QCY H2 Pro<br/>Communication distance: 10 meters<br/>Bluetooth version: 5.3<br/>Bluetooth profles: HFP/A2DP/AVRCP</p>"
@@ -631,6 +633,7 @@
         },
         "specification_j6FQmb": {
           "type": "specification",
+          "disabled": true,
           "settings": {
             "select_specs": "battery",
             "description": "<p>Battery capacity: 400mAh<br/>Charging port: Type C<br/>Charging time: no more than 2h</p>"
@@ -647,14 +650,14 @@
         "heading": "Spec",
         "image": "shopify://shop_images/QT35_-1920_14_4ecf856e-bcc8-42ca-b7ea-cabf112b762d.jpg",
         "image_mobile": "shopify://shop_images/QT43_-12_1500x1500_21e3fc5c-37dc-4446-8e75-a8c34ef29e4d.jpg",
-        "heading_specs": "Product Name"
+        "heading_specs": "Product Name",
+        "custom_manual_title": ""
       }
     },
     "product_page_review_section_QC38Ja": {
       "type": "product-page-review-section",
       "settings": {
-        "header_nav": "Reviews",
-        "review_title": "What Our Client Say's"
+        "header_nav": "Reviews"
       }
     },
     "product_page_faqs_section_bWj7KF": {

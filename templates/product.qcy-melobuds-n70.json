@@ -704,6 +704,7 @@
         "specification_mLhHBG",
         "specification_VkHf8b"
       ],
+      "disabled": true,
       "settings": {
         "product_header": "Specification",
         "heading": "Spec",

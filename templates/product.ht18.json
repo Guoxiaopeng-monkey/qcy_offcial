@@ -239,7 +239,7 @@
           "settings": {
             "image": "shopify://shop_images/4_3ce3888a-1b2a-401b-a141-6697ee0107ac.jpg",
             "image_mobile": "shopify://shop_images/4_27a80114-a01a-49e8-9aa6-83351f5baf58.jpg",
-            "heading": "<p><strong>-56dB</strong> Noise Canceling</p>",
+            "heading": "<p><strong>-56dB</strong></p><p>Noise Canceling</p>",
             "primary_color": "#121212",
             "secondary_color": "#334fb4",
             "primary_weight": "f-f-black",
@@ -404,7 +404,7 @@
         "image_zB3Qhk": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/1_bf3221ca-0291-4f7b-819a-ef735e7d2225.jpg",
+            "image": "shopify://shop_images/1_a1d880e3-9a6c-4220-9ade-ec16c0a6cc35.jpg",
             "heading": "Music in True Details",
             "sub_heading": "DualCore Acoustic Systema",
             "description": "<p>Power by QCY latest DualCore Acoustic system, ring shape dynamic driver work together with MEMS tweeter to tuned distortion-free and more true-to like audio experience.</p>",
@@ -414,7 +414,7 @@
         "image_QBLDTW": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/10_d8b21897-bc0d-4288-a56e-72470009d2ba.jpg",
+            "image": "shopify://shop_images/lQDPJxBBsg5_PEnNBNjNBuCwRH6usISfOUQIjYoVaP04AA_1760_1240.jpg",
             "heading": "Listen for Days",
             "sub_heading": "Battary Life",
             "description": "<p>Get 10 hours of playtime from a single charge, and an incredible up to 50 hours total with the compact charging case.</p>",
