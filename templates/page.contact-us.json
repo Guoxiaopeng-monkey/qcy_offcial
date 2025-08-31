@@ -66,6 +66,13 @@
             "description": "<p><a href=\"mailto:wanggang@qcy.com\" target=\"_blank\">wanggang@qcy.com</a></p>"
           }
         },
+        "information_rXMJf8": {
+          "type": "information",
+          "settings": {
+            "heading": "OEM & ODM",
+            "description": "<p><a href=\"mailto:Cobly.zhao@qcymall.com\" target=\"_blank\">Cobly.zhao@qcymall.com</a></p>"
+          }
+        },
         "feedback_C8fkdG": {
           "type": "feedback",
           "settings": {}
@@ -99,6 +106,7 @@
         "information_kWFAnU",
         "information_gPLL7m",
         "information_3iqJGe",
+        "information_rXMJf8",
         "feedback_C8fkdG",
         "information_3DQWmK",
         "information_CY7Eza",
