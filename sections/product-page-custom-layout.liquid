@@ -1,678 +1,845 @@
 {% style %}
-    .gallery-featured-image-section{
-        padding:50px 0px 50px;
+  .gallery-featured-image-section {
+    padding: 50px 0px 50px;
+  }
+  .gallery-featured-list-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .gallery-featured-item {
+    display: flex;
+    overflow: hidden;
+  }
+  .gallery-featured-list-container,
+  .gallery-featured-item {
+    gap: 25px;
+  }
+  .gallery-image-item {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+  }
+  .gallery-image-item:hover img {
+    scale: 1.03;
+  }
+  .gallery-image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+  .gallery-content-detail {
+    position: absolute;
+    top: 0;
+    padding: 25px 35px;
+    display: flex;
+    align-items: var(--heading-position);
+    width: 100%;
+    height: 100%;
+  }
+  .gallery-content-detail p {
+    margin: 0px;
+  }
+  .gallery-content-detail ul {
+    list-style: disc;
+    padding-left: 25px;
+  }
+  .gallery-content-detail strong {
+    font-weight: normal;
+    font-family: var(--secondary-font-weight);
+    color: var(--secondary-color);
+    font-size: var(--secondary-font-size);
+  }
+  .gallery-content-detail .arrow-down-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50px;
+  }
+  .gallery-image-item:hover .gallery-content-detail .arrow-down-icon {
+    background-color: #ff8832;
+  }
+  .gallery-image-item:hover .gallery-content-detail .arrow-down-icon .icon-path {
+    fill: #fff;
+  }
+  .gallery-two-col {
+    display: flex;
+    gap: 10px;
+  }
+  .gallery-featured-container {
+    display: none;
+  }
+  .single-bg-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  /* FOR MOBILE PHONE */
+  @media only screen and (max-width: 768px) {
+    .gallery-featured-image-section {
+      padding: 50px 0px;
     }
-    .gallery-featured-list-container{
-        display:flex;
-        flex-direction: column;
+    .gallery-featured-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-    .gallery-featured-item{
-        display:flex;
-        overflow:hidden;
+    .gallery-content-detail {
+      padding: 20px 20px;
     }
-    .gallery-featured-list-container,
-    .gallery-featured-item{
-        gap:25px;
+    .gallery-featured-list-container {
+      display: none;
     }
-    .gallery-image-item{
-        border-radius:10px;
-        overflow:hidden;
-        position:relative;
-        display:flex;
-    }
-    .gallery-image-item:hover img{
-        scale:1.03;
-    }
-    .gallery-image-item img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        transition: all 0.3s ease;
-    }
-    .gallery-content-detail{
-        position: absolute;
-        top: 0;
-        padding: 25px 35px;
-        display: flex;
-        align-items:var(--heading-position);
-        width: 100%;
-        height:100%;
-    }
-    .gallery-content-detail p{
-        margin:0px;
-    }
-    .gallery-content-detail ul{
-        list-style: disc;
-        padding-left: 25px;
-    }
-    .gallery-content-detail strong{
-        font-weight:normal;
-        font-family: var(--secondary-font-weight);
-        color: var(--secondary-color);
-        font-size:var(--secondary-font-size);
-    }
-    .gallery-content-detail .arrow-down-icon{
-        width:30px;
-        height:30px;
-        background-color:#fff;
-        border-radius:50px;
-    }
-    .gallery-image-item:hover .gallery-content-detail .arrow-down-icon{
-        background-color:#FF8832;
-    }
-    .gallery-image-item:hover .gallery-content-detail .arrow-down-icon .icon-path{
-        fill:#fff;
-    }
-    .gallery-two-col{
-      display:flex;
-      gap:10px;
-    }
-    .gallery-featured-container{
-      display:none;
-    }
-    .single-bg-image-container img{
-        width:100%;
-        height:100%;
-        object-fit:contain;
-    }
-    /* FOR MOBILE PHONE */
-    @media only screen and (max-width: 768px) {
-        .gallery-featured-image-section{
-            padding:50px 0px;
-        }
-        .gallery-featured-container{
-          display:flex;
-          flex-direction:column;
-          gap:10px;
-        }
-        .gallery-content-detail{
-          padding:20px 20px;
-        }
-        .gallery-featured-list-container{
-          display:none;
-        }
-    }
+  }
 
-    /* ipad Air */
-    @media only screen 
-        and (min-device-width : 768px) 
-        and (max-device-width : 1024px) {
-        .gallery-featured-image-section{
-            padding:50px 0px;
-        }
-        .gallery-featured-container{
-          display:flex;
-          flex-direction:column;
-          gap:10px;
-        }
-        .gallery-content-detail{
-          padding:20px 20px;
-        }
-        .gallery-featured-list-container{
-          display:none;
-        }
+  /* ipad Air */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .gallery-featured-image-section {
+      padding: 50px 0px;
     }
+    .gallery-featured-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .gallery-content-detail {
+      padding: 20px 20px;
+    }
+    .gallery-featured-list-container {
+      display: none;
+    }
+  }
 
+  /* MOBILES ----------------------------------------------------------------------------------- */
+  @media only screen and (min-width: 0px) {
+    :root {
+      --heading-2: 24px;
+      --heading-3: 18px;
+      --heading-4: 16px;
+      --heading-5: 14px;
+      --heading-6: 12px;
+    }
+  }
+  @media only screen and (min-width: 375px) {
+    :root {
+      --heading-2: 24px;
+      --heading-3: 18px;
+      --heading-4: 16px;
+      --heading-5: 14px;
+      --heading-6: 12px;
+    }
+  }
+  @media only screen and (min-width: 390px) {
+    :root {
+      --heading-2: 24px;
+      --heading-3: 18px;
+      --heading-4: 16px;
+      --heading-5: 14px;
+      --heading-6: 12px;
+    }
+  }
+  @media only screen and (min-width: 414px) {
+    :root {
+      --heading-2: 24px;
+      --heading-3: 18px;
+      --heading-4: 16px;
+      --heading-5: 14px;
+      --heading-6: 12px;
+    }
+  }
+  @media only screen and (min-width: 428px) {
+    :root {
+      --heading-2: 24px;
+      --heading-3: 18px;
+      --heading-4: 16px;
+      --heading-5: 14px;
+      --heading-6: 12px;
+    }
+  }
+  @media only screen and (min-width: 480px) {
+    :root {
+      --heading-2: 24px;
+      --heading-3: 18px;
+      --heading-4: 16px;
+      --heading-5: 14px;
+      --heading-6: 12px;
+    }
+  }
 
-/* MOBILES ----------------------------------------------------------------------------------- */
-@media only screen and (min-width: 0px) {
-  :root {
-    --heading-2: 24px;
-    --heading-3: 18px;
-    --heading-4: 16px;
-    --heading-5: 14px;
-    --heading-6: 12px;
+  /* TABLETS ----------------------------------------------------------------------------------- */
+  @media only screen and (min-width: 768px) {
+    :root {
+      --heading-2: 26px;
+      --heading-3: 20px;
+      --heading-4: 18px;
+      --heading-5: 16px;
+      --heading-6: 14px;
+    }
   }
-}
-@media only screen and (min-width: 375px) {
-  :root {
-    --heading-2: 24px;
-    --heading-3: 18px;
-    --heading-4: 16px;
-    --heading-5: 14px;
-    --heading-6: 12px;
-  }
-}
-@media only screen and (min-width: 390px) {
-  :root {
-    --heading-2: 24px;
-    --heading-3: 18px;
-    --heading-4: 16px;
-    --heading-5: 14px;
-    --heading-6: 12px;
-  }
-}
-@media only screen and (min-width: 414px) {
-  :root {
-    --heading-2: 24px;
-    --heading-3: 18px;
-    --heading-4: 16px;
-    --heading-5: 14px;
-    --heading-6: 12px;
-  }
-}
-@media only screen and (min-width: 428px) {
-  :root {
-    --heading-2: 24px;
-    --heading-3: 18px;
-    --heading-4: 16px;
-    --heading-5: 14px;
-    --heading-6: 12px;
-  }
-}
-@media only screen and (min-width: 480px) {
-  :root {
-    --heading-2: 24px;
-    --heading-3: 18px;
-    --heading-4: 16px;
-    --heading-5: 14px;
-    --heading-6: 12px;
-  }
-}
 
-/* TABLETS ----------------------------------------------------------------------------------- */
-@media only screen and (min-width: 768px) {
-  :root {
-    --heading-2: 26px;
-    --heading-3: 20px;
-    --heading-4: 18px;
-    --heading-5: 16px;
-    --heading-6: 14px;
+  /* LAPTOPS --------------------------------------------------------------------------------- */
+  @media only screen and (min-width: 1280px) {
+    :root {
+      --heading-2: 26px;
+      --heading-3: 20px;
+      --heading-4: 18px;
+      --heading-5: 16px;
+      --heading-6: 14px;
+    }
   }
-}
+  @media only screen and (min-width: 1366px) {
+    :root {
+      --heading-2: 26px;
+      --heading-3: 20px;
+      --heading-4: 18px;
+      --heading-5: 16px;
+      --heading-6: 14px;
+    }
+  }
+  @media only screen and (min-width: 1440px) {
+    :root {
+      --heading-2: 26px;
+      --heading-3: 20px;
+      --heading-4: 18px;
+      --heading-5: 16px;
+      --heading-6: 14px;
+    }
+  }
+  @media only screen and (min-width: 1536px) {
+    :root {
+      --heading-2: 26px;
+      --heading-3: 20px;
+      --heading-4: 18px;
+      --heading-5: 16px;
+      --heading-6: 14px;
+    }
+  }
+  @media only screen and (min-width: 1600px) {
+    :root {
+      --heading-2: 26px;
+      --heading-3: 20px;
+      --heading-4: 18px;
+      --heading-5: 16px;
+      --heading-6: 14px;
+    }
+  }
 
-/* LAPTOPS --------------------------------------------------------------------------------- */
-@media only screen and (min-width: 1280px) {
-  :root {
-    --heading-2: 26px;
-    --heading-3: 20px;
-    --heading-4: 18px;
-    --heading-5: 16px;
-    --heading-6: 14px;
+  /* COMPUTERS --------------------------------------------------------------------------------- */
+  @media only screen and (min-width: 1920px) {
+    :root {
+      --heading-2: 28px;
+      --heading-3: 22px;
+      --heading-4: 20px;
+      --heading-5: 18px;
+      --heading-6: 16px;
+    }
   }
-}
-@media only screen and (min-width: 1366px) {
-  :root {
-    --heading-2: 26px;
-    --heading-3: 20px;
-    --heading-4: 18px;
-    --heading-5: 16px;
-    --heading-6: 14px;
+  @media only screen and (min-width: 2560px) {
+    :root {
+      --heading-2: 28px;
+      --heading-3: 22px;
+      --heading-4: 20px;
+      --heading-5: 18px;
+      --heading-6: 16px;
+    }
   }
-}
-@media only screen and (min-width: 1440px) {
-  :root {
-    --heading-2: 26px;
-    --heading-3: 20px;
-    --heading-4: 18px;
-    --heading-5: 16px;
-    --heading-6: 14px;
-  }
-}
-@media only screen and (min-width: 1536px) {
-  :root {
-    --heading-2: 26px;
-    --heading-3: 20px;
-    --heading-4: 18px;
-    --heading-5: 16px;
-    --heading-6: 14px;
-  }
-}
-@media only screen and (min-width: 1600px) {
-  :root {
-    --heading-2: 26px;
-    --heading-3: 20px;
-    --heading-4: 18px;
-    --heading-5: 16px;
-    --heading-6: 14px;
-  }
-}
 
-/* COMPUTERS --------------------------------------------------------------------------------- */
-@media only screen and (min-width: 1920px) {
-  :root {
-    --heading-2: 28px;
-    --heading-3: 22px;
-    --heading-4: 20px;
-    --heading-5: 18px;
-    --heading-6: 16px;
+  .gallery-heading,
+  .gallery-heading * {
+    font-size: var(--primary-size);
   }
-}
-@media only screen and (min-width: 2560px) {
-  :root {
-    --heading-2: 28px;
-    --heading-3: 22px;
-    --heading-4: 20px;
-    --heading-5: 18px;
-    --heading-6: 16px;
+  .gallery-heading strong {
+    font-size: var(--secondary-font-size);
   }
-}
 
+  @media only screen and (max-width: 768px) {
+    .gallery-heading,
+    .gallery-heading * {
+      font-size: var(--primary-size-mobile);
+    }
+    .gallery-heading strong {
+      font-size: var(--secondary-font-size-mobile);
+    }
+  }
 {% endstyle %}
 <div class="{{ section.settings.header_nav | handleize }}-scroll-section gallery-featured-image-section section-scroll">
   <div class="page-width">
-      {% if section.settings.bg_image == blank %}
-        <div class="gallery-featured-list-container">
-            <div class="gallery-featured-item">
-                {% for block in section.blocks %}
-                  {% if forloop.index0 == 0   %}
-                    <div class="gallery-image-item col_50">
-                        <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}" alt="">
-                        {% if block.settings.heading != blank %}
-                        <div class="gallery-content-detail" style="--heading-position: {{ block.settings.heading_position }};">
-                            <div class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }}" 
-                              style="
-                                color:{{ block.settings.primary_color }};
-                                --secondary-font-weight: {{ block.settings.secondary_weight }};
-                                --secondary-color:{{ block.settings.secondary_color }};
-                                --secondary-font-size: var({{ block.settings.secondary_size }}); 
-                                ">
-                              {{ block.settings.heading }}
-                            </div>
-                        </div>
-                        {% endif %}
+    {% if section.settings.bg_image == blank %}
+      <div class="gallery-featured-list-container">
+        <div class="gallery-featured-item">
+          {% for block in section.blocks %}
+            {% if forloop.index0 == 0 %}
+              <div class="gallery-image-item col_50">
+                <img
+                  loading="lazy"
+                  src="{{ block.settings.image | img_url: 'master' }}"
+                  alt=""
+                  width="100%"
+                  height="auto"
+                >
+                {% if block.settings.heading != blank %}
+                  <div
+                    class="gallery-content-detail"
+                    style="--heading-position: {{ block.settings.heading_position }};"
+                  >
+                    <div
+                      class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }} gallery-heading"
+                      style="
+                        color:{{ block.settings.primary_color }};
+                        --primary-size: {{ block.settings.primary_font_size }}px;
+                        --primary-size-mobile: {{ block.settings.primary_font_size_mobile }}px;
+                        --secondary-font-weight: {{ block.settings.secondary_weight }};
+                        --secondary-color:{{ block.settings.secondary_color }};
+                        --secondary-font-size: var({{ block.settings.secondary_size }});
+                        --secondary-font-size: {{ block.settings.secondary_font_size }}px;
+                        --secondary-font-size-mobile: {{ block.settings.secondary_font_size_mobile }}px;
+                      "
+                    >
+                      {{ block.settings.heading }}
                     </div>
-                    {% elsif forloop.index0 == 1 %}
-                    <div class="gallery-image-item col_25">
-                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
-                        {% if block.settings.heading != blank %}
-                        <div class="gallery-content-detail" style="--heading-position: {{ block.settings.heading_position }};">
-                            <div class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }}" 
-                              style="
-                                color:{{ block.settings.primary_color }};
-                                --secondary-font-weight: {{ block.settings.secondary_weight }};
-                                --secondary-color:{{ block.settings.secondary_color }};
-                                --secondary-font-size: var({{ block.settings.secondary_size }}); 
-                                ">
-                              {{ block.settings.heading }}
-                            </div>
-                        </div>
-                        {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            {% elsif forloop.index0 == 1 %}
+              <div class="gallery-image-item col_25">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="" width="100%" height="auto">
+                {% if block.settings.heading != blank %}
+                  <div
+                    class="gallery-content-detail"
+                    style="--heading-position: {{ block.settings.heading_position }};"
+                  >
+                    <div
+                      class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }} gallery-heading"
+                      style="
+                        color:{{ block.settings.primary_color }};
+                        --primary-size: {{ block.settings.primary_font_size }}px;
+                        --primary-size-mobile: {{ block.settings.primary_font_size_mobile }}px;
+                        --secondary-font-weight: {{ block.settings.secondary_weight }};
+                        --secondary-color:{{ block.settings.secondary_color }};
+                        --secondary-font-size: var({{ block.settings.secondary_size }});
+                        --secondary-font-size: {{ block.settings.secondary_font_size }}px;
+                        --secondary-font-size-mobile: {{ block.settings.secondary_font_size_mobile }}px;
+                      "
+                    >
+                      {{ block.settings.heading }}
                     </div>
-                    {% elsif forloop.index0 == 2 %}
-                    <div class="gallery-image-item col_25">
-                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
-                        {% if block.settings.heading != blank %}
-                        <div class="gallery-content-detail" style="--heading-position: {{ block.settings.heading_position }};">
-                            <div class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }}" 
-                              style="
-                                color:{{ block.settings.primary_color }};
-                                --secondary-font-weight: {{ block.settings.secondary_weight }};
-                                --secondary-color:{{ block.settings.secondary_color }};
-                                --secondary-font-size: var({{ block.settings.secondary_size }}); 
-                                ">
-                              {{ block.settings.heading }}
-                            </div>
-                        </div>
-                        {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            {% elsif forloop.index0 == 2 %}
+              <div class="gallery-image-item col_25">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="" width="100%" height="auto">
+                {% if block.settings.heading != blank %}
+                  <div
+                    class="gallery-content-detail"
+                    style="--heading-position: {{ block.settings.heading_position }};"
+                  >
+                    <div
+                      class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }} gallery-heading"
+                      style="
+                        color:{{ block.settings.primary_color }};
+                        --primary-size: {{ block.settings.primary_font_size }}px;
+                        --primary-size-mobile: {{ block.settings.primary_font_size_mobile }}px;
+                        --secondary-font-weight: {{ block.settings.secondary_weight }};
+                        --secondary-color:{{ block.settings.secondary_color }};
+                        --secondary-font-size: var({{ block.settings.secondary_size }});
+                        --secondary-font-size: {{ block.settings.secondary_font_size }}px;
+                        --secondary-font-size-mobile: {{ block.settings.secondary_font_size_mobile }}px;
+                      "
+                    >
+                      {{ block.settings.heading }}
                     </div>
-                  {% endif %}
-                {% endfor %}
-            </div>
-            <div class="gallery-featured-item">
-                {% for block in section.blocks %}
-                  {% if forloop.index0 == 3   %}
-                    <div class="gallery-image-item col_40">
-                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
-                        {% if block.settings.heading != blank %}
-                        <div class="gallery-content-detail" style="--heading-position: {{ block.settings.heading_position }};">
-                            <div class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }}" 
-                              style="
-                                color:{{ block.settings.primary_color }};
-                                --secondary-font-weight: {{ block.settings.secondary_weight }};
-                                --secondary-color:{{ block.settings.secondary_color }};
-                                --secondary-font-size: var({{ block.settings.secondary_size }}); 
-                                ">
-                              {{ block.settings.heading }}
-                            </div>
-                        </div>
-                        {% endif %}
-                    </div>
-                  {% elsif forloop.index0 == 4 %}
-                    <div class="gallery-image-item col_60">
-                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
-                        {% if block.settings.heading != blank %}
-                        <div class="gallery-content-detail" style="--heading-position: {{ block.settings.heading_position }};">
-                            <div class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }}" 
-                              style="
-                                color:{{ block.settings.primary_color }};
-                                --secondary-font-weight: {{ block.settings.secondary_weight }};
-                                --secondary-color:{{ block.settings.secondary_color }};
-                                --secondary-font-size: var({{ block.settings.secondary_size }}); 
-                                ">
-                              {{ block.settings.heading }}
-                            </div>
-                        </div>
-                        {% endif %}
-                    </div>
-                  {% endif %}
-                {% endfor %}
-            </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
-        
-        <div class="gallery-featured-container">
-            <div class="gallery-row">
-                {% for block in section.blocks %}
-                  {% if forloop.index0 == 0   %}
-                    <div class="gallery-image-item">
-                        <img loading="lazy" src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="">
-                        {% if block.settings.heading != blank %}
-                        <div class="gallery-content-detail" style="--heading-position: {{ block.settings.heading_position }};">
-                            <div class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }}" 
-                              style="
-                                color:{{ block.settings.primary_color }};
-                                --secondary-font-weight: {{ block.settings.secondary_weight }};
-                                --secondary-color:{{ block.settings.secondary_color }};
-                                --secondary-font-size: var({{ block.settings.secondary_size }}); 
-                                ">
-                              {{ block.settings.heading }}
-                            </div>
-                        </div>
-                        {% endif %}
+        <div class="gallery-featured-item">
+          {% for block in section.blocks %}
+            {% if forloop.index0 == 3 %}
+              <div class="gallery-image-item col_40">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="" width="100%" height="auto">
+                {% if block.settings.heading != blank %}
+                  <div
+                    class="gallery-content-detail"
+                    style="--heading-position: {{ block.settings.heading_position }};"
+                  >
+                    <div
+                      class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }} gallery-heading"
+                      style="
+                        color:{{ block.settings.primary_color }};
+                        --primary-size: {{ block.settings.primary_font_size }}px;
+                        --primary-size-mobile: {{ block.settings.primary_font_size_mobile }}px;
+                        --secondary-font-weight: {{ block.settings.secondary_weight }};
+                        --secondary-color:{{ block.settings.secondary_color }};
+                        --secondary-font-size: var({{ block.settings.secondary_size }});
+                        --secondary-font-size: {{ block.settings.secondary_font_size }}px;
+                        --secondary-font-size-mobile: {{ block.settings.secondary_font_size_mobile }}px;
+                      "
+                    >
+                      {{ block.settings.heading }}
                     </div>
-                  {% endif %}
-                {% endfor %}
-            </div>
-            <div class="gallery-row gallery-two-col">
-                {% for block in section.blocks %}
-                  {% if forloop.index0 == 1   %}
-                    <div class="gallery-image-item">
-                        <img src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="">
-                        {% if block.settings.heading != blank %}
-                        <div class="gallery-content-detail" style="--heading-position: {{ block.settings.heading_position }};">
-                            <div class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }}" 
-                              style="
-                                color:{{ block.settings.primary_color }};
-                                --secondary-font-weight: {{ block.settings.secondary_weight }};
-                                --secondary-color:{{ block.settings.secondary_color }};
-                                --secondary-font-size: var({{ block.settings.secondary_size }}); 
-                                ">
-                              {{ block.settings.heading }}
-                            </div>
-                        </div>
-                        {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            {% elsif forloop.index0 == 4 %}
+              <div class="gallery-image-item col_60">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="" width="100%" height="auto">
+                {% if block.settings.heading != blank %}
+                  <div
+                    class="gallery-content-detail"
+                    style="--heading-position: {{ block.settings.heading_position }};"
+                  >
+                    <div
+                      class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }} gallery-heading"
+                      style="
+                        color:{{ block.settings.primary_color }};
+                        --primary-size: {{ block.settings.primary_font_size }}px;
+                        --primary-size-mobile: {{ block.settings.primary_font_size_mobile }}px;
+                        --secondary-font-weight: {{ block.settings.secondary_weight }};
+                        --secondary-color:{{ block.settings.secondary_color }};
+                        --secondary-font-size: var({{ block.settings.secondary_size }});
+                        --secondary-font-size: {{ block.settings.secondary_font_size }}px;
+                        --secondary-font-size-mobile: {{ block.settings.secondary_font_size_mobile }}px;
+                      "
+                    >
+                      {{ block.settings.heading }}
                     </div>
-                  {% elsif forloop.index0 == 2 %}
-                    <div class="gallery-image-item">
-                        <img src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="">
-                        {% if block.settings.heading != blank %}
-                        <div class="gallery-content-detail" style="--heading-position: {{ block.settings.heading_position }};">
-                            <div class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }}" 
-                              style="
-                                color:{{ block.settings.primary_color }};
-                                --secondary-font-weight: {{ block.settings.secondary_weight }};
-                                --secondary-color:{{ block.settings.secondary_color }};
-                                --secondary-font-size: var({{ block.settings.secondary_size }}); 
-                                ">
-                              {{ block.settings.heading }}
-                            </div>
-                        </div>
-                        {% endif %}
-                    </div>
-                  {% endif %}
-                {% endfor %}
-            </div>
-            <div class="gallery-row">
-                {% for block in section.blocks %}
-                  {% if forloop.index0 == 3   %}
-                    <div class="gallery-image-item">
-                        <img src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="">
-                        {% if block.settings.heading != blank %}
-                        <div class="gallery-content-detail" style="--heading-position: {{ block.settings.heading_position }};">
-                            <div class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }}" 
-                              style="
-                                color:{{ block.settings.primary_color }};
-                                --secondary-font-weight: {{ block.settings.secondary_weight }};
-                                --secondary-color:{{ block.settings.secondary_color }};
-                                --secondary-font-size: var({{ block.settings.secondary_size }}); 
-                                ">
-                              {{ block.settings.heading }}
-                            </div>
-                        </div>
-                        {% endif %}
-                    </div>
-                  {% endif %}
-                {% endfor %}
-            </div>
-            <div class="gallery-row">
-                {% for block in section.blocks %}
-                  {% if forloop.index0 == 4   %}
-                    <div class="gallery-image-item">
-                        <img src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="">
-                        {% if block.settings.heading != blank %}
-                        <div class="gallery-content-detail" style="--heading-position: {{ block.settings.heading_position }};">
-                            <div class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }}" 
-                              style="
-                                color:{{ block.settings.primary_color }};
-                                --secondary-font-weight: {{ block.settings.secondary_weight }};
-                                --secondary-color:{{ block.settings.secondary_color }};
-                                --secondary-font-size: var({{ block.settings.secondary_size }}); 
-                                ">
-                              {{ block.settings.heading }}
-                            </div>
-                        </div>
-                        {% endif %}
-                    </div>
-                  {% endif %}
-                {% endfor %}
-            </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
-      {% else %}
+      </div>
+
+      <div class="gallery-featured-container">
+        <div class="gallery-row">
+          {% for block in section.blocks %}
+            {% if forloop.index0 == 0 %}
+              <div class="gallery-image-item">
+                <img
+                  loading="lazy"
+                  src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                  alt=""
+                  width="100%"
+                  height="auto"
+                >
+                {% if block.settings.heading != blank %}
+                  <div
+                    class="gallery-content-detail"
+                    style="--heading-position: {{ block.settings.heading_position }};"
+                  >
+                    <div
+                      class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }} gallery-heading"
+                      style="
+                        color:{{ block.settings.primary_color }};
+                        --primary-size: {{ block.settings.primary_font_size }}px;
+                        --primary-size-mobile: {{ block.settings.primary_font_size_mobile }}px;
+                        --secondary-font-weight: {{ block.settings.secondary_weight }};
+                        --secondary-color:{{ block.settings.secondary_color }};
+                        --secondary-font-size: var({{ block.settings.secondary_size }});
+                        --secondary-font-size: {{ block.settings.secondary_font_size }}px;
+                        --secondary-font-size-mobile: {{ block.settings.secondary_font_size_mobile }}px;
+                      "
+                    >
+                      {{ block.settings.heading }}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="gallery-row gallery-two-col">
+          {% for block in section.blocks %}
+            {% if forloop.index0 == 1 %}
+              <div class="gallery-image-item">
+                <img src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="" width="100%" height="auto">
+                {% if block.settings.heading != blank %}
+                  <div
+                    class="gallery-content-detail"
+                    style="--heading-position: {{ block.settings.heading_position }};"
+                  >
+                    <div
+                      class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }} gallery-heading"
+                      style="
+                        color:{{ block.settings.primary_color }};
+                        --primary-size: {{ block.settings.primary_font_size }}px;
+                        --primary-size-mobile: {{ block.settings.primary_font_size_mobile }}px;
+                        --secondary-font-weight: {{ block.settings.secondary_weight }};
+                        --secondary-color:{{ block.settings.secondary_color }};
+                        --secondary-font-size: var({{ block.settings.secondary_size }});
+                        --secondary-font-size: {{ block.settings.secondary_font_size }}px;
+                        --secondary-font-size-mobile: {{ block.settings.secondary_font_size_mobile }}px;
+                      "
+                    >
+                      {{ block.settings.heading }}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% elsif forloop.index0 == 2 %}
+              <div class="gallery-image-item">
+                <img src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="" width="100%" height="auto">
+                {% if block.settings.heading != blank %}
+                  <div
+                    class="gallery-content-detail"
+                    style="--heading-position: {{ block.settings.heading_position }};"
+                  >
+                    <div
+                      class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }} gallery-heading"
+                      style="
+                        color:{{ block.settings.primary_color }};
+                        --primary-size: {{ block.settings.primary_font_size }}px;
+                        --primary-size-mobile: {{ block.settings.primary_font_size_mobile }}px;
+                        --secondary-font-weight: {{ block.settings.secondary_weight }};
+                        --secondary-color:{{ block.settings.secondary_color }};
+                        --secondary-font-size: var({{ block.settings.secondary_size }});
+                        --secondary-font-size: {{ block.settings.secondary_font_size }}px;
+                        --secondary-font-size-mobile: {{ block.settings.secondary_font_size_mobile }}px;
+                      "
+                    >
+                      {{ block.settings.heading }}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="gallery-row">
+          {% for block in section.blocks %}
+            {% if forloop.index0 == 3 %}
+              <div class="gallery-image-item">
+                <img src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="" width="100%" height="auto">
+                {% if block.settings.heading != blank %}
+                  <div
+                    class="gallery-content-detail"
+                    style="--heading-position: {{ block.settings.heading_position }};"
+                  >
+                    <div
+                      class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }}  gallery-heading"
+                      style="
+                        color:{{ block.settings.primary_color }};
+                        --primary-size: {{ block.settings.primary_font_size }}px;
+                        --primary-size-mobile: {{ block.settings.primary_font_size_mobile }}px;
+                        --secondary-font-weight: {{ block.settings.secondary_weight }};
+                        --secondary-color:{{ block.settings.secondary_color }};
+                        --secondary-font-size: var({{ block.settings.secondary_size }});
+                        --secondary-font-size: {{ block.settings.secondary_font_size }}px;
+                        --secondary-font-size-mobile: {{ block.settings.secondary_font_size_mobile }}px;
+                      "
+                    >
+                      {{ block.settings.heading }}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="gallery-row">
+          {% for block in section.blocks %}
+            {% if forloop.index0 == 4 %}
+              <div class="gallery-image-item">
+                <img src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="" width="100%" height="auto">
+                {% if block.settings.heading != blank %}
+                  <div
+                    class="gallery-content-detail"
+                    style="--heading-position: {{ block.settings.heading_position }};"
+                  >
+                    <div
+                      class="{{ block.settings.primary_size }} mx-0 {{ block.settings.primary_weight }} gallery-heading"
+                      style="
+                        color:{{ block.settings.primary_color }};
+                        --primary-size: {{ block.settings.primary_font_size }}px;
+                        --primary-size-mobile: {{ block.settings.primary_font_size_mobile }}px;
+                        --secondary-font-weight: {{ block.settings.secondary_weight }};
+                        --secondary-color:{{ block.settings.secondary_color }};
+                        --secondary-font-size: var({{ block.settings.secondary_size }});
+                        --secondary-font-size: {{ block.settings.secondary_font_size }}px;
+                        --secondary-font-size-mobile: {{ block.settings.secondary_font_size_mobile }}px;
+                      "
+                    >
+                      {{ block.settings.heading }}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
       <div class="single-bg-image-container">
-          <img loading="lazy" src="{{ section.settings.bg_image |  img_url: 'master' }}" 
+        <img
+          loading="lazy"
+          src="{{ section.settings.bg_image |  img_url: 'master' }}"
           {% if section.settings.bg_image_mobile != blank %}
             class="h-desktop"
           {% endif %}
-            >
-          {% if section.settings.bg_image_mobile != blank %}
-            <img loading="lazy" src="{{ section.settings.bg_image_mobile |  img_url: 'master' }}" class="h-mobile">
-          {% endif %}
+          width="100%"
+          height="auto"
+        >
+        {% if section.settings.bg_image_mobile != blank %}
+          <img
+            loading="lazy"
+            src="{{ section.settings.bg_image_mobile |  img_url: 'master' }}"
+            class="h-mobile"
+            width="100%"
+            height="auto"
+          >
+        {% endif %}
       </div>
-      {% endif %}
-  
+    {% endif %}
   </div>
 </div>
 {% schema %}
+{
+  "name": "Custom Layout",
+  "limit": 1,
+  "settings": [
     {
-        "name": "Custom Layout",
-        "limit": 1, 
-        "settings": [
-            {
-                "type": "text",
-                "id": "header_nav",
-                "label": "Header Nav",
-                "default": "Features"
-            },
-            {
-                "type": "image_picker",
-                "id": "bg_image",
-                "label": "Background Image"
-            },
-            {
-                "type": "image_picker",
-                "id": "bg_image_mobile",
-                "label": "Background Image Mobile"
-            }
-        ],
-        "max_blocks": 5,
-        "blocks": [
-            {
-                "type": "item",
-                "name": "Item",
-                "settings": [
-                    {
-                        "type": "image_picker",
-                        "id": "image",
-                        "label": "Image"
-                    },
-                    {
-                        "type": "image_picker",
-                        "id": "image_mobile",
-                        "label": "Image - Mobile"
-                    },
-                    {
-                        "type": "richtext",
-                        "id": "heading",
-                        "label": "Heading",
-                        "info": "Don't update the paragraph style in this input: Need to be P- paragraph"
-                    },
-                    {
-                        "type": "color",
-                        "id": "primary_color",
-                        "label": "Primary Color",
-                        "default":"#fff"
-                    },
-                    {
-                        "type": "color",
-                        "id": "secondary_color",
-                        "label": "Secondary Color",
-                        "default":"#ff8832"
-                    },
-                    {
-                      "type": "select",
-                      "id": "primary_weight",
-                      "label": "Primary - Font Weight",
-                      "options": [
-                          {
-                            "value": "f-f-regular",
-                            "label": "Regular"
-                          },
-                          {
-                            "value": "f-f-medium",
-                            "label": "Medium"
-                          },
-                          {
-                            "value": "f-f-semibold",
-                            "label": "Semi-Bold"
-                          },
-                          {
-                            "value": "f-f-bold",
-                            "label": "Bold"
-                          },
-                          {
-                            "value": "f-f-extra-bold",
-                            "label": "Extra Bold"
-                          },
-                          {
-                            "value": "f-f-black",
-                            "label": "Black"
-                          }
-                      ],
-                      "default": "f-f-medium"
-                    },
-                    {
-                      "type": "select",
-                      "id": "secondary_weight",
-                      "label": "Secondary - Font Weight",
-                      "options": [
-                          {
-                            "value": "Mulish-Regular",
-                            "label": "Regular"
-                          },
-                          {
-                            "value": "Mulish-Medium",
-                            "label": "Medium"
-                          },
-                          {
-                            "value": "Mulish-SemiBold",
-                            "label": "Semi-Bold"
-                          },
-                          {
-                            "value": "Mulish-Bold",
-                            "label": "Bold"
-                          },
-                          {
-                            "value": "Mulish-ExtraBold",
-                            "label": "Extra Bold"
-                          },
-                          {
-                            "value": "Mulish-Black",
-                            "label": "Black"
-                          }
-                      ],
-                      "default": "Mulish-SemiBold"
-                    },
-                    {
-                      "type": "select",
-                      "id": "primary_size",
-                      "label": "Primary - Font Size",
-                      "options": [
-                          {
-                            "value": "h2",
-                            "label": "Heading 2"
-                          },
-                          {
-                            "value": "h3",
-                            "label": "Heading 3"
-                          },
-                          {
-                            "value": "h4",
-                            "label": "Heading 4"
-                          },
-                          {
-                            "value": "h5",
-                            "label": "Heading 5"
-                          },
-                          {
-                            "value": "h6",
-                            "label": "Heading 6"
-                          }
-                      ],
-                      "default": "h4"
-                    },
-                    {
-                      "type": "select",
-                      "id": "secondary_size",
-                      "label": "Secondary - Font Size",
-                      "options": [
-                          {
-                            "value": "--heading-2",
-                            "label": "Heading 2"
-                          },
-                          {
-                            "value": "--heading-3",
-                            "label": "Heading 3"
-                          },
-                          {
-                            "value": "--heading-4",
-                            "label": "Heading 4"
-                          },
-                          {
-                            "value": "--heading-5",
-                            "label": "Heading 5"
-                          },
-                          {
-                            "value": "--heading-6",
-                            "label": "Heading 6"
-                          }
-                      ],
-                      "default": "--heading-4"
-                    },
-                    {
-                      "type": "select",
-                      "id": "heading_position",
-                      "label": "Heading - Position",
-                      "options": [
-                          {
-                            "value": "flex-start",
-                            "label": "Top"
-                          },
-                          {
-                            "value": "center",
-                            "label": "Center"
-                          },
-                          {
-                            "value": "flex-end",
-                            "label": "Bottom"
-                          }
-                      ],
-                      "default": "flex-start"
-                    }
-                ]
-            }
-        ],
-        "presets" :[{
-            "name" : "Custom Layout"
-        }]
+      "type": "text",
+      "id": "header_nav",
+      "label": "Header Nav",
+      "default": "Features"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mobile",
+      "label": "Background Image Mobile"
     }
-  {% endschema %} 
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image - Mobile"
+        },
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Heading",
+          "info": "Don't update the paragraph style in this input: Need to be P- paragraph"
+        },
+        {
+          "type": "color",
+          "id": "primary_color",
+          "label": "Primary Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "secondary_color",
+          "label": "Secondary Color",
+          "default": "#ff8832"
+        },
+        {
+          "type": "select",
+          "id": "primary_weight",
+          "label": "Primary - Font Weight",
+          "options": [
+            {
+              "value": "f-f-regular",
+              "label": "Regular"
+            },
+            {
+              "value": "f-f-medium",
+              "label": "Medium"
+            },
+            {
+              "value": "f-f-semibold",
+              "label": "Semi-Bold"
+            },
+            {
+              "value": "f-f-bold",
+              "label": "Bold"
+            },
+            {
+              "value": "f-f-extra-bold",
+              "label": "Extra Bold"
+            },
+            {
+              "value": "f-f-black",
+              "label": "Black"
+            }
+          ],
+          "default": "f-f-medium"
+        },
+        {
+          "type": "select",
+          "id": "secondary_weight",
+          "label": "Secondary - Font Weight",
+          "options": [
+            {
+              "value": "Mulish-Regular",
+              "label": "Regular"
+            },
+            {
+              "value": "Mulish-Medium",
+              "label": "Medium"
+            },
+            {
+              "value": "Mulish-SemiBold",
+              "label": "Semi-Bold"
+            },
+            {
+              "value": "Mulish-Bold",
+              "label": "Bold"
+            },
+            {
+              "value": "Mulish-ExtraBold",
+              "label": "Extra Bold"
+            },
+            {
+              "value": "Mulish-Black",
+              "label": "Black"
+            }
+          ],
+          "default": "Mulish-SemiBold"
+        },
+        {
+          "type": "select",
+          "id": "primary_size",
+          "label": "Primary - Font Size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "Heading 2"
+            },
+            {
+              "value": "h3",
+              "label": "Heading 3"
+            },
+            {
+              "value": "h4",
+              "label": "Heading 4"
+            },
+            {
+              "value": "h5",
+              "label": "Heading 5"
+            },
+            {
+              "value": "h6",
+              "label": "Heading 6"
+            }
+          ],
+          "default": "h4"
+        },
+        {
+          "type": "range",
+          "id": "primary_font_size",
+          "label": "Primary - Font Size",
+          "min": 16,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "primary_font_size_mobile",
+          "label": "Primary - Font Size - Mobile",
+          "min": 14,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "secondary_font_size",
+          "label": "Secondary - Font Size",
+          "min": 16,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "secondary_font_size_mobile",
+          "label": "Secondary - Font Size - Mobile",
+          "min": 14,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "default": 18
+        },
+        {
+          "type": "select",
+          "id": "secondary_size",
+          "label": "Secondary - Font Size",
+          "options": [
+            {
+              "value": "--heading-2",
+              "label": "Heading 2"
+            },
+            {
+              "value": "--heading-3",
+              "label": "Heading 3"
+            },
+            {
+              "value": "--heading-4",
+              "label": "Heading 4"
+            },
+            {
+              "value": "--heading-5",
+              "label": "Heading 5"
+            },
+            {
+              "value": "--heading-6",
+              "label": "Heading 6"
+            }
+          ],
+          "default": "--heading-4"
+        },
+        {
+          "type": "select",
+          "id": "heading_position",
+          "label": "Heading - Position",
+          "options": [
+            {
+              "value": "flex-start",
+              "label": "Top"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "flex-end",
+              "label": "Bottom"
+            }
+          ],
+          "default": "flex-start"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Layout"
+    }
+  ]
+}
+{% endschema %}
