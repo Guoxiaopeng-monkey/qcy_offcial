@@ -14,6 +14,7 @@
       "blocks": {
         "banner_image_Qhf7hC": {
           "type": "Banner_Image",
+          "disabled": true,
           "settings": {
             "content_display": false,
             "content_position_y": "content-desktop-y-center",
@@ -346,10 +347,10 @@
         "product_PjLHk6": {
           "type": "product",
           "settings": {
-            "product": "qcy-h3-pro",
-            "custom_featured_image": "shopify://shop_images/H3-PRO_-1_d47772ad-b743-4f34-ae66-2b8a0f6fc533.png",
-            "sub_heading": "QCY H3 PRO",
-            "heading": "Music On, Unwanted Noise Off",
+            "product": "qcy-melobuds-n70",
+            "custom_featured_image": "shopify://shop_images/8ee163965c752b4df31d594396825cee_56b8ad34-1aea-4380-9282-6ae35e9c635f.png",
+            "sub_heading": "QCY MeloBuds N70",
+            "heading": "Premium Sound, Smart Price",
             "button_buy_now": "Buy Now"
           }
         },
@@ -372,11 +373,11 @@
       "custom_css": [],
       "settings": {
         "section_heading": "Feature Products",
-        "product": "qcy-melobuds-n70",
-        "bg_image": "shopify://shop_images/HT18-pc_85755d9b-dbd3-4665-888a-f1c8551de891.jpg",
-        "bg_image_mobile": "shopify://shop_images/1_40f17468-4a18-46dd-9cbe-3672c986da31.png",
-        "sub_heading": "QCY MeloBuds N70",
-        "heading": "Premium Sound, Smart Price",
+        "product": "qcy-h3-pro",
+        "bg_image": "shopify://shop_images/PC_1440_x_620.jpg",
+        "bg_image_mobile": "shopify://shop_images/M_390_x_340.jpg",
+        "sub_heading": "QCY H3 PRO",
+        "heading": "Music On, Unwanted Noise Off",
         "button_learn_more": "Learn More",
         "button_buy_now": "Buy Now"
       }
@@ -667,6 +668,15 @@
             "link": ""
           }
         },
+        "youtube_CLGcDN": {
+          "type": "youtube",
+          "settings": {
+            "custom_image": "shopify://shop_images/DroidModderX.jpg",
+            "youtube_link": "https://www.youtube.com/watch?v=HTs10LwC_YM",
+            "heading": "@Shane Starnes: BEST ANC Headphones Under $50",
+            "link": ""
+          }
+        },
         "youtube_zFb6jY": {
           "type": "youtube",
           "settings": {
@@ -675,21 +685,12 @@
             "heading": "@TechManiacHD: QCY MeloBuds Pro Review",
             "link": ""
           }
-        },
-        "youtube_CLGcDN": {
-          "type": "youtube",
-          "settings": {
-            "custom_image": "shopify://shop_images/DroidModderX.jpg",
-            "youtube_link": "https://www.youtube.com/watch?v=HTs10LwC_YM",
-            "heading": "@DroidModderX: BEST ANC Headphones Under $50",
-            "link": ""
-          }
         }
       },
       "block_order": [
         "youtube_chc6xF",
-        "youtube_zFb6jY",
-        "youtube_CLGcDN"
+        "youtube_CLGcDN",
+        "youtube_zFb6jY"
       ],
       "settings": {
         "heading": "Hear what others are saying",

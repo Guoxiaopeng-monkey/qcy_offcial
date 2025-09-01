@@ -54,6 +54,15 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "countdown_discount_fD4Myd": {
+          "type": "countdown_discount",
+          "settings": {
+            "discount": "Save $3",
+            "title": "Code: R703",
+            "date_time": "",
+            "discount_code": "R703"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -93,6 +102,7 @@
         "description",
         "variant_picker",
         "quantity_selector",
+        "countdown_discount_fD4Myd",
         "buy_buttons",
         "membership_discount_nAmWHi",
         "delivery_payment_cYYJWp"
