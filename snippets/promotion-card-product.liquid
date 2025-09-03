@@ -226,10 +226,10 @@
       {% if product.metafields.custom.discount_price != blank %}
         <div class="price">
           <h4 class="f-f-semibold original-price mx-0">
-            {{ product.metafields.custom.discount_price | money_with_currency }}
+            {{ product.metafields.custom.discount_price | times: 100 | money_with_currency }}
           </h4>
           <h5 class="f-f-medium compare-price mx-0 f-f-msb">
-            {{ product.selected_or_first_available_variant.compare_at_price | money_with_currency }}
+            {{ product.selected_or_first_available_variant.price | money_with_currency }}
           </h5>
         </div>
       {% else %}
