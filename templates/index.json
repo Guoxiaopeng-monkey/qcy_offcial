@@ -377,9 +377,22 @@
         "bg_image": "shopify://shop_images/PC_1440_x_620.jpg",
         "bg_image_mobile": "shopify://shop_images/M_390_x_340.jpg",
         "sub_heading": "QCY H3 PRO",
+        "sub_heading_font_size": 24,
+        "sub_heading_font_size_mobile": 16,
+        "sub_heading_weight": "f-f-semibold",
+        "sub_heading_weight_mobile": "f-f-semibold",
+        "sub_heading_color": "#5d5d5d",
+        "sub_heading_color_mobile": "#ffffff",
         "heading": "Music On, Unwanted Noise Off",
+        "heading_font_size": 42,
+        "heading_font_size_mobile": 20,
+        "heading_weight": "f-f-extra-bold",
+        "heading_weight_mobile": "f-f-extra-bold",
+        "heading_color": "#121212",
+        "heading_color_mobile": "#ffffff",
         "button_learn_more": "Learn More",
-        "button_buy_now": "Buy Now"
+        "button_buy_now": "Buy Now",
+        "mobile_position": "top-2"
       }
     },
     "homepage_slider_products_section_W4EQcL": {
