@@ -1,211 +1,320 @@
 <div class="product-item swiper-slide scroll-trigger animate--slide-in" style="--animation-order: {{ forloop.index }};">
-    <div class="upper-details">
-    <a href="{{ product.url }}" >
-        <div class="product-image-container">
-            {% if product.selected_or_first_available_variant.featured_image %}
-                <img loading="lazy" class="product-image product-image-img" src="{{ product.selected_or_first_available_variant.featured_image | img_url: '2048x2048'  }}" > 
-            {% else %}
-                <img loading="lazy" class="product-image product-image-img" src="{{ product.featured_image | img_url: '2048x2048'  }}" > 
-            {% endif %}
-            {% if product.selected_or_first_available_variant.metafields.custom.product_hover_image != blank %}
-                <img loading="lazy" class="product-image-img product-image-hover" src="{{ product.selected_or_first_available_variant.metafields.custom.product_hover_image | img_url: 'master' }}" > 
-            {% else %}
-                <img loading="lazy" class="product-image-img product-image-hover" src="{{ product.media[1] | img_url: 'master' }}" > 
-            {% endif %}
-          
-              {% if product.metafields.custom.promotion_sale_badge != blank %}
-                 <img loading="lazy" src="{{ product.metafields.custom.promotion_sale_badge | img_url: 'master' }}" class="custom-badge">
-              {% else %}
-                {% assign amount_discount = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price %}
-                {% assign percentage_discount = amount_discount | times: 100 | divided_by: product.selected_or_first_available_variant.compare_at_price | round %}
-                {% if product.metafields.custom.discount_badge %}
-                  {% if product.selected_or_first_available_variant.compare_at_price != blank %}
-                      <div class="badge-discount-banner">
-                        <h5 class="h3 main-color f-f-bold mx-0 l-h-normal">{{ percentage_discount }}%</h5>
-                        <h5 class="h3 main-color f-f-bold mx-0 l-h-normal">OFF</h5>
-                      </div>
-                  {% endif %}
-                {% else %}
-                  {% if product.selected_or_first_available_variant.compare_at_price != blank %}
-                      <div class="badge-discount-banner">
-                          <p class="mx-0 main-color f-f-regular l-h-normal">Save</p>
-                          <h5 class="h3 main-color f-f-bold mx-0 l-h-normal">{{ amount_discount | money }}</h5>
-                      </div>
-                  {% endif %}
-                {% endif %}
-              {% endif %}
-        </div>
-    </a>
-    </div>
-    <div class="lower-details">
-        <div class="product-variant">
-           <ul class="{{ product.metafields.custom.color_image_variant }}">
-                {% if product.metafields.custom.color_image_variant %}
-                <ul class="image-variant variant-desktop">
-                    {% assign count_extra = 0 %}
-                    {% for option in product.options %}
-                        {% if option == "Color" or option == "Colour" %}
-                            {% assign index = forloop.index0 %}
-                            {% assign colorlist = '' %}
-                            {% assign color = '' %}
-                            {% assign count = 0 %}
-                            {% for variant in product.variants %}
-                                {% capture color %}
-                                    {{ variant.options[index] }}
-                                {% endcapture %}
-                                {% unless colorlist contains color %}
-                                    {% if count < 4 %}
-                                        <li class="{% if forloop.index == 1 %}selected{% endif %}">
-                                            <span class="color-variant " data-color="{{ color | handle }}" data-variant-image="{{ variant.featured_image.src | img_url: '2048x2048'  }}" data-variant-url="{{ variant.url }}" data-variant-id="{{ variant.id }}" style="background:url('{{ variant.featured_image.src | img_url: '2048x2048' }}')">{{ color | handle }}</span>
-                                        </li>
-                                        {% assign count = count | plus: 1 %}
-                                    {% else %}
-                                        {% assign count_extra = count_extra | plus: 1 %}
-                                    {% endif %}
-                                    {% capture tempList %}
-                                        {{ colorlist | append: color | append: ' '}}
-                                    {% endcapture %}
-                                    {% assign colorlist = tempList %}
-                                {% endunless %}
-                            {% endfor %}
-                        {% endif %}
-                    {% endfor %}
-                    {% if count_extra > 0 %}
-                        <li>
-                            <a href="{{ product.url }}" class="color-variant mx-0 limit-var p-small black-f">+{{ count_extra }}</a>
-                        </li>
-                    {% endif %}
-                </ul>
-                <ul class="image-variant variant-mobile">
-                    {% assign count_extra = 0 %}
-                    {% for option in product.options %}
-                        {% if option == "Color" or option == "Colour" %}
-                            {% assign index = forloop.index0 %}
-                            {% assign colorlist = '' %}
-                            {% assign color = '' %}
-                            {% assign count = 0 %}
-                            {% for variant in product.variants %}
-                                {% capture color %}
-                                    {{ variant.options[index] }}
-                                {% endcapture %}
-                                {% unless colorlist contains color %}
-                                    {% if count < 3 %}
-                                        <li class="{% if forloop.index == 1 %}selected{% endif %}">
-                                            <span class="color-variant " data-color="{{ color | handle }}" data-variant-image="{{ variant.featured_image.src | img_url: '2048x2048'  }}" data-variant-url="{{ variant.url }}" data-variant-image-hover="{{ variant.custom.product_hover_image | img_url: 'master' }}" style="background:url('{{ variant.featured_image.src | img_url: '2048x2048' }}')">{{ color | handle }}</span>
-                                        </li>
-                                        {% assign count = count | plus: 1 %}
-                                    {% else %}
-                                        {% assign count_extra = count_extra | plus: 1 %}
-                                    {% endif %}
-                                    {% capture tempList %}
-                                        {{ colorlist | append: color | append: ' '}}
-                                    {% endcapture %}
-                                    {% assign colorlist = tempList %}
-                                {% endunless %}
-                            {% endfor %}
-                        {% endif %}
-                    {% endfor %}
-                    {% if count_extra > 0 %}
-                        <li>
-                            <a href="{{ product.url }}" class="color-variant mx-0 limit-var p-small black-f">+{{ count_extra }}</a>
-                        </li>
-                    {% endif %}
-                </ul>
-                {% else %}
-                  <ul>
-                        {% for option in product.options  limit: 4 %}
-                            {% if option == "Color" or option == "Colour" %}
-                                {% assign index = forloop.index0 %}
-                                {% assign colorlist = '' %}
-                                {% assign color = '' %}
-                                {% for variant in product.variants %}
-                                {% capture color %}
-                                    {{ variant.options[index] }}
-                                {% endcapture %}
-                                {% unless colorlist contains color %}
-                                    <li class="{% if forloop.index == 1 %}selected{% endif %}">
-                                        <span class="color-variant " data-color="{{ color | handle }}" data-variant-image="{{ variant.featured_image.src | img_url: '2048x2048'  }}" data-variant-url="{{ variant.url }}" data-variant-id="{{ variant.id }}" data-variant-image-hover="{{ variant.metafields.custom.product_hover_image | img_url: 'master' }}">{{ color | handle }}</span>
-                                    </li>
-                                    {% capture tempList %}
-                                        {{ colorlist | append: color | append: ' '}}
-                                    {% endcapture %}
-                                {% assign colorlist = tempList %}
-                                {% endunless %}
-                                {% endfor %}
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </ul> 
-        </div>
-        <a href="{{ product.url }}" class="text-none-underline black-f">
-            <h4 class="mx-0 f-f-bold product-title">
-                {% if product.metafields.custom.custom_title != blank %}
-                  {{ product.metafields.custom.custom_title }}
-                {% else %}
-                  {{ product.title }}
-                {% endif %}
-            </h4>
-        </a>
-        <div class="mx-0 p-small l-h-normal product-short-description">
-            <!-- Go creative and go beyond -->
+  <div class="upper-details">
+    <a href="{{ product.url }}">
+      <div class="product-image-container">
+        {% if product.selected_or_first_available_variant.featured_image %}
+          <img
+            loading="lazy"
+            class="product-image product-image-img"
+            src="{{ product.selected_or_first_available_variant.featured_image | img_url: '2048x2048'  }}"
+            width="100%"
+            height="auto"
+          >
+        {% else %}
+          <img
+            loading="lazy"
+            class="product-image product-image-img"
+            src="{{ product.featured_image | img_url: '2048x2048'  }}"
+            width="100%"
+            height="auto"
+          >
+        {% endif %}
+        {% if product.selected_or_first_available_variant.metafields.custom.product_hover_image != blank %}
+          <img
+            loading="lazy"
+            class="product-image-img product-image-hover"
+            src="{{ product.selected_or_first_available_variant.metafields.custom.product_hover_image | img_url: 'master' }}"
+            width="100%"
+            height="auto"
+          >
+        {% else %}
+          <img
+            loading="lazy"
+            class="product-image-img product-image-hover"
+            src="{{ product.media[1] | img_url: 'master' }}"
+            width="100%"
+            height="auto"
+          >
+        {% endif %}
 
-        {% comment %}{% if product.metafields.custom.short_description != blank %}
+        {% if product.metafields.custom.promotion_sale_badge != blank %}
+          <img
+            loading="lazy"
+            src="{{ product.metafields.custom.promotion_sale_badge | img_url: 'master' }}"
+            class="custom-badge"
+            width="100%"
+            height="auto"
+          >
+        {% else %}
+          {% assign amount_discount = product.selected_or_first_available_variant.compare_at_price
+            | minus: product.selected_or_first_available_variant.price
+          %}
+          {% assign percentage_discount = amount_discount
+            | times: 100
+            | divided_by: product.selected_or_first_available_variant.compare_at_price
+            | round
+          %}
+          {% if product.metafields.custom.discount_badge %}
+            {% if product.selected_or_first_available_variant.compare_at_price != blank %}
+              <div class="badge-discount-banner">
+                <h5 class="h3 main-color f-f-bold mx-0 l-h-normal">{{ percentage_discount }}%</h5>
+                <h5 class="h3 main-color f-f-bold mx-0 l-h-normal">OFF</h5>
+              </div>
+            {% endif %}
+          {% else %}
+            {% if product.selected_or_first_available_variant.compare_at_price != blank %}
+              <div class="badge-discount-banner">
+                <p class="mx-0 main-color f-f-regular l-h-normal">Save</p>
+                <h5 class="h3 main-color f-f-bold mx-0 l-h-normal">{{ amount_discount | money }}</h5>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      </div>
+    </a>
+  </div>
+  <div class="lower-details">
+    <div class="product-variant">
+      <ul class="{{ product.metafields.custom.color_image_variant }}">
+        {% if product.metafields.custom.color_image_variant %}
+          <ul class="image-variant variant-desktop">
+            {% assign count_extra = 0 %}
+            {% for option in product.options %}
+              {% if option == 'Color' or option == 'Colour' %}
+                {% assign index = forloop.index0 %}
+                {% assign colorlist = '' %}
+                {% assign color = '' %}
+                {% assign count = 0 %}
+                {% for variant in product.variants %}
+                  {% capture color %}
+                                    {{ variant.options[index] }}
+                                {% endcapture %}
+                  {% unless colorlist contains color %}
+                    {% if count < 4 %}
+                      <li class="{% if forloop.index == 1 %}selected{% endif %}">
+                        <span
+                          class="color-variant "
+                          data-color="{{ color | handle }}"
+                          data-variant-image="{{ variant.featured_image.src | img_url: '2048x2048'  }}"
+                          data-variant-url="{{ variant.url }}"
+                          data-variant-id="{{ variant.id }}"
+                          style="background:url('{{ variant.featured_image.src | img_url: '2048x2048' }}')"
+                        >
+                          {{- color | handle -}}
+                        </span>
+                      </li>
+                      {% assign count = count | plus: 1 %}
+                    {% else %}
+                      {% assign count_extra = count_extra | plus: 1 %}
+                    {% endif %}
+                    {% capture tempList %}
+                                        {{ colorlist | append: color | append: ' '}}
+                                    {% endcapture %}
+                    {% assign colorlist = tempList %}
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+            {% if count_extra > 0 %}
+              <li>
+                <a href="{{ product.url }}" class="color-variant mx-0 limit-var p-small black-f">+{{ count_extra }}</a>
+              </li>
+            {% endif %}
+          </ul>
+          <ul class="image-variant variant-mobile">
+            {% assign count_extra = 0 %}
+            {% for option in product.options %}
+              {% if option == 'Color' or option == 'Colour' %}
+                {% assign index = forloop.index0 %}
+                {% assign colorlist = '' %}
+                {% assign color = '' %}
+                {% assign count = 0 %}
+                {% for variant in product.variants %}
+                  {% capture color %}
+                                    {{ variant.options[index] }}
+                                {% endcapture %}
+                  {% unless colorlist contains color %}
+                    {% if count < 3 %}
+                      <li class="{% if forloop.index == 1 %}selected{% endif %}">
+                        <span
+                          class="color-variant "
+                          data-color="{{ color | handle }}"
+                          data-variant-image="{{ variant.featured_image.src | img_url: '2048x2048'  }}"
+                          data-variant-url="{{ variant.url }}"
+                          data-variant-image-hover="{{ variant.custom.product_hover_image | img_url: 'master' }}"
+                          style="background:url('{{ variant.featured_image.src | img_url: '2048x2048' }}')"
+                        >
+                          {{- color | handle -}}
+                        </span>
+                      </li>
+                      {% assign count = count | plus: 1 %}
+                    {% else %}
+                      {% assign count_extra = count_extra | plus: 1 %}
+                    {% endif %}
+                    {% capture tempList %}
+                                        {{ colorlist | append: color | append: ' '}}
+                                    {% endcapture %}
+                    {% assign colorlist = tempList %}
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+            {% if count_extra > 0 %}
+              <li>
+                <a href="{{ product.url }}" class="color-variant mx-0 limit-var p-small black-f">+{{ count_extra }}</a>
+              </li>
+            {% endif %}
+          </ul>
+        {% else %}
+          <ul>
+            {% for option in product.options limit: 4 %}
+              {% if option == 'Color' or option == 'Colour' %}
+                {% assign index = forloop.index0 %}
+                {% assign colorlist = '' %}
+                {% assign color = '' %}
+                {% for variant in product.variants %}
+                  {% capture color %}
+                                    {{ variant.options[index] }}
+                                {% endcapture %}
+                  {% unless colorlist contains color %}
+                    <li class="{% if forloop.index == 1 %}selected{% endif %}">
+                      <span
+                        class="color-variant "
+                        data-color="{{ color | handle }}"
+                        data-variant-image="{{ variant.featured_image.src | img_url: '2048x2048'  }}"
+                        data-variant-url="{{ variant.url }}"
+                        data-variant-id="{{ variant.id }}"
+                        data-variant-image-hover="{{ variant.metafields.custom.product_hover_image | img_url: 'master' }}"
+                      >
+                        {{- color | handle -}}
+                      </span>
+                    </li>
+                    {% capture tempList %}
+                                        {{ colorlist | append: color | append: ' '}}
+                                    {% endcapture %}
+                    {% assign colorlist = tempList %}
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </ul>
+    </div>
+    <a href="{{ product.url }}" class="text-none-underline black-f">
+      <h4 class="mx-0 f-f-bold product-title">
+        {% if product.metafields.custom.custom_title != blank %}
+          {{ product.metafields.custom.custom_title }}
+        {% else %}
+          {{ product.title }}
+        {% endif %}
+      </h4>
+    </a>
+    <div class="mx-0 p-small l-h-normal product-short-description">
+      <!-- Go creative and go beyond -->
+
+      {% comment %}
+        {% if product.metafields.custom.short_description != blank %}
             {{ product.metafields.custom.short_description | metafield_tag  }}
         {% else %}
-            <p class="mx-0" style="color:transparent !important;">space</p>  
-        {% endif %}{% endcomment %}
-        </div>
-        {% render 'copy-discount-off', product: product %}
-        <div class="price-n-button">
-            <div class="price">
-                <h4 class="f-f-semibold original-price mx-0">{{ product.selected_or_first_available_variant.price | money_with_currency }}</h4>
-                <h5 class="f-f-medium compare-price mx-0 f-f-msb">{{ product.selected_or_first_available_variant.compare_at_price | money_with_currency }}</h5>
-            </div>
-            <div class="btn-content">
-
-            {% assign product_form_id = 'quick-add-' | append: section.id | append: product.id %}
-                <div class="quick-add no-js-hidden add-to-cart-btn">
-                    <product-page-form data-section-id="{{ section.id }}">
-                        {%- form 'product', product, id: product.id, class: 'form add_cart_form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-                        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" class="product-variant-id" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
-                        <button id="{{ product_form_id }}-submit" type="submit" name="add" class="quick-add__submit " aria-haspopup="dialog" aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ product.id }}" aria-live="polite" data-sold-out-message="true" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
-                            <span class="hidden">
-                                {%- if product.selected_or_first_available_variant.available -%}
-                                {{ 'products.product.add_to_cart' | t }}
-                                {%- else -%}
-                                {{ 'products.product.sold_out' | t }}
-                                {%- endif -%}
-                            </span>
-                            <span class="sold-out-message hidden">
-                                {{ 'products.product.sold_out' | t }}
-                            </span>
-                            {%- if horizontal_quick_add -%}
-                            <span class="icon-wrap hidden">
-                                {{- 'icon-plus.svg' | inline_asset_content -}}
-                            </span>
-                            {%- endif -%}
-                            
-                            <span class="add-to-cart-btn" style="background-color: {{ background_add_to_cart }};">
-                                <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
-                                    <g transform="translate(0.72 0.889)">
-                                        <rect fill="none" width="21" height="21" transform="translate(-0.72 -0.889)" />
-                                        <path d="M28.863,36.251H20.119L17.983,24.505a.613.613,0,0,0-.6-.505H16" transform="translate(-15.021 -22.422)" stroke="{{ background_icon }}" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-                                        <circle cx="1.248" cy="1.248" r="1.248" transform="translate(5.038 13.829)" stroke="{{ background_icon }}" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-                                        <circle cx="1.248" cy="1.248" r="1.248" transform="translate(12.716 13.829)" stroke="{{ background_icon }}" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-                                        <path d="M49.11,70.125h9.617a1.217,1.217,0,0,0,1.2-1L60.863,64H48" transform="translate(-44.571 -59.359)" stroke="{{ background_icon }}" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-                                    </g>
-                                </svg>
-                            </span>
-                            {%- render 'loading-spinner' -%}
-                        </button>
-                        {%- endform -%}
-                    </product-page-form>
-                </div>
-                <a href="/cart/{{ product.selected_or_first_available_variant.id }}:1" class="learn-more-btn" style="background-color: {{ background_buy_now }};">
-                    <p class="f-f-regular mx-0" style="color:{{ background_text }};">Buy Now</p>
-                </a>
-            </div>
-        </div>
+            <p class="mx-0" style="color:transparent !important;">space</p>
+        {% endif %}
+      {% endcomment %}
     </div>
+    {% render 'copy-discount-off', product: product %}
+    <div class="price-n-button">
+      {% if product.metafields.custom.discount_price != blank %}
+        <div class="price">
+          <h4 class="f-f-semibold original-price mx-0">
+            {{ product.metafields.custom.discount_price | money_with_currency }}
+          </h4>
+          <h5 class="f-f-medium compare-price mx-0 f-f-msb">
+            {{ product.selected_or_first_available_variant.compare_at_price | money_with_currency }}
+          </h5>
+        </div>
+      {% else %}
+        <div class="price">
+          <h4 class="f-f-semibold original-price mx-0">
+            {{ product.selected_or_first_available_variant.price | money_with_currency }}
+          </h4>
+          <h5 class="f-f-medium compare-price mx-0 f-f-msb">
+            {{ product.selected_or_first_available_variant.compare_at_price | money_with_currency }}
+          </h5>
+        </div>
+      {% endif %}
+      <div class="btn-content">
+        {% assign product_form_id = 'quick-add-' | append: section.id | append: product.id %}
+        <div class="quick-add no-js-hidden add-to-cart-btn">
+          <product-page-form data-section-id="{{ section.id }}">
+            {%- form 'product',
+              product,
+              id: product.id,
+              class: 'form add_cart_form',
+              novalidate: 'novalidate',
+              data-type: 'add-to-cart-form'
+            -%}
+              <input
+                type="hidden"
+                name="id"
+                value="{{ product.selected_or_first_available_variant.id }}"
+                class="product-variant-id"
+                {% if product.selected_or_first_available_variant.available == false %}
+                  disabled
+                {% endif %}
+              >
+              <button
+                id="{{ product_form_id }}-submit"
+                type="submit"
+                name="add"
+                class="quick-add__submit "
+                aria-haspopup="dialog"
+                aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ product.id }}"
+                aria-live="polite"
+                data-sold-out-message="true"
+                {% if product.selected_or_first_available_variant.available == false %}
+                  disabled
+                {% endif %}
+              >
+                <span class="hidden">
+                  {%- if product.selected_or_first_available_variant.available -%}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {%- else -%}
+                    {{ 'products.product.sold_out' | t }}
+                  {%- endif -%}
+                </span>
+                <span class="sold-out-message hidden">
+                  {{ 'products.product.sold_out' | t }}
+                </span>
+                {%- if horizontal_quick_add -%}
+                  <span class="icon-wrap hidden">
+                    {{- 'icon-plus.svg' | inline_asset_content -}}
+                  </span>
+                {%- endif -%}
+
+                <span class="add-to-cart-btn" style="background-color: {{ background_add_to_cart }};">
+                  <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                    <g transform="translate(0.72 0.889)">
+                        <rect fill="none" width="21" height="21" transform="translate(-0.72 -0.889)" />
+                        <path d="M28.863,36.251H20.119L17.983,24.505a.613.613,0,0,0-.6-.505H16" transform="translate(-15.021 -22.422)" stroke="{{ background_icon }}" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                        <circle cx="1.248" cy="1.248" r="1.248" transform="translate(5.038 13.829)" stroke="{{ background_icon }}" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                        <circle cx="1.248" cy="1.248" r="1.248" transform="translate(12.716 13.829)" stroke="{{ background_icon }}" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                        <path d="M49.11,70.125h9.617a1.217,1.217,0,0,0,1.2-1L60.863,64H48" transform="translate(-44.571 -59.359)" stroke="{{ background_icon }}" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                    </g>
+                  </svg>
+                </span>
+                {%- render 'loading-spinner' -%}
+              </button>
+            {%- endform -%}
+          </product-page-form>
+        </div>
+        <a
+          href="/cart/{{ product.selected_or_first_available_variant.id }}:1"
+          class="learn-more-btn"
+          style="background-color: {{ background_buy_now }};"
+        >
+          <p class="f-f-regular mx-0" style="color:{{ background_text }};">Buy Now</p>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
