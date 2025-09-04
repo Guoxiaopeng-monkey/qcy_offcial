@@ -54,6 +54,15 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "countdown_discount_gzYmrq": {
+          "type": "countdown_discount",
+          "settings": {
+            "discount": "15% OFF",
+            "title": "Code:FG15",
+            "date_time": "",
+            "discount_code": "FG15"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -96,6 +105,7 @@
         "description",
         "variant_picker",
         "quantity_selector",
+        "countdown_discount_gzYmrq",
         "buy_buttons",
         "membership_discount_nAmWHi",
         "delivery_payment_Rk9DYF"

@@ -204,21 +204,30 @@
         "manual_12345": {
           "type": "manual",
           "settings": {
-            "title": "Professional Edition (USB Version) PC Driver Version 20250813",
+            "title": "Heroad V200 Pro PC Driver (Version 20250813)",
             "manual_url": "https://pub-093083eb68a74089b353bba523d828c1.r2.dev/QCY%20USB%20Audio%20Virtual%207.1-20250813.zip"
           }
         },
         "manual_9axdc4": {
           "type": "manual",
           "settings": {
-            "title": "Three-module PC driver version 1.0.0.5",
+            "title": "Heroad V200 Quad-Mode Edition PC Driver(Version 1.0.0.5)",
             "manual_url": "https://cdn.shopify.com/s/files/1/0639/3492/2809/files/QCY_Heroad_Driver_Setup_1.0.0.5_20250801_01.zip?v=1755079341"
+          }
+        },
+        "manual_pFcUzn": {
+          "type": "manual",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "manual_url": ""
           }
         }
       },
       "block_order": [
         "manual_12345",
-        "manual_9axdc4"
+        "manual_9axdc4",
+        "manual_pFcUzn"
       ],
       "settings": {
         "title": "Documents & Drivers"

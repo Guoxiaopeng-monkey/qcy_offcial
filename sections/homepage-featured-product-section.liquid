@@ -112,10 +112,11 @@
       flex-direction: column;
       margin-top: 20px;
       gap: 10px;
-      position: relative;
+      /* position: relative; */
     }
     .featured-products-section .featured-full-width-content {
-      position: absolute;
+      /* position: absolute; */
+      position: relative;
       padding-left: 0px;
     }
     .featured-products-section .featured-full-width-content.top-1 {
@@ -319,7 +320,7 @@
       >
     {% endif %}
 
-    <div class="featured-full-width-content col_35  {{ section.settings.mobile_position }}">
+    <div class="featured-full-width-content col_35  ">
       <h4
         class="sub-heading f-f-regular mx-0 "
         style="--font-size: {{ section.settings.sub_heading_font_size }}px; --color: {{ section.settings.sub_heading_color }}; --font-size-mobile: {{ section.settings.sub_heading_font_size_mobile }}px; --color-mobile: {{ section.settings.sub_heading_color_mobile }}; --font-weight: {{ section.settings.sub_heading_weight }}; --font-weight-mobile: {{ section.settings.sub_heading_weight_mobile }};"
