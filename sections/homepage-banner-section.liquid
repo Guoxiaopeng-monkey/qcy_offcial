@@ -412,6 +412,7 @@
     .description-font-size {
       --description-font-size: var(--base-description-font-size-mb);
       font-size: var(--description-font-size);
+      color: var(--color-mb);
     }
   }
   @media only screen and (min-width: 375px) {
@@ -801,7 +802,7 @@
                   data-aos-easing="ease"
                   data-aos-duration="700"
                   data-aos-once="true"
-                  style="--base-description-font-size: {{ block.settings.description_font_size }}px; color:{{ block.settings.description_color }};--base-description-font-size-mb: {{ block.settings.description_font_size_mb }}px; --color-mb:{{ block.settings.description_color_mb }};"
+                  style="--base-description-font-size: {{ block.settings.description_font_size }}px; --color:{{ block.settings.description_color }};--base-description-font-size-mb: {{ block.settings.description_font_size_mb }}px; --color-mb:{{ block.settings.description_color_mb }};"
                 >
                   {{ block.settings.description | replace: '<p>', '' | replace: '</p>', '' }}
                 </h4>
@@ -1096,7 +1097,7 @@
         {
           "type": "range",
           "id": "heading_font_size_mb",
-          "min": 40,
+          "min": 20,
           "max": 80,
           "step": 5,
           "unit": "px",
