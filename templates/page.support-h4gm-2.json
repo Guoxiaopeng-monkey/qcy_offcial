@@ -211,8 +211,9 @@
         },
         "manual_9axdc4": {
           "type": "manual",
+          "disabled": true,
           "settings": {
-            "title": "Heroad V200 Tri-Mode Edition PC Driver(Version 1.0.0.5)",
+            "title": "Heroad V200 Quad-Mode Edition PC Driver(Version 1.0.0.5)",
             "manual_url": "https://cdn.shopify.com/s/files/1/0639/3492/2809/files/QCY_Heroad_Driver_Setup_1.0.0.5_20250801_01.zip?v=1755079341"
           }
         },
