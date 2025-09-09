@@ -83,6 +83,155 @@
                                         {% endif %}
                                     {% endif %}
                                   {% endfor %}
+                              {% elsif childlink.title == 'About Us' %}
+
+                                <!-- MEGA MENU - DISPLAY 3  -->
+                                <details id="Details-menu-drawer-qcy-technology">
+                                    <summary
+                                      id="HeaderDrawer-qcy-technology"
+                                      class="f-f-medium t-up h2 menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
+                                    >
+                                        QCY Technology
+                                      {% render 'icon-arrow-next' %}
+                                    </summary>
+                                    <div id="childlink-qcy-technology" class="menu-drawer__submenu has-submenu gradient motion-reduce">
+                                      <button class="menu-drawer__close-button link link--text focus-inset h5" aria-expanded="true">
+                                        <span class="svg-wrapper">
+                                          {% render 'icon-arrow-prev' %}
+                                        </span>
+                                        QCY Technology
+                                      </button>
+
+                                      <div class="tab-container-list">
+                                          <div class="row" style="--bs-gutter-y:1rem;">
+                                            
+                                              <div class="col-12">
+                                                  <a href="/pages/audio-technologies" class="tab-item">
+                                                      <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/40106_2x_8066e5de-3a3c-4c35-bccb-7bd6e86ff167.png?v=1750778256" class="img-container" width="100%" height="100%">
+                                                      <h3 class="white-f f-f-bold mx-0">Audio</h3>
+                                                  </a>
+                                              </div>
+                                              {% if block.settings.tab_1_heading_2 != blank %}
+                                              <div class="col-12">
+                                                  <a href="{{ block.settings.tab_1_link_2 }}" class="tab-item">
+                                                      <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/40006_2x_fa7a7338-6e24-4031-b10b-ed248ca1e26b.png?v=1750778256" class="img-container" width="100%" height="100%">
+                                                      <h3 class="white-f f-f-bold mx-0">{{ block.settings.tab_1_heading_2 }}</h3>
+                                                  </a>
+                                              </div>
+                                              {% endif %}
+                                            
+                                          </div>
+                                      </div>
+                                      
+                                    </div>
+                                </details>
+                                <details id="Details-menu-drawer-about-us">
+                                    <summary
+                                      id="HeaderDrawer-about-us"
+                                      class="f-f-medium t-up h2 menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
+                                    >
+                                        About Us
+                                      {% render 'icon-arrow-next' %}
+                                    </summary>
+                                    <div id="childlink-qcy-technology" class="menu-drawer__submenu has-submenu gradient motion-reduce">
+                                      <button class="menu-drawer__close-button link link--text focus-inset h5" aria-expanded="true">
+                                        <span class="svg-wrapper">
+                                          {% render 'icon-arrow-prev' %}
+                                        </span>
+                                        About Us
+                                      </button>
+                                      
+                                      <div class="tab-container-list">
+                                          <div class="tab-item">
+                                              <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/40009_2x_538879b1-c466-43fd-abf0-659f1d05c6fb.png?v=1750779646" class="img-container" width="100%" height="100%">
+                                          </div>
+                                          <div class="pt-3">
+                                              <p class="h4 f-f-medium black-f text-center">
+                                                About Us，Launched By Tech-Savvy Audio Enthusiasts And Engineers, QCY Has Grown Into Oneof The Largest Bluetooth Headphone Manufacturers. 
+                                              </p>
+                                              <a href="{{ block.settings.url }}" class="btn s-main f-f-regular p white-f ">
+                                                <h5 class="mx-0">
+                                                  Learn More
+                                                </h5>
+                                              </a>
+                                          </div>
+                                      </div>
+                                      
+                                    </div>
+                                </details>
+                                <details id="Details-menu-drawer-blog">
+                                    <summary
+                                      id="HeaderDrawer-blog"
+                                      class="f-f-medium t-up h2 menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
+                                    >
+                                        Blog
+                                      {% render 'icon-arrow-next' %}
+                                    </summary>
+                                    <div id="childlink-qcy-technology" class="menu-drawer__submenu has-submenu gradient motion-reduce">
+                                      <button class="menu-drawer__close-button link link--text focus-inset h5" aria-expanded="true">
+                                        <span class="svg-wrapper">
+                                          {% render 'icon-arrow-prev' %}
+                                        </span>
+                                        Blog
+                                      </button>
+                                      
+                                      <div class="tab-container-list">
+                                          <div class="tab-item">
+                                              <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/40008_2x_e5f1747c-afbe-4803-9ad1-a9865cd6c3d2.png?v=1750781316" class="img-container" width="100%" height="100%">
+                                          </div>
+                                          <div class="pt-3">
+                                              <p class="h4 f-f-medium black-f text-center">
+                                                 Blog, a place where you can discover the latest updates, in-depth reviews, and expert tips to guide you in selecting the ideal headset that suits your needs perfectly. 
+                                              </p>
+                                              <a href="{{ block.settings.url }}" class="btn s-main f-f-regular p white-f ">
+                                                <h5 class="mx-0">
+                                                  Learn More
+                                                </h5>
+                                              </a>
+                                          </div>
+                                      </div>
+                                      
+                                    </div>
+                                </details>
+                                <details id="Details-menu-drawer-sustainability">
+                                    <summary
+                                      id="HeaderDrawer-sustainability"
+                                      class="f-f-medium t-up h2 menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
+                                    >
+                                        Sustainability
+                                      {% render 'icon-arrow-next' %}
+                                    </summary>
+                                    <div id="childlink-qcy-technology" class="menu-drawer__submenu has-submenu gradient motion-reduce">
+                                      <button class="menu-drawer__close-button link link--text focus-inset h5" aria-expanded="true">
+                                        <span class="svg-wrapper">
+                                          {% render 'icon-arrow-prev' %}
+                                        </span>
+                                        Sustainability
+                                      </button>
+                                      
+                                      <div class="tab-container-list">
+                                          <div class="tab-item">
+                                              <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/40010_2x_88674a43-1ed0-4740-bace-0588a72e0080.png?v=1750781335" class="img-container" width="100%" height="100%">
+                                          </div>
+                                          <div class="pt-3">
+                                              <p class="h4 f-f-medium black-f text-center">
+                                                 Sustainability, We adhere to environmental principles, using energy-saving technologies and recycled materials to reduce environmental impact, providing green and efficient Bluetooth headset solutions to protect the Earth.
+                                              </p>
+                                              <a href="{{ block.settings.url }}" class="btn s-main f-f-regular p white-f ">
+                                                <h5 class="mx-0">
+                                                  Learn More
+                                                </h5>
+                                              </a>
+                                          </div>
+                                      </div>
+                                      
+                                    </div>
+                                </details>
+                                
+                                
+                              {% elsif childlink.title == 'Blog' or childlink.title == 'Sustainability' %}
+                                 <!-- NEED TO REMOVE MENU NAV in BACKEND -->
+                            
                               {% else %}
                                 <li>
                                 {%- if childlink.links == blank -%}
@@ -201,127 +350,6 @@
                 -%}
               </a>
             {%- endif -%}
-            {%- if localization.available_countries or localization.available_languages -%}
-              {% comment %}<div class="menu-drawer__localization header-localization">
-                {%- if localization.available_countries and localization.available_countries.size > 1 -%}
-                  <localization-form>
-                    {%- form 'localization', id: 'HeaderCountryMobileForm', class: 'localization-form' -%}
-                      <div>
-                        <h2 class="visually-hidden" id="HeaderCountryMobileLabel">
-                          {{ 'localization.country_label' | t }}
-                        </h2>
-                        {%- render 'country-localization', localPosition: 'HeaderCountryMobile' -%}
-                      </div>
-                    {%- endform -%}
-                  </localization-form>
-                {% endif %}
-
-                {%- if localization.available_languages and localization.available_languages.size > 1 -%}
-                  <localization-form>
-                    {%- form 'localization', id: 'HeaderLanguageMobileForm', class: 'localization-form' -%}
-                      <div>
-                        <h2 class="visually-hidden" id="HeaderLanguageMobileLabel">
-                          {{ 'localization.language_label' | t }}
-                        </h2>
-                        {%- render 'language-localization', localPosition: 'HeaderLanguageMobile' -%}
-                      </div>
-                    {%- endform -%}
-                  </localization-form>
-                {%- endif -%}
-              </div> {% endcomment %}
-            {%- endif -%}
-              {% comment %}<ul class="list list-social list-unstyled" role="list">
-              {%- if settings.social_twitter_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_twitter_link }}" class="list-social__link link">
-                    <span class="svg-wrapper">
-                      {{- 'icon-twitter.svg' | inline_asset_content -}}
-                    </span>
-                    <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_facebook_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_facebook_link }}" class="list-social__link link">
-                    <span class="svg-wrapper">
-                      {{- 'icon-facebook.svg' | inline_asset_content -}}
-                    </span>
-                    <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_pinterest_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_pinterest_link }}" class="list-social__link link">
-                    <span class="svg-wrapper">
-                      {{- 'icon-pinterest.svg' | inline_asset_content -}}
-                    </span>
-                    <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_instagram_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_instagram_link }}" class="list-social__link link">
-                    <span class="svg-wrapper">
-                      {{- 'icon-instagram.svg' | inline_asset_content -}}
-                    </span>
-                    <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_tiktok_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_tiktok_link }}" class="list-social__link link">
-                    <span class="svg-wrapper">
-                      {{- 'icon-tiktok.svg' | inline_asset_content -}}
-                    </span>
-                    <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_tumblr_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_tumblr_link }}" class="list-social__link link">
-                    <span class="svg-wrapper">
-                      {{- 'icon-tumblr.svg' | inline_asset_content -}}
-                    </span>
-                    <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_snapchat_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_snapchat_link }}" class="list-social__link link">
-                    <span class="svg-wrapper">
-                      {{- 'icon-snapchat.svg' | inline_asset_content -}}
-                    </span>
-                    <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_youtube_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_youtube_link }}" class="list-social__link link">
-                    <span class="svg-wrapper">
-                      {{- 'icon-youtube.svg' | inline_asset_content -}}
-                    </span>
-                    <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_vimeo_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_vimeo_link }}" class="list-social__link link">
-                    <span class="svg-wrapper">
-                      {{- 'icon-vimeo.svg' | inline_asset_content -}}
-                    </span>
-                    <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-            </ul> {% endcomment %}
           </div>
         </div>
       </div>

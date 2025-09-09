@@ -1,9 +1,9 @@
 {%- if settings.predictive_search_enabled -%}
-  <link rel="stylesheet" href="{{ 'component-price.aio.min.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
 {%- if section.settings.menu_type_desktop == 'mega' -%}
-  <link rel="stylesheet" href="{{ 'component-mega-menu.aio.min.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
 
@@ -61,6 +61,7 @@
     align-items: center;
     line-height: calc(1 + 0.3 / var(--font-body-scale));
     position: relative;
+    border-bottom: 1px solid #EEE;
   }
 
   .list-menu__item--link {
@@ -154,7 +155,7 @@
 
 {% endstylesheet %}
 
-<script src="{{ 'cart-notification.aio.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
   for block in section.blocks
@@ -283,10 +284,7 @@
           </localization-form>
         {%- endif -%}
       </div>{% endcomment %}
- {% comment %}   
-  <button id="myButton"><selector-root data-id=JP425840 id="JP425840"></selector-root></button>
-{% endcomment %}
-      
+
       {% render 'country-selector', country_setting: section.settings.enable_language_selector , currency_setting: section.settings.enable_country_selector %}
 
       {% render 'header-search', input_id: 'Search-In-Modal' %}
@@ -926,44 +924,47 @@ $(window).resize(function() {
       });
   });
 
-let initialHeight = window.innerHeight;
-let drawer = document.querySelector('#menu-drawer');
-
-// Main function that includes optional header extras
-function adjustDrawerHeightWithExtras() {
-  let headerHeight = document.querySelector('#site-header')?.offsetHeight || 0;
-  let announcementHeight = $('.announcement-bar-section').length ? $('.announcement-bar-section').outerHeight() : 0;
-  let headerSupportHeight = $('.header-support-section').length ? $('.header-support-section').outerHeight() : 0;
-
-  // Calculate total height to subtract
-  let totalHeight = headerHeight + announcementHeight + headerSupportHeight;
-
-  drawer.style.height = `calc(${initialHeight}px - ${totalHeight}px)`;
-}
+  let drawer = document.querySelector('#menu-drawer');
   
-// Basic drawer height based on site-header and announcement-bar
-function adjustDrawerHeight() {
-  let headerHeight = document.querySelector('#site-header')?.offsetHeight || 0;
-  let announcementHeight = $('.announcement-bar-section').length ? $('.announcement-bar-section').outerHeight() : 0;
-
-  let totalHeight = headerHeight + announcementHeight;
-  drawer.style.height = `calc(${initialHeight}px - ${totalHeight}px)`;
-}
-
-// Initial run
-adjustDrawerHeightWithExtras();
-
-// Adjust on scroll
-$(window).scroll(function () {
-  let scrollPosition = $(this).scrollTop();
-
-  if (scrollPosition > 50) {
-    adjustDrawerHeight();
-  } else {
-    adjustDrawerHeightWithExtras();
+  function getHeaderHeight() {
+    return document.querySelector('#site-header').offsetHeight;
   }
-});
-
+  
+  function adjustDrawerHeightWithAnnouncement() {
+    let currentHeight = window.innerHeight;
+    let headerHeight = getHeaderHeight();
+    drawer.style.height = `calc(${currentHeight}px - ${headerHeight + 40}px)`;
+  }
+  
+  function adjustDrawerHeight() {
+    let currentHeight = window.innerHeight;
+    let headerHeight = getHeaderHeight();
+    drawer.style.height = `calc(${currentHeight}px - ${headerHeight}px)`;
+  }
+  
+  // On load
+  adjustDrawerHeightWithAnnouncement();
+  
+  // On scroll
+  $(window).on('scroll', function () {
+    var scrollPosition = $(this).scrollTop();
+    if (scrollPosition > 50) {
+      adjustDrawerHeight();
+    } else {
+      adjustDrawerHeightWithAnnouncement();
+    }
+  });
+  
+  // Also listen to resize — helpful for orientation change or URL bar collapse/expand
+  window.addEventListener('resize', () => {
+    let scrollPosition = window.scrollY;
+    if (scrollPosition > 50) {
+      adjustDrawerHeight();
+    } else {
+      adjustDrawerHeightWithAnnouncement();
+    }
+  });
+  
 </script>
 
 {% schema %}
@@ -1338,6 +1339,131 @@ $(window).scroll(function () {
             }
         ]
     }, 
+    {
+        "type": "mega_menu_3",
+        "name": "Mega Menu 3",
+        "settings": [
+            {
+                "type": "text",
+                "id": "mega_menu_title",
+                "label": "Title"
+            },
+            {
+                "type": "header",
+                "content": "Tab - 1"
+            },
+            {
+                "type": "image_picker",
+                "id": "tab_1_image",
+                "label": "Image - 1"
+            },
+            {
+                "type": "text",
+                "id": "tab_1_heading",
+                "label": "Heading - 1",
+                "default": "Audio"
+            },
+            {
+                "type": "url",
+                "id": "tab_1_link",
+                "label": "Link - 1"
+            },
+            {
+                "type": "image_picker",
+                "id": "tab_1_image_2",
+                "label": "Image - 2"
+            },
+            {
+                "type": "text",
+                "id": "tab_1_heading_2",
+                "label": "Heading - 1",
+                "default": "Smartwatches"
+            },
+            {
+                "type": "url",
+                "id": "tab_1_link_2",
+                "label": "Link - 2"
+            },
+            {
+                "type": "header",
+                "content": "Tab - 2"
+            },
+            {
+                "type": "textarea",
+                "id": "tab_2_desciprtion",
+                "label": "Description",
+                "default": "About Us，Launched By Tech-Savvy Audio Enthusiasts And Engineers, QCY Has Grown Into Oneof The Largest Bluetooth Headphone Manufacturers."
+            },
+            {
+                "type": "text",
+                "id": "tab_2_link_label",
+                "label": "Link Label",
+                "default": "Learn More"
+            },
+            {
+                "type": "url",
+                "id": "tab_2_link",
+                "label": "Link"
+            },
+            {
+                "type": "image_picker",
+                "id": "tab_2_image",
+                "label": "Image"
+            },
+            {
+                "type": "header",
+                "content": "Tab - 3"
+            },
+            {
+                "type": "textarea",
+                "id": "tab_3_desciprtion",
+                "label": "Description",
+                "default": "Blog, a place where you can discover the latest updates, in-depth reviews, and expert tips to guide you in selecting the ideal headset that suits your needs perfectly."
+            },
+            {
+                "type": "text",
+                "id": "tab_3_link_label",
+                "label": "Link Label",
+                "default": "Learn More"
+            },
+            {
+                "type": "url",
+                "id": "tab_3_link",
+                "label": "Link"
+            },
+            {
+                "type": "image_picker",
+                "id": "tab_3_image",
+                "label": "Image"
+            },
+            {
+                "type": "header",
+                "content": "Tab - 4"
+            },
+            {
+                "type": "textarea",
+                "id": "tab_4_desciprtion",
+                "label": "Description",
+                "default": "Sustainability, We adhere to environmental principles, using energy-saving technologies and recycled materials to reduce environmental impact, providing green and efficient Bluetooth headset solutions to protect the Earth."
+            },
+            {
+                "type": "text",
+                "id": "tab_4_link_label",
+                "label": "Link Label",
+                "default": "Learn More"
+            },
+            {
+                "type": "url",
+                "id": "tab_4_link",
+                "label": "Link"
+            },
+            {
+                "type": "image_picker",
+                "id": "tab_4_image",
+                "label": "Image"
+            }
+        ],
+    },
     {
         "type": "menu_list",
         "name": "Menu List",

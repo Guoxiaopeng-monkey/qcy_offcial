@@ -1,5 +1,25 @@
 $(document).ready(function() {
     
+  $('.mega_menu_display.mega-menu-tab-list').each(function () {
+    var $thisMenu = $(this);
+
+    $thisMenu.find('.tab-span').on('click', function () {
+      var tab = $(this).data('tab');
+
+      // Toggle active tab
+      $thisMenu.find('.tab-span').removeClass('active');
+      $(this).addClass('active');
+
+
+    // Hide all tab containers with fadeOut
+    $thisMenu.find('.tab-container-list').hide(); 
+
+    // Show the selected one with fadeIn
+    $thisMenu.find('.tab-container-list[data-tab="' + tab + '"]').fadeIn(200);
+
+    });
+  });
+    
 
 $('.announcement-bar__link').each(function() {
     var $this = $(this); // Reference to the current element

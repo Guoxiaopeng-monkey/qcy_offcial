@@ -1,0 +1,92 @@
+<div class="mega_menu_display mega-menu-tab-list">
+    <div class="row mega-menu-row">
+        <div class="col-3">
+            <div class="tab-menu-container">
+                <span class="tab-span active" data-tab="qcy-technology">
+                    QCY Technology
+                </span>
+                <span class="tab-span" data-tab="about-us">
+                    About Us
+                </span>
+                <span class="tab-span" data-tab="blog">
+                    Blog
+                </span>
+                <span class="tab-span" data-tab="sustainability">
+                    Sustainability
+                </span>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="tab-container-list row" data-tab="qcy-technology">
+                {% if block.settings.tab_1_heading != blank %}
+                    <div class="col-6">
+                        <a href="{{ block.settings.tab_1_link }}" class="tab-item">
+                            <img src="{{ block.settings.tab_1_image | img_url: 'master' }}" class="img-container" width="100%" height="100%">
+                            <h3 class="white-f f-f-bold mx-0">{{ block.settings.tab_1_heading }}</h3>
+                        </a>
+                    </div>
+                {% endif %}
+                {% if block.settings.tab_1_heading_2 != blank %}
+                    <div class="col-6">
+                        <a href="{{ block.settings.tab_1_link_2 }}" class="tab-item">
+                            <img src="{{ block.settings.tab_1_image_2 | img_url: 'master' }}" class="img-container" width="100%" height="100%">
+                            <h3 class="white-f f-f-bold mx-0">{{ block.settings.tab_1_heading_2 }}</h3>
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="tab-container-list row" data-tab="about-us" style="display:none;">
+                <div class="col-5">
+                    <div class="d-flex flex-column justify-content-between align-items-start h-100 pb-5">
+                        <p class="f-f-medium black-f">
+                            About Us，Launched By Tech-Savvy Audio Enthusiasts And Engineers, QCY Has Grown Into Oneof The Largest Bluetooth Headphone Manufacturers. 
+                        </p>
+                        <a href="" class="f-f-medium black-f">
+                            <span class="text-decoration-underline">Learn More</span> >
+                        </a>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="img-container-tab">
+                        <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/40009_2x_538879b1-c466-43fd-abf0-659f1d05c6fb.png?v=1750779646" class="img-container" width="100%" height="100%">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-container-list row" data-tab="blog" style="display:none;">
+                <div class="col-5">
+                    <div class="d-flex flex-column justify-content-between align-items-start h-100 pb-5">
+                        <p class="f-f-medium black-f">
+                            Blog, a place where you can discover the latest updates, in-depth reviews, and expert tips to guide you in selecting the ideal headset that suits your needs perfectly.
+                        </p>
+                        <a href="" class="f-f-medium black-f">
+                            <span class="text-decoration-underline">Learn More</span> >
+                        </a>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="img-container-tab">
+                        <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/40008_2x_e5f1747c-afbe-4803-9ad1-a9865cd6c3d2.png?v=1750781316" class="img-container" width="100%" height="100%">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-container-list row" data-tab="sustainability" style="display:none;">
+                <div class="col-5">
+                    <div class="d-flex flex-column justify-content-between align-items-start h-100 pb-5">
+                        <p class="f-f-medium black-f">
+                            Sustainability, We adhere to environmental principles, using energy-saving technologies and recycled materials to reduce environmental impact, providing green and efficient Bluetooth headset solutions to protect the Earth.
+                        </p>
+                        <a href="" class="f-f-medium black-f">
+                            <span class="text-decoration-underline">Learn More</span> >
+                        </a>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="img-container-tab">
+                        <img src="https://cdn.shopify.com/s/files/1/0639/3492/2809/files/40010_2x_88674a43-1ed0-4740-bace-0588a72e0080.png?v=1750781335" class="img-container" width="100%" height="100%">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
