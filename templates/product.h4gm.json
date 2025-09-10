@@ -258,7 +258,7 @@
             "secondary_weight": "Mulish-Black",
             "primary_size": "h4",
             "primary_font_size": 18,
-            "primary_font_size_mobile": 15,
+            "primary_font_size_mobile": 18,
             "secondary_font_size": 24,
             "secondary_font_size_mobile": 18,
             "secondary_size": "--heading-2",
@@ -414,17 +414,27 @@
         "image_3mnKTC": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/5.7.1_Surround_Sound_ab8cdf11-0668-4268-91e4-0cda8dfe23f9.jpg",
+            "image": "shopify://shop_images/5.7.1_Surround_Sound.png",
             "heading": "7.1 Surround Sound",
             "sub_heading": "Hear Every Details",
             "description": "<p>Experience immersive 3D audio that precisely tracks in-game sounds from every direction. 50mm neodymium drivers deliver deep bass, crisp highs, and rich details for a competitive edge.</p>",
             "title": "​​Precision Soundscape​"
           }
         },
+        "image_3fayic": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/9c5fd782569f5af441e14747582aecb6.png",
+            "heading": "All Day Comfort",
+            "sub_heading": "Lightweight & Glasses-friendly",
+            "description": "<p>Engineered for marathon gaming with breathable and soft earcups, an adjustable headband, and a feather light 276g build for fatigue-free immersion.<br/><br/></p>",
+            "title": "All Day Comfort"
+          }
+        },
         "image_zB3Qhk": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/8..jpg",
+            "image": "shopify://shop_images/8..png",
             "heading": "Coordinate with Your team flawlessly",
             "sub_heading": "",
             "description": "<p>Our unidirectional mic focuses on your voice and filters out distracting background noise, ensuring your callouts are always crisp and clear.</p>",
@@ -434,29 +444,19 @@
         "image_QBLDTW": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/12..jpg",
+            "image": "shopify://shop_images/12..png",
             "heading": "Listen for Days",
             "sub_heading": "Unbeatable 240H Battery Life",
             "description": "<p>Up to 240 hours of nonstop playtime for true all-week performance.</p>",
             "title": "Power For Days"
           }
-        },
-        "image_3fayic": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/24cf81e72cbe4bcaacd01d7a4d0bac2d.jpg",
-            "heading": "All Day Comfort",
-            "sub_heading": "Lightweight & Glasses-friendly",
-            "description": "<p>Engineered for marathon gaming with breathable and soft earcups, an adjustable headband, and a feather light 276g build for fatigue-free immersion.<br/><br/></p>",
-            "title": "All Day Comfort"
-          }
         }
       },
       "block_order": [
         "image_3mnKTC",
+        "image_3fayic",
         "image_zB3Qhk",
-        "image_QBLDTW",
-        "image_3fayic"
+        "image_QBLDTW"
       ],
       "settings": {
         "animation_fade": false
@@ -467,6 +467,7 @@
       "blocks": {
         "left_content_8rmCpk": {
           "type": "left_content",
+          "disabled": true,
           "settings": {
             "bg_image": "shopify://shop_images/6.app_e93cdd3d-0cd2-4983-be7f-0711b97900d1.jpg",
             "heading": "Heroad Driver Software",
@@ -484,7 +485,7 @@
           "settings": {
             "bg_image": "shopify://shop_images/9.2.4Ghz.jpg",
             "heading": "Ultra-low Latency 2.4GHZ Wireless",
-            "description": "<p>Perfect synchronization for seamlessreal-timegaming experience.</p>",
+            "description": "<p>Perfect synchronization for seamless real-time gaming experience.</p>",
             "heading_1": "",
             "unit_1": "",
             "label_1": "",
@@ -496,9 +497,9 @@
         "left_content_QyKYHk": {
           "type": "left_content",
           "settings": {
-            "bg_image": "shopify://shop_images/9_eeb2bb03-0e7a-4ebb-8a7a-527cd2a1d8bc.jpg",
-            "heading": "IPX5 Waterproof",
-            "description": "<p>A unidirectional waterproof membrane and sealed chamber design keep out sweat and rain.</p>",
+            "bg_image": "shopify://shop_images/6.app_ba12f533-d498-4678-877f-2555d880b67f.jpg",
+            "heading": "Game audio customization",
+            "description": "<p>Heroad Driver Software custom-tunes your PC game audio,  from immersive sound effects to EQ tuning. Precision-boosts critical cues (footsteps, gunfire) for a tactical advantage.</p>",
             "heading_1": "",
             "unit_1": "",
             "label_1": "",
@@ -510,9 +511,9 @@
         "right_content_xntrMe": {
           "type": "right_content",
           "settings": {
-            "bg_image": "shopify://shop_images/6_85f28e4a-2e46-4761-bd84-49df043c1bfa.jpg",
-            "heading": "Pure Comfort, Perfect Seal",
-            "description": "<p>Ultra-soft, double-layered silicone tips in 5 sizes for a second-skin fit, all-day comfort and a perfect seal for immersive sound.</p>",
+            "bg_image": "shopify://shop_images/10..png",
+            "heading": "3 Ways to Connect",
+            "description": "<p>Switch seamlessly between ultra-low latency 2.4G (A+C dongle), Bluetooth 6.0 mobility, and Aux wired reliability for all devices and scenes.</p>",
             "heading_1": "",
             "unit_1": "",
             "label_1": "",
@@ -649,6 +650,7 @@
         },
         "fullwidth_kbr8UE": {
           "type": "fullwidth",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/753ae0c0543d835c6fc7af099f470134_37dc1525-bf43-41c1-ac11-929ab878027b.jpg",
             "image_mobile": "shopify://shop_images/m.jpg"

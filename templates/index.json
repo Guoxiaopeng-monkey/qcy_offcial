@@ -50,6 +50,43 @@
             "overlay_opacity": 25
           }
         },
+        "banner_image_mLaxyt": {
+          "type": "Banner_Image",
+          "settings": {
+            "content_display": false,
+            "content_position_y": "content-desktop-y-center",
+            "content_position_x": "content-desktop-x-left",
+            "content_position_y_mobile": "top-1",
+            "sub_heading": "<p>Heroad V200</p>",
+            "sub_heading_font_size": 30,
+            "sub_heading_font_size_mb": 23,
+            "sub_heading_weight": "f-f-bold",
+            "sub_heading_weight_mb": "f-f-regular",
+            "sub_heading_color": "#ff8832",
+            "sub_heading_color_mb": "#ff8832",
+            "heading": "​​Precision Audio, Victorious Edge",
+            "heading_font_size": 40,
+            "heading_font_size_mb": 40,
+            "heading_weight": "f-f-extra-bold",
+            "heading_weight_mb": "f-f-extra-bold",
+            "heading_color": "#ffffff",
+            "heading_color_mb": "#ffffff",
+            "description": "<p>Tri-Mode Gaming Headset​</p>",
+            "description_font_size": 20,
+            "description_font_size_mb": 18,
+            "description_weight": "f-f-regular",
+            "description_weight_mb": "f-f-regular",
+            "description_color": "#ffffff",
+            "description_color_mb": "#ffffff",
+            "image": "shopify://shop_images/H4m-pc.webp",
+            "bg_image": "shopify://shop_images/H4m-sp.webp",
+            "btn_heading": "EXPLORE",
+            "btn_bg_color": "#ff8832",
+            "url": "shopify://products/qcy-heroad-v200",
+            "overlay": false,
+            "overlay_opacity": 25
+          }
+        },
         "banner_countdown_grkkX9": {
           "type": "Banner_countdown",
           "settings": {
@@ -85,7 +122,7 @@
             "secondary_color": "#121212",
             "content_position_y": "content-desktop-y-center",
             "content_position_x": "content-desktop-x-left",
-            "content_position_y_mobile": "content-mobile-y-top"
+            "content_position_y_mobile": "top-2"
           }
         },
         "banner_image_CVVNze": {
@@ -121,44 +158,6 @@
             "btn_heading": "EXPLORE",
             "btn_bg_color": "#ff8832",
             "url": "https://www.qcy.com/products/qcy-crossky-c50",
-            "overlay": false,
-            "overlay_opacity": 25
-          }
-        },
-        "banner_image_mLaxyt": {
-          "type": "Banner_Image",
-          "disabled": true,
-          "settings": {
-            "content_display": false,
-            "content_position_y": "content-desktop-y-center",
-            "content_position_x": "content-desktop-x-left",
-            "content_position_y_mobile": "content-mobile-y-top",
-            "sub_heading": "<p>Heroad V200</p>",
-            "sub_heading_font_size": 30,
-            "sub_heading_font_size_mb": 22,
-            "sub_heading_weight": "f-f-bold",
-            "sub_heading_weight_mb": "f-f-regular",
-            "sub_heading_color": "#ff8832",
-            "sub_heading_color_mb": "#ff8832",
-            "heading": "Music On, Unwanted Noise Off",
-            "heading_font_size": 45,
-            "heading_font_size_mb": 40,
-            "heading_weight": "f-f-extra-bold",
-            "heading_weight_mb": "f-f-extra-bold",
-            "heading_color": "#ffffff",
-            "heading_color_mb": "#ffffff",
-            "description": "<p>Muiti-Platform Gaming Headset</p>",
-            "description_font_size": 20,
-            "description_font_size_mb": 18,
-            "description_weight": "f-f-regular",
-            "description_weight_mb": "f-f-regular",
-            "description_color": "#ffffff",
-            "description_color_mb": "#ffffff",
-            "image": "shopify://shop_images/H4m-pc.webp",
-            "bg_image": "shopify://shop_images/H4m-sp.webp",
-            "btn_heading": "EXPLORE",
-            "btn_bg_color": "#ff8832",
-            "url": "shopify://products/qcy-h3-pro",
             "overlay": false,
             "overlay_opacity": 25
           }
@@ -317,9 +316,9 @@
       },
       "block_order": [
         "banner_image_Qhf7hC",
+        "banner_image_mLaxyt",
         "banner_countdown_grkkX9",
         "banner_image_CVVNze",
-        "banner_image_mLaxyt",
         "banner_image_7FtPTD",
         "banner_image_adERje",
         "banner_image_HPpNrE",
@@ -377,10 +376,10 @@
         "bg_image": "shopify://shop_images/PC_1440_x_620.jpg",
         "bg_image_mobile": "shopify://shop_images/M_390_x_340.jpg",
         "sub_heading": "QCY H3 PRO",
-        "sub_heading_font_size": 24,
-        "sub_heading_font_size_mobile": 16,
-        "sub_heading_weight": "f-f-black",
-        "sub_heading_weight_mobile": "f-f-black",
+        "sub_heading_font_size": 22,
+        "sub_heading_font_size_mobile": 18,
+        "sub_heading_weight": "f-f-regular",
+        "sub_heading_weight_mobile": "md-f-f-semibold",
         "sub_heading_color": "#5d5d5d",
         "sub_heading_color_mobile": "#121212",
         "heading": "Music On, Unwanted Noise Off",
