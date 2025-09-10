@@ -9,15 +9,76 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "technology_banner": {
+      "type": "technology-banner",
+      "name": "Technology Banner",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "display_heading": false,
+        "display_description": false,
+        "adapt_bg_image_size": true,
+        "background_image_desktop": "shopify://shop_images/1_e5a6947d-a271-40cc-b309-5dc12b2dc4df.png",
+        "background_image_mobile": "shopify://shop_images/1_23a8664a-d38d-4774-81b2-568542078534.png",
+        "custom_heading": ""
+      }
+    },
+    "audio_box_item_6EKmQg": {
+      "type": "audio-box-item",
+      "blocks": {
+        "box_BW49fQ": {
+          "type": "box",
+          "settings": {
+            "image": "shopify://shop_images/2_2816fec4-58a1-4994-bd8d-54ce8fa7a0d4.png",
+            "heading": "DualCore Acoustic Technology",
+            "description": "Patented dual-driver architecture for enhanced frequency response and accurate audio reproduction.",
+            "btn_label": "Learn More",
+            "link": "shopify://pages/coaxialbeat"
+          }
+        },
+        "box_g8gV3g": {
+          "type": "box",
+          "settings": {
+            "image": "shopify://shop_images/3_00a79d6f-7a10-4890-baf0-a04ce7c095dd.png",
+            "heading": "BassBoost™ Technology",
+            "description": "Custom acoustic structure to enhance bass performance in open-ear headphones.",
+            "btn_label": "Learn More",
+            "link": "shopify://pages/bassboost"
+          }
+        },
+        "box_hdhEnt": {
+          "type": "box",
+          "settings": {
+            "image": "shopify://shop_images/4_5c0398a9-5ee4-4190-9bc9-6681d527a63a.png",
+            "heading": "Puresilenz™ Noise Cancelling System",
+            "description": "Advanced noise cancellation technology to precisely reduce environmental noise for pure audio.",
+            "btn_label": "Learn More",
+            "link": "shopify://pages/puresilenz"
+          }
+        }
+      },
+      "block_order": [
+        "box_BW49fQ",
+        "box_g8gV3g",
+        "box_hdhEnt"
+      ],
+      "name": "Audio Box Item",
+      "settings": {}
+    },
+    "audio_app_download_AXDKXN": {
+      "type": "audio-app-download",
+      "name": "Audio App Download",
+      "settings": {
+        "heading": "HearX™ Personalized EQ",
+        "description": "AI-powered hearing test generates a personalized EQ curve for tailored sound.",
+        "bg_color": "#f8f8f8",
+        "bg_image": "shopify://shop_images/Picture1_9b321036-472a-4187-a516-3e195d3f0a52.png",
+        "google_link": "",
+        "appstore_linl": ""
       }
     }
   },
   "order": [
-    "main"
+    "technology_banner",
+    "audio_box_item_6EKmQg",
+    "audio_app_download_AXDKXN"
   ]
 }

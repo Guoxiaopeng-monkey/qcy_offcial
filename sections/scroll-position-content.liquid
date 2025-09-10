@@ -1,0 +1,381 @@
+{% assign unique_id = section.id %}
+
+{% style %}
+    #scroll-section-{{ unique_id }} {
+    }
+    #scroll-section-{{ unique_id }} .scroll-item {
+        display:flex;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+    }
+    #scroll-section-{{ unique_id }} .scroll-item .heading,
+    #scroll-section-{{ unique_id }} .scroll-item .description {
+        opacity: 0;
+        transform: translateY(150px);
+        transition: opacity 0.3s ease 0.3s, transform 0.5s ease 0.3s;
+    }
+    #scroll-section-{{ unique_id }} .scroll-item.active .heading,
+    #scroll-section-{{ unique_id }} .scroll-item.active .description {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    #scroll-section-{{ unique_id }} .scroll-item.fade-out .heading,
+    #scroll-section-{{ unique_id }} .scroll-item.fade-out .description {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    #scroll-section-{{ unique_id }} .scroll-main-sticky {
+        height:100%;
+        width:100%;
+        position:sticky;
+        top:0;
+        background-image:url({{ section.settings.background_image | img_url: 'master'}});
+        background-size:cover;
+        background-position:center;
+    }
+    /* FOR MOBILE PHONE */
+    @media only screen and (max-width: 768px) {
+        #scroll-section-{{ unique_id }} .scroll-main-sticky {
+            background-image:url({{ section.settings.background_image_mobile | img_url: 'master'}});
+        }
+    }
+    
+    /* ipad Air */
+    @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px){
+        #scroll-section-{{ unique_id }} .scroll-main-sticky {
+            background-image:url({{ section.settings.background_image | img_url: 'master'}});
+        }
+    }
+
+    /* MOBILES ----------------------------------------------------------------------------------- */
+
+    @media only screen and (min-width: 0px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:20px;
+      }
+    }
+    @media only screen and (min-width: 375px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:20px;
+      }
+    }
+    @media only screen and (min-width: 390px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:20px;
+      }
+    }
+    @media only screen and (min-width: 414px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:20px;
+      }
+    }
+    @media only screen and (min-width: 428px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:20px;
+      }
+    }
+    @media only screen and (min-width: 480px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:20px;
+      }
+    }
+    
+    /* TABLETS ----------------------------------------------------------------------------------- */
+    
+    @media only screen and (min-width: 768px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:30px;
+      }
+    }
+    
+    
+    /* LAPTOPS --------------------------------------------------------------------------------- */
+    
+    @media only screen and (min-width: 1280px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:30px;
+      }
+    }
+    @media only screen and (min-width: 1366px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:35px;
+      }
+    }
+    @media only screen and (min-width: 1440px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:35px;
+      }
+    }
+    @media only screen and (min-width: 1536px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:40px;
+      }
+    }
+    @media only screen and (min-width: 1600px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:45px;
+      }
+    }
+    
+    /* COMPUTERS --------------------------------------------------------------------------------- */
+    @media only screen and (min-width: 1920px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:50px;
+      }
+    }
+    @media only screen and (min-width: 2560px) {
+      .scroll-bottom-section .scroll-bottom-content{
+          padding:50px;
+      }
+    }
+{% endstyle %}
+{% assign count = section.blocks.size %}
+<div id="scroll-section-{{ unique_id }}" class="scroll-position-content-section">
+    <div class="scroll-main-sticky">
+        <div class="page-width section-content h-100">
+            <div class="scroll-content h-100 position-relative">
+                {% assign count = section.blocks.size %}
+                {% for block in section.blocks %}
+                    <div {{ block.shopify_attributes }} class="scroll-item h-100 {{ block.settings.content_position_y }} {{ block.settings.content_position_x }} {% if forloop.index == 1 %}active{% endif %}" style="z-index:{{ count | minus: forloop.index0 }};">
+                        <div class="col-lg-5 col-md-5 col-sm-12 overflow-hidden">
+                            <h2 class="heading f-f-bold text-md white-f my-4 {{ block.settings.text_align }}">
+                                {{ block.settings.heading }}
+                            </h2>
+                            <div class="description f-f-regular h5 white-f {{ block.settings.text_align }}">
+                                {{ block.settings.description }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="scroll-bottom-section">
+  <div class="page-width section-content">
+      <div class="row">
+          {% if section.settings.enabled_column_1 %}
+          <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="scroll-bottom-content">
+                  <h3 class="f-f-bold black-f mb-lg-5 mb-md-4 mb-sm-3 mt-0">
+                      {{ section.settings.col_heading_1 }}
+                  </h3>
+                  <p class="f-f-regular black-f my-0">
+                      {{ section.settings.col_description_1 }}
+                  </p>
+              </div>
+          </div>
+          {% endif %}
+          {% if section.settings.enabled_column_2 %}
+          <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="scroll-bottom-content">
+                  <h3 class="f-f-bold black-f mb-lg-5 mb-md-4 mb-sm-3 mt-0">
+                      {{ section.settings.col_heading_2 }}
+                  </h3>
+                  <p class="f-f-regular black-f my-0">
+                      {{ section.settings.col_description_2 }}
+                  </p>
+              </div>
+          </div>
+          {% endif %}
+      </div>
+  </div>
+</div>
+
+<script>
+(function($){
+  var sectionId = "{{ unique_id }}";
+  var $section = $("#scroll-section-" + sectionId);
+  var blockCount = {{ section.blocks.size }};
+  
+  var hAnnouncementbarDynamic = $('.shopify-section-group-header-group sticky-header').height();
+  $section.find('.scroll-main-sticky').css('top', `${hAnnouncementbarDynamic }px`);
+
+  if (blockCount === 1) {
+    $section.css('height', '100vh');
+  } else {
+    var totalHeight = 100 + 40 * (blockCount - 1);
+    $section.css('height', totalHeight + 'vh');
+  }
+
+  function vertical_slider() {
+    const scrollTop = $(window).scrollTop();
+    const sectionOffset = $section.offset().top;
+    const scrolled = scrollTop - sectionOffset;
+    let previousIndex = $section.find('.scroll-item.active').index();
+
+    const vh = $(window).height() / 100;
+    const stepHeight = 40 * vh;
+    let index = Math.floor(scrolled / stepHeight);
+    index = Math.max(0, Math.min(blockCount - 1, index));
+
+    if (index !== previousIndex) {
+      $section.find('.scroll-item').eq(previousIndex).removeClass('active').addClass('fade-out');
+      $section.find('.scroll-item').eq(index).addClass('active');
+
+      setTimeout(() => {
+        $section.find('.scroll-item').eq(previousIndex).removeClass('fade-out');
+      }, 600);
+    }
+  }
+  
+  $(window).on('scroll', vertical_slider);
+})(jQuery);
+</script>
+{% schema %}
+    {
+        "class": "scroll-section",
+        "name": "Scroll Position Content",
+        "settings": [
+            {
+                "type": "header",
+                "content": "First Scroll Content"
+            },
+            {
+                "type": "image_picker",
+                "id": "background_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "background_image_mobile",
+                "label": "Background Image - Mobile"
+            },
+            {
+                "type": "header",
+                "content": "Column 1"
+            },
+            {
+                "type": "checkbox",
+                "id": "enabled_column_1",
+                "label": "Show Column 1",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "col_heading_1",
+                "label": "Heading",
+                "default": "Feedforward Mlcs(External Nolse Sensors):"
+            },
+            {
+                "type": "richtext",
+                "id": "col_description_1",
+                "label": "description",
+                "default": "<p>Posltloned on the outer shell, these dual mlcrophones accurately detect amblent nolse and fllter lt out before It reaches your ears-dellverlng a cleaner, quleter sound envlronment.</p>"
+            },
+            {
+                "type": "header",
+                "content": "Column 2"
+            },
+            {
+                "type": "checkbox",
+                "id": "enabled_column_2",
+                "label": "Show Column 2",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "col_heading_2",
+                "label": "Heading",
+                "default": "Feedback Mlcs(In-Ear Nolse Sensors):"
+            },
+            {
+                "type": "richtext",
+                "id": "col_description_2",
+                "label": "description",
+                "default": "<p>Located near the speaker Inslde the earbud, thesemlcs work wlth a feedback control system to cancelout any remalning nolse In your ear canal. Thls smartdeslgn reduces the need for a tlght seal, so there's noneed to force-flt your earbuds-just wear them comfortably and enjoy conslstent nolse cancellatlon Inany setting.</p>"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "content",
+                "name": "Content",
+                "settings": [
+                      {
+                          "type": "text",
+                          "id": "heading",
+                          "label": "Heading",
+                          "default": "8-Sensor Precise Noise Sensor"
+                      },
+                      {
+                          "type": "textarea",
+                          "id": "description",
+                          "label": "Description",
+                          "default": "EquIpped wlth 8 sound sensors each earbuds, QCY PureSllenz™ capture nolse from all dlrectlons.Comblned wlth an advanced nolse reductlon processor,It slgnlflcantly lmproves both the depth and range ofnolse cancellatlon."
+                      },
+                      {
+                          "type": "select",
+                          "id": "text_align",
+                          "label": "Text Alignment",
+                          "options": [
+                              {
+                                "value": "text-start",
+                                "label": "Left"
+                              },
+                              {
+                                "value": "text-center",
+                                "label": "Center"
+                              },
+                              {
+                                "value": "text-end",
+                                "label": "Right"
+                              }
+                          ],
+                          "default": "text-center"
+                      },
+                      {
+                          "type": "select",
+                          "id": "content_position_x",
+                          "label": "Content Position X",
+                          "options": [
+                              {
+                                "value": "justify-content-start",
+                                "label": "Left"
+                              },
+                              {
+                                "value": "justify-content-center",
+                                "label": "Center"
+                              },
+                              {
+                                "value": "justify-content-end",
+                                "label": "right"
+                              }
+                          ],
+                          "default": "justify-content-start"
+                      },
+                      {
+                          "type": "select",
+                          "id": "content_position_y",
+                          "label": "Content Position Y",
+                          "options": [
+                              {
+                                "value": "align-items-start",
+                                "label": "Top"
+                              },
+                              {
+                                "value": "align-items-center",
+                                "label": "Center"
+                              },
+                              {
+                                "value": "align-items-end",
+                                "label": "Bottom"
+                              }
+                          ],
+                          "default": "align-items-center"
+                      }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Scroll Position Content"
+            }
+        ]
+    }
+{% endschema %} 

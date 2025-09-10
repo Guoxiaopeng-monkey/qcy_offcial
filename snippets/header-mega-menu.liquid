@@ -79,7 +79,7 @@
                       {% endif %}
                     {% elsif block.type == 'mega_menu_3' %}
                       {% if block.settings.mega_menu_title == link.title %}
-                        {% render 'mega_menu_display_3' %}
+                        {% render 'mega_menu_display_3', block: block %}
                       {% endif %}
                     {% elsif block.type == 'menu_list'  %}
                       {% if block.settings.mega_menu_title == link.title %}

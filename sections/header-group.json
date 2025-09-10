@@ -147,8 +147,32 @@
         },
         "menu_list_6RCBCC": {
           "type": "menu_list",
+          "disabled": true,
           "settings": {
             "mega_menu_title": "Explore"
+          }
+        },
+        "mega_menu_3_76qcCm": {
+          "type": "mega_menu_3",
+          "settings": {
+            "mega_menu_title": "Explore",
+            "tab_1_image": "shopify://shop_images/40106_2x_8066e5de-3a3c-4c35-bccb-7bd6e86ff167.png",
+            "tab_1_heading": "Audio",
+            "tab_1_link": "shopify://pages/audio-technologies",
+            "tab_1_heading_2": "",
+            "tab_1_link_2": "",
+            "tab_2_desciprtion": "About Us，Launched By Tech-Savvy Audio Enthusiasts And Engineers, QCY Has Grown Into Oneof The Largest Bluetooth Headphone Manufacturers.",
+            "tab_2_link_label": "Learn More",
+            "tab_2_link": "shopify://pages/about-us",
+            "tab_2_image": "shopify://shop_images/40009_2x_538879b1-c466-43fd-abf0-659f1d05c6fb.png",
+            "tab_3_desciprtion": "Blog, a place where you can discover the latest updates, in-depth reviews, and expert tips to guide you in selecting the ideal headset that suits your needs perfectly.",
+            "tab_3_link_label": "Learn More",
+            "tab_3_link": "shopify://pages/blogs",
+            "tab_3_image": "shopify://shop_images/40008_2x_e5f1747c-afbe-4803-9ad1-a9865cd6c3d2.png",
+            "tab_4_desciprtion": "Sustainability, We adhere to environmental principles, using energy-saving technologies and recycled materials to reduce environmental impact, providing green and efficient Bluetooth headset solutions to protect the Earth.",
+            "tab_4_link_label": "Learn More",
+            "tab_4_link": "",
+            "tab_4_image": "shopify://shop_images/40010_2x_88674a43-1ed0-4740-bace-0588a72e0080.png"
           }
         },
         "menu_list_yyiPBk": {
@@ -166,6 +190,7 @@
         "mega_menu_1_gmE8ne",
         "mega_menu_1_ppqTeG",
         "menu_list_6RCBCC",
+        "mega_menu_3_76qcCm",
         "menu_list_yyiPBk"
       ],
       "custom_css": [

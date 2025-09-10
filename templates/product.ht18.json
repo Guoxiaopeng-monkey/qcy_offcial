@@ -200,6 +200,10 @@
             "primary_weight": "f-f-black",
             "secondary_weight": "Mulish-SemiBold",
             "primary_size": "h2",
+            "primary_font_size": 20,
+            "primary_font_size_mobile": 18,
+            "secondary_font_size": 20,
+            "secondary_font_size_mobile": 18,
             "secondary_size": "--heading-5",
             "heading_position": "flex-start"
           }
@@ -215,6 +219,10 @@
             "primary_weight": "f-f-medium",
             "secondary_weight": "Mulish-Bold",
             "primary_size": "h5",
+            "primary_font_size": 20,
+            "primary_font_size_mobile": 18,
+            "secondary_font_size": 20,
+            "secondary_font_size_mobile": 18,
             "secondary_size": "--heading-4",
             "heading_position": "flex-start"
           }
@@ -230,6 +238,10 @@
             "primary_weight": "f-f-black",
             "secondary_weight": "Mulish-Black",
             "primary_size": "h4",
+            "primary_font_size": 18,
+            "primary_font_size_mobile": 18,
+            "secondary_font_size": 24,
+            "secondary_font_size_mobile": 18,
             "secondary_size": "--heading-3",
             "heading_position": "flex-start"
           }
@@ -239,12 +251,16 @@
           "settings": {
             "image": "shopify://shop_images/4_3ce3888a-1b2a-401b-a141-6697ee0107ac.jpg",
             "image_mobile": "shopify://shop_images/4_27a80114-a01a-49e8-9aa6-83351f5baf58.jpg",
-            "heading": "<p><strong>-56dB</strong></p><p>Noise Canceling</p>",
+            "heading": "<p><strong>-56dB</strong></p><p>Noise </p><p>Canceling</p>",
             "primary_color": "#121212",
             "secondary_color": "#334fb4",
             "primary_weight": "f-f-black",
             "secondary_weight": "Mulish-Black",
             "primary_size": "h4",
+            "primary_font_size": 20,
+            "primary_font_size_mobile": 15,
+            "secondary_font_size": 24,
+            "secondary_font_size_mobile": 18,
             "secondary_size": "--heading-2",
             "heading_position": "flex-start"
           }
@@ -257,9 +273,13 @@
             "heading": "<p><strong>3 </strong>Mics with Al for Call Clarity</p><p>& Patented Wind Sheilding Design<br/></p>",
             "primary_color": "#ffffff",
             "secondary_color": "#ffffff",
-            "primary_weight": "f-f-semibold",
+            "primary_weight": "f-f-black",
             "secondary_weight": "Mulish-SemiBold",
             "primary_size": "h3",
+            "primary_font_size": 18,
+            "primary_font_size_mobile": 18,
+            "secondary_font_size": 24,
+            "secondary_font_size_mobile": 18,
             "secondary_size": "--heading-2",
             "heading_position": "flex-start"
           }

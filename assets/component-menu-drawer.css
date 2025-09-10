@@ -59,7 +59,11 @@ details[open].menu-opening > .menu-drawer__submenu {
   visibility: visible;
 }
 .menu-drawer__submenu .menu-drawer__close-button{
-  display:flex;
+    display: flex;
+    padding: 5px 0px 1.5rem;
+    margin: 0px 20px;
+    border-bottom: 1px solid #EEE;
+    width: 89vw;
 }
 
 .js .menu-drawer__navigation .submenu-open {
@@ -89,7 +93,9 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__navigation {
-  padding: 3rem 0;
+  padding: 0rem 0 2rem;
+  position:relative;
+  top:20px;
 }
 
 .menu-drawer__inner-submenu {
@@ -103,7 +109,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__menu-item {
-  padding: 1.3rem 0px;
+  padding: 1.5rem 0px;
   text-decoration: none;
   font-size: 1.8rem;
   border-bottom:1px solid #00000024;
@@ -114,6 +120,8 @@ details[open].menu-opening > .menu-drawer__submenu {
 .list-menu__item svg{
   position: absolute;
   right: -10px;
+  width: fit-content;
+  height: 40px;
 }
 
 
@@ -172,8 +180,8 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer__close-button .svg-wrapper {
   margin-right: 1rem;
-  width: 45px;
-  height: 45px;
+  height: 15px;
+  width: 15px;
 }
 
 .menu-drawer__utility-links {
@@ -240,6 +248,45 @@ details[open].menu-opening > .menu-drawer__submenu {
   padding: 1.1rem 1.1rem;
 }
 
+
+
+.tab-container-list{
+    padding:25px 20px;
+}
+.tab-container-list .tab-item{
+    display:block;
+    height:180px;
+    position: relative;
+}
+.tab-container-list .tab-item img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+.tab-container-list .tab-item h3{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.tab-container-list a.btn {
+    transition: all 0.3s ease;
+    width: fit-content;
+    display: block;
+    background-color: #FF8832;
+    padding: 1rem 3rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin:auto;
+}
+
+
 @media screen and (max-width: 749px) {
   .menu-drawer.country-selector-open {
     transform: none !important;
@@ -253,7 +300,7 @@ details[open].menu-opening > .menu-drawer__submenu {
     font-size:18px !important;
   }
   .menu-drawer__close-button{
-    padding:1.2rem 5px;
+    padding:0px 5px 0px;
     
   }
   .header{

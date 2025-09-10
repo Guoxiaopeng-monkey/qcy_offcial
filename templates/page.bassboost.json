@@ -9,15 +9,104 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "technology_banner": {
+      "type": "technology-banner",
+      "name": "Technology Banner",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "display_heading": false,
+        "display_description": false,
+        "adapt_bg_image_size": true,
+        "background_image_desktop": "shopify://shop_images/image_updated_02.png",
+        "background_image_mobile": "shopify://shop_images/11_ec9e1e54-c317-48a4-8b8e-a8833955e1c9.png",
+        "custom_heading": ""
+      }
+    },
+    "scroll_position_content_6LdLg4": {
+      "type": "scroll-position-content",
+      "blocks": {
+        "content_mNmYiE": {
+          "type": "content",
+          "settings": {
+            "heading": "BassBoost™ Technology",
+            "description": "BassBoost™\" technology solves this with our custom acoustic conduction tubes, which channel sound waves more effectively into your ears and create natural resonance that supercharges the bass-without sacrificingclarity.",
+            "text_align": "text-start",
+            "content_position_x": "justify-content-start",
+            "content_position_y": "align-items-start"
+          }
+        }
+      },
+      "block_order": [
+        "content_mNmYiE"
+      ],
+      "name": "Scroll Position Content",
+      "settings": {
+        "background_image": "shopify://shop_images/image_updated_01.png",
+        "background_image_mobile": "shopify://shop_images/12_065651f4-f0dc-4300-96a5-1d0bff0cb442.png",
+        "enabled_column_1": false,
+        "col_heading_1": "",
+        "col_description_1": "<p>Finally- open design without sacrificing bass.<br/>Traditional open-ear headphones struggle to deliver that rich,thumping bass because sound leaks out.</p>",
+        "enabled_column_2": false,
+        "col_heading_2": "",
+        "col_description_2": "<p>BassBoost™\" technology solves this with our custom acoustic conduction tubes, which channel sound waves more effectively into your ears and create natural resonance that supercharges the bass-without sacrificingclarity.</p>"
+      }
+    },
+    "custom_layout_section_VbYz8n": {
+      "type": "custom-layout-section",
+      "disabled": true,
+      "name": "Custom Layout Section",
+      "settings": {
+        "Image": "shopify://shop_images/image3.png",
+        "content_position": "right",
+        "heading": "QCY BassBoost™ Open-ear Earbuds",
+        "description": "Leading Brand Open-ear Earbuds Preference Curve",
+        "heading_2": "",
+        "description_2": "",
+        "animation": true
+      }
+    },
+    "audio_banner_aHYKnF": {
+      "type": "audio-banner",
+      "disabled": true,
+      "name": "Audio Banner",
+      "settings": {
+        "Image": "shopify://shop_images/40082_2x_62ed0bb6-a91a-47e9-913f-c4ff963ba652.png",
+        "Image_mobile": "shopify://shop_images/40126_2x_288298d0-59d5-4799-ac71-256cf36d6e7c.png",
+        "heading": "Wind Noise Resistance for Call Clarity",
+        "description": "With QCY's patented mic structure and wind noisereduction algorithm, your calls stay clear even inbreezy outdoor environments."
+      }
+    },
+    "audio_banner_7yhRtC": {
+      "type": "audio-banner",
+      "disabled": true,
+      "name": "Audio Banner",
+      "settings": {
+        "Image": "shopify://shop_images/40116_2x_a051c35b-4c2b-4ff7-9f4a-bfc9ae39a628.png",
+        "Image_mobile": "shopify://shop_images/40127_2x_4fd75368-aa6a-45d0-94b0-004db4ef0107.png",
+        "heading": "Pure Audio, Immersive Experience",
+        "description": "QCY PureSilenz™ technology not only effectively eliminates environmental noise but also reproduces pure and lifelike sound details through meticulous audio tuning. Enjoy clear calls while immersing yourself in an immersive audio experience."
+      }
+    },
+    "audio_two_layout_w39LWD": {
+      "type": "audio-two-layout",
+      "disabled": true,
+      "name": "Two Layout",
+      "settings": {
+        "section_heading": "Omnidirectional Noise Cancellation, Deep Immersion",
+        "Image": "shopify://shop_images/40120_2x_d249d13c-a203-4800-9578-50284a30e2eb.png",
+        "heading": "Traditional Products：",
+        "description": "Conventional active noise-cancelling earbuds typically only target noise from specific directions or frequencies, resulting in limited effectiveness. They perform poorly in complex environments and fail to provide an omnidirectional quiet experience.",
+        "Image_2": "shopify://shop_images/40121_2x_9ad71cbf-f721-4298-89c9-7e9c5ac43306.png",
+        "heading_2": "Traditional Products：",
+        "description_2": "Conventional active noise-cancelling earbuds typically only target noise from specific directions or frequencies, resulting in limited effectiveness. They perform poorly in complex environments and fail to provide an omnidirectional quiet experience."
       }
     }
   },
   "order": [
-    "main"
+    "technology_banner",
+    "scroll_position_content_6LdLg4",
+    "custom_layout_section_VbYz8n",
+    "audio_banner_aHYKnF",
+    "audio_banner_7yhRtC",
+    "audio_two_layout_w39LWD"
   ]
 }

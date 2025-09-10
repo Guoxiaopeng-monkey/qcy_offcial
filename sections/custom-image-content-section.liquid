@@ -1,0 +1,65 @@
+{% style %}
+    .custom-image-content-section{
+        background-color:#F8F8F8;
+        overflow:hidden;
+    }
+    .custom-image-content-section img{
+        border-radius:8px;
+    }
+{% endstyle %}
+<div class="page-width section-content">
+    <div class="header-content d-flex align-items-center justify-content-center mb-lg-5 mb-md-4 mb-sm-4">
+          <div class="col-lg-10 col-md-10 col-sm-12">
+                <h2 class="f-f-bold text-md black-f my-3 text-center">
+                    {{ section.settings.heading }}
+                </h2>
+                <div class="f-f-regular h5 black-f text-center">
+                    {{ section.settings.description }}
+                </div>
+          </div>
+    </div>
+    <img src="{{ section.settings.Image | img_url: 'master' }}" width="100%" height="100%"
+        {% if section.settings.Image_mobile != blank %}
+            class="d-lg-block d-md-block d-sm-none"
+        {% endif %}
+      >
+    {% if section.settings.Image_mobile != blank %}
+        <img src="{{ section.settings.Image_mobile | img_url: 'master' }}" width="100%" height="100%" class="d-lg-none d-md-none d-sm-block">
+    {% endif %}
+</div>
+{% schema %}
+    {
+        "class": "custom-image-content-section",
+        "name": "Custom Image Content",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "QCY CoaxialBeatTM"
+            },
+            {
+                "type": "textarea",
+                "id": "description",
+                "label": "Description",
+                "default": "Compared to single-driver earbuds, CoaxialBeat™ offers  broader high-frequency response and better detail. The dynamic driver delivers impactful bass and clear mids, while the balanced armature enhances high-frequency clarity, improving treble definition. This combination creates a more detailed and expansive sound, with improved clarity across all frequencies."
+            },
+            {
+                "type": "image_picker",
+                "id": "Image",
+                "label": "Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "Image_mobile",
+                "label": "Image - Mobile"
+            }
+        ],
+        "templates": ["page"],
+        "presets": [
+            {
+                "name": "Custom Image Content"
+            }
+        ]
+    }
+{% endschema %} 

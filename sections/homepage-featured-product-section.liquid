@@ -277,21 +277,17 @@
   .featured-products-section .featured-full-width-content .sub-heading {
     font-size: var(--font-size);
     color: var(--color);
-    font-weight: var(--font-weight);
     @media (max-width: 768px) {
       font-size: var(--font-size-mobile);
       color: var(--color-mobile);
-      font-weight: var(--font-weight-mobile);
     }
   }
   .featured-products-section .featured-full-width-content .heading {
     font-size: var(--font-size);
     color: var(--color);
-    font-weight: var(--font-weight);
     @media (max-width: 768px) {
       font-size: var(--font-size-mobile);
       color: var(--color-mobile);
-      font-weight: var(--font-weight-mobile);
     }
   }
 {% endstyle %}
@@ -322,14 +318,14 @@
 
     <div class="featured-full-width-content col_35  ">
       <h4
-        class="sub-heading f-f-regular mx-0 "
-        style="--font-size: {{ section.settings.sub_heading_font_size }}px; --color: {{ section.settings.sub_heading_color }}; --font-size-mobile: {{ section.settings.sub_heading_font_size_mobile }}px; --color-mobile: {{ section.settings.sub_heading_color_mobile }}; --font-weight: {{ section.settings.sub_heading_weight }}; --font-weight-mobile: {{ section.settings.sub_heading_weight_mobile }};"
+        class="sub-heading {{section.settings.sub_heading_weight}} {{section.settings.sub_heading_weight_mobile}} mx-0  "
+        style="--font-size: {{ section.settings.sub_heading_font_size }}px; --color: {{ section.settings.sub_heading_color }}; --font-size-mobile: {{ section.settings.sub_heading_font_size_mobile }}px; --color-mobile: {{ section.settings.sub_heading_color_mobile }};"
       >
         {{ section.settings.sub_heading }}
       </h4>
       <h2
-        class="heading text-md f-f-bold mx-0"
-        style="--font-size: {{ section.settings.heading_font_size }}px; --color: {{ section.settings.heading_color }}; --font-size-mobile: {{ section.settings.heading_font_size_mobile }}px; --color-mobile: {{ section.settings.heading_color_mobile }}; --font-weight: {{ section.settings.heading_weight }}; --font-weight-mobile: {{ section.settings.heading_weight_mobile }};"
+        class="heading text-md {{section.settings.heading_weight}} {{section.settings.heading_weight_mobile}} mx-0"
+        style="--font-size: {{ section.settings.heading_font_size }}px; --color: {{ section.settings.heading_color }}; --font-size-mobile: {{ section.settings.heading_font_size_mobile }}px; --color-mobile: {{ section.settings.heading_color_mobile }}; "
       >
         {{ section.settings.heading }}
       </h2>
@@ -506,35 +502,35 @@
       "label": "Sub Heading - Font Weight - Mobile",
       "options": [
         {
-          "value": "f-f-light",
+          "value": "md-f-f-light",
           "label": "Light"
         },
         {
-          "value": "f-f-regular",
+          "value": "md-f-f-regular",
           "label": "Regular"
         },
         {
-          "value": "f-f-medium",
+          "value": "md-f-f-medium",
           "label": "Medium"
         },
         {
-          "value": "f-f-semibold",
+          "value": "md-f-f-semibold",
           "label": "Semi-Bold"
         },
         {
-          "value": "f-f-bold",
+          "value": "md-f-f-bold",
           "label": "Bold"
         },
         {
-          "value": "f-f-extra-bold",
+          "value": "md-f-f-extra-bold",
           "label": "Extra Bold"
         },
         {
-          "value": "f-f-black",
+          "value": "md-f-f-black",
           "label": "Black"
         }
       ],
-      "default": "f-f-semibold"
+      "default": "md-f-f-semibold"
     },
     {
       "type": "color",
@@ -616,35 +612,35 @@
       "label": "Heading - Font Weight - Mobile",
       "options": [
         {
-          "value": "f-f-light",
+          "value": "md-f-f-light",
           "label": "Light"
         },
         {
-          "value": "f-f-regular",
+          "value": "md-f-f-regular",
           "label": "Regular"
         },
         {
-          "value": "f-f-medium",
+          "value": "md-f-f-medium",
           "label": "Medium"
         },
         {
-          "value": "f-f-semibold",
+          "value": "md-f-f-semibold",
           "label": "Semi-Bold"
         },
         {
-          "value": "f-f-bold",
+          "value": "md-f-f-bold",
           "label": "Bold"
         },
         {
-          "value": "f-f-extra-bold",
+          "value": "md-f-f-extra-bold",
           "label": "Extra Bold"
         },
         {
-          "value": "f-f-black",
+          "value": "md-f-f-black",
           "label": "Black"
         }
       ],
-      "default": "f-f-extra-bold"
+      "default": "md-f-f-extra-bold"
     },
 
     {

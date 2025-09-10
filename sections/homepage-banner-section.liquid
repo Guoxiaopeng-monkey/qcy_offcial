@@ -289,6 +289,19 @@
       padding-top: 10vh;
       padding-bottom: 11vh;
     }
+    .homepage-content .page-width.top-1 {
+      justify-content: flex-start;
+      padding-top: 3vh;
+    }
+    .homepage-content .page-width.top-2 {
+      justify-content: flex-start;
+      padding-top: 6vh;
+    }
+    .homepage-content .page-width.top-3 {
+      justify-content: flex-start;
+      padding-top: 12vh;
+    }
+
     .homepage-section .banner-item .sub-heading-font-size,
     .homepage-section .banner-item .heading-font-size,
     .homepage-section .banner-item .description-font-size {
@@ -412,6 +425,7 @@
     .description-font-size {
       --description-font-size: var(--base-description-font-size-mb);
       font-size: var(--description-font-size);
+      color: var(--color-mb);
     }
   }
   @media only screen and (min-width: 375px) {
@@ -801,7 +815,7 @@
                   data-aos-easing="ease"
                   data-aos-duration="700"
                   data-aos-once="true"
-                  style="--base-description-font-size: {{ block.settings.description_font_size }}px; color:{{ block.settings.description_color }};--base-description-font-size-mb: {{ block.settings.description_font_size_mb }}px; --color-mb:{{ block.settings.description_color_mb }};"
+                  style="--base-description-font-size: {{ block.settings.description_font_size }}px; --color:{{ block.settings.description_color }};--base-description-font-size-mb: {{ block.settings.description_font_size_mb }}px; --color-mb:{{ block.settings.description_color_mb }};"
                 >
                   {{ block.settings.description | replace: '<p>', '' | replace: '</p>', '' }}
                 </h4>
@@ -955,6 +969,18 @@
           "label": "Content Position Y",
           "options": [
             {
+              "value": "top-1",
+              "label": "Top-1"
+            },
+            {
+              "value": "top-2",
+              "label": "Top-2"
+            },
+            {
+              "value": "top-3",
+              "label": "Top-3"
+            },
+            {
               "value": "content-mobile-y-top",
               "label": "Top"
             },
@@ -1096,7 +1122,7 @@
         {
           "type": "range",
           "id": "heading_font_size_mb",
-          "min": 40,
+          "min": 20,
           "max": 80,
           "step": 5,
           "unit": "px",
@@ -1403,6 +1429,18 @@
           "id": "content_position_y_mobile",
           "label": "Content Position Y",
           "options": [
+            {
+              "value": "top-1",
+              "label": "Top-1"
+            },
+            {
+              "value": "top-2",
+              "label": "Top-2"
+            },
+            {
+              "value": "top-3",
+              "label": "Top-3"
+            },
             {
               "value": "content-mobile-y-top",
               "label": "Top"
@@ -2231,6 +2269,18 @@
           "id": "content_position_y_mobile",
           "label": "Content Position Y",
           "options": [
+            {
+              "value": "top-1",
+              "label": "Top-1"
+            },
+            {
+              "value": "top-2",
+              "label": "Top-2"
+            },
+            {
+              "value": "top-3",
+              "label": "Top-3"
+            },
             {
               "value": "content-mobile-y-top",
               "label": "Top"

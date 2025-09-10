@@ -109,6 +109,9 @@
 a{
   text-decoration: inherit;
 }
+.text-decoration-underline{
+    text-decoration: underline;
+}
 .col_5{
     width: 5%;
 }
@@ -210,6 +213,11 @@ a{
 .learn-more{
     background-color: #000;
 }
+.learn-more svg{
+    width: 12px;
+    height: 12px;
+    margin-top: 1px;
+}
 .learn-more p{
     color: #fff;
 }
@@ -224,6 +232,54 @@ a{
 }
 .h-g-mobile{
     display:none;
+}
+
+
+
+.pp-thin {
+    font-family: 'Poppins';
+    font-weight: 100 !important;
+    letter-spacing: normal;
+}
+.pp-extralight {
+    font-family: 'Poppins';
+    font-weight: 200 !important;
+    letter-spacing: normal;
+}
+.pp-light {
+    font-family: 'Poppins';
+    font-weight: 300 !important;
+    letter-spacing: normal;
+}
+.pp-regular {
+    font-family: 'Poppins';
+    font-weight: 400 !important;
+    letter-spacing: normal;
+}
+.pp-medium {
+    font-family: 'Poppins';
+    font-weight: 500 !important;
+    letter-spacing: normal;
+}
+.pp-semibold {
+    font-family: 'Poppins';
+    font-weight: 600 !important;
+    letter-spacing: normal;
+}
+.pp-bold {
+    font-family: 'Poppins';
+    font-weight: 700 !important;
+    letter-spacing: normal;
+}
+.pp-extrabold {
+    font-family: 'Poppins';
+    font-weight: 800 !important;
+    letter-spacing: normal;
+}
+.pp-black {
+    font-family: 'Poppins';
+    font-weight: 900 !important;
+    letter-spacing: normal;
 }
 /* FOR MOBILE PHONE */
 @media only screen and (max-width: 768px) {
@@ -572,6 +628,27 @@ a{
       position:relative;
       bottom:40px !important;
     }
+    .header__icon--account span.svg-wrapper:after, 
+    .header__icon--cart span.svg-wrapper:after,
+    .header__search .header__icon--search .svg-wrapper:after{
+        width:30px;
+        height:30px;
+    }
+    .tl-selection{
+        padding:0 !important;
+    }
+    header-drawer{
+        margin-left:0 !important;
+    }
+    .header__icon, 
+    .header__icon--cart .icon{
+        margin:0;
+    }
+    .header__icon--menu .icon,
+    .header__icon .icon.icon-close{
+        width: 1.6rem;
+        height: 1.6rem;
+    }
 }
 
 .header__icon--account span.svg-wrapper,
@@ -620,13 +697,17 @@ a{
   align-items: center;
   gap:10px;
 }
-.footer-payment-icons img{
+
+.footer-payment-icons img {
     height: 24px;
     width: auto;
     object-fit: contain;
-    max-width: none;
+    max-width: none
 }
 
+.product__media-list .media>img {
+    object-fit: contain
+}
 
 /* PRODUCT MEDIA -------------- */
 .product__media-list .media>img{

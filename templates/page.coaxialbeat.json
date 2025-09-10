@@ -9,15 +9,134 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "technology_banner": {
+      "type": "technology-banner",
+      "name": "Technology Banner",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "display_heading": false,
+        "display_description": false,
+        "adapt_bg_image_size": true,
+        "background_image_desktop": "shopify://shop_images/6_30514ad0-9ace-4e56-a028-11ea2e33e6d0.png",
+        "background_image_mobile": "shopify://shop_images/6_2f1b71ba-a313-422d-a442-0866b4b9e0b5.png",
+        "custom_heading": ""
+      }
+    },
+    "scroll_position_content_biFJcM": {
+      "type": "scroll-position-content",
+      "blocks": {
+        "content_ePGdxz": {
+          "type": "content",
+          "settings": {
+            "heading": "",
+            "description": "DualCore Acoustic Technology is QCY's proprietary dual-driver architecture, meticulously engineered to deliver superior sound fidelity. The system integrates a ring-shaped dynamic driver and a MEMS tweeter within a custom acoustic structure. This design precisely separates and manages high and low frequencies, effectively minimizing resonance between them. The result is a more refined and highly detailed audio reproduction, ensuring exceptional clarity and accuracy across the entire frequency spectrum.",
+            "text_align": "text-center",
+            "content_position_x": "justify-content-center",
+            "content_position_y": "align-items-start"
+          }
+        }
+      },
+      "block_order": [
+        "content_ePGdxz"
+      ],
+      "name": "Scroll Position Content",
+      "settings": {
+        "background_image": "shopify://shop_images/7-1-1.png",
+        "background_image_mobile": "shopify://shop_images/updated7-1.png",
+        "enabled_column_1": false,
+        "col_heading_1": "Feedforward Mlcs(External Nolse Sensors):",
+        "col_description_1": "<p>Posltloned on the outer shell, these dual mlcrophones accurately detect amblent nolse and fllter lt out before It reaches your ears-dellverlng a cleaner, quleter sound envlronment.</p>",
+        "enabled_column_2": false,
+        "col_heading_2": "Feedback Mlcs(In-Ear Nolse Sensors):",
+        "col_description_2": "<p>Located near the speaker Inslde the earbud, thesemlcs work wlth a feedback control system to cancelout any remalning nolse In your ear canal. Thls smartdeslgn reduces the need for a tlght seal, so there's noneed to force-flt your earbuds-just wear them comfortably and enjoy conslstent nolse cancellatlon Inany setting.</p>"
+      }
+    },
+    "audio_banner_gaP7xc": {
+      "type": "audio-banner",
+      "disabled": true,
+      "name": "Audio Banner",
+      "settings": {
+        "Image": "shopify://shop_images/7-1_f7a40aa9-81b0-4d0c-9bf8-4a5da90f6ccd.png",
+        "Image_mobile": "shopify://shop_images/39911_2x_d5d0cb82-9e57-4234-862a-2f7174cdd2af.png",
+        "heading": "QCY DualCore Technology",
+        "description": "CoaxialBeat™ Technology integrates a dynamic driver and a balanced armature driver in a coaxial alignment. This design lets each driver play to its strength—dynamic drivers deliver powerful mid-to-low frequencies (rich bass and clear vocals), and balanced armature drivers capture crisp, detailed highs."
+      }
+    },
+    "custom_layout_section_8Xxgtn": {
+      "type": "custom-layout-section",
+      "disabled": true,
+      "name": "Custom Layout Section",
+      "settings": {
+        "Image": "shopify://shop_images/image1.png",
+        "content_position": "left",
+        "heading": "Dynamic Driver",
+        "description": "The dynamic driver handles punchy lows and smooth mids (thinkbass drops and crisp vocals).",
+        "heading_2": "MEMs Tweeter",
+        "description_2": "The MEMs driver sharpens every cymbal crash and high note, sodetails don't get lost.",
+        "animation": false
+      }
+    },
+    "audio_two_layout_6gxbGy": {
+      "type": "audio-two-layout",
+      "name": "Two Layout",
+      "settings": {
+        "section_heading": "",
+        "Image": "shopify://shop_images/8_3816d0a4-d123-43e0-afb1-8e8037298066.png",
+        "heading": "QCY Unique Acoustic Guide",
+        "description": "Our patented acoustic guide features a dedicated high-frequency conduit. This innovative design separates the sound paths for highs and lows, effectively eliminating resonance and mutual interference. The result is a sound that is pristine, with every nuance and detail of the original recording accurately preserved. Experience a richer, purer, and more vibrant audio landscape.",
+        "Image_2": "shopify://shop_images/9_149884a3-168d-4ea6-8eeb-20ea1f7db76c.png",
+        "heading_2": "Conventional Acoustic Design",
+        "description_2": "Most conventional designs lack a dedicated guide for high frequencies. Without separate sound channels, high and low frequencies collide, causing unwanted resonance and distortion. This leads to a compromised listening experience where details are lost, and the overall sound signature becomes muddy and less defined."
+      }
+    },
+    "custom_image_content_section_PmhrLk": {
+      "type": "custom-image-content-section",
+      "name": "Custom Image Content",
+      "settings": {
+        "heading": "QCY CoaxialBeat™",
+        "description": "Compared to single-driver earbuds, CoaxialBeat™ offers  broader high-frequency response and better detail. The dynamic driver delivers impactful bass and clear mids, while the balanced armature enhances high-frequency clarity, improving treble definition.",
+        "Image": "shopify://shop_images/7-2_2afca38e-46e9-40a5-b73f-d5ae443c4c2f.png",
+        "Image_mobile": "shopify://shop_images/7-2-01_3f2358dd-3e14-4922-b7d9-00cd0532562a.png"
+      }
+    },
+    "page_featured_products_hkRXQm": {
+      "type": "page-featured-products",
+      "blocks": {
+        "product_LLPWyV": {
+          "type": "product",
+          "settings": {
+            "product_image": "shopify://shop_images/updated_Ht.png",
+            "product": "qcy-melobuds-n70",
+            "custom_product_title": "QCY MeloBuds N70"
+          }
+        },
+        "product_APWBWU": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product_image": "shopify://shop_images/5_2x_f9965b5b-f09b-4078-9e0f-5a8284ecf485.png",
+            "product": "qcy-t13-anc",
+            "custom_product_title": "QCY T13 ANC"
+          }
+        }
+      },
+      "block_order": [
+        "product_LLPWyV",
+        "product_APWBWU"
+      ],
+      "disabled": true,
+      "name": "Featured Products",
+      "settings": {
+        "heading": "Headphones Featuring QCY CoaxialBeat"
       }
     }
   },
   "order": [
-    "main"
+    "technology_banner",
+    "scroll_position_content_biFJcM",
+    "audio_banner_gaP7xc",
+    "custom_layout_section_8Xxgtn",
+    "audio_two_layout_6gxbGy",
+    "custom_image_content_section_PmhrLk",
+    "page_featured_products_hkRXQm"
   ]
 }

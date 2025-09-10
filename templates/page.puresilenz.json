@@ -9,15 +9,173 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "technology_banner": {
+      "type": "technology-banner",
+      "name": "Technology Banner",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "display_heading": false,
+        "display_description": false,
+        "adapt_bg_image_size": true,
+        "background_image_desktop": "shopify://shop_images/13_db92b086-065f-484d-91ac-3b39662397cc.png",
+        "background_image_mobile": "shopify://shop_images/13_12e35c91-3143-4782-8322-88a10fbb400c.png",
+        "custom_heading": ""
+      }
+    },
+    "custom_layout_section_repwUR": {
+      "type": "custom-layout-section",
+      "name": "Custom Layout Section",
+      "settings": {
+        "Image": "shopify://shop_images/HT08_HT10_Puresilenz.png",
+        "content_position": "right",
+        "heading": "QCY’s advanced noise cancellation system",
+        "description": "PureSilenz™ is built to keep your world quieter and your listening more immersive. It combines smart hardware with intelligent algorithms to deliver adaptive, all-day noise control.",
+        "heading_2": "",
+        "description_2": "",
+        "animation": false
+      }
+    },
+    "custom_image_content_section_kWwLpT": {
+      "type": "custom-image-content-section",
+      "disabled": true,
+      "name": "Custom Image Content",
+      "settings": {
+        "heading": "6-Sensor Precise Noise Sensor",
+        "description": "EquIpped wlth 8 sound sensors each earbuds, QCY PureSllenz™ capture nolse from all dlrectlons.Comblned wlth an advanced nolse reductlon processor,It slgnlflcantly lmproves both the depth and range ofnolse cancellatlon.",
+        "Image": "shopify://shop_images/14_updated.jpg"
+      }
+    },
+    "scroll_position_content_6LdLg4": {
+      "type": "scroll-position-content",
+      "blocks": {
+        "content_mNmYiE": {
+          "type": "content",
+          "settings": {
+            "heading": "6-Sensor Precise Noise Sensor",
+            "description": "Equipped with 6 sound sensors each earbuds, QCY PureSilenz™ capture noise from all directions. Combined with an advanced noise reduction processor, it significantly improves both the depth and range of noise cancellation.",
+            "text_align": "text-center",
+            "content_position_x": "justify-content-center",
+            "content_position_y": "align-items-start"
+          }
+        }
+      },
+      "block_order": [
+        "content_mNmYiE"
+      ],
+      "name": "Scroll Position Content",
+      "settings": {
+        "background_image": "shopify://shop_images/14_fa391027-5074-405c-aec9-128110841599.png",
+        "background_image_mobile": "shopify://shop_images/14-02.png",
+        "enabled_column_1": true,
+        "col_heading_1": "Feedforward Mics (External Noise Sensors):",
+        "col_description_1": "<p>Positioned on the outer shell, these dual microphones accurately detect ambient noise and filter it out before it reaches your ears—delivering a cleaner, quieter sound environment.</p>",
+        "enabled_column_2": true,
+        "col_heading_2": "Feedback Mics(In-Ear Noise Sensors):",
+        "col_description_2": "<p>Located near the speaker inslde the earbud, thesemics work wlth a feedback control system to cancelout any remaining noise in your ear canal. This smartdesign reduces the need for a tlght seal, so there's noneed to force-flt your earbuds-just wear them comfortably and enjoy conslstent noise cancellation inany setting.</p>"
+      }
+    },
+    "custom_layout_section_VbYz8n": {
+      "type": "custom-layout-section",
+      "name": "Custom Layout Section",
+      "settings": {
+        "Image": "shopify://shop_images/HT18_puresilenz.png",
+        "content_position": "left",
+        "heading": "Adaptive Smart Noise Cancellation",
+        "description": "Powered by an advanced chip, PureSilenzTM automatically adjusts the noise cancellation depth andparameters in real time-based on your surroundings.Whether you're in a guiet room or a noisy commute, itfine-tunes itself to give you the best listeningexperience,anytime,anywhere.",
+        "heading_2": "",
+        "description_2": "",
+        "animation": true
+      }
+    },
+    "custom_layout_section_Jnaibf": {
+      "type": "custom-layout-section",
+      "disabled": true,
+      "name": "Custom Layout Section",
+      "settings": {
+        "Image": "shopify://shop_images/HT08_HT10_Puresilenz.png",
+        "content_position": "right",
+        "heading": "Wind Noise Resistance for Call Clarity",
+        "description": "With QCY's patented mic structure and wind noisereduction algorithm, your calls stay clear even inbreezy outdoor environments.",
+        "heading_2": "",
+        "description_2": "",
+        "animation": false
+      }
+    },
+    "audio_banner_aHYKnF": {
+      "type": "audio-banner",
+      "disabled": true,
+      "name": "Audio Banner",
+      "settings": {
+        "Image": "shopify://shop_images/15_951dfc72-0cac-48f3-bc4b-6596f65f825c.png",
+        "Image_mobile": "shopify://shop_images/HT08_HT10_Puresilenz.png",
+        "heading": "Wind Noise Resistance for Call Clarity",
+        "description": "With QCY's patented mic structure and wind noisereduction algorithm, your calls stay clear even inbreezy outdoor environments."
+      }
+    },
+    "scroll_position_content_k9F7NP": {
+      "type": "scroll-position-content",
+      "blocks": {
+        "content_3RQcbt": {
+          "type": "content",
+          "settings": {
+            "heading": "Wind Noise Resistance for Call Clarity",
+            "description": "With QCY's patented mic structure and wind noisereduction algorithm, your calls stay clear even inbreezy outdoor environments.",
+            "text_align": "text-center",
+            "content_position_x": "justify-content-center",
+            "content_position_y": "align-items-start"
+          }
+        }
+      },
+      "block_order": [
+        "content_3RQcbt"
+      ],
+      "name": "Scroll Position Content",
+      "settings": {
+        "background_image": "shopify://shop_images/15_8067679b-be7b-4ddd-ae88-6b1b3b5db340.png",
+        "background_image_mobile": "shopify://shop_images/15_d82c6db4-4c34-4873-8d16-f256950b28a6.png",
+        "enabled_column_1": false,
+        "col_heading_1": "Feedforward Mlcs(External Nolse Sensors):",
+        "col_description_1": "<p>Posltloned on the outer shell, these dual mlcrophones accurately detect amblent nolse and fllter lt out before It reaches your ears-dellverlng a cleaner, quleter sound envlronment.</p>",
+        "enabled_column_2": false,
+        "col_heading_2": "Feedback Mlcs(In-Ear Nolse Sensors):",
+        "col_description_2": "<p>Located near the speaker Inslde the earbud, thesemlcs work wlth a feedback control system to cancelout any remalning nolse In your ear canal. Thls smartdeslgn reduces the need for a tlght seal, so there's noneed to force-flt your earbuds-just wear them comfortably and enjoy conslstent nolse cancellatlon Inany setting.</p>"
+      }
+    },
+    "audio_banner_7yhRtC": {
+      "type": "audio-banner",
+      "disabled": true,
+      "name": "Audio Banner",
+      "settings": {
+        "Image": "shopify://shop_images/40116_2x_a051c35b-4c2b-4ff7-9f4a-bfc9ae39a628.png",
+        "Image_mobile": "shopify://shop_images/40127_2x_4fd75368-aa6a-45d0-94b0-004db4ef0107.png",
+        "heading": "Pure Audio, Immersive Experience",
+        "description": "QCY PureSilenz™ technology not only effectively eliminates environmental noise but also reproduces pure and lifelike sound details through meticulous audio tuning. Enjoy clear calls while immersing yourself in an immersive audio experience."
+      }
+    },
+    "audio_two_layout_w39LWD": {
+      "type": "audio-two-layout",
+      "disabled": true,
+      "name": "Two Layout",
+      "settings": {
+        "section_heading": "Omnidirectional Noise Cancellation, Deep Immersion",
+        "Image": "shopify://shop_images/40120_2x_d249d13c-a203-4800-9578-50284a30e2eb.png",
+        "heading": "Traditional Products：",
+        "description": "Conventional active noise-cancelling earbuds typically only target noise from specific directions or frequencies, resulting in limited effectiveness. They perform poorly in complex environments and fail to provide an omnidirectional quiet experience.",
+        "Image_2": "shopify://shop_images/40121_2x_9ad71cbf-f721-4298-89c9-7e9c5ac43306.png",
+        "heading_2": "Traditional Products：",
+        "description_2": "Conventional active noise-cancelling earbuds typically only target noise from specific directions or frequencies, resulting in limited effectiveness. They perform poorly in complex environments and fail to provide an omnidirectional quiet experience."
       }
     }
   },
   "order": [
-    "main"
+    "technology_banner",
+    "custom_layout_section_repwUR",
+    "custom_image_content_section_kWwLpT",
+    "scroll_position_content_6LdLg4",
+    "custom_layout_section_VbYz8n",
+    "custom_layout_section_Jnaibf",
+    "audio_banner_aHYKnF",
+    "scroll_position_content_k9F7NP",
+    "audio_banner_7yhRtC",
+    "audio_two_layout_w39LWD"
   ]
 }

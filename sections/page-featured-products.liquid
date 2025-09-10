@@ -1,0 +1,189 @@
+{% style %}
+    .featured-product-container .row{
+        --bs-gutter-x:3rem;
+        --bs-gutter-y:1.5rem;
+    }
+    .featured-product-item{
+        background: #E6E6E6;
+        border-radius: 10px 10px 10px 10px;
+        overflow:hidden;
+        padding: 0;
+        position:relative;
+    }
+    .featured-product-item img{
+        height: 300px;
+        object-fit: cover;
+        object-position: center center;
+    }
+    .featured-product-item .product-content{
+        padding:1rem 2rem;
+        position:absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+    }
+    /* MOBILES ----------------------------------------------------------------------------------- */
+
+    @media only screen and (min-width: 0px) {
+        .featured-product-container .row{
+            --bs-gutter-x:2rem;
+        }
+    }
+    @media only screen and (min-width: 375px) {
+        .featured-product-container .row{
+            --bs-gutter-x:2rem;
+        }
+    }
+    @media only screen and (min-width: 390px) {
+        .featured-product-container .row{
+            --bs-gutter-x:2rem;
+        }
+    }
+    @media only screen and (min-width: 414px) {
+        .featured-product-container .row{
+            --bs-gutter-x:2rem;
+        }
+    }
+    @media only screen and (min-width: 428px) {
+        .featured-product-container .row{
+            --bs-gutter-x:2rem;
+        }
+    }
+    @media only screen and (min-width: 480px) {
+        .featured-product-container .row{
+            --bs-gutter-x:2rem;
+        }
+    }
+    
+    /* TABLETS ----------------------------------------------------------------------------------- */
+    
+    @media only screen and (min-width: 768px) {
+        .featured-product-container .row{
+            --bs-gutter-x:2rem;
+        }
+    }
+    
+    
+    /* LAPTOPS --------------------------------------------------------------------------------- */
+    
+    @media only screen and (min-width: 1280px) {
+        .featured-product-container .row{
+            --bs-gutter-x:2rem;
+        }
+    }
+    @media only screen and (min-width: 1366px) {
+        .featured-product-container .row{
+            --bs-gutter-x:2.5rem;
+        }
+    }
+    @media only screen and (min-width: 1440px) {
+        .featured-product-container .row{
+            --bs-gutter-x:2.5rem;
+        }
+    }
+    @media only screen and (min-width: 1536px) {
+        .featured-product-container .row{
+            --bs-gutter-x:3rem;
+        }
+    }
+    @media only screen and (min-width: 1600px) {
+        .featured-product-container .row{
+            --bs-gutter-x:3.5rem;
+        }
+    }
+    
+    /* COMPUTERS --------------------------------------------------------------------------------- */
+    @media only screen and (min-width: 1920px) {
+        .featured-product-container .row{
+            --bs-gutter-x:4rem;
+        }
+    }
+    @media only screen and (min-width: 2560px) {
+        .featured-product-container .row{
+            --bs-gutter-x:4rem;
+        }
+    }
+  
+{% endstyle %}
+<div class="page-width section-content">
+    <h2 class="f-f-bold text-md black-f my-3 text-center pb-lg-5 pb-md-4 pb-sm-4">
+        {{ section.settings.heading }}
+    </h2>
+    <div class="featured-product-container">
+        <div class="row">
+            {% for block in section.blocks %}
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="featured-product-item">
+                      <img src="{{ block.settings.product_image | img_url: 'master' }}" width="100%" height="100%">
+                      <div class="product-content">
+                          <div class="row align-items-center justify-content-between">
+                              <div class="col-lg-7 col-md-7 col-sm-6">
+                                  <div class="text-sm f-f-bold black-f d-lg-block d-md-block d-sm-none">
+                                      {% if block.settings.custom_product_title != blank %}
+                                          {{ block.settings.custom_product_title }}
+                                      {% else %}
+                                          {{ block.settings.product.title }}
+                                      {% endif %}
+                                  </div>
+                                  <div class="h3 f-f-bold black-f d-lg-none d-md-none d-sm-block">
+                                      {% if block.settings.custom_product_title != blank %}
+                                          {{ block.settings.custom_product_title }}
+                                      {% else %}
+                                          {{ block.settings.product.title }}
+                                      {% endif %}
+                                  </div>
+                              </div>
+                              <div class="col-lg-5 col-md-5 col-sm-6 d-flex align-items-center justify-content-end">
+                                <a href="{{ block.settings.product.url }}" class="btn learn-more d-flex align-items-center justify-content-center py-lg-3 py-md-3 py-sm-2">
+                                    <p class="mx-0 l-h-normal">Shop Now</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 330 330" xml:space="preserve">
+                                        <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001  c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213  C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606  C255,161.018,253.42,157.202,250.606,154.389z" fill="#fff"></path>
+                                    </svg>
+                                </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "class": "featured-products-section",
+        "name": "Featured Products",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "Headphones Featuring QCY CoaxialBeat"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "product",
+                "name": "Product",
+                "settings": [
+                     {
+                         "type": "image_picker",
+                         "id": "product_image",
+                         "label": "Product Image"
+                     },
+                     {
+                         "type": "product",
+                         "id": "product",
+                         "label": "Product"
+                     },
+                     {
+                         "type": "text",
+                         "id": "custom_product_title",
+                         "label": "Custom Product Title"
+                     }
+                ]
+            }
+        ],
+        "templates": ["page"],
+    }
+{% endschema %} 
