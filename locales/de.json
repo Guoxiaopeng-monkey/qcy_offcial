@@ -579,5 +579,39 @@
       "password_link": "Enter using password"
     }
   },
-  "homepage_h1": "QCY Official - Kabellose Kopfhörer, Ohrhörer, Lautsprecher und mehr"
+  "homepage_h1": "QCY Official - Kabellose Kopfhörer, Ohrhörer, Lautsprecher und mehr",
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "email_rollup_accessibility_label": "E-Mail-Optionen",
+        "phone_rollup_accessibility_label": "Telefonoptionen"
+      },
+      "customer_account": {
+        "rollup_accessibility_label": "Kontooptionen"
+      },
+      "payment": {
+        "usdc_cashback_title": "1% Cashback",
+        "usdc_cashback_additional_info": "Erhalten Sie 1 % in USDC direkt in Ihrer Brieftasche zurück.",
+        "usdc_cashback_terms": "Bedingungen gelten"
+      },
+      "billing": {
+        "billing_address_rollup_accessibility_label": "Rechnung an Optionen"
+      },
+      "remote": {
+        "errors": {
+          "only_remote_merchandise_lines": "Der Checkout enthält nur entfernte Waren. Eine Weiterleitung zum entfernten Shop ist erforderlich, um den Checkout abzuschließen."
+        }
+      }
+    }
+  },
+  "customer_accounts": {
+    "payment_methods": {
+      "replacement_payment_method_title": "Ersatz-Zahlungsmethode",
+      "add_payment_method": {
+        "replace_mode_warning": "Das Löschen dieser Zahlungsmethode wirkt sich auf Abonnements oder Vorbestellungen aus. Ersetzen Sie sie durch eine alternative Zahlungsmethode, um weiterhin kommende Bestellungen zu erhalten.",
+        "choose_from_list": "Aus Liste wählen",
+        "add_new_button": "Neu hinzufügen"
+      }
+    }
+  }
 }

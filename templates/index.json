@@ -12,6 +12,44 @@
     "homepage_banner_section_PpXMRt": {
       "type": "homepage-banner-section",
       "blocks": {
+        "banner_countdown_grkkX9": {
+          "type": "Banner_countdown",
+          "settings": {
+            "image": "shopify://shop_images/3200x1280-1.webp",
+            "bg_image": "shopify://shop_images/860x1200-2.webp",
+            "sub_heading": "",
+            "sub_heading_font_size": 40,
+            "sub_heading_font_size_mb": 30,
+            "sub_heading_weight": "f-f-bold",
+            "sub_heading_weight_mb": "f-f-semibold",
+            "sub_heading_color": "#ff8832",
+            "sub_heading_color_mb": "#ff8832",
+            "heading": "Flash Sale: 5 Days Only!",
+            "heading_font_size": 40,
+            "heading_font_size_mb": 40,
+            "heading_weight": "f-f-extra-bold",
+            "heading_weight_mb": "f-f-extra-bold",
+            "heading_color": "#121212",
+            "heading_color_mb": "#121212",
+            "description": "UP TO 46% OFF !",
+            "description_font_size": 30,
+            "description_font_size_mb": 30,
+            "description_weight": "f-f-bold",
+            "description_weight_mb": "f-f-bold",
+            "description_color": "#ff8832",
+            "description_color_mb": "#ff8832",
+            "btn_heading": "EXPLORE",
+            "btn_bg_color": "#ff8832",
+            "url": "shopify://pages/flash-sale",
+            "countdown_display": true,
+            "date_time": "Sep 22, 2025 16:00:00 CST",
+            "primary_color": "#121212",
+            "secondary_color": "#121212",
+            "content_position_y": "content-desktop-y-center",
+            "content_position_x": "content-desktop-x-left",
+            "content_position_y_mobile": "top-2"
+          }
+        },
         "banner_image_Qhf7hC": {
           "type": "Banner_Image",
           "disabled": true,
@@ -71,7 +109,7 @@
             "heading_weight_mb": "f-f-extra-bold",
             "heading_color": "#ffffff",
             "heading_color_mb": "#ffffff",
-            "description": "<p>Tri-Mode Gaming Headset​</p>",
+            "description": "<p>Tri-Mode Gaming Headset​<strong> | ​​20ms Ultra-Low Lag​ | Glasses-Friendly​ </strong></p>",
             "description_font_size": 20,
             "description_font_size_mb": 18,
             "description_weight": "f-f-regular",
@@ -87,12 +125,14 @@
             "overlay_opacity": 25
           }
         },
-        "banner_countdown_grkkX9": {
-          "type": "Banner_countdown",
+        "banner_image_7FtPTD": {
+          "type": "Banner_Image",
           "settings": {
-            "image": "shopify://shop_images/HT18-pc_85755d9b-dbd3-4665-888a-f1c8551de891_2.webp",
-            "bg_image": "shopify://shop_images/HT18-sp_217e9e5e-e21e-4faf-81ff-825acecb913b.webp",
-            "sub_heading": "QCY MeloBuds N70",
+            "content_display": false,
+            "content_position_y": "content-desktop-y-center",
+            "content_position_x": "content-desktop-x-left",
+            "content_position_y_mobile": "content-mobile-y-top",
+            "sub_heading": "<p>QCY MeloBuds N70</p>",
             "sub_heading_font_size": 30,
             "sub_heading_font_size_mb": 30,
             "sub_heading_weight": "f-f-bold",
@@ -104,25 +144,22 @@
             "heading_font_size_mb": 40,
             "heading_weight": "f-f-extra-bold",
             "heading_weight_mb": "f-f-extra-bold",
-            "heading_color": "#121212",
-            "heading_color_mb": "#121212",
-            "description": "Flagship Wireless ANC Earbuds",
+            "heading_color": "#000000",
+            "heading_color_mb": "#000000",
+            "description": "<p>Flagship Wireless ANC Earbuds</p>",
             "description_font_size": 20,
             "description_font_size_mb": 20,
             "description_weight": "f-f-regular",
             "description_weight_mb": "f-f-regular",
             "description_color": "#121212",
-            "description_color_mb": "#121212",
+            "description_color_mb": "#000000",
+            "image": "shopify://shop_images/HT18-pc_85755d9b-dbd3-4665-888a-f1c8551de891_2_1.webp",
+            "bg_image": "shopify://shop_images/HT18-sp_217e9e5e-e21e-4faf-81ff-825acecb913b_1.webp",
             "btn_heading": "EXPLORE",
             "btn_bg_color": "#ff8832",
             "url": "shopify://products/qcy-melobuds-n70",
-            "countdown_display": false,
-            "date_time": "Aug 26, 2025 00:00:00 CST",
-            "primary_color": "#121212",
-            "secondary_color": "#121212",
-            "content_position_y": "content-desktop-y-center",
-            "content_position_x": "content-desktop-x-left",
-            "content_position_y_mobile": "top-2"
+            "overlay": false,
+            "overlay_opacity": 20
           }
         },
         "banner_image_CVVNze": {
@@ -160,44 +197,6 @@
             "url": "https://www.qcy.com/products/qcy-crossky-c50",
             "overlay": false,
             "overlay_opacity": 25
-          }
-        },
-        "banner_image_7FtPTD": {
-          "type": "Banner_Image",
-          "disabled": true,
-          "settings": {
-            "content_display": false,
-            "content_position_y": "content-desktop-y-center",
-            "content_position_x": "content-desktop-x-left",
-            "content_position_y_mobile": "content-mobile-y-top",
-            "sub_heading": "<p>QCY Crossky C30S</p>",
-            "sub_heading_font_size": 30,
-            "sub_heading_font_size_mb": 22,
-            "sub_heading_weight": "f-f-bold",
-            "sub_heading_weight_mb": "f-f-regular",
-            "sub_heading_color": "#dc0f0f",
-            "sub_heading_color_mb": "#ff8832",
-            "heading": "Allow Ears to Breathe",
-            "heading_font_size": 45,
-            "heading_font_size_mb": 50,
-            "heading_weight": "f-f-extra-bold",
-            "heading_weight_mb": "f-f-extra-bold",
-            "heading_color": "#000000",
-            "heading_color_mb": "#ffffff",
-            "description": "<p>Uncompressed Audio, Uninterrupted Journeys​</p>",
-            "description_font_size": 20,
-            "description_font_size_mb": 20,
-            "description_weight": "f-f-regular",
-            "description_weight_mb": "f-f-regular",
-            "description_color": "#121212",
-            "description_color_mb": "#ffffff",
-            "image": "shopify://shop_images/c30s-pc_393eafae-c4dd-43f3-9622-887fca19d506.jpg",
-            "bg_image": "shopify://shop_images/c30s-sp_e0cae05d-3cf1-41b0-bc26-e981a8d493c2.jpg",
-            "btn_heading": "EXPLORE",
-            "btn_bg_color": "#121212",
-            "url": "shopify://products/qcy-crossky-c30s",
-            "overlay": false,
-            "overlay_opacity": 20
           }
         },
         "banner_image_adERje": {
@@ -315,11 +314,11 @@
         }
       },
       "block_order": [
+        "banner_countdown_grkkX9",
         "banner_image_Qhf7hC",
         "banner_image_mLaxyt",
-        "banner_countdown_grkkX9",
-        "banner_image_CVVNze",
         "banner_image_7FtPTD",
+        "banner_image_CVVNze",
         "banner_image_adERje",
         "banner_image_HPpNrE",
         "banner_video_Twi3cE"
@@ -369,7 +368,10 @@
         "product_PjLHk6",
         "product_LjifJW"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".featured-product-content-container h5 {font-size: 22px; color: #ff8832;}",
+        "@media (max-width: 767px) {.featured-product-content-container h5 {font-size: 18px; }}"
+      ],
       "settings": {
         "section_heading": "Feature Products",
         "product": "qcy-h3-pro",

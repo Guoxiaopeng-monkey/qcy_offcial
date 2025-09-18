@@ -20,13 +20,13 @@
     "promotion_banner_yEiC7a": {
       "type": "promotion-banner",
       "settings": {
-        "background": "shopify://shop_images/banner-pc-1920x600_4044a0c9-c9c1-406f-9d21-c080c6a8376f.jpg",
-        "background_mobile": "shopify://shop_images/banner-m-860x1600.jpg",
-        "sub_heading": "Prime Day Sale",
-        "sub_heading_font_size": 40,
+        "background": "shopify://shop_images/1920x600-3_ff1da5e9-c568-414e-91a1-d158111bb7ee.jpg",
+        "background_mobile": "shopify://shop_images/860x1200-4_d14e7d8b-a3b0-4d2e-8780-7d8a863c869c.jpg",
+        "sub_heading": "Flash Sale: 5 Days Only!",
+        "sub_heading_font_size": 30,
         "sub_heading_weight": "f-f-semibold",
         "sub_heading_color": "#ff8832",
-        "heading": "UP TO 59% OFF !",
+        "heading": "UP TO 46% OFF !",
         "heading_weight": "f-f-extra-bold",
         "heading_font_size": 45,
         "heading_color": "#121212",
@@ -35,7 +35,7 @@
         "description_weight": "f-f-black",
         "description_color": "#ffffff",
         "countdown_display": true,
-        "date_time": "Jul 15, 2025 00:00:00 PST",
+        "date_time": "Sep 22, 2025 16:00:00 CST",
         "primary_color": "#121212",
         "secondary_color": "#121212",
         "content_position_y": "content-desktop-y-center",
@@ -70,6 +70,7 @@
         "header_menu_mnyGLC",
         "header_menu_NLUDzX"
       ],
+      "disabled": true,
       "settings": {
         "background": "#f7e7cf",
         "text_color": "#000000"
@@ -97,12 +98,12 @@
       "type": "promotion-collection-list",
       "settings": {
         "product_header": "Headphones",
-        "background": "#f7e7cf",
+        "background": "#f8f4ee",
         "primary_color": "#000000",
         "secondary_color": "#000000",
         "sub_heading": "",
-        "heading": "<p>💫<em>Silence & Ease, All Day Long</em>💫</p>",
-        "collection": "pd-headphones",
+        "heading": "<p>🌟Huge Savings on Top Items !🌟</p>",
+        "collection": "flash-sale",
         "link_heading": "",
         "modal_heading": "Bonus Gifts Guidelines 2",
         "modal_description": "<p>Lorem Ipsum Odor Amet. Consectetuer Adipiscing Ellt. Rutrum Lorem Condimentum Diam Etiam Viverra Eleifend. Donec Commodo. Enim Locus Ante Augue Dapibus Cursus Nec Justo Lacus Vivamus. Uttrices Arcu Bibendum Vulputate Cras; Erat Mattis Dictum Nam Frtngilla. Varius Qu•sque Cras Velit ld Netus. Sagittis Lacus Ridiculus Ullamcorper Maecenas Dictumst F•nibus Orci Sodales.</p><p>Condimentum Lectus Erat Blandit Commodo. Sed Conubia Interdum Posuere. Tempor Morbi Vehicula Eget Eletfend. Consectetur Congue Vulputate. Consectetur Nec Urna ut Hac Ntsl. Accumsan Ultricies Nibh Dolor: Varius Eleifend ld Cursus Eros. Mauris Ullamcorper Velit Curae Hac Lacinia Aliquet Trisuque Nascetur. Egestas Consectctur Mollis Senectus Morbi Quam Massa Euismod. Facil•sis Consectetur Pharetra Ex Maecenas Netus Mus Quisque.</p><p>Mus Libero Prims Natoque Fames Ipsum Malesuada; Curabitur Conubla Dis.<br/>Pharetra Convallis Quis Locus Aenean Cubillo Locus. At Facilisis Rhoncus<br/>Elementum Consectetur Felis Ac Fames. Scelerisque Maecenas Nam Tortor<br/>Eros Sed Conubia. Vellt Curabltur Lacinia Dolor Fells Integer Orci Accumsan<br/>Platea. Ac Adipiscing Lobortis Facilisi Eleifend: Sagittis Duis. Elegfend Egestas<br/>Integer Diam Rhoncus: Phasellus Consectetur Efficrtur. Eu Felis Suscipit Odio<br/>Dui Metus Bibendum Libero Curabitur.</p><p>Elcmcntum Ac Inceptos Quis Rhoncus; Est Sagitus Taciti. Ad Inceptos</p>",
@@ -115,6 +116,7 @@
     },
     "promotion_collection_list_BpbK6G": {
       "type": "promotion-collection-list",
+      "disabled": true,
       "settings": {
         "product_header": "Open-Ear Earbuds",
         "background": "#f7e7cf",
@@ -135,6 +137,7 @@
     },
     "promotion_collection_list_qN9rKT": {
       "type": "promotion-collection-list",
+      "disabled": true,
       "settings": {
         "product_header": "Earbuds",
         "background": "#f7e7cf",

@@ -17,9 +17,9 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Hear Beyond: MeloBuds N70 is Live​💥",
-            "link": "shopify://products/qcy-melobuds-n70",
-            "date_time": ""
+            "text": "5-Day Flash Sale On Now !​💥",
+            "link": "shopify://pages/flash-sale",
+            "date_time": "Sep 22, 2025 16:00:00 CST"
           }
         }
       },
@@ -44,35 +44,39 @@
           "type": "support",
           "settings": {
             "icon": "shopify://shop_images/4_734adc9a-15fe-4ddf-bd5d-ee0ec1cf2c26.png",
-            "label": "Fast, Free Delivery"
-          }
-        },
-        "support_BP3WG6": {
-          "type": "support",
-          "settings": {
-            "icon": "shopify://shop_images/ea7b9fbe0d90ffc88e67bdc19919f9fe.jpg",
-            "label": "Lifetime Customer Support"
+            "label": "Fast, Free Delivery",
+            "url": "shopify://pages/shipping-policy"
           }
         },
         "support_rkYAQK": {
           "type": "support",
           "settings": {
             "icon": "shopify://shop_images/44a71eaf99f7e6f519c0a41d92e7ecc3.jpg",
-            "label": "Money-Back Guarantee"
+            "label": "Money-Back Guarantee",
+            "url": "shopify://pages/return-refund-policy"
+          }
+        },
+        "support_BP3WG6": {
+          "type": "support",
+          "settings": {
+            "icon": "shopify://shop_images/ea7b9fbe0d90ffc88e67bdc19919f9fe.jpg",
+            "label": "Lifetime Customer Support",
+            "url": "shopify://pages/contact-us"
           }
         },
         "support_XKQbUX": {
           "type": "support",
           "settings": {
             "icon": "shopify://shop_images/1_4c8556ab-841a-492a-9e43-95ea4649264e.png",
-            "label": "365 Days Warranty"
+            "label": "365 Days Warranty",
+            "url": "shopify://pages/warranty-policy"
           }
         }
       },
       "block_order": [
         "support_mizMFT",
-        "support_BP3WG6",
         "support_rkYAQK",
+        "support_BP3WG6",
         "support_XKQbUX"
       ],
       "name": "Header Support",

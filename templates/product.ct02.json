@@ -56,6 +56,7 @@
         },
         "countdown_discount_fD4Myd": {
           "type": "countdown_discount",
+          "disabled": true,
           "settings": {
             "discount": "Save $3",
             "title": "Code: R703",
