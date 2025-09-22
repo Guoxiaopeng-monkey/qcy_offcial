@@ -12,10 +12,12 @@
     "image_with_text_d8bwY6": {
       "type": "image-with-text",
       "settings": {
-        "image": "shopify://shop_images/Headphones.png",
-        "image_mobile": "shopify://shop_images/Headphones_Mobile.jpg",
+        "image": "shopify://shop_images/2.Wireless_Headphones-pc.jpg",
+        "image_mobile": "shopify://shop_images/2.Wireless_Headphones-m.png",
         "heading": "Wireless Headphones",
-        "text": "<p>Discover pure audio bliss with QCY headphones!\nElevate your listening experience with cutting-edge noise cancellation, crystal-clear sound quality, and ergonomic design - our premium wireless headphones deliver exceptional audio performance for music enthusiasts and daily commuters!</p>"
+        "text": "<p>Discover pure audio bliss with QCY headphones!<br/>Elevate your listening experience with cutting-edge noise cancellation, crystal-clear sound quality, and ergonomic design - our premium wireless headphones deliver exceptional audio performance for music enthusiasts and daily commuters!</p>",
+        "desktop_heading_color": "#ffffff",
+        "desktop_text_color": "#ffffff"
       }
     },
     "collection_navigation_wDLXFT": {

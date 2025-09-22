@@ -12,12 +12,12 @@
     "image_with_text_d8bwY6": {
       "type": "image-with-text",
       "settings": {
-        "image": "shopify://shop_images/ANC_earbuds_banner-1.jpg",
-        "image_mobile": "shopify://shop_images/1_bbcc2f07-e41c-46f1-99fc-6b00ad937d9b.jpg",
+        "image": "shopify://shop_images/8.ANC_Earbuds-pc.png",
+        "image_mobile": "shopify://shop_images/8.ANC_Earbuds-m.png",
         "heading": "ANC Earbuds",
         "text": "<p>Immerse yourself in superior sound and unmatched comfort with QCY's ANC earbuds! Whether you're diving into your favorite tunes, handling calls, or powering through a workout, QCY's active noise cancellation and wireless freedom elevate your audio experience to new heights!</p>",
-        "desktop_heading_color": "#ffffff",
-        "desktop_text_color": "#ffffff"
+        "desktop_heading_color": "#121212",
+        "desktop_text_color": "#121212"
       }
     },
     "collection_navigation_wDLXFT": {

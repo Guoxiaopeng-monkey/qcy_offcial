@@ -13,10 +13,20 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/over-ear-headphones.jpg",
-        "image_mobile": "shopify://shop_images/over-ear-headphones_287a9816-d89b-4a35-85d1-e8e5ee64bf01.jpg",
+        "image": "shopify://shop_images/4.Over_Ear_Headphones-pc.png",
+        "image_mobile": "shopify://shop_images/4.Over_Ear_Headphones-m.png",
         "heading": "Over Ear Headphones",
-        "text": "<p>Dive into immersive audio with QCY over-ear headphones—built for comfort, long listening, and focus. With up to 60 hours of battery life, powerful noise cancelling, and clear call performance, they’re your perfect companion wherever life takes you.</p>"
+        "text": "<p>Dive into immersive audio with QCY over-ear headphones—built for comfort, long listening, and focus. With up to 60 hours of battery life, powerful noise cancelling, and clear call performance, they’re your perfect companion wherever life takes you.</p>",
+        "desktop_heading_color": "#000000",
+        "desktop_text_color": "#000000"
+      }
+    },
+    "collection_navigation_4AAGh6": {
+      "type": "collection-navigation",
+      "name": "Collection Navigation",
+      "settings": {
+        "text_color": "#333333",
+        "padding": 10
       }
     },
     "main_collection_D4J9rG": {
@@ -37,14 +47,6 @@
       "settings": {
         "heading": "More Features on QCY Over-Ear Headphones",
         "text": "<p><strong>Clear Calls, Anywhere</strong><br/>Thanks to AI-enhanced microphones and noise suppression, your voice stays clear even in noisy environments. From video calls to voice chats, QCY helps you communicate without interruption.</p><p><strong>Personalized Sound Experience</strong><br/>Using the QCY App, you can adjust EQ settings or fine-tune audio to match your unique preferences. Your sound, your style—tailored the way you like it.</p><p><strong>Compact and Travel-Friendly</strong><br/>Need to pack light? No problem. The foldable design makes QCY headphones easy to store and carry, making them a perfect companion for life on the go.</p>"
-      }
-    },
-    "collection_navigation_4AAGh6": {
-      "type": "collection-navigation",
-      "name": "Collection Navigation",
-      "settings": {
-        "text_color": "#333",
-        "padding": 10
       }
     }
   },

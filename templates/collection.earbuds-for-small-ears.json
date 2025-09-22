@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "image_with_text_TT3CPt": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/28.Earbuds_for_Small_Ears-pc.png",
+        "image_mobile": "shopify://shop_images/28.Earbuds_for_Small_Ears-m.png",
+        "heading": "Earbuds for Small Ears",
+        "text": "<p>Experience tailored audio with <strong>QCY Earbuds for Small Ears</strong>! Designed for comfort, these earbuds deliver crisp sound for music, calls, or workouts. With a secure fit and wireless convenience, <strong>QCY Earbuds for Small Ears</strong> ensure all-day comfort and immersive audio.</p>",
+        "desktop_heading_color": "#ffffff",
+        "desktop_text_color": "#ffffff"
+      }
+    },
     "collection_navigation_AnCJQE": {
       "type": "collection-navigation",
       "name": "Collection Navigation",
@@ -20,18 +32,6 @@
     "main_collection_D4J9rG": {
       "type": "main-collection",
       "settings": {}
-    },
-    "image_with_text_TT3CPt": {
-      "type": "image-with-text",
-      "name": "Image with text",
-      "settings": {
-        "image": "shopify://shop_images/18-1.jpg",
-        "image_mobile": "shopify://shop_images/18-2.jpg",
-        "heading": "Earbuds for Small Ears",
-        "text": "<p>Experience tailored audio with <strong>QCY Earbuds for Small Ears</strong>! Designed for comfort, these earbuds deliver crisp sound for music, calls, or workouts. With a secure fit and wireless convenience, <strong>QCY Earbuds for Small Ears</strong> ensure all-day comfort and immersive audio.</p>",
-        "desktop_heading_color": "#ffffff",
-        "desktop_text_color": "#ffffff"
-      }
     }
   },
   "order": [

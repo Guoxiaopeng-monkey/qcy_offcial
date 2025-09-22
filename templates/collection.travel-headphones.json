@@ -13,12 +13,12 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/5-2.jpg",
-        "image_mobile": "shopify://shop_images/5-1.jpg",
+        "image": "shopify://shop_images/13.Travel_Headphones-pc.png",
+        "image_mobile": "shopify://shop_images/13.Travel_Headphones-m.png",
         "heading": "Travel Headphones",
         "text": "<p>Embark on your adventures with QCY Travel Headphones! Perfect for music, calls, or relaxing on the go, QCY offers exceptional audio and lasting comfort. With noise cancellation and wireless convenience, these Travel Headphones elevate your travel experience to new heights.</p>",
-        "desktop_heading_color": "#000000",
-        "desktop_text_color": "#000000"
+        "desktop_heading_color": "#ffffff",
+        "desktop_text_color": "#ffffff"
       }
     },
     "collection_navigation_AnCJQE": {

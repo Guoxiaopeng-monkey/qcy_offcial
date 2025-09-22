@@ -13,8 +13,8 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/16-1_68064dea-2441-4fd4-9cb3-0cfae56f3146.jpg",
-        "image_mobile": "shopify://shop_images/16-2_262e4f88-d204-4e8f-9ba2-749d82cbe8b1.jpg",
+        "image": "shopify://shop_images/25.Behind_the_Ear_Headphones-pc.png",
+        "image_mobile": "shopify://shop_images/25.Behind_the_Ear_Headphones-m.png",
         "heading": "Behind the Ear Headphones",
         "text": "<p>Experience audio freedom with <strong>QCY Behind the Ear Headphones</strong>! Ideal for workouts, calls, or daily use, QCY offers clear sound with a secure, ergonomic fit. With wireless convenience and lasting comfort, these <strong>Behind the Ear Headphones</strong> elevate your active lifestyle.</p>",
         "desktop_heading_color": "#121212",

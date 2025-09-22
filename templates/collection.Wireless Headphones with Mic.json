@@ -13,8 +13,8 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/12-1.jpg",
-        "image_mobile": "shopify://shop_images/12-2.jpg",
+        "image": "shopify://shop_images/20.Wireless_Headphones_with_Mic-pc.png",
+        "image_mobile": "shopify://shop_images/20.Wireless_Headphones_with_Mic-m.png",
         "heading": "Wireless Headphones with Mic",
         "text": "<p>Elevate your audio experience with QCY Wireless Headphones with Mic! Ideal for calls, music, or gaming, QCY offers superior sound and a noise-canceling microphone. With wireless freedom and all-day comfort, these Wireless Headphones with Mic ensure seamless connectivity for work or play.</p>",
         "desktop_heading_color": "#ffffff",

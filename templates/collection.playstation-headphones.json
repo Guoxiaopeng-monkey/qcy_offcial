@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "image_with_text_h3LqiM": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/22.PlayStation_headphones-pc.png",
+        "image_mobile": "shopify://shop_images/22.PlayStation_headphones-m.png",
+        "heading": "PlayStation Headphones",
+        "text": "<p>Level up your PlayStation experience with <strong>QCY </strong><a href=\"https://www.qcy.com/blogs/support/how-to-connect-wireless-headphones-to-ps5\"><strong>PlayStation Headphones</strong></a>! Tailored for gamers, QCY delivers rich audio and clear communication for epic battles or immersive adventures. With wireless convenience and lasting comfort, these <strong>PlayStation Headphones</strong> enhance every gaming session.</p>",
+        "desktop_heading_color": "#ffffff",
+        "desktop_text_color": "#ffffff"
+      }
+    },
     "collection_navigation_AnCJQE": {
       "type": "collection-navigation",
       "name": "Collection Navigation",
@@ -20,18 +32,6 @@
     "main_collection_D4J9rG": {
       "type": "main-collection",
       "settings": {}
-    },
-    "image_with_text_h3LqiM": {
-      "type": "image-with-text",
-      "name": "Image with text",
-      "settings": {
-        "image": "shopify://shop_images/13-1.jpg",
-        "image_mobile": "shopify://shop_images/13-2.jpg",
-        "heading": "PlayStation Headphones",
-        "text": "<p>Level up your PlayStation experience with <strong>QCY </strong><a href=\"https://www.qcy.com/blogs/support/how-to-connect-wireless-headphones-to-ps5\"><strong>PlayStation Headphones</strong></a>! Tailored for gamers, QCY delivers rich audio and clear communication for epic battles or immersive adventures. With wireless convenience and lasting comfort, these <strong>PlayStation Headphones</strong> enhance every gaming session.</p>",
-        "desktop_heading_color": "#ffffff",
-        "desktop_text_color": "#ffffff"
-      }
     }
   },
   "order": [

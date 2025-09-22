@@ -13,8 +13,8 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/15-1.jpg",
-        "image_mobile": "shopify://shop_images/15-2.jpg",
+        "image": "shopify://shop_images/24.Hi_Res_Headphones-pc.png",
+        "image_mobile": "shopify://shop_images/24.Hi_Res_Headphones-m.png",
         "heading": "Hi Res Headphones",
         "text": "<p>Immerse yourself in pristine sound with <strong>QCY Hi Res Headphones</strong>! Perfect for music, gaming, or calls, QCY delivers high-resolution audio with exceptional detail. Enjoy wireless freedom and all-day comfort with these <strong>Hi Res Headphones</strong>, crafted for audiophiles and everyday listeners alike.</p>",
         "desktop_heading_color": "#ffffff",

@@ -13,8 +13,8 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/17-1.jpg",
-        "image_mobile": "shopify://shop_images/17-2.jpg",
+        "image": "shopify://shop_images/26.Earbuds_That_Don_t_Go_in_Ear-pc.png",
+        "image_mobile": "shopify://shop_images/26.Earbuds_That_Don_t_Go_in_Ear-m.png",
         "heading": "Earbuds That Don't Go in Ear",
         "text": "<p>Enjoy superior sound without intrusion with <strong>QCY Earbuds That Don't Go in Ear</strong>! Perfect for music, calls, or workouts, QCY delivers clear audio with an open-ear design for all-day comfort. With wireless freedom, these <strong>Earbuds That Don't Go in Ear</strong> keep you aware and connected.</p>",
         "desktop_heading_color": "#000000",

@@ -13,12 +13,12 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/19-1.jpg",
-        "image_mobile": "shopify://shop_images/19-2.jpg",
+        "image": "shopify://shop_images/29.Noise_Cancelling_Earbuds-pc.png",
+        "image_mobile": "shopify://shop_images/29.Noise_Cancelling_Earbuds-m.png",
         "heading": "Noise Cancelling Earbuds",
         "text": "<p>Dive into pristine audio with <strong>QCY Noise Cancelling Earbuds</strong>! Perfect for music, calls, or workouts, QCY’s advanced noise cancellation blocks distractions for a focused experience. With wireless freedom and all-day comfort, these <strong>Noise Cancelling Earbuds</strong> elevate your audio wherever you go.</p>",
-        "desktop_heading_color": "#ffffff",
-        "desktop_text_color": "#ffffff"
+        "desktop_heading_color": "#121212",
+        "desktop_text_color": "#121212"
       }
     },
     "collection_navigation_AnCJQE": {

@@ -13,12 +13,12 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/anc-headphones.jpg",
-        "image_mobile": "shopify://shop_images/anc-headphones.jpg",
+        "image": "shopify://shop_images/6.ANC_Headphones-pc.png",
+        "image_mobile": "shopify://shop_images/6.ANC_Headphones-m.png",
         "heading": "ANC Headphones",
         "text": "<p>Explore QCY’s ANC headphones—engineered to tune out the noise and dial in on what matters. With powerful noise cancellation, impressive sound quality, and long-lasting battery life, they’re built for your everyday hustle.</p>",
-        "desktop_heading_color": "#ffffff",
-        "desktop_text_color": "#ffffff"
+        "desktop_heading_color": "#121212",
+        "desktop_text_color": "#121212"
       }
     },
     "collection_navigation_EPaD7r": {

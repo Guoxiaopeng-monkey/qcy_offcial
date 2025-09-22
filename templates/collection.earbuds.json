@@ -12,8 +12,8 @@
     "image_with_text_cX7dLK": {
       "type": "image-with-text",
       "settings": {
-        "image": "shopify://shop_images/Earbuds.png",
-        "image_mobile": "shopify://shop_images/QCY.jpg",
+        "image": "shopify://shop_images/3.True_Wireless_Earbuds-pc.png",
+        "image_mobile": "shopify://shop_images/3.True_Wireless_Earbuds-m.png",
         "heading": "True Wireless Earbuds",
         "text": "<p>Experience powerful audio and exceptional comfort with QCY's true wireless earbuds! Whether you're enjoying your favorite music, taking calls, or working out, QCY delivers premium sound quality and wireless freedom that elevates your listening experience!</p>",
         "desktop_heading_color": "#000000",

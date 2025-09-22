@@ -13,8 +13,8 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/31-1.jpg",
-        "image_mobile": "shopify://shop_images/31-2.jpg",
+        "image": "shopify://shop_images/41.Bean-shaped_Earbuds-pc.png",
+        "image_mobile": "shopify://shop_images/41.Bean-shaped_Earbuds-m.png",
         "heading": "Bean-shaped Earbuds",
         "text": "<p>Experience audio in style with <strong>QCY Bean-shaped Earbuds</strong>! Perfect for music, calls, or workouts, these earbuds deliver clear sound with a distinctive bean-shaped design. With wireless convenience and all-day comfort, <strong>Bean-shaped Earbuds</strong> by QCY blend innovation and performance seamlessly.</p>",
         "desktop_heading_color": "#000000",

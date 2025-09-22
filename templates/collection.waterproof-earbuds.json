@@ -21,10 +21,10 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/7-1_f5e23257-51bd-4f1c-bdba-a76159ae636b.jpg",
-        "image_mobile": "shopify://shop_images/7-2.jpg",
+        "image": "shopify://shop_images/15.Waterproof_Earbuds-pc.png",
+        "image_mobile": "shopify://shop_images/15.Waterproof_Earbuds-m.png",
         "heading": "Waterproof Earbuds",
-        "text": "<p>Dive into your music with QCY Waterproof Earbuds! Perfect for workouts, outdoor adventures, or daily commutes, QCY offers superior audio and rugged durability.&nbsp;</p>",
+        "text": "<p>Dive into your music with QCY Waterproof Earbuds! Perfect for workouts, outdoor adventures, or daily commutes, QCY offers superior audio and rugged durability. </p>",
         "desktop_heading_color": "#000000",
         "desktop_text_color": "#000000"
       }

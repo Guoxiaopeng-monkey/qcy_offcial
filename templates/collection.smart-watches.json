@@ -13,8 +13,8 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/40025_2x_07cc5d8a-3216-4a68-a5e3-bc4270492431.png",
-        "image_mobile": "shopify://shop_images/40025_2x_07cc5d8a-3216-4a68-a5e3-bc4270492431.png",
+        "image": "shopify://shop_images/42.Smart_Watches-pc.png",
+        "image_mobile": "shopify://shop_images/42.Smart_Watches-m.png",
         "heading": "Smart watches",
         "text": "<p>Experience cutting-edge technology and sleek style with QCY's smart watches! Whether you're tracking your fitness, staying connected, or managing your day, QCY delivers premium performance and seamless functionality to elevate your everyday experience!</p>",
         "desktop_heading_color": "#000000",

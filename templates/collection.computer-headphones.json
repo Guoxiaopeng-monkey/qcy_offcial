@@ -13,8 +13,8 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/14-2.jpg",
-        "image_mobile": "shopify://shop_images/14-1.jpg",
+        "image": "shopify://shop_images/23.Computer_Headphones-pc.png",
+        "image_mobile": "shopify://shop_images/23.Computer_Headphones-m.png",
         "heading": "Computer Headphones",
         "text": "<p>Enhance your digital experience with <strong>QCY </strong><a href=\"https://www.qcy.com/blogs/support/how-to-connect-wireless-headphones-a-complete-beginner-s-guide\" target=\"_blank\" title=\"https://www.qcy.com/blogs/support/how-to-connect-wireless-headphones-a-complete-beginner-s-guide\"><strong>Computer Headphones</strong></a>! Perfect for video calls, gaming, or music, QCY delivers crisp audio and reliable connectivity. With noise cancellation and all-day comfort, these <strong>Computer Headphones</strong> ensure seamless performance for your PC or laptop.</p>",
         "desktop_heading_color": "#ffffff",

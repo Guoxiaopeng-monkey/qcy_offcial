@@ -14,10 +14,12 @@
       "custom_css": [],
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/1_a5c82198-7603-4e59-94d2-84311ce9d393.jpg",
-        "image_mobile": "shopify://shop_images/1_a5c82198-7603-4e59-94d2-84311ce9d393.jpg",
+        "image": "shopify://shop_images/5.Noise-Cancelling_Headphones-pc.png",
+        "image_mobile": "shopify://shop_images/5.Noise-Cancelling_Headphones-m.png",
         "heading": "Noise Cancelling Headphones",
-        "text": "<p>QCY noise cancelling headphones use advanced ANC with four adaptable modes to minimize surrounding noise in various environments. Enjoy crystal-clear audio and lasting comfort—perfect for music, calls, and everyday entertainment.</p>"
+        "text": "<p>QCY noise cancelling headphones use advanced ANC with four adaptable modes to minimize surrounding noise in various environments. Enjoy crystal-clear audio and lasting comfort—perfect for music, calls, and everyday entertainment.</p>",
+        "desktop_heading_color": "#000000",
+        "desktop_text_color": "#000000"
       }
     },
     "main_collection_D4J9rG": {

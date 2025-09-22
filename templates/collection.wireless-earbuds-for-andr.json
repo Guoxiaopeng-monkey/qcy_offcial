@@ -13,7 +13,8 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/8-1.jpg",
+        "image": "shopify://shop_images/16.Wireless_Earbuds_for_Android.png",
+        "image_mobile": "shopify://shop_images/16.Wireless_Earbuds_for_Android-1.png",
         "heading": "Wireless Earbuds for Android",
         "text": "<p>Elevate your audio experience with QCY <a href=\"https://www.qcy.com/blogs/tech/what-is-ldac-aac-aptx-lhdc-sbc-dsee-extreme-and-whats-their-differences\" target=\"_blank\" title=\"https://www.qcy.com/blogs/tech/what-is-ldac-aac-aptx-lhdc-sbc-dsee-extreme-and-whats-their-differences\">Wireless Earbuds for Android</a>! Perfect for music, calls, or gaming, QCY delivers crystal-clear sound and effortless Android compatibility. With wireless convenience and all-day comfort, these Wireless Earbuds for Android enhance every moment.</p>",
         "desktop_heading_color": "#ffffff",

@@ -13,8 +13,8 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/9-1_edf0410b-4daf-450d-9477-3b99ff7b5e36.jpg",
-        "image_mobile": "shopify://shop_images/9-2.jpg",
+        "image": "shopify://shop_images/17.Spatial_Audio_Earbuds-pc.png",
+        "image_mobile": "shopify://shop_images/17.Spatial_Audio_Earbuds-m.png",
         "heading": "Spatial Audio Earbuds",
         "text": "<p>Experience next-level audio with QCY <a href=\"https://www.qcy.com/blogs/tech/what-is-spatial-audio\" target=\"_blank\" title=\"https://www.qcy.com/blogs/tech/what-is-spatial-audio\">Spatial Audio Earbuds</a>! Perfect for music, calls, or gaming, QCY delivers rich, immersive sound with spatial audio technology. Enjoy wireless freedom and all-day comfort with these Spatial Audio Earbuds.</p>",
         "desktop_heading_color": "#ffffff",

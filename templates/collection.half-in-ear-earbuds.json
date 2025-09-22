@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "image_with_text_BGpQQB": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/31.half_in-ear_earbuds_-pc.png",
+        "image_mobile": "shopify://shop_images/31.half_in-ear_earbuds_-m.png",
+        "heading": "half in-ear earbuds",
+        "text": "<p><br/>Experience balanced sound with QCY Half In-Ear Earbuds! Perfect for music, calls, or workouts, these earbuds offer a comfortable half in-ear fit with clear audio. With wireless freedom and all-day comfort, Half In-Ear Earbuds by QCY enhance your listening while keeping you aware.<br/></p>",
+        "desktop_heading_color": "#ffffff",
+        "desktop_text_color": "#ffffff"
+      }
+    },
     "collection_navigation_AnCJQE": {
       "type": "collection-navigation",
       "name": "Collection Navigation",
@@ -20,18 +32,6 @@
     "main_collection_D4J9rG": {
       "type": "main-collection",
       "settings": {}
-    },
-    "image_with_text_BGpQQB": {
-      "type": "image-with-text",
-      "name": "Image with text",
-      "settings": {
-        "image": "shopify://shop_images/21-1.jpg",
-        "image_mobile": "shopify://shop_images/21-2.jpg",
-        "heading": "half in-ear earbuds",
-        "text": "<p><br/>Experience balanced sound with QCY Half In-Ear Earbuds! Perfect for music, calls, or workouts, these earbuds offer a comfortable half in-ear fit with clear audio. With wireless freedom and all-day comfort, Half In-Ear Earbuds by QCY enhance your listening while keeping you aware.<br/></p>",
-        "desktop_heading_color": "#ffffff",
-        "desktop_text_color": "#ffffff"
-      }
     }
   },
   "order": [

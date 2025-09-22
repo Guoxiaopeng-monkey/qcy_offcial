@@ -13,8 +13,8 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/1-1.jpg",
-        "image_mobile": "shopify://shop_images/1-2.jpg",
+        "image": "shopify://shop_images/9.Gaming_Headsets-pc.png",
+        "image_mobile": "shopify://shop_images/9.Gaming_Headsets-m.png",
         "heading": "Gaming Headsets",
         "text": "<p>Dive into the ultimate gaming experience with QCY Gaming Headsets! Designed for gamers who demand precision, comfort, and crystal-clear audio, QCY delivers cutting-edge technology to enhance every moment of your gameplay. Whether you're battling in intense multiplayer matches or exploring immersive single-player worlds, our Gaming Headsets provide unparalleled sound quality and wireless freedom.</p>",
         "desktop_heading_color": "#ffffff",

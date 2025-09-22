@@ -21,8 +21,8 @@
       "type": "image-with-text",
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/3-2.jpg",
-        "image_mobile": "shopify://shop_images/3-1.jpg",
+        "image": "shopify://shop_images/21.Earhook_Earbuds-pc.png",
+        "image_mobile": "shopify://shop_images/21.Earhook_Earbuds-m.png",
         "heading": "Earhook Earbuds",
         "text": "<p>Experience unstoppable audio with QCY Earhook Earbuds! Designed for workouts, runs, or daily use, QCY delivers premium sound with a secure earhook design. Enjoy wireless freedom and all-day comfort with these Earhook Earbuds, perfect for an active lifestyle.</p>",
         "desktop_heading_color": "#121212",

@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "image_with_text_wMWEAb": {
+      "type": "image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/30.Clip_On_Earbuds-pc.png",
+        "image_mobile": "shopify://shop_images/30.Clip_On_Earbuds-m.png",
+        "heading": "Clip On Earbuds",
+        "text": "<p>Enjoy premium sound with <strong>QCY Clip On Earbuds</strong>! Designed for active lifestyles, these earbuds offer a secure clip-on design for music, calls, or workouts. With wireless convenience and all-day comfort, <strong>Clip On Earbuds</strong> by QCY keep you immersed in every moment.</p>",
+        "desktop_heading_color": "#000000",
+        "desktop_text_color": "#000000"
+      }
+    },
     "collection_navigation_AnCJQE": {
       "type": "collection-navigation",
       "name": "Collection Navigation",
@@ -20,18 +32,6 @@
     "main_collection_D4J9rG": {
       "type": "main-collection",
       "settings": {}
-    },
-    "image_with_text_wMWEAb": {
-      "type": "image-with-text",
-      "name": "Image with text",
-      "settings": {
-        "image": "shopify://shop_images/20-1.jpg",
-        "image_mobile": "shopify://shop_images/20-2.jpg",
-        "heading": "Clip On Earbuds",
-        "text": "<p>Enjoy premium sound with <strong>QCY Clip On Earbuds</strong>! Designed for active lifestyles, these earbuds offer a secure clip-on design for music, calls, or workouts. With wireless convenience and all-day comfort, <strong>Clip On Earbuds</strong> by QCY keep you immersed in every moment.</p>",
-        "desktop_heading_color": "#000000",
-        "desktop_text_color": "#000000"
-      }
     }
   },
   "order": [
