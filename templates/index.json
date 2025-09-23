@@ -671,6 +671,57 @@
       ],
       "settings": {}
     },
+    "mx_video_slideshow_yXfYmt": {
+      "type": "mx-video-slideshow",
+      "blocks": {
+        "video_W8WpJH": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=bcv4VGFbg8A",
+            "autoplay": false,
+            "video_image": "shopify://shop_images/Mitchell.jpg",
+            "video_title": "@MitchellMillennial: QCY Melobuds Pro, Insane Value",
+            "video_description": ""
+          }
+        },
+        "video_VLqx6P": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=HTs10LwC_YM",
+            "autoplay": false,
+            "video_image": "shopify://shop_images/DroidModderX.jpg",
+            "video_title": "@Shane Starnes: BEST ANC Headphones Under $50",
+            "video_description": ""
+          }
+        },
+        "video_PR76j3": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=Ni8wUZpcyfA",
+            "autoplay": false,
+            "video_image": "shopify://shop_images/Techmaniac.jpg",
+            "video_title": "@TechManiacHD: QCY MeloBuds Pro Review",
+            "video_description": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_W8WpJH",
+        "video_VLqx6P",
+        "video_PR76j3"
+      ],
+      "name": "MX Video Slideshow",
+      "settings": {
+        "title": "Hear what others are saying",
+        "sub_title": "Listening is believing. Watch people use QCY products and check out their comments.",
+        "button_text": "",
+        "button_url": "",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "show_dots": true
+      }
+    },
     "homepage_stories_section_rNfJBq": {
       "type": "homepage-stories-section",
       "blocks": {
@@ -707,6 +758,7 @@
         "youtube_CLGcDN",
         "youtube_zFb6jY"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Hear what others are saying",
         "description": "<p>Listening is believing. Watch people use QCY products and check out their comments.</p>"
@@ -789,6 +841,7 @@
     "17325251952b802861",
     "homepage_community_section_ynR3ef",
     "homepage_review_section_EEWKqn",
+    "mx_video_slideshow_yXfYmt",
     "homepage_stories_section_rNfJBq",
     "homepage_about_us_section_ryKhJy",
     "homepage_icons_section_n3yjbz",

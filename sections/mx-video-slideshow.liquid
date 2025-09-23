@@ -144,6 +144,9 @@
     padding: 0 20px;
     text-align: center;
   }
+  .video-slidershow-header h2 {
+    font-weight: 700;
+  }
 
   .video-slidershow-content {
     width: 100%;
@@ -160,6 +163,8 @@
   .swiper-wrapper {
     align-items: center;
     display: flex;
+    width: 100%;
+    position: relative;
   }
 
   .swiper-slide {
@@ -180,6 +185,13 @@
   .swiper-slide.swiper-slide-active {
     opacity: 1;
     z-index: 2;
+  }
+
+  /* PC端特定样式 */
+  @media (min-width: 768px) {
+    .swiper-slide {
+      width: calc(100% / 3);
+    }
   }
 
   .swiper-slide.swiper-slide-next,
@@ -431,7 +443,7 @@
       // Basic settings
       loop: true,
       spaceBetween: 20,
-      centeredSlides: true,
+      centeredSlides: false,
       slidesOffsetBefore: 0,
       slidesOffsetAfter: 0,
       // Autoplay
@@ -461,16 +473,15 @@
           spaceBetween: 20,
           centeredSlides: true,
         },
-
         768: {
           slidesPerView: 3,
           spaceBetween: 20,
-          centeredSlides: true,
+          centeredSlides: false,
         },
         1024: {
           slidesPerView: 3,
           spaceBetween: 20,
-          centeredSlides: true,
+          centeredSlides: false,
         },
       },
 
