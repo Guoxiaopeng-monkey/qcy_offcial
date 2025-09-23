@@ -1,4 +1,4 @@
-<div>
+<div class="video-slideshow-container">
   <div class="video-slidershow-header">
     <h2>
       {{ section.settings.title }}
@@ -16,7 +16,14 @@
               <div class="video-slide-content">
                 {% if block.settings.video != blank %}
                   <div class="video-container">
-                    {{ block.settings.video | video_tag: controls: true, autoplay: false, loop: false, muted: false }}
+                    {{
+                      block.settings.video
+                      | video_tag:
+                        controls: true,
+                        autoplay: block.settings.autoplay,
+                        loop: false,
+                        muted: block.settings.autoplay
+                    }}
                   </div>
                 {% elsif block.settings.video_url != blank %}
                   <div class="video-container">
@@ -26,15 +33,19 @@
                         <div class="video-cover">
                           {% if block.settings.video_image != blank %}
                             <img
-                              src="{{ block.settings.video_image | img_url: '800x450' }}"
+                              src="{{ block.settings.video_image | image_url }}"
                               alt="{{ block.settings.video_title | default: 'YouTube Video' }}"
                               class="video-thumbnail"
+                              width="100%"
+                              height="auto"
                             >
                           {% else %}
                             <img
                               src="https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg"
                               alt="{{ block.settings.video_title | default: 'YouTube Video' }}"
                               class="video-thumbnail"
+                              width="100%"
+                              height="auto"
                             >
                           {% endif %}
                           <div class="play-button">
@@ -54,6 +65,8 @@
                               src="{{ block.settings.video_image | img_url: '800x450' }}"
                               alt="{{ block.settings.video_title | default: 'Vimeo Video' }}"
                               class="video-thumbnail"
+                              width="100%"
+                              height="auto"
                             >
                           {% else %}
                             <div class="vimeo-placeholder">
@@ -90,8 +103,16 @@
 
       {% if section.blocks.size > 1 %}
         {% if section.settings.show_navigation %}
-          <div class="swiper-button-next video-swiper-button-next"></div>
-          <div class="swiper-button-prev video-swiper-button-prev"></div>
+          <div class="swiper-button-next video-swiper-button-next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+              <path fill="currentColor" d="m14.475 12l-7.35-7.35q-.375-.375-.363-.888t.388-.887t.888-.375t.887.375l7.675 7.7q.3.3.45.675t.15.75t-.15.75t-.45.675l-7.7 7.7q-.375.375-.875.363T7.15 21.1t-.375-.888t.375-.887z"/>
+            </svg>
+          </div>
+          <div class="swiper-button-prev video-swiper-button-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M16 22L6 12L16 2l1.775 1.775L9.55 12l8.225 8.225z"/>
+            </svg>
+          </div>
         {% endif %}
 
         {% if section.settings.show_dots %}
@@ -110,14 +131,60 @@
 </div>
 
 <style>
+  .video-slideshow-container {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .video-slidershow-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .video-slidershow-content {
+    width: 100%;
+    position: relative;
+  }
+
   .video-swiper {
     width: 100%;
     margin: 0 auto;
     position: relative;
+    overflow: visible;
+  }
+
+  .swiper-wrapper {
+    align-items: center;
+    display: flex;
   }
 
   .swiper-slide {
     height: auto;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+
+  .swiper-slide:not(.swiper-slide-active):hover {
+    opacity: 0.8;
+  }
+
+  .swiper-slide.swiper-slide-active {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .swiper-slide.swiper-slide-next,
+  .swiper-slide.swiper-slide-prev {
+    opacity: 0.7;
   }
 
   .video-slide-content {
@@ -131,7 +198,7 @@
     height: 0;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     background: #000;
-    border-radius: 8px;
+    border-radius: 0;
     overflow: hidden;
   }
 
@@ -150,7 +217,9 @@
     width: 100%;
     height: 100%;
     text-decoration: none;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .video-cover {
@@ -158,13 +227,10 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 0;
     cursor: pointer;
     transition: transform 0.3s ease;
-  }
-
-  .video-cover:hover {
-    transform: scale(1.02);
+    z-index: 2;
   }
 
   .video-thumbnail {
@@ -191,7 +257,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    z-index: 3;
     transition: all 0.3s ease;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
   }
@@ -211,22 +277,29 @@
   }
 
   .video-slide-info {
-    padding: 20px 0;
-    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    z-index: 2;
   }
 
   .video-title {
     font-size: 1.5rem;
     font-weight: 600;
     margin: 0 0 10px 0;
-    color: #333;
+    color: #fff;
   }
 
   .video-description {
     font-size: 1rem;
-    color: #666;
     margin: 0;
     line-height: 1.5;
+    color: #fff;
   }
 
   /* Swiper Navigation Buttons */
@@ -239,6 +312,13 @@
     margin-top: -24px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    color: #333;
+  }
+
+  .video-swiper-button-next svg,
+  .video-swiper-button-prev svg {
+    width: 32px;
+    height: 32px;
   }
 
   .video-swiper-button-next:hover,
@@ -249,17 +329,19 @@
 
   .video-swiper-button-next:after,
   .video-swiper-button-prev:after {
-    font-size: 18px;
+    font-size: 0;
     font-weight: bold;
     color: #333;
   }
 
   .video-swiper-button-next {
-    right: 16px;
+    right: 30px;
+    z-index: 10;
   }
 
   .video-swiper-button-prev {
-    left: 16px;
+    left: 30px;
+    z-index: 10;
   }
 
   /* Swiper Pagination */
@@ -286,24 +368,33 @@
   }
 
   @media (max-width: 768px) {
+    .video-slideshow-container {
+      margin-left: calc(-50vw + 50%);
+    }
+
     .video-swiper-button-next,
     .video-swiper-button-prev {
       width: 40px;
       height: 40px;
       margin-top: -20px;
     }
+    .video-swiper-button-next svg,
+    .video-swiper-button-prev svg {
+      width: 24px;
+      height: 24px;
+    }
 
     .video-swiper-button-next:after,
     .video-swiper-button-prev:after {
-      font-size: 14px;
+      font-size: 0;
     }
 
     .video-swiper-button-next {
-      right: 8px;
+      right: 15px;
     }
 
     .video-swiper-button-prev {
-      left: 8px;
+      left: 15px;
     }
 
     .video-title {
@@ -341,7 +432,8 @@
       loop: true,
       spaceBetween: 20,
       centeredSlides: true,
-
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
       // Autoplay
       autoplay: autoplayEnabled ? {
         delay: autoplaySpeed,
@@ -365,16 +457,20 @@
       // Responsive breakpoints
       breakpoints: {
         320: {
-          slidesPerView: 1,
+          slidesPerView: 1.2,
           spaceBetween: 20,
+          centeredSlides: true,
         },
+
         768: {
           slidesPerView: 3,
           spaceBetween: 20,
+          centeredSlides: true,
         },
         1024: {
-          slidesPerView: 15,
+          slidesPerView: 3,
           spaceBetween: 20,
+          centeredSlides: true,
         },
       },
 
@@ -502,6 +598,12 @@
           "label": "Video URL",
           "info": "Use a YouTube or Vimeo URL",
           "placeholder": "Use a YouTube or Vimeo URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "Enable Auto Play",
+          "default": false
         },
         {
           "type": "image_picker",
