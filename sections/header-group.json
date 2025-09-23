@@ -16,6 +16,7 @@
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "5-Day Flash Sale On Now !​💥",
             "link": "shopify://pages/flash-sale",
