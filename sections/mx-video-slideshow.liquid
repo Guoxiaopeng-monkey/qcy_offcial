@@ -1,0 +1,531 @@
+<div>
+  <div class="video-slidershow-header">
+    <h2>
+      {{ section.settings.title }}
+    </h2>
+    <p>
+      {{ section.settings.sub_title }}
+    </p>
+  </div>
+  <div class="video-slidershow-content">
+    <div class="swiper video-swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide" {{ block.shopify_attributes }}>
+            {% if block.type == 'video' %}
+              <div class="video-slide-content">
+                {% if block.settings.video != blank %}
+                  <div class="video-container">
+                    {{ block.settings.video | video_tag: controls: true, autoplay: false, loop: false, muted: false }}
+                  </div>
+                {% elsif block.settings.video_url != blank %}
+                  <div class="video-container">
+                    {% if block.settings.video_url contains 'youtube' %}
+                      {% assign video_id = block.settings.video_url | split: 'v=' | last | split: '&' | first %}
+                      <a href="{{ block.settings.video_url }}" target="_blank" class="video-link">
+                        <div class="video-cover">
+                          {% if block.settings.video_image != blank %}
+                            <img
+                              src="{{ block.settings.video_image | img_url: '800x450' }}"
+                              alt="{{ block.settings.video_title | default: 'YouTube Video' }}"
+                              class="video-thumbnail"
+                            >
+                          {% else %}
+                            <img
+                              src="https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg"
+                              alt="{{ block.settings.video_title | default: 'YouTube Video' }}"
+                              class="video-thumbnail"
+                            >
+                          {% endif %}
+                          <div class="play-button">
+                            <svg width="68" height="48" viewBox="0 0 68 48">
+                              <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path>
+                              <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </a>
+                    {% elsif block.settings.video_url contains 'vimeo' %}
+                      {% assign video_id = block.settings.video_url | split: '/' | last | split: '?' | first %}
+                      <a href="{{ block.settings.video_url }}" target="_blank" class="video-link">
+                        <div class="video-cover">
+                          {% if block.settings.video_image != blank %}
+                            <img
+                              src="{{ block.settings.video_image | img_url: '800x450' }}"
+                              alt="{{ block.settings.video_title | default: 'Vimeo Video' }}"
+                              class="video-thumbnail"
+                            >
+                          {% else %}
+                            <div class="vimeo-placeholder">
+                              <span>Vimeo Video</span>
+                            </div>
+                          {% endif %}
+                          <div class="play-button">
+                            <svg width="68" height="48" viewBox="0 0 68 48">
+                              <circle cx="24" cy="24" r="20" fill="#1ab7ea" opacity="0.8"></circle>
+                              <path d="M 18,16 L 18,32 L 32,24 Z" fill="#fff"></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </a>
+                    {% endif %}
+                  </div>
+                {% endif %}
+
+                {% if block.settings.video_title != blank or block.settings.video_description != blank %}
+                  <div class="video-slide-info">
+                    {% if block.settings.video_title != blank %}
+                      <h3 class="video-title">{{ block.settings.video_title }}</h3>
+                    {% endif %}
+                    {% if block.settings.video_description != blank %}
+                      <p class="video-description">{{ block.settings.video_description }}</p>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if section.blocks.size > 1 %}
+        {% if section.settings.show_navigation %}
+          <div class="swiper-button-next video-swiper-button-next"></div>
+          <div class="swiper-button-prev video-swiper-button-prev"></div>
+        {% endif %}
+
+        {% if section.settings.show_dots %}
+          <div class="swiper-pagination video-swiper-pagination"></div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+  {% if section.settings.button_text != blank %}
+    <div class="video-slidershow-footer">
+      <a href="{{ section.settings.button_url }}" class="button">
+        {{ section.settings.button_text }}
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  .video-swiper {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  .video-slide-content {
+    position: relative;
+    width: 100%;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .video-container video,
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .video-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .video-cover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .video-cover:hover {
+    transform: scale(1.02);
+  }
+
+  .video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .vimeo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1ab7ea 0%, #0d7bb8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  }
+
+  .video-cover:hover .play-button {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  .play-button svg {
+    width: 68px;
+    height: 48px;
+    transition: all 0.3s ease;
+  }
+
+  .video-cover:hover .play-button svg {
+    filter: brightness(1.1);
+  }
+
+  .video-slide-info {
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .video-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #333;
+  }
+
+  .video-description {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Swiper Navigation Buttons */
+  .video-swiper-button-next,
+  .video-swiper-button-prev {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin-top: -24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .video-swiper-button-next:hover,
+  .video-swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+  }
+
+  .video-swiper-button-next:after,
+  .video-swiper-button-prev:after {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .video-swiper-button-next {
+    right: 16px;
+  }
+
+  .video-swiper-button-prev {
+    left: 16px;
+  }
+
+  /* Swiper Pagination */
+  .video-swiper-pagination {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .video-swiper-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #ddd;
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+
+  .video-swiper-pagination .swiper-pagination-bullet-active {
+    background: #333;
+    transform: scale(1.2);
+  }
+
+  .video-swiper-pagination .swiper-pagination-bullet:hover {
+    background: #999;
+  }
+
+  @media (max-width: 768px) {
+    .video-swiper-button-next,
+    .video-swiper-button-prev {
+      width: 40px;
+      height: 40px;
+      margin-top: -20px;
+    }
+
+    .video-swiper-button-next:after,
+    .video-swiper-button-prev:after {
+      font-size: 14px;
+    }
+
+    .video-swiper-button-next {
+      right: 8px;
+    }
+
+    .video-swiper-button-prev {
+      left: 8px;
+    }
+
+    .video-title {
+      font-size: 1.25rem;
+    }
+
+    .video-description {
+      font-size: 0.9rem;
+    }
+
+    .play-button svg {
+      width: 48px;
+      height: 34px;
+    }
+
+    .vimeo-placeholder {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const swiperContainer = document.querySelector('.video-swiper');
+    if (!swiperContainer) return;
+
+    const autoplayEnabled = {{ section.settings.autoplay | json }};
+    const autoplaySpeed = {{ section.settings.autoplay_speed | json }} * 1000;
+    const showNavigation = {{ section.settings.show_navigation | json }};
+    const showDots = {{ section.settings.show_dots | json }};
+
+    // Initialize Swiper
+    const swiper = new Swiper('.video-swiper', {
+      // Basic settings
+      loop: true,
+      spaceBetween: 20,
+      centeredSlides: true,
+
+      // Autoplay
+      autoplay: autoplayEnabled ? {
+        delay: autoplaySpeed,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      } : false,
+
+      // Navigation arrows
+      navigation: showNavigation ? {
+        nextEl: '.video-swiper-button-next',
+        prevEl: '.video-swiper-button-prev',
+      } : false,
+
+      // Pagination dots
+      pagination: showDots ? {
+        el: '.video-swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      } : false,
+
+      // Responsive breakpoints
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 15,
+          spaceBetween: 20,
+        },
+      },
+
+      // Effects
+      effect: 'slide',
+      speed: 600,
+
+      // Events
+      on: {
+        init: function() {
+          // Pause autoplay when video starts playing
+          const videos = document.querySelectorAll('.video-container video');
+          videos.forEach(video => {
+            video.addEventListener('play', () => {
+              swiper.autoplay.stop();
+            });
+            video.addEventListener('pause', () => {
+              if (autoplayEnabled) {
+                swiper.autoplay.start();
+              }
+            });
+          });
+
+          // Add click tracking for video links
+          const videoLinks = document.querySelectorAll('.video-link');
+          videoLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+              // Optional: Add analytics tracking here
+              console.log('Video link clicked:', this.href);
+            });
+          });
+        },
+
+        slideChange: function() {
+          // Pause all videos when slide changes
+          const videos = document.querySelectorAll('.video-container video');
+          videos.forEach(video => {
+            video.pause();
+          });
+        }
+      }
+    });
+
+    // Pause autoplay on hover
+    swiperContainer.addEventListener('mouseenter', () => {
+      if (autoplayEnabled) {
+        swiper.autoplay.stop();
+      }
+    });
+
+    swiperContainer.addEventListener('mouseleave', () => {
+      if (autoplayEnabled) {
+        swiper.autoplay.start();
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "MX Video Slideshow",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "sub_title",
+      "label": "Sub Title"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Auto Play",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Auto Play Speed (seconds)",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "show_navigation",
+      "label": "Show Navigation Arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show Dots Navigation",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "label": "Video URL",
+          "info": "Use a YouTube or Vimeo URL",
+          "placeholder": "Use a YouTube or Vimeo URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "video_image",
+          "label": "Video Image",
+          "info": "Video Image"
+        },
+        {
+          "type": "text",
+          "id": "video_title",
+          "label": "Video Title"
+        },
+        {
+          "type": "text",
+          "id": "video_description",
+          "label": "Video Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MX Video Slideshow"
+    }
+  ]
+}
+{% endschema %}
