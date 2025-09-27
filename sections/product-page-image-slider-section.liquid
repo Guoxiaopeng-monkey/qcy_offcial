@@ -64,6 +64,40 @@
     background: #ff8832;
     color: #fff;
   }
+
+  /* Dot pagination styles */
+  .image-slider-section .dot-pagination-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  .image-slider-section .dot-pagination-slider .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #ddd;
+    border-radius: 50%;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+  }
+
+  .image-slider-section .dot-pagination-slider .swiper-pagination-bullet-active {
+    background: #ff8832;
+    transform: scale(1.2);
+  }
+
+  .image-slider-section .dot-pagination-slider .swiper-pagination-bullet:hover {
+    background: #ff8832;
+    opacity: 0.8;
+  }
   .image-slider-section .image-slider-slider-arrows {
     position: absolute;
     top: 50%;
@@ -151,6 +185,7 @@
     .image-slider-section .mid-image-item {
       display: block;
       border-radius: 10px;
+      gap: 0px;
     }
     .image-slider-section .mid-image-item .text-details {
       padding: 0px 10px 20px;
@@ -173,6 +208,16 @@
     .image-slider-section .mid-image-slider-mobile .swiper-wrapper {
       display: flex;
       align-items: stretch; /* 确保所有slide高度一致 */
+    }
+
+    .image-slider-section .dot-pagination-slider {
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    .image-slider-section .dot-pagination-slider .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
     }
     .image-slider-section .mid-image-item {
       width: 100% !important;
@@ -251,7 +296,7 @@
                 {% if block.settings.image_add != blank %}
                   <img
                     loading="lazy"
-                    src="{{ block.settings.image_add | img_url: 'master' }}"
+                    src="{{ block.settings.image_add | image_url }}"
                     class="additinal-img"
                     width="100%"
                     height="100%"
@@ -260,7 +305,7 @@
               </div>
             </div>
             <div class="col_60">
-              <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}" width="100%" height="100%">
+              <img loading="lazy" src="{{ block.settings.image | image_url }}" width="100%" height="100%">
             </div>
           </div>
         {% endfor %}
@@ -282,6 +327,9 @@
         </svg>
       </div>
     </div>
+    {% if section.settings.show_dots %}
+      <div class="dot-pagination-slider dot-pagination-slider-{{ section.id }}"></div>
+    {% endif %}
   </div>
 
   <div class="inner-section h-mobile">
@@ -301,7 +349,7 @@
                 </p>
                 {% if block.settings.image_add != blank %}
                   <img
-                    src="{{ block.settings.image_add | img_url: 'master' }}"
+                    src="{{ block.settings.image_add | image_url }}"
                     class="additinal-img"
                     width="100%"
                     height="100%"
@@ -310,7 +358,7 @@
               </div>
             </div>
             <div class="col_60">
-              <img src="{{ block.settings.image | img_url: 'master' }}" width="100%" height="100%">
+              <img src="{{ block.settings.image | image_url }}" width="100%" height="100%">
             </div>
           </div>
         {% endfor %}
@@ -332,6 +380,9 @@
         </svg>
       </div>
     </div>
+    {% if section.settings.show_dots %}
+      <div class="dot-pagination-slider dot-pagination-slider-mobile-{{ section.id }}"></div>
+    {% endif %}
   </div>
 </div>
 <script>
@@ -357,6 +408,14 @@ document.addEventListener('DOMContentLoaded', function () {
       prev: { opacity: 0 },
       next: { translate: ['100%', 0, 0] },
     },
+    {% if section.settings.show_dots %}
+    pagination: {
+      el: '.dot-pagination-slider-{{ section.id }}',
+      clickable: true,
+      bulletClass: 'swiper-pagination-bullet',
+      bulletActiveClass: 'swiper-pagination-bullet-active',
+    },
+    {% else %}
     pagination: {
       el: '.bottom-pagination-slider-{{ section.id }}',
       clickable: true,
@@ -364,6 +423,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return `<span class="tab-pagination t-cap ${className}" data-index="${index}" title="${slideTitles[index]}">${slideTitles[index]}</span>`;
       },
     },
+    {% endif %}
   });
 
 let hasInteracted = false;
@@ -378,6 +438,14 @@ var mobileSlider = new Swiper('.mid-image-slider-mobile-{{ section.id }}', {
     nextEl: '.image-slider-button-next-mobile-{{ section.id }}',
     prevEl: '.image-slider-button-prev-mobile-{{ section.id }}',
   },
+  {% if section.settings.show_dots %}
+  pagination: {
+    el: '.dot-pagination-slider-mobile-{{ section.id }}',
+    clickable: true,
+    bulletClass: 'swiper-pagination-bullet',
+    bulletActiveClass: 'swiper-pagination-bullet-active',
+  },
+  {% else %}
   pagination: {
     el: '.bottom-pagination-slider-mobile-{{ section.id }}',
     clickable: true,
@@ -385,6 +453,7 @@ var mobileSlider = new Swiper('.mid-image-slider-mobile-{{ section.id }}', {
       return `<span class="tab-pagination t-cap ${className}" data-index="${index}" title="${slideTitles[index]}">${slideTitles[index]}</span>`;
     },
   },
+  {% endif %}
   on: {
     slideChange: function () {
       const activeIndex = this.realIndex;
@@ -394,6 +463,7 @@ var mobileSlider = new Swiper('.mid-image-slider-mobile-{{ section.id }}', {
 
       hasInteracted = true; // User has now interacted or changed slides
 
+      {% unless section.settings.show_dots %}
       const paginationContainer = document.querySelector('.bottom-pagination-slider-mobile-{{ section.id }}');
       if (paginationContainer) {
         const bullets = paginationContainer.querySelectorAll('.tab-pagination');
@@ -406,11 +476,13 @@ var mobileSlider = new Swiper('.mid-image-slider-mobile-{{ section.id }}', {
           });
         }
       }
+      {% endunless %}
     }
   }
 });
 
 
+  {% unless section.settings.show_dots %}
   document.addEventListener('click', function(e) {
     const bullet = e.target.closest('.bottom-pagination-slider-mobile-{{ section.id }} .tab-pagination');
     if (bullet) {
@@ -421,6 +493,7 @@ var mobileSlider = new Swiper('.mid-image-slider-mobile-{{ section.id }}', {
       });
     }
   });
+  {% endunless %}
 });
 </script>
 
@@ -437,6 +510,12 @@ var mobileSlider = new Swiper('.mid-image-slider-mobile-{{ section.id }}', {
       "id": "animation_fade",
       "label": "Animation Fade Up",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show Dots Navigation",
+      "default": true
     }
   ],
   "max_blocks": 5,
