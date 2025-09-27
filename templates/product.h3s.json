@@ -54,14 +54,27 @@
           "type": "quantity_selector",
           "settings": {}
         },
-        "countdown_discount_gzYmrq": {
+        "countdown_discount_PWbq4e": {
           "type": "countdown_discount",
-          "disabled": true,
           "settings": {
             "discount": "15% OFF",
-            "title": "Code:HP15",
+            "title": "Code: N70",
             "date_time": "",
-            "discount_code": "HP15"
+            "discount_code": "N70"
+          }
+        },
+        "text_pBJPCh": {
+          "type": "text",
+          "settings": {
+            "text": "11111",
+            "text_style": "body"
+          }
+        },
+        "custom_liquid_BFNkz8": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<p>We will ship on the 26th after purchase.</p>"
           }
         },
         "buy_buttons": {
@@ -84,7 +97,7 @@
             "link_url": ""
           }
         },
-        "delivery_payment_Rk9DYF": {
+        "delivery_payment_xjMGEk": {
           "type": "delivery_payment",
           "settings": {
             "heading": "Delivery & Payment",
@@ -106,10 +119,12 @@
         "description",
         "variant_picker",
         "quantity_selector",
-        "countdown_discount_gzYmrq",
+        "countdown_discount_PWbq4e",
+        "text_pBJPCh",
+        "custom_liquid_BFNkz8",
         "buy_buttons",
         "membership_discount_nAmWHi",
-        "delivery_payment_Rk9DYF"
+        "delivery_payment_xjMGEk"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -142,22 +157,22 @@
         "support_description_4": "<p>We'll always be there for you. If you have any questions or concerns, feel free to contact us at <a href=\"mailto:service@qcyearphone.com\" title=\"mailto:service@qcyearphone.com\">service@qcyearphone.com</a>.</p>"
       }
     },
-    "product_page_header_section_pp3azA": {
+    "product_page_header_section_bpQYpw": {
       "type": "product-page-header-section",
       "blocks": {
-        "header_menu_AwwCap": {
+        "header_menu_DqaX6d": {
           "type": "header_menu",
           "settings": {
             "header_menu": "Features"
           }
         },
-        "header_menu_Ky9xRm": {
+        "header_menu_QrxAym": {
           "type": "header_menu",
           "settings": {
             "header_menu": "Specification"
           }
         },
-        "header_menu_qtjfeK": {
+        "header_menu_rGH6xx": {
           "type": "header_menu",
           "settings": {
             "header_menu": "Reviews"
@@ -165,11 +180,122 @@
         }
       },
       "block_order": [
-        "header_menu_AwwCap",
-        "header_menu_Ky9xRm",
-        "header_menu_qtjfeK"
+        "header_menu_DqaX6d",
+        "header_menu_QrxAym",
+        "header_menu_rGH6xx"
       ],
       "settings": {}
+    },
+    "product_page_custom_layout_ybtiBW": {
+      "type": "product-page-custom-layout",
+      "blocks": {
+        "item_pnafxp": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/1_b2af4a2b-2d08-41f0-96e5-4309ec2f014b.jpg",
+            "image_mobile": "shopify://shop_images/1_d0a10c9c-2fdb-4ce2-a4a4-0a833e4832fa.jpg",
+            "heading": "<p><strong>Dual-driver Units<br/>True to life audio experience</strong></p>",
+            "primary_color": "#ffffff",
+            "secondary_color": "#ffffff",
+            "primary_weight": "f-f-black",
+            "secondary_weight": "Mulish-SemiBold",
+            "primary_size": "h2",
+            "primary_font_size": 20,
+            "primary_font_size_mobile": 18,
+            "secondary_font_size": 20,
+            "secondary_font_size_mobile": 18,
+            "secondary_size": "--heading-5",
+            "heading_position": "flex-start"
+          }
+        },
+        "item_wKAteN": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/2_674528cc-2adb-4124-804e-0e8d770f05c9.jpg",
+            "image_mobile": "shopify://shop_images/2_b57d6ca5-d2c3-4a98-9b41-f798e3000fa3.jpg",
+            "heading": "<p><strong>Hi-Res & LDAC Codec</strong></p>",
+            "primary_color": "#121212",
+            "secondary_color": "#121212",
+            "primary_weight": "f-f-medium",
+            "secondary_weight": "Mulish-Bold",
+            "primary_size": "h5",
+            "primary_font_size": 20,
+            "primary_font_size_mobile": 18,
+            "secondary_font_size": 20,
+            "secondary_font_size_mobile": 18,
+            "secondary_size": "--heading-4",
+            "heading_position": "flex-start"
+          }
+        },
+        "item_ddwLmj": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/3_825a334e-4655-42a4-b81f-e8e5dd5d3a79.jpg",
+            "image_mobile": "shopify://shop_images/3_c170bf5d-ec4c-43b0-bf2a-5f1fa73e2ae3.jpg",
+            "heading": "<p>Up to<strong> 50H</strong> Playback</p>",
+            "primary_color": "#121212",
+            "secondary_color": "#334fb4",
+            "primary_weight": "f-f-black",
+            "secondary_weight": "Mulish-Black",
+            "primary_size": "h4",
+            "primary_font_size": 18,
+            "primary_font_size_mobile": 18,
+            "secondary_font_size": 24,
+            "secondary_font_size_mobile": 18,
+            "secondary_size": "--heading-3",
+            "heading_position": "flex-start"
+          }
+        },
+        "item_rraLHP": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/4_3ce3888a-1b2a-401b-a141-6697ee0107ac.jpg",
+            "image_mobile": "shopify://shop_images/4_27a80114-a01a-49e8-9aa6-83351f5baf58.jpg",
+            "heading": "<p><strong>-56dB</strong></p><p>Noise </p><p>Canceling</p>",
+            "primary_color": "#121212",
+            "secondary_color": "#334fb4",
+            "primary_weight": "f-f-black",
+            "secondary_weight": "Mulish-Black",
+            "primary_size": "h4",
+            "primary_font_size": 20,
+            "primary_font_size_mobile": 15,
+            "secondary_font_size": 24,
+            "secondary_font_size_mobile": 18,
+            "secondary_size": "--heading-2",
+            "heading_position": "flex-start"
+          }
+        },
+        "item_RMpJKi": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/5_8d45fe58-bf60-4013-a577-530c360a9248.jpg",
+            "image_mobile": "shopify://shop_images/5_1f70b040-a32c-4cb6-b38d-b6f3c8f202fd.jpg",
+            "heading": "<p><strong>3 </strong>Mics with Al for Call Clarity</p><p>& Patented Wind Sheilding Design<br/></p>",
+            "primary_color": "#ffffff",
+            "secondary_color": "#ffffff",
+            "primary_weight": "f-f-black",
+            "secondary_weight": "Mulish-SemiBold",
+            "primary_size": "h3",
+            "primary_font_size": 18,
+            "primary_font_size_mobile": 18,
+            "secondary_font_size": 24,
+            "secondary_font_size_mobile": 18,
+            "secondary_size": "--heading-2",
+            "heading_position": "flex-start"
+          }
+        }
+      },
+      "block_order": [
+        "item_pnafxp",
+        "item_wKAteN",
+        "item_ddwLmj",
+        "item_rraLHP",
+        "item_RMpJKi"
+      ],
+      "name": "Custom Layout",
+      "settings": {
+        "header_nav": "Features"
+      }
     },
     "product_page_gallery_featured_image_section_79B43B": {
       "type": "product-page-gallery-featured-image-section",
@@ -177,40 +303,40 @@
         "item_DX6mJr": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/3504de1e526f8918234da5fe44534d2c.jpg",
-            "image_mobile": "shopify://shop_images/2_M.jpg",
+            "image": "shopify://shop_images/42824_2x_4.png",
+            "image_mobile": "shopify://shop_images/43723_2x_4.png",
             "heading": ""
           }
         },
         "item_8wdzp3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/42826_2x_5.png",
-            "image_mobile": "shopify://shop_images/43727_2x_5.png",
+            "image": "shopify://shop_images/42826_2x_4.png",
+            "image_mobile": "shopify://shop_images/43727_2x_4.png",
             "heading": ""
           }
         },
         "item_B9mfRk": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/42825_2x_5.png",
-            "image_mobile": "shopify://shop_images/43726_2x_5.png",
+            "image": "shopify://shop_images/42825_2x_4.png",
+            "image_mobile": "shopify://shop_images/43726_2x_4.png",
             "heading": ""
           }
         },
         "item_4CGhpY": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/43782_2x_4.png",
-            "image_mobile": "shopify://shop_images/43787_2x_5.png",
+            "image": "shopify://shop_images/43782_2x_3.png",
+            "image_mobile": "shopify://shop_images/43787_2x_3.png",
             "heading": ""
           }
         },
         "item_4pWFih": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/43784_2x_4.png",
-            "image_mobile": "shopify://shop_images/43729_2x_5.png",
+            "image": "shopify://shop_images/43784_2x_3.png",
+            "image_mobile": "shopify://shop_images/43729_2x_4.png",
             "heading": ""
           }
         }
@@ -222,6 +348,7 @@
         "item_4CGhpY",
         "item_4pWFih"
       ],
+      "disabled": true,
       "settings": {
         "header_nav": "Features"
       }
@@ -236,8 +363,8 @@
       "type": "product-page-featured-specs-section",
       "disabled": true,
       "settings": {
-        "bg_image": "shopify://shop_images/39954_2x_13.png",
-        "bg_image_mobile": "shopify://shop_images/39957_2x_10.png"
+        "bg_image": "shopify://shop_images/39954_2x_12.png",
+        "bg_image_mobile": "shopify://shop_images/39957_2x_9.png"
       }
     },
     "product_page_featured_video_section_NbhMGF": {
@@ -253,21 +380,21 @@
         "content_n98KXx": {
           "type": "content",
           "settings": {
-            "image": "shopify://shop_images/39908_2x_11.webp",
-            "heading": "Dual Chip Driven Superior Sound",
+            "image": "shopify://shop_images/39908_2x_10.webp",
+            "heading": "Minimised Sound leakage",
             "text_color": "#121212",
-            "description": "<p>The QCY H3 Pro supports LDAC for high-fidelity sound and is Hi-Res Audio certified. Dual-chip technology enhances bass with a primary and amplifier chip.</p>",
-            "sub_image": "shopify://shop_images/2x_2937ca3f-e90b-4f85-bbb4-0dd8a7dffd7d.png",
-            "sub_image_fullwidth": false
+            "description": "<p>With advanced directional audio technology and auto sound beam adjustment, sounds are transmitted precisely into ear canal, making for a private listening experience.</p>",
+            "sub_image": "shopify://shop_images/e_0_2x_a25ee4bb-0845-424e-a491-56ad08712346.png",
+            "sub_image_fullwidth": true
           }
         },
         "content_agxaXd": {
           "type": "content",
           "settings": {
-            "image": "shopify://shop_images/39908_2x_12.webp",
-            "heading": "40mm Dynamic Drivers",
+            "image": "shopify://shop_images/39908_2x_9.webp",
+            "heading": "Open Up Your Ear",
             "text_color": "#121212",
-            "description": "<p>Powerful 40-mm drivers with titanium film diaphragms, promise high-quality sound without any fuss. From accurate bass with a warm sound signature to crisp, clean highs, hear each beat and every layer with clarity.</p>",
+            "description": "<p>With C-Shape open-ear design, QCY Crossky C30 keeps you in sync with your surroundings, without sealing the ear canal.</p>",
             "sub_image_fullwidth": false
           }
         }
@@ -276,6 +403,7 @@
         "content_n98KXx",
         "content_agxaXd"
       ],
+      "disabled": true,
       "settings": {
         "bg_color": "#ffffff"
       }
@@ -286,38 +414,51 @@
         "image_3mnKTC": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/39911_2x_30.webp",
-            "heading": "by Up to 50dB",
-            "sub_heading": "Reduce Noise",
-            "description": "<p>Adaptive ANC detects external sounds and leakage, automatically enhancing noise reduction. Multiple modes block out disruptive noises across different environments.</p>",
+            "image": "shopify://shop_images/3_30de862f-3ebb-4f32-9d45-ffbf9e4d4396.jpg",
+            "heading": "Hear Only What You Want",
+            "sub_heading": "QCY PureSilenz™ Tech & Adaptive ANC",
+            "description": "<p>With three advanced noise sensors in each earbud, MeloBuds N70 blocks out voices,keyboard taps, speaker noise, and even snoring, cutting noise across a wide 5kHz range.</p>",
             "title": "Noise Cancellation"
-          }
-        },
-        "image_QBLDTW": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/39911_2x_31.png",
-            "heading": "and Quick charging",
-            "sub_heading": "All Day Power",
-            "description": "<p>The headphone provides an extended music playback, allowing for prolonged usage without frequent charging.</p>",
-            "title": "Power For Days"
           }
         },
         "image_zB3Qhk": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/39911_2x_33_5abc5458-94e3-4c14-84e9-9a27d5524ab6.webp",
-            "heading": "Distraction ",
-            "sub_heading": "Free Calling",
-            "description": "<p>Featured with 3 microphones with AI, it enhances voice pick-up over the noise to ensure you sound crystal clear on the other end.</p>",
+            "image": "shopify://shop_images/1_a1d880e3-9a6c-4220-9ade-ec16c0a6cc35.jpg",
+            "heading": "Music in True Details",
+            "sub_heading": "DualCore Acoustic Systema",
+            "description": "<p>Power by QCY latest DualCore Acoustic system, ring shape dynamic driver work together with MEMS tweeter to tuned distortion-free and more true-to like audio experience.</p>",
+            "title": "High-Fidelity Sound"
+          }
+        },
+        "image_QBLDTW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lQDPJxBBsg5_PEnNBNjNBuCwRH6usISfOUQIjYoVaP04AA_1760_1240.jpg",
+            "heading": "Listen for Days",
+            "sub_heading": "Battary Life",
+            "description": "<p>Get 10 hours of playtime from a single charge, and an incredible up to 50 hours total with the compact charging case.</p>",
+            "title": "Power For Days",
+            "image_add": "shopify://shop_images/HT18__13_1.jpg"
+          }
+        },
+        "image_3fayic": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/39911_2x_29.webp",
+            "heading": "Noise Cancelling",
+            "sub_heading": "Clear Calls",
+            "description": "",
             "title": "Clear Communication"
           }
         }
       },
       "block_order": [
         "image_3mnKTC",
+        "image_zB3Qhk",
         "image_QBLDTW",
-        "image_zB3Qhk"
+        "image_3fayic"
       ],
       "settings": {
         "animation_fade": false
@@ -326,12 +467,40 @@
     "product_page_side_by_side_section_rYNrbK": {
       "type": "product-page-side-by-side-section",
       "blocks": {
-        "left_content_CHpgtG": {
+        "left_content_8rmCpk": {
           "type": "left_content",
           "settings": {
-            "bg_image": "shopify://shop_images/39919_2x_8_b5cb6615-def1-4b4a-a67c-375f0509710f.png",
-            "heading": "Wired & Wireless compatible",
-            "description": "<p>Switch to wired mode and enjoy your music non-stop during long travel. Unlimited access to immersive sound at any time.</p>",
+            "bg_image": "shopify://shop_images/8_2aa29375-bba6-4ff5-a007-e3c06fd2632e.jpg",
+            "heading": "Sound Perfectly Tuned for You",
+            "description": "<p>A quick and simple hearing test maps your unique ear sensitivity, and generates apersonalized EQ curve crafted just for you.</p>",
+            "heading_1": "",
+            "unit_1": "",
+            "label_1": "",
+            "heading_2": "",
+            "unit_2": "",
+            "label_2": ""
+          }
+        },
+        "right_content_LfDYkB": {
+          "type": "right_content",
+          "settings": {
+            "bg_image": "shopify://shop_images/2_eb847787-b757-4f5a-b9e4-20867db9d7fa.jpg",
+            "heading": "LDAC & Hi-Res Wireless Certified",
+            "description": "<p>Experience stunning, high-fidelity audio. Hear richer detail and clarity,bringing you closer to the artist's true sound, wirelessly.</p>",
+            "heading_1": "",
+            "unit_1": "",
+            "label_1": "",
+            "heading_2": "",
+            "unit_2": "",
+            "label_2": ""
+          }
+        },
+        "left_content_QyKYHk": {
+          "type": "left_content",
+          "settings": {
+            "bg_image": "shopify://shop_images/9_eeb2bb03-0e7a-4ebb-8a7a-527cd2a1d8bc.jpg",
+            "heading": "IPX5 Waterproof",
+            "description": "<p>A unidirectional waterproof membrane and sealed chamber design keep out sweat and rain.</p>",
             "heading_1": "",
             "unit_1": "",
             "label_1": "",
@@ -343,9 +512,9 @@
         "right_content_xntrMe": {
           "type": "right_content",
           "settings": {
-            "bg_image": "shopify://shop_images/39920_2x_8.png",
-            "heading": "Low-Latency Mode",
-            "description": "<p>60ms ultra-low latency. Enjoy a smoother gaming experience.</p>",
+            "bg_image": "shopify://shop_images/6_85f28e4a-2e46-4761-bd84-49df043c1bfa.jpg",
+            "heading": "Pure Comfort, Perfect Seal",
+            "description": "<p>Ultra-soft, double-layered silicone tips in 5 sizes for a second-skin fit, all-day comfort and a perfect seal for immersive sound.</p>",
             "heading_1": "",
             "unit_1": "",
             "label_1": "",
@@ -354,12 +523,13 @@
             "label_2": ""
           }
         },
-        "left_content_8rmCpk": {
+        "left_content_CHpgtG": {
           "type": "left_content",
+          "disabled": true,
           "settings": {
-            "bg_image": "shopify://shop_images/39921_2x_10.png",
-            "heading": "Dual connection",
-            "description": "<p>Connect two devices at the same time without a switch.</p>",
+            "bg_image": "shopify://shop_images/6_39a97bc1-368d-4174-a4bb-5c3c1e3516ba.jpg",
+            "heading": "Auto Left-Right Correction",
+            "description": "<p>Just pop the earbuds into the charging case in any order, the charging case will automatically detect and assign the correct left and right sound channels when you take them out.</p>",
             "heading_1": "",
             "unit_1": "",
             "label_1": "",
@@ -367,12 +537,22 @@
             "unit_2": "",
             "label_2": ""
           }
+        },
+        "full_width_YBUtgm": {
+          "type": "full_width",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/image_7.png"
+          }
         }
       },
       "block_order": [
-        "left_content_CHpgtG",
+        "left_content_8rmCpk",
+        "right_content_LfDYkB",
+        "left_content_QyKYHk",
         "right_content_xntrMe",
-        "left_content_8rmCpk"
+        "left_content_CHpgtG",
+        "full_width_YBUtgm"
       ],
       "settings": {}
     },
@@ -445,36 +625,52 @@
           "type": "text_image",
           "settings": {
             "right_content": true,
-            "image": "shopify://shop_images/43990_2x_a09eab24-f071-4a99-9106-7fc9e4545189.png",
+            "image": "shopify://shop_images/d28c9643660f272a0a74e58550c075ed.jpg",
             "sub_heading": "",
-            "heading": "Personalization",
-            "description": "<p>Tune EQ settings, switch ANC modes, and more with the QCY App. </p>"
+            "heading": "What's in the Box?",
+            "description": "<p>QCY MeloBuds N70<br/>5 Size of Eartips ( XS/S/M/L/XL)<br/>User Manual<br/>USB-C Charging Cable</p>"
           }
         },
         "text_image_CGRcpk": {
           "type": "text_image",
+          "disabled": true,
           "settings": {
             "right_content": false,
-            "image": "shopify://shop_images/39922_2x_8.png",
+            "image": "shopify://shop_images/14_1602b8bc-9dd8-4d28-9b88-3b89c78547f7.jpg",
             "sub_heading": "",
             "heading": "In the Box",
-            "description": "<p>Headphones * 1 <br/>3.5mm Aux Cable * 1<br/>Type-C cable * 1<br/>User manual * 1<br/>Packaging* 1 </p>"
+            "description": "<p>Earbuds *1<br/>Type-C cable *1<br/>User manual *1<br/>Packaging *1</p>"
           }
         },
         "fullwidth_LhkqUG": {
           "type": "fullwidth",
           "settings": {
-            "image": "shopify://shop_images/43853_2x_3.png",
-            "image_mobile": "shopify://shop_images/43881_2x_7.png"
+            "image": "shopify://shop_images/app-pc_0a7cdb3e-7d09-4534-927c-3133cf3b3208.jpg",
+            "image_mobile": "shopify://shop_images/app-m.jpg"
+          }
+        },
+        "fullwidth_kbr8UE": {
+          "type": "fullwidth",
+          "settings": {
+            "image": "shopify://shop_images/753ae0c0543d835c6fc7af099f470134_37dc1525-bf43-41c1-ac11-929ab878027b.jpg",
+            "image_mobile": "shopify://shop_images/m.jpg"
+          }
+        },
+        "fullwidth_aRCqr4": {
+          "type": "fullwidth",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/753ae0c0543d835c6fc7af099f470134_37dc1525-bf43-41c1-ac11-929ab878027b.jpg"
           }
         },
         "image_image_pdLg6x": {
           "type": "image_image",
+          "disabled": true,
           "settings": {
-            "heading": "Easy to Operate",
-            "description": "<p>Adjust volumn, switch noise cancelling modes, answer call and more control, all in your fingertips.</p>",
-            "left_image": "shopify://shop_images/40051_2x_1.png",
-            "right_image": "shopify://shop_images/39921_2x_11.png"
+            "heading": "Easy Control",
+            "description": "",
+            "left_image": "shopify://shop_images/40051_2x_c49957a4-165c-4ba9-a165-3e9113863599.png",
+            "right_image": "shopify://shop_images/39921_2x_9.png"
           }
         }
       },
@@ -482,6 +678,8 @@
         "text_image_npUmMX",
         "text_image_CGRcpk",
         "fullwidth_LhkqUG",
+        "fullwidth_kbr8UE",
+        "fullwidth_aRCqr4",
         "image_image_pdLg6x"
       ],
       "settings": {
@@ -528,21 +726,21 @@
           "type": "specification",
           "settings": {
             "select_specs": "basic",
-            "description": "<p>Type: Over-ear<br/>Audio codec: LDAC/SBC<br/>Compatible system: iOS/Android<br/>Charging port: USB Type-C<br/>Weight: 231g</p>"
+            "description": "<p>Type: ​​In-Ear<br/>Compatible system: iOS/Android<br/>Water Resistance Range: IPX5<br/>Dimensions (Case):50*60*28mm<br/>Dimensions (Earbud):31*25*25mm</p>"
           }
         },
         "specification_mLhHBG": {
           "type": "specification",
           "settings": {
             "select_specs": "bluetooth",
-            "description": "<p>Pairing name: QCY H3 Pro<br/>Effective bluetooth range: 10m<br/>Bluetooth version: 5.4<br/>Supported Protocols: HFP/A2DP/AVRCP</p>"
+            "description": "<p>Pairing name: QCY MeloBuds N70<br/>Bluetooth Range: 10m<br/>Bluetooth version: 6.0<br/>Profiles: HFP/A2DP/AVRCP</p>"
           }
         },
         "specification_VkHf8b": {
           "type": "specification",
           "settings": {
             "select_specs": "battery",
-            "description": "<p>Battery capacity: 550mAh<br/>Battery life: 40H with ANC ON, 55H with ANC OFF</p>"
+            "description": "<p>Total Battery Life(ANC on/off): 35h/50h<br/>Single Playback(ANC on/off): 7h/10h<br/>Battery Capacity (Charging Case): 480mAh<br/>Battery Capacity (Earbuds): 40mAh<br/>Charging Port: Type-C</p>"
           }
         }
       },
@@ -648,7 +846,8 @@
   "order": [
     "product_page_featured_product_section_eKUxRF",
     "main",
-    "product_page_header_section_pp3azA",
+    "product_page_header_section_bpQYpw",
+    "product_page_custom_layout_ybtiBW",
     "product_page_gallery_featured_image_section_79B43B",
     "product_page_footer_section_kKYNfJ",
     "product_page_featured_specs_section_A3prPV",

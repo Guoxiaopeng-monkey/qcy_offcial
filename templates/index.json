@@ -658,6 +658,14 @@
             "review_image": "shopify://shop_images/img_v3_02ge_78d0842d-a251-426a-b348-b7793ca5328g.png",
             "description": "<p>Perfect for anyone who needs a budget solution that still offers decent performance.</p>"
           }
+        },
+        "review_temtBx": {
+          "type": "review",
+          "disabled": true,
+          "settings": {
+            "review_image": "shopify://shop_images/20250926-095114.png",
+            "description": "<p>Those drivers work in tandem to form a spacious, well-layered soundstage. </p>"
+          }
         }
       },
       "block_order": [
@@ -667,7 +675,8 @@
         "review_ppK3A3",
         "review_pkwLFt",
         "review_93gMUr",
-        "review_XdJUVb"
+        "review_XdJUVb",
+        "review_temtBx"
       ],
       "settings": {}
     },
