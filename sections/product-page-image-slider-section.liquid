@@ -64,6 +64,35 @@
     background: #ff8832;
     color: #fff;
   }
+
+  /* 圆点指示器样式 */
+  .image-slider-section .dots-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+  }
+
+  .image-slider-section .dots-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #dbdbdb;
+    border-radius: 50%;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .image-slider-section .dots-pagination .swiper-pagination-bullet-active {
+    background: #ff8832;
+    transform: scale(1.2);
+  }
+
+  .image-slider-section .dots-pagination .swiper-pagination-bullet:hover {
+    background: #ff8832;
+    opacity: 0.7;
+  }
   .image-slider-section .image-slider-slider-arrows {
     position: absolute;
     top: 50%;
@@ -174,6 +203,16 @@
       display: flex;
       align-items: stretch; /* 确保所有slide高度一致 */
     }
+
+    /* 移动端圆点指示器样式 */
+    .image-slider-section .dots-pagination {
+      margin-top: 20px;
+    }
+
+    .image-slider-section .dots-pagination .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+    }
     .image-slider-section .mid-image-item {
       width: 100% !important;
       display: flex;
@@ -282,6 +321,9 @@
         </svg>
       </div>
     </div>
+
+    <!-- 桌面版圆点指示器 -->
+    <div class="dots-pagination dots-pagination-desktop-{{ section.id }}"></div>
   </div>
 
   <div class="inner-section h-mobile">
@@ -332,6 +374,9 @@
         </svg>
       </div>
     </div>
+
+    <!-- 移动版圆点指示器 -->
+    <div class="dots-pagination dots-pagination-mobile-{{ section.id }}"></div>
   </div>
 </div>
 <script>
@@ -364,6 +409,40 @@ document.addEventListener('DOMContentLoaded', function () {
         return `<span class="tab-pagination t-cap ${className}" data-index="${index}" title="${slideTitles[index]}">${slideTitles[index]}</span>`;
       },
     },
+  });
+
+  // 为桌面版添加圆点指示器 - 使用相同的 Swiper 实例
+  var midSliderDots = new Swiper('.mid-image-slider-{{ section.id }}', {
+    slidesPerView: "auto",
+    loop: true,
+    speed: 800,
+    allowTouchMove: true,
+    autoHeight: true,
+    navigation: {
+      nextEl: '.image-slider-button-next-{{ section.id }}',
+      prevEl: '.image-slider-button-prev-{{ section.id }}',
+    },
+    effect: 'creative',
+    creativeEffect: {
+      prev: { opacity: 0 },
+      next: { translate: ['100%', 0, 0] },
+    },
+    pagination: {
+      el: '.dots-pagination-desktop-{{ section.id }}',
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="swiper-pagination-bullet ${className}"></span>`;
+      },
+    },
+  });
+
+  // 同步两个分页器
+  midSlider.on('slideChange', function () {
+    midSliderDots.slideTo(this.realIndex);
+  });
+  
+  midSliderDots.on('slideChange', function () {
+    midSlider.slideTo(this.realIndex);
   });
 
 let hasInteracted = false;
@@ -408,6 +487,35 @@ var mobileSlider = new Swiper('.mid-image-slider-mobile-{{ section.id }}', {
       }
     }
   }
+});
+
+// 为移动版添加圆点指示器
+var mobileSliderDots = new Swiper('.mid-image-slider-mobile-{{ section.id }}', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  speed: 800,
+  allowTouchMove: true,
+  navigation: {
+    nextEl: '.image-slider-button-next-mobile-{{ section.id }}',
+    prevEl: '.image-slider-button-prev-mobile-{{ section.id }}',
+  },
+  pagination: {
+    el: '.dots-pagination-mobile-{{ section.id }}',
+    clickable: true,
+    renderBullet: function (index, className) {
+      return `<span class="swiper-pagination-bullet ${className}"></span>`;
+    },
+  },
+});
+
+// 同步移动版两个分页器
+mobileSlider.on('slideChange', function () {
+  mobileSliderDots.slideTo(this.realIndex);
+});
+
+mobileSliderDots.on('slideChange', function () {
+  mobileSlider.slideTo(this.realIndex);
 });
 
 
