@@ -89,6 +89,43 @@
             "overlay_opacity": 25
           }
         },
+        "banner_image_FqWGap": {
+          "type": "Banner_Image",
+          "settings": {
+            "content_display": false,
+            "content_position_y": "content-desktop-y-center",
+            "content_position_x": "content-desktop-x-left",
+            "content_position_y_mobile": "top-1",
+            "sub_heading": "<h1>QCY H3S</h1>",
+            "sub_heading_font_size": 30,
+            "sub_heading_font_size_mb": 30,
+            "sub_heading_weight": "f-f-bold",
+            "sub_heading_weight_mb": "f-f-semibold",
+            "sub_heading_color": "#ff8832",
+            "sub_heading_color_mb": "#ff8832",
+            "heading": "Pro-Level Performance, Mind-Level Price",
+            "heading_font_size": 40,
+            "heading_font_size_mb": 40,
+            "heading_weight": "f-f-extra-bold",
+            "heading_weight_mb": "f-f-extra-bold",
+            "heading_color": "#ffffff",
+            "heading_color_mb": "#121212",
+            "description": "<p>56dB ANC | 102H Playtime | Hi-Res & Spatial Sound | 7-Mic AI Call | Bluetooth 6.0</p>",
+            "description_font_size": 20,
+            "description_font_size_mb": 20,
+            "description_weight": "f-f-regular",
+            "description_weight_mb": "f-f-regular",
+            "description_color": "#ffffff",
+            "description_color_mb": "#121212",
+            "image": "shopify://shop_images/banner-pcH3S-PC_1.webp",
+            "bg_image": "shopify://shop_images/bannerH3S-sp_ab14dae8-c266-4830-a676-b4ca2615968f.webp",
+            "btn_heading": "Preorder Now",
+            "btn_bg_color": "#ff8832",
+            "url": "shopify://products/qcy-h3s",
+            "overlay": false,
+            "overlay_opacity": 20
+          }
+        },
         "banner_image_mLaxyt": {
           "type": "Banner_Image",
           "settings": {
@@ -202,7 +239,6 @@
         },
         "banner_image_adERje": {
           "type": "Banner_Image",
-          "disabled": true,
           "settings": {
             "content_display": true,
             "content_position_y": "content-desktop-y-center",
@@ -317,6 +353,7 @@
       "block_order": [
         "banner_countdown_grkkX9",
         "banner_image_Qhf7hC",
+        "banner_image_FqWGap",
         "banner_image_mLaxyt",
         "banner_image_7FtPTD",
         "banner_image_CVVNze",
@@ -659,6 +696,14 @@
             "description": "<p>Perfect for anyone who needs a budget solution that still offers decent performance.</p>"
           }
         },
+        "review_UPERhy": {
+          "type": "review",
+          "disabled": true,
+          "settings": {
+            "review_image": "shopify://shop_images/lg-688056132e465-GSMArena.webp",
+            "description": "<p>It's a credible name in the TWS audio market, brings in-house R&D, and has some advanced audio technology on hand.</p>"
+          }
+        },
         "review_temtBx": {
           "type": "review",
           "disabled": true,
@@ -676,6 +721,7 @@
         "review_pkwLFt",
         "review_93gMUr",
         "review_XdJUVb",
+        "review_UPERhy",
         "review_temtBx"
       ],
       "settings": {}
@@ -712,12 +758,23 @@
             "video_title": "@TechManiacHD: QCY MeloBuds Pro Review",
             "video_description": ""
           }
+        },
+        "video_e4GEt3": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=5OXz4XXusJ0",
+            "autoplay": false,
+            "video_image": "shopify://shop_images/1_461b4a61-669d-4c59-9c85-4067dd2adc60.jpg",
+            "video_title": "@Gesiel Taveira: QCY H3 - Unboxing and User Experience",
+            "video_description": ""
+          }
         }
       },
       "block_order": [
         "video_W8WpJH",
         "video_VLqx6P",
-        "video_PR76j3"
+        "video_PR76j3",
+        "video_e4GEt3"
       ],
       "name": "MX Video Slideshow",
       "settings": {
