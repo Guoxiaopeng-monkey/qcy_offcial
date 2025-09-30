@@ -407,45 +407,57 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  // 为桌面版添加圆点指示器 - 使用相同的 Swiper 实例
-  var midSliderDots = new Swiper('.mid-image-slider-{{ section.id }}', {
-    slidesPerView: "auto",
-    loop: true,
-    speed: 800,
-    allowTouchMove: true,
-    autoHeight: true,
-    effect: 'creative',
-    creativeEffect: {
-      prev: { opacity: 0 },
-      next: { translate: ['100%', 0, 0] },
-    },
-    pagination: {
-      el: '.dots-pagination-desktop-{{ section.id }}',
-      clickable: true,
-      renderBullet: function (index, className) {
-        return `<span class="swiper-pagination-bullet ${className}"></span>`;
-      },
-    },
-  });
+  // 手动创建桌面版圆点指示器
+  function createDesktopDots() {
+    const dotsContainer = document.querySelector('.dots-pagination-desktop-{{ section.id }}');
+    if (!dotsContainer) return;
+    
+    const totalSlides = midSlider.slides.length;
+    dotsContainer.innerHTML = '';
+    
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('span');
+      dot.className = 'swiper-pagination-bullet';
+      if (i === 0) dot.classList.add('swiper-pagination-bullet-active');
+      
+      dot.addEventListener('click', function() {
+        midSlider.slideTo(i);
+      });
+      
+      dotsContainer.appendChild(dot);
+    }
+  }
 
-  // 同步两个分页器
+  // 更新桌面版圆点指示器状态
+  function updateDesktopDots(activeIndex) {
+    const dots = document.querySelectorAll('.dots-pagination-desktop-{{ section.id }} .swiper-pagination-bullet');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('swiper-pagination-bullet-active', index === activeIndex);
+    });
+  }
+
+  // 同步桌面版分页器和圆点指示器
   midSlider.on('slideChange', function () {
-    midSliderDots.slideTo(this.realIndex);
-  });
-  
-  midSliderDots.on('slideChange', function () {
-    midSlider.slideTo(this.realIndex);
+    updateDesktopDots(this.realIndex);
   });
 
-  // 同步导航按钮 - 让按钮同时控制两个实例
+  // 在 Swiper 初始化完成后创建圆点指示器
+  midSlider.on('init', function() {
+    createDesktopDots();
+  });
+
+  // 确保圆点指示器被创建（如果 init 事件已经触发）
+  setTimeout(function() {
+    createDesktopDots();
+  }, 100);
+
+  // 同步桌面版导航按钮
   document.querySelector('.image-slider-button-next-{{ section.id }}').addEventListener('click', function() {
     midSlider.slideNext();
-    midSliderDots.slideNext();
   });
   
   document.querySelector('.image-slider-button-prev-{{ section.id }}').addEventListener('click', function() {
     midSlider.slidePrev();
-    midSliderDots.slidePrev();
   });
 
 let hasInteracted = false;
@@ -488,40 +500,57 @@ var mobileSlider = new Swiper('.mid-image-slider-mobile-{{ section.id }}', {
   }
 });
 
-// 为移动版添加圆点指示器
-var mobileSliderDots = new Swiper('.mid-image-slider-mobile-{{ section.id }}', {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
-  speed: 800,
-  allowTouchMove: true,
-  pagination: {
-    el: '.dots-pagination-mobile-{{ section.id }}',
-    clickable: true,
-    renderBullet: function (index, className) {
-      return `<span class="swiper-pagination-bullet ${className}"></span>`;
-    },
-  },
-});
+// 手动创建移动版圆点指示器
+function createMobileDots() {
+  const dotsContainer = document.querySelector('.dots-pagination-mobile-{{ section.id }}');
+  if (!dotsContainer) return;
+  
+  const totalSlides = mobileSlider.slides.length;
+  dotsContainer.innerHTML = '';
+  
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'swiper-pagination-bullet';
+    if (i === 0) dot.classList.add('swiper-pagination-bullet-active');
+    
+    dot.addEventListener('click', function() {
+      mobileSlider.slideTo(i);
+    });
+    
+    dotsContainer.appendChild(dot);
+  }
+}
 
-// 同步移动版两个分页器
+// 更新移动版圆点指示器状态
+function updateMobileDots(activeIndex) {
+  const dots = document.querySelectorAll('.dots-pagination-mobile-{{ section.id }} .swiper-pagination-bullet');
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('swiper-pagination-bullet-active', index === activeIndex);
+  });
+}
+
+// 同步移动版分页器和圆点指示器
 mobileSlider.on('slideChange', function () {
-  mobileSliderDots.slideTo(this.realIndex);
+  updateMobileDots(this.realIndex);
 });
 
-mobileSliderDots.on('slideChange', function () {
-  mobileSlider.slideTo(this.realIndex);
+// 在 Swiper 初始化完成后创建圆点指示器
+mobileSlider.on('init', function() {
+  createMobileDots();
 });
 
-// 同步移动版导航按钮 - 让按钮同时控制两个实例
+// 确保圆点指示器被创建（如果 init 事件已经触发）
+setTimeout(function() {
+  createMobileDots();
+}, 100);
+
+// 同步移动版导航按钮
 document.querySelector('.image-slider-button-next-mobile-{{ section.id }}').addEventListener('click', function() {
   mobileSlider.slideNext();
-  mobileSliderDots.slideNext();
 });
 
 document.querySelector('.image-slider-button-prev-mobile-{{ section.id }}').addEventListener('click', function() {
   mobileSlider.slidePrev();
-  mobileSliderDots.slidePrev();
 });
 
 
