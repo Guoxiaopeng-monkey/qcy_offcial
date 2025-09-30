@@ -393,10 +393,6 @@ document.addEventListener('DOMContentLoaded', function () {
     speed: 800,
     allowTouchMove: true,
     autoHeight: true,
-    navigation: {
-      nextEl: '.image-slider-button-next-{{ section.id }}',
-      prevEl: '.image-slider-button-prev-{{ section.id }}',
-    },
     effect: 'creative',
     creativeEffect: {
       prev: { opacity: 0 },
@@ -418,10 +414,6 @@ document.addEventListener('DOMContentLoaded', function () {
     speed: 800,
     allowTouchMove: true,
     autoHeight: true,
-    navigation: {
-      nextEl: '.image-slider-button-next-{{ section.id }}',
-      prevEl: '.image-slider-button-prev-{{ section.id }}',
-    },
     effect: 'creative',
     creativeEffect: {
       prev: { opacity: 0 },
@@ -445,6 +437,17 @@ document.addEventListener('DOMContentLoaded', function () {
     midSlider.slideTo(this.realIndex);
   });
 
+  // 同步导航按钮 - 让按钮同时控制两个实例
+  document.querySelector('.image-slider-button-next-{{ section.id }}').addEventListener('click', function() {
+    midSlider.slideNext();
+    midSliderDots.slideNext();
+  });
+  
+  document.querySelector('.image-slider-button-prev-{{ section.id }}').addEventListener('click', function() {
+    midSlider.slidePrev();
+    midSliderDots.slidePrev();
+  });
+
 let hasInteracted = false;
 
 var mobileSlider = new Swiper('.mid-image-slider-mobile-{{ section.id }}', {
@@ -453,10 +456,6 @@ var mobileSlider = new Swiper('.mid-image-slider-mobile-{{ section.id }}', {
   loop: true,
   speed: 800,
   allowTouchMove: true,
-  navigation: {
-    nextEl: '.image-slider-button-next-mobile-{{ section.id }}',
-    prevEl: '.image-slider-button-prev-mobile-{{ section.id }}',
-  },
   pagination: {
     el: '.bottom-pagination-slider-mobile-{{ section.id }}',
     clickable: true,
@@ -496,10 +495,6 @@ var mobileSliderDots = new Swiper('.mid-image-slider-mobile-{{ section.id }}', {
   loop: true,
   speed: 800,
   allowTouchMove: true,
-  navigation: {
-    nextEl: '.image-slider-button-next-mobile-{{ section.id }}',
-    prevEl: '.image-slider-button-prev-mobile-{{ section.id }}',
-  },
   pagination: {
     el: '.dots-pagination-mobile-{{ section.id }}',
     clickable: true,
@@ -516,6 +511,17 @@ mobileSlider.on('slideChange', function () {
 
 mobileSliderDots.on('slideChange', function () {
   mobileSlider.slideTo(this.realIndex);
+});
+
+// 同步移动版导航按钮 - 让按钮同时控制两个实例
+document.querySelector('.image-slider-button-next-mobile-{{ section.id }}').addEventListener('click', function() {
+  mobileSlider.slideNext();
+  mobileSliderDots.slideNext();
+});
+
+document.querySelector('.image-slider-button-prev-mobile-{{ section.id }}').addEventListener('click', function() {
+  mobileSlider.slidePrev();
+  mobileSliderDots.slidePrev();
 });
 
 
