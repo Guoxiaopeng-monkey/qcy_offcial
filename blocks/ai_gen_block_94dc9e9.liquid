@@ -1,7 +1,6 @@
 {% doc %}
   @prompt
     Create a section that can display multiple blocks. Each block consists of a picture and a piece of text, with the picture on top and the text below. The size can be adjusted. On the PC side, a maximum of four pictures can be displayed per row. If more than four are needed, they can be slide
-
 {% enddoc %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
@@ -36,12 +35,15 @@
   }
 
   .ai-image-text-grid__slide-{{ ai_gen_id }} {
-    min-width: calc((100% - {{ block.settings.grid_gap | times: 3 }}px) / {{ block.settings.columns_desktop }});
+    {% assign gap_count_desktop = block.settings.columns_desktop | minus: 1 %}
+    {% assign total_gap_desktop = block.settings.grid_gap | times: gap_count_desktop %}
+    width: calc((100% - {{ total_gap_desktop }}px) / {{ block.settings.columns_desktop }});
     flex-shrink: 0;
+    box-sizing: border-box;
   }
 
   .ai-image-text-grid__item-{{ ai_gen_id }} {
-    text-align: center;
+    text-align: left;
     background-color: {{ block.settings.card_background }};
     border-radius: {{ block.settings.card_border_radius }}px;
     padding: {{ block.settings.card_padding }}px;
@@ -49,6 +51,24 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+  }
+  .ai-image-text-grid-item-heading {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 0;
+  }
+  .ai-image-text-grid-item-sub-heading {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 8px;
+  }
+
+  .ai-image-text-grid-item-button-link {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 0px;
+    text-decoration: underline !important;
   }
 
   .ai-image-text-grid__image-wrapper-{{ ai_gen_id }} {
@@ -130,7 +150,11 @@
 
   @media screen and (max-width: 768px) {
     .ai-image-text-grid__slide-{{ ai_gen_id }} {
-      min-width: calc((100% - {{ block.settings.grid_gap | divided_by: 2 }}px) / {{ block.settings.columns_mobile }});
+      {% assign gap_count_mobile = block.settings.columns_mobile | minus: 1 %}
+      {% assign mobile_gap = block.settings.grid_gap | divided_by: 2 %}
+      {% assign total_gap_mobile = mobile_gap | times: gap_count_mobile %}
+      width: calc((100% - {{ total_gap_mobile }}px) / {{ block.settings.columns_mobile }});
+      box-sizing: border-box;
     }
 
     .ai-image-text-grid__slider-{{ ai_gen_id }} {
@@ -141,7 +165,9 @@
       height: {{ block.settings.image_height | times: 0.8 }}px;
     }
   }
-{% endstyle %}<image-text-slider-{{ ai_gen_id }}
+{% endstyle %}
+
+<image-text-slider-{{ ai_gen_id }}
   class="ai-image-text-grid-{{ ai_gen_id }}"
   {{ block.shopify_attributes }}
   data-columns-desktop="{{ block.settings.columns_desktop }}"
@@ -170,6 +196,14 @@
             {% assign text_key = 'text_' | append: i %}
             {% assign image = block.settings[image_key] %}
             {% assign text = block.settings[text_key] %}
+            {% assign heading_key = 'heading_' | append: i %}
+            {% assign sub_heading_key = 'sub_heading_' | append: i %}
+            {% assign button_key = 'button_' | append: i %}
+            {% assign button_link_key = 'button_link_' | append: i %}
+            {% assign heading = block.settings[heading_key] %}
+            {% assign sub_heading = block.settings[sub_heading_key] %}
+            {% assign button = block.settings[button_key] %}
+            {% assign button_link = block.settings[button_link_key] %}
             {% if image != blank or text != blank %}
               <div class="ai-image-text-grid__slide-{{ ai_gen_id }}">
                 <div class="ai-image-text-grid__item-{{ ai_gen_id }}">
@@ -189,8 +223,18 @@
                       </div>
                     {% endif %}
                   </div>
+                  {% if heading != blank %}
+                    <div class="ai-image-text-grid-item-heading">{{ heading }}</div>
+                  {% endif %}
+                  {% if sub_heading != blank %}
+                    <div class="ai-image-text-grid-item-sub-heading">{{ sub_heading }}</div>
+                  {% endif %}
+
                   {% if text != blank %}
                     <div class="ai-image-text-grid__text-{{ ai_gen_id }}">{{ text }}</div>
+                  {% endif %}
+                  {% if button_link != blank %}
+                    <a class="ai-image-text-grid-item-button-link" href="{{ button_link }}">{{ button }}</a>
                   {% endif %}
                 </div>
               </div>
@@ -198,7 +242,8 @@
           {% endfor %}
         </div>
 
-        <div class="ai-image-text-grid__nav-{{ ai_gen_id }}"><button
+        <div class="ai-image-text-grid__nav-{{ ai_gen_id }}">
+          <button
             class="ai-image-text-grid__nav-button-{{ ai_gen_id }} ai-image-text-grid__prev-{{ ai_gen_id }}"
             aria-label="Previous slide"
           >
@@ -217,9 +262,7 @@
         </div>
       </div>
     {% else %}
-      <div class="ai-image-text-grid__empty-state-{{ ai_gen_id }}">
-        Add images and text to get started
-      </div>
+      <div class="ai-image-text-grid__empty-state-{{ ai_gen_id }}">Add images and text to get started</div>
     {% endif %}
   </div>
 </image-text-slider-{{ ai_gen_id }}>
@@ -342,10 +385,10 @@
       "id": "columns_desktop",
       "label": "Columns on desktop",
       "options": [
-        {"value": "1", "label": "1"},
-        {"value": "2", "label": "2"},
-        {"value": "3", "label": "3"},
-        {"value": "4", "label": "4"}
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
       ],
       "default": "4"
     },
@@ -354,8 +397,8 @@
       "id": "columns_mobile",
       "label": "Columns on mobile",
       "options": [
-        {"value": "1", "label": "1"},
-        {"value": "2", "label": "2"}
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" }
       ],
       "default": "1"
     },
@@ -491,11 +534,33 @@
       "label": "Image"
     },
     {
+      "type": "text",
+      "id": "heading_1",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_1",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_1",
+      "label": "Button",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Button Link"
+    },
+    {
       "type": "textarea",
       "id": "text_1",
       "label": "Text",
       "default": "Feature description goes here"
     },
+
     {
       "type": "header",
       "content": "Item 2"
@@ -504,6 +569,27 @@
       "type": "image_picker",
       "id": "image_2",
       "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_2",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_2",
+      "label": "Button",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button Link"
     },
     {
       "type": "textarea",
@@ -520,6 +606,27 @@
       "label": "Image"
     },
     {
+      "type": "text",
+      "id": "heading_3",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_3",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_3",
+      "label": "Button",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link_3",
+      "label": "Button Link"
+    },
+    {
       "type": "textarea",
       "id": "text_3",
       "label": "Text"
@@ -532,6 +639,27 @@
       "type": "image_picker",
       "id": "image_4",
       "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_4",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_4",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_4",
+      "label": "Button",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link_4",
+      "label": "Button Link"
     },
     {
       "type": "textarea",
@@ -548,6 +676,27 @@
       "label": "Image"
     },
     {
+      "type": "text",
+      "id": "heading_5",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_5",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_5",
+      "label": "Button",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link_5",
+      "label": "Button Link"
+    },
+    {
       "type": "textarea",
       "id": "text_5",
       "label": "Text"
@@ -560,6 +709,27 @@
       "type": "image_picker",
       "id": "image_6",
       "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_6",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_6",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_6",
+      "label": "Button",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link_6",
+      "label": "Button Link"
     },
     {
       "type": "textarea",
@@ -576,6 +746,27 @@
       "label": "Image"
     },
     {
+      "type": "text",
+      "id": "heading_7",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_7",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_7",
+      "label": "Button",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link_7",
+      "label": "Button Link"
+    },
+    {
       "type": "textarea",
       "id": "text_7",
       "label": "Text"
@@ -588,6 +779,27 @@
       "type": "image_picker",
       "id": "image_8",
       "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_8",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_8",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_8",
+      "label": "Button",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link_8",
+      "label": "Button Link"
     },
     {
       "type": "textarea",
@@ -604,6 +816,27 @@
       "label": "Image"
     },
     {
+      "type": "text",
+      "id": "heading_9",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_9",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_9",
+      "label": "Button",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link_9",
+      "label": "Button Link"
+    },
+    {
       "type": "textarea",
       "id": "text_9",
       "label": "Text"
@@ -616,6 +849,27 @@
       "type": "image_picker",
       "id": "image_10",
       "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_10",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_10",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_10",
+      "label": "Button",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link_10",
+      "label": "Button Link"
     },
     {
       "type": "textarea",
@@ -632,6 +886,27 @@
       "label": "Image"
     },
     {
+      "type": "text",
+      "id": "heading_11",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_11",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_11",
+      "label": "Button",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link_11",
+      "label": "Button Link"
+    },
+    {
       "type": "textarea",
       "id": "text_11",
       "label": "Text"
@@ -644,6 +919,27 @@
       "type": "image_picker",
       "id": "image_12",
       "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_12",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_12",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_12",
+      "label": "Button",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link_12",
+      "label": "Button Link"
     },
     {
       "type": "textarea",
