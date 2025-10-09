@@ -1,0 +1,603 @@
+{%- liquid
+  assign color_bg = section.settings.color_bg
+  assign bg_gradient = section.settings.bg_gradient
+  assign bg_image = section.settings.bg_image
+  assign mg_top_desktop = section.settings.mg_top_desktop
+  assign mg_top_tablet = section.settings.mg_top_tablet
+  assign mg_top_mobile = section.settings.mg_top_mobile
+
+  assign mg_bottom_desktop = section.settings.mg_bottom_desktop
+  assign mg_bottom_tablet = section.settings.mg_bottom_tablet
+  assign mg_bottom_mobile = section.settings.mg_bottom_mobile
+%}
+<style>
+
+    {%- if bg_image != blank -%}
+    .section-block-{{section.id}} {
+        background: url({{ bg_image | img_url: '1920x' }});
+        background-repeat: repeat-x;
+        background-size: cover
+    }
+    {%- else -%}
+    .section-block-{{section.id}} {
+        background: {% if bg_gradient != blank %}{{ bg_gradient }}{% else %}{{ color_bg }}{% endif %};
+        font-family: 'poppins';
+    }
+    {%- endif -%}
+
+    @media (max-width: 767px) {
+        .section-block-{{ section.id }} {
+            padding-top: {{ mg_top_mobile | append: 'px' }};
+            padding-bottom: {{ mg_bottom_mobile | append: 'px' }};
+        }
+    }
+
+  @media (min-width: 1200px) {
+      .section-block-{{ section.id }} {
+          padding-top: {{ mg_top_desktop | append: 'px' }};
+          padding-bottom: {{ mg_bottom_desktop | append: 'px' }};
+      }
+  }
+
+  @media (min-width: 768px) and (max-width: 1199px) {
+      .section-block-{{ section.id }} {
+          padding-top: {{ mg_top_tablet | append: 'px' }};
+          padding-bottom: {{ mg_bottom_tablet | append: 'px' }};
+      }
+  }
+
+  .section-block-{{ section.id }} .yg-accordion-box-heading {
+      margin: 0;
+      color: {{ section.settings.color_title }};
+      text-align: {{ section.settings.text_align }};
+      font-weight: {{ section.settings.font_weight_heading}};
+      font-size: {{ section.settings.fontsize_title | append: 'px' }};
+      line-height: {{ section.settings.line_height_title | append: 'px' }};
+      margin-bottom: {{ section.settings.margin_bottom_title | append: 'px' }};
+  }
+
+  .section-block-{{ section.id }} .yg-accordion-frame {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      gap: 1.25rem;
+      width: 100%;
+  }
+  .cardSwipe{
+    padding-top: 0px;
+  }
+  .cardSwipe .swiper-button-prev, .cardSwipe .swiper-button-next{
+    top: 30px;
+    background: #ACACAC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cardSwipe .swiper-button-prev{
+    right: 60px;
+    left: auto;
+  }
+  .cardSwipe .img-container{
+    border-radius: 20px;
+    border: 1px solid rgb(0 0 0 / 0%);
+    overflow: hidden;
+  }
+  .cardSwipe .content-container{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    color: white;
+  }
+  .cardSwipe .card-des{
+    font-size: 16px;
+    font-family: "poppins-light";
+  }
+  .section-block-{{ section.id }} .yg-accordion-box {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      overflow: hidden;
+      border-radius: 10px
+  }
+  .yg-card{
+    display: none;
+  }
+  .yg-pagination-btn{
+    display: block;
+  }
+  .section-block-{{ section.id }} .yg-accordion-image {
+      cursor: pointer;
+      max-width: 180px;
+      height: 230px;
+      border-radius: 12px;
+      overflow: hidden;
+  }
+
+  .section-block-{{ section.id }} .yg-accordion-image img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+  }
+
+  .section-block-{{ section.id }} .yg-accordion-box.active .yg-accordion-image {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+  }
+
+  .section-block-{{ section.id }} .yg-accordion-content {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      box-sizing: border-box;
+      height: 230px;
+      overflow: hidden;
+      background: #FAFAFA;
+      border-radius: 0 10px 10px 0;
+      transition: width .7s ease;
+  }
+
+  .section-block-{{ section.id }} .yg-accordion-title {
+      font-size: 22px;
+      line-height: 1.6;
+      font-weight: 600;
+  }
+
+  @media (min-width: 1200px) {
+      .section-block-{{ section.id }} .yg-accordion-frame {
+          overflow: hidden;
+      }
+
+      .section-block-{{ section.id }} .yg-accordion-content {
+          width: 0;
+          opacity: 0;
+          transform: translateX(-10%) translateZ(0px);
+          transition: all ease-in-out 0.5s;
+      }
+
+      .section-block-{{ section.id }} .yg-accordion-box.active .yg-accordion-content {
+          width: 32vw;
+          padding: 18px 48px;
+          opacity: 1;
+          transform: translateX(0%) translateZ(0px);
+      }
+
+      .section-block-{{ section.id }} .yg-accordion-box p,
+      .section-block-{{ section.id }} .yg-accordion-box span {
+          opacity: 0;
+          width: 100%;
+          transform: translateX(-100%) translateZ(0px);
+          transition: opacity ease 1.2s, transform ease 0.8s;
+      }
+
+      .section-block-{{ section.id }} .yg-accordion-box.active p,
+      .section-block-{{ section.id }} .yg-accordion-box.active span {
+          opacity: 1;
+          transform: translateX(0%) translateZ(0px);
+      }
+  }
+
+  @media (max-width: 1200px) {
+      .section-block-{{ section.id }} .yg-accordion-box-heading {
+          font-size: {{ section.settings.fontsize_title_mb | append: 'px' }};
+          line-height: {{ section.settings.line_height_title_mb | append: 'px' }};
+          margin-bottom: {{ section.settings.margin_bottom_title_mo | append: 'px' }};
+      }
+
+      .section-block-{{ section.id }} .yg-accordion-frame {
+          display: flex;
+          padding-bottom: 16px;
+          -webkit-flex-wrap: nowrap;
+          -moz-flex-wrap: nowrap;
+          -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          margin-left: 0;
+          align-items: flex-start;
+          scroll-snap-type: x mandatory;
+      }
+
+      .section-block-{{ section.id }} .yg-accordion-box {
+          flex-wrap: wrap;
+          padding-left: 0;
+          padding-right: 0;
+          max-width: 400px !important;
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 90%;
+          flex: 0 0 90%;
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+      }
+
+      .section-block-{{ section.id }} .yg-accordion-image {
+          width: 100%;
+          max-width: 100%;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+      }
+
+      .section-block-{{ section.id }} .yg-accordion-content {
+          height: auto;
+          padding: 24px;
+      }
+  }
+
+  @media (max-width: 768px) {
+      .section-block-{{ section.id }} .section {
+        margin-right: -20px;
+        overflow: hidden;
+      }
+      .cardSwipe .swiper-button-prev, .cardSwipe .swiper-button-next{
+        width: 35px;
+        height: 35px;
+      }
+      .cardSwipe .swiper-button-prev, .cardSwipe .swiper-button-next{
+        top: 25px;
+      }
+      .cardSwipe .card-des{
+        font-size: 13px;
+      }
+      .yg-card{
+        display: block;
+        top: 40px !important;
+        text-align: left;
+        position: absolute;
+      }
+      .yg-pagination-btn{
+        display: none !important;
+      }
+      .section-block-{{ section.id }} .yg-accordion-box-heading {
+        margin-bottom: 46px;
+      }
+  }
+  @media (max-width: 480px){
+    .cardSwipe .swiper-button-prev, .cardSwipe .swiper-button-next{
+      top: 20px;
+    }
+    .swiper-button-next{
+      right: 10px;
+    }
+  }
+</style>
+
+<div class="section-block-{{ section.id }}">
+  <div class="{% if section.settings.full_width %}section-full{% else %}section{% endif %}{% if section.settings.remove_padding %} is-remove-padding{% endif %}">
+      
+      <div class="swiper cardSwipe">
+        {% if section.settings.heading != blank %}
+          <p class="yg-accordion-box-heading">
+              {{ section.settings.heading }}
+          </p>
+      {% endif %}
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              <div class="img-container">
+                {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: loading: 'lazy', widths: '200,300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200' -}}
+              </div>
+              <div class="content-container">
+                <span class="card-des yg-text-small2 yg-text-base-mo">{{ block.settings.description }}</span>
+              </div> 
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-button-next yg-pagination-btn"></div>
+        <div class="swiper-button-prev yg-pagination-btn"></div>
+        <div class="yg-{{ section.id }}-pagination yg-card"></div>
+      </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    var swiper = new Swiper(".cardSwipe", {
+      spaceBetween: 20,
+      slidesPerView: 3.5,
+      speed: 600,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: ".yg-card",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        375: {
+          slidesPerView: 1.2,
+          spaceBetween: 20,
+        },
+        750: {
+          slidesPerView: 2.2,
+          spaceBetween: 20,
+        },
+        1280: {
+          slidesPerView: 3.5,
+          spaceBetween: 20,
+        },
+        1440: {
+          slidesPerView: 3.5,
+          spaceBetween: 20,
+        },
+        1920: {
+            slidesPerView: 3.5,
+            spaceBetween: 20,
+        }
+      }
+    });
+
+  });
+
+</script>
+{% schema %}
+{
+"name": "YG Accordion Box",
+"tag": "section",
+"class": "spaced-section",
+"settings": [
+  {
+    "type": "header",
+    "content": "GENERAL"
+  },
+  {
+    "type": "checkbox",
+    "id": "full_width",
+    "label": "Full width",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "id": "remove_padding",
+    "label": "Remove Gutter",
+    "default": false
+  },
+  {
+    "type": "color",
+    "id": "color_bg",
+    "label": "Background Color"
+  },
+  {
+    "type": "color_background",
+    "id": "bg_gradient",
+    "label": "Background Gradient"
+  },
+  {
+    "type": "image_picker",
+    "id": "bg_image",
+    "label": "Background Image"
+  },
+  {
+    "type": "checkbox",
+    "id": "enable_h1",
+    "label": "Enable H1 Tag",
+    "default": false
+  },
+  {
+    "type": "header",
+    "content": "SPACING TOP:"
+  },
+  {
+    "type": "range",
+    "id": "mg_top_desktop",
+    "label": "Desktop",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "default": 50
+  },
+  {
+    "type": "range",
+    "id": "mg_top_tablet",
+    "label": "Tablet",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "default": 50
+  },
+  {
+    "type": "range",
+    "id": "mg_top_mobile",
+    "label": "Mobile",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "default": 50
+  },
+  {
+    "type": "header",
+    "content": "SPACING BOTTOM:"
+  },
+  {
+    "type": "range",
+    "id": "mg_bottom_desktop",
+    "label": "Desktop",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "default": 50
+  },
+  {
+    "type": "range",
+    "id": "mg_bottom_tablet",
+    "label": "Tablet",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "default": 50
+  },
+  {
+    "type": "range",
+    "id": "mg_bottom_mobile",
+    "label": "Mobile",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "default": 50
+  },
+  {
+    "type": "header",
+    "content": "Heading"
+  },
+  {
+    "type": "select",
+    "id": "text_align",
+    "label": "Text Align:",
+    "default": "center",
+    "options": [
+      {
+        "value": "left",
+        "label": "Left"
+      },
+      {
+        "value": "center",
+        "label": "Center"
+      },
+      {
+        "value": "right",
+        "label": "Right"
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading"
+  },
+  {
+    "type": "color",
+    "id": "color_title",
+    "label": "Heading Color",
+    "default": "#202020"
+  },
+  {
+    "type": "select",
+    "id": "font_weight_heading",
+    "label": "Font Weight",
+    "default": "600",
+    "options": [
+      {
+        "value": "400",
+        "label": "Normal"
+      },
+      {
+        "value": "500",
+        "label": "Medium"
+      },
+      {
+        "value": "600",
+        "label": "Semi Bold"
+      },
+      {
+        "value": "700",
+        "label": "Bold"
+      },
+      {
+        "value": "800",
+        "label": "Bolder"
+      },
+      {
+        "value": "900",
+        "label": "Black"
+      }
+    ]
+  },
+  {
+    "type": "range",
+    "id": "fontsize_title",
+    "label": "Heading Font Size",
+    "min": 10,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "default": 24
+  },
+  {
+    "type": "range",
+    "id": "line_height_title",
+    "label": "Heading Line Height",
+    "min": 10,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "margin_bottom_title",
+    "label": "Heading Margin Bottom",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "default": 25
+  },
+  {
+    "type": "range",
+    "id": "fontsize_title_mb",
+    "label": "Heading Font Size Mobile",
+    "min": 10,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "line_height_title_mb",
+    "label": "Heading Line Height Mobile",
+    "min": 10,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "margin_bottom_title_mo",
+    "label": "Heading Margin Bottom Mobile",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "default": 25
+  }
+],
+"blocks": [
+  {
+    "type": "item",
+    "name": "Item",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Select Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description"
+      }
+    ]
+  }
+],
+"presets": [
+  {
+    "name": "Accordion Box"
+  }
+]
+}
+{% endschema %}

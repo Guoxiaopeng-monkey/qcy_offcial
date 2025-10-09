@@ -1,0 +1,660 @@
+{% doc %}
+  @prompt
+    Create a section that can display multiple blocks. Each block consists of a picture and a piece of text, with the picture on top and the text below. The size can be adjusted. On the PC side, a maximum of four pictures can be displayed per row. If more than four are needed, they can be slide
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-image-text-grid-{{ ai_gen_id }} {
+    width: 100%;
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-image-text-grid__container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-image-text-grid__heading-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-image-text-grid__slider-container-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-image-text-grid__slider-{{ ai_gen_id }} {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: {{ block.settings.grid_gap }}px;
+  }
+
+  .ai-image-text-grid__slide-{{ ai_gen_id }} {
+    min-width: calc((100% - {{ block.settings.grid_gap | times: 3 }}px) / {{ block.settings.columns_desktop }});
+    flex-shrink: 0;
+  }
+
+  .ai-image-text-grid__item-{{ ai_gen_id }} {
+    text-align: center;
+    background-color: {{ block.settings.card_background }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: {{ block.settings.card_padding }}px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-image-text-grid__image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    height: {{ block.settings.image_height }}px;
+    margin-bottom: 16px;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-image-text-grid__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-image-text-grid__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+  }
+
+  .ai-image-text-grid__image-placeholder-{{ ai_gen_id }} svg {
+    width: 60px;
+    height: 60px;
+    opacity: 0.5;
+  }
+
+  .ai-image-text-grid__text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.5;
+    flex-grow: 1;
+  }
+
+  .ai-image-text-grid__nav-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .ai-image-text-grid__nav-button-{{ ai_gen_id }} {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: {{ block.settings.nav_button_color }};
+    color: {{ block.settings.nav_button_text_color }};
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-image-text-grid__nav-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.nav_button_hover_color }};
+  }
+
+  .ai-image-text-grid__nav-button-{{ ai_gen_id }}:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .ai-image-text-grid__empty-state-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    font-style: italic;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-image-text-grid__slide-{{ ai_gen_id }} {
+      min-width: calc((100% - {{ block.settings.grid_gap | divided_by: 2 }}px) / {{ block.settings.columns_mobile }});
+    }
+
+    .ai-image-text-grid__slider-{{ ai_gen_id }} {
+      gap: {{ block.settings.grid_gap | divided_by: 2 }}px;
+    }
+
+    .ai-image-text-grid__image-wrapper-{{ ai_gen_id }} {
+      height: {{ block.settings.image_height | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}<image-text-slider-{{ ai_gen_id }}
+  class="ai-image-text-grid-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+  data-columns-desktop="{{ block.settings.columns_desktop }}"
+  data-columns-mobile="{{ block.settings.columns_mobile }}"
+>
+  <div class="ai-image-text-grid__container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-image-text-grid__heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+    {% endif %}
+
+    {% assign has_content = false %}
+    {% for i in (1..12) %}
+      {% assign image_key = 'image_' | append: i %}
+      {% assign text_key = 'text_' | append: i %}
+      {% if block.settings[image_key] != blank or block.settings[text_key] != blank %}
+        {% assign has_content = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% if has_content %}
+      <div class="ai-image-text-grid__slider-container-{{ ai_gen_id }}">
+        <div class="ai-image-text-grid__slider-{{ ai_gen_id }}">
+          {% for i in (1..12) %}
+            {% assign image_key = 'image_' | append: i %}
+            {% assign text_key = 'text_' | append: i %}
+            {% assign image = block.settings[image_key] %}
+            {% assign text = block.settings[text_key] %}
+            {% if image != blank or text != blank %}
+              <div class="ai-image-text-grid__slide-{{ ai_gen_id }}">
+                <div class="ai-image-text-grid__item-{{ ai_gen_id }}">
+                  <div class="ai-image-text-grid__image-wrapper-{{ ai_gen_id }}">
+                    {% if image != blank %}
+                      <img
+                        src="{{ image | image_url: width: 400 }}"
+                        alt="{{ image.alt | escape }}"
+                        class="ai-image-text-grid__image-{{ ai_gen_id }}"
+                        loading="lazy"
+                        width="400"
+                        height="{{ block.settings.image_height }}"
+                      >
+                    {% else %}
+                      <div class="ai-image-text-grid__image-placeholder-{{ ai_gen_id }}">
+                        {{ 'image' | placeholder_svg_tag }}
+                      </div>
+                    {% endif %}
+                  </div>
+                  {% if text != blank %}
+                    <div class="ai-image-text-grid__text-{{ ai_gen_id }}">{{ text }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="ai-image-text-grid__nav-{{ ai_gen_id }}"><button
+            class="ai-image-text-grid__nav-button-{{ ai_gen_id }} ai-image-text-grid__prev-{{ ai_gen_id }}"
+            aria-label="Previous slide"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15,18 9,12 15,6"></polyline>
+            </svg>
+          </button>
+          <button
+            class="ai-image-text-grid__nav-button-{{ ai_gen_id }} ai-image-text-grid__next-{{ ai_gen_id }}"
+            aria-label="Next slide"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    {% else %}
+      <div class="ai-image-text-grid__empty-state-{{ ai_gen_id }}">
+        Add images and text to get started
+      </div>
+    {% endif %}
+  </div>
+</image-text-slider-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ImageTextSlider{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.currentSlide = 0;
+        this.totalSlides = 0;
+        this.columnsDesktop = parseInt(this.dataset.columnsDesktop) || 4;
+        this.columnsMobile = parseInt(this.dataset.columnsMobile) || 1;
+      }
+
+      connectedCallback() {
+        this.slider = this.querySelector('.ai-image-text-grid__slider-{{ ai_gen_id }}');
+        this.slides = this.querySelectorAll('.ai-image-text-grid__slide-{{ ai_gen_id }}');
+        this.prevButton = this.querySelector('.ai-image-text-grid__prev-{{ ai_gen_id }}');
+        this.nextButton = this.querySelector('.ai-image-text-grid__next-{{ ai_gen_id }}');
+
+        if (!this.slider || this.slides.length === 0) return;
+
+        this.calculateSlides();
+        this.setupEventListeners();
+        this.updateNavigation();
+
+        window.addEventListener('resize', () => {
+          this.calculateSlides();
+          this.updateSlider();
+          this.updateNavigation();
+        });
+      }
+
+      calculateSlides() {
+        const isMobile = window.innerWidth <= 768;
+        const columns = isMobile ? this.columnsMobile : this.columnsDesktop;
+        this.totalSlides = Math.max(0, this.slides.length - columns);
+      }
+
+      setupEventListeners() {
+        if (this.prevButton) {
+          this.prevButton.addEventListener('click', () => this.previousSlide());
+        }
+        if (this.nextButton) {
+          this.nextButton.addEventListener('click', () => this.nextSlide());
+        }
+      }
+
+      previousSlide() {
+        if (this.currentSlide > 0) {
+          this.currentSlide--;
+          this.updateSlider();
+          this.updateNavigation();
+        }
+      }
+
+      nextSlide() {
+        if (this.currentSlide < this.totalSlides) {
+          this.currentSlide++;
+          this.updateSlider();
+          this.updateNavigation();
+        }
+      }
+
+      updateSlider() {
+        if (!this.slider || this.slides.length === 0) return;
+        
+        const slideWidth = this.slides[0].offsetWidth;
+        const gap = parseInt(getComputedStyle(this.slider).gap) || 0;
+        const translateX = -(this.currentSlide * (slideWidth + gap));
+        
+        this.slider.style.transform = `translateX(${translateX}px)`;
+      }
+
+      updateNavigation() {
+        if (this.prevButton) {
+          this.prevButton.disabled = this.currentSlide === 0;
+        }
+        if (this.nextButton) {
+          this.nextButton.disabled = this.currentSlide >= this.totalSlides;
+        }
+      }
+    }
+
+    customElements.define('image-text-slider-{{ ai_gen_id }}', ImageTextSlider{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Image text grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Features"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "options": [
+        {"value": "1", "label": "1"},
+        {"value": "2", "label": "2"},
+        {"value": "3", "label": "3"},
+        {"value": "4", "label": "4"}
+      ],
+      "default": "4"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        {"value": "1", "label": "1"},
+        {"value": "2", "label": "2"}
+      ],
+      "default": "1"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Grid gap",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Card padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Card border radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Image style"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 150,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Image height",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_color",
+      "label": "Button color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_hover_color",
+      "label": "Button hover color",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Item1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "text_1",
+      "label": "Text",
+      "default": "Feature description goes here"
+    },
+    {
+      "type": "header",
+      "content": "Item 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "text_2",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Item 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "text_3",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Item 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "text_4",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Item 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "text_5",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Item 6"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_6",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "text_6",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Item 7"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_7",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "text_7",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Item 8"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_8",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "text_8",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Item 9"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_9",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "text_9",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Item 10"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_10",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "text_10",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Item 11"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_11",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "text_11",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Item 12"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_12",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "text_12",
+      "label": "Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image text grid"
+    }
+  ]
+}
+{% endschema %}

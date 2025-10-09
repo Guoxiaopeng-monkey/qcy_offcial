@@ -483,6 +483,56 @@
       "disabled": true,
       "settings": {}
     },
+    "175925196697a6938e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_94dc9e9_AjrmpE": {
+          "type": "ai_gen_block_94dc9e9",
+          "name": "Image text grid",
+          "settings": {
+            "heading": "Explore The Collections",
+            "section_padding": 40,
+            "columns_desktop": "4",
+            "columns_mobile": "1",
+            "grid_gap": 20,
+            "card_background": "#ffffff",
+            "card_padding": 20,
+            "card_border_radius": 8,
+            "image_height": 200,
+            "image_border_radius": 4,
+            "heading_size": 32,
+            "heading_color": "#000000",
+            "text_size": 14,
+            "text_color": "#666666",
+            "nav_button_color": "#000000",
+            "nav_button_text_color": "#ffffff",
+            "nav_button_hover_color": "#333333",
+            "image_1": "shopify://shop_images/1_c166ed6c-f243-45a4-9e5c-7aec47a28230.jpg",
+            "text_1": "Headphones",
+            "image_2": "shopify://shop_images/2_68ce1fc2-8ec2-4f81-ae1a-aa8e5f3789f6.jpg",
+            "text_2": "Earbuds",
+            "image_3": "shopify://shop_images/3_19dbec4d-e5df-458c-81bf-1a137863d1e1.jpg",
+            "text_3": "Open-Ear Earbuds",
+            "image_4": "shopify://shop_images/4_e2201ba3-3421-44c4-8ee1-854deaf6d0fd.jpg",
+            "text_4": "Smart Watch",
+            "text_5": "",
+            "text_6": "",
+            "text_7": "",
+            "text_8": "",
+            "text_9": "",
+            "text_10": "",
+            "text_11": "",
+            "text_12": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_94dc9e9_AjrmpE"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
     "homepage_featured_collection_section_fndfyN": {
       "type": "homepage-featured-collection-section",
       "blocks": {
@@ -901,6 +951,7 @@
     "homepage_banner_section_PpXMRt",
     "homepage_featured_product_section_z7nUe9",
     "homepage_slider_products_section_W4EQcL",
+    "175925196697a6938e",
     "homepage_featured_collection_section_fndfyN",
     "homepage_best_seller_section_wpCPpg",
     "homepage_featured_video_section_7cGAEh",

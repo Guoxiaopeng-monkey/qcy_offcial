@@ -170,7 +170,7 @@ $(document).ready(function() {
             },
             // when window width is >= 1024px (desktop)
             1024: {
-                slidesPerView: 3,
+                slidesPerView: 4,
             },
             1524: {
                 slidesPerView: 4,
