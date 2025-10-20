@@ -5,13 +5,17 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
+    #shopify-section-{{ section.id }} {
+      background-color: {{ block.settings.section_background_color }};
+      padding: {{ block.settings.section_padding }}px 0;
+    }
+
   .ai-image-text-grid-{{ ai_gen_id }} {
     width: 100%;
-    padding: {{ block.settings.section_padding }}px 0;
   }
 
   .ai-image-text-grid__container-{{ ai_gen_id }} {
-    max-width: 1200px;
+    max-width: var(--page-width);
     margin: 0 auto;
     padding: 0 20px;
   }
@@ -21,11 +25,13 @@
     margin-bottom: 40px;
     font-size: {{ block.settings.heading_size }}px;
     color: {{ block.settings.heading_color }};
+    font-weiht:600;
   }
 
   .ai-image-text-grid__slider-container-{{ ai_gen_id }} {
     position: relative;
     overflow: hidden;
+    padding: 0 60px;
   }
 
   .ai-image-text-grid__slider-{{ ai_gen_id }} {
@@ -73,7 +79,7 @@
 
   .ai-image-text-grid__image-wrapper-{{ ai_gen_id }} {
     width: 100%;
-    height: {{ block.settings.image_height }}px;
+    aspect-ratio: 4/3;
     margin-bottom: 16px;
     border-radius: {{ block.settings.image_border_radius }}px;
     overflow: hidden;
@@ -111,14 +117,10 @@
     flex-grow: 1;
   }
 
-  .ai-image-text-grid__nav-{{ ai_gen_id }} {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-  }
-
   .ai-image-text-grid__nav-button-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 40px;
     height: 40px;
     border: none;
@@ -130,6 +132,15 @@
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s ease;
+    z-index: 10;
+  }
+
+  .ai-image-text-grid__prev-{{ ai_gen_id }} {
+    left: 0;
+  }
+
+  .ai-image-text-grid__next-{{ ai_gen_id }} {
+    right: 0;
   }
 
   .ai-image-text-grid__nav-button-{{ ai_gen_id }}:hover {
@@ -149,6 +160,14 @@
   }
 
   @media screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} {
+      padding: {{ block.settings.section_padding | times: 0.5 }}px 0;
+    }
+
+    .ai-image-text-grid__slider-container-{{ ai_gen_id }} {
+      padding: 0;
+    }
+
     .ai-image-text-grid__slide-{{ ai_gen_id }} {
       {% assign gap_count_mobile = block.settings.columns_mobile | minus: 1 %}
       {% assign mobile_gap = block.settings.grid_gap | divided_by: 2 %}
@@ -161,8 +180,31 @@
       gap: {{ block.settings.grid_gap | divided_by: 2 }}px;
     }
 
-    .ai-image-text-grid__image-wrapper-{{ ai_gen_id }} {
-      height: {{ block.settings.image_height | times: 0.8 }}px;
+    .ai-image-text-grid__nav-button-{{ ai_gen_id }} {
+      width: 32px;
+      height: 32px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .ai-image-text-grid__prev-{{ ai_gen_id }} {
+      left: 10px;
+    }
+
+    .ai-image-text-grid__next-{{ ai_gen_id }} {
+      right: 10px;
+    }
+
+    .ai-image-text-grid__heading-{{ ai_gen_id }} {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+  }
+
+  @media screen and (max-width: 480px) {
+    .ai-image-text-grid__heading-{{ ai_gen_id }} {
+      font-size: 24px;
+      font-family: 'Mulish-Bold';
     }
   }
 {% endstyle %}
@@ -190,6 +232,15 @@
 
     {% if has_content %}
       <div class="ai-image-text-grid__slider-container-{{ ai_gen_id }}">
+        <button
+          class="ai-image-text-grid__nav-button-{{ ai_gen_id }} ai-image-text-grid__prev-{{ ai_gen_id }}"
+          aria-label="Previous slide"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15,18 9,12 15,6"></polyline>
+          </svg>
+        </button>
+
         <div class="ai-image-text-grid__slider-{{ ai_gen_id }}">
           {% for i in (1..12) %}
             {% assign image_key = 'image_' | append: i %}
@@ -207,22 +258,34 @@
             {% if image != blank or text != blank %}
               <div class="ai-image-text-grid__slide-{{ ai_gen_id }}">
                 <div class="ai-image-text-grid__item-{{ ai_gen_id }}">
-                  <div class="ai-image-text-grid__image-wrapper-{{ ai_gen_id }}">
-                    {% if image != blank %}
-                      <img
-                        src="{{ image | image_url: width: 400 }}"
-                        alt="{{ image.alt | escape }}"
-                        class="ai-image-text-grid__image-{{ ai_gen_id }}"
-                        loading="lazy"
-                        width="400"
-                        height="{{ block.settings.image_height }}"
-                      >
-                    {% else %}
-                      <div class="ai-image-text-grid__image-placeholder-{{ ai_gen_id }}">
-                        {{ 'image' | placeholder_svg_tag }}
-                      </div>
-                    {% endif %}
-                  </div>
+                  {% if button_link != blank %}
+                    <a
+                      href="{{ button_link }}"
+                      class="ai-image-text-grid__image-wrapper-{{ ai_gen_id }}"
+                      target="_blank"
+                    >
+                  {% else %}
+                    <div class="ai-image-text-grid__image-wrapper-{{ ai_gen_id }}">
+                  {% endif %}
+                  {% if image != blank %}
+                    <img
+                      src="{{ image | image_url: width: 400 }}"
+                      alt="{{ image.alt | escape }}"
+                      class="ai-image-text-grid__image-{{ ai_gen_id }}"
+                      loading="lazy"
+                      width="400"
+                      height="auto"
+                    >
+                  {% else %}
+                    <div class="ai-image-text-grid__image-placeholder-{{ ai_gen_id }}">
+                      {{ 'image' | placeholder_svg_tag }}
+                    </div>
+                  {% endif %}
+                  {% if button_link != blank %}
+                    </a>
+                  {% else %}
+                    </div>
+                  {% endif %}
                   {% if heading != blank %}
                     <div class="ai-image-text-grid-item-heading">{{ heading }}</div>
                   {% endif %}
@@ -242,24 +305,14 @@
           {% endfor %}
         </div>
 
-        <div class="ai-image-text-grid__nav-{{ ai_gen_id }}">
-          <button
-            class="ai-image-text-grid__nav-button-{{ ai_gen_id }} ai-image-text-grid__prev-{{ ai_gen_id }}"
-            aria-label="Previous slide"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="15,18 9,12 15,6"></polyline>
-            </svg>
-          </button>
-          <button
-            class="ai-image-text-grid__nav-button-{{ ai_gen_id }} ai-image-text-grid__next-{{ ai_gen_id }}"
-            aria-label="Next slide"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="9,18 15,12 9,6"></polyline>
-            </svg>
-          </button>
-        </div>
+        <button
+          class="ai-image-text-grid__nav-button-{{ ai_gen_id }} ai-image-text-grid__next-{{ ai_gen_id }}"
+          aria-label="Next slide"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9,18 15,12 9,6"></polyline>
+          </svg>
+        </button>
       </div>
     {% else %}
       <div class="ai-image-text-grid__empty-state-{{ ai_gen_id }}">Add images and text to get started</div>
@@ -358,6 +411,16 @@
   "settings": [
     {
       "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Section background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
       "content": "General"
     },
     {
@@ -446,16 +509,7 @@
       "type": "header",
       "content": "Image style"
     },
-    {
-      "type": "range",
-      "id": "image_height",
-      "min": 150,
-      "max": 400,
-      "step": 10,
-      "unit": "px",
-      "label": "Image height",
-      "default": 200
-    },
+
     {
       "type": "range",
       "id": "image_border_radius",
