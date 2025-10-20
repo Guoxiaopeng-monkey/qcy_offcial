@@ -792,15 +792,10 @@
                 >
                   {{- product.metafields.descriptors.subtitle -}}
                 </p>
-              {%- when 'title' -%}
-                <div class="product__title" {{ block.shopify_attributes }}>
-                  <h1 class="text-md f-f-bold">{{ product.title | escape | replace: '(Development)', '' }}</h1>
-                  <a href="{{ product.url }}" class="product__title">
-                    <h2 class="h1">
-                      {{ product.title | escape | replace: '(Development)', '' }}
-                    </h2>
-                  </a>
-                </div>
+           {%- when 'title' -%}
+  <div class="product__title" {{ block.shopify_attributes }}>
+    <h1 class="text-md f-f-bold">{{ product.title | escape | replace: '(Development)', '' }}</h1>
+  </div>
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'custom-price',

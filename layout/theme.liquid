@@ -424,7 +424,7 @@
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
     <!--End Hotjar Tracking Code for www.qcy.com -->
-     <!-- Start /pt language jump -->
+      <!-- Start /pt language jump -->
     {% assign current_path = request.path %}
 {% assign redirect_base = 'https://qcymall.myshopify.com' %}
 {% assign is_redirect_path = false %}
@@ -434,28 +434,32 @@
   {% assign is_redirect_path = true %}
 {% elsif current_path == '/pt/products/qcy-h3-wireless-headphone' %}
   {% assign is_redirect_path = true %}
- {% elsif current_path == '/pt/products/qcy-arcbuds' %}
+{% elsif current_path == '/pt/products/qcy-arcbuds' %}
   {% assign is_redirect_path = true %}
- {% elsif current_path == '/pt/products/qcy-t13-wireless-earphones' %}
+{% elsif current_path == '/pt/products/qcy-t13-wireless-earphones' %}
   {% assign is_redirect_path = true %}
- {% elsif current_path == '/pt/products/qcy-t13-anc' %}
+{% elsif current_path == '/pt/products/qcy-t13-anc' %}
   {% assign is_redirect_path = true %}
- {% elsif current_path == '/pt/products/qcy-h3-lite' %}
+{% elsif current_path == '/pt/products/qcy-h3-lite' %}
   {% assign is_redirect_path = true %} 
- {% elsif current_path == '/pt/products/qcy-melobuds-n50' %}
+{% elsif current_path == '/pt/products/qcy-melobuds-n50' %}
   {% assign is_redirect_path = true %}
 {% elsif current_path == '/pt/products/qcy-crossky-r70' %}
   {% assign is_redirect_path = true %}
- {% elsif current_path == '/pt/products/qcy-crossky-c50' %}
+{% elsif current_path == '/pt/products/qcy-crossky-c50' %}
   {% assign is_redirect_path = true %}
- {% elsif current_path == '/pt/products/qcy-ht05' %}
+{% elsif current_path == '/pt/products/qcy-ht05' %}
   {% assign is_redirect_path = true %}
- {% elsif current_path == '/pt/products/qcy-crossky-c30' %}
+{% elsif current_path == '/pt/products/qcy-crossky-c30' %}
   {% assign is_redirect_path = true %}
- {% elsif current_path == '/pt/products/qcy-melobuds-pro' %}
+{% elsif current_path == '/pt/products/qcy-melobuds-pro' %}
   {% assign is_redirect_path = true %} 
- {% elsif current_path == '/pt/products/qcy-h3-pro' %}
+{% elsif current_path == '/pt/products/qcy-h3-pro' %}
   {% assign is_redirect_path = true %}  
+{% elsif current_path == '/pt/products/qcy-melobuds-n70' %}
+  {% assign is_redirect_path = true %} 
+{% elsif current_path == '/pt/products/qcy-h3s' %}
+  {% assign is_redirect_path = true %}   
 {% endif %}
 {% if is_redirect_path %}
   {% assign new_path = current_path | replace: '/pt', '' %}
@@ -478,17 +482,20 @@
     '/pt/products/qcy-ht05',
     '/pt/products/qcy-crossky-c30',
     '/pt/products/qcy-melobuds-pro',
-    '/pt/products/qcy-h3-pro'
+    '/pt/products/qcy-h3-pro',
+    '/pt/products/qcy-h3s',
+    '/pt/products/qcy-melobuds-n70'
+
   ];
   const currentPath = window.location.pathname;
-  const isRedirect = redirectPrefixes.some(prefix => currentPath.startsWith(prefix));
+  const isRedirect = redirectPrefixes.includes(currentPath);
   if (isRedirect) {
     const newPath = currentPath.replace('/pt', '');
     const newUrl = 'https://qcymall.myshopify.com' + newPath + window.location.search + window.location.hash;
     window.location.replace(newUrl);
   }
 </script>
-<!--/pt language jump -->
+<!-- End /pt language jump -->   
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">    

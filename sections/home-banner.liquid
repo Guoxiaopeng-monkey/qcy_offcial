@@ -1,0 +1,116 @@
+{% render 'home-banner-slider', section: section %}
+
+{% schema %}
+{
+  "name": "Home Banner Slider",
+  "class": "section home-banner",
+  "settings": [
+    { "type": "checkbox", "id": "autoplay", "label": "Autoplay", "default": true },
+    { "type": "range", "id": "autoplay_speed", "label": "Autoplay interval (s)", "min": 2, "max": 12, "step": 1, "default": 5 },
+    { "type": "range", "id": "transition_speed", "label": "Transition duration (s)", "min": 0.2, "max": 2, "step": 0.1, "default": 0.6 },
+    { "type": "checkbox", "id": "show_arrows", "label": "Show arrows", "default": true },
+    { "type": "checkbox", "id": "show_dots", "label": "Show dots", "default": true },
+    { "type": "range", "id": "height_desktop", "label": "Desktop height (px)", "min": 300, "max": 900, "step": 50, "default": 600 },
+    { "type": "range", "id": "height_mobile", "label": "Mobile height (px)", "min": 200, "max": 800, "step": 50, "default": 400 },
+    { "type": "select", "id": "text_align", "label": "Text alignment", "default": "center", "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "center", "label": "Center" },
+      { "value": "right", "label": "Right" }
+    ] },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#ffffff" },
+    { "type": "select", "id": "button_style", "label": "Button style", "default": "fill", "options": [
+      { "value": "fill", "label": "Fill" },
+      { "value": "outline", "label": "Outline" }
+    ] },
+    { "type": "color", "id": "overlay_color", "label": "Overlay color", "default": "#000000" },
+    { "type": "range", "id": "overlay_opacity", "label": "Overlay opacity (%)", "min": 0, "max": 90, "step": 5, "default": 30 },
+    { "type": "color", "id": "arrow_bg_color", "label": "Arrow background color" },
+    { "type": "color", "id": "arrow_icon_color", "label": "Arrow icon color" }
+  ],
+  "blocks": [
+    { "type": "slide", "name": "Slide", "settings": [
+      { "type": "image_picker", "id": "image", "label": "Desktop image" },
+      { "type": "image_picker", "id": "mobile_image", "label": "Mobile image" },
+      { "type": "text", "id": "heading", "label": "Heading" },
+      { "type": "range", "id": "heading_size", "label": "Heading font size (px)", "min": 16, "max": 72, "step": 2, "default": 36 },
+      { "type": "color", "id": "heading_color", "label": "Heading color" },
+      { "type": "select", "id": "heading_align", "label": "Heading alignment", "default": "inherit", "options": [
+        { "value": "inherit", "label": "Inherit" },
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ] },
+      { "type": "range", "id": "heading_offset_x", "label": "Heading offset X", "min": -200, "max": 200, "step": 5, "default": 0 },
+      { "type": "range", "id": "heading_offset_y", "label": "Heading offset Y", "min": -200, "max": 200, "step": 5, "default": 0 },
+      { "type": "select", "id": "heading_offset_unit", "label": "Heading offset unit", "default": "px", "options": [
+        { "value": "px", "label": "px" },
+        { "value": "%", "label": "%" },
+        { "value": "vw", "label": "vw" }
+      ] },
+      { "type": "text", "id": "subheading", "label": "Subheading" },
+      { "type": "range", "id": "subheading_size", "label": "Subheading font size (px)", "min": 14, "max": 48, "step": 2, "default": 22 },
+      { "type": "color", "id": "subheading_color", "label": "Subheading color" },
+      { "type": "select", "id": "subheading_align", "label": "Subheading alignment", "default": "inherit", "options": [
+        { "value": "inherit", "label": "Inherit" },
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ] },
+      { "type": "range", "id": "subheading_offset_x", "label": "Subheading offset X", "min": -200, "max": 200, "step": 5, "default": 0 },
+      { "type": "range", "id": "subheading_offset_y", "label": "Subheading offset Y", "min": -200, "max": 200, "step": 5, "default": 0 },
+      { "type": "select", "id": "subheading_offset_unit", "label": "Subheading offset unit", "default": "px", "options": [
+        { "value": "px", "label": "px" },
+        { "value": "%", "label": "%" },
+        { "value": "vw", "label": "vw" }
+      ] },
+      { "type": "textarea", "id": "description", "label": "Description" },
+      { "type": "range", "id": "description_size", "label": "Description font size (px)", "min": 12, "max": 32, "step": 2, "default": 16 },
+      { "type": "color", "id": "description_color", "label": "Description color" },
+      { "type": "select", "id": "description_align", "label": "Description alignment", "default": "inherit", "options": [
+        { "value": "inherit", "label": "Inherit" },
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ] },
+      { "type": "range", "id": "description_offset_x", "label": "Description offset X", "min": -200, "max": 200, "step": 5, "default": 0 },
+      { "type": "range", "id": "description_offset_y", "label": "Description offset Y", "min": -200, "max": 200, "step": 5, "default": 0 },
+      { "type": "select", "id": "description_offset_unit", "label": "Description offset unit", "default": "px", "options": [
+        { "value": "px", "label": "px" },
+        { "value": "%", "label": "%" },
+        { "value": "vw", "label": "vw" }
+      ] },
+      { "type": "text", "id": "button_label", "label": "Button label" },
+      { "type": "url", "id": "button_link", "label": "Button link" },
+      { "type": "range", "id": "button_font_size", "label": "Button font size (px)", "min": 12, "max": 32, "step": 1, "default": 16 },
+      { "type": "color", "id": "button_background", "label": "Button background color" },
+      { "type": "color", "id": "button_text_color", "label": "Button text color" },
+      { "type": "select", "id": "text_position", "label": "Text position", "default": "middle-center", "options": [
+        { "value": "top-left", "label": "Top left" },
+        { "value": "top-center", "label": "Top center" },
+        { "value": "top-right", "label": "Top right" },
+        { "value": "middle-left", "label": "Middle left" },
+        { "value": "middle-center", "label": "Middle center" },
+        { "value": "middle-right", "label": "Middle right" },
+        { "value": "bottom-left", "label": "Bottom left" },
+        { "value": "bottom-center", "label": "Bottom center" },
+        { "value": "bottom-right", "label": "Bottom right" }
+      ] },
+      { "type": "select", "id": "focal_point", "label": "Image focal point", "default": "center center", "options": [
+        {"value":"top left", "label":"Top left"},
+        {"value":"top center", "label":"Top center"},
+        {"value":"top right", "label":"Top right"},
+        {"value":"center left", "label":"Center left"},
+        {"value":"center center", "label":"Center"},
+        {"value":"center right", "label":"Center right"},
+        {"value":"bottom left", "label":"Bottom left"},
+        {"value":"bottom center", "label":"Bottom center"},
+        {"value":"bottom right", "label":"Bottom right"}
+      ] }
+    ] }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    { "name": "Home Banner Carousel", "blocks": [ {"type":"slide"}, {"type":"slide"}, {"type":"slide"} ] }
+  ]
+}
+{% endschema %}

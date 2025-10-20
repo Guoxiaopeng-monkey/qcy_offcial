@@ -282,11 +282,19 @@
             "title": "MeloBuds Neo manual -Italian",
             "manual_url": "https://cdn.shopify.com/s/files/1/0639/3492/2809/files/QT31_V3_20250617.pdf?v=1750673444"
           }
+        },
+        "manual_7dqVrP": {
+          "type": "manual",
+          "settings": {
+            "title": "MeloBuds Neo manual - Hebrew",
+            "manual_url": "https://cdn.shopify.com/s/files/1/0639/3492/2809/files/QCY_MeloBuds_Neo.pdf?v=1760406380"
+          }
         }
       },
       "block_order": [
         "manual_12345",
-        "manual_TcHEff"
+        "manual_TcHEff",
+        "manual_7dqVrP"
       ],
       "settings": {
         "title": "Manuals"

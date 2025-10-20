@@ -218,10 +218,9 @@
         },
         "manual_pFcUzn": {
           "type": "manual",
-          "disabled": true,
           "settings": {
-            "title": "",
-            "manual_url": ""
+            "title": "Heroad V200 Tri-Mode Edition Manual",
+            "manual_url": "https://cdn.shopify.com/s/files/1/0639/3492/2809/files/H4GM_2.4G_-A-20250712_1.pdf?v=1760421622"
           }
         }
       },

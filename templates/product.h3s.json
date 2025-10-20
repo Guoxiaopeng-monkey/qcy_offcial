@@ -408,14 +408,6 @@
         "bg_color": "#ffffff"
       }
     },
-    "rich_text_FfYTac": {
-      "type": "rich-text",
-      "name": "Rich Text",
-      "settings": {
-        "heading": "Rich text",
-        "text": "<p>Share information about your brand with your customers.</p>"
-      }
-    },
     "product_page_image_slider_section_dpQdgV": {
       "type": "product-page-image-slider-section",
       "blocks": {
@@ -589,9 +581,9 @@
         },
         "full_width_YBUtgm": {
           "type": "full_width",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/image_7.png"
+            "image": "shopify://shop_images/c0c4c49f3d88e7b2c036102503a2e917.jpg",
+            "image_mobile": "shopify://shop_images/M_924cef36-bb04-43c2-a7b0-cbcb68622a40.jpg"
           }
         }
       },
@@ -906,7 +898,6 @@
     "product_page_featured_specs_section_A3prPV",
     "product_page_featured_video_section_NbhMGF",
     "product_page_scroll_content_section_DkGNRw",
-    "rich_text_FfYTac",
     "product_page_image_slider_section_dpQdgV",
     "product_page_side_by_side_section_rYNrbK",
     "product_page_mobile_application_section_EVFkfd",
